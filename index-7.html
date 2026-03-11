@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Can't Beat The System</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --bg-r: #08080b;
+  --text: #c8c4b8;
+  --dim: #6b6760;
+  --bright: #e8e4d8;
+  --lyric: #8a7e6a;
+  --warm: #c4956a;
+  --earth: #7a8a5a;
+  --cold: #5a7a8a;
+  --sys: #6a8aaa;
+  --alert: #a65a4a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --div: #1a1816;
+  --card: #111110;
+  --card-b: #1e1c18;
+  --player: #8a7e6a;
+  --heart-vital: #7a8a5a;
+  --heart-fine: #c8c4b8;
+  --heart-declining: #c4956a;
+  --heart-critical: #a65a4a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow: hidden;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  display: flex;
+  height: calc(100vh - 90px);
+  margin-top: 48px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── LEFT PANE ── */
+.left {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  position: relative;
+  border-right: 1px solid var(--div);
+  scrollbar-width: thin;
+  scrollbar-color: var(--faint) transparent;
+  background-color: #0d0d10;
+  background-image:
+    linear-gradient(to bottom, rgba(90,75,50,.15) 0%, rgba(50,42,28,.06) 40%, transparent 70%);
+}
+.left::-webkit-scrollbar { width: 4px; }
+.left::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 2px; }
+
+.left-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAARlJREFUaIHt0LENwzAQBMD/J+YanMR1qAxX4jJUiMpwEYxhGBJF0tL9ADvAwh5xi+/rGwAAAAAAAAAAAAAAAGCffvYO/Kf3vQNnImJk5v7uoTNEEUtEnIiIvHfquxGxAAAAAAAAAAAAAAAAAAAAANibmXmIiMi79yIiTkTEwcf7EbGIiJWZi3unhoh4f/cOAAAAAAAAAAAAAAAAAPy/iJgj4nhErCLi+Nmpc0TEIiJOZuaBiIicc4iI+e6hM0TEYWYeJyLifO/UGSLikpnHiIi8e+9ExJyIWETEvlNfiIh5Zh4i4mBEvO8dOkNELDPzFBERd+9dRMxExImImO+eOsP3EwAAAAAAAAAAAAAAAAAA4E/5BStFbVGMnMaXAAAAAElFTkSuQmCC");
+  background-size: 50px 50px;
+  background-repeat: repeat;
+}
+
+.prose-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 64px 48px 120px 48px;
+}
+
+/* ── TURN NAV (dev only) ── */
+.turn-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.t-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: .4;
+}
+.t-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: .45;
+  background: none;
+  border: 1px solid var(--faint);
+  border-radius: 2px;
+  padding: 3px 9px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.t-btn:hover { opacity: .6; color: var(--warm); border-color: var(--warm); }
+
+.t-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: .4;
+  margin-bottom: 10px;
+}
+
+.t-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  margin-bottom: 40px;
+  letter-spacing: -.3px;
+  line-height: 1.2;
+}
+
+/* ── PROSE ── */
+.prose { font-size: 19px; font-weight: 300; line-height: 1.78; color: var(--text); }
+.prose p { margin-bottom: 26px; opacity: 0; animation: fadeUp 1s ease forwards; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+.lyric {
+  font-style: italic;
+  color: var(--lyric);
+  margin: 32px 0;
+  padding-left: 22px;
+  border-left: 1px solid var(--faint);
+  font-size: 19px;
+  line-height: 1.72;
+}
+.inner {
+  font-style: italic;
+  color: var(--inner);
+  margin: 32px 0;
+  padding-left: 22px;
+  border-left: 1px solid rgba(196,144,144,.2);
+  font-size: 19px;
+  line-height: 1.72;
+}
+.solo {
+  margin: 40px 0;
+  color: var(--bright);
+  font-size: 19px;
+}
+.big { font-size: 24px; letter-spacing: 2px; font-style: normal; color: var(--bright); font-weight: 400; }
+.time {
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  letter-spacing: -.3px;
+  line-height: 1.2;
+  margin: 48px 0 40px;
+}
+
+/* ── QUESTION (standalone psychometric turn) ── */
+.question-standalone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 40px 0;
+}
+.q-text-standalone {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 40px;
+  letter-spacing: .3px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: .3s;
+}
+.q-opt {
+  font-family: 'Crimson Pro', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--dim);
+  padding: 16px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(26,24,22,.3);
+  transition: all .35s;
+  opacity: 0;
+  animation: fadeUp .8s ease forwards;
+}
+.q-opt:nth-child(2) { animation-delay: .8s; }
+.q-opt:nth-child(3) { animation-delay: 1.1s; }
+.q-opt:nth-child(4) { animation-delay: 1.4s; }
+.q-opt:last-child { border-bottom: none; }
+.q-opt:hover { color: var(--warm); padding-left: 14px; }
+.q-opt.sel { color: var(--warm); padding-left: 14px; }
+
+/* ── CHOICES ── */
+.choices {
+  margin: 52px 0 44px;
+  padding: 28px 26px;
+  background: rgba(196,149,106,.03);
+  border: 1px solid rgba(196,149,106,.12);
+  border-radius: 4px;
+}
+.c-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--warm);
+  opacity: .5;
+  margin-bottom: 8px;
+}
+.c-prompt {
+  font-family: 'Crimson Pro', serif;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.c-opt {
+  font-family: 'Crimson Pro', serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--dim);
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(26,24,22,.4);
+  transition: all .35s;
+}
+.c-opt:last-child { border-bottom: none; }
+.c-opt:hover { color: var(--warm); padding-left: 12px; }
+.c-opt.sel { color: var(--warm); padding-left: 12px; }
+
+/* ── ECONOMIC DISPLAY ── */
+.econ-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(6,6,9,.97);
+  border-bottom: 1px solid var(--div);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 200;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.econ-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.econ-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dim);
+  opacity: .7;
+  transition: opacity .3s;
+}
+.econ-item:hover { opacity: 1; }
+.econ-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: .45;
+}
+.econ-val {
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 400;
+}
+.econ-val.cash { color: var(--earth); }
+.econ-val.ds { color: var(--text); opacity: .7; }
+.econ-val.bc { color: var(--sys); }
+.econ-val.cw { color: var(--warm); }
+
+/* ── HEALTH HEART ── */
+.heart-icon {
+  font-size: 22px;
+  line-height: 1;
+  animation: heartPulse 2s ease-in-out infinite;
+}
+.heart-icon.vital { color: var(--heart-vital); }
+.heart-icon.fine { color: var(--heart-fine); animation-duration: 2.5s; }
+.heart-icon.declining { color: var(--heart-declining); animation-duration: 3.5s; }
+.heart-icon.critical { color: var(--heart-critical); animation-duration: 5s; opacity: .5; }
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+
+/* ── BC display (hidden until post-Event registration) ── */
+.bc-display { display: none; }
+.bc-display.visible { display: flex; }
+/* ── CW display (hidden until T41) ── */
+.cw-display { display: none; }
+.cw-display.visible { display: flex; }
+
+/* ── DEV NAV ── */
+.dev-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dev-label {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: .25;
+}
+
+/* ── RIGHT PANE ── */
+.right {
+  width: 50%;
+  min-width: 360px;
+  flex-shrink: 0;
+  background: var(--bg-r);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  padding: 14px 14px 0;
+  margin-top: 6px;
+  border-bottom: 1px solid var(--div);
+  flex-shrink: 0;
+}
+.tab {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  color: var(--text);
+  opacity: .5;
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  transition: all .3s;
+}
+.tab.on { opacity: 1; color: var(--warm); border-bottom-color: var(--warm); }
+.tab:hover:not(.on) { opacity: .9; color: var(--bright); }
+.tab .tab-count {
+  font-size: 8px;
+  opacity: .4;
+  margin-left: 4px;
+}
+
+.panels {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--faint) transparent;
+}
+.panels::-webkit-scrollbar { width: 3px; }
+.panels::-webkit-scrollbar-thumb { background: var(--faint); }
+
+.panel { display: none; padding: 14px 12px 80px; }
+.panel.on { display: block; }
+
+/* ── SIGNAL CARDS ── */
+.sec-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cold);
+  opacity: .35;
+  padding: 14px 4px 8px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: 3px;
+  padding: 12px 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.card:hover { background: #1a1814; border-color: var(--faint); }
+.card.new { border-left: 2px solid var(--warm); animation: pulse 3s ease-in-out infinite; }
+.card.fade { opacity: .28; }
+@keyframes pulse { 0%,100%{border-left-color:var(--warm)} 50%{border-left-color:rgba(196,149,106,.15)} }
+
+.card .src { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .45; margin-bottom: 5px; }
+.card .ttl { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--text); line-height: 1.5; margin-bottom: 4px; }
+.card .snip { font-family: 'Crimson Pro', serif; font-size: 15px; font-style: italic; color: var(--dim); line-height: 1.6; opacity: .6; }
+.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 2px 6px; margin-top: 7px; border-radius: 2px; background: rgba(196,149,106,.08); color: var(--warm); opacity: .6; }
+.tag.c { background: rgba(90,122,138,.08); color: var(--cold); }
+.tag.a { background: rgba(166,90,74,.15); color: var(--alert); }
+.tag.e { background: rgba(122,138,90,.08); color: var(--earth); }
+.save-signal { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
+.save-signal:hover { opacity: .7; color: var(--warm); }
+.save-signal.saved { color: var(--cold); opacity: .5; pointer-events: none; }
+
+/* ── THREADS ── */
+.tg { margin-bottom: 22px; }
+.tg-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--cold); opacity: .45; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid rgba(90,122,138,.1); }
+a.ti, div.ti { font-family: 'Crimson Pro', serif; font-size: 15px; color: var(--dim); padding: 6px 0 6px 11px; border-left: 1px solid rgba(90,122,138,.14); margin-bottom: 3px; cursor: pointer; transition: all .3s; display: block; text-decoration: none; }
+a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
+a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
+a.ti::after { content: ' ↗'; opacity: 0; transition: opacity .3s; font-size: 11px; }
+a.ti:hover::after { opacity: .4; }
+a.ti.player { color: var(--player); border-left-color: rgba(138,126,106,.2); }
+a.ti.player:hover { color: var(--text); border-left-color: var(--player); }
+a.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
+div.ti.pending { cursor: default; opacity: .5; }
+
+/* ── NOTES ── */
+.note { background: rgba(196,149,106,.04); border: 1px solid rgba(196,149,106,.1); border-radius: 3px; padding: 13px 14px; margin-bottom: 9px; }
+.note textarea { width: 100%; background: transparent; border: none; color: var(--text); font-family: 'Crimson Pro', serif; font-size: 16px; line-height: 1.7; resize: none; outline: none; min-height: 56px; }
+.note textarea::placeholder { color: var(--dim); opacity: .3; font-style: italic; }
+.note-t { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--dim); opacity: .28; margin-top: 7px; text-transform: uppercase; }
+.note-actions { display: flex; gap: 12px; margin-top: 6px; }
+.note-act { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: 0; background: none; border: none; cursor: pointer; padding: 2px 0; transition: all .3s; }
+.note:hover .note-act { opacity: .35; }
+.note-act:hover { opacity: .7 !important; }
+.note-act.del:hover { color: var(--alert); }
+.note-act.keep:hover { color: var(--earth); }
+.note-act.thread:hover { color: var(--cold); }
+.thread-picker { display: none; margin-top: 6px; background: var(--card); border: 1px solid var(--card-b); border-radius: 3px; padding: 6px 0; }
+.thread-picker.open { display: block; }
+.thread-pick { display: block; width: 100%; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--dim); background: none; border: none; padding: 7px 12px; cursor: pointer; transition: all .2s; opacity: .55; }
+.thread-pick:hover { opacity: 1; color: var(--cold); background: rgba(90,122,138,.06); }
+.add-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; }
+.add-note:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
+
+/* ── SONGS ── */
+.song {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all .3s;
+  align-items: flex-start;
+}
+.song:hover { background: #1a1814; border-color: var(--faint); }
+.song-info { flex: 1; min-width: 0; }
+.song-title { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--text); line-height: 1.4; }
+.song-artist { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .45; margin-top: 2px; }
+.song-context { font-family: 'Crimson Pro', serif; font-size: 14px; color: var(--dim); opacity: .55; margin-top: 5px; line-height: 1.5; font-style: italic; }
+.song-turn { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; margin-top: 4px; }
+.song.player .song-title { color: var(--player); }
+.song-link { font-size: 28px; color: var(--warm); opacity: .6; flex-shrink: 0; padding-top: 4px; text-decoration: none; transition: opacity .3s; }
+.song-link:hover { opacity: .8; }
+.add-song { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; margin-top: 8px; }
+.add-song:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
+.ps-act { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .35; cursor: pointer; transition: all .3s; margin-right: 12px; }
+.ps-act:hover { opacity: .7; color: var(--warm); }
+
+/* ── INTRO SCREEN ── */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #0a0a0c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  overflow: hidden;
+  animation: intro-bg-pulse 10s ease-in-out infinite;
+}
+
+#intro-screen.clickable {
+  cursor: pointer;
+}
+
+#intro-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+#intro-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(210,190,150,0.18) 0%, rgba(180,155,110,0.08) 40%, transparent 70%);
+  animation: intro-bg-glow 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#intro-screen .intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: intro-fade-in 3s ease-out 0.8s forwards;
+}
+
+#intro-screen .intro-cage {
+  display: inline-block;
+  border: 1px solid rgba(0,255,136,0.2);
+  padding: 18px 36px;
+  position: relative;
+}
+
+#intro-screen .intro-cage .cage-bar {
+  position: absolute;
+  top: -1px;
+  width: 1px;
+  height: calc(100% + 2px);
+}
+#intro-screen .intro-cage .cage-bar.b1 { left: 0; background: rgba(0,255,136,0.13); }
+#intro-screen .intro-cage .cage-bar.b2 { left: 25%; background: rgba(0,255,136,0.08); }
+#intro-screen .intro-cage .cage-bar.b3 { right: 25%; background: rgba(0,255,136,0.08); }
+#intro-screen .intro-cage .cage-bar.b4 { right: 0; background: rgba(0,255,136,0.13); }
+
+#intro-screen .intro-title {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  font-size: 36px;
+  color: #e0e0e8;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+#intro-screen .intro-title .sys {
+  color: #00ff88;
+  font-weight: 600;
+}
+
+#intro-screen .intro-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 32px;
+  background: #ff3355;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: intro-blink 1s step-end infinite;
+}
+
+#intro-screen .intro-tagline {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: rgba(0,255,136,0.4);
+  margin-top: 20px;
+  opacity: 0;
+  animation: intro-fade-in 2s ease-out 3s forwards;
+}
+
+#intro-screen .intro-enter {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(200,196,184,0.2);
+  margin-top: 52px;
+  opacity: 0;
+  animation: intro-fade-in 2s ease-out 10s forwards;
+}
+
+#intro-screen:hover .intro-enter {
+  color: rgba(200,196,184,0.5);
+}
+
+#intro-screen .intro-ambient {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(200,196,184,0.15);
+  cursor: pointer;
+  opacity: 0;
+  animation: intro-fade-in 1.5s ease-out 6s forwards;
+  transition: color 0.3s;
+  z-index: 10001;
+}
+#intro-screen .intro-ambient:hover {
+  color: rgba(200,196,184,0.4);
+}
+
+#intro-screen.fade-out {
+  animation: intro-fade-out 2s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes intro-fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes intro-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes intro-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes intro-bg-pulse {
+  0%, 100% { background-color: #0a0a0c; }
+  50% { background-color: #1a1610; }
+}
+
+@keyframes intro-bg-glow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 1; }
+}
+
+/* ── WELCOME SCREEN ── */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0a0a0c;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#welcome-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+#welcome-screen .welcome-inner {
+  max-width: 560px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+#welcome-screen .wl {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+#welcome-screen .wl.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#welcome-screen .wl-line {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  font-size: 19px;
+  color: #e0e0e8;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+#welcome-screen .wl-line.green {
+  color: #00ff88;
+  font-style: italic;
+}
+
+#welcome-screen .wl-line.beige {
+  color: #c4b08a;
+}
+
+#welcome-screen .wl-line.indent {
+  padding-left: 24px;
+}
+
+#welcome-screen .wl-big-line {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 42px;
+  color: var(--inner);
+  line-height: 1.3;
+  padding-left: 20px;
+  border-left: 2px solid var(--inner);
+}
+
+#welcome-screen .wl-gap {
+  height: 28px;
+}
+
+#welcome-screen .wl-gap-lg {
+  height: 44px;
+}
+
+/* Welcome logo */
+#welcome-screen .welcome-logo {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#welcome-screen .welcome-cage {
+  display: inline-block;
+  border: 1px solid rgba(0,255,136,0.2);
+  padding: 10px 24px;
+  position: relative;
+}
+#welcome-screen .welcome-cage .wb { position: absolute; top: -1px; width: 1px; height: calc(100% + 2px); }
+#welcome-screen .welcome-cage .wb1 { left: 0; background: rgba(0,255,136,0.13); }
+#welcome-screen .welcome-cage .wb2 { left: 25%; background: rgba(0,255,136,0.08); }
+#welcome-screen .welcome-cage .wb3 { right: 25%; background: rgba(0,255,136,0.08); }
+#welcome-screen .welcome-cage .wb4 { right: 0; background: rgba(0,255,136,0.13); }
+
+#welcome-screen .welcome-cage .wc-title {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #e0e0e8;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+#welcome-screen .welcome-cage .wc-title.wc-title-lg {
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+#welcome-screen .welcome-cage.welcome-cage-lg {
+  padding: 16px 36px;
+}
+#welcome-screen .welcome-cage .wc-title .sys { color: #00ff88; font-weight: 600; }
+#welcome-screen .welcome-cage .wc-title .cur {
+  display: inline-block; width: 2px; height: 18px;
+  background: #ff3355; margin-left: 4px; vertical-align: middle;
+  animation: intro-blink 1s step-end infinite;
+}
+#welcome-screen .welcome-cage .wc-title.wc-title-lg .cur {
+  height: 26px;
+  margin-left: 6px;
+}
+
+#welcome-screen .wl-tagline {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: rgba(0,255,136,0.4);
+  margin-top: 14px;
+  text-align: center;
+}
+
+#welcome-screen .green-i {
+  color: #00ff88;
+  font-style: italic;
+}
+
+#welcome-screen .red-i {
+  color: #ff3355;
+  font-style: italic;
+}
+
+#welcome-screen .wl-terms {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  font-size: 30px;
+  color: #e0e0e8;
+  letter-spacing: 3px;
+  line-height: 1.4;
+}
+
+#welcome-screen .wl-terms .green-i {
+  color: #00ff88;
+  font-style: italic;
+  font-weight: 600;
+}
+
+#welcome-screen .terms-cur {
+  display: inline-block;
+  width: 2px;
+  height: 26px;
+  background: #ff3355;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: intro-blink 1s step-end infinite;
+}
+
+/* Begin button */
+#welcome-screen .welcome-begin {
+  margin-top: 36px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  background: none;
+  border: 1px solid var(--faint);
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0.7;
+}
+#welcome-screen .welcome-begin:hover {
+  border-color: var(--inner);
+  color: var(--inner);
+  opacity: 1;
+}
+
+#welcome-screen.fade-out {
+  animation: intro-fade-out 1.5s ease-in forwards;
+  pointer-events: none;
+}
+
+.econ-bar { display: none; }
+.wrap { display: none; }
+.ticker-bar { display: none; }
+body.game-active .econ-bar { display: flex; }
+body.game-active .wrap { display: flex; }
+body.game-active .ticker-bar { display: flex; }
+
+/* ── NOISE OVERLAY ── */
+.noise { position: fixed; inset: 0; background-color: transparent; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; }
+
+/* ── TICKER ── */
+.ticker-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  background: rgba(6,6,9,0.99);
+  border-top: 1px solid var(--div);
+  display: flex;
+  align-items: center;
+  z-index: 200;
+  overflow: hidden;
+}
+.ticker-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--warm);
+  padding: 0 18px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  border-right: 1px solid var(--faint);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: tickerScroll 75s linear infinite;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: 0.4px;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+.t-item {
+  padding: 0 32px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.t-item:hover { opacity: 0.9; color: var(--text); cursor: default; }
+.t-item.warm { color: var(--warm); opacity: 0.6; }
+.t-item.alert { color: var(--alert); opacity: 0.7; }
+.t-item.cold { color: var(--cold); opacity: 0.5; }
+.t-sep {
+  opacity: 0.15;
+  padding: 0 4px;
+  color: var(--faint);
+}
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── TICKER DEAD (event mode) ── */
+.ticker-bar.dead .ticker-inner { animation: none; }
+.ticker-bar.dead .ticker-label { color: var(--alert); opacity: .3; }
+.ticker-bar.dead .t-item { display: none; }
+.ticker-bar.dead::after {
+  content: '';
+  flex: 1;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .right { display: none; }
+  .left { border-right: none; }
+  .prose-wrap { padding: 64px 24px 120px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══ INTRO SCREEN ══ -->
+<div id="intro-screen">
+  <div class="intro-content">
+    <div class="intro-cage">
+      <div class="cage-bar b1"></div>
+      <div class="cage-bar b2"></div>
+      <div class="cage-bar b3"></div>
+      <div class="cage-bar b4"></div>
+      <div class="intro-title">Can't Beat the <span class="sys">System</span><span class="intro-cursor"></span></div>
+    </div>
+    <div class="intro-tagline">the cage is comfortable</div>
+    <div class="intro-enter">click anywhere to begin</div>
+  </div>
+  <div class="intro-ambient" id="intro-ambient-toggle">♪ sound on</div>
+</div>
+
+<!-- ══ WELCOME SCREEN ══ -->
+<div id="welcome-screen">
+  <div class="welcome-inner">
+
+    <div class="wl welcome-logo">
+      <div class="welcome-cage welcome-cage-lg">
+        <div class="wb wb1"></div><div class="wb wb2"></div><div class="wb wb3"></div><div class="wb wb4"></div>
+        <div class="wc-title wc-title-lg">Can't Beat the <span class="sys">System</span><span class="cur"></span></div>
+      </div>
+      <div class="wl-tagline">the cage is comfortable</div>
+    </div>
+
+    <div class="wl wl-gap-lg"></div>
+
+    <div class="wl wl-line">As the tale unfolds, you will be asked questions</div>
+    <div class="wl wl-line">They are simply for your <span class="green-i">enjoyment</span></div>
+
+    <div class="wl wl-gap"></div>
+    <div class="wl wl-line">Take your time or respond instinctively</div>
+    <div class="wl wl-line indent">Respond with <span class="green-i">thought</span></div>
+    <div class="wl wl-line indent">With <span class="green-i">consideration</span></div>
+    <div class="wl wl-line indent">With <span class="green-i">reflection</span></div>
+    <div class="wl wl-line indent">With <span class="green-i">honesty</span></div>
+    <div class="wl wl-line">Or click on an option at random</div>
+    <div class="wl wl-gap"></div>
+    <div class="wl wl-line">What difference does it make?</div>
+
+    <div class="wl wl-gap"></div>
+    <div class="wl wl-line">No algorithm will <span class="red-i">monitor</span> your answers</div>
+    <div class="wl wl-line">You will not be <span class="red-i">tracked</span></div>
+    <div class="wl wl-line">You will not be <span class="red-i">judged</span></div>
+
+    <div class="wl wl-gap"></div>
+    <div class="wl wl-big-line">Unless you judge yourself?</div>
+
+    <div class="wl wl-gap-lg"></div>
+    <div class="wl wl-terms">There are no <span class="green-i">terms</span> and <span class="green-i">conditions</span><span class="terms-cur"></span></div>
+
+    <div class="wl" style="display:flex;justify-content:center;margin-top:20px;">
+      <button class="welcome-begin" id="welcome-begin">agree all</button>
+    </div>
+  </div>
+</div>
+
+<div class="noise"></div>
+
+<!-- ══ ECONOMIC BAR ══ -->
+<div class="econ-bar">
+  <div class="econ-left">
+    <div class="econ-item heart-wrap">
+      <span class="econ-label">Health</span>
+      <span class="heart-icon fine" id="heart">♥</span>
+    </div>
+    <div class="econ-item" id="cashWrap">
+      <span class="econ-label">Cash</span>
+      <span class="econ-val cash" id="cashVal">£840</span>
+    </div>
+    <div class="econ-item" id="dsWrap">
+      <span class="econ-label">Savings</span>
+      <span class="econ-val ds" id="dsVal">£12,400</span>
+    </div>
+    <div class="econ-item bc-display" id="bcWrap">
+      <span class="econ-label">BC</span>
+      <span class="econ-val bc" id="bcVal">0</span>
+    </div>
+    <div class="econ-item cw-display" id="cwWrap">
+      <span class="econ-label">CW</span>
+      <span class="econ-val cw" id="cwVal">50</span>
+    </div>
+  </div>
+  <div class="dev-bar">
+    <span class="dev-label">Dev</span>
+    <button class="t-btn" id="prev">←</button>
+    <span class="t-num" id="t-num">T1</span>
+    <button class="t-btn" id="next">→</button>
+  </div>
+</div>
+
+<!-- ══ MAIN WRAP ══ -->
+<div class="wrap">
+
+  <!-- LEFT PANE — PROSE -->
+  <div class="left">
+    <div class="left-bg"></div>
+    <div class="prose-wrap">
+      <div class="t-date" id="t-date">October 2026</div>
+      <div class="t-title" id="t-title">Digging, Bright and Breezy</div>
+      <div class="prose" id="turn-content">
+        <!-- Rendered by engine -->
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANE — HUB -->
+  <div class="right">
+    <div class="tabs">
+      <button class="tab on" data-p="signal">Signal</button>
+      <button class="tab" data-p="threads">Threads</button>
+      <button class="tab" data-p="notes">Notes</button>
+      <button class="tab" data-p="songs">Songs</button>
+    </div>
+    <div class="panels">
+      <div class="panel on" data-p="signal" id="signal-panel"></div>
+      <div class="panel" data-p="threads" id="threads-panel"></div>
+      <div class="panel" data-p="notes" id="notes-panel"></div>
+      <div class="panel" data-p="songs" id="songs-panel"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker-bar" id="ticker">
+  <div class="ticker-label">● Live</div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="ticker-inner"></div>
+  </div>
+</div>
+
+
+
+<script>
+// ══════════════════════════════════════════════════════════
+// CBTS ENGINE — Phase B: External JSON loader
+// Loads play data from play1-simon.json
+// All render logic identical to index-6 Phase A.
+// ══════════════════════════════════════════════════════════
+
+// ── STATE (initialised from JSON) ──
+let state = {};
+let playData = {};
+let signalData = {};
+let threadsData = [];
+let songsData = [];
+let tickerItems = [];
+
+async function loadGame() {
+  try {
+    const resp = await fetch('play1-simon.json');
+    if (!resp.ok) throw new Error('Failed to load play1-simon.json');
+    const data = await resp.json();
+
+    // Hydrate state from JSON initialState
+    state = {
+      play: 1,
+      turnIndex: 0,
+      ...structuredClone(data.initialState),
+      choicesLog: [],
+      questionsLog: [],
+      notes: data.initialNotes ? structuredClone(data.initialNotes) : [],
+      playerSongs: [],
+      playerThreads: []
+    };
+
+    // Hydrate data
+    playData = { turns: data.turns };
+    signalData = data.signal || {};
+    threadsData = data.threads || [];
+    songsData = data.songs || [];
+    tickerItems = data.ticker || [];
+
+    // Init
+    renderThreads();
+    renderNotes();
+    goTo(0);
+
+  } catch (err) {
+    console.error('CBTS load error:', err);
+    document.getElementById('turn-content').innerHTML =
+      '<p style="color:var(--alert)">Failed to load game data. Check console.</p>';
+  }
+}
+
+// ══════════════════════════════════════════════════════
+// ENGINE — identical to index-6
+// ══════════════════════════════════════════════════════
+
+function renderTurn(turnData) {
+  const container = document.getElementById('turn-content');
+  if (!turnData) {
+    container.innerHTML = '<p style="color:var(--dim);font-style:italic">Turn not yet written.</p>';
+    return;
+  }
+
+  let html = '';
+
+  // ── STANDALONE QUESTION TURN ──
+  if (turnData.isQuestion) {
+    html += '<div class="question-standalone">\n';
+    html += `  <div class="q-text-standalone">${turnData.questionText}</div>\n`;
+    const answered = state.questionsLog.find(ql => ql.id === turnData.id);
+    turnData.questionOpts.forEach((o, i) => {
+      const sel = answered && answered.chosen === i ? ' sel' : '';
+      html += `  <div class="q-opt${sel}" data-qid="${turnData.id}" data-qi="${i}">${o.text}</div>\n`;
+    });
+    html += '</div>\n';
+    container.innerHTML = html;
+    // Bind question clicks
+    container.querySelectorAll('.q-opt').forEach(opt => {
+      if (opt.classList.contains('sel')) return;
+      opt.addEventListener('click', function() {
+        const qid = this.dataset.qid;
+        const qi = parseInt(this.dataset.qi);
+        if (turnData.questionOpts[qi].fx) applyEffects(turnData.questionOpts[qi].fx);
+        state.questionsLog.push({ id: qid, chosen: qi, text: turnData.questionOpts[qi].text });
+        this.closest('.question-standalone').querySelectorAll('.q-opt').forEach(o => {
+          o.style.opacity = '.2';
+          o.style.pointerEvents = 'none';
+        });
+        this.classList.add('sel');
+        this.style.opacity = '1';
+        setTimeout(() => goTo(state.turnIndex + 1), 1200);
+      });
+    });
+    return;
+  }
+
+  // ── PROSE TURN ──
+  turnData.paras.forEach(p => {
+    const cls = p.c ? ` class="${p.c}"` : '';
+    const sty = p.s ? ` style="${p.s}"` : '';
+    html += `<p${cls}${sty}>${p.t}</p>\n`;
+  });
+
+  // Choices
+  if (turnData.choices) {
+    const chosen = state.choicesLog.find(cl => cl.turn === turnData.id);
+    html += '<div class="choices">\n';
+    html += `  <div class="c-label">${turnData.choices.label}</div>\n`;
+    if (turnData.choices.prompt) {
+      html += `  <div class="c-prompt">${turnData.choices.prompt}</div>\n`;
+    }
+    turnData.choices.opts.forEach((o, i) => {
+      const sel = chosen && chosen.chosen === i ? ' sel' : '';
+      const label = typeof o === 'string' ? o : o.text;
+      html += `  <div class="c-opt${sel}" data-ci="${i}">${label}</div>\n`;
+    });
+    html += '</div>\n';
+  } else if (!turnData.isQuestion) {
+    // Default continue for turns without choices
+    const alreadyContinued = state.choicesLog.find(cl => cl.turn === turnData.id);
+    html += '<div class="choices">\n';
+    html += '  <div class="c-label">Tempus fugit</div>\n';
+    const sel = alreadyContinued ? ' sel' : '';
+    html += `  <div class="c-opt${sel}" data-ci="0">Continue</div>\n`;
+    html += '</div>\n';
+  }
+
+  // After-choices content
+  if (turnData.after) {
+    turnData.after.forEach(p => {
+      const cls = p.c ? ` class="${p.c}"` : '';
+      const sty = p.s ? ` style="${p.s}"` : '';
+      html += `<p${cls}${sty}>${p.t}</p>\n`;
+    });
+  }
+
+  container.innerHTML = html;
+
+  // Bind choice clicks
+  container.querySelectorAll('.choices .c-opt').forEach(opt => {
+    if (opt.classList.contains('sel')) return;
+    opt.addEventListener('click', function() {
+      const ci = parseInt(this.dataset.ci);
+
+      // Tempus fugit continue — no choices to process
+      if (!turnData.choices) {
+        state.choicesLog.push({ turn: turnData.id, chosen: 0, text: 'Continue' });
+        this.classList.add('sel');
+        setTimeout(() => goTo(state.turnIndex + 1), 900);
+        return;
+      }
+
+      const choice = turnData.choices.opts[ci];
+      const choiceText = typeof choice === 'string' ? choice : choice.text;
+      if (choice.fx) applyEffects(choice.fx);
+      if (choice.flag) {
+        Object.assign(state.flags, choice.flag);
+        if (choice.flag.registered) {
+          state.bc = 1000;
+          state.ds = 0;
+        }
+      }
+      state.choicesLog.push({ turn: turnData.id, chosen: ci, text: choiceText });
+      const choices = this.closest('.choices');
+      choices.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
+      this.classList.add('sel');
+      choices.querySelectorAll('.c-opt:not(.sel)').forEach(o => o.style.opacity = '.25');
+      setTimeout(() => goTo(state.turnIndex + 1), 900);
+    });
+  });
+
+  // Dynamic reveal pacing — short lines breathe faster
+  let cumDelay = 0.5;
+  container.querySelectorAll('p').forEach(p => {
+    p.style.animation = 'none';
+    p.style.opacity = '0';
+    void p.offsetWidth;
+    p.style.animation = `fadeUp 1.2s ease ${cumDelay}s forwards`;
+    // Gap before NEXT paragraph based on THIS paragraph's length
+    const len = p.textContent.length;
+    let gap;
+    if (len < 30) gap = 0.3;        // punchy one-liners
+    else if (len < 80) gap = 0.5;   // short lines, dialogue
+    else if (len < 200) gap = 0.8;  // medium paragraphs
+    else if (len < 400) gap = 1.2;  // substantial paragraphs
+    else gap = 1.6;                  // dense blocks — let them breathe
+    cumDelay += gap;
+  });
+}
+
+function applyEffects(fx) {
+  for (const [key, val] of Object.entries(fx)) {
+    if (key in state.profile) {
+      state.profile[key] += val;
+    }
+  }
+  console.log('AIDA Profile:', JSON.stringify(state.profile));
+}
+
+function renderSignal(turnId) {
+  const panel = document.getElementById('signal-panel');
+  const data = signalData[turnId];
+  if (!data) {
+    panel.innerHTML = '<div class="sec-label">\u2014 No signal this turn \u2014</div>';
+    return;
+  }
+  let html = '';
+  data.forEach(section => {
+    html += `<div class="sec-label">\u2014 ${section.sec} \u2014</div>`;
+    section.cards.forEach(card => {
+      const newCls = card.isnew ? ' new' : '';
+      html += `<div class="card${newCls}">
+        <div class="src">${card.src}</div>
+        <div class="ttl">${card.ttl}</div>
+        <div class="snip">${card.snip}</div>
+        <div class="tag ${card.cls}">${card.tag}</div>
+        <div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>
+      </div>`;
+    });
+  });
+  panel.innerHTML = html;
+
+  // Card interactions
+  panel.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (e.target.classList.contains('save-signal')) return;
+      if (this.classList.contains('new')) this.classList.remove('new');
+      else this.classList.toggle('fade');
+    });
+  });
+  panel.querySelectorAll('.save-signal').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const turn = playData.turns[state.turnIndex];
+      addNote(`${this.dataset.src}: ${this.dataset.ttl}`, `Signal \u2014 ${turn.num}`, true);
+      this.textContent = 'Saved';
+      this.classList.add('saved');
+    });
+  });
+}
+
+function renderThreads() {
+  const panel = document.getElementById('threads-panel');
+  let html = '';
+  threadsData.forEach(group => {
+    const visibleItems = group.items.filter(item => {
+      if (!item.turn) return true;
+      const turnIdx = playData.turns.findIndex(t => t.id === item.turn);
+      return turnIdx <= state.turnIndex;
+    });
+    if (visibleItems.length === 0) return;
+    html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
+    visibleItems.forEach(item => {
+      if (item.url) {
+        const cls = item.src === 'player' ? 'ti player' : 'ti';
+        html += `<a class="${cls}" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
+      } else {
+        html += `<div class="ti pending">${item.text}</div>`;
+      }
+    });
+    html += '</div>';
+  });
+  panel.innerHTML = html;
+}
+
+function renderNotes() {
+  const panel = document.getElementById('notes-panel');
+  let html = '';
+  state.notes.forEach((note, i) => {
+    // Skip initialNotes that haven't been reached yet
+    if (note.turn !== undefined) {
+      const turnIdx = playData.turns.findIndex(t => t.id === note.turn);
+      if (turnIdx > state.turnIndex) return;
+    }
+    const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
+    html += `<div class="note" data-ni="${i}">
+      <textarea${ro}>${note.text}</textarea>
+      <div class="note-t">${note.timestamp}</div>
+      <div class="note-actions">
+        <button class="note-act del">Delete</button>
+        <button class="note-act keep">Keep</button>
+        <button class="note-act thread">Save to thread</button>
+      </div>
+    </div>`;
+  });
+  html += '<button class="add-note" id="addNote">+ Add note</button>';
+  panel.innerHTML = html;
+  bindNoteActions();
+}
+
+function addNote(text, timestamp, readonly = false) {
+  if (!timestamp) {
+    const turn = playData.turns[state.turnIndex];
+    timestamp = turn && turn.date ? turn.date : '';
+  }
+  state.notes.push({ text, timestamp, readonly });
+  renderNotes();
+}
+
+function bindNoteActions() {
+  document.querySelectorAll('.note .del').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (this.dataset.confirm) {
+        const idx = parseInt(this.closest('.note').dataset.ni);
+        state.notes.splice(idx, 1);
+        renderNotes();
+      } else {
+        this.dataset.confirm = '1';
+        this.textContent = 'Sure?';
+        this.style.opacity = '.7';
+        this.style.color = 'var(--alert)';
+        setTimeout(() => {
+          if (this.parentElement) {
+            delete this.dataset.confirm;
+            this.textContent = 'Delete';
+            this.style.opacity = '';
+            this.style.color = '';
+          }
+        }, 3000);
+      }
+    });
+  });
+
+  document.querySelectorAll('.note .keep').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const idx = parseInt(this.closest('.note').dataset.ni);
+      state.notes[idx].kept = true;
+      const note = this.closest('.note');
+      note.style.borderColor = 'rgba(122,138,90,.25)';
+      this.textContent = 'Kept';
+      this.style.opacity = '.7';
+      this.style.color = 'var(--earth)';
+      this.style.pointerEvents = 'none';
+    });
+  });
+
+  document.querySelectorAll('.note .thread').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const note = this.closest('.note');
+      const textarea = note.querySelector('textarea');
+      const txt = textarea ? textarea.value.trim() : '';
+      if (!txt) return;
+      document.querySelectorAll('.thread-picker.open').forEach(p => p.remove());
+      const picker = document.createElement('div');
+      picker.className = 'thread-picker open';
+      threadsData.forEach((group, gi) => {
+        const pickBtn = document.createElement('button');
+        pickBtn.className = 'thread-pick';
+        pickBtn.textContent = group.label;
+        pickBtn.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          const urlMatch = txt.match(/https?:\/\/[^\s]+/);
+          const newItem = {
+            text: urlMatch ? txt.replace(urlMatch[0], '').trim() || urlMatch[0] : txt,
+            url: urlMatch ? urlMatch[0] : null,
+            src: 'player',
+            turn: playData.turns[state.turnIndex] ? playData.turns[state.turnIndex].id : 0
+          };
+          threadsData[gi].items.push(newItem);
+          renderThreads();
+          picker.remove();
+          const threadBtn = note.querySelector('.thread');
+          if (threadBtn) {
+            threadBtn.textContent = 'Saved';
+            threadBtn.style.opacity = '.7';
+            threadBtn.style.color = 'var(--cold)';
+            threadBtn.style.pointerEvents = 'none';
+          }
+          note.style.transition = 'opacity .4s';
+          note.style.opacity = '.2';
+        });
+        picker.appendChild(pickBtn);
+      });
+      note.appendChild(picker);
+    });
+  });
+
+  const addBtn = document.getElementById('addNote');
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      addNote('', 'Just now', false);
+      const notes = document.querySelectorAll('.note textarea');
+      if (notes.length) notes[notes.length - 1].focus();
+    });
+  }
+}
+
+// Close thread pickers when clicking elsewhere
+document.addEventListener('click', function(e) {
+  if (!e.target.classList.contains('thread') && !e.target.classList.contains('thread-pick')) {
+    document.querySelectorAll('.thread-picker.open').forEach(p => p.remove());
+  }
+});
+
+function renderSongs() {
+  const panel = document.getElementById('songs-panel');
+  const currentTurn = playData.turns[state.turnIndex];
+  const visible = songsData.filter(s => {
+    const turnIdx = playData.turns.findIndex(t => t.id === s.turn);
+    return turnIdx <= state.turnIndex;
+  }).sort((a, b) => {
+    const ai = playData.turns.findIndex(t => t.id === a.turn);
+    const bi = playData.turns.findIndex(t => t.id === b.turn);
+    return ai - bi;
+  });
+
+  let html = '';
+  if (visible.length > 0) {
+    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);opacity:.4;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(196,149,106,.1)"><a href="https://open.spotify.com" target="_blank" rel="noopener" style="color:var(--warm);text-decoration:none">&#9835; Open in Spotify</a></div>';
+  }
+  visible.forEach(song => {
+    const linkHtml = song.url
+      ? `<a class="song-link" href="${song.url}" target="_blank" rel="noopener">\u266b</a>`
+      : '';
+    html += `<div class="song${song.src === 'player' ? ' player' : ''}">
+      <div class="song-info">
+        <div class="song-title">${song.title}</div>
+        <div class="song-artist">${song.artist}</div>
+        <div class="song-context">${song.context}</div>
+        <div class="song-turn">T${song.turn}</div>
+      </div>
+      ${linkHtml}
+    </div>`;
+  });
+
+  if (state.playerSongs.length > 0) {
+    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);opacity:.4;margin:24px 0 16px;padding:12px 0 8px;border-top:1px solid rgba(196,149,106,.1)">Your songs</div>';
+  }
+
+  state.playerSongs.forEach((song, si) => {
+    const linkHtml = song.url
+      ? `<a class="song-link" href="${song.url}" target="_blank" rel="noopener">\u266b</a>`
+      : '';
+    const addLinkBtn = !song.url
+      ? `<span class="ps-act ps-link" data-si="${si}">+ Add Spotify link</span>`
+      : '';
+    html += `<div class="song player">
+      <div class="song-info">
+        <div class="song-title">${song.title}</div>
+        <div class="song-artist">${song.artist || ''}</div>
+        ${song.notes ? `<div class="song-context">${song.notes}</div>` : ''}
+        <div class="song-turn">Added by player</div>
+        <div style="margin-top:6px">${addLinkBtn}<span class="ps-act ps-del" data-si="${si}">Delete</span></div>
+      </div>
+      ${linkHtml}
+    </div>`;
+  });
+
+  html += '<button class="add-song" id="addSong">+ Add a song</button>';
+  panel.innerHTML = html;
+
+  // Bind add-link buttons
+  panel.querySelectorAll('.ps-link').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const si = parseInt(this.dataset.si);
+      const url = prompt('Spotify link:');
+      if (url) {
+        state.playerSongs[si].url = url;
+        renderSongs();
+      }
+    });
+  });
+
+  // Bind delete buttons with confirmation
+  panel.querySelectorAll('.ps-del').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const si = parseInt(this.dataset.si);
+      if (this.dataset.confirm) {
+        state.playerSongs.splice(si, 1);
+        renderSongs();
+      } else {
+        this.dataset.confirm = '1';
+        this.textContent = 'Sure?';
+        this.style.color = 'var(--alert)';
+        setTimeout(() => {
+          if (this.parentElement) {
+            delete this.dataset.confirm;
+            this.textContent = 'Delete';
+            this.style.color = '';
+          }
+        }, 3000);
+      }
+    });
+  });
+
+  document.getElementById('addSong').addEventListener('click', () => {
+    const title = prompt('Song title:');
+    if (title) {
+      const artist = prompt('Artist:');
+      const notes = prompt('Why this song? (optional):');
+      const url = prompt('Spotify link (optional):');
+      state.playerSongs.push({
+        title,
+        artist: artist || '',
+        notes: notes || '',
+        url: url || ''
+      });
+      renderSongs();
+    }
+  });
+}
+
+function updateEconDisplay() {
+  const turn = playData.turns[state.turnIndex];
+  const turnId = turn ? turn.id : 1;
+  document.getElementById('cashVal').textContent = '\u00a3' + state.cash.toLocaleString();
+  document.getElementById('heart').className = 'heart-icon ' + state.health;
+
+  const dsWrap = document.getElementById('dsWrap');
+  if (state.flags.registered) {
+    dsWrap.style.display = 'none';
+  } else {
+    dsWrap.style.display = 'flex';
+    document.getElementById('dsVal').textContent = '\u00a3' + state.ds.toLocaleString();
+  }
+
+  const bcWrap = document.getElementById('bcWrap');
+  if (state.flags.registered && state.bc > 0) {
+    bcWrap.classList.add('visible');
+    document.getElementById('bcVal').textContent = state.bc.toLocaleString() + ' BC';
+  } else {
+    bcWrap.classList.remove('visible');
+  }
+
+  const cwWrap = document.getElementById('cwWrap');
+  if (state.cw.visible) {
+    cwWrap.classList.add('visible');
+    document.getElementById('cwVal').textContent = state.cw.value;
+  } else {
+    cwWrap.classList.remove('visible');
+  }
+}
+
+function updateTicker(turnId) {
+  const ticker = document.getElementById('ticker');
+  const inner = document.getElementById('ticker-inner');
+  if (turnId === 21) {
+    ticker.classList.add('dead');
+    inner.innerHTML = '';
+    return;
+  }
+  ticker.classList.remove('dead');
+  const all = [...tickerItems, ...tickerItems];
+  inner.innerHTML = all.map(item =>
+    `<span class="t-item ${item.cls}">${item.text}</span><span class="t-sep">\u25c6</span>`
+  ).join('');
+}
+
+// ── NAVIGATION ──
+function goTo(idx) {
+  if (idx < 0 || idx >= playData.turns.length) return;
+  state.turnIndex = idx;
+  const turn = playData.turns[idx];
+  const titleEl = document.getElementById('t-title');
+  const dateEl = document.getElementById('t-date');
+  const numEl = document.getElementById('t-num');
+
+  if (turn.isQuestion) {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+  } else {
+    titleEl.style.display = '';
+    dateEl.style.display = '';
+    numEl.textContent = turn.num;
+    titleEl.textContent = turn.title;
+    dateEl.textContent = turn.date;
+  }
+
+  renderTurn(turn);
+  renderSignal(turn.isQuestion ? null : turn.id);
+  renderSongs();
+  renderThreads();
+  renderNotes();
+  updateEconDisplay();
+  updateTicker(turn.isQuestion ? null : turn.id);
+  document.querySelector('.left').scrollTop = 0;
+}
+
+// ── TAB SWITCHING ──
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    const p = this.dataset.p;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+    document.querySelectorAll('.panel').forEach(el => el.classList.remove('on'));
+    this.classList.add('on');
+    document.querySelector('.panel[data-p="' + p + '"]').classList.add('on');
+  });
+});
+
+// ── DEV NAV ──
+document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
+document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));
+
+// ── KEYBOARD NAV (dev) ──
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowLeft') goTo(state.turnIndex - 1);
+  if (e.key === 'ArrowRight') goTo(state.turnIndex + 1);
+});
+
+// ── TEXTAREA AUTO-RESIZE ──
+document.addEventListener('input', function(e) {
+  if (e.target.tagName === 'TEXTAREA') {
+    e.target.style.height = 'auto';
+    e.target.style.height = e.target.scrollHeight + 'px';
+  }
+});
+
+// ── INTRO SCREEN ──
+let ambientAudio = null;
+let ambientOn = false;
+
+function startAmbient() {
+  if (ambientAudio) return;
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc1 = ctx.createOscillator();
+    osc1.type = 'sine';
+    osc1.frequency.value = 55;
+    const gain1 = ctx.createGain();
+    gain1.gain.value = 0;
+    osc1.connect(gain1);
+    gain1.connect(ctx.destination);
+    osc1.start();
+    // Fade in slowly
+    gain1.gain.linearRampToValueAtTime(0.03, ctx.currentTime + 3);
+
+    const osc2 = ctx.createOscillator();
+    osc2.type = 'sine';
+    osc2.frequency.value = 220;
+    const gain2 = ctx.createGain();
+    gain2.gain.value = 0;
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    osc2.start();
+    gain2.gain.linearRampToValueAtTime(0.008, ctx.currentTime + 4);
+
+    const lfo = ctx.createOscillator();
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.15;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 0.005;
+    lfo.connect(lfoGain);
+    lfoGain.connect(gain2.gain);
+    lfo.start();
+
+    ambientAudio = { ctx, oscs: [osc1, osc2, lfo], gains: [gain1, gain2] };
+    ambientOn = true;
+  } catch(err) {
+    console.log('Audio not available');
+  }
+}
+
+function stopAmbient() {
+  if (ambientAudio) {
+    ambientAudio.oscs.forEach(o => { try { o.stop(); } catch(e){} });
+    ambientAudio.ctx.close();
+    ambientAudio = null;
+  }
+  ambientOn = false;
+}
+
+// Auto-start ambient on first user interaction with the intro
+let ambientStarted = false;
+document.getElementById('intro-screen').addEventListener('mousedown', function() {
+  if (!ambientStarted) {
+    startAmbient();
+    ambientStarted = true;
+  }
+}, { once: false });
+// Also try on mousemove as a gentler trigger
+document.getElementById('intro-screen').addEventListener('mousemove', function() {
+  if (!ambientStarted) {
+    startAmbient();
+    ambientStarted = true;
+  }
+}, { once: true });
+
+document.getElementById('intro-ambient-toggle').addEventListener('click', function(e) {
+  e.stopPropagation();
+  if (ambientOn) {
+    stopAmbient();
+    this.textContent = '♪ sound off';
+  } else {
+    startAmbient();
+    this.textContent = '♪ sound on';
+  }
+});
+
+let introClickable = false;
+setTimeout(() => {
+  introClickable = true;
+  document.getElementById('intro-screen').classList.add('clickable');
+}, 10000);
+
+document.getElementById('intro-screen').addEventListener('click', function() {
+  if (!introClickable) return;
+  this.classList.add('fade-out');
+  // Fade out ambient with the screen
+  if (ambientAudio) {
+    ambientAudio.gains.forEach(g => {
+      g.gain.linearRampToValueAtTime(0, ambientAudio.ctx.currentTime + 2);
+    });
+    setTimeout(() => { stopAmbient(); }, 2200);
+  }
+  setTimeout(() => {
+    this.style.display = 'none';
+    // Show welcome screen and start line reveals
+    const ws = document.getElementById('welcome-screen');
+    ws.style.display = 'flex';
+    startWelcomeSequence();
+    startBirdsong();
+  }, 2100);
+});
+
+// ── WELCOME SCREEN ──
+// ── WELCOME SCREEN ──
+let birdsongCtx = null;
+let birdsongInterval = null;
+
+function startBirdsong() {
+  if (birdsongCtx) return;
+  try {
+    birdsongCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function chirp() {
+      if (!birdsongCtx) return;
+      const now = birdsongCtx.currentTime;
+      const osc = birdsongCtx.createOscillator();
+      const gain = birdsongCtx.createGain();
+      
+      // Random bird character
+      const baseFreq = 2000 + Math.random() * 3000;
+      const chirpLen = 0.05 + Math.random() * 0.1;
+      const notes = 1 + Math.floor(Math.random() * 4);
+      
+      osc.type = 'sine';
+      osc.connect(gain);
+      gain.connect(birdsongCtx.destination);
+      
+      // Build a little phrase
+      let t = now;
+      for (let i = 0; i < notes; i++) {
+        const freq = baseFreq + (Math.random() - 0.3) * 1500;
+        osc.frequency.setValueAtTime(freq, t);
+        // Slight slide between notes
+        if (i < notes - 1) {
+          const nextFreq = baseFreq + (Math.random() - 0.3) * 1500;
+          osc.frequency.linearRampToValueAtTime(nextFreq, t + chirpLen * 0.8);
+        }
+        t += chirpLen + Math.random() * 0.03;
+      }
+      
+      // Volume envelope — gentle
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.012 + Math.random() * 0.008, now + 0.01);
+      gain.gain.setValueAtTime(0.012 + Math.random() * 0.008, now + (t - now) - 0.03);
+      gain.gain.linearRampToValueAtTime(0, t);
+      
+      osc.start(now);
+      osc.stop(t + 0.05);
+    }
+    
+    // Scatter chirps at random intervals
+    function scheduleChirp() {
+      if (!birdsongCtx) return;
+      chirp();
+      // Sometimes a second bird responds
+      if (Math.random() > 0.5) {
+        setTimeout(() => { if (birdsongCtx) chirp(); }, 200 + Math.random() * 400);
+      }
+      birdsongInterval = setTimeout(scheduleChirp, 800 + Math.random() * 2500);
+    }
+    
+    // Start after a brief pause
+    birdsongInterval = setTimeout(scheduleChirp, 600);
+    
+  } catch(err) {
+    console.log('Audio not available');
+  }
+}
+
+function stopBirdsong() {
+  if (birdsongInterval) {
+    clearTimeout(birdsongInterval);
+    birdsongInterval = null;
+  }
+  if (birdsongCtx) {
+    birdsongCtx.close();
+    birdsongCtx = null;
+  }
+}
+
+function startWelcomeSequence() {
+  const lines = document.querySelectorAll('#welcome-screen .wl');
+  const delays = [
+    300,   // logo + tagline
+    800,   // gap
+    1200,  // As the tale unfolds
+    1000,  // enjoyment
+    1000,  // gap + take your time
+    600,   // with thought
+    500,   // with consideration
+    500,   // with reflection
+    500,   // with honesty
+    800,   // click at random
+    400,   // gap
+    800,   // what difference
+    1000,  // gap + no algorithm
+    700,   // not tracked
+    700,   // not judged
+    1200,  // gap + unless
+    1400,  // gap + no terms
+    1000,  // agree all
+  ];
+
+  let cumulative = 0;
+  lines.forEach((line, i) => {
+    cumulative += (delays[i] || 800);
+    setTimeout(() => {
+      line.classList.add('visible');
+    }, cumulative);
+  });
+}
+
+document.getElementById('welcome-begin').addEventListener('click', function(e) {
+  e.stopPropagation();
+  const ws = document.getElementById('welcome-screen');
+  ws.classList.add('fade-out');
+  stopBirdsong();
+  setTimeout(() => {
+    ws.style.display = 'none';
+    document.body.classList.add('game-active');
+  }, 1600);
+});
+
+// ── BOOT ──
+loadGame();
+
+</script>
+</body>
+</html>

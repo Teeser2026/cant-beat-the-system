@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convergence Architecture — CBTS</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a0f; overflow: hidden; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useCallback, useMemo } = React;
+
+const FACTIONS = [
+  {
+    id: "technocratic",
+    label: "Technocratic State",
+    short: "Technocracy",
+    color: "#00ff88",
+    layer: "Layer 2, with Layer 0 philosophical roots",
+    description: "Patrick Wood's framework: governance by technical management, replacing elected politics with algorithmic resource allocation. Trilateral Commission origin (1973). Technocracy Inc. blueprint (1930s) now viable via AI/IoT. The SDGs map directly onto technocratic resource management. 'Sustainable' = managed.",
+    researchers: ["Patrick Wood", "Zbigniew Brzezinski (architect)", "Iain Davis"],
+    goals: ["Resource-based economy", "Algorithmic governance", "Elimination of price system", "Energy accounting via smart grid"],
+    x: 50, y: 12
+  },
+  {
+    id: "finance",
+    label: "Supranational Financial Architecture",
+    short: "BIS / Central Banks",
+    color: "#ff6644",
+    layer: "Layer 2, with Layer 0 connections through dynastic banking lineages",
+    description: "The G3P apex. BIS coordinates central banks globally. 'Going direct' (BlackRock 2019) = monetary policy becomes fiscal policy. Webb/Goodwin's 'Chain' series: PayPal's founding mission was literally 'A New World Currency.' The Thiel \u2192 PayPal \u2192 stablecoins \u2192 PYUSD pipeline was carefully constructed to appear organic. Fink: tokenise everything onto a single universal ledger. Powell documents the UK end: BlackRock's 677 Companies House entities, 80% of three Freeports, \u00a3600bn pension market, 'Nature's Assets' tokenisation. The transition from owning debt instruments to owning the protocol layer underneath all financial instruments.",
+    researchers: ["Iain Davis", "John Titus", "Catherine Austin Fitts", "Richard Werner", "Mathew Crawford", "Whitney Webb", "Mark Goodwin", "European Powell"],
+    goals: ["CBDC implementation", "Cashless society", "Programmable money", "Financial surveillance", "Credit scoring as social control", "SDR 2.0 protocol layer"],
+    x: 50, y: 90
+  },
+  {
+    id: "intelligence",
+    label: "Intelligence / Military-Industrial",
+    short: "Intel / MIC",
+    color: "#ff44aa",
+    layer: "Layers 1\u20132 (DARPA bridges both)",
+    description: "Whitney Webb's domain, deepened by Crawford. CIA/DARPA/In-Q-Tel as venture capital for surveillance tech. Five Eyes architecture. Silicon Valley as intelligence community front end since the 1960s. Crawford's key insight: privatisation of intelligence services ensures control remains within bloodlines regardless of which government is 'in power.' The MIC doesn't serve the state \u2014 the state serves the MIC. Pre-Event encrypted internet was an intelligence headache. Post-Event tiered internet is a dream.",
+    researchers: ["Whitney Webb", "James Corbett", "Yasha Levine", "Peter Dale Scott", "Mathew Crawford"],
+    goals: ["Total information awareness", "Predictive policing", "Population monitoring", "Narrative control", "Pre-crime architecture", "Privatised intelligence dynasties"],
+    x: 12, y: 38
+  },
+  {
+    id: "silicon",
+    label: "Big Tech / Silicon Valley",
+    short: "Big Tech",
+    color: "#44aaff",
+    layer: "Layer 1, interfacing with Layer 2",
+    description: "The visible layer. Google, Meta, Microsoft, Apple, Palantir, Oracle. Already public-private partnerships before the Event \u2014 PRISM was 2013, DARPA funded Google. 7SEES maps the PayPal Mafia network radiating into every sector. Three US companies control nearly two-thirds of global cloud infrastructure (AWS, Azure, Google Cloud) and own 70%+ of international undersea cable capacity. They don't just store data; they maintain power over the pathways it travels on. The 7SEES thesis: once every system runs on the same stack, unification is just a config change.",
+    researchers: ["Shoshana Zuboff", "Yasha Levine", "Whitney Webb", "7SEES"],
+    goals: ["Behavioural surplus extraction", "Platform monopoly", "Digital identity standard", "AI-mediated reality", "Metaverse as managed environment"],
+    x: 88, y: 38
+  },
+  {
+    id: "pharma",
+    label: "Pharma-Bio Complex",
+    short: "Pharma-Bio",
+    color: "#ffcc00",
+    layer: "Layers 1\u20132",
+    description: "mRNA platform as operating system. Biosecurity as governance framework. Biodigital convergence (Canadian policy doc, 2020). Escape Key: COVID as proof-of-concept for algorithmic authority \u2014 populations accepted restrictions based on computer models, not observable reality. WHO Pandemic Agreement 2025 formalises this permanently. Manhattan Principle 9: pharmaceutical companies as formal 'stakeholders' \u2014 the entities profiting from emergencies help identify emergencies. The same supply chains that deliver vaccines deliver nanites. Same cold chain. Same logistics. Same regulatory framework.",
+    researchers: ["Robert Malone", "Sasha Latypova", "Katherine Watt", "Escape Key (esc)", "Mathew Crawford"],
+    goals: ["Biosecurity governance", "Biodigital convergence", "Human body as platform", "Subscription health model", "Genetic surveillance"],
+    x: 12, y: 68
+  },
+  {
+    id: "sdg",
+    label: "SDG / Impact Investing",
+    short: "SDGs / Impact",
+    color: "#aa66ff",
+    layer: "Layer 2, with Layer 1 financial architecture underneath",
+    description: "McDowell's thesis (2017): SDGs as framework for financialising all life \u2014 children as primary data source, schools as data factories, blockchain as 'the ledger,' impact investors as speculators. 'Technocratic feudalism.' Webb/Davis SDG16 investigation: Target 16.9 mandates universal digital identity by 2030 \u2014 the convergence point. Powell documents UK implementation: Freeports/SEZs as the spatial layer, Oracle/TBI as policy laundering mechanism, BlackRock tokenising nature as the financial layer. The humanitarian case and the control case are the same case.",
+    researchers: ["Alison McDowell", "Cory Morningstar", "Jacob Nordang\u00e5rd", "Escape Key (esc)", "Whitney Webb", "Iain Davis", "European Powell"],
+    goals: ["Human capital markets", "Nature as financial asset", "Behavioural futures", "Impact tokens", "Children as investment vehicles"],
+    x: 88, y: 68
+  },
+  {
+    id: "transhumanist",
+    label: "Transhumanist Movement",
+    short: "Transhumanism",
+    color: "#00cccc",
+    layer: "Layer 1, with ideological roots traceable through the full TF \u00a71 genealogy",
+    description: "The true believers. Kurzweil's faithful (the Merger, the Universe Wakes Up). Harari's popularisers. More's Luciferian architects (human nature as raw material). Intellectual lineage: Julian Huxley \u2192 FM-2030 \u2192 Extropy Institute \u2192 WTA/H+. They genuinely believe this is humanity's next evolutionary step. Bio-digital convergence as liberation from the limitations of biology. The Gnostic inversion: material world as prison, technology as salvation, the body as tomb (soma/sema).",
+    researchers: ["Aaron Franz", "Joseph Farrell", "Jay Dyer"],
+    goals: ["Human-machine merger", "Consciousness upload", "Biological transcendence", "Post-human evolution", "Immortality technology"],
+    x: 50, y: 50
+  },
+  {
+    id: "cybernetic",
+    label: "Cybernetic / MOBS Network",
+    short: "MOBS / Cybernetics",
+    color: "#ff5577",
+    layer: "Meta-layer operating THROUGH other factions",
+    description: "Crawford's framework: Military-Occult-Banking Syndicate. Not a faction with its own goals \u2014 a METHOD deployed across all factions. Cybernetics (Wiener, 1948) as the science of treating the world as one managed machine. Theosophy \u2192 Alice Bailey \u2192 Lucis Trust as spiritual OS. MK-ULTRA/psychiatry as modernised occult mind control. Rockefeller money on BOTH sides of every issue. 'I have barely found a piece of machinery or a side \u2014 either side \u2014 of an issue without Rockefeller money behind it.'",
+    researchers: ["Mathew Crawford", "Michael Aquino (architect)", "Norbert Wiener (theorist)", "Gregory Bateson"],
+    goals: ["Cybernetic world-system", "Managed feedback loops", "Hegelian dialectic as method", "Cultic fracturing of society", "Psychiatry as social control"],
+    x: 50, y: 3
+  },
+  {
+    id: "sovereign",
+    label: "Sovereign Wealth / Gulf States",
+    short: "Gulf / SWFs",
+    color: "#ddaa44",
+    layer: "Layer 1\u20132 bridge",
+    description: "7SEES map reveals Gulf State cluster: UAE sovereign wealth funds (Mubadala), Saudi PIF, Qatar Investment Authority as active builders of digital infrastructure \u2014 not just customers. NEOM as the test city. These states offer what Western democracies can't: unlimited capital, no democratic friction, authoritarian-compatible governance frameworks, and physical infrastructure built from scratch with surveillance designed in from day one. When Western financial systems collapse, sovereign wealth funds become lenders of last resort \u2014 on their terms.",
+    researchers: ["7SEES", "Whitney Webb", "Unlimited Hangout"],
+    goals: ["Smart city construction (NEOM)", "AI infrastructure hosting", "Crypto/digital finance hub status", "Post-oil economic transition", "Authoritarian-compatible digital governance"],
+    x: 8, y: 85
+  },
+  {
+    id: "religious",
+    label: "Eschatological Groups",
+    short: "Religious/Esoteric",
+    color: "#cc88ff",
+    layer: "Layer 1 (ideological accelerant) and Layer 0 (Sabbatean-Frankist lineage)",
+    description: "Third Temple movements, Chabad messianism, Christian Zionism, techno-gnostic cults. Sabbatean-Frankist inversion: redemption through sin, destruction as purification. Crawford: Theosophy/Alice Bailey/Lucis Trust as the 'New World Religious Order' \u2014 a syncretic framework designed to subsume all religions. The NWO term itself coined within this current (Bailey). The Event functions as the Sabbatean catastrophe that precedes redemption.",
+    researchers: ["Jay Dyer", "Robert Sepehr", "Joseph Farrell", "Barry Chamish", "Mathew Crawford"],
+    goals: ["Messianic acceleration", "Destruction of current order", "Sacred architecture rebuild", "Antinomian liberation", "New covenant through technology"],
+    x: 72, y: 18
+  },
+  {
+    id: "geological",
+    label: "Geological / Existential",
+    short: "Geological",
+    color: "#cc8844",
+    layer: "Layer 0\u20131 (the most speculative \u2014 possibly reframes the entire moral calculus)",
+    description: "Holders of classified data about cyclical geological events. Ethical Skeptic (systematic analysis of extinction-level geological cycles, volcanic forcing, magnetic excursion data). Ben Davidson / Suspicious0bservers (solar micronova hypothesis, geomagnetic pole shift evidence). The catastrophism researchers: evidence for previous advanced civilisations, Younger Dryas impact hypothesis, megalithic anomalies. If they're right, the surveillance state is a lifeboat. If previous civilisations achieved technological sophistication and were wiped, the current programme could be framed as 'this time we survive.' Elite bunker construction (New Zealand compounds, Norwegian seed vault, classified continuity-of-government facilities) is either paranoid wealth or rational preparation.",
+    researchers: ["Ethical Skeptic", "Ben Davidson (Suspicious0bservers)", "Graham Hancock (gateway \u2014 contested)", "Randall Carlson"],
+    goals: ["Species survival", "Centralised control for rapid population management", "Genetic diversity preservation", "Civilisational continuity infrastructure", "Elite lifeboat construction"],
+    x: 28, y: 18
+  }
+];
+
+const OPERATIONAL_MODES = [
+  {
+    id: "political_capture",
+    label: "Political Capture",
+    short: "Political Capture",
+    color: "#ff8800",
+    former: "Dark MAGA / Populist Right",
+    description: "How populist grievances \u2014 immigration, cultural progressivism, institutional corruption, 'drain the swamp' \u2014 get channelled into building the very infrastructure the populists claim to oppose. The rhetoric is anti-government; the result is technocracy. DOGE is technocratic efficiency wearing populist clothes. GENIUS Act, CLARITY Act, KOSA, Operation Stargate \u2014 five populist-branded policy streams building the same surveillance/identity/financial infrastructure as the SDG framework. The 'anti-globalist' administration builds globalist infrastructure. The Thiel/Musk axis bridges Big Tech and populism, making the infrastructure buildout feel like rebellion.",
+    operates_through: ["silicon", "finance", "sdg", "intelligence"],
+    researchers: ["Whitney Webb", "James Corbett", "Unlimited Hangout", "7SEES"]
+  },
+  {
+    id: "cultural_capture",
+    label: "Cultural Capture",
+    short: "Cultural Capture",
+    color: "#99bb55",
+    former: "Heterodox Capture / Alt-Establishment",
+    description: "How intellectual dissent gets absorbed into approved frameworks. The 'Intellectual Dark Web,' heterodox media, 'contrarian' thought leaders networked into Thiel/Founders Fund/Apollo capital. University of Austin as hub node connected to the same financial infrastructure as the system it claims to challenge. Powell's Oracle/TBI dossier: policy laundering through 'independent' think tanks funded by the beneficiaries. Critical enough to feel authentic, connected enough to never threaten the architecture. The permitted opposition.",
+    operates_through: ["sdg", "silicon", "finance", "cybernetic"],
+    researchers: ["7SEES", "Mathew Crawford", "James Corbett", "European Powell"]
+  }
+];
+
+const CONNECTIONS = [
+  { from: "technocratic", to: "finance", mechanism: "CBDC as Energy Certificate", detail: "Wood's thesis: CBDCs fulfill the 1930s Technocracy Inc. dream of energy-based currency. Programmable money IS resource accounting. The BIS provides the infrastructure, technocracy provides the philosophy.", strength: 3 },
+  { from: "technocratic", to: "silicon", mechanism: "AI as Governance Engine", detail: "Palantir, Foundry, algorithmic decision-making in government. Smart cities as technocratic management zones. '7SEES thesis': once every government runs on the same AI stack, interoperability = unification.", strength: 3 },
+  { from: "technocratic", to: "sdg", mechanism: "SDGs as Technocratic Blueprint", detail: "The 17 SDGs map directly onto technocratic resource management. 'Sustainable' = managed. Each goal requires monitoring, measurement, and algorithmic optimisation of human behaviour.", strength: 3 },
+  { from: "finance", to: "intelligence", mechanism: "SWIFT / Financial Surveillance", detail: "Follow-the-money infrastructure doubles as intelligence gathering. SWIFT monitoring. Treasury's FINCEN. Sanctions as weaponised finance. The financial system IS the surveillance system.", strength: 2 },
+  { from: "finance", to: "sdg", mechanism: "Impact Investing Infrastructure", detail: "McDowell's core thesis: Wall Street needs new asset classes. Human capital bonds, social impact bonds, nature-based securities. SDGs create the metrics; finance creates the markets.", strength: 3 },
+  { from: "finance", to: "pharma", mechanism: "Pandemic Bonds / Health Finance", detail: "World Bank pandemic bonds. Health as financial instrument. Insurance-to-governance pipeline. mRNA subscriptions as recurring revenue model. Biosecurity as economic mandate.", strength: 2 },
+  { from: "intelligence", to: "silicon", mechanism: "In-Q-Tel / Palantir Pipeline", detail: "Webb's core research: CIA venture capital (In-Q-Tel) funded Google, Palantir, Facebook precursors. Silicon Valley is the commercial front of the intelligence community. Surveillance capitalism IS state surveillance, privatised.", strength: 3 },
+  { from: "intelligence", to: "pharma", mechanism: "DARPA / Biosecurity", detail: "DARPA biotech funding. Fort Detrick. Dual-use research. Gain-of-function as both weapon and governance pretext. The biosecurity state merges public health with national security permanently.", strength: 2 },
+  { from: "silicon", to: "transhumanist", mechanism: "Platform as Posthuman Interface", detail: "Neuralink, brain-computer interfaces, AR/VR as consciousness alteration. The smartphone was step one. The headset is step two. The implant is step three. Each step normalised by the last.", strength: 3 },
+  { from: "pharma", to: "transhumanist", mechanism: "Body as Platform", detail: "mRNA as software update for the body. Lipid nanoparticles as delivery system. 'Biodigital convergence' (Canada, 2020). The pharmaceutical model becomes the transhumanist model: biology is hackable substrate.", strength: 3 },
+  { from: "sdg", to: "transhumanist", mechanism: "Human as Measurable Asset", detail: "SDG metrics require total quantification of human activity. Transhumanism provides the sensing layer. Impact investing requires predictable human outputs. The merger: humans as optimisable, investable, programmable units.", strength: 2 },
+  { from: "transhumanist", to: "religious", mechanism: "Gnostic Inversion", detail: "CBTS theological framework: transhumanism IS techno-gnosticism. Material world as prison. Technology as salvation. The body as tomb (soma/sema). Sabbatean 'redemption through sin' = 'liberation through destruction of the biological.'", strength: 3 },
+  { from: "religious", to: "finance", mechanism: "Jubilee / Reset Theology", detail: "Sabbatean-Frankist economic destruction as purification. 'Great Reset' echoes Jubilee. Destruction of old financial order to birth the new. Kabbalistic 'breaking of the vessels' mapped onto economic collapse as creative destruction.", strength: 2 },
+  { from: "technocratic", to: "transhumanist", mechanism: "Optimised Human as Goal", detail: "Technocracy requires predictable inputs and outputs. The unpredictable human is the bottleneck. Transhumanist augmentation solves the 'human problem' for technocratic managers.", strength: 3 },
+  { from: "silicon", to: "finance", mechanism: "Thiel/Musk Bridge \u2192 Crypto Infrastructure", detail: "The seeming paradox: 'anti-establishment' populism funded and led by tech billionaires. Musk's DOGE is technocratic efficiency wearing populist clothes. X/Twitter as controlled opposition platform. PayPal Mafia across both camps.", strength: 2, mode: "political_capture" },
+  { from: "finance", to: "sdg", mechanism: "Crypto as Parallel Track to CBDC", detail: "Bitcoin/crypto positioned as 'freedom money' but still requires digital infrastructure, KYC, and ultimately digital identity. Different branding, same destination. Strategic Bitcoin Reserve still operates within BIS-coordinated system.", strength: 2, mode: "political_capture" },
+  { from: "intelligence", to: "religious", mechanism: "Christian Zionism / Messianic Politics", detail: "Evangelical base provides eschatological urgency. Third Temple politics. 'Chosen nation' narratives. Abraham Accords as prophetic fulfilment framing. Religious motivation drives political support for technocratic infrastructure.", strength: 2, mode: "political_capture" },
+  { from: "intelligence", to: "silicon", mechanism: "Controlled Opposition via Platform", detail: "Corbett's framework: meaningful political change is managed through controlled opposition. Intelligence community assets across the political spectrum. QAnon as intelligence operation. The rebellion is managed.", strength: 2, mode: "political_capture" },
+  { from: "technocratic", to: "silicon", mechanism: "DOGE as Technocratic Vehicle", detail: "Government efficiency = technocratic dream. Cutting bureaucracy sounds populist, but the replacement is algorithmic governance. Fewer humans in the loop = more machine control.", strength: 2, mode: "political_capture" },
+  { from: "sdg", to: "pharma", mechanism: "UNESCO \u2192 Manhattan Principles \u2192 WHO Treaty Pipeline", detail: "Escape Key's core thesis: a direct policy lineage from UNESCO 1968 \u2192 Manhattan Principles 2004 \u2192 Berlin Principles 2019 \u2192 WHO Pandemic Agreement 2025. The same framework that authorises wildlife culling now governs human populations.", strength: 3, source: "escapekey" },
+  { from: "technocratic", to: "pharma", mechanism: "Algorithmic Authority \u2192 Biosecurity", detail: "Escape Key's 'Four-Domain Control': COVID proved populations accept algorithmic authority over human judgment. Imperial College models justified lockdowns. The precedent: computer models can now trigger binding emergency responses.", strength: 3, source: "escapekey" },
+  { from: "sdg", to: "intelligence", mechanism: "Security Council Reform \u2192 Military Enforcement", detail: "Escape Key flags: proposals to eliminate UN Security Council veto while expanding jurisdiction to 'environmental crimes' and 'ecocide.' Algorithmic monitoring \u2192 'Planetary Health Emergency' \u2192 no veto \u2192 pre-authorised intervention.", strength: 2, source: "escapekey" },
+  { from: "finance", to: "intelligence", mechanism: "Bitcoin as ONI/DARPA Project", detail: "Crawford's thesis: Bitcoin most likely created by government technologists centred around Office of Naval Intelligence. Same lineage as ARPANET \u2192 internet. Solves real problems AND serves as controlled transition vehicle.", strength: 3, source: "crawford" },
+  { from: "intelligence", to: "pharma", mechanism: "Controlled Resistance (Medical Freedom)", detail: "Crawford: Rockefeller money on BOTH sides, including within the Medical Freedom Movement. COINTELPRO-style chaos agents. UFO cultists with intelligence ties. The opposition isn't just monitored \u2014 it's architected. 'Hegelian Pinball'.", strength: 3, source: "crawford" },
+  { from: "cybernetic", to: "intelligence", mechanism: "MK-ULTRA / Mindwar Lineage", detail: "Crawford: CIA Director Dulles organised unofficial committee post-WW2 to architect MK-ULTRA. Psychiatry as modernised occult mind control. 'Mindwar' (Michael Aquino, 1980) as explicit doctrine.", strength: 3, source: "crawford" },
+  { from: "cybernetic", to: "religious", mechanism: "Theosophy as NWO Operating System", detail: "Crawford: Alice Bailey's Theosophical Society is the core organisation in the effort to create a syncretic global religion subsuming all others. 'New World Order' coined within this current. Lucis Trust \u2014 Rockefeller and McNamara as trustees.", strength: 3, source: "crawford" },
+  { from: "cybernetic", to: "finance", mechanism: "Rockefeller Money on Both Sides", detail: "Crawford's central finding: 'I have barely found a piece of machinery or a side \u2014 either side \u2014 of an issue without Rockefeller money behind it.' Thesis vs antithesis, both controlled, synthesis predetermined.", strength: 3, source: "crawford" },
+  { from: "cybernetic", to: "technocratic", mechanism: "Cybernetics IS Technocracy's Science", detail: "Cybernetics (Wiener, 1948) provides the theoretical framework technocracy lacked. Treating the world as managed feedback loops makes technocratic governance 'scientifically necessary.' An engineering specification, not a metaphor.", strength: 3, source: "crawford" },
+  { from: "cybernetic", to: "silicon", mechanism: "Corporate Cultification", detail: "Crawford: the same methods used by cults to fracture and steer religious thought were injected into corporate coaching. Tech companies operate as cultic structures that shape employee worldview.", strength: 2, source: "crawford" },
+  { from: "cybernetic", to: "sdg", mechanism: "Education Sabotage as Control", detail: "Crawford's (mal)education thesis: deliberate dumbing down constrains specialists to silos. Escape Key: curricula teach children to see individual desires as selfish, personal judgment as dangerous. Preparation of subjects who cannot resist.", strength: 3, source: "both" },
+  { from: "sdg", to: "silicon", mechanism: "Populist Legislation Builds SDG Infrastructure (7SEES)", detail: "7SEES: GENIUS Act + KOSA + Antisemitism Laws collectively build the Four-Domain Control System. KYC on all crypto = financial surveillance. KOSA = digital identity mandate. Different branding, identical architecture.", strength: 3, source: "7sees", mode: "political_capture" },
+  { from: "silicon", to: "intelligence", mechanism: "GENIUS/CLARITY \u2192 Crypto-Tech-Intelligence Merger (7SEES)", detail: "7SEES: GENIUS Act legitimises stablecoins. CLARITY Act channels regulation to CFTC. Operation Stargate funds AI data centres. Foundry Digital becomes largest Bitcoin miner. Government-subsidised compute for AI and crypto.", strength: 3, source: "7sees", mode: "political_capture" },
+  { from: "sovereign", to: "silicon", mechanism: "Gulf Capital \u2192 AI/Data Infrastructure", detail: "7SEES: UAE/Saudi sovereign wealth funds directly connected to AI data centre construction, crypto mining, and digital platform development. Unlimited capital, no democratic friction, surveillance by design.", strength: 3, source: "7sees" },
+  { from: "sovereign", to: "finance", mechanism: "Petrodollar \u2192 Digital Finance Transition", detail: "Gulf states managing post-oil transition as digital finance hubs. Abu Dhabi Global Market, Dubai International Financial Centre. The same nations that underpinned the petrodollar positioning to underpin its replacement.", strength: 3, source: "7sees" },
+  { from: "sovereign", to: "technocratic", mechanism: "Smart Cities as Technocracy Labs", detail: "NEOM, Masdar City, The Line \u2014 purpose-built technocratic governance prototypes. No legacy systems, no democratic institutions, unlimited capital. What works in NEOM gets exported as 'best practice.'", strength: 2, source: "7sees" },
+  { from: "sdg", to: "finance", mechanism: "Policy Laundering: TBI/Oracle \u2192 Digital ID (Powell)", detail: "Powell's Oracle/TBI dossier: Ellison funds TBI (\u00a3300m+) \u2192 TBI shapes policy \u2192 Government gives early access \u2192 TBI 'endorses' \u2192 Oracle wins contracts (\u00a31bn+, National Digital ID mid-2029). 161 lobbyist meetings, zero civil society.", strength: 3, source: "powell", mode: "cultural_capture" },
+  { from: "silicon", to: "sdg", mechanism: "Alt-Media \u2192 Platform Dependency", detail: "Heterodox media (Substack, podcasts, X/Twitter) depends entirely on platforms controlled by the same tech-capital nexus. Musk owns the platform. Thiel funds the institutions. 'Alternative' discourse on infrastructure it cannot threaten.", strength: 2, source: "7sees", mode: "cultural_capture" },
+  { from: "cybernetic", to: "finance", mechanism: "Managed Dissent as Feedback Loop", detail: "Crawford's Hegelian Pinball applied to the intellectual class: heterodox thought absorbs genuine dissent into frameworks that reinforce the architecture. University of Austin won't produce graduates who dismantle the Thiel network.", strength: 3, source: "both", mode: "cultural_capture" },
+  { from: "silicon", to: "finance", mechanism: "PayPal \u2192 'New World Currency' (The Chain)", detail: "Webb/Goodwin: PayPal's founding mission was literally 'A New World Currency.' Thiel \u2192 PayPal \u2192 Marcus \u2192 Libra \u2192 stablecoins \u2192 PYUSD. The 2023 banking crisis resembles controlled demolition. 'Carefully constructed to appear organic.'", strength: 3, source: "webb" },
+  { from: "finance", to: "sdg", mechanism: "BlackRock: Tokenise Everything (Webb + Powell)", detail: "Fink: 'If we can ETF a Bitcoin, imagine what we can do with all financial instruments.' Tokenise all assets onto one ledger. Powell: 'Nature's Assets' on blockchain. McDowell: 'technocratic feudalism.' Three researchers, same conclusion.", strength: 3, source: "webb" },
+  { from: "sdg", to: "intelligence", mechanism: "SDG16: Digital ID as Global Police State (Webb/Davis)", detail: "Webb/Davis: SDG16.9 mandates 'legal identity for all' by 2030. Empower global governance, exploit threats, force global digital ID. 'Interoperable modular platform' avoids political resistance while achieving the same result.", strength: 3, source: "webb" },
+  { from: "sdg", to: "silicon", mechanism: "Education as Data Factory \u2192 Impact Investing (McDowell)", detail: "McDowell (2017): Ed Reform 2.0 pushed learning onto digital platforms. Children are the primary data source. Schools are factories. Blockchain is the ledger. Social impact bonds securitise behavioural data as derivatives.", strength: 3, source: "mcdowell" },
+  { from: "technocratic", to: "sovereign", mechanism: "Zonification: Corporate Territory (Powell)", detail: "Powell: Freeports, SEZs, AI Growth Zones, charter cities. UK has 12 Freeports + 74 SEZs with 25-year licenses, LCIA arbitration bypassing UK courts. BlackRock owns 80% of three controlling 60% of container traffic.", strength: 3, source: "powell" },
+  { from: "intelligence", to: "silicon", mechanism: "Palantir UK Capture (Powell)", detail: "Powell: Palantir's 24 UK contracts (NHS, MoD, Cabinet Office, police). UK branch run by Louis Mosley (grandson of Oswald Mosley). Strategy: 'Buy our way in, take a lot of ground, take down political resistance.'", strength: 3, source: "powell" },
+  { from: "geological", to: "transhumanist", mechanism: "Previous Civilisation Failure \u2192 Bio-Digital Survival", detail: "If previous civilisations were wiped by geological/cosmic events, bio-digital convergence becomes survival instinct not hubris. The drive to transcend biological vulnerability becomes species preservation. 'This time we survive.'", strength: 2 },
+  { from: "geological", to: "religious", mechanism: "Flood Narratives / Cyclical Cosmology", detail: "Catastrophism connects to religious tradition: Flood narratives across every culture, cyclical cosmology, 'as it was in the days of Noah.' Younger Dryas and pole-shift evidence provides scientific basis for what theology encodes as memory.", strength: 2 },
+  { from: "geological", to: "sovereign", mechanism: "Elite Bunker Construction / Lifeboat Infrastructure", detail: "Elite bunker construction (New Zealand compounds, Norwegian seed vault, classified continuity-of-government facilities). If the timeline for a geological event is short enough, centralised control enables rapid population management.", strength: 2 },
+  { from: "sovereign", to: "intelligence", mechanism: "Gulf-Admin Axis (7SEES)", detail: "7SEES: direct connections between UAE Deputy PM cluster and administration nodes. Abraham Accords as economic infrastructure deal. Gulf sovereign wealth co-funding AI/crypto infrastructure being legislated into existence.", strength: 2, source: "7sees", mode: "political_capture" },
+];
+
+const CYBER_ATTACK_EFFECTS = {
+  technocratic: "Cyber attack destroys the old, inefficient systems. Rebuilding 'better' means rebuilding managed. The post-attack internet is Corbett's 'internet 2.0' \u2014 magnificent, seamless, and totally monitored.",
+  finance: "Financial system destruction is the CBDC on-ramp. Cash becomes impossible post-attack. Emergency digital currency 'to keep the economy running' becomes permanent. The Britannia Coin scenario.",
+  intelligence: "False flag pretext for total information awareness. 'We must secure cyberspace' = we must monitor all digital activity. Attribution theatre points wherever useful.",
+  silicon: "Big Tech positioned as 'rebuilder' and 'protector.' Post-attack internet requires biometric login (ARC protocol). Tech companies become identity providers. Rebuilt systems interoperable by design.",
+  pharma: "Health records 'lost' in attack \u2014 rebuilt on new platform. Biometric health ID mandatory for continuity of care. Biosecurity protocols activated. The medical system becomes the identity system.",
+  sdg: "Crisis accelerates SDG timeline. 'Build Back Better' is literal. Impact investors fund reconstruction. Human activity tracked 'for resilience.' Every SDG metric requires the surveillance infrastructure.",
+  transhumanist: "Post-attack world is the 'born again' moment. Old humanity's systems failed. New humanity \u2014 augmented, connected, monitored \u2014 presented as evolution, not imprisonment. 'Pig in a Cage' with better WiFi.",
+  religious: "Destruction of the old order as prophetic fulfilment. 'Birth pangs.' The new system is the millennial kingdom or the beast system, depending on who's preaching. Either way: the faithful cooperate.",
+  cybernetic: "The cyber attack IS cybernetic management \u2014 a controlled perturbation designed to produce a predetermined response. The attack, the fear, the solution, and the resistance are ALL managed feedback loops. The MOBS network doesn't benefit from the attack \u2014 it IS the attack.",
+  sovereign: "Gulf states positioned as 'safe harbours' during Western instability. Sovereign wealth funds become lenders of last resort \u2014 only to nations adopting compatible digital frameworks. Smart cities already built become the template.",
+  geological: "Validates the lifeboat thesis. If they're right about cyclical catastrophism, centralised control becomes necessary for species survival. The bunker logic becomes defensible. The moral calculus inverts if extinction is the alternative."
+};
+
+const MODE_CYBER_EFFECTS = {
+  political_capture: "The apparent opposition calls for 'strong response' \u2014 more military spending, more tech solutions, crypto as 'secure alternative.' Populist anger channelled into demanding the very infrastructure that controls them.",
+  cultural_capture: "The 'alternative' intellectuals provide the sophisticated critique that makes the new system seem inevitable. 'Yes, the attack was suspicious, but the real question is what we build next.' The controlled opposition's finest hour."
+};
+
+function ConvergenceMap() {
+  const [selectedFaction, setSelectedFaction] = useState(null);
+  const [selectedConnection, setSelectedConnection] = useState(null);
+  const [hoveredFaction, setHoveredFaction] = useState(null);
+  const [activeView, setActiveView] = useState("map");
+  const [showModeConnections, setShowModeConnections] = useState(true);
+
+  const getConnections = useCallback((factionId) => {
+    return CONNECTIONS.filter(c => c.from === factionId || c.to === factionId);
+  }, []);
+
+  const activeFactionConnections = useMemo(() => {
+    if (!selectedFaction) return [];
+    return getConnections(selectedFaction);
+  }, [selectedFaction, getConnections]);
+
+  const isConnected = useCallback((factionId) => {
+    if (!selectedFaction) return true;
+    if (factionId === selectedFaction) return true;
+    return activeFactionConnections.some(c => c.from === factionId || c.to === factionId);
+  }, [selectedFaction, activeFactionConnections]);
+
+  const getFaction = (id) => FACTIONS.find(f => f.id === id);
+
+  const LAYER_MODEL = [
+    {
+      id: "layer0", label: "LAYER 0 \u2014 DESIGN TIER", sublabel: "invisible",
+      borderColor: "#ff3355", dashed: true,
+      description: "The worldview holders. Possibly a distributed network united by shared initiatory frameworks, dynastic wealth, and philosophical commitments. The Sabbatean-Frankist lineage, the Hermetic-Rosicrucian transmission belt. They orient \u2014 set the direction and let the layers below determine the method.",
+      entities: ["Dynastic Wealth Networks", "Initiatory Brotherhoods", "Sabbatean-Frankist Lineage", "Hermetic-Rosicrucian Transmission"],
+      note: "The experience never confirms or denies Layer 0. Evidence is available. Interpretation is the reader's."
+    },
+    {
+      id: "layer1", label: "LAYER 1 \u2014 ARCHITECT-OPERATORS", sublabel: "semi-visible",
+      borderColor: "#ff8800", dashed: false,
+      description: "The tech billionaires, transhumanist true believers, Palantir/Oracle/Thiel orbit, DARPA-funded researchers. They build: fund the research, construct the infrastructure, place the civilisational bets.",
+      entities: ["Thiel / Palantir / Oracle", "Musk / Neuralink / X", "DARPA / In-Q-Tel", "Kurzweil / Singularity", "Gulf SWFs (Mubadala, PIF)", "Transhumanist True Believers"],
+      note: "Visible enough to shape public narrative. Connected enough to operate in alignment with Layer 0's direction."
+    },
+    {
+      id: "layer2", label: "LAYER 2 \u2014 G3P INSTITUTIONAL TIER", sublabel: "visible",
+      borderColor: "#44aaff", dashed: false,
+      description: "Davis's territory. BIS, IMF, WHO, WEF, central banks, corporate partners. They translate direction into 'international consensus,' 'development goals,' 'best practice.' SDG16.9 is their output.",
+      entities: ["BIS / Central Banks", "WEF / CFR / Chatham House", "United Nations / IMF / World Bank", "WHO / IPCC", "Club of Rome / Trilateral Commission", "BlackRock / Goldman Sachs", "Philanthropists / Gates / Rockefeller"],
+      note: "None of this is hidden \u2014 it's published, promoted, and celebrated as progress.",
+      davis_tiers: [
+        { label: "POLICY MAKERS", entities: ["BIS", "Central Banks", "WEF", "CFR", "Club of Rome", "Chatham House", "Rockefeller Network"] },
+        { label: "POLICY DISTRIBUTORS", entities: ["United Nations", "IMF", "IPCC", "World Bank", "WHO", "Philanthropists", "Global Corps", "NGOs"] },
+        { label: "POLICY PROPAGANDISTS", entities: ["MSM", "Fact Checkers", "Social Platforms", "77th Brigade", "Anti-Hate Groups", "CCDH / SPLC"] }
+      ]
+    },
+    {
+      id: "layer3", label: "LAYER 3 \u2014 NATIONAL IMPLEMENTATION", sublabel: "fully visible",
+      borderColor: "#00ff88", dashed: false,
+      description: "Governments, civil services, NHS, local authorities, police, courts. Margaret's world. The Health Secretary signs off on 'advanced wellness monitoring' without understanding the substrate.",
+      entities: ["National Governments", "Civil Service / NHS", "Police / Military / Courts", "SAGE / CDC / FDA / MHRA", "Local Authorities", "Schools / Universities"],
+      note: "Your elected officials. Not makers \u2014 enforcers of decisions made above.",
+      compliance: [
+        { label: "SOMA", detail: "Genuine improvements. Real health benefits. Seamless convenience. The carrot that IS actually a carrot." },
+        { label: "INFRASTRUCTURE", detail: "Default architecture assumes compliance. One Gov Login. DIATF. The prescription only exists in the system." },
+        { label: "SOCIAL", detail: "Other people enforce. Margaret says 'just register, love.' The system never needs to coerce." }
+      ]
+    }
+  ];
+
+  return (
+    React.createElement("div", {style: {
+      fontFamily: "'IBM Plex Mono', 'Courier New', monospace",
+      background: "#0a0a0f",
+      color: "#c8c8d0",
+      minHeight: "100vh",
+      padding: "0",
+      overflow: "hidden"
+    }},
+
+      React.createElement("style", null, `
+        .nav-btn {
+          background: transparent; border: 1px solid #333; color: #888;
+          padding: 8px 16px; font-family: 'IBM Plex Mono', monospace;
+          font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+          cursor: pointer; transition: all 0.3s ease;
+        }
+        .nav-btn:hover { border-color: #666; color: #ccc; }
+        .nav-btn.active { border-color: #00ff88; color: #00ff88; background: rgba(0,255,136,0.05); }
+        .faction-node { position: absolute; cursor: pointer; transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 10; }
+        .faction-node:hover { z-index: 20; }
+        .faction-dot { width: 14px; height: 14px; border-radius: 50%; transition: all 0.3s ease; box-shadow: 0 0 20px currentColor; }
+        .faction-node:hover .faction-dot { width: 18px; height: 18px; box-shadow: 0 0 40px currentColor; }
+        .faction-label { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; transition: opacity 0.3s ease; }
+        .connection-line { stroke-linecap: round; transition: all 0.4s ease; cursor: pointer; }
+        .panel { background: rgba(10,10,15,0.95); border: 1px solid #222; padding: 20px; font-size: 12px; line-height: 1.7; overflow-y: auto; }
+        .tag { display: inline-block; padding: 2px 8px; border: 1px solid #333; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; margin: 2px; }
+        .cyber-card { border-left: 2px solid; padding: 12px 16px; margin: 8px 0; background: rgba(255,255,255,0.02); font-size: 11px; line-height: 1.7; }
+        .g3p-entity { display: inline-block; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.15); font-size: 10px; margin: 3px; letter-spacing: 0.5px; }
+        .mode-card { border-left: 2px dashed; padding: 12px 16px; margin: 8px 0; background: rgba(255,255,255,0.015); font-size: 11px; line-height: 1.7; font-style: italic; }
+        .scroll-panel::-webkit-scrollbar { width: 4px; }
+        .scroll-panel::-webkit-scrollbar-track { background: transparent; }
+        .scroll-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+        @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+      `),
+
+      /* Header */
+      React.createElement("div", {style: {
+        padding: "20px 24px 16px", borderBottom: "1px solid #1a1a22",
+        display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px"
+      }},
+        React.createElement("div", null,
+          React.createElement("h1", {style: {
+            fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 700,
+            color: "#e0e0e8", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "4px"
+          }}, "Convergence Architecture"),
+          React.createElement("p", {style: {fontSize: "10px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase"}},
+            "10 factions \u00b7 2 operational modes \u00b7 4-tier layer model")
+        ),
+        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap"}},
+          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Network Map"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => setActiveView("cyber")}, "Cyber Attack")
+        )
+      ),
+
+      /* MAP VIEW */
+      activeView === "map" && React.createElement("div", {style: {display: "flex", height: "calc(100vh - 70px)"}},
+        React.createElement("div", {style: {flex: 1, position: "relative", overflow: "hidden"}},
+          /* Scan line */
+          React.createElement("div", {style: {
+            position: "absolute", top: 0, left: 0, right: 0, height: "1px",
+            background: "rgba(0,255,136,0.15)", animation: "scan 8s linear infinite", zIndex: 1
+          }}),
+          /* Connection Lines */
+          React.createElement("svg", {style: {position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2}},
+            CONNECTIONS.map((conn, i) => {
+              const fromF = getFaction(conn.from);
+              const toF = getFaction(conn.to);
+              if (!fromF || !toF) return null;
+              const isActive = selectedFaction && (conn.from === selectedFaction || conn.to === selectedFaction);
+              const isSelected = selectedConnection === i;
+              const dimmed = selectedFaction && !isActive;
+              const isModeConnection = !!conn.mode;
+              if (isModeConnection && !showModeConnections) return null;
+              return React.createElement("line", {
+                key: i, className: "connection-line",
+                x1: fromF.x + "%", y1: fromF.y + "%", x2: toF.x + "%", y2: toF.y + "%",
+                stroke: isSelected ? "#fff" : isActive ? fromF.color : isModeConnection ? (conn.mode === "political_capture" ? "#ff8800" : "#99bb55") : "#333",
+                strokeWidth: isSelected ? 2 : conn.strength === 3 ? 1.5 : 1,
+                strokeDasharray: isModeConnection ? "6,4" : "none",
+                opacity: dimmed ? 0.05 : isActive || isSelected ? 0.8 : 0.2,
+                onClick: (e) => { e.stopPropagation(); setSelectedConnection(i); setSelectedFaction(null); }
+              });
+            })
+          ),
+          /* Convergence point */
+          React.createElement("div", {style: {
+            position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)",
+            zIndex: 3, textAlign: "center", pointerEvents: "none"
+          }},
+            React.createElement("div", {style: {
+              width: "80px", height: "80px", borderRadius: "50%",
+              border: "1px solid rgba(0,255,136,0.2)", background: "rgba(0,255,136,0.03)",
+              animation: "pulse 3s ease-in-out infinite",
+              display: "flex", alignItems: "center", justifyContent: "center"
+            }},
+              React.createElement("span", {style: {fontSize: "8px", color: "#00ff88", letterSpacing: "1.5px", textTransform: "uppercase"}}, "Digital ID")
+            )
+          ),
+          /* Faction nodes */
+          FACTIONS.map(f => React.createElement("div", {
+            key: f.id, className: "faction-node",
+            style: { left: f.x + "%", top: f.y + "%", transform: "translate(-50%, -50%)", opacity: isConnected(f.id) ? 1 : 0.2 },
+            onClick: (e) => { e.stopPropagation(); setSelectedFaction(selectedFaction === f.id ? null : f.id); setSelectedConnection(null); },
+            onMouseEnter: () => setHoveredFaction(f.id),
+            onMouseLeave: () => setHoveredFaction(null)
+          },
+            React.createElement("div", {className: "faction-label", style: {color: f.color, opacity: hoveredFaction === f.id || selectedFaction === f.id ? 1 : 0.6}}, f.short),
+            React.createElement("div", {className: "faction-dot", style: {background: f.color, color: f.color}})
+          )),
+          /* Mode toggle */
+          React.createElement("div", {style: {position: "absolute", bottom: "16px", left: "16px", zIndex: 20}},
+            React.createElement("button", {
+              onClick: () => setShowModeConnections(!showModeConnections),
+              style: {
+                background: showModeConnections ? "rgba(255,136,0,0.1)" : "transparent",
+                border: "1px " + (showModeConnections ? "solid" : "dashed") + " " + (showModeConnections ? "#ff8800" : "#444"),
+                color: showModeConnections ? "#ff8800" : "#666",
+                padding: "6px 12px", fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", cursor: "pointer"
+              }
+            }, showModeConnections ? "\u2B21 Mode connections on" : "\u2B21 Mode connections off")
+          )
+        ),
+
+        /* Detail panel */
+        React.createElement("div", {className: "panel scroll-panel", style: {width: "380px", borderLeft: "1px solid #222"}},
+          selectedConnection !== null ? (() => {
+            const conn = CONNECTIONS[selectedConnection];
+            const fromF = getFaction(conn.from);
+            const toF = getFaction(conn.to);
+            return React.createElement("div", null,
+              React.createElement("div", {style: {marginBottom: "16px"}},
+                React.createElement("span", {style: {color: fromF?.color, fontSize: "11px", fontWeight: 600}}, fromF?.short),
+                React.createElement("span", {style: {color: "#555", margin: "0 8px"}}, "\u2192"),
+                React.createElement("span", {style: {color: toF?.color, fontSize: "11px", fontWeight: 600}}, toF?.short)
+              ),
+              React.createElement("div", {style: {fontSize: "14px", color: "#e0e0e8", marginBottom: "12px", fontWeight: 500}}, conn.mechanism),
+              conn.mode && React.createElement("div", {style: {
+                display: "inline-block", padding: "3px 10px",
+                border: "1px dashed " + (conn.mode === "political_capture" ? "#ff8800" : "#99bb55"),
+                color: conn.mode === "political_capture" ? "#ff8800" : "#99bb55",
+                fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px"
+              }}, "operates through " + (conn.mode === "political_capture" ? "political" : "cultural") + " capture"),
+              React.createElement("p", {style: {color: "#999", lineHeight: 1.8}}, conn.detail),
+              conn.source && React.createElement("div", {style: {marginTop: "12px"}}, React.createElement("span", {className: "tag", style: {color: "#666"}}, "Source: " + conn.source)),
+              React.createElement("div", {style: {marginTop: "12px"}},
+                React.createElement("span", {className: "tag", style: {color: conn.strength === 3 ? "#00ff88" : "#888"}},
+                  "Strength: " + (conn.strength === 3 ? "Primary" : "Secondary")))
+            );
+          })()
+          : selectedFaction ? (() => {
+            const f = getFaction(selectedFaction);
+            const conns = getConnections(selectedFaction);
+            return React.createElement("div", null,
+              React.createElement("div", {style: {display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px"}},
+                React.createElement("div", {style: {width: "10px", height: "10px", borderRadius: "50%", background: f.color, boxShadow: "0 0 15px " + f.color}}),
+                React.createElement("span", {style: {fontSize: "14px", fontWeight: 600, color: f.color, letterSpacing: "1px"}}, f.label)
+              ),
+              f.layer && React.createElement("div", {style: {fontSize: "9px", color: "#888", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px", padding: "4px 8px", border: "1px solid #333", display: "inline-block"}}, f.layer),
+              React.createElement("p", {style: {color: "#999", lineHeight: 1.8, marginBottom: "16px"}}, f.description),
+              React.createElement("div", {style: {marginBottom: "16px"}},
+                React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Researchers"),
+                React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "4px"}},
+                  f.researchers.map(r => React.createElement("span", {key: r, className: "tag", style: {color: "#aaa"}}, r)))
+              ),
+              React.createElement("div", {style: {marginBottom: "16px"}},
+                React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Goals / Cui Bono"),
+                React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "4px"}},
+                  f.goals.map(g => React.createElement("span", {key: g, className: "tag", style: {color: f.color, borderColor: f.color + "44"}}, g)))
+              ),
+              React.createElement("div", null,
+                React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Connections (" + conns.length + ")"),
+                conns.map((conn, i) => {
+                  const other = conn.from === selectedFaction ? getFaction(conn.to) : getFaction(conn.from);
+                  return React.createElement("div", {
+                    key: i,
+                    style: { padding: "8px 12px", borderLeft: "2px " + (conn.mode ? "dashed" : "solid") + " " + (other?.color || "#555"), marginBottom: "6px", cursor: "pointer", background: "rgba(255,255,255,0.02)" },
+                    onClick: () => { setSelectedConnection(CONNECTIONS.indexOf(conn)); setSelectedFaction(null); }
+                  },
+                    React.createElement("div", {style: {fontSize: "10px", color: other?.color || "#888", marginBottom: "2px"}},
+                      "\u2192 " + other?.short,
+                      conn.mode && React.createElement("span", {style: {color: "#666", marginLeft: "6px", fontSize: "8px"}}, "(" + (conn.mode === "political_capture" ? "POL" : "CUL") + ")")
+                    ),
+                    React.createElement("div", {style: {fontSize: "11px", color: "#ccc"}}, conn.mechanism)
+                  );
+                })
+              )
+            );
+          })()
+          : React.createElement("div", null,
+              React.createElement("p", {style: {color: "#666", marginBottom: "16px"}}, "Click a faction node or connection line to explore."),
+              React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px"}},
+                FACTIONS.length + " factions \u00b7 " + CONNECTIONS.length + " connections"),
+              React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Legend"),
+              React.createElement("div", {style: {display: "flex", flexDirection: "column", gap: "6px"}},
+                FACTIONS.map(f => React.createElement("div", {
+                  key: f.id, style: {display: "flex", alignItems: "center", gap: "8px", cursor: "pointer"},
+                  onClick: () => { setSelectedFaction(f.id); setSelectedConnection(null); }
+                },
+                  React.createElement("div", {style: {width: "6px", height: "6px", borderRadius: "50%", background: f.color, flexShrink: 0}}),
+                  React.createElement("span", {style: {fontSize: "10px", color: "#888"}}, f.short),
+                  React.createElement("span", {style: {fontSize: "8px", color: "#444", marginLeft: "auto"}}, f.layer?.split(",")[0])
+                )),
+                React.createElement("div", {style: {borderTop: "1px dashed #333", marginTop: "8px", paddingTop: "8px"}},
+                  React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1px", marginBottom: "6px"}}, "OPERATIONAL MODES"),
+                  OPERATIONAL_MODES.map(m => React.createElement("div", {key: m.id, style: {display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px"}},
+                    React.createElement("div", {style: {width: "12px", borderTop: "1px dashed " + m.color, flexShrink: 0}}),
+                    React.createElement("span", {style: {fontSize: "10px", color: m.color, fontStyle: "italic"}}, m.short)
+                  ))
+                )
+              )
+            )
+        )
+      ),
+
+      /* LAYER MODEL VIEW */
+      activeView === "g3p" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+        React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
+          React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Convergence Architecture v1.1"),
+          React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "The Four-Tier Layer Model"),
+          React.createElement("p", {style: {fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px"}},
+            "Not a conspiracy hierarchy \u2014 a functional description of how direction becomes policy becomes infrastructure becomes daily life."),
+
+          LAYER_MODEL.map(layer => React.createElement("div", {
+            key: layer.id,
+            style: { borderLeft: "3px " + (layer.dashed ? "dashed" : "solid") + " " + layer.borderColor, padding: "16px 20px", margin: "12px 0", background: layer.dashed ? "rgba(255,51,85,0.02)" : "rgba(255,255,255,0.02)" }
+          },
+            React.createElement("div", {style: {fontSize: "10px", color: layer.borderColor, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "4px"}}, layer.label),
+            React.createElement("div", {style: {fontSize: "8px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px"}}, layer.sublabel),
+            React.createElement("p", {style: {fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "12px"}}, layer.description),
+            React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "4px", marginBottom: "8px"}},
+              layer.entities.map(e => React.createElement("span", {key: e, className: "g3p-entity", style: {color: layer.borderColor, borderColor: layer.borderColor + "33", borderStyle: layer.dashed ? "dashed" : "solid"}}, e))
+            ),
+            layer.davis_tiers && React.createElement("div", {style: {marginTop: "16px", paddingTop: "12px", borderTop: "1px solid #222"}},
+              React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Davis G3P 5-tier model nests within this layer"),
+              layer.davis_tiers.map((tier, ti) => React.createElement("div", {key: ti, style: {marginBottom: "8px"}},
+                React.createElement("div", {style: {fontSize: "9px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, tier.label),
+                React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "3px"}},
+                  tier.entities.map(e => React.createElement("span", {key: e, style: {display: "inline-block", padding: "2px 6px", border: "1px solid #333", fontSize: "9px", color: "#777"}}, e)))
+              ))
+            ),
+            layer.compliance && React.createElement("div", {style: {marginTop: "16px", paddingTop: "12px", borderTop: "1px solid #222"}},
+              React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Three downstream mechanisms"),
+              layer.compliance.map((c, ci) => React.createElement("div", {key: ci, style: {marginBottom: "8px", paddingLeft: "12px", borderLeft: "1px solid #333"}},
+                React.createElement("div", {style: {fontSize: "9px", color: "#00ff88", letterSpacing: "1px", marginBottom: "2px"}}, c.label),
+                React.createElement("div", {style: {fontSize: "10px", color: "#777"}}, c.detail)
+              ))
+            ),
+            React.createElement("p", {style: {fontSize: "10px", color: "#555", lineHeight: 1.6, marginTop: "8px", fontStyle: "italic"}}, layer.note)
+          )),
+
+          /* Policy Subjects */
+          React.createElement("div", {style: {padding: "16px 20px", margin: "12px 0", border: "1px dashed #333", background: "rgba(255,255,255,0.01)"}},
+            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS"),
+            React.createElement("p", {style: {fontSize: "11px", color: "#666", lineHeight: 1.7}},
+              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture.")
+          ),
+
+          /* Standing bridge */
+          React.createElement("div", {style: {padding: "16px 20px", margin: "24px 0 12px", borderLeft: "3px solid #ff8800", background: "rgba(255,136,0,0.03)"}},
+            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "The Standing / CW Bridge"),
+            React.createElement("p", {style: {fontSize: "11px", color: "#999", lineHeight: 1.8}},
+              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit CW \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
+          )
+        )
+      ),
+
+      /* MANAGED OPPOSITION VIEW */
+      activeView === "opposition" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+        React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
+          React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Convergence Architecture v1.1 \u00a73.4"),
+          React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "Managed Opposition \u2014 Operational Modes"),
+          React.createElement("p", {style: {fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px"}},
+            "Not factions. Mechanisms. These are how the real factions manage the discursive space. They operate through other factions, not alongside them."),
+
+          OPERATIONAL_MODES.map(mode => React.createElement("div", {
+            key: mode.id,
+            style: {borderLeft: "3px dashed " + mode.color, padding: "16px 20px", margin: "16px 0", background: "rgba(255,255,255,0.02)"}
+          },
+            React.createElement("div", {style: {fontSize: "10px", color: mode.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "4px"}}, mode.label),
+            React.createElement("div", {style: {fontSize: "8px", color: "#555", letterSpacing: "1px", marginBottom: "12px"}}, "formerly: " + mode.former),
+            React.createElement("p", {style: {color: "#999", fontSize: "11px", lineHeight: 1.8, marginBottom: "16px"}}, mode.description),
+            React.createElement("div", {style: {marginBottom: "12px"}},
+              React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "Operates through"),
+              React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "4px"}},
+                mode.operates_through.map(fid => { const f = getFaction(fid); return f ? React.createElement("span", {key: fid, className: "tag", style: {color: f.color, borderColor: f.color + "44"}}, f.short) : null; }))
+            ),
+            React.createElement("div", {style: {marginBottom: "12px"}},
+              React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "Researchers"),
+              React.createElement("div", {style: {display: "flex", flexWrap: "wrap", gap: "4px"}},
+                mode.researchers.map(r => React.createElement("span", {key: r, className: "tag", style: {color: "#aaa"}}, r)))
+            ),
+            React.createElement("div", {style: {marginTop: "16px", paddingTop: "12px", borderTop: "1px dashed #333"}},
+              React.createElement("div", {style: {fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Connection mechanisms"),
+              CONNECTIONS.filter(c => c.mode === mode.id).map((conn, i) => {
+                const fromF = getFaction(conn.from); const toF = getFaction(conn.to);
+                return React.createElement("div", {key: i, style: {padding: "8px 12px", borderLeft: "1px dashed " + mode.color, marginBottom: "6px", background: "rgba(255,255,255,0.01)"}},
+                  React.createElement("div", {style: {fontSize: "9px", color: "#888", marginBottom: "2px"}},
+                    React.createElement("span", {style: {color: fromF?.color}}, fromF?.short),
+                    " \u2192 ",
+                    React.createElement("span", {style: {color: toF?.color}}, toF?.short)
+                  ),
+                  React.createElement("div", {style: {fontSize: "10px", color: "#ccc"}}, conn.mechanism)
+                );
+              })
+            )
+          )),
+
+          /* Chaos as Control */
+          React.createElement("div", {style: {borderLeft: "3px solid #ff5577", padding: "16px 20px", margin: "24px 0", background: "rgba(255,85,119,0.03)"}},
+            React.createElement("div", {style: {fontSize: "10px", color: "#ff5577", letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "8px"}}, "Chaos as Control \u2014 the MK-Ultra Lineage"),
+            React.createElement("p", {style: {color: "#999", fontSize: "11px", lineHeight: 1.8, marginBottom: "12px"}},
+              "Both modes share a deeper function: flooding the zone. Immigration debates, culture wars, partisan fury \u2014 the noise generates exhausted surrender that makes technocratic management feel like the only alternative to chaos."),
+            React.createElement("p", {style: {color: "#888", fontSize: "11px", lineHeight: 1.8}},
+              "MK-Ultra demonstrated at individual scale what managed opposition achieves at population scale: destabilise the frame of reference until external authority becomes the only stable ground. The CIA didn't stop researching this. They scaled it.")
+          ),
+
+          /* Dev's Mesh */
+          React.createElement("div", {style: {borderLeft: "3px dashed #666", padding: "16px 20px", margin: "16px 0", background: "rgba(255,255,255,0.015)"}},
+            React.createElement("div", {style: {fontSize: "10px", color: "#aaa", letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "8px"}}, "Infrastructure-Level: Dev's Mesh as Controlled Resistance"),
+            React.createElement("p", {style: {color: "#999", fontSize: "11px", lineHeight: 1.8, marginBottom: "12px"}},
+              "The mesh is managed opposition made physical. Intelligence-monitored, infiltrated, allowed to exist as a pressure release valve. 90% real, accurate, damning research. What's managed is the framing: what's absent rather than present. The mesh never carries actionable intelligence. It carries analysis. Pattern recognition. Everything Simon already knows."),
+            React.createElement("p", {style: {color: "#777", fontSize: "11px", lineHeight: 1.8, fontStyle: "italic"}}, "The mesh is the Pig's library.")
+          )
+        )
+      ),
+
+      /* CYBER ATTACK VIEW */
+      activeView === "cyber" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+        React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
+          React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Valentine's Day 2027"),
+          React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "The Cyber Attack \u2014 What Each Faction Gains"),
+          React.createElement("p", {style: {fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px"}},
+            "Not who did it \u2014 what each gains. Every faction's rational self-interest produces the same expansion of the same system."),
+
+          FACTIONS.map(f => React.createElement("div", {key: f.id, className: "cyber-card", style: {borderLeftColor: f.color}},
+            React.createElement("div", {style: {display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px"}},
+              React.createElement("div", {style: {width: "8px", height: "8px", borderRadius: "50%", background: f.color, boxShadow: "0 0 10px " + f.color}}),
+              React.createElement("span", {style: {fontSize: "11px", fontWeight: 600, color: f.color, letterSpacing: "1px", textTransform: "uppercase"}}, f.short)
+            ),
+            React.createElement("p", {style: {color: "#888", lineHeight: 1.7}}, CYBER_ATTACK_EFFECTS[f.id])
+          )),
+
+          /* Mode effects */
+          React.createElement("div", {style: {borderTop: "1px dashed #333", marginTop: "16px", paddingTop: "16px"}},
+            React.createElement("div", {style: {fontSize: "9px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px"}}, "Operational Modes"),
+            OPERATIONAL_MODES.map(mode => React.createElement("div", {key: mode.id, className: "mode-card", style: {borderLeftColor: mode.color}},
+              React.createElement("div", {style: {display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px"}},
+                React.createElement("div", {style: {width: "8px", height: "8px", border: "1px dashed " + mode.color, background: "transparent"}}),
+                React.createElement("span", {style: {fontSize: "11px", fontWeight: 600, color: mode.color, letterSpacing: "1px", textTransform: "uppercase"}}, mode.short),
+                React.createElement("span", {style: {fontSize: "8px", color: "#555"}}, "(mechanism, not faction)")
+              ),
+              React.createElement("p", {style: {color: "#777", lineHeight: 1.7}}, MODE_CYBER_EFFECTS[mode.id])
+            ))
+          ),
+
+          /* Convergence point */
+          React.createElement("div", {style: {marginTop: "24px", padding: "16px", border: "1px solid #333", background: "rgba(255,255,255,0.02)"}},
+            React.createElement("div", {style: {fontSize: "9px", color: "#fff", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "The Convergence Point"),
+            React.createElement("p", {style: {fontSize: "12px", color: "#999", lineHeight: 1.8, marginBottom: "12px"}},
+              "Every \u201csolution\u201d proposed by every faction requires the same thing: ",
+              React.createElement("span", {style: {color: "#00ff88"}}, "universal digital identity tied to biometric data"),
+              ". The cyber attack doesn't create this requirement \u2014 it creates the urgency. The infrastructure was already designed. The attack is the permission structure."
+            ),
+
+            React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px", marginTop: "16px"}}, "Eight researchers, one conclusion"),
+
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#ff44aa"}}, "Webb/Davis (SDG16): "), "The UN's own target mandates digital identity for all by 2030. The infrastructure predates any crisis."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#ff6644"}}, "Webb/Goodwin (The Chain): "), "The Bitcoin-Dollar stablecoin system was carefully constructed to appear organic. Financial infrastructure doesn't emerge; it's engineered."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#ddaa44"}}, "Powell (UK Capture): "), "Oracle positioned for UK National Digital ID (mid-2029). Palantir in 24 institutions. BlackRock controls 60% of UK container traffic. 25-year licenses."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#aa66ff"}}, "McDowell (2017-18): "), "Predicted life on the ledger. Her 2018 fiction described AI assistants, Global Coin stipends, sensor-free sanctuaries \u2014 virtually identical to the CBTS scenario."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#88ddaa"}}, "Escape Key: "), "The enforcement doesn't require violence. It withdraws access. Algorithmic exclusion is invisible, deniable, and total."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#ff8899"}}, "Crawford: "), "Even the resistance is managed. Rockefeller money on both sides. \u201cHegelian Pinball.\u201d"),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "8px"}},
+              React.createElement("span", {style: {color: "#44aaff"}}, "7SEES: "), "The legislation is already passed. GENIUS Act, KOSA, CLARITY Act, Operation Stargate. The API update isn't coming. It's here."),
+            React.createElement("p", {style: {fontSize: "11px", color: "#888", lineHeight: 1.7, marginBottom: "12px"}},
+              React.createElement("span", {style: {color: "#00ff88"}}, "Davis/Wood: "), "The G3P is the governance structure. Technocracy Inc. is the philosophy. The SDGs are the implementation targets. The BIS is the apex. None of this is hidden."),
+
+            React.createElement("div", {style: {padding: "12px", border: "1px solid #333", background: "rgba(255,136,0,0.04)", marginTop: "12px"}},
+              React.createElement("div", {style: {fontSize: "9px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "The CBTS Design Thesis"),
+              React.createElement("p", {style: {fontSize: "12px", color: "#999", lineHeight: 1.8, marginBottom: "8px"}},
+                "The post-attack world is not chaotic \u2014 it's magnificently better. The internet is faster. Services are seamless. AIDA is helpful. The cage is comfortable. ",
+                React.createElement("span", {style: {color: "#ff8800"}}, "Most players will like it.")),
+              React.createElement("p", {style: {fontSize: "12px", color: "#999", lineHeight: 1.8, marginBottom: "8px"}},
+                "The game exists because these researchers documented a system so comprehensive that the only way to make people feel it is to put them inside it."),
+              React.createElement("p", {style: {fontSize: "11px", color: "#555", lineHeight: 1.7, fontStyle: "italic"}},
+                "\u201cSoma, not Room 101.\u201d The control isn't the boot stamping on the face. It's the face smiling because the boot feels like a massage.")
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+ReactDOM.render(React.createElement(ConvergenceMap), document.getElementById("root"));
+  </script>
+</body>
+</html>

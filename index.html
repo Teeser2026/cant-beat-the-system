@@ -106,7 +106,7 @@ const FACTIONS = [
     description: "Crawford's framework: Military-Occult-Banking Syndicate. Not a faction with its own goals \u2014 a METHOD deployed across all factions. Cybernetics (Wiener, 1948) as the science of treating the world as one managed machine. Theosophy \u2192 Alice Bailey \u2192 Lucis Trust as spiritual OS. MK-ULTRA/psychiatry as modernised occult mind control. Rockefeller money on BOTH sides of every issue. 'I have barely found a piece of machinery or a side \u2014 either side \u2014 of an issue without Rockefeller money behind it.'",
     researchers: ["Mathew Crawford", "Michael Aquino (architect)", "Norbert Wiener (theorist)", "Gregory Bateson"],
     goals: ["Cybernetic world-system", "Managed feedback loops", "Hegelian dialectic as method", "Cultic fracturing of society", "Psychiatry as social control"],
-    x: 50, y: 3
+    x: 50, y: 8
   },
   {
     id: "sovereign",
@@ -341,13 +341,13 @@ function ConvergenceMap() {
 
       /* Header with Logo */
       React.createElement("div", {style: {
-        padding: "16px 24px 12px", borderBottom: "1px solid #1a1a22",
-        display: "flex", flexDirection: "column", alignItems: "center", gap: "12px"
+        padding: "10px 24px 8px", borderBottom: "1px solid #1a1a22",
+        display: "flex", flexDirection: "column", alignItems: "center", gap: "6px"
       }},
         /* Logo */
         React.createElement("div", {style: {
           display: "inline-block", border: "1px solid rgba(0,255,136,0.2)",
-          padding: "12px 28px", position: "relative"
+          padding: "8px 24px", position: "relative"
         }},
           /* Cage bars */
           React.createElement("div", {style: {position: "absolute", top: "-1px", left: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
@@ -356,24 +356,24 @@ function ConvergenceMap() {
           React.createElement("div", {style: {position: "absolute", top: "-1px", right: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
           /* Title */
           React.createElement("div", {style: {
-            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "24px",
-            color: "#e0e0e8", letterSpacing: "3px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
+            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "20px",
+            color: "#e0e0e8", letterSpacing: "2px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
           }},
             "Can\u2019t Beat the ",
             React.createElement("span", {style: {color: "#00ff88", fontWeight: 600}}, "System"),
             React.createElement("span", {style: {
-              display: "inline-block", width: "2px", height: "22px", background: "#ff3355",
-              marginLeft: "5px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
+              display: "inline-block", width: "2px", height: "18px", background: "#ff3355",
+              marginLeft: "4px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
             }})
           )
         ),
         /* Tagline */
         React.createElement("div", {style: {
           fontFamily: "'Crimson Pro', serif", fontStyle: "italic", fontWeight: 300,
-          fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
+          fontSize: "11px", letterSpacing: "1.5px", color: "rgba(0,255,136,0.35)"
         }}, "the cage is comfortable"),
         /* Nav */
-        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center"}},
+        React.createElement("div", {style: {display: "flex", gap: "6px", flexWrap: "wrap", justifyContent: "center", marginTop: "2px"}},
           React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Network Map"),
           React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
           React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),

@@ -17,7 +17,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { useState, useCallback, useMemo } = React;
+    const { useState, useCallback, useMemo, useEffect, useRef } = React;
 
 const FACTIONS = [
   {
@@ -106,7 +106,7 @@ const FACTIONS = [
     description: "Crawford's framework: Military-Occult-Banking Syndicate. Not a faction with its own goals \u2014 a METHOD deployed across all factions. Cybernetics (Wiener, 1948) as the science of treating the world as one managed machine. Theosophy \u2192 Alice Bailey \u2192 Lucis Trust as spiritual OS. MK-ULTRA/psychiatry as modernised occult mind control. Rockefeller money on BOTH sides of every issue. 'I have barely found a piece of machinery or a side \u2014 either side \u2014 of an issue without Rockefeller money behind it.'",
     researchers: ["Mathew Crawford", "Michael Aquino (architect)", "Norbert Wiener (theorist)", "Gregory Bateson"],
     goals: ["Cybernetic world-system", "Managed feedback loops", "Hegelian dialectic as method", "Cultic fracturing of society", "Psychiatry as social control"],
-    x: 50, y: 8
+    x: 50, y: 3
   },
   {
     id: "sovereign",
@@ -242,6 +242,105 @@ function ConvergenceMap() {
   const [hoveredFaction, setHoveredFaction] = useState(null);
   const [activeView, setActiveView] = useState("map");
   const [showModeConnections, setShowModeConnections] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [audioReady, setAudioReady] = useState(false);
+
+  // Audio system
+  const audioRef = useRef({});
+  const switchSoundRef = useRef(null);
+  const fadeTimerRef = useRef(null);
+
+  const AUDIO_MAP = {
+    map: "audio-network.mp3",
+    g3p: "audio-layers.mp3",
+    opposition: "audio-opposition.mp3",
+    cyber: "audio-cyber.mp3"
+  };
+
+  const AUDIO_VOLUME = { map: 0.25, g3p: 0.3, opposition: 0.2, cyber: 0.25 };
+
+  // Initialise audio on first user interaction
+  useEffect(() => {
+    const initAudio = () => {
+      if (audioReady) return;
+      Object.entries(AUDIO_MAP).forEach(([key, src]) => {
+        const a = new Audio(src);
+        a.loop = true;
+        a.volume = 0;
+        a.preload = "auto";
+        audioRef.current[key] = a;
+      });
+      switchSoundRef.current = new Audio("audio-switch.mp3");
+      switchSoundRef.current.volume = 0.15;
+      setAudioReady(true);
+      document.removeEventListener("click", initAudio);
+    };
+    document.addEventListener("click", initAudio);
+    return () => document.removeEventListener("click", initAudio);
+  }, [audioReady]);
+
+  // Crossfade on tab change
+  useEffect(() => {
+    if (!audioReady || muted) return;
+    const FADE_MS = 1500;
+    const STEPS = 30;
+    const interval = FADE_MS / STEPS;
+
+    // Clear any running fade
+    if (fadeTimerRef.current) {
+      fadeTimerRef.current.forEach(id => clearInterval(id));
+    }
+    fadeTimerRef.current = [];
+
+    Object.entries(audioRef.current).forEach(([key, audio]) => {
+      const targetVol = key === activeView ? AUDIO_VOLUME[key] : 0;
+      const startVol = audio.volume;
+      const delta = (targetVol - startVol) / STEPS;
+      let step = 0;
+
+      if (key === activeView && audio.paused) {
+        audio.play().catch(() => {});
+      }
+
+      const timerId = setInterval(() => {
+        step++;
+        audio.volume = Math.max(0, Math.min(1, startVol + delta * step));
+        if (step >= STEPS) {
+          clearInterval(timerId);
+          audio.volume = targetVol;
+          if (targetVol === 0) audio.pause();
+        }
+      }, interval);
+      fadeTimerRef.current.push(timerId);
+    });
+  }, [activeView, audioReady, muted]);
+
+  // Handle mute toggle
+  useEffect(() => {
+    if (!audioReady) return;
+    Object.entries(audioRef.current).forEach(([key, audio]) => {
+      if (muted) {
+        audio.volume = 0;
+        audio.pause();
+      } else if (key === activeView) {
+        audio.volume = AUDIO_VOLUME[key];
+        audio.play().catch(() => {});
+      }
+    });
+  }, [muted, audioReady]);
+
+  // Tab switch handler with sound
+  const switchTab = useCallback((view) => {
+    if (audioReady && !muted && switchSoundRef.current) {
+      switchSoundRef.current.currentTime = 0;
+      switchSoundRef.current.play().catch(() => {});
+    }
+    if (view === "map") {
+      setSelectedFaction(null);
+      setSelectedConnection(null);
+    }
+    setActiveView(view);
+  }, [audioReady, muted]);
 
   const getConnections = useCallback((factionId) => {
     return CONNECTIONS.filter(c => c.from === factionId || c.to === factionId);
@@ -341,13 +440,13 @@ function ConvergenceMap() {
 
       /* Header with Logo */
       React.createElement("div", {style: {
-        padding: "10px 24px 8px", borderBottom: "1px solid #1a1a22",
-        display: "flex", flexDirection: "column", alignItems: "center", gap: "6px"
+        padding: "16px 24px 12px", borderBottom: "1px solid #1a1a22",
+        display: "flex", flexDirection: "column", alignItems: "center", gap: "12px"
       }},
         /* Logo */
         React.createElement("div", {style: {
           display: "inline-block", border: "1px solid rgba(0,255,136,0.2)",
-          padding: "8px 24px", position: "relative"
+          padding: "12px 28px", position: "relative"
         }},
           /* Cage bars */
           React.createElement("div", {style: {position: "absolute", top: "-1px", left: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
@@ -356,28 +455,37 @@ function ConvergenceMap() {
           React.createElement("div", {style: {position: "absolute", top: "-1px", right: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
           /* Title */
           React.createElement("div", {style: {
-            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "20px",
-            color: "#e0e0e8", letterSpacing: "2px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
+            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "24px",
+            color: "#e0e0e8", letterSpacing: "3px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
           }},
             "Can\u2019t Beat the ",
             React.createElement("span", {style: {color: "#00ff88", fontWeight: 600}}, "System"),
             React.createElement("span", {style: {
-              display: "inline-block", width: "2px", height: "18px", background: "#ff3355",
-              marginLeft: "4px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
+              display: "inline-block", width: "2px", height: "22px", background: "#ff3355",
+              marginLeft: "5px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
             }})
           )
         ),
         /* Tagline */
         React.createElement("div", {style: {
           fontFamily: "'Crimson Pro', serif", fontStyle: "italic", fontWeight: 300,
-          fontSize: "11px", letterSpacing: "1.5px", color: "rgba(0,255,136,0.35)"
+          fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
         }}, "the cage is comfortable"),
         /* Nav */
-        React.createElement("div", {style: {display: "flex", gap: "6px", flexWrap: "wrap", justifyContent: "center", marginTop: "2px"}},
-          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Network Map"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => setActiveView("cyber")}, "Cyber Attack")
+        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}},
+          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => switchTab("map")}, "Network Map"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => switchTab("g3p")}, "Layer Model"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => switchTab("opposition")}, "Managed Opposition"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => switchTab("cyber")}, "Cyber Attack"),
+          React.createElement("button", {
+            onClick: () => setMuted(!muted),
+            style: {
+              background: "none", border: "1px solid #333", color: muted ? "#555" : "#00ff88",
+              fontSize: "14px", cursor: "pointer", padding: "4px 8px", borderRadius: "3px",
+              marginLeft: "8px", transition: "all 0.3s", opacity: audioReady ? 1 : 0.3
+            },
+            title: muted ? "Unmute" : "Mute"
+          }, muted ? "\uD83D\uDD07" : "\uD83D\uDD0A")
         )
       ),
 
@@ -580,16 +688,17 @@ function ConvergenceMap() {
 
           /* Policy Subjects */
           React.createElement("div", {style: {padding: "16px 20px", margin: "12px 0", border: "1px dashed #333", background: "rgba(255,255,255,0.01)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS \u2014 PIGS IN CAGES ON ANTIBIOTICS"),
+            React.createElement("div", {style: {fontSize: "8px", color: "#444", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "BARELY VISIBLE"),
             React.createElement("p", {style: {fontSize: "11px", color: "#666", lineHeight: 1.7}},
-              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture.")
+              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture. Can't beat the system.")
           ),
 
           /* Standing bridge */
           React.createElement("div", {style: {padding: "16px 20px", margin: "24px 0 12px", borderLeft: "3px solid #ff8800", background: "rgba(255,136,0,0.03)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "The Standing / CW Bridge"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Community Wellbeing"),
             React.createElement("p", {style: {fontSize: "11px", color: "#999", lineHeight: 1.8}},
-              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit CW \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
+              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit Community Wellbeing \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
           )
         )
       ),

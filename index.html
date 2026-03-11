@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #0a0a0f; overflow: hidden; }
     #root { min-height: 100vh; }
@@ -336,22 +336,44 @@ function ConvergenceMap() {
         .scroll-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
         @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
         @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+        @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
       `),
 
-      /* Header */
+      /* Header with Logo */
       React.createElement("div", {style: {
-        padding: "20px 24px 16px", borderBottom: "1px solid #1a1a22",
-        display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px"
+        padding: "16px 24px 12px", borderBottom: "1px solid #1a1a22",
+        display: "flex", flexDirection: "column", alignItems: "center", gap: "12px"
       }},
-        React.createElement("div", null,
-          React.createElement("h1", {style: {
-            fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 700,
-            color: "#e0e0e8", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "4px"
-          }}, "Convergence Architecture"),
-          React.createElement("p", {style: {fontSize: "10px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase"}},
-            "10 factions \u00b7 2 operational modes \u00b7 4-tier layer model")
+        /* Logo */
+        React.createElement("div", {style: {
+          display: "inline-block", border: "1px solid rgba(0,255,136,0.2)",
+          padding: "12px 28px", position: "relative"
+        }},
+          /* Cage bars */
+          React.createElement("div", {style: {position: "absolute", top: "-1px", left: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
+          React.createElement("div", {style: {position: "absolute", top: "-1px", left: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)"}}),
+          React.createElement("div", {style: {position: "absolute", top: "-1px", right: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)"}}),
+          React.createElement("div", {style: {position: "absolute", top: "-1px", right: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)"}}),
+          /* Title */
+          React.createElement("div", {style: {
+            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "24px",
+            color: "#e0e0e8", letterSpacing: "3px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
+          }},
+            "Can\u2019t Beat the ",
+            React.createElement("span", {style: {color: "#00ff88", fontWeight: 600}}, "System"),
+            React.createElement("span", {style: {
+              display: "inline-block", width: "2px", height: "22px", background: "#ff3355",
+              marginLeft: "5px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
+            }})
+          )
         ),
-        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap"}},
+        /* Tagline */
+        React.createElement("div", {style: {
+          fontFamily: "'Crimson Pro', serif", fontStyle: "italic", fontWeight: 300,
+          fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
+        }}, "the cage is comfortable"),
+        /* Nav */
+        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center"}},
           React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Network Map"),
           React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
           React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),
@@ -360,7 +382,7 @@ function ConvergenceMap() {
       ),
 
       /* MAP VIEW */
-      activeView === "map" && React.createElement("div", {style: {display: "flex", height: "calc(100vh - 70px)"}},
+      activeView === "map" && React.createElement("div", {style: {display: "flex", height: "calc(100vh - 130px)"}},
         React.createElement("div", {style: {flex: 1, position: "relative", overflow: "hidden"}},
           /* Scan line */
           React.createElement("div", {style: {
@@ -521,7 +543,7 @@ function ConvergenceMap() {
       ),
 
       /* LAYER MODEL VIEW */
-      activeView === "g3p" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+      activeView === "g3p" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 130px)", padding: "24px", overflowY: "auto"}},
         React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
           React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Convergence Architecture v1.1"),
           React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "The Four-Tier Layer Model"),
@@ -573,7 +595,7 @@ function ConvergenceMap() {
       ),
 
       /* MANAGED OPPOSITION VIEW */
-      activeView === "opposition" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+      activeView === "opposition" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 130px)", padding: "24px", overflowY: "auto"}},
         React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
           React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Convergence Architecture v1.1 \u00a73.4"),
           React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "Managed Opposition \u2014 Operational Modes"),
@@ -633,7 +655,7 @@ function ConvergenceMap() {
       ),
 
       /* CYBER ATTACK VIEW */
-      activeView === "cyber" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 70px)", padding: "24px", overflowY: "auto"}},
+      activeView === "cyber" && React.createElement("div", {className: "scroll-panel", style: {height: "calc(100vh - 130px)", padding: "24px", overflowY: "auto"}},
         React.createElement("div", {style: {maxWidth: "800px", margin: "0 auto"}},
           React.createElement("div", {style: {fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px"}}, "Valentine's Day 2027"),
           React.createElement("h2", {style: {fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px"}}, "The Cyber Attack \u2014 What Each Faction Gains"),

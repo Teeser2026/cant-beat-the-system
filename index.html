@@ -17,7 +17,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { useState, useCallback, useMemo } = React;
+    const { useState, useCallback, useMemo, useEffect, useRef } = React;
 
 const FACTIONS = [
   {
@@ -29,7 +29,7 @@ const FACTIONS = [
     description: "Patrick Wood's framework: governance by technical management, replacing elected politics with algorithmic resource allocation. Trilateral Commission origin (1973). Technocracy Inc. blueprint (1930s) now viable via AI/IoT. The SDGs map directly onto technocratic resource management. 'Sustainable' = managed.",
     researchers: ["Patrick Wood", "Zbigniew Brzezinski (architect)", "Iain Davis"],
     goals: ["Resource-based economy", "Algorithmic governance", "Elimination of price system", "Energy accounting via smart grid"],
-    x: 50, y: 12
+    x: 50, y: 15
   },
   {
     id: "finance",
@@ -40,7 +40,7 @@ const FACTIONS = [
     description: "The G3P apex. BIS coordinates central banks globally. 'Going direct' (BlackRock 2019) = monetary policy becomes fiscal policy. Webb/Goodwin's 'Chain' series: PayPal's founding mission was literally 'A New World Currency.' The Thiel \u2192 PayPal \u2192 stablecoins \u2192 PYUSD pipeline was carefully constructed to appear organic. Fink: tokenise everything onto a single universal ledger. Powell documents the UK end: BlackRock's 677 Companies House entities, 80% of three Freeports, \u00a3600bn pension market, 'Nature's Assets' tokenisation. The transition from owning debt instruments to owning the protocol layer underneath all financial instruments.",
     researchers: ["Iain Davis", "John Titus", "Catherine Austin Fitts", "Richard Werner", "Mathew Crawford", "Whitney Webb", "Mark Goodwin", "European Powell"],
     goals: ["CBDC implementation", "Cashless society", "Programmable money", "Financial surveillance", "Credit scoring as social control", "SDR 2.0 protocol layer"],
-    x: 50, y: 90
+    x: 50, y: 78
   },
   {
     id: "intelligence",
@@ -51,7 +51,7 @@ const FACTIONS = [
     description: "Whitney Webb's domain, deepened by Crawford. CIA/DARPA/In-Q-Tel as venture capital for surveillance tech. Five Eyes architecture. Silicon Valley as intelligence community front end since the 1960s. Crawford's key insight: privatisation of intelligence services ensures control remains within bloodlines regardless of which government is 'in power.' The MIC doesn't serve the state \u2014 the state serves the MIC. Pre-Event encrypted internet was an intelligence headache. Post-Event tiered internet is a dream.",
     researchers: ["Whitney Webb", "James Corbett", "Yasha Levine", "Peter Dale Scott", "Mathew Crawford"],
     goals: ["Total information awareness", "Predictive policing", "Population monitoring", "Narrative control", "Pre-crime architecture", "Privatised intelligence dynasties"],
-    x: 12, y: 38
+    x: 12, y: 36
   },
   {
     id: "silicon",
@@ -62,7 +62,7 @@ const FACTIONS = [
     description: "The visible layer. Google, Meta, Microsoft, Apple, Palantir, Oracle. Already public-private partnerships before the Event \u2014 PRISM was 2013, DARPA funded Google. 7SEES maps the PayPal Mafia network radiating into every sector. Three US companies control nearly two-thirds of global cloud infrastructure (AWS, Azure, Google Cloud) and own 70%+ of international undersea cable capacity. They don't just store data; they maintain power over the pathways it travels on. The 7SEES thesis: once every system runs on the same stack, unification is just a config change.",
     researchers: ["Shoshana Zuboff", "Yasha Levine", "Whitney Webb", "7SEES"],
     goals: ["Behavioural surplus extraction", "Platform monopoly", "Digital identity standard", "AI-mediated reality", "Metaverse as managed environment"],
-    x: 88, y: 38
+    x: 88, y: 36
   },
   {
     id: "pharma",
@@ -73,7 +73,7 @@ const FACTIONS = [
     description: "mRNA platform as operating system. Biosecurity as governance framework. Biodigital convergence (Canadian policy doc, 2020). Escape Key: COVID as proof-of-concept for algorithmic authority \u2014 populations accepted restrictions based on computer models, not observable reality. WHO Pandemic Agreement 2025 formalises this permanently. Manhattan Principle 9: pharmaceutical companies as formal 'stakeholders' \u2014 the entities profiting from emergencies help identify emergencies. The same supply chains that deliver vaccines deliver nanites. Same cold chain. Same logistics. Same regulatory framework.",
     researchers: ["Robert Malone", "Sasha Latypova", "Katherine Watt", "Escape Key (esc)", "Mathew Crawford"],
     goals: ["Biosecurity governance", "Biodigital convergence", "Human body as platform", "Subscription health model", "Genetic surveillance"],
-    x: 12, y: 68
+    x: 12, y: 60
   },
   {
     id: "sdg",
@@ -84,7 +84,7 @@ const FACTIONS = [
     description: "McDowell's thesis (2017): SDGs as framework for financialising all life \u2014 children as primary data source, schools as data factories, blockchain as 'the ledger,' impact investors as speculators. 'Technocratic feudalism.' Webb/Davis SDG16 investigation: Target 16.9 mandates universal digital identity by 2030 \u2014 the convergence point. Powell documents UK implementation: Freeports/SEZs as the spatial layer, Oracle/TBI as policy laundering mechanism, BlackRock tokenising nature as the financial layer. The humanitarian case and the control case are the same case.",
     researchers: ["Alison McDowell", "Cory Morningstar", "Jacob Nordang\u00e5rd", "Escape Key (esc)", "Whitney Webb", "Iain Davis", "European Powell"],
     goals: ["Human capital markets", "Nature as financial asset", "Behavioural futures", "Impact tokens", "Children as investment vehicles"],
-    x: 88, y: 68
+    x: 88, y: 60
   },
   {
     id: "transhumanist",
@@ -95,7 +95,7 @@ const FACTIONS = [
     description: "The true believers. Kurzweil's faithful (the Merger, the Universe Wakes Up). Harari's popularisers. More's Luciferian architects (human nature as raw material). Intellectual lineage: Julian Huxley \u2192 FM-2030 \u2192 Extropy Institute \u2192 WTA/H+. They genuinely believe this is humanity's next evolutionary step. Bio-digital convergence as liberation from the limitations of biology. The Gnostic inversion: material world as prison, technology as salvation, the body as tomb (soma/sema).",
     researchers: ["Aaron Franz", "Joseph Farrell", "Jay Dyer"],
     goals: ["Human-machine merger", "Consciousness upload", "Biological transcendence", "Post-human evolution", "Immortality technology"],
-    x: 50, y: 50
+    x: 50, y: 46
   },
   {
     id: "cybernetic",
@@ -106,7 +106,7 @@ const FACTIONS = [
     description: "Crawford's framework: Military-Occult-Banking Syndicate. Not a faction with its own goals \u2014 a METHOD deployed across all factions. Cybernetics (Wiener, 1948) as the science of treating the world as one managed machine. Theosophy \u2192 Alice Bailey \u2192 Lucis Trust as spiritual OS. MK-ULTRA/psychiatry as modernised occult mind control. Rockefeller money on BOTH sides of every issue. 'I have barely found a piece of machinery or a side \u2014 either side \u2014 of an issue without Rockefeller money behind it.'",
     researchers: ["Mathew Crawford", "Michael Aquino (architect)", "Norbert Wiener (theorist)", "Gregory Bateson"],
     goals: ["Cybernetic world-system", "Managed feedback loops", "Hegelian dialectic as method", "Cultic fracturing of society", "Psychiatry as social control"],
-    x: 50, y: 3
+    x: 50, y: 7
   },
   {
     id: "sovereign",
@@ -117,7 +117,7 @@ const FACTIONS = [
     description: "7SEES map reveals Gulf State cluster: UAE sovereign wealth funds (Mubadala), Saudi PIF, Qatar Investment Authority as active builders of digital infrastructure \u2014 not just customers. NEOM as the test city. These states offer what Western democracies can't: unlimited capital, no democratic friction, authoritarian-compatible governance frameworks, and physical infrastructure built from scratch with surveillance designed in from day one. When Western financial systems collapse, sovereign wealth funds become lenders of last resort \u2014 on their terms.",
     researchers: ["7SEES", "Whitney Webb", "Unlimited Hangout"],
     goals: ["Smart city construction (NEOM)", "AI infrastructure hosting", "Crypto/digital finance hub status", "Post-oil economic transition", "Authoritarian-compatible digital governance"],
-    x: 8, y: 85
+    x: 8, y: 74
   },
   {
     id: "religious",
@@ -128,7 +128,7 @@ const FACTIONS = [
     description: "Third Temple movements, Chabad messianism, Christian Zionism, techno-gnostic cults. Sabbatean-Frankist inversion: redemption through sin, destruction as purification. Crawford: Theosophy/Alice Bailey/Lucis Trust as the 'New World Religious Order' \u2014 a syncretic framework designed to subsume all religions. The NWO term itself coined within this current (Bailey). The Event functions as the Sabbatean catastrophe that precedes redemption.",
     researchers: ["Jay Dyer", "Robert Sepehr", "Joseph Farrell", "Barry Chamish", "Mathew Crawford"],
     goals: ["Messianic acceleration", "Destruction of current order", "Sacred architecture rebuild", "Antinomian liberation", "New covenant through technology"],
-    x: 72, y: 18
+    x: 72, y: 20
   },
   {
     id: "geological",
@@ -139,7 +139,7 @@ const FACTIONS = [
     description: "Holders of classified data about cyclical geological events. Ethical Skeptic (systematic analysis of extinction-level geological cycles, volcanic forcing, magnetic excursion data). Ben Davidson / Suspicious0bservers (solar micronova hypothesis, geomagnetic pole shift evidence). The catastrophism researchers: evidence for previous advanced civilisations, Younger Dryas impact hypothesis, megalithic anomalies. If they're right, the surveillance state is a lifeboat. If previous civilisations achieved technological sophistication and were wiped, the current programme could be framed as 'this time we survive.' Elite bunker construction (New Zealand compounds, Norwegian seed vault, classified continuity-of-government facilities) is either paranoid wealth or rational preparation.",
     researchers: ["Ethical Skeptic", "Ben Davidson (Suspicious0bservers)", "Graham Hancock (gateway \u2014 contested)", "Randall Carlson"],
     goals: ["Species survival", "Centralised control for rapid population management", "Genetic diversity preservation", "Civilisational continuity infrastructure", "Elite lifeboat construction"],
-    x: 28, y: 18
+    x: 28, y: 20
   }
 ];
 
@@ -241,6 +241,102 @@ function ConvergenceMap() {
   const [selectedConnection, setSelectedConnection] = useState(null);
   const [hoveredFaction, setHoveredFaction] = useState(null);
   const [activeView, setActiveView] = useState("map");
+  const [showModeConnections, setShowModeConnections] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [audioReady, setAudioReady] = useState(false);
+
+  // Audio system
+  const audioRef = useRef({});
+  const switchSoundRef = useRef(null);
+  const fadeTimerRef = useRef(null);
+
+  const AUDIO_MAP = {
+    map: "audio-network.mp3",
+    g3p: "audio-layers.mp3",
+    opposition: "audio-opposition.mp3",
+    cyber: "audio-cyber.mp3"
+  };
+
+  const AUDIO_VOLUME = { map: 0.25, g3p: 0.3, opposition: 0.2, cyber: 0.25 };
+
+  // Initialise audio on first user interaction
+  useEffect(() => {
+    const initAudio = () => {
+      if (audioReady) return;
+      Object.entries(AUDIO_MAP).forEach(([key, src]) => {
+        const a = new Audio(src);
+        a.loop = true;
+        a.volume = 0;
+        a.preload = "auto";
+        audioRef.current[key] = a;
+      });
+      switchSoundRef.current = new Audio("audio-switch.mp3");
+      switchSoundRef.current.volume = 0.15;
+      setAudioReady(true);
+      document.removeEventListener("click", initAudio);
+    };
+    document.addEventListener("click", initAudio);
+    return () => document.removeEventListener("click", initAudio);
+  }, [audioReady]);
+
+  // Crossfade on tab change
+  useEffect(() => {
+    if (!audioReady || muted) return;
+    const FADE_MS = 1500;
+    const STEPS = 30;
+    const interval = FADE_MS / STEPS;
+
+    // Clear any running fade
+    if (fadeTimerRef.current) {
+      fadeTimerRef.current.forEach(id => clearInterval(id));
+    }
+    fadeTimerRef.current = [];
+
+    Object.entries(audioRef.current).forEach(([key, audio]) => {
+      const targetVol = key === activeView ? AUDIO_VOLUME[key] : 0;
+      const startVol = audio.volume;
+      const delta = (targetVol - startVol) / STEPS;
+      let step = 0;
+
+      if (key === activeView && audio.paused) {
+        audio.play().catch(() => {});
+      }
+
+      const timerId = setInterval(() => {
+        step++;
+        audio.volume = Math.max(0, Math.min(1, startVol + delta * step));
+        if (step >= STEPS) {
+          clearInterval(timerId);
+          audio.volume = targetVol;
+          if (targetVol === 0) audio.pause();
+        }
+      }, interval);
+      fadeTimerRef.current.push(timerId);
+    });
+  }, [activeView, audioReady, muted]);
+
+  // Handle mute toggle
+  useEffect(() => {
+    if (!audioReady) return;
+    Object.entries(audioRef.current).forEach(([key, audio]) => {
+      if (muted) {
+        audio.volume = 0;
+        audio.pause();
+      } else if (key === activeView) {
+        audio.volume = AUDIO_VOLUME[key];
+        audio.play().catch(() => {});
+      }
+    });
+  }, [muted, audioReady]);
+
+  // Tab switch handler with sound
+  const switchTab = useCallback((view) => {
+    if (view === "map") {
+      setSelectedFaction(null);
+      setSelectedConnection(null);
+    }
+    setActiveView(view);
+  }, []);
 
   const getConnections = useCallback((factionId) => {
     return CONNECTIONS.filter(c => c.from === factionId || c.to === factionId);
@@ -372,11 +468,20 @@ function ConvergenceMap() {
           fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
         }}, "the cage is comfortable"),
         /* Nav */
-        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center"}},
-          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Faction Network Map"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => setActiveView("cyber")}, "Cyber Attack")
+        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}},
+          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => switchTab("map")}, "Network Map"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => switchTab("g3p")}, "Layer Model"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => switchTab("opposition")}, "Managed Opposition"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => switchTab("cyber")}, "Cyber Attack"),
+          React.createElement("button", {
+            onClick: () => setMuted(!muted),
+            style: {
+              background: "none", border: "1px solid #333", color: muted ? "#555" : "#00ff88",
+              fontSize: "14px", cursor: "pointer", padding: "4px 8px", borderRadius: "3px",
+              marginLeft: "8px", transition: "all 0.3s", opacity: audioReady ? 1 : 0.3
+            },
+            title: muted ? "Unmute" : "Mute"
+          }, muted ? "\uD83D\uDD07" : "\uD83D\uDD0A")
         )
       ),
 
@@ -398,6 +503,7 @@ function ConvergenceMap() {
               const isSelected = selectedConnection === i;
               const dimmed = selectedFaction && !isActive;
               const isModeConnection = !!conn.mode;
+              if (isModeConnection && !showModeConnections) return null;
               return React.createElement("line", {
                 key: i, className: "connection-line",
                 x1: fromF.x + "%", y1: fromF.y + "%", x2: toF.x + "%", y2: toF.y + "%",
@@ -433,7 +539,20 @@ function ConvergenceMap() {
           },
             React.createElement("div", {className: "faction-label", style: {color: f.color, opacity: hoveredFaction === f.id || selectedFaction === f.id ? 1 : 0.6}}, f.short),
             React.createElement("div", {className: "faction-dot", style: {background: f.color, color: f.color}})
-          ))
+          )),
+          /* Mode toggle */
+          React.createElement("div", {style: {position: "absolute", bottom: "16px", left: "16px", zIndex: 20}},
+            React.createElement("button", {
+              onClick: () => setShowModeConnections(!showModeConnections),
+              style: {
+                background: showModeConnections ? "rgba(255,136,0,0.1)" : "transparent",
+                border: "1px " + (showModeConnections ? "solid" : "dashed") + " " + (showModeConnections ? "#ff8800" : "#444"),
+                color: showModeConnections ? "#ff8800" : "#666",
+                padding: "6px 12px", fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", cursor: "pointer"
+              }
+            }, showModeConnections ? "\u2B21 Mode connections on" : "\u2B21 Mode connections off")
+          )
         ),
 
         /* Detail panel */
@@ -565,16 +684,17 @@ function ConvergenceMap() {
 
           /* Policy Subjects */
           React.createElement("div", {style: {padding: "16px 20px", margin: "12px 0", border: "1px dashed #333", background: "rgba(255,255,255,0.01)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS \u2014 PIGS IN CAGES ON ANTIBIOTICS"),
+            React.createElement("div", {style: {fontSize: "8px", color: "#444", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "BARELY VISIBLE"),
             React.createElement("p", {style: {fontSize: "11px", color: "#666", lineHeight: 1.7}},
-              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture.")
+              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture. Can't beat the system.")
           ),
 
           /* Standing bridge */
           React.createElement("div", {style: {padding: "16px 20px", margin: "24px 0 12px", borderLeft: "3px solid #ff8800", background: "rgba(255,136,0,0.03)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "The Standing / CW Bridge"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Community Wellbeing"),
             React.createElement("p", {style: {fontSize: "11px", color: "#999", lineHeight: 1.8}},
-              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit CW \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
+              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit Community Wellbeing \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
           )
         )
       ),

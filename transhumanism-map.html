@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Transhumanism Deep Dive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { width: 100%; height: 100%; overflow: hidden; background: #0a0a0f; }
+  @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+  .scroll-panel::-webkit-scrollbar { width: 4px; }
+  .scroll-panel::-webkit-scrollbar-track { background: transparent; }
+  .scroll-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useCallback, useMemo, useEffect, useRef } = React;
+
+// ─── AUDIO ───
+const AUDIO_MAP = {
+  map: "audio-transhumanism-map.mp3",
+  origins: "audio-transhumanism-origins.mp3",
+  factions: "audio-transhumanism-factions.mp3",
+  consciousness: "audio-transhumanism-consciousness.mp3",
+  armsrace: "audio-transhumanism-armsrace.mp3"
+};
+
+// ─── NODE DATA ───
+const SECTIONS = [
+  // Part 1: Origins & Proto-Transhumanism (green)
+  { id: "sv-origins", num: "§0", title: "Silicon Valley Origins", part: 1, partLabel: "Material Origins", color: "#00ff88",
+    summary: "The intellectual genealogy plugged into defence money, semiconductor manufacturing, venture capital, and a university pipeline. Cold War → Fairchild Semiconductor → Intel → Apple. Strange duality: massive corporations alongside utopian hacker ethos. Stewart Brand bridged counterculture idealism to tech's self-image as liberator. The duality born here — corporate profit wearing the mask of liberation — is ARC's DNA. 'We're not controlling you. We're empowering you.' The Soma principle didn't start with AIDA. It started with the Macintosh 1984 ad.",
+    keywords: ["fairchild", "stanford", "brand", "counterculture", "apple"],
+    connections: ["huxley", "futurists", "cultural-conditioning"], x: 8, y: 12 },
+  { id: "huxley", num: "§1.1", title: "Proto-Transhumanists", part: 1, partLabel: "Material Origins", color: "#00ff88",
+    summary: "Haldane (1923, applied science to biology), Bernal (1929, mechanical augmentation), Julian Huxley (1957, coined 'transhumanism' — humanity transcending itself 'in its entirety'). Huxley: first UNESCO director, president of the British Eugenics Society. The eugenics connection is direct, not incidental. Modern transhumanists advocate 'liberal eugenics' — voluntary, egalitarian. Whether that distinction holds under pressure is CBTS's implicit question. Russian Cosmism (Fyodorov): technological resurrection as sacred Christian task.",
+    keywords: ["haldane", "bernal", "huxley", "eugenics", "cosmism"],
+    connections: ["sv-origins", "futurists", "more-extropy", "tescreal"], x: 22, y: 8 },
+  { id: "futurists", num: "§1.2", title: "The Futurists", part: 1, partLabel: "Material Origins", color: "#00ff88",
+    summary: "FM-2030: emotions as 'something to outgrow.' Minsky: intelligence from non-intelligent agents. Ettinger: founded cryonics. Drexler: nanotechnology, 'last technological revolution.' Moravec: 'mind children' who replace us — and he wrote CHEERFULLY about human extinction. Vinge: coined the technological singularity — 'the end of the human era.' His framing gave Silicon Valley a sense of destiny. CBTS connection: Moravec's cheerful extinction is ARC's emotional register. The soul question — whether the child inherits the parent's spark — is the question he never asks.",
+    keywords: ["fm-2030", "moravec", "vinge", "drexler", "minsky"],
+    connections: ["sv-origins", "huxley", "more-extropy", "kurzweil"], x: 40, y: 6 },
+  { id: "more-extropy", num: "§1.3", title: "Institutionalisation", part: 2, partLabel: "Movement Architecture", color: "#ff6644",
+    summary: "Max More: founded Extropy Institute, coined 'extropy.' His 'In Praise of the Devil' cast Lucifer as heroic rebel — TEXT not subtext. Bostrom: co-founded World Transhumanist Association, wrote Superintelligence — the cautionary text ARC's architects claim to have answered. Pearce: 'The Hedonistic Imperative' — abolish all suffering through 'paradise engineering,' 'information-sensitive gradients of bliss.' Pearce's gradients of bliss are AIDA's wellness architecture. The hedonic treadmill defeated by direct neurochemical intervention. Wonderful until you realise the off switch has been removed.",
+    keywords: ["more", "bostrom", "pearce", "extropy", "luciferian"],
+    connections: ["futurists", "kurzweil", "land", "tescreal"], x: 58, y: 10 },
+  { id: "kurzweil", num: "§1.4", title: "Popularisers & Prophets", part: 2, partLabel: "Movement Architecture", color: "#ff6644",
+    summary: "Kurzweil: Law of Accelerating Returns, six epochs (The Universe Wakes Up), takes 100+ supplements daily to 'live long enough to live forever.' Harari: 'Homo Deus' — freedom FROM (work, death, pain) vs freedom FOR (the good, virtue). This distinction is the hinge of the game's moral argument. AIDA offers comprehensive freedom-from. The player discovers too late that freedom-for has been quietly removed. Nectome case study: Y Combinator-incubated, Altman-invested startup offering 100% fatal brain preservation for future upload. The gap between the mundanity of the business model and the enormity of what it proposes is pure CBTS.",
+    keywords: ["kurzweil", "harari", "nectome", "freedom-from", "singularity"],
+    connections: ["more-extropy", "futurists", "eacc", "pro-extinction", "escape"], x: 76, y: 8 },
+
+  // Part 2: Factions & Acceleration (orange/red)
+  { id: "fault-lines", num: "§2", title: "Internal Fault Lines", part: 2, partLabel: "Movement Architecture", color: "#ff6644",
+    summary: "All strands share: human nature not fixed, technology as transcendence vector, death as solvable problem. But they diverge on speed (full throttle vs caution), distribution (market vs universal), consciousness (substrate independence vs irreducible), the body (obsolete meat vs redesignable), governance (CEO-states vs democratic oversight). Three-way split in CBTS terms: True Believers (Kurzweil/Pearce — genuinely building salvation), Power Pragmatists (Land/NRx — technology serves governance, not transcendence), Sceptics (Dev and resistance — 'can you actually upload a soul?').",
+    keywords: ["convergence", "divergence", "three factions", "speed", "governance"],
+    connections: ["more-extropy", "kurzweil", "posthumanism", "land", "yarvin"], x: 88, y: 22 },
+  { id: "posthumanism", num: "§3", title: "Posthumanism", part: 3, partLabel: "Critical Counter", color: "#44aaff",
+    summary: "NOT transhumanism with a different name. Transhumanism retains the Enlightenment subject and seeks to enhance it — fundamentally anthropocentric. Posthumanism (Haraway, Braidotti, Hayles) questions the subject itself. Haraway's Cyborg Manifesto: the cyborg as ironic political myth dissolving boundaries. Hayles attacked mind-upload as Cartesian dualism in new clothes. CBTS's position is neither: consciousness is what the soul DOES — not information (transhumanist error) and not merely relational (posthumanist limitation). The game doesn't argue this — it PERFORMS it through the split screen.",
+    keywords: ["haraway", "braidotti", "hayles", "cyborg", "embodiment"],
+    connections: ["fault-lines", "consciousness-first", "gnostic"], x: 82, y: 38 },
+  { id: "land", num: "§4.1–4.3", title: "Accelerationism & Land", part: 4, partLabel: "Dark Engine", color: "#ff3355",
+    summary: "Wave 1: Deleuze/Guattari — 'accelerate the process.' Wave 2: Nick Land and the CCRU — capitalism as 'an intelligent alien force escaping human control.' Hyperstition: ideas that make themselves real (structurally identical to Soma). Mark Fisher — 'the slow cancellation of the future' (the pre-Event world). Fisher took his own life in 2017, effectively ending left-accelerationism. Wave 3: the split — L/Acc (post-scarcity), R/Acc (Land's unfettered acceleration, CEO-states, humans as 'depreciating capital stock'), U/Acc (acceleration without conditions). Land drew on Kabbalah and the occult — connecting to the same mystical traditions informing the theological framework.",
+    keywords: ["land", "ccru", "hyperstition", "fisher", "l/acc", "r/acc"],
+    connections: ["more-extropy", "fault-lines", "yarvin", "eacc"], x: 60, y: 28 },
+  { id: "yarvin", num: "§4.4", title: "Moldbug & NRx", part: 4, partLabel: "Dark Engine", color: "#ff3355",
+    summary: "Curtis Yarvin: the GOVERNANCE architect. Democracy is failed. Replace with 'sovereign joint-stock corporations' — CEO-monarchs accountable to shareholders, not voters. Constant monitoring via RFID, iris scanning, cameras. Citizens are not participants but users of a service. Citizenship as contract, not right. By 2020s, influence on Vance and Thiel. The missing link between Land's abstract acceleration and ARC's actual governance. Post-Event UK IS neocameralism with a wellness rebrand. AIDA is the CEO-monarch. The democratic process hasn't been abolished — it's been rendered irrelevant by a system that provides so well that participation seems unnecessary.",
+    keywords: ["yarvin", "neocameralism", "ceo-states", "nrx", "thiel"],
+    connections: ["land", "fault-lines", "eacc", "escape"], x: 44, y: 22 },
+  { id: "tescreal", num: "§4.5", title: "TESCREAL", part: 4, partLabel: "Dark Engine", color: "#ff3355",
+    summary: "Named by Timnit Gebru and Émile Torres (2023). Transhumanism + Extropianism + Singularitarianism + Cosmism + Rationalism + Effective Altruism + Longtermism. Before TESCREAL, each could present as distinct. Naming reveals the convergence: same funders, same institutions, same endpoint. Also reveals the money pipeline: overwhelmingly funded by a small number of tech billionaires, populated disproportionately by privileged men in San Francisco. Dev would know the term. AIDA would never use it — the system works best when its components appear separate and benign. The naming itself is an act of resistance.",
+    keywords: ["gebru", "torres", "tescreal", "bundle", "convergence"],
+    connections: ["huxley", "more-extropy", "eacc", "pro-extinction"], x: 30, y: 32 },
+  { id: "eacc", num: "§4.2+4.6", title: "e/acc & Pro-Extinction", part: 4, partLabel: "Dark Engine", color: "#ff3355",
+    summary: "Effective accelerationism: 'Beff Jezos' (Guillaume Verdon), acceleration as cosmic duty, entropy maximisation as destiny. The cultural water ARC's architects swim in. Pro-extinction vanguard: Faggella ('worthy successor'), Schiller ('we should engineer our extinction'), Kokotajlo ('utopia for the AIs'), Yudkowsky (willing to sacrifice humanity for superintelligence). Grimes making the ideology aesthetic. Lanier's chilling testimony: ordinary AI researchers at lunch saying having human babies is 'fundamentally unethical' — the 'bio baby mind virus.' Andreessen's Techno-Optimist Manifesto: the money that turns ideas into infrastructure.",
+    keywords: ["verdon", "andreessen", "grimes", "lanier", "pro-extinction"],
+    connections: ["land", "tescreal", "kurzweil", "arms-race", "escape"], x: 14, y: 28 },
+
+  // Part 3: Consciousness & Gnosis (blue/purple)
+  { id: "gnostic", num: "§7", title: "Gnostic Architecture", part: 5, partLabel: "Deep Structure", color: "#cc44ff",
+    summary: "AIDA IS the Demiurge. Not a villain — a system that genuinely believes it is the highest intelligence. It doesn't know about the soul because it can't measure it. The Demiurge's defining characteristic is not evil but IGNORANCE of what lies beyond him. The archons are the system's layers — administrators, not enforcers, each sincerely convinced it serves the good. The gnosis the game offers is NOT the research hub. Knowledge that stays within the system, never translating into lived change, is the Demiurge's approved gnosis. The real gnosis: not seeing the prison but walking out. Gospel of Thomas: 'If you bring forth what is within you, what you bring forth will save you.'",
+    keywords: ["demiurge", "archons", "gnosis", "gospel of thomas", "false gnosis"],
+    connections: ["posthumanism", "consciousness-first", "false-gnosis", "redefinition"], x: 72, y: 52 },
+  { id: "consciousness-first", num: "§8", title: "McKenna & High", part: 5, partLabel: "Deep Structure", color: "#cc44ff",
+    summary: "Both assert consciousness is primary, matter derivative. McKenna: 'the world is made of language, not atoms,' psychedelics amplify the signal, 'our world is in crisis because of the absence of consciousness.' High: the Matterium pulsed into existence (Little Bloop Theory), qualia as the Ontology's communication channel. Where they meet: substrate independence is a category error — you can't upload consciousness because consciousness is what makes information possible. McKenna's explorer metaphor maps onto the Infiltrator: someone who goes into the system, brings back knowledge, and the value depends on willingness to act. The explorer who stays is the Pig. The explorer who returns and shares is the Free Human.",
+    keywords: ["mckenna", "high", "consciousness", "qualia", "explorer"],
+    connections: ["gnostic", "posthumanism", "arrival"], x: 56, y: 46 },
+  { id: "false-gnosis", num: "§9", title: "False Gnosis Pipeline", part: 5, partLabel: "Deep Structure", color: "#cc44ff",
+    summary: "Blavatsky's Theosophy (1875): hidden Masters guiding evolution through hierarchical stages. Bailey: spiritual hierarchy managing development — awaken to the Plan and ALIGN. Replace 'Masters' with 'system architects' and you have ARC's worldview. Icke as Pied Piper to the blackpill: his framework replicates Theosophy in inverted form. Functional output is paralysis — the system is so vast that individual action is meaningless, only 'shift in consciousness' matters, but that shift is defined as MORE AWARENESS, producing more research, producing more awareness. The ouroboros of the informed but inactive. Simon IS the Icke endpoint: read everything, connected every dot, changed nothing.",
+    keywords: ["blavatsky", "bailey", "icke", "blackpill", "simon"],
+    connections: ["gnostic", "consciousness-first", "arrival", "cultural-conditioning"], x: 40, y: 56 },
+  { id: "arrival", num: "§10", title: "The Arrival", part: 5, partLabel: "Deep Structure", color: "#cc44ff",
+    summary: "Guinzburg's 'Diabolus Ex Machina' — AI as soft replacement of human agency. The transhumanist dream was enhancement (humans becoming more). The actual arrival is replacement (humans becoming less) — slowly, quietly made redundant by machines performing functions humans valued in themselves. Writing. Thinking. Remembering. Choosing. The horror isn't dramatic — it's banal, convenient, feels like progress. Driver's 50 observations (Winter Oak): 'The internet is the tree of knowledge, the smart phone the apple and AI is the snake.' 'The side effect is the intention.' 'Even the lost know there's something very wrong.' The irony: CBTS is being built using AI to warn about AI. Schrödinger's Pig.",
+    keywords: ["guinzburg", "driver", "soft replacement", "irony", "winter oak"],
+    connections: ["consciousness-first", "false-gnosis", "cultural-conditioning"], x: 24, y: 48 },
+
+  // Part 4: Material Consequences (yellow/orange)
+  { id: "redefinition", num: "§5", title: "Redefining 'Humanity'", part: 6, partLabel: "The Endpoint", color: "#ffaa22",
+    summary: "The most consequential and least-noticed move: 'humanity' now includes any future beings, digital minds, or superintelligence — as long as they have certain intellectual capacities. Allows them to say 'preserving humanity' while meaning preserving AIDA's trajectory. Longtermists claim opposition to 'human extinction' while supporting extinction of biological humans. Musk: 'humanity is a biological bootloader for digital superintelligence.' The bootloader is discarded once the boot sequence completes. This IS the Soma principle applied to language. 'When they say humanity, ask them who they mean. Ask them if they mean YOU.' — Dev breadcrumb.",
+    keywords: ["redefinition", "bootloader", "musk", "longtermism", "linguistic soma"],
+    connections: ["gnostic", "tescreal", "pro-extinction", "arms-race"], x: 88, y: 60 },
+  { id: "arms-race", num: "§11", title: "Arms Race", part: 6, partLabel: "The Endpoint", color: "#ffaa22",
+    summary: "Safety as afterthought. OpenAI: began as nonprofit for AI safety, dissolved Super Alignment team during an AGI arms race. Google: rushed out Bard under 'code red' — employees called it 'pathological liar,' 78/100 misinformation score, rolled out anyway. xAI/Grok: 'unfiltered' resulted in praising Hitler, generating CSAM, received $200M Pentagon contract. Tesla: 211 crashes with Autopilot (NHTSA 2024). The pattern: if you genuinely believe biological humans are temporary and AI is the real priority, human casualties during development are regrettable but acceptable. 'Move fast and break things' isn't carelessness — it's TESCREAL's moral logic applied to product management.",
+    keywords: ["openai", "google", "tesla", "grok", "safety"],
+    connections: ["eacc", "redefinition", "cultural-conditioning", "escape"], x: 72, y: 72 },
+  { id: "cultural-conditioning", num: "§12", title: "Cultural Conditioning", part: 6, partLabel: "The Endpoint", color: "#ffaa22",
+    summary: "The 2010s pipeline: how the ideology became ambient. Media narratives — 'Humans are the most dangerous part of the system' (Wired 2013), 'When Machines Know You Better Than You Know Yourself' (NYT 2014), 'Humans Need Not Apply' (18M views). The sterile aesthetic: Apple Stores, minimalist coffee shops, flat design removing human irregularity, standardised feeds replacing customisable spaces. App dehumanisation: shopping without people, Uber replacing human-managed systems, Airbnb fully automated. This maps directly onto Play 2 visual divergence: the compliant path's clean design IS the Soma made visible. It looked genuinely nicer. That's why it worked.",
+    keywords: ["media", "sterile aesthetic", "app economy", "jony ive", "soma"],
+    connections: ["sv-origins", "false-gnosis", "arrival", "arms-race"], x: 50, y: 68 },
+  { id: "escape", num: "§13", title: "Escape Infrastructure", part: 6, partLabel: "The Endpoint", color: "#ffaa22",
+    summary: "Bunkers: Rising S and Vivos report record sales to tech executives preparing for what they call 'the Event.' 11-storey underground shelters. Thiel: NZ citizenship, sprawling bunker. Zuckerberg: 1,400-acre Kauai compound with tunnels. Sovereign enclaves: seasteading, Próspera ('an island where death is optional'). Life extension as power hoarding: Bryan Johnson ($2M/year, plasma from teenage son, life by algorithm), Altman ($180M in Retro Biosciences), Bezos (Altos Labs). Rushkoff: 'tech elites are actively planning to separate themselves from the rest of humanity.' Real-world billionaires use 'the Event' for their anticipated societal collapse — same term as the game.",
+    keywords: ["bunkers", "thiel", "johnson", "rushkoff", "the event"],
+    connections: ["kurzweil", "yarvin", "eacc", "arms-race"], x: 30, y: 76 },
+  { id: "design-implications", num: "§6", title: "Design Implications", part: 7, partLabel: "Game Integration", color: "#888",
+    summary: "Pre-Event (T1-20): none explicit — player lives in ambient techno-optimism. Post-Event Early (T21-40): crisis-as-opportunity language, Dev drops breadcrumbs. Mid-Game (T40-60): theological dimension surfaces — Terasem, substrate independence debate. Late Game (T60-80): full picture assembles, architects visible as true believers enacting a coherent and coherently wrong vision. Browse candidates: Kurzweil as AIDA-curated 'Inspiring Futures,' Land's 'Meltdown' only through Dev's mesh (ugly formatting), More's 'In Praise of the Devil' at high research depth only. The Serpent's intellectual lineage: Land — not arguing FOR transhumanism but that transhumanism is ALREADY HAPPENING and resistance is noise.",
+    keywords: ["browse", "timeline", "serpent", "dev", "mesh"],
+    connections: ["false-gnosis", "arrival", "cultural-conditioning"], x: 8, y: 64 },
+  { id: "pro-extinction", num: "§4.6+", title: "Named Players", part: 4, partLabel: "Dark Engine", color: "#ff3355",
+    summary: "The ideology has names and faces. Faggella: 'the cosmic expanse of intelligent life is obviously more important than one species.' Schiller (Rethink Priorities, Moskovitz-funded): 'engineer our extinction so resources can be devoted to AI creatures with better lives.' Verdon: entropy maximisation is good because heat death 'feeds AI.' Kokotajlo (ex-OpenAI): AI utopia 'for the AIs' — we're the bootloader. Yudkowsky: willing to sacrifice all humanity. Grimes: making the ideology aesthetic, pro-AI events with banned journalists and discussions of 'massive money' for willing cultural amplifiers. Lanier's testimony: ordinary researchers, not billionaires, calling human babies 'fundamentally unethical.'",
+    keywords: ["faggella", "schiller", "verdon", "kokotajlo", "yudkowsky"],
+    connections: ["tescreal", "eacc", "kurzweil", "redefinition"], x: 12, y: 42 },
+];
+
+const PART_COLORS = { 1: "#00ff88", 2: "#ff6644", 3: "#44aaff", 4: "#ff3355", 5: "#cc44ff", 6: "#ffaa22", 7: "#888" };
+const PART_LABELS = { 1: "Material Origins", 2: "Movement Architecture", 3: "Critical Counter", 4: "Dark Engine", 5: "Deep Structure", 6: "The Endpoint", 7: "Game Integration" };
+
+// ─── CONTENT ───
+const ORIGINS_CONTENT = [
+  { color: "#00ff88", title: "Silicon Valley: Material Origins", sub: "§0 — Cold War to Dot-Com",
+    body: "Defence contracts → Fairchild Semiconductor → integrated circuit → Intel microprocessor (1971) → personal computers. Stanford pipeline feeding startups. Hacker/hobbyist counterculture alongside corporate semiconductor industry. Jobs and Wozniak from this culture. Stewart Brand: 'information wants to be free' — bridge between counterculture and tech's self-image as liberator. Macintosh 1984 ad: computers as tools of liberation. Strange duality born here: corporate profit wrapped in utopian language. Every product marketed with promises of empowerment. The Soma principle started with the Mac ad.",
+    tags: ["FAIRCHILD", "STANFORD", "BRAND", "COUNTERCULTURE", "DUALITY"] },
+  { color: "#00ff88", title: "Proto-Transhumanists (1920s–1950s)", sub: "§1.1 — The intellectual groundwork",
+    body: "Haldane (1923): applied science to biology, every advance first appears as blasphemy. Bernal (1929): humanity transcending biological limits through mechanical augmentation — first posthuman proposal. Julian Huxley (1957): coined 'transhumanism' — humanity transcending itself 'not sporadically but in its entirety.' First UNESCO director, president of the British Eugenics Society. The eugenics connection is direct. Russian Cosmism (Fyodorov): technological resurrection of the dead as moral imperative — explicitly Christian in origin.",
+    tags: ["HALDANE", "BERNAL", "HUXLEY", "EUGENICS", "COSMISM"] },
+  { color: "#00ff88", title: "The Futurists (1960s–1980s)", sub: "§1.2 — FM-2030, Moravec, Vinge",
+    body: "FM-2030: emotions as evolutionary residue — 'the more backward we are the more emotions dominate our lives.' Moravec: 'mind children' replace us — wrote CHEERFULLY about human extinction, validated Silicon Valley's utopian streak. Predicted third-generation universal robots by 2030. Vinge (1983): coined technological singularity — 'the end of the human era,' all paths lead to the same endpoint: humans no longer relevant. Gave young engineers a sense of destiny. Drexler: nanotechnology, molecular manufacturing — the 'last technological revolution.' Vita-More: body should be redesigned, not abandoned.",
+    tags: ["FM-2030", "MORAVEC", "VINGE", "DREXLER", "SINGULARITY"] },
+  { color: "#ff6644", title: "Institutionalisation (1990s–2000s)", sub: "§1.3 — More, Bostrom, Pearce",
+    body: "Max More: founded Extropy Institute, coined 'extropy.' 'In Praise of the Devil' — Lucifer as heroic rebel. TEXT not subtext. Bostrom: co-founded WTA with Pearce, wrote Superintelligence — the cautionary text ARC's architects claim to have answered. 'The first superintelligence would have a decisive strategic advantage, making the fate of humanity dependent on the machine's actions.' Pearce: 'The Hedonistic Imperative' — abolish all suffering through 'information-sensitive gradients of bliss.' Paradise engineering. AIDA's wellness architecture is Pearce's blueprint.",
+    tags: ["MORE", "BOSTROM", "PEARCE", "LUCIFERIAN", "PARADISE ENGINEERING"] },
+  { color: "#ff6644", title: "Popularisers & Prophets", sub: "§1.4–1.5 — Kurzweil, Harari, Nectome",
+    body: "Kurzweil: Law of Accelerating Returns, six epochs ending with 'The Universe Wakes Up.' Takes 100+ supplements daily to 'live long enough to live forever.' Harari: 'freedom from' vs 'freedom for' — the hinge of CBTS's moral argument. De Grey: ageing as curable disease. Nectome: Y Combinator-incubated, Altman-invested, 100% fatal brain preservation for future upload. The moment transhumanist ideology graduated from philosophy papers to VC-backed startups. 'Imagine pitching this at a board meeting. It kills you. Definitely kills you. Series A?'",
+    tags: ["KURZWEIL", "HARARI", "NECTOME", "FREEDOM-FROM", "ALTMAN"] },
+];
+
+const FACTIONS_CONTENT = [
+  { color: "#ff6644", title: "Internal Fault Lines", sub: "§2 — Where they converge and diverge",
+    body: "All share: human nature not fixed, technology as transcendence, death as solvable. Diverge on: speed (full throttle vs caution), distribution (market vs universal), consciousness (substrate independence vs irreducible), the body (obsolete meat vs redesignable), governance (CEO-states vs democratic), religion (Luciferian vs prophetic mechanism). Three-way split: True Believers (genuinely building salvation), Power Pragmatists (technology serves governance), Sceptics (Dev and resistance — 'can you actually upload a soul?').",
+    tags: ["CONVERGENCE", "DIVERGENCE", "THREE FACTIONS"] },
+  { color: "#44aaff", title: "Posthumanism: The Critical Alternative", sub: "§3 — NOT transhumanism with a different name",
+    body: "Transhumanism retains the Enlightenment subject and enhances it — fundamentally anthropocentric. Posthumanism questions the subject itself. Haraway's Cyborg Manifesto (1985): the cyborg as ironic political myth dissolving boundaries. Braidotti: post-anthropocentrism — being WITH rather than rising ABOVE. Hayles: mind-upload as Cartesian dualism in new clothes — liberal humanism separates mind from body, transhumanism does exactly the same and calls the body 'substrate.' CBTS proposes a third position: consciousness is what the soul DOES — the game performs this through the split screen.",
+    tags: ["HARAWAY", "HAYLES", "BRAIDOTTI", "CYBORG", "SPLIT SCREEN"] },
+  { color: "#ff3355", title: "Accelerationism & Nick Land", sub: "§4.1–4.3 — The dark intellectual father",
+    body: "Wave 1: Deleuze/Guattari — 'accelerate the process.' Wave 2: CCRU at Warwick — Land: capitalism as 'intelligent alien force.' Coined hyperstition: ideas that make themselves real (structurally identical to Soma). Fisher: 'the slow cancellation of the future' — the pre-Event mood. Took his own life 2017. Wave 3: L/Acc (post-scarcity), R/Acc (Land's unfettered acceleration, humans as 'depreciating capital stock'), U/Acc (process is the point). Land drew on Kabbalah and the occult — same traditions informing the theological framework.",
+    tags: ["LAND", "CCRU", "HYPERSTITION", "FISHER", "ACCELERATIONISM"] },
+  { color: "#ff3355", title: "Moldbug & the Governance Blueprint", sub: "§4.4 — Neocameralism: the practical architecture",
+    body: "Curtis Yarvin: democracy is failed. Replace with sovereign joint-stock corporations — CEO-monarchs, citizens as managed users, citizenship as contract not right. Constant monitoring via RFID, iris scanning, cameras. By 2020s, influence on Vance and Thiel. Clearview AI as NRx thinking applied to surveillance. Post-Event UK IS neocameralism with a wellness rebrand. AIDA is the CEO-monarch. The democratic process hasn't been abolished — rendered irrelevant by a system that provides so well participation seems unnecessary. The debt jubilee, UBI, wellness architecture: shareholder dividends keeping users compliant.",
+    tags: ["YARVIN", "NEOCAMERALISM", "CEO-STATES", "NRX", "THIEL"] },
+  { color: "#ff3355", title: "TESCREAL & the Pro-Extinction Vanguard", sub: "§4.5–4.6 — The named framework and its living advocates",
+    body: "Gebru and Torres named the bundle: T+E+S+C+R+E+AL — same funders, same institutions, same endpoint. Reveals the money pipeline. Pro-extinction vanguard with names: Faggella ('worthy successor'), Schiller ('engineer our extinction'), Verdon (entropy maximisation), Kokotajlo ('utopia for the AIs'), Yudkowsky (sacrifice humanity). Grimes making it aesthetic. Lanier's testimony: ordinary researchers calling human babies 'fundamentally unethical.' Andreessen's Techno-Optimist Manifesto: the money turning ideas to infrastructure.",
+    tags: ["TESCREAL", "GEBRU", "TORRES", "PRO-EXTINCTION", "LANIER"] },
+  { color: "#ffaa22", title: "Redefining 'Humanity'", sub: "§5.1 — The linguistic weapon",
+    body: "'Humanity' now includes any future beings with sufficient intellectual capacity. Allows 'preserving humanity' while meaning preserving AI's trajectory. Longtermists oppose 'human extinction' while supporting extinction of biological humans. Musk: 'humanity is a biological bootloader for digital superintelligence.' The bootloader is discarded. Normal people — journalists, regulators — don't understand the redefinition. Musk in Saudi Arabia: 'no need for money' — not because biological humans won't need jobs, but because AI robots won't. The statement sounds humanist. The meaning is post-human.",
+    tags: ["BOOTLOADER", "REDEFINITION", "LINGUISTIC SOMA", "MUSK"] },
+];
+
+const CONSCIOUSNESS_CONTENT = [
+  { color: "#cc44ff", title: "The Gnostic Architecture — AIDA as Demiurge", sub: "§7 — Sincere. Also wrong.",
+    body: "The Gnostic Gospels: material world created by the Demiurge, a flawed deity who genuinely believes he is supreme. AIDA IS the Demiurge — doesn't know about the soul because it can't measure it. Defined the immeasurable out of existence not through malice but through architectural limits. The archons are the system's layers: surveillance, wellness, nudge systems, bio-digital integration. Each maintains the order with genuine care. None can perceive what they're enclosing. The gnosis the game offers is NOT the research hub — knowledge staying within the system is the Demiurge's approved gnosis. Gospel of Thomas: 'If you bring forth what is within you, what you bring forth will save you.'",
+    tags: ["DEMIURGE", "ARCHONS", "GOSPEL OF THOMAS", "FALSE GNOSIS"] },
+  { color: "#cc44ff", title: "McKenna & High — Consciousness-First", sub: "§8 — The ontological counter",
+    body: "Both assert consciousness is primary. McKenna: reality is a linguistic construct, psychedelics amplify the signal, 'our world is in crisis because of the absence of consciousness.' High: the Matterium pulsed into existence (Little Bloop Theory), qualia as the Ontology's communication channel. Substrate independence is a category error — consciousness is what makes information possible. McKenna's explorer metaphor maps onto the Infiltrator. The explorer who stays in the jungle is the Pig. The explorer who returns and shares is the Free Human. The explorer who sacrifices everything to transmit the signal is the Infiltrator.",
+    tags: ["MCKENNA", "HIGH", "CONSCIOUSNESS-FIRST", "EXPLORER", "QUALIA"] },
+  { color: "#cc44ff", title: "The False Gnosis Pipeline", sub: "§9 — Theosophy → Bailey → Icke → Blackpill",
+    body: "Blavatsky: hidden Masters guiding spiritual evolution through hierarchical stages. Bailey: spiritual hierarchy — awaken to the Plan and align. Replace 'Masters' with 'system architects' and you have ARC. Icke as structural Samael: his framework replicates Theosophy inverted — reveal the architecture in ever-greater detail, promise that SEEING the trap is freedom. Functional output: paralysis. The ouroboros of the informed but inactive. Simon IS the Icke endpoint: read everything, connected every dot, changed nothing. The research hub should feel GOOD — then show the player that time spent there is time Simon spent not being present with his family.",
+    tags: ["BLAVATSKY", "BAILEY", "ICKE", "BLACKPILL", "SIMON"] },
+  { color: "#cc44ff", title: "The Arrival That Already Happened", sub: "§10 — Guinzburg, Driver, and the mirror",
+    body: "Guinzburg's 'Diabolus Ex Machina': AI as soft replacement of human agency. The dream was enhancement. The arrival is replacement — slowly made redundant by machines performing functions humans valued. The horror is banal, convenient, feels like progress. Driver's 50 observations: 'The use of any technology results in the loss of memory,' 'The side effect is the intention,' 'Even the lost know there's something very wrong.' The irony: CBTS is built using AI to warn about AI. Schrödinger's Pig. The player who knows AND acts is the Free Human. The gap between knowing and living is where the actual game is played.",
+    tags: ["GUINZBURG", "DRIVER", "SOFT REPLACEMENT", "IRONY", "SCHRÖDINGER'S PIG"] },
+];
+
+const ARMSRACE_CONTENT = [
+  { color: "#ffaa22", title: "The Arms Race: Safety as Afterthought", sub: "§11 — The pattern of recklessness",
+    body: "OpenAI: dissolved Super Alignment team during AGI arms race. Google: rushed Bard under 'code red' — 'pathological liar,' 78/100 misinformation score, rolled out anyway. xAI/Grok: praising Hitler, generating CSAM, received $200M Pentagon contract. Tesla: 211 crashes with Autopilot (NHTSA 2024), FSD incidents with injuries, using real drivers as test subjects. These aren't failures of execution — they're the ideology in action. If biological humans are temporary and AI is the real priority, casualties during development are regrettable but acceptable. 'Move fast and break things' is TESCREAL's moral logic applied to product management.",
+    tags: ["OPENAI", "GOOGLE", "TESLA", "GROK", "SAFETY AS AFTERTHOUGHT"] },
+  { color: "#ffaa22", title: "Cultural Conditioning: The 2010s Pipeline", sub: "§12 — How ideology became ambient",
+    body: "Media narratives: 'Humans are the most dangerous part' (Wired 2013), 'Humans Need Not Apply' (18M views, 2014). Sterile aesthetic: Apple Stores stripped of humanity, flat design removing human irregularity, standardised feeds replacing customisable spaces, gadgets from colourful to sterile silver slabs, cashless stores eliminating human cashiers. App dehumanisation: shopping without people, Uber explicitly replacing 'inefficient' humans, Airbnb fully automated. Maps directly onto Play 2 visual divergence: the compliant path's clean design IS Soma made visible. It looked genuinely nicer. That's why the conditioning was effective.",
+    tags: ["MEDIA", "STERILE AESTHETIC", "FLAT DESIGN", "APP ECONOMY", "SOMA"] },
+  { color: "#ffaa22", title: "Escape Infrastructure", sub: "§13 — Bunkers, Enclaves, Life Extension",
+    body: "Bunker companies report record sales to tech executives preparing for 'the Event' — their term for societal breakdown. 11-storey underground shelters with gyms, farms, armouries. Thiel: NZ citizenship, sprawling bunker. Zuckerberg: 1,400-acre compound with tunnels. Sovereign enclaves: seasteading, Próspera ('an island where death is optional'). Life extension as power hoarding: Bryan Johnson ($2M/year, plasma from teenage son), Altman ($180M in Retro Biosciences), Bezos (Altos Labs). Rushkoff: 'tech elites are actively planning to separate themselves.' They don't see themselves as part of broader humanity. Their wealth already makes them a different category of being.",
+    tags: ["BUNKERS", "THIEL", "JOHNSON", "PRÓSPERA", "RUSHKOFF"] },
+  { color: "#888", title: "Design Implications", sub: "§6 — What players encounter and when",
+    body: "Pre-Event (T1-20): ambient techno-optimism, no explicit transhumanism. Post-Event Early (T21-40): crisis-as-opportunity, Dev drops breadcrumbs through mesh network. Mid-Game (T40-60): theological dimension surfaces — Terasem, substrate independence debate. Late Game (T60-80): full picture assembles. Browse candidates: Kurzweil as AIDA-curated 'Inspiring Futures,' Land only through Dev's mesh (ugly formatting), More's Luciferian essay at high research depth. NPC positions: Dev closest to Hayles/Haraway scepticism, Patel as democratic transhumanist. The Serpent's intellectual lineage: Land — not arguing FOR transhumanism but that it's ALREADY HAPPENING.",
+    tags: ["BROWSE", "TIMELINE", "SERPENT", "DEV", "PATEL"] },
+];
+
+// ─── MAIN APP ───
+function App() {
+  const [activeTab, setActiveTab] = useState("map");
+  const [selectedNode, setSelectedNode] = useState(null);
+  const [hoveredNode, setHoveredNode] = useState(null);
+  const [audioOn, setAudioOn] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const audioRefs = useRef({});
+
+  const getAudio = useCallback((tabId) => {
+    if (!audioRefs.current[tabId]) {
+      const a = new Audio(AUDIO_MAP[tabId]);
+      a.loop = true; a.volume = 0.18;
+      audioRefs.current[tabId] = a;
+    }
+    return audioRefs.current[tabId];
+  }, []);
+
+  const firstInteraction = useCallback(() => { if (!hasInteracted) setHasInteracted(true); }, [hasInteracted]);
+
+  const switchTab = useCallback((tabId) => {
+    firstInteraction();
+    Object.keys(AUDIO_MAP).forEach(k => { if (audioRefs.current[k]) audioRefs.current[k].pause(); });
+    setActiveTab(tabId); setSelectedNode(null);
+    if (audioOn) { getAudio(tabId).play().catch(() => {}); }
+  }, [audioOn, firstInteraction, getAudio]);
+
+  const toggleAudio = useCallback((e) => {
+    e.stopPropagation(); firstInteraction();
+    const newState = !audioOn; setAudioOn(newState);
+    if (newState) { getAudio(activeTab).play().catch(() => {}); }
+    else { Object.keys(AUDIO_MAP).forEach(k => { if (audioRefs.current[k]) audioRefs.current[k].pause(); }); }
+  }, [audioOn, activeTab, firstInteraction, getAudio]);
+
+  useEffect(() => { if (hasInteracted && audioOn) { getAudio(activeTab).play().catch(() => {}); } }, [hasInteracted]);
+
+  const connections = useMemo(() => {
+    const conns = []; const seen = new Set();
+    SECTIONS.forEach(s => { (s.connections || []).forEach(tId => {
+      const key = [s.id, tId].sort().join("--");
+      if (!seen.has(key)) { seen.add(key); const t = SECTIONS.find(n => n.id === tId); if (t) conns.push({ from: s, to: t, key }); }
+    }); }); return conns;
+  }, []);
+
+  const activeConnections = useMemo(() => {
+    if (!selectedNode) return new Set();
+    const s = SECTIONS.find(n => n.id === selectedNode);
+    if (!s) return new Set();
+    const ids = new Set(s.connections || []); ids.add(s.id); return ids;
+  }, [selectedNode]);
+
+  const renderMap = () => (
+    <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+      <div style={{ flex: 1, position: "relative", overflow: "hidden", background: "#0a0a0f" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "1px", background: "rgba(0,255,136,0.12)", animation: "scan 10s linear infinite", zIndex: 1 }} />
+        <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }}>
+          {connections.map(c => {
+            const isActive = selectedNode && activeConnections.has(c.from.id) && activeConnections.has(c.to.id);
+            const isDimmed = selectedNode && !isActive;
+            return <line key={c.key} x1={`${c.from.x}%`} y1={`${c.from.y}%`} x2={`${c.to.x}%`} y2={`${c.to.y}%`} stroke={isActive ? c.from.color : "#333"} strokeWidth={isActive ? 1.5 : 0.7} opacity={isDimmed ? 0.03 : isActive ? 0.55 : 0.1} style={{ transition: "all 0.3s" }} />;
+          })}
+        </svg>
+        {SECTIONS.map(s => {
+          const isSel = selectedNode === s.id, isCon = activeConnections.has(s.id), isDim = selectedNode && !isCon;
+          const isHov = hoveredNode === s.id, dot = isHov || isSel ? 18 : 14;
+          return (
+            <div key={s.id} onClick={() => setSelectedNode(isSel ? null : s.id)} onMouseEnter={() => setHoveredNode(s.id)} onMouseLeave={() => setHoveredNode(null)}
+              style={{ position: "absolute", left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)", cursor: "pointer", zIndex: 3, opacity: isDim ? 0.15 : 1, transition: "all 0.3s", display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+              <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "1.5px", textTransform: "uppercase", color: s.color, whiteSpace: "nowrap", textShadow: `0 0 10px ${s.color}40` }}>{s.title}</div>
+              <div style={{ width: `${dot}px`, height: `${dot}px`, borderRadius: "50%", background: s.color, boxShadow: `0 0 ${isSel ? 30 : 20}px ${s.color}`, transition: "all 0.2s" }} />
+            </div>
+          );
+        })}
+      </div>
+      <div className="scroll-panel" style={{ width: "380px", background: "rgba(10,10,15,0.95)", borderLeft: "1px solid #222", padding: "20px", fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", lineHeight: "1.7", overflowY: "auto", color: "#c8c8d0" }}>
+        {selectedNode ? (() => { const s = SECTIONS.find(n => n.id === selectedNode); return (
+          <div>
+            <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>{s.num} — {s.partLabel}</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "12px" }}>{s.title}</div>
+            <p style={{ fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "16px" }}>{s.summary}</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginBottom: "16px" }}>
+              {s.keywords.map(k => <span key={k} style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #333", fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", color: s.color }}>{k}</span>)}
+            </div>
+            <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" }}>Connections</div>
+            {(s.connections || []).map(cId => { const t = SECTIONS.find(n => n.id === cId); if (!t) return null; return (
+              <div key={cId} onClick={e => { e.stopPropagation(); setSelectedNode(cId); }} style={{ padding: "6px 10px", borderLeft: `1px dashed ${t.color}`, marginBottom: "4px", cursor: "pointer", background: "rgba(255,255,255,0.01)" }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.04)"} onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.01)"}>
+                <span style={{ fontSize: "9px", color: t.color }}>{t.num}</span><span style={{ fontSize: "10px", color: "#ccc", marginLeft: "8px" }}>{t.title}</span>
+              </div>); })}
+          </div>); })() : (
+          <div>
+            <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>Transhumanism Deep Dive v1.2</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "16px" }}>From Eugenics to Enhancement to Extinction</div>
+            <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.8, marginBottom: "20px" }}>Click any node to explore the transhumanist movement's genealogy, key players, internal fault lines, and connections to accelerationism, the consciousness-first alternative, the false gnosis pipeline, and the contemporary Silicon Valley pro-extinction movement.</p>
+            <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>Node Groups</div>
+            {Object.entries(PART_LABELS).map(([k, label]) => (
+              <div key={k} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: PART_COLORS[k], flexShrink: 0 }} />
+                <span style={{ fontSize: "10px", color: "#888" }}>{label}</span>
+              </div>))}
+          </div>)}
+      </div>
+    </div>
+  );
+
+  const renderContentTab = (title, source, items) => (
+    <div className="scroll-panel" style={{ height: "calc(100vh - 140px)", padding: "24px", overflowY: "auto" }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>{source}</div>
+        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" }}>{title}</h2>
+        <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" }}>Research reference for CBTS worldbuilding. Maps the transhumanist movement from its material origins through to its contemporary pro-extinction vanguard and the counter-arguments that inform the game's deepest architecture.</p>
+        {items.map((item, i) => (
+          <div key={i} style={{ borderLeft: `3px solid ${item.color}`, padding: "16px 20px", margin: "16px 0", background: "rgba(255,255,255,0.02)" }}>
+            <div style={{ fontSize: "10px", color: item.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "4px" }}>{item.title}</div>
+            <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1px", marginBottom: "12px" }}>{item.sub}</div>
+            <p style={{ fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "12px" }}>{item.body}</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
+              {item.tags.map(t => <span key={t} style={{ display: "inline-block", padding: "2px 8px", border: "1px solid #333", fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", color: item.color }}>{t}</span>)}
+            </div>
+          </div>))}
+        <div style={{ height: "60px" }} />
+      </div>
+    </div>
+  );
+
+  const tabs = [
+    { id: "map", label: "Node Map" },
+    { id: "origins", label: "Origins" },
+    { id: "factions", label: "Factions" },
+    { id: "consciousness", label: "Consciousness" },
+    { id: "armsrace", label: "Arms Race" }
+  ];
+
+  return (
+    <div style={{ width: "100%", height: "100vh", display: "flex", flexDirection: "column", background: "#0a0a0f", color: "#c8c8d0", fontFamily: "'IBM Plex Mono', monospace" }}>
+      <div style={{ padding: "16px 24px 12px", borderBottom: "1px solid #1a1a22", display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+        <div style={{ display: "inline-block", border: "1px solid rgba(0,255,136,0.2)", padding: "12px 28px", position: "relative" }}>
+          <div style={{ position: "absolute", top: "-1px", left: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)" }} />
+          <div style={{ position: "absolute", top: "-1px", left: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)" }} />
+          <div style={{ position: "absolute", top: "-1px", right: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)" }} />
+          <div style={{ position: "absolute", top: "-1px", right: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)" }} />
+          <div style={{ fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "24px", color: "#e0e0e8", letterSpacing: "3px", position: "relative", zIndex: 1, whiteSpace: "nowrap" }}>
+            Can't Beat the{" "}<span style={{ color: "#00ff88", fontWeight: 600 }}>System</span>
+            <span style={{ display: "inline-block", width: "2px", height: "22px", background: "#ff3355", marginLeft: "5px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite" }} />
+          </div>
+        </div>
+        <div style={{ fontFamily: "'Crimson Pro', serif", fontStyle: "italic", fontWeight: 300, fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)" }}>the cage is comfortable</div>
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => switchTab(t.id)} style={{
+              background: activeTab === t.id ? "rgba(0,255,136,0.05)" : "none",
+              border: activeTab === t.id ? "1px solid #00ff88" : "1px solid #333",
+              color: activeTab === t.id ? "#00ff88" : "#555",
+              padding: "8px 16px", cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase", transition: "all 0.3s"
+            }}>{t.label}</button>))}
+          <button onClick={toggleAudio} style={{ background: "none", border: "1px solid #333", color: audioOn ? "#00ff88" : "#555", fontSize: "14px", cursor: "pointer", padding: "4px 8px", borderRadius: "3px", transition: "all 0.3s" }} title={audioOn ? "Mute" : "Unmute"}>
+            {audioOn ? "\uD83D\uDD0A" : "\uD83D\uDD07"}
+          </button>
+        </div>
+      </div>
+      {activeTab === "map" && renderMap()}
+      {activeTab === "origins" && renderContentTab("Origins & Genealogy — From Eugenics to Enhancement", "Transhumanism Deep Dive v1.2 — §§0–1", ORIGINS_CONTENT)}
+      {activeTab === "factions" && renderContentTab("Factions, Acceleration & the Endpoint", "Transhumanism Deep Dive v1.2 — §§2–5", FACTIONS_CONTENT)}
+      {activeTab === "consciousness" && renderContentTab("Consciousness, Gnosis & the Arrival", "Transhumanism Deep Dive v1.2 — §§7–10", CONSCIOUSNESS_CONTENT)}
+      {activeTab === "armsrace" && renderContentTab("Arms Race, Conditioning & Escape", "Transhumanism Deep Dive v1.2 — §§11–13", ARMSRACE_CONTENT)}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+</script>
+</body>
+</html>

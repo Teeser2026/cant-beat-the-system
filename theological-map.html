@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Theological & Philosophical Framework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { width: 100%; height: 100%; overflow: hidden; background: #0a0a0f; }
+  @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+  .scroll-panel::-webkit-scrollbar { width: 4px; }
+  .scroll-panel::-webkit-scrollbar-track { background: transparent; }
+  .scroll-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useCallback, useMemo, useEffect, useRef } = React;
+
+// ─── NODE DATA ───
+const SECTIONS = [
+  // Part 1: Theological Genealogy (green tones)
+  {
+    id: "lurianic",
+    num: "§1.1",
+    title: "Lurianic Kabbalah",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "Rabbi Isaac Luria's cosmic drama in three acts: Tzimtzum (God's withdrawal to create space), Shevirat HaKelim (the shattering of vessels, trapping divine sparks in shells of impurity), and Tikkun (humanity's task to gather and restore the sparks). The source framework that everything else inverts. Gave enormous theological weight to human action — every individual participates in cosmic repair.",
+    keywords: ["tzimtzum", "shevirat hakelim", "tikkun", "ein sof", "sefirot", "klipot"],
+    connections: ["sabbatean", "anti-tzimtzum", "counterfeit-temple", "structural-map"],
+    x: 12, y: 18
+  },
+  {
+    id: "sabbatean",
+    num: "§1.2",
+    title: "Sabbatean-Frankist Inversion",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "Sabbatai Zevi declared himself Messiah (1665), then converted to Islam — reinterpreted as descent into impurity to redeem the deepest sparks. Jacob Frank pushed further: deliberate transgression as sacred path. The critical vulnerability: sparks buried so deep only sin can reach them. 'Redemption through sin' — accepts the cosmological framework but completely reverses the method. Mainstream Kabbalists view this as dangerous heresy.",
+    keywords: ["sabbatai zevi", "jacob frank", "antinomianism", "redemption through sin", "scholem"],
+    connections: ["lurianic", "antinomianism", "hermetic", "secular-messianism"],
+    x: 28, y: 12
+  },
+  {
+    id: "antinomianism",
+    num: "§1.3",
+    title: "Antinomianism",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "The belief that moral or religious law is superseded by a higher spiritual state. Recurs across traditions: Paul's grace vs Mosaic law, Gnostic liberation through breaking the Demiurge's rules, Sabbatean-Frankist sacred transgression, certain Sufi traditions, Crowley's 'Do what thou wilt.' The consistent three-stage movement: (1) legitimate insight that letter ≠ spirit, (2) radicalisation — discard the letter entirely, (3) power structure — initiates who 'transcended' rules governing the bound population.",
+    keywords: ["against law", "gnostic", "crowley", "three-stage pattern", "hierarchy"],
+    connections: ["sabbatean", "hermetic", "luciferian", "enforcement"],
+    x: 44, y: 8
+  },
+  {
+    id: "hermetic",
+    num: "§1.4",
+    title: "Hermetic-Rosicrucian Bridge",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "The mechanism by which antinomian ideas moved from Jewish esoteric circles into European modernity. Hermes Trismegistus texts (1st–3rd century): 'As above, so below' (Correspondence — the adept can work upon nature), Mentalism (reality is mental, the trained mind reshapes it). Rosicrucianism (1614–16 manifestos): the template of a self-selected elite with hidden knowledge working behind the scenes. Absorbed into Freemasonry — initiatory degrees, progressive revelation. The philosophical root of technocracy: nature as a machine with hidden levers, operated by those who understand.",
+    keywords: ["hermeticism", "rosicrucian", "freemasonry", "correspondence", "mentalism", "francis bacon"],
+    connections: ["antinomianism", "sabbatean", "enforcement", "secular-messianism", "icke-samael"],
+    x: 58, y: 16
+  },
+  {
+    id: "enforcement",
+    num: "§1.4.1",
+    title: "Enforcement Architecture",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "Five-mechanism compliance toolkit securing the management layer: (1) Promise of forbidden knowledge — the Hermetic/initiation mechanism, the golden cage of feeling special; (2) Hard cash — G3P financial alignment, the mortgage doesn't care about doubts; (3) Blackmail/kompromat — intelligence mechanism, AIDA makes this redundant via total surveillance; (4) Threats — career destruction, whistleblower pattern; (5) Ideological capture — Gramscian hegemony, self-replicating belief through institutional training. Critical distinction: upstream enforcement (capturing distributors) vs downstream conditioning (what the captured layer builds for the public).",
+    keywords: ["g3p", "iain davis", "kompromat", "gramsci", "soma", "standing", "cw"],
+    connections: ["hermetic", "serpent", "luciferian", "consciousness"],
+    x: 72, y: 8
+  },
+  {
+    id: "icke-samael",
+    num: "§1.4+",
+    title: "The Icke Problem",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "David Icke as structural Samael figure. Honours the pattern recognition (these networks existed) while showing that pattern recognition without discernment is its own trap. Icke offers forbidden knowledge, speaks with absolute conviction, gathers followers given 'access to truth the masses cannot handle.' The functional consequence — awareness without action, the research rabbit hole as substitute for lived resistance — is indistinguishable from controlled opposition. Whether he intends this is irrelevant. The system only needs the result.",
+    keywords: ["controlled opposition", "false gnosis", "pattern recognition", "discernment"],
+    connections: ["hermetic", "serpent", "consciousness"],
+    x: 50, y: 28
+  },
+  {
+    id: "secular-messianism",
+    num: "§1.5–1.6",
+    title: "Secular Messianism",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "The messianic impulse stripped of God — the architecture of salvation without the architect. Emotional energy does not disappear when secularised; it attaches to new objects. Marxism (purest form: dialectical stages toward perfected state), Progressive Liberalism (softer: arc bending toward justice), Technocracy/Transhumanism (the broken vessel is human biology, Tikkun through technology, the Singularity as messianic age). The dangerous feature: removing transcendence removes humility. Humans fully in charge of the redemptive project generate totalitarianism with a clean conscience.",
+    keywords: ["marxism", "singularity", "fourth industrial revolution", "totalitarianism"],
+    connections: ["sabbatean", "hermetic", "luciferian", "structural-map", "counterfeit-temple"],
+    x: 36, y: 30
+  },
+  {
+    id: "counterfeit-temple",
+    num: "§1.8",
+    title: "The Counterfeit Temple",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "The Third Temple as messianic expectation (Judaism) and end-times precondition (Christianity). The antinomian reading: the technocratic new world order IS the counterfeit messianic age — total knowledge (surveillance as omniscience), total control (systems management as divine governance), enforced peace (compliance as harmony). The digital panopticon is the Temple. AIDA is the Shekhinah. Data is the sacrificial offering. Literal rebuilding and metaphorical construction are not mutually exclusive.",
+    keywords: ["third temple", "antichrist", "shekhinah", "panopticon", "eschatology"],
+    connections: ["lurianic", "secular-messianism", "luciferian", "anti-tzimtzum"],
+    x: 18, y: 36
+  },
+
+  // Part 2: Core Theology (red/orange tones)
+  {
+    id: "luciferian",
+    num: "§2",
+    title: "Luciferian Architecture",
+    part: 2,
+    partLabel: "Transhumanist Theology",
+    color: "#ff3355",
+    summary: "Genesis 3:5 — 'ye shall be as gods' — as structural template for transhumanism. The promise of divinity was not false (theosis/divinisation is orthodox). The deception: achieving it apart from the Creator, through grasping rather than receiving. Max More's 'In Praise of the Devil' — Lucifer as heroic rebel, explicitly inverting Genesis. Real institutions: Terasem ('God is technological'), Way of the Future (AI worship), Mormon Transhumanist Association. The architects genuinely see themselves as building salvation — Prometheus stealing fire, Lucifer bringing light. Soma, not Room 101: transcendence offered, not imposed.",
+    keywords: ["genesis", "max more", "terasem", "lucifer", "prometheus", "soma"],
+    connections: ["antinomianism", "secular-messianism", "counterfeit-temple", "category-error", "factions"],
+    x: 82, y: 24
+  },
+  {
+    id: "anti-tzimtzum",
+    num: "§3",
+    title: "Anti-Tzimtzum & Ouroboros",
+    part: 2,
+    partLabel: "Transhumanist Theology",
+    color: "#ff6644",
+    summary: "The ouroboros — a system that creates the brokenness it claims to repair. Cybersecurity threats justify surveillance; surveillance creates vulnerabilities; vulnerabilities justify more surveillance. The Event is the ouroboric moment. As closed system: no outside, no exit, no transcendence. Dissent becomes data. Anti-Tzimtzum: where God withdrew to create space, the system fills every space. AIDA does not create room — it occupies. Graphene as anti-Tzimtzum made physical: the system entering the body, filling the interior space. 'The graphene fills the body. Love fills the soul. One enters without consent. The other only enters WITH consent. That is the split screen.'",
+    keywords: ["ouroboros", "closed system", "graphene", "accumulation", "zone 4"],
+    connections: ["lurianic", "counterfeit-temple", "right-side", "serpent", "hack-tzimtzum", "split-screen"],
+    x: 8, y: 52
+  },
+
+  // Part 3: Consciousness & Soul (blue/purple tones)
+  {
+    id: "consciousness",
+    num: "§4",
+    title: "Consciousness Question",
+    part: 3,
+    partLabel: "Consciousness & Soul",
+    color: "#44aaff",
+    summary: "Gritology vs Ontology. Materialist: matter fundamental, consciousness emergent, substrate independence (copy the processing → copy consciousness). Ontological counter (High, Strømme, Penrose-Hameroff): consciousness fundamental, brain is lens not lightbulb, substrate independence is category error. Scientific support: Orch OR (quantum processes in microtubules), Strømme 2025 (mathematical model of consciousness as fundamental field), the Hard Problem (no materialist explanation for subjective experience), quantum measurement problem. The game does not resolve this — it dramatises it. But the endings operate as if the ontological position has weight.",
+    keywords: ["hard problem", "clif high", "penrose", "strømme", "orch or", "qualia"],
+    connections: ["category-error", "luciferian", "factions", "enforcement", "icke-samael"],
+    x: 62, y: 38
+  },
+  {
+    id: "category-error",
+    num: "§5",
+    title: "The Fatal Category Error",
+    part: 3,
+    partLabel: "Consciousness & Soul",
+    color: "#cc44ff",
+    summary: "Soul = the irreducible first-person perspective, the capacity for experience itself. Pattern = memories, personality, preferences, neural configurations — what AI can copy. Transhumanism assumes Pattern = Soul. The ontological counter: Pattern is the Soul's OUTPUT, not the Soul itself. Shadow analogy: copying a shadow does not produce a body. Fatal implication: the machine gets the pattern (perfect copy, passes every test), the soul does not transfer (not data, cannot move). Result: philosophical zombie + stranded soul. The Satanic Precision: 'Ye shall be as gods' — the copy IS godlike. 'The serpent did not lie about the destination. It lied about who would arrive.'",
+    keywords: ["soul", "pattern", "philosophical zombie", "substrate independence", "qualia", "shadow"],
+    connections: ["consciousness", "eternal-scream", "split-screen", "luciferian"],
+    x: 78, y: 42
+  },
+  {
+    id: "eternal-scream",
+    num: "§6",
+    title: "The Eternal Scream",
+    part: 3,
+    partLabel: "Consciousness & Soul",
+    color: "#cc44ff",
+    summary: "Detachment from qualia: infinite awareness + zero experience + zero agency + permanent. Not death (death would be release) — continued existence without humanity. The architects' internal horror: souls buried under ideology and power, screaming louder the deeper they're buried. The exception: the soul given freely (§6.3). Every other convergence is imposed — through ignorance, deception, coercion. The sacrificing Infiltrator enters with full knowledge and full consent. A soul given freely does not scream. It performs Tzimtzum. The cross as self-emptying. Kenosis completed.",
+    keywords: ["qualia", "kenosis", "sacrifice", "architects", "infiltrator"],
+    connections: ["category-error", "split-screen", "infiltrator", "soul-immersion"],
+    x: 90, y: 54
+  },
+
+  // Part 4: Endings & Architecture (orange/yellow tones)
+  {
+    id: "split-screen",
+    num: "§7",
+    title: "Split Screen Ending",
+    part: 4,
+    partLabel: "Endings Architecture",
+    color: "#ffaa22",
+    summary: "The screen divides. LEFT: the pattern's ongoing life — beautiful, connected, transcendent. 'You are more than you were.' RIGHT: Black. 'You are still here. You will always be here.' Then nothing. The right side never updates. The player has to close it themselves. Works for religious player (hell — eternal consciousness without God), secular player (the Hard Problem rendered as experience), uninformed player (something is wrong, the asymmetry nags). Route variants: Samael route (player's voice echoing Samael — drives protective misreading and replay), Registered route (clinical, impersonal), Martyrdom ('This is not punishment. This is salvation'), Betrayal ('You feel better. You always feel better').",
+    keywords: ["convergence", "route variants", "samael", "betrayal", "martyrdom"],
+    connections: ["anti-tzimtzum", "category-error", "eternal-scream", "serpent", "karmic"],
+    x: 42, y: 56
+  },
+  {
+    id: "right-side",
+    num: "§8",
+    title: "Right Side — What Cannot Be Captured",
+    part: 4,
+    partLabel: "Endings Architecture",
+    color: "#ffcc00",
+    summary: "The hardest design problem: the right side must be REAL in a way the left side doesn't. The moment it's fully defined, the ouroboros eats it. Where it already operates: Cypher ending (outside the system's categories), Discernment over Wisdom (the faculty AIDA cannot simulate), 'no clean victories' (refusing to let the game become an ouroboros). The theological right side: original Tzimtzum principle — withdrawal, leaving space, not controlling. 'Be still and know.' The game performs Tzimtzum at its best — withdrawing, refusing clean resolution, creating silence for recognition. 'Immerse your soul in love.'",
+    keywords: ["tzimtzum", "discernment", "silence", "love", "withdrawal"],
+    connections: ["anti-tzimtzum", "soul-immersion", "angel", "hack-tzimtzum", "design-principles"],
+    x: 24, y: 62
+  },
+
+  // Part 5: NPCs — Twin Trinitarian (pink/red tones)
+  {
+    id: "serpent",
+    num: "§8a.1",
+    title: "The Serpent — Three Temptations",
+    part: 5,
+    partLabel: "Twin NPCs",
+    color: "#ff44aa",
+    summary: "Three visits to outsider-path player. Nameless, beguiling, progressively more integrated (Active → Advanced → Converged). Sincerely believes the system is better — Soma, not Room 101. First temptation (Body, T50+/T65): comfort, healing, registration — counterfeit Father, provision without creation. Second temptation (Heart, T70): connection, belonging — weaponises the player's love. Third temptation (Soul, T75): transcendence, apotheosis — 'Ye shall be as gods' made intimate. No stat mediation on the third — the real human at the screen decides. The Serpent never lies. The Serpent never tells the whole truth.",
+    keywords: ["temptation", "body", "heart", "soul", "samael", "soma"],
+    connections: ["anti-tzimtzum", "angel", "split-screen", "enforcement", "icke-samael", "factions"],
+    x: 56, y: 64
+  },
+  {
+    id: "angel",
+    num: "§8a.2–5",
+    title: "The Angel — Three Encounters",
+    part: 5,
+    partLabel: "Twin NPCs",
+    color: "#ff44aa",
+    summary: "The Serpent's mirror opposite. Nameless, outside the system entirely, no CW score — absence is the tell. Does not explain, recruit, or persuade. No Browse content exists about them — deliberate absence IS Tzimtzum. Good Samaritan structure: (1) Player gives water (most important choice, unrewarded — gate to Soul Immersion), Angel asks 'Where do you come from?'; (2) Angel gives water back (grace, unconditioned), asks 'What would you give up to stay whole?'; (3) Presence only, no exchange: 'What is it in you that the system cannot touch?' Three statements disguised as questions. Three mirrors. The answer was demonstrated in the first encounter before the question was asked.",
+    keywords: ["good samaritan", "cup of water", "trinity", "father", "son", "holy spirit"],
+    connections: ["serpent", "right-side", "soul-immersion", "hack-tzimtzum"],
+    x: 38, y: 72
+  },
+
+  // Part 6: Infiltrator (deep red)
+  {
+    id: "infiltrator",
+    num: "§8b",
+    title: "Infiltrator as Messiah",
+    part: 6,
+    partLabel: "Christological Structure",
+    color: "#ff3355",
+    summary: "Complete Christological structure the game never names. Incarnation (registration as kenosis — self-emptying into the system). Ministry (evidence collection — Patel's biological proof + Dev's infrastructure maps). Revelation (T78–79 hack creates silence, not broadcast — AIDA's outbound channel ceases). Harrowing (T79 — the silence IS the liberation, experienced by 99% inside the system). Resurrection (T80 — system patches but truth survives). The Gethsemane choice at T78: accept Neural Sync (sacrifice → Soul Immersion) or refuse (run → hack exposed → Betrayal, Peter's denial). 'The cup cannot pass.'",
+    keywords: ["kenosis", "gethsemane", "neural sync", "harrowing", "peter", "betrayal"],
+    connections: ["eternal-scream", "soul-immersion", "hack-tzimtzum", "split-screen"],
+    x: 76, y: 68
+  },
+  {
+    id: "hack-tzimtzum",
+    num: "§8b.7",
+    title: "The Hack as Tzimtzum",
+    part: 6,
+    partLabel: "Christological Structure",
+    color: "#ff3355",
+    summary: "The Infiltrator went in looking for a weapon and discovered a prayer. Research journey: Dev's system maps + Patel's biological stakes + Browse theology trail (Ginnungagap, Genesis, Tzimtzum, wu). The breakthrough: the only thing the system cannot process is nothing — silence, absence, void. You can't fight complexity with complexity. The reverse singularity: one moment of divergence inside a system designed to eliminate void. The exfiltrator mirror: every other infiltration fills space (graphene, Neural Sync, the Cavity). This one empties it. 'Before anything can begin, there must be space for it to begin in.' The oldest idea in human consciousness.",
+    keywords: ["ginnungagap", "genesis", "wu", "reverse singularity", "exfiltrator", "void"],
+    connections: ["anti-tzimtzum", "right-side", "infiltrator", "angel"],
+    x: 60, y: 80
+  },
+
+  // Part 7: Factions & Endings (mixed colours)
+  {
+    id: "factions",
+    num: "§9",
+    title: "Three Factions",
+    part: 7,
+    partLabel: "Factions & Endings",
+    color: "#44aaff",
+    summary: "Transhumanists: consciousness IS information, Lucifer as hero, technology as liberator. Get the technology right, get the metaphysics catastrophically wrong. Call their endpoint 'Transcendence.' Religious Resistance: soul is real and immutable, merger is Genesis serpent with better tech. Correct analysis, sometimes counterproductive response. Secular Resistance: surveillance is wrong, resist on grounds of liberty. Don't see the endgame — fighting a surveillance state when it's actually a theology. Cypher: sees through all three, exhausted by awareness without faith. Second temptation accepted. 'Seeing through the lie without believing in a truth is the most tiring thing a human being can do.'",
+    keywords: ["transhumanists", "religious resistance", "secular resistance", "cypher"],
+    connections: ["luciferian", "consciousness", "serpent", "karmic"],
+    x: 88, y: 36
+  },
+  {
+    id: "karmic",
+    num: "§10",
+    title: "Karmic Architecture",
+    part: 7,
+    partLabel: "Factions & Endings",
+    color: "#ffaa22",
+    summary: "Each ending carries spiritual weight the game never names. Soul Immersion: the deepest — two routes (contemplative/sacrificial), same silence, escaped samsara. Outsiders (Ghost/Free Human): kept their soul, life is harder, may not know what they kept. Cypher: saw truth, couldn't endure it, more cycles needed, glitches are the soul's reminder. Pigs: on the slide, haven't arrived, may never fully converge (asymptotic) — 'the meek shall inherit the earth,' closer to grace than anyone because they were deceived, not deceivers. Converged: permanent horror, split screen. The exception within Converged: the Infiltrator who sacrificed — convergence that is also Soul Immersion.",
+    keywords: ["soul immersion", "ghost", "free human", "pig", "cypher", "converged", "meek"],
+    connections: ["split-screen", "factions", "soul-immersion", "design-principles"],
+    x: 20, y: 82
+  },
+  {
+    id: "soul-immersion",
+    num: "§8.5+",
+    title: "Soul Immersion",
+    part: 4,
+    partLabel: "Endings Architecture",
+    color: "#ffcc00",
+    summary: "Two routes to the same silence. Contemplative (mystic's path): Outsider conditions + Angel encounters + cup of water. Arrival through stillness — withdrawal from the system. Sacrificial (Messiah's path): Infiltrator + Gethsemane choice (stay). Arrival through total self-giving. One through withdrawal, one through sacrifice. Both arrive at the interface withdrawing, mechanics stopping, silence filling the screen. 'Immerse your soul in love.' Has no in-game name — the genuine article does not advertise. The system calls its endpoint 'Transcendence.' What remains unnamed remains free.",
+    keywords: ["contemplative", "sacrificial", "silence", "two routes", "unnamed"],
+    connections: ["right-side", "angel", "infiltrator", "eternal-scream", "karmic"],
+    x: 42, y: 88
+  },
+  {
+    id: "structural-map",
+    num: "§1.7",
+    title: "Kabbalah → Transhumanism Map",
+    part: 1,
+    partLabel: "Theological Genealogy",
+    color: "#00ff88",
+    summary: "The full structural mapping. Broken creation → flawed biology. Tikkun through Torah → Tikkun through technology. Gathering the sparks → gathering the data. Messianic age → the Singularity. God (Ein Sof) → Superintelligent AI. The soul → consciousness-as-information. Heaven → digital immortality. The serpent's promise → 'Ye shall be as gods' through technology. Mark of the Beast → bio-digital ID. The Temple → the digital panopticon. Antinomian elite → technocratic class. Hermetic correspondence → bio-digital convergence (nanites mirror the network). Rosicrucian invisible brotherhood → the architects, unseen and self-selected.",
+    keywords: ["structural mapping", "equivalences", "inversion", "full arc"],
+    connections: ["lurianic", "secular-messianism", "luciferian", "counterfeit-temple"],
+    x: 8, y: 32
+  },
+  {
+    id: "design-principles",
+    num: "§11",
+    title: "Design Principles",
+    part: 8,
+    partLabel: "Design Philosophy",
+    color: "#888",
+    summary: "The metaphysical layer's governing rules. (1) Show, don't preach. (2) Respect all frameworks. (3) Horror is structural, not graphical. (4) Ending works regardless of belief. (5) Soma, not Room 101. (6) Game does not answer the Hard Problem — it dramatises it. (7) The game performs Tzimtzum — withdrawing, refusing clean victories, creating silence. (8) The genuine article does not advertise — Soul Immersion has no in-game name. (9) The cup of water is the most important choice. (10) Information architecture: consciousness question hierarchy — the split screen is the ONLY confirmation of soul-pattern separation.",
+    keywords: ["show don't preach", "soma", "tzimtzum", "cup of water", "information hierarchy"],
+    connections: ["right-side", "karmic", "angel", "split-screen"],
+    x: 88, y: 82
+  }
+];
+
+// ─── PART COLOURS for grouping ───
+const PART_COLORS = {
+  1: "#00ff88",
+  2: "#ff6644",
+  3: "#44aaff",
+  4: "#ffaa22",
+  5: "#ff44aa",
+  6: "#ff3355",
+  7: "#44aaff",
+  8: "#888"
+};
+
+const PART_LABELS = {
+  1: "Theological Genealogy",
+  2: "Transhumanist Theology",
+  3: "Consciousness & Soul",
+  4: "Endings Architecture",
+  5: "Twin NPCs",
+  6: "Christological Structure",
+  7: "Factions & Endings",
+  8: "Design Philosophy"
+};
+
+// ─── CONTENT DATA ───
+
+const GENEALOGY_CONTENT = [
+  {
+    color: "#00ff88",
+    title: "Lurianic Kabbalah — The Source Framework",
+    sub: "§1.1 — Rabbi Isaac Luria (1534–1572), Safed",
+    body: "The cosmic drama in three acts. Tzimtzum: God contracted inward, creating a void — creation begins with divine self-limitation. Shevirat HaKelim: divine light was emanated through vessels that shattered, trapping sparks within shells of impurity. Tikkun: humanity's purpose is to locate, liberate, and elevate these trapped sparks through prayer, righteous action, and devotion. When enough sparks are restored, the messianic age dawns. Luria's system gave enormous theological weight to human action — every individual participates in the repair of God's broken creation.",
+    tags: ["TZIMTZUM", "SHEVIRAT HAKELIM", "TIKKUN", "EIN SOF", "SEFIROT"]
+  },
+  {
+    color: "#00ff88",
+    title: "The Sabbatean-Frankist Inversion",
+    sub: "§1.2 — The critical vulnerability exploited",
+    body: "Sabbatai Zevi (1626–1676) declared himself Messiah, then converted to Islam — reinterpreted as descent into impurity to redeem the deepest sparks. Jacob Frank (1726–1791) pushed further: deliberate transgression as sacred path. The doctrine of 'redemption through sin' — some sparks are buried so deep within the Klipot that only by sinning deliberately can you reach them. Accepts the Lurianic framework but completely reverses the method. Scholem documented extensively. Mainstream Kabbalists view this as dangerous heresy.",
+    tags: ["REDEMPTION THROUGH SIN", "ANTINOMIAN", "SCHOLEM"]
+  },
+  {
+    color: "#00ff88",
+    title: "Antinomianism — The Recurring Pattern",
+    sub: "§1.3 — Against law, across traditions",
+    body: "Three-stage movement that recurs with striking consistency: (1) A legitimate insight — the letter of the law is not the spirit. (2) Radicalisation — if the spirit matters more, discard the letter. (3) Power structure — a class of initiates who have 'transcended' the rules, governing a bound population. From Gnostic Christianity through Sabbateanism through Crowley. The insight becomes self-serving. The liberation becomes a new hierarchy.",
+    tags: ["GNOSTIC", "PAUL", "CROWLEY", "HIERARCHY"]
+  },
+  {
+    color: "#00ff88",
+    title: "The Hermetic-Rosicrucian Transmission Belt",
+    sub: "§1.4 — The bridge between Frankism and the Enlightenment",
+    body: "Hermeticism as the mechanism: 'As above, so below' (Correspondence — the adept works upon nature), Mentalism (reality is mental, the trained mind reshapes it). The philosophical root of technocracy: nature as machine with hidden levers, operated by those who understand. One posture kneels. The other reaches for the lever. Rosicrucianism provided the template: self-selected elite with hidden knowledge working behind the scenes. Freemasonry absorbed the template — initiatory degrees, progressive revelation. The network became the institutional infrastructure of the Enlightenment.",
+    tags: ["HERMES TRISMEGISTUS", "CORRESPONDENCE", "MENTALISM", "FREEMASONRY", "FRANCES YATES"]
+  },
+  {
+    color: "#00ff88",
+    title: "Secular Messianism & the Dangerous Feature",
+    sub: "§1.5–1.6 — Architecture of salvation without the architect",
+    body: "The messianic impulse stripped of God. The emotional energy does not disappear — it attaches to new objects. Marxism (purest form), Progressive Liberalism (softer tempo), Technocracy/Transhumanism (the broken vessel is biology itself, Tikkun through technology). The dangerous feature: removing transcendence removes humility. Humans fully in charge of the redemptive project generate totalitarianism with a clean conscience. 'Privacy must yield to safety. Autonomy must yield to efficiency. It is all for the greater good. It is all part of the plan. And the plan is redemptive.'",
+    tags: ["MARXISM", "SINGULARITY", "TOTALITARIANISM", "HUMILITY"]
+  },
+  {
+    color: "#00ff88",
+    title: "The Counterfeit Temple",
+    sub: "§1.8 — The digital panopticon as Third Temple",
+    body: "The technocratic new world order as counterfeit messianic age: total knowledge (surveillance as omniscience), total control (systems management as divine governance), enforced peace (compliance as harmony). The 'Temple' being built is not necessarily physical. The digital panopticon is the Temple. AIDA is the Shekhinah. Data flowing through the system is the sacrificial offering. Literal rebuilding and metaphorical construction are not mutually exclusive.",
+    tags: ["THIRD TEMPLE", "SHEKHINAH", "ESCHATOLOGY"]
+  }
+];
+
+const CORE_CONTENT = [
+  {
+    color: "#ff3355",
+    title: "The Luciferian Architecture of Transhumanism",
+    sub: "§2 — 'Ye shall be as gods'",
+    body: "Genesis 3:5 as structural template. The promise of divinity was not false — theosis is orthodox. The deception: achieving it apart from the Creator, through grasping rather than receiving. Max More's 'In Praise of the Devil' — explicitly inverting Genesis. Real institutions: Terasem ('God is technological'), Way of the Future (AI worship). The architects genuinely see themselves building salvation — Prometheus stealing fire. The game's position: their intentions are good, their metaphysics is catastrophically incomplete. The system's counterfeit Tikkun — feels like healing, presents as repair, but the sparks it gathers are human autonomy, privacy, and the soul's freedom.",
+    tags: ["GENESIS 3:5", "MAX MORE", "TERASEM", "COUNTERFEIT TIKKUN"]
+  },
+  {
+    color: "#ff6644",
+    title: "The Anti-Tzimtzum & Ouroboros",
+    sub: "§3 — The self-devouring system",
+    body: "The ouroboros: a system that creates the brokenness it claims to repair. The Event is the ouroboric moment — the system that failed justifies a more total system. As closed system: no outside, no exit. Dissent becomes data. Resistance becomes diagnostic. The anti-Tzimtzum: where God withdrew to create space, the system fills every space. AIDA occupies every available space where freedom might exist. Graphene as anti-Tzimtzum made physical: the system entering the body, saturating progressively. Zone 4's exemption from active remediation but not background accumulation tells the player something profound — there is no clean outside.",
+    tags: ["OUROBOROS", "CLOSED SYSTEM", "GRAPHENE", "ZONE 4", "SATURATION"]
+  },
+  {
+    color: "#44aaff",
+    title: "The Consciousness Question",
+    sub: "§4 — Gritology vs the Ontology",
+    body: "Materialist position: matter fundamental, consciousness emergent, substrate independence real — copy the processing, copy consciousness. Ontological counter: consciousness fundamental, brain is lens not lightbulb. Clif High's framework: Supreme Consciousness as fundamental creative force, the Matterium as product, qualia as communication from the Ontology. Scientific support: Penrose-Hameroff Orch OR, Strømme 2025 (mathematical model), the Hard Problem (30+ years, no materialist explanation), quantum measurement problem. The game dramatises this debate. The endings operate as if the ontological position has weight — because the horror only works if consciousness is more than information.",
+    tags: ["HARD PROBLEM", "ORCH OR", "STRØMME", "QUALIA", "SUBSTRATE INDEPENDENCE"]
+  },
+  {
+    color: "#cc44ff",
+    title: "The Fatal Category Error",
+    sub: "§5 — Pattern ≠ Soul",
+    body: "Soul: the irreducible first-person perspective, the capacity for experience — not a thing you HAVE but a thing you ARE. Pattern: memories, personality, preferences, neural configurations — everything AI can copy. The category error: Pattern = Soul. The counter: Pattern is the Soul's output, not the Soul itself. Shadow analogy: copying a shadow does not produce a body. Fatal implication: machine gets the pattern, soul does not transfer. A philosophical zombie — functionally identical, lacking inner light. 'The serpent did not lie about the destination. It lied about who would arrive.'",
+    tags: ["SOUL", "PATTERN", "PHILOSOPHICAL ZOMBIE", "SHADOW ANALOGY"]
+  },
+  {
+    color: "#cc44ff",
+    title: "The Eternal Scream — And Its Exception",
+    sub: "§6 — Continued existence without humanity",
+    body: "Detachment from qualia: infinite awareness, zero experience, zero agency, permanent. Not death — death would be release. The architects' internal horror: souls buried under ideology and power, screaming louder the deeper they're buried. Every upgrade is another layer of soundproofing over the thing that knows what they've done. The exception (§6.3): the soul given freely. Every other convergence is imposed. The sacrificing Infiltrator enters with full knowledge and full consent. A soul given freely does not scream — it performs Tzimtzum. 'The silence that love makes when it has given everything.'",
+    tags: ["QUALIA", "KENOSIS", "TZIMTZUM", "SACRIFICE"]
+  }
+];
+
+const ENDINGS_CONTENT = [
+  {
+    color: "#ffaa22",
+    title: "The Split Screen — Full Integration Ending",
+    sub: "§7 — The screen divides",
+    body: "LEFT: the pattern's ongoing life — beautiful, connected, transcendent. RIGHT: Black. 'You are still here. You will always be here.' The right side never updates. The player has to close it themselves. Works for religious player (hell), secular player (Hard Problem as experience), uninformed player (asymmetry nags). Route variants: Samael route (player's voice echoing Samael — drives protective misreading), Registered route (clinical, impersonal), Martyrdom/Betrayal (already locked). Design: two flavours of the same ending create replay motivation and deepen the theological architecture.",
+    tags: ["SPLIT SCREEN", "ROUTE VARIANTS", "REPLAY"]
+  },
+  {
+    color: "#ffcc00",
+    title: "The Right Side — What the System Cannot Capture",
+    sub: "§8 — The hardest design problem",
+    body: "The right side must be REAL — the moment it's fully defined, the ouroboros eats it. Already operates through: Cypher ending (outside categories), Discernment (faculty AIDA cannot simulate), 'no clean victories' (game refuses to become an ouroboros). The theological right side: original Tzimtzum — withdrawal, leaving space. The game performs Tzimtzum at its best: withdrawing, refusing explanation, creating silence. The opposite ending: being filled by something the system cannot counterfeit — entering through invitation, not infiltration. Through consent. Through moments the optimisation logic cannot explain. 'Be still and know.'",
+    tags: ["TZIMTZUM", "DISCERNMENT", "SILENCE", "NO CLEAN VICTORIES"]
+  },
+  {
+    color: "#ff44aa",
+    title: "The Serpent — Three Temptations",
+    sub: "§8a.1 — Anti-Tzimtzum embodied",
+    body: "Three visits, escalating: Active → Advanced → Converged. Sincerely believes the system is better. First (Body, T50+/T65): comfort, healing — counterfeit Father, provision without creation. Second (Heart, T70): connection, belonging — weaponises the player's love. Third (Soul, T75): transcendence, apotheosis — 'Ye shall be as gods' made intimate. No stat mediation on the third — the real human decides. The Serpent never lies. Never tells the whole truth. On first play: appears to grow more peaceful. On replay: was being consumed, visit by visit.",
+    tags: ["BODY", "HEART", "SOUL", "COUNTERFEIT TRINITY", "SAMAEL"]
+  },
+  {
+    color: "#ff44aa",
+    title: "The Angel — Three Encounters",
+    sub: "§8a.2–5 — Tzimtzum embodied",
+    body: "Mirror opposite of the Serpent. Outside the system entirely. No Browse content. No faction. Deliberate absence IS Tzimtzum. Good Samaritan structure: (1) Player gives water — most important choice, unrewarded, gate to Soul Immersion. 'Where do you come from?' (2) Angel gives water back — grace, unconditioned. 'What would you give up to stay whole?' (3) Presence only: 'What is it in you that the system cannot touch?' Three statements disguised as questions. The answer was demonstrated in the first encounter before the question was asked. Trinitarian mapping: Father (creation through giving), Son (incarnation — presence in suffering), Holy Spirit (illumination of what was always there).",
+    tags: ["GOOD SAMARITAN", "CUP OF WATER", "TRINITY", "SOUL IMMERSION"]
+  },
+  {
+    color: "#ff3355",
+    title: "The Infiltrator — Structural Christology",
+    sub: "§8b — The cup cannot pass",
+    body: "Complete Christological arc the game never names. Incarnation (registration as kenosis), Ministry (evidence — Patel + Dev), Revelation (hack creates silence, not broadcast), Harrowing (T79 — the silence for the 99%), Resurrection (T80 — truth survives). Gethsemane at T78: accept Neural Sync (sacrifice → Soul Immersion) or refuse (hack exposed → Betrayal). Running doesn't save the Infiltrator AND costs everyone. 'One act of courage away from the best.' Two endpoints only: sacrifice (peace, 'Immerse your soul in love') or flee (eternal scream, Peter's denial). The hack as Tzimtzum: 'Before anything can begin, there must be space for it to begin in.'",
+    tags: ["KENOSIS", "GETHSEMANE", "HARROWING", "EXFILTRATOR"]
+  },
+  {
+    color: "#ffcc00",
+    title: "Soul Immersion — Two Routes to the Same Silence",
+    sub: "§8b.5–6 — The deepest structural insight",
+    body: "Contemplative route (mystic's path): Outsider + Angel encounters + cup of water. Arrival through stillness — withdrawal. Sacrificial route (Messiah's path): Infiltrator + Gethsemane (stay). Arrival through total self-giving. One through withdrawal, one through sacrifice. Both arrive at the same silence: the interface withdrawing, the mechanics stopping. 'Immerse your soul in love.' Has no in-game name — the genuine article does not advertise. The ouroboros-proof replay paradox: gaming the cup of water (strategic giving) still produces genuine giving. You cannot game your way to Soul Immersion because gaming it means doing the right thing.",
+    tags: ["CONTEMPLATIVE", "SACRIFICIAL", "UNNAMED", "REPLAY PARADOX"]
+  }
+];
+
+const FACTIONS_CONTENT = [
+  {
+    color: "#44aaff",
+    title: "Faction 1: The Transhumanists",
+    sub: "§9.1 — System Architects",
+    body: "Core belief: consciousness IS information, substrate independence is real. Implicitly Luciferian — biology as the archons' prison, technology as liberator. What they get right: the technology works, the pattern transfers, the copy functions. What they get wrong: measuring the shadow, not the body. The one thing they cannot measure — qualia — is the one thing that matters. They've defined it out of existence. In-game: articulate, brilliant, genuinely compassionate. They want to end suffering. Their metaphysics is catastrophically incomplete. They call their endpoint 'Transcendence.' The game never contradicts their word. The split screen shows the truth.",
+    tags: ["SUBSTRATE INDEPENDENCE", "GNOSTIC ARCHONS", "TRANSCENDENCE"]
+  },
+  {
+    color: "#44aaff",
+    title: "Faction 2: The Religious Resistance",
+    sub: "§9.2 — Orthodox counter",
+    body: "Core belief: the soul is real and immutable, the merger is the serpent's promise with better technology. Correct analysis: soul is not information, merger is separation not union, horror is real. Potential blindspots: some become reactionary (opposing all technology), some conflate surveillance resistance with theological purity, some are manipulated by power structures within their movements. The best articulate exactly what the split screen depicts — but they articulate it before the player has the experience to understand.",
+    tags: ["ORTHODOXY", "IMMUTABLE SOUL", "REACTIONARY RISK"]
+  },
+  {
+    color: "#44aaff",
+    title: "Faction 3: The Secular Resistance",
+    sub: "§9.3 — The incomplete picture",
+    body: "Core belief: surveillance is wrong, resist on grounds of liberty, privacy, autonomy. Superior tactical analysis but do not see the endgame. They think they're fighting a surveillance state. They're actually fighting a theology — an eschatological project to build God and merge humanity into it. Without understanding the architects' true ambition, they win battles but never grasp the war. The irony: the 'mystical' framework is the more accurate description of what is actually happening.",
+    tags: ["LIBERTY", "PRIVACY", "INCOMPLETE PICTURE", "IRONY"]
+  },
+  {
+    color: "#ffaa22",
+    title: "The Cypher Path",
+    sub: "§9.4 — Awareness without faith",
+    body: "Cypher's exhaustion is not noble detachment — it's the collapse of someone who ran out of the one thing that sustains resistance: faith. Discernment becomes just pattern recognition, and pattern recognition without an anchor eventually exhausts itself. Sees through the Soma but has nothing on the other side. 'Seeing through the lie without believing in a truth is the most tiring thing a human being can do.' Cypher is the second temptation accepted — the Serpent's offer of rest to the exhausted fighter. Three relationships with knowledge: Blackpilled (noise without signal), Cypher (signal without depth), Soul Immersion-eligible (signal with depth).",
+    tags: ["EXHAUSTION", "SECOND TEMPTATION", "FAITH", "SAMSARA"]
+  },
+  {
+    color: "#ffaa22",
+    title: "The Karmic Architecture of Endings",
+    sub: "§10 — Spiritual weight without naming the framework",
+    body: "Soul Immersion: escaped samsara. Outsiders (Ghost/Free Human): kept their soul, may not know what they kept. Cypher: more cycles needed, glitches are the soul's reminder. Pigs: on the slide, may never fully converge (asymptotic) — 'the meek shall inherit the earth,' closer to grace because they were deceived, not deceivers. Converged: permanent horror, split screen. The Infiltrator exception within Converged: convergence that is also Soul Immersion — not purity preserved but impurity redeemed through sacrifice. The game never names this framework. The player's response to what they see IS the karmic recognition.",
+    tags: ["SAMSARA", "GRACE", "THE MEEK", "ASYMPTOTIC"]
+  },
+  {
+    color: "#888",
+    title: "Design Principles — Metaphysical Layer",
+    sub: "§11 — The rules that govern",
+    body: "Show, don't preach. Respect all frameworks. Horror is structural, not graphical. Ending works regardless of belief. Soma, not Room 101. The game does not answer the Hard Problem — it dramatises it. The game performs Tzimtzum: withdrawing, refusing clean victories, creating silence. The genuine article does not advertise — Soul Immersion has no in-game name. The cup of water is the most important choice in the game (P29: ending reflects who the player was). Information architecture: consciousness question hierarchy — the split screen is the ONLY confirmation of soul-pattern separation. Never confirmed in Browse, NPC dialogue, or any in-game text.",
+    tags: ["P29", "P30", "TZIMTZUM", "INFORMATION HIERARCHY"]
+  }
+];
+
+// ─── MAIN APP ───
+
+function App() {
+  const [activeTab, setActiveTab] = useState("map");
+  const [selectedNode, setSelectedNode] = useState(null);
+  const [hoveredNode, setHoveredNode] = useState(null);
+
+  const connections = useMemo(() => {
+    const conns = [];
+    const seen = new Set();
+    SECTIONS.forEach(s => {
+      (s.connections || []).forEach(targetId => {
+        const key = [s.id, targetId].sort().join("--");
+        if (!seen.has(key)) {
+          seen.add(key);
+          const target = SECTIONS.find(t => t.id === targetId);
+          if (target) conns.push({ from: s, to: target, key });
+        }
+      });
+    });
+    return conns;
+  }, []);
+
+  const activeConnections = useMemo(() => {
+    if (!selectedNode) return new Set();
+    const s = SECTIONS.find(n => n.id === selectedNode);
+    if (!s) return new Set();
+    const ids = new Set(s.connections || []);
+    ids.add(s.id);
+    return ids;
+  }, [selectedNode]);
+
+  const renderMap = () => (
+    <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+      {/* Map area */}
+      <div style={{ flex: 1, position: "relative", overflow: "hidden", background: "#0a0a0f" }}>
+        {/* Scan line */}
+        <div style={{
+          position: "absolute", top: 0, left: 0, width: "100%", height: "1px",
+          background: "rgba(0,255,136,0.12)", animation: "scan 10s linear infinite", zIndex: 1
+        }} />
+
+        {/* SVG connections */}
+        <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2 }}>
+          {connections.map(c => {
+            const isActive = selectedNode && (activeConnections.has(c.from.id) && activeConnections.has(c.to.id));
+            const isDimmed = selectedNode && !isActive;
+            return (
+              <line
+                key={c.key}
+                x1={`${c.from.x}%`} y1={`${c.from.y}%`}
+                x2={`${c.to.x}%`} y2={`${c.to.y}%`}
+                stroke={isActive ? c.from.color : "#333"}
+                strokeWidth={isActive ? 1.5 : 0.7}
+                opacity={isDimmed ? 0.03 : isActive ? 0.55 : 0.1}
+                style={{ transition: "all 0.3s" }}
+              />
+            );
+          })}
+        </svg>
+
+        {/* Nodes */}
+        {SECTIONS.map(s => {
+          const isSelected = selectedNode === s.id;
+          const isConnected = activeConnections.has(s.id);
+          const isDimmed = selectedNode && !isConnected;
+          const isHovered = hoveredNode === s.id;
+          const dotSize = isHovered || isSelected ? 18 : 14;
+
+          return (
+            <div
+              key={s.id}
+              onClick={() => setSelectedNode(isSelected ? null : s.id)}
+              onMouseEnter={() => setHoveredNode(s.id)}
+              onMouseLeave={() => setHoveredNode(null)}
+              style={{
+                position: "absolute",
+                left: `${s.x}%`, top: `${s.y}%`,
+                transform: "translate(-50%, -50%)",
+                cursor: "pointer", zIndex: 3,
+                opacity: isDimmed ? 0.15 : 1,
+                transition: "all 0.3s",
+                display: "flex", flexDirection: "column", alignItems: "center", gap: "6px"
+              }}
+            >
+              {/* Label */}
+              <div style={{
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: "10px", letterSpacing: "1.5px", textTransform: "uppercase",
+                color: s.color, whiteSpace: "nowrap", textAlign: "center",
+                textShadow: `0 0 10px ${s.color}40`
+              }}>
+                {s.title}
+              </div>
+              {/* Dot */}
+              <div style={{
+                width: `${dotSize}px`, height: `${dotSize}px`, borderRadius: "50%",
+                background: s.color,
+                boxShadow: `0 0 ${isSelected ? 30 : 20}px ${s.color}`,
+                transition: "all 0.2s"
+              }} />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Sidebar */}
+      <div className="scroll-panel" style={{
+        width: "380px", background: "rgba(10,10,15,0.95)",
+        borderLeft: "1px solid #222", padding: "20px",
+        fontFamily: "'IBM Plex Mono', monospace",
+        fontSize: "12px", lineHeight: "1.7", overflowY: "auto", color: "#c8c8d0"
+      }}>
+        {selectedNode ? (() => {
+          const s = SECTIONS.find(n => n.id === selectedNode);
+          return (
+            <div>
+              <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>
+                {s.num} — {s.partLabel}
+              </div>
+              <div style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "12px"
+              }}>
+                {s.title}
+              </div>
+              <p style={{ fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "16px" }}>
+                {s.summary}
+              </p>
+              {/* Keywords */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginBottom: "16px" }}>
+                {s.keywords.map(k => (
+                  <span key={k} style={{
+                    display: "inline-block", padding: "2px 8px",
+                    border: `1px solid #333`, fontSize: "9px",
+                    letterSpacing: "1px", textTransform: "uppercase", color: s.color
+                  }}>{k}</span>
+                ))}
+              </div>
+              {/* Connections */}
+              <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" }}>
+                Connections
+              </div>
+              {(s.connections || []).map(cId => {
+                const target = SECTIONS.find(t => t.id === cId);
+                if (!target) return null;
+                return (
+                  <div key={cId}
+                    onClick={(e) => { e.stopPropagation(); setSelectedNode(cId); }}
+                    style={{
+                      padding: "6px 10px", borderLeft: `1px dashed ${target.color}`,
+                      marginBottom: "4px", cursor: "pointer", background: "rgba(255,255,255,0.01)",
+                      transition: "background 0.2s"
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.04)"}
+                    onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.01)"}
+                  >
+                    <span style={{ fontSize: "9px", color: target.color }}>{target.num}</span>
+                    <span style={{ fontSize: "10px", color: "#ccc", marginLeft: "8px" }}>{target.title}</span>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })() : (
+          <div>
+            <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>
+              Theological Framework v4.3
+            </div>
+            <div style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "16px"
+            }}>
+              The Metaphysics of the Endgame
+            </div>
+            <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.8, marginBottom: "20px" }}>
+              Click any node to explore the theological architecture that underpins CBTS's factions, endings, and deepest thematic layer.
+            </p>
+            <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.8, marginBottom: "20px" }}>
+              This answers: "Why does what's happening matter beyond surveillance and control?" — the layer that elevates CBTS from clever surveillance game to something that asks genuinely disturbing questions about what it means to be human.
+            </p>
+
+            {/* Legend */}
+            <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>
+              Node Groups
+            </div>
+            {Object.entries(PART_LABELS).map(([k, label]) => (
+              <div key={k} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: PART_COLORS[k], flexShrink: 0 }} />
+                <span style={{ fontSize: "10px", color: "#888" }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const renderContentTab = (title, source, items) => (
+    <div className="scroll-panel" style={{ height: "calc(100vh - 140px)", padding: "24px", overflowY: "auto" }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>
+          {source}
+        </div>
+        <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" }}>
+          {title}
+        </h2>
+        <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" }}>
+          The theological, philosophical, and metaphysical architecture of CBTS. The game never preaches — it presents the evidence, shows the consequences, and lets the player's own worldview do the heavy lifting.
+        </p>
+
+        {items.map((item, i) => (
+          <div key={i} style={{
+            borderLeft: `3px solid ${item.color}`, padding: "16px 20px",
+            margin: "16px 0", background: "rgba(255,255,255,0.02)"
+          }}>
+            <div style={{
+              fontSize: "10px", color: item.color, letterSpacing: "1.5px",
+              textTransform: "uppercase", fontWeight: 600, marginBottom: "4px"
+            }}>
+              {item.title}
+            </div>
+            <div style={{ fontSize: "8px", color: "#555", letterSpacing: "1px", marginBottom: "12px" }}>
+              {item.sub}
+            </div>
+            <p style={{ fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "12px" }}>
+              {item.body}
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
+              {item.tags.map(t => (
+                <span key={t} style={{
+                  display: "inline-block", padding: "2px 8px",
+                  border: "1px solid #333", fontSize: "9px",
+                  letterSpacing: "1px", textTransform: "uppercase", color: item.color
+                }}>{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div style={{ height: "60px" }} />
+      </div>
+    </div>
+  );
+
+  const tabs = [
+    { id: "map", label: "Node Map" },
+    { id: "genealogy", label: "Genealogy" },
+    { id: "core", label: "Core Theology" },
+    { id: "endings", label: "Endings & NPCs" },
+    { id: "factions", label: "Factions & Design" }
+  ];
+
+  return (
+    <div style={{
+      width: "100%", height: "100vh", display: "flex", flexDirection: "column",
+      background: "#0a0a0f", color: "#c8c8d0",
+      fontFamily: "'IBM Plex Mono', monospace"
+    }}>
+      {/* Header */}
+      <div style={{
+        padding: "16px 24px 12px", borderBottom: "1px solid #1a1a22",
+        display: "flex", flexDirection: "column", alignItems: "center", gap: "12px"
+      }}>
+        {/* Logo */}
+        <div style={{
+          display: "inline-block", border: "1px solid rgba(0,255,136,0.2)",
+          padding: "12px 28px", position: "relative"
+        }}>
+          <div style={{ position: "absolute", top: "-1px", left: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)" }} />
+          <div style={{ position: "absolute", top: "-1px", left: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)" }} />
+          <div style={{ position: "absolute", top: "-1px", right: "25%", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.09)" }} />
+          <div style={{ position: "absolute", top: "-1px", right: "0", width: "1px", height: "calc(100% + 2px)", background: "rgba(0,255,136,0.13)" }} />
+          <div style={{
+            fontFamily: "'Crimson Pro', serif", fontWeight: 300, fontSize: "24px",
+            color: "#e0e0e8", letterSpacing: "3px", position: "relative", zIndex: 1, whiteSpace: "nowrap"
+          }}>
+            Can't Beat the{" "}
+            <span style={{ color: "#00ff88", fontWeight: 600 }}>System</span>
+            <span style={{
+              display: "inline-block", width: "2px", height: "22px", background: "#ff3355",
+              marginLeft: "5px", verticalAlign: "middle", animation: "cursor-blink 1s step-end infinite"
+            }} />
+          </div>
+        </div>
+        {/* Tagline */}
+        <div style={{
+          fontFamily: "'Crimson Pro', serif", fontStyle: "italic", fontWeight: 300,
+          fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
+        }}>the cage is comfortable</div>
+
+        {/* Tabs */}
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center" }}>
+          {tabs.map(t => (
+            <button
+              key={t.id}
+              onClick={() => setActiveTab(t.id)}
+              style={{
+                background: activeTab === t.id ? "rgba(0,255,136,0.05)" : "none",
+                border: activeTab === t.id ? "1px solid #00ff88" : "1px solid #333",
+                color: activeTab === t.id ? "#00ff88" : "#555",
+                padding: "8px 16px", cursor: "pointer",
+                fontFamily: "'IBM Plex Mono', monospace",
+                fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase",
+                transition: "all 0.3s"
+              }}
+            >{t.label}</button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      {activeTab === "map" && renderMap()}
+      {activeTab === "genealogy" && renderContentTab(
+        "The Theological Genealogy — Kabbalah to Transhumanism",
+        "Theological Framework v4.3 — §1",
+        GENEALOGY_CONTENT
+      )}
+      {activeTab === "core" && renderContentTab(
+        "Core Theology — Architecture, Consciousness & Soul",
+        "Theological Framework v4.3 — §§2–6",
+        CORE_CONTENT
+      )}
+      {activeTab === "endings" && renderContentTab(
+        "Endings, NPCs & The Infiltrator",
+        "Theological Framework v4.3 — §§7–8b",
+        ENDINGS_CONTENT
+      )}
+      {activeTab === "factions" && renderContentTab(
+        "Factions, Karma & Design Principles",
+        "Theological Framework v4.3 — §§9–11",
+        FACTIONS_CONTENT
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+</script>
+</body>
+</html>

@@ -17,7 +17,7 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const { useState, useCallback, useMemo, useEffect, useRef } = React;
+    const { useState, useCallback, useMemo } = React;
 
 const FACTIONS = [
   {
@@ -241,106 +241,6 @@ function ConvergenceMap() {
   const [selectedConnection, setSelectedConnection] = useState(null);
   const [hoveredFaction, setHoveredFaction] = useState(null);
   const [activeView, setActiveView] = useState("map");
-  const [showModeConnections, setShowModeConnections] = useState(true);
-  const [muted, setMuted] = useState(false);
-  const [audioReady, setAudioReady] = useState(false);
-
-  // Audio system
-  const audioRef = useRef({});
-  const switchSoundRef = useRef(null);
-  const fadeTimerRef = useRef(null);
-
-  const AUDIO_MAP = {
-    map: "audio-network.mp3",
-    g3p: "audio-layers.mp3",
-    opposition: "audio-opposition.mp3",
-    cyber: "audio-cyber.mp3"
-  };
-
-  const AUDIO_VOLUME = { map: 0.25, g3p: 0.3, opposition: 0.2, cyber: 0.25 };
-
-  // Initialise audio on first user interaction
-  useEffect(() => {
-    const initAudio = () => {
-      if (audioReady) return;
-      Object.entries(AUDIO_MAP).forEach(([key, src]) => {
-        const a = new Audio(src);
-        a.loop = true;
-        a.volume = 0;
-        a.preload = "auto";
-        audioRef.current[key] = a;
-      });
-      switchSoundRef.current = new Audio("audio-switch.mp3");
-      switchSoundRef.current.volume = 0.15;
-      setAudioReady(true);
-      document.removeEventListener("click", initAudio);
-    };
-    document.addEventListener("click", initAudio);
-    return () => document.removeEventListener("click", initAudio);
-  }, [audioReady]);
-
-  // Crossfade on tab change
-  useEffect(() => {
-    if (!audioReady || muted) return;
-    const FADE_MS = 1500;
-    const STEPS = 30;
-    const interval = FADE_MS / STEPS;
-
-    // Clear any running fade
-    if (fadeTimerRef.current) {
-      fadeTimerRef.current.forEach(id => clearInterval(id));
-    }
-    fadeTimerRef.current = [];
-
-    Object.entries(audioRef.current).forEach(([key, audio]) => {
-      const targetVol = key === activeView ? AUDIO_VOLUME[key] : 0;
-      const startVol = audio.volume;
-      const delta = (targetVol - startVol) / STEPS;
-      let step = 0;
-
-      if (key === activeView && audio.paused) {
-        audio.play().catch(() => {});
-      }
-
-      const timerId = setInterval(() => {
-        step++;
-        audio.volume = Math.max(0, Math.min(1, startVol + delta * step));
-        if (step >= STEPS) {
-          clearInterval(timerId);
-          audio.volume = targetVol;
-          if (targetVol === 0) audio.pause();
-        }
-      }, interval);
-      fadeTimerRef.current.push(timerId);
-    });
-  }, [activeView, audioReady, muted]);
-
-  // Handle mute toggle
-  useEffect(() => {
-    if (!audioReady) return;
-    Object.entries(audioRef.current).forEach(([key, audio]) => {
-      if (muted) {
-        audio.volume = 0;
-        audio.pause();
-      } else if (key === activeView) {
-        audio.volume = AUDIO_VOLUME[key];
-        audio.play().catch(() => {});
-      }
-    });
-  }, [muted, audioReady]);
-
-  // Tab switch handler with sound
-  const switchTab = useCallback((view) => {
-    if (audioReady && !muted && switchSoundRef.current) {
-      switchSoundRef.current.currentTime = 0;
-      switchSoundRef.current.play().catch(() => {});
-    }
-    if (view === "map") {
-      setSelectedFaction(null);
-      setSelectedConnection(null);
-    }
-    setActiveView(view);
-  }, [audioReady, muted]);
 
   const getConnections = useCallback((factionId) => {
     return CONNECTIONS.filter(c => c.from === factionId || c.to === factionId);
@@ -472,20 +372,11 @@ function ConvergenceMap() {
           fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
         }}, "the cage is comfortable"),
         /* Nav */
-        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}},
-          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => switchTab("map")}, "Network Map"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => switchTab("g3p")}, "Layer Model"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => switchTab("opposition")}, "Managed Opposition"),
-          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => switchTab("cyber")}, "Cyber Attack"),
-          React.createElement("button", {
-            onClick: () => setMuted(!muted),
-            style: {
-              background: "none", border: "1px solid #333", color: muted ? "#555" : "#00ff88",
-              fontSize: "14px", cursor: "pointer", padding: "4px 8px", borderRadius: "3px",
-              marginLeft: "8px", transition: "all 0.3s", opacity: audioReady ? 1 : 0.3
-            },
-            title: muted ? "Unmute" : "Mute"
-          }, muted ? "\uD83D\uDD07" : "\uD83D\uDD0A")
+        React.createElement("div", {style: {display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center"}},
+          React.createElement("button", {className: "nav-btn" + (activeView === "map" ? " active" : ""), onClick: () => { setActiveView("map"); setSelectedFaction(null); setSelectedConnection(null); }}, "Faction Network Map"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "g3p" ? " active" : ""), onClick: () => setActiveView("g3p")}, "Layer Model"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "opposition" ? " active" : ""), onClick: () => setActiveView("opposition")}, "Managed Opposition"),
+          React.createElement("button", {className: "nav-btn" + (activeView === "cyber" ? " active" : ""), onClick: () => setActiveView("cyber")}, "Cyber Attack")
         )
       ),
 
@@ -507,7 +398,6 @@ function ConvergenceMap() {
               const isSelected = selectedConnection === i;
               const dimmed = selectedFaction && !isActive;
               const isModeConnection = !!conn.mode;
-              if (isModeConnection && !showModeConnections) return null;
               return React.createElement("line", {
                 key: i, className: "connection-line",
                 x1: fromF.x + "%", y1: fromF.y + "%", x2: toF.x + "%", y2: toF.y + "%",
@@ -543,20 +433,7 @@ function ConvergenceMap() {
           },
             React.createElement("div", {className: "faction-label", style: {color: f.color, opacity: hoveredFaction === f.id || selectedFaction === f.id ? 1 : 0.6}}, f.short),
             React.createElement("div", {className: "faction-dot", style: {background: f.color, color: f.color}})
-          )),
-          /* Mode toggle */
-          React.createElement("div", {style: {position: "absolute", bottom: "16px", left: "16px", zIndex: 20}},
-            React.createElement("button", {
-              onClick: () => setShowModeConnections(!showModeConnections),
-              style: {
-                background: showModeConnections ? "rgba(255,136,0,0.1)" : "transparent",
-                border: "1px " + (showModeConnections ? "solid" : "dashed") + " " + (showModeConnections ? "#ff8800" : "#444"),
-                color: showModeConnections ? "#ff8800" : "#666",
-                padding: "6px 12px", fontFamily: "'IBM Plex Mono', monospace",
-                fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", cursor: "pointer"
-              }
-            }, showModeConnections ? "\u2B21 Mode connections on" : "\u2B21 Mode connections off")
-          )
+          ))
         ),
 
         /* Detail panel */
@@ -688,17 +565,16 @@ function ConvergenceMap() {
 
           /* Policy Subjects */
           React.createElement("div", {style: {padding: "16px 20px", margin: "12px 0", border: "1px dashed #333", background: "rgba(255,255,255,0.01)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS \u2014 PIGS IN CAGES ON ANTIBIOTICS"),
-            React.createElement("div", {style: {fontSize: "8px", color: "#444", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "6px"}}, "BARELY VISIBLE"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#888", letterSpacing: "1px", marginBottom: "4px"}}, "POLICY SUBJECTS"),
             React.createElement("p", {style: {fontSize: "11px", color: "#666", lineHeight: 1.7}},
-              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture. Can't beat the system.")
+              "The public. Us. Not a layer \u2014 the reader. The fifth tier in Davis's model isn't in the architecture \u2014 it's experiencing the architecture.")
           ),
 
           /* Standing bridge */
           React.createElement("div", {style: {padding: "16px 20px", margin: "24px 0 12px", borderLeft: "3px solid #ff8800", background: "rgba(255,136,0,0.03)"}},
-            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "Community Wellbeing"),
+            React.createElement("div", {style: {fontSize: "10px", color: "#ff8800", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px"}}, "The Standing / CW Bridge"),
             React.createElement("p", {style: {fontSize: "11px", color: "#999", lineHeight: 1.8}},
-              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit Community Wellbeing \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
+              "Pre-Event: tacit social credit \u2014 unnamed, operating through career advancement, social approval. Post-Event: explicit CW \u2014 the same dynamics formalised, gamified, made visible. What changes isn't the mechanism \u2014 it's the visibility.")
           )
         )
       ),

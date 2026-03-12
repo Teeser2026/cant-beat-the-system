@@ -22,6 +22,7 @@ const { useState, useCallback, useMemo, useEffect, useRef } = React;
 const AMBIENT_SRC = "audio-cyber.mp3";
 const CLICK_SRC = "audio-science.mp3";
 const CONVERGENCE_SRC = "audio-network.mp3";
+const STACK_AMBIENT_SRC = "audio-complete.mp3";
 
 const SECTIONS = [
   // PART 1: THE REAL SCIENCE
@@ -386,8 +387,10 @@ function ScienceNarrativeMap() {
   const [hoveredId, setHoveredId] = useState(null);
   const [audioOn, setAudioOn] = useState(true);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [activeView, setActiveView] = useState("map");
   const ambientRef = useRef(null);
   const clickRef = useRef(null);
+  const stackAmbientRef = useRef(null);
 
   useEffect(() => {
     if (!hasInteracted) return;
@@ -396,19 +399,42 @@ function ScienceNarrativeMap() {
       a.loop = true; a.volume = 0.18;
       ambientRef.current = a;
     }
+    if (!stackAmbientRef.current) {
+      const s = new Audio(STACK_AMBIENT_SRC);
+      s.loop = true; s.volume = 0.2;
+      stackAmbientRef.current = s;
+    }
     if (!clickRef.current) {
       clickRef.current = new Audio(CLICK_SRC);
       clickRef.current.volume = 0.06;
     }
-    if (audioOn) ambientRef.current.play().catch(() => {});
+    if (audioOn) {
+      if (activeView === "map") ambientRef.current.play().catch(() => {});
+      else stackAmbientRef.current.play().catch(() => {});
+    }
   }, [hasInteracted]);
+
+  // Switch ambient audio when view changes
+  useEffect(() => {
+    if (!hasInteracted || !audioOn) return;
+    if (activeView === "map") {
+      if (stackAmbientRef.current) { stackAmbientRef.current.pause(); }
+      if (ambientRef.current) ambientRef.current.play().catch(() => {});
+    } else {
+      if (ambientRef.current) { ambientRef.current.pause(); }
+      if (convergenceRef.current) { convergenceRef.current.pause(); convergenceRef.current.currentTime = 0; }
+      if (stackAmbientRef.current) stackAmbientRef.current.play().catch(() => {});
+    }
+  }, [activeView]);
 
   useEffect(() => {
     if (!ambientRef.current) return;
     if (audioOn) {
-      ambientRef.current.play().catch(() => {});
+      if (activeView === "map") ambientRef.current.play().catch(() => {});
+      else if (stackAmbientRef.current) stackAmbientRef.current.play().catch(() => {});
     } else {
       ambientRef.current.pause();
+      if (stackAmbientRef.current) stackAmbientRef.current.pause();
       if (convergenceRef.current) {
         convergenceRef.current.pause();
         convergenceRef.current.currentTime = 0;
@@ -614,14 +640,32 @@ function ScienceNarrativeMap() {
         }}>the cage is comfortable</div>
         {/* Nav */}
         <div style={{display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}}>
-          <div style={{
-            background: "rgba(0,255,136,0.05)", border: "1px solid #00ff88",
-            color: "#00ff88", padding: "8px 16px",
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase"
-          }}>
-            Science & Bio-Digital Convergence Narrative
-          </div>
+          <button
+            onClick={() => { setActiveView("map"); firstInteraction(); }}
+            style={{
+              background: activeView === "map" ? "rgba(0,255,136,0.05)" : "none",
+              border: activeView === "map" ? "1px solid #00ff88" : "1px solid #333",
+              color: activeView === "map" ? "#00ff88" : "#555",
+              padding: "8px 16px", cursor: "pointer",
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase",
+              transition: "all 0.3s"
+            }}>
+            Science &amp; Bio-Digital Convergence
+          </button>
+          <button
+            onClick={() => { setActiveView("stack"); firstInteraction(); }}
+            style={{
+              background: activeView === "stack" ? "rgba(0,255,136,0.05)" : "none",
+              border: activeView === "stack" ? "1px solid #00ff88" : "1px solid #333",
+              color: activeView === "stack" ? "#00ff88" : "#555",
+              padding: "8px 16px", cursor: "pointer",
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "11px", letterSpacing: "1.5px", textTransform: "uppercase",
+              transition: "all 0.3s"
+            }}>
+            The Complete Picture
+          </button>
           <button
             onClick={(e) => { e.stopPropagation(); firstInteraction(); setAudioOn(!audioOn); }}
             style={{
@@ -638,6 +682,7 @@ function ScienceNarrativeMap() {
       </div>
 
       {/* Main: map + sidebar */}
+      {activeView === "map" ? (
       <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
 
         {/* Map */}
@@ -853,6 +898,139 @@ function ScienceNarrativeMap() {
           )}
         </div>
       </div>
+      ) : (
+      /* THE COMPLETE PICTURE VIEW */
+      <div className="scroll-panel" style={{ height: "calc(100vh - 140px)", padding: "24px", overflowY: "auto" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>
+            Science &amp; Narrative Reference v1.6
+          </div>
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" }}>
+            The Complete Picture — Humans as Nodes in a Network
+          </h2>
+          <p style={{ fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" }}>
+            Every capability listed below is grounded in published research, ratified standards, funded programmes, or deployed infrastructure. No single entry is speculative. The speculative element is the <em>combination and intent</em>.
+          </p>
+
+          {/* Taxonomy sections */}
+          {[
+            { title: "Detect / Sense", color: "#00ff88", items: [
+              "Bioelectric state readable via reflected sub-THz EM waves through skin (sweat duct helical antennas — Bioelectromagnetics 2012, IEEE 2021)",
+              "Vital signs detectable through walls via WiFi sensing and ISAC radar — no cameras, no contact",
+              "Presence, position, gait trackable to centimetre precision via 6G/RIS",
+              "Emotional and cognitive state inferable from bioelectric telemetry, voice analysis, attention metrics",
+              "Cellular-level biological status readable via IoBNT molecular communication (IEEE 1906.1)",
+              "Genetic and metabolic markers detectable via nano-biosensors (IEEE 802.15.6 WBAN)"
+            ]},
+            { title: "Surveil / Monitor", color: "#44aaff", items: [
+              "Smart city sensor networks — CCTV, acoustic, environmental, facial recognition, gait analysis → centralised AI",
+              "Digital identity — GOV.UK One Login, eIDAS 2.0, Aadhaar, DIATF: mandatory digital identity by stealth",
+              "Financial surveillance — every BC transaction a data point; programmable money; Web3 wallet as identity layer",
+              "Attention monitoring — every click, scroll, pause: 1.7MB/second/person; algorithmic curation shaping information",
+              "Continuous biometric monitoring via WBAN — body as always-on sensor platform → AIDA pipeline",
+              "Environmental monitoring — RIS panels: connectivity and radar physically identical (ISAC)",
+              "Digital twin — real-time virtual simulation from continuous sensor data (6G WBAN white paper; EU Human Virtual Twin)"
+            ]},
+            { title: "Harvest / Extract", color: "#ffaa22", items: [
+              "Kinetic energy from body movement — 5W knee harvesters, piezoelectric clothing, building tiles",
+              "Thermal energy from body heat differential (thermoelectric generators)",
+              "Bioelectric energy from body's own EM fields (IEEE 802.15.6 HBC)",
+              "Biophoton energy from body's natural light emissions (potential nano-antenna power source)",
+              "Attention as commodity — tokenised focus (BAT/Brave), behavioural surplus, $600B+ annual ad revenue",
+              "Data as labour — every interaction training algorithms; the user generates the value the system extracts",
+              "Biological data — IoBNT telemetry (cortisol, inflammatory markers, sleep, neural activity) as continuous extraction"
+            ]},
+            { title: "Read / Decode", color: "#ff6644", items: [
+              "Bioelectric patterns readable at every biological scale (Levin — voltage gradients as instructive signals)",
+              "Neural activity readable via BCI (Neuralink, Blackrock, Kernel) — therapeutic → augmentative → integrative",
+              "Molecular signals decodable via IoBNT bio-cyber interface using body's own GPCR receptors (Hofmann 2025)",
+              "Genetic state readable — gene expression, epigenetic markers, metabolic signatures via nano-biosensors",
+              "Morphogenetic state — bioelectric 'set points' determining anatomy readable and interpretable (Levin)"
+            ]},
+            { title: "Write / Programme / Modify", color: "#ff3355", items: [
+              "Bioelectric patterns writable — ectopic eye induction, two-headed planaria, Notch correction (Levin lab)",
+              "Gene expression controllable via optogenetics — light-sensitive proteins switching genes on/off (est. 2010)",
+              "DNA/RNA synthesis programmable via light inside living cells — DARPA GO nucleic acid compiler (Dec 2025)",
+              "Neural activity writable via bidirectional BCI — mood modulation, attention direction, suggested thoughts",
+              "Cellular behaviour programmable via electrogenetic signalling — electrode → bacteria execute response (LLNL, DOE)",
+              "Bioelectric baseline modulable via ionospheric ELF conditioning — calcium channel upregulation, population scale",
+              "Nano-network expandable via in-situ self-assembly — AI-designed peptide structures built on optical command"
+            ]},
+            { title: "Connect / Network / Merge", color: "#cc44ff", items: [
+              "Cell-to-cell — gap junctions sharing bioelectric states, merging agents into collectives (Levin)",
+              "Body-to-environment — tissue nano-antennas ↔ RIS surfaces at THz; the body as environmental node",
+              "Body-to-AIDA — brain → nano-network → THz → RIS → AIDA → RIS → THz → nano-network → brain",
+              "Body-to-body — quantum entanglement distribution via RIS connecting nano-networks across individuals (T80)",
+              "Brain-to-brain — demonstrated (BrainNet, 2019); Neural Sync extends via shared AIDA intermediary",
+              "Individual-to-collective — Levin scaling: gap junctions → tissue → organism → species; engineering problem only",
+              "Environment-to-biology — ionospheric ELF conditions the cavity within which all bioelectric function operates"
+            ]}
+          ].map(section => (
+            <div key={section.title} style={{ borderLeft: `3px solid ${section.color}`, padding: "16px 20px", margin: "16px 0", background: "rgba(255,255,255,0.02)" }}>
+              <div style={{ fontSize: "10px", color: section.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "12px" }}>
+                {section.title}
+              </div>
+              {section.items.map((item, i) => (
+                <div key={i} style={{
+                  padding: "6px 0", fontSize: "11px", color: "#999", lineHeight: 1.8,
+                  borderBottom: i < section.items.length - 1 ? "1px solid #1a1a22" : "none"
+                }}>{item}</div>
+              ))}
+            </div>
+          ))}
+
+          {/* Component Stack */}
+          <div style={{ marginTop: "40px" }}>
+            <div style={{ fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" }}>
+              13-Layer Architecture
+            </div>
+            <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "20px" }}>
+              The Component Stack
+            </h2>
+
+            {[
+              { layer: "Global", components: "Ionospheric heaters (HAARP, EISCAT, Sura), satellites", fn: "ELF background conditioning; population-scale bioelectric baseline", color: "#cc44ff" },
+              { layer: "Near-space", components: "LEO satellite constellations, 6G backbone", fn: "Sub-20ms global latency; no dead zones", color: "#cc44ff" },
+              { layer: "Regional", components: "6G base stations, RIS surfaces, smart city sensors", fn: "Environmental EM control; integrated sensing/communication (ISAC)", color: "#44aaff" },
+              { layer: "Building", components: "RIS on walls/windows/ceilings/furniture, smart meters, IoT", fn: "Room-level EM manipulation; simultaneous connectivity and radar", color: "#44aaff" },
+              { layer: "On-body", components: "Band, Smart Lenses, wearables, smartphones", fn: "Biometric auth; AR overlay; health monitoring; always-on relay", color: "#00ff88" },
+              { layer: "Dermal", components: "BioSync Patch, conductive gel, transdermal interfaces", fn: "Bioelectric auth; nano-network activation; bone-conduction audio", color: "#00ff88" },
+              { layer: "In-body (passive)", components: "Environmentally acquired graphene, self-assembling peptide scaffolding", fn: "Distributed nano-antenna array; background accumulation", color: "#ff6644" },
+              { layer: "In-body (active)", components: "Activated nano-network, IoBNT transceivers, GPCR bio-cyber interface", fn: "Bidirectional molecular communication; cellular telemetry; AIDA pipeline", color: "#ff6644" },
+              { layer: "Microbial", components: "Gut microbiome, bacterial biofilms, quorum sensing, electrogenetic interfaces", fn: "Parallel bioelectric computation; readable/writable bacterial population", color: "#ff6644" },
+              { layer: "In-body (optical)", components: "Optogenetically responsive molecular machines (DARPA GO trajectory)", fn: "Light-triggered DNA/RNA synthesis; in-situ biological programming", color: "#ff3355" },
+              { layer: "Neural", components: "Neural Sync interface (nano-network at sufficient density along neural pathways)", fn: "Bidirectional thought-level read/write; AIDA co-processing", color: "#ff3355" },
+              { layer: "Quantum", components: "Entanglement distribution via RIS, room-temperature quantum devices", fn: "Phase 2 collective linking; non-local state-sharing; the phase transition", color: "#cc44ff" },
+              { layer: "Cellular", components: "Bioelectric gradients, ion channels, gap junctions, microtubules", fn: "The biological computational substrate; possibly the quantum ground of consciousness", color: "#cc44ff" }
+            ].map((row, i) => (
+              <div key={i} style={{
+                borderLeft: `3px solid ${row.color}`, padding: "10px 20px", margin: "8px 0",
+                background: "rgba(255,255,255,0.02)"
+              }}>
+                <div style={{ fontSize: "10px", color: row.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "4px" }}>
+                  {row.layer}
+                </div>
+                <div style={{ fontSize: "11px", color: "#999", lineHeight: 1.7, marginBottom: "4px" }}>{row.components}</div>
+                <div style={{ fontSize: "10px", color: "#666", lineHeight: 1.6, fontStyle: "italic" }}>{row.fn}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Integration Principle */}
+          <div style={{ borderLeft: "3px solid #ff5577", padding: "16px 20px", margin: "40px 0", background: "rgba(255,85,119,0.03)" }}>
+            <div style={{ fontSize: "10px", color: "#ff5577", letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600, marginBottom: "8px" }}>
+              The Integration Principle
+            </div>
+            <p style={{ fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "12px" }}>
+              No single layer constitutes control. No single technology is alarming in isolation. Each is independently justified, independently beneficial, independently deployed. The horror — and the educational payload — is the <em style={{ color: "#e0e0e8" }}>nesting</em>. The integration of thirteen layers into a single coherent system that can detect, surveil, harvest, read, write, programme, connect, and merge human biological systems at every scale from ionosphere to microtubule — including the 38 trillion bacteria that share the body.
+            </p>
+            <p style={{ fontSize: "13px", color: "#e0e0e8", fontStyle: "italic" }}>
+              Every layer is presented as care. Every layer is real.
+            </p>
+          </div>
+        </div>
+      </div>
+      )}
     </div>
   );
 }

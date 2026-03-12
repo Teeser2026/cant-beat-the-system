@@ -25,6 +25,15 @@
 <script type="text/babel">
 const { useState, useCallback, useMemo, useEffect, useRef } = React;
 
+// ─── AUDIO ───
+const AUDIO_MAP = {
+  map: "audio-theology-map.mp3",
+  genealogy: "audio-theology-genealogy.mp3",
+  core: "audio-theology-core.mp3",
+  endings: "audio-theology-endings.mp3",
+  factions: "audio-theology-factions.mp3"
+};
+
 // ─── NODE DATA ───
 const SECTIONS = [
   // Part 1: Theological Genealogy (green tones)
@@ -534,6 +543,68 @@ function App() {
   const [activeTab, setActiveTab] = useState("map");
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
+  const [audioOn, setAudioOn] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  const audioRefs = useRef({});
+  const clickRef = useRef(null);
+
+  // Lazy-create audio elements
+  const getAudio = useCallback((tabId) => {
+    if (!audioRefs.current[tabId]) {
+      const a = new Audio(AUDIO_MAP[tabId]);
+      a.loop = true;
+      a.volume = 0.18;
+      audioRefs.current[tabId] = a;
+    }
+    return audioRefs.current[tabId];
+  }, []);
+
+  const firstInteraction = useCallback(() => {
+    if (!hasInteracted) setHasInteracted(true);
+  }, [hasInteracted]);
+
+  // Handle tab switching — pause old, play new
+  const switchTab = useCallback((tabId) => {
+    firstInteraction();
+    // Pause all
+    Object.keys(AUDIO_MAP).forEach(k => {
+      if (audioRefs.current[k]) {
+        audioRefs.current[k].pause();
+      }
+    });
+    setActiveTab(tabId);
+    setSelectedNode(null);
+    // Play new tab's audio if audio is on
+    if (audioOn) {
+      const a = getAudio(tabId);
+      a.play().catch(() => {});
+    }
+  }, [audioOn, firstInteraction, getAudio]);
+
+  // Handle mute toggle
+  const toggleAudio = useCallback((e) => {
+    e.stopPropagation();
+    firstInteraction();
+    const newState = !audioOn;
+    setAudioOn(newState);
+    if (newState) {
+      const a = getAudio(activeTab);
+      a.play().catch(() => {});
+    } else {
+      Object.keys(AUDIO_MAP).forEach(k => {
+        if (audioRefs.current[k]) audioRefs.current[k].pause();
+      });
+    }
+  }, [audioOn, activeTab, firstInteraction, getAudio]);
+
+  // Start audio on first interaction
+  useEffect(() => {
+    if (hasInteracted && audioOn) {
+      const a = getAudio(activeTab);
+      a.play().catch(() => {});
+    }
+  }, [hasInteracted]);
 
   const connections = useMemo(() => {
     const conns = [];
@@ -819,12 +890,12 @@ function App() {
           fontSize: "13px", letterSpacing: "2px", color: "rgba(0,255,136,0.4)"
         }}>the cage is comfortable</div>
 
-        {/* Tabs */}
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center" }}>
+        {/* Tabs + Sound Toggle */}
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           {tabs.map(t => (
             <button
               key={t.id}
-              onClick={() => setActiveTab(t.id)}
+              onClick={() => switchTab(t.id)}
               style={{
                 background: activeTab === t.id ? "rgba(0,255,136,0.05)" : "none",
                 border: activeTab === t.id ? "1px solid #00ff88" : "1px solid #333",
@@ -836,6 +907,18 @@ function App() {
               }}
             >{t.label}</button>
           ))}
+          <button
+            onClick={toggleAudio}
+            style={{
+              background: "none", border: "1px solid #333",
+              color: audioOn ? "#00ff88" : "#555",
+              fontSize: "14px", cursor: "pointer", padding: "4px 8px", borderRadius: "3px",
+              transition: "all 0.3s"
+            }}
+            title={audioOn ? "Mute" : "Unmute"}
+          >
+            {audioOn ? "\uD83D\uDD0A" : "\uD83D\uDD07"}
+          </button>
         </div>
       </div>
 

@@ -405,8 +405,15 @@ function ScienceNarrativeMap() {
 
   useEffect(() => {
     if (!ambientRef.current) return;
-    if (audioOn) ambientRef.current.play().catch(() => {});
-    else ambientRef.current.pause();
+    if (audioOn) {
+      ambientRef.current.play().catch(() => {});
+    } else {
+      ambientRef.current.pause();
+      if (convergenceRef.current) {
+        convergenceRef.current.pause();
+        convergenceRef.current.currentTime = 0;
+      }
+    }
   }, [audioOn]);
 
   const convergenceRef = useRef(null);
@@ -421,6 +428,11 @@ function ScienceNarrativeMap() {
 
   const playClick = (nodeId) => {
     if (!audioOn) return;
+    // Always stop convergence sound when clicking any node
+    if (convergenceRef.current) {
+      convergenceRef.current.pause();
+      convergenceRef.current.currentTime = 0;
+    }
     if (nodeId === "convergence" && convergenceRef.current) {
       convergenceRef.current.currentTime = 0;
       convergenceRef.current.play().catch(() => {});

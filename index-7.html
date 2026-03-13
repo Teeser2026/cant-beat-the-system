@@ -866,6 +866,17 @@ body.game-active .wrap { display: flex; }
 body.game-active .ticker-bar { display: flex; }
 
 /* ── NOISE OVERLAY ── */
+/* ── DEV SKIP ── */
+.dev-skip {
+  position: absolute; bottom: 20px; right: 20px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--dim); opacity: .25;
+  cursor: pointer; z-index: 9999; padding: 8px 12px;
+  border: 1px solid rgba(107,103,96,.15); border-radius: 3px;
+  transition: opacity .3s;
+}
+.dev-skip:hover { opacity: .6; }
+
 .noise { position: fixed; inset: 0; background-color: transparent; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; }
 
 /* ── TICKER ── */
@@ -968,6 +979,7 @@ body.game-active .ticker-bar { display: flex; }
     <div class="intro-enter">click anywhere to begin</div>
   </div>
   <div class="intro-ambient" id="intro-ambient-toggle">♪ sound on</div>
+  <div class="dev-skip" id="dev-skip-intro">skip ▸</div>
 </div>
 
 <!-- ══ WELCOME SCREEN ══ -->
@@ -1011,6 +1023,7 @@ body.game-active .ticker-bar { display: flex; }
     <div class="wl" style="display:flex;justify-content:center;margin-top:20px;">
       <button class="welcome-begin" id="welcome-begin">agree all</button>
     </div>
+    <div class="dev-skip" id="dev-skip-welcome">skip ▸</div>
   </div>
 </div>
 
@@ -1950,6 +1963,21 @@ document.getElementById('welcome-begin').addEventListener('click', function(e) {
     ws.style.display = 'none';
     document.body.classList.add('game-active');
   }, 1600);
+});
+
+// ── DEV SKIP ──
+document.getElementById('dev-skip-intro').addEventListener('click', function(e) {
+  e.stopPropagation();
+  stopAmbient();
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.body.classList.add('game-active');
+});
+document.getElementById('dev-skip-welcome').addEventListener('click', function(e) {
+  e.stopPropagation();
+  stopBirdsong();
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.body.classList.add('game-active');
 });
 
 // ── BOOT ──

@@ -1611,15 +1611,17 @@ function renderNotes() {
     } else if (!note.fromSignal && !note.readonly) {
       threadBtn = '<button class="note-act thread">Save to thread</button>';
     }
-    const savedStyle = note.savedToThread ? 'opacity:.35;' : '';
+    const savedStyle = note.savedToThread ? 'opacity:.5;' : '';
     const keptStyle = note.kept ? 'border-color:rgba(122,138,90,.25);' : '';
-    const noteStyle = (savedStyle || keptStyle) ? ` style="${savedStyle}${keptStyle}"` : '';
+    const signalStyle = note.fromSignal && !note.savedToThread ? 'border-color:rgba(196,149,106,.25);' : '';
+    const noteStyle = (savedStyle || keptStyle || signalStyle) ? ` style="${savedStyle}${keptStyle}${signalStyle}"` : '';
     const keptBtn = note.kept
       ? '<button class="note-act keep" style="opacity:.7;color:var(--earth);pointer-events:none">Kept</button>'
       : '<button class="note-act keep">Keep</button>';
+    const placeholder = (!note.readonly && !note.fromSignal) ? ' placeholder="Your thoughts, or paste a link..."' : '';
     html += `<div class="note" data-ni="${i}"${noteStyle}>
-      <textarea${ro}>${note.text}</textarea>
-      <div class="note-t">${note.timestamp}</div>
+      <textarea${ro}${placeholder}>${note.text}</textarea>
+      <div class="note-t">${note.timestamp}${note.fromSignal && !note.timestamp.includes('from signal') ? ' · from signal' : ''}</div>
       <div class="note-actions">
         <button class="note-act del">Delete</button>
         ${keptBtn}
@@ -1721,7 +1723,7 @@ function bindNoteActions() {
             threadBtn.style.color = 'var(--cold)';
             threadBtn.style.pointerEvents = 'none';
           }
-          note.style.opacity = '.35';
+          note.style.opacity = '.5';
         });
         picker.appendChild(pickBtn);
       });

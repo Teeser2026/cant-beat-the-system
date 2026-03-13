@@ -225,11 +225,6 @@
             }
           }
         ]
-      },
-      "audio": {
-        "src": "gentle-rain.mp3",
-        "fadeIn": 2,
-        "vol": 0.3
       }
     },
     {
@@ -2180,6 +2175,55 @@
           }
         ]
       }
+    ],
+    "17": [
+      {
+        "sec": "Priority",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
+            "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
+            "tag": "Urgent",
+            "cls": "a",
+            "isnew": true
+          },
+          {
+            "src": "X — Predictive AI accounts",
+            "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
+            "snip": "You screenshotted it at 3am. Still looks like something.",
+            "tag": "Flagged",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Research",
+        "cards": [
+          {
+            "src": "BIS — Bank for International Settlements",
+            "ttl": "mBridge cross-border CBDC pilot: 26 central banks now confirmed.",
+            "snip": "Dev flagged this months ago. You told people. They shrugged.",
+            "tag": "Research",
+            "cls": "c"
+          }
+        ]
+      }
+    ],
+    "16": [
+      {
+        "sec": "From Dev",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "Silent firmware update pushed to 2 million payment terminals overnight. No official announcement.",
+            "snip": "\"Read this. Actually read it this time.\"",
+            "tag": "Unread",
+            "cls": "a",
+            "isnew": true
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -2187,6 +2231,19 @@
       "id": "payment-infra",
       "label": "Payment Infrastructure",
       "items": [
+        {
+          "text": "FCA PS26/4 — ARC Implementation Notice",
+          "src": "simon",
+          "turn": 6,
+          "article": {
+            "style": "gov",
+            "source": "Financial Conduct Authority",
+            "title": "PS26/4: Authenticated Residential Computing (ARC) — Implementation Notice",
+            "date": "Published 14 June 2026 · Policy Statement",
+            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
+            "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
+          }
+        },
         {
           "text": "BIS mBridge: cross-border CBDC pilot",
           "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
@@ -2204,6 +2261,18 @@
           "url": "https://solari.com/the-going-direct-reset/",
           "src": "simon",
           "turn": 5
+        },
+        {
+          "text": "Firmware analysis — undocumented OTA push (29 Jan 2027)",
+          "src": "dev",
+          "turn": 16,
+          "article": {
+            "style": "paste",
+            "source": "No byline · No attribution · Forwarded via Signal",
+            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
+            "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
+            "footer": "Forwarded by Dev · Save to notes ↓"
+          }
         }
       ]
     },
@@ -2259,6 +2328,18 @@
       "id": "valentines-question",
       "label": "The Valentine’s Day Question",
       "items": [
+        {
+          "text": "Dev — \"Someone's cracked the time-lock\"",
+          "src": "dev",
+          "turn": 17,
+          "article": {
+            "style": "paste",
+            "source": "Dev · Signal message · Forwarded",
+            "title": "Someone's cracked the time-lock",
+            "body": "<p>Someone's cracked the time-lock. Or they say they have. Valentine's Day. 00:00 GMT.</p><p>Take it or leave it — could be genuine, could be the op wants us watching the wrong date. Either way the deployment is real.</p>",
+            "footer": "Dev · Signal · T17"
+          }
+        },
         {
           "text": "Gematria: 214 — Half Man, Half Angel",
           "url": null,

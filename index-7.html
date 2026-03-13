@@ -430,10 +430,10 @@ html, body {
 .save-signal { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .save-signal:hover { opacity: .7; color: var(--warm); }
 .save-signal.saved { color: var(--cold); opacity: .5; pointer-events: none; }
-.card-thread-ref { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--cold); opacity: .5; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
+.card-thread-ref { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cold); opacity: .5; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .card-thread-ref:hover { opacity: .85; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
-.card-auto-saved { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--earth); opacity: .4; margin-top: 4px; padding: 2px 6px; display: inline-block; }
+.card-auto-saved { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--earth); opacity: .4; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 .card.thread-notify-card { border-left: 2px solid rgba(90,122,138,.3); }
 
@@ -532,18 +532,26 @@ div.ti.article:hover::after { opacity: .4; }
 .note { background: rgba(196,149,106,.04); border: 1px solid rgba(196,149,106,.1); border-radius: 3px; padding: 13px 14px; margin-bottom: 9px; }
 .note textarea { width: 100%; background: transparent; border: none; color: var(--text); font-family: 'Crimson Pro', serif; font-size: 16px; line-height: 1.7; resize: none; outline: none; min-height: 56px; }
 .note textarea::placeholder { color: var(--dim); opacity: .3; font-style: italic; }
-.note-t { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; color: var(--dim); opacity: .28; margin-top: 7px; text-transform: uppercase; }
+.note-t { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--dim); opacity: .28; margin-top: 7px; text-transform: uppercase; }
 .note-actions { display: flex; gap: 12px; margin-top: 6px; }
-.note-act { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: 0; background: none; border: none; cursor: pointer; padding: 2px 0; transition: all .3s; }
+.note-act { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: 0; background: none; border: none; cursor: pointer; padding: 2px 0; transition: all .3s; }
 .note:hover .note-act { opacity: .35; }
 .note-act:hover { opacity: .7 !important; }
 .note-act.del:hover { color: var(--alert); }
-.note-act.keep:hover { color: var(--earth); }
 .note-act.thread:hover { color: var(--cold); }
-.thread-picker { display: none; margin-top: 6px; background: var(--card); border: 1px solid var(--card-b); border-radius: 3px; padding: 6px 0; }
-.thread-picker.open { display: block; }
-.thread-pick { display: block; width: 100%; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--dim); background: none; border: none; padding: 7px 12px; cursor: pointer; transition: all .2s; opacity: .55; }
-.thread-pick:hover { opacity: 1; color: var(--cold); background: rgba(90,122,138,.06); }
+.link-input-row { display: flex; gap: 6px; margin-top: 8px; align-items: center; }
+.link-input { flex: 1; background: var(--card); border: 1px solid var(--card-b); border-radius: 3px; color: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 6px 10px; outline: none; }
+.link-input:focus { border-color: rgba(122,138,90,.4); }
+.link-input::placeholder { color: var(--dim); opacity: .35; }
+.link-confirm { background: none; border: 1px solid rgba(122,138,90,.25); border-radius: 3px; color: var(--earth); font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 12px; cursor: pointer; opacity: .6; transition: all .2s; }
+.link-confirm:hover { opacity: 1; border-color: rgba(122,138,90,.5); }
+.note-act.add-link-thread { color: var(--earth); }
+.note-act.add-link-thread:hover { opacity: .9 !important; }
+.tg-label.research-label { color: var(--earth); opacity: .6; border-bottom-color: rgba(122,138,90,.15); }
+a.ti.research { color: var(--earth); border-left-color: rgba(122,138,90,.25); opacity: .8; }
+a.ti.research:hover { color: var(--bright); border-left-color: var(--earth); opacity: 1; }
+a.ti.research::after { content: ' ↗'; opacity: 0; transition: opacity .3s; font-size: 11px; }
+a.ti.research:hover::after { opacity: .5; }
 .add-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; }
 .add-note:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
 
@@ -1550,6 +1558,16 @@ function renderSignal(turnId) {
 function renderThreads() {
   const panel = document.getElementById('threads-panel');
   let html = '';
+
+  // Player's own research — at the top, green
+  if (state.playerThreads && state.playerThreads.length > 0) {
+    html += '<div class="tg"><div class="tg-label research-label">Your Research</div>';
+    state.playerThreads.forEach(item => {
+      html += `<a class="ti research" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
+    });
+    html += '</div>';
+  }
+
   threadsData.forEach(group => {
     const visibleItems = group.items.filter(item => {
       if (!item.turn) return true;
@@ -1607,24 +1625,19 @@ function renderNotes() {
     const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
     let threadBtn = '';
     if (note.savedToThread) {
-      threadBtn = '<button class="note-act thread" style="opacity:.7;color:var(--cold);pointer-events:none">In Threads</button>';
+      threadBtn = '<span class="note-act" style="opacity:.5;color:var(--earth);pointer-events:none">Linked</span>';
     } else if (!note.fromSignal && !note.readonly) {
-      threadBtn = '<button class="note-act thread">Save to thread</button>';
+      threadBtn = '<button class="note-act add-link-thread">Add link &amp; save to thread</button>';
     }
-    const savedStyle = note.savedToThread ? 'opacity:.5;' : '';
-    const keptStyle = note.kept ? 'border-color:rgba(122,138,90,.25);' : '';
-    const signalStyle = note.fromSignal && !note.savedToThread ? 'border-color:rgba(196,149,106,.25);' : '';
-    const noteStyle = (savedStyle || keptStyle || signalStyle) ? ` style="${savedStyle}${keptStyle}${signalStyle}"` : '';
-    const keptBtn = note.kept
-      ? '<button class="note-act keep" style="opacity:.7;color:var(--earth);pointer-events:none">Kept</button>'
-      : '<button class="note-act keep">Keep</button>';
-    const placeholder = (!note.readonly && !note.fromSignal) ? ' placeholder="Your thoughts, or paste a link..."' : '';
+    const signalStyle = note.fromSignal ? 'border-color:rgba(196,149,106,.25);' : '';
+    const linkedStyle = note.savedToThread ? 'border-color:rgba(122,138,90,.25);' : '';
+    const noteStyle = (signalStyle || linkedStyle) ? ` style="${signalStyle}${linkedStyle}"` : '';
+    const placeholder = (!note.readonly && !note.fromSignal) ? ' placeholder="Write a note..."' : '';
     html += `<div class="note" data-ni="${i}"${noteStyle}>
       <textarea${ro}${placeholder}>${note.text}</textarea>
       <div class="note-t">${note.timestamp}${note.fromSignal && !note.timestamp.includes('from signal') ? ' · from signal' : ''}</div>
       <div class="note-actions">
         <button class="note-act del">Delete</button>
-        ${keptBtn}
         ${threadBtn}
       </div>
     </div>`;
@@ -1667,25 +1680,7 @@ function bindNoteActions() {
     });
   });
 
-  document.querySelectorAll('.note .keep').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const note = this.closest('.note');
-      const idx = parseInt(note.dataset.ni);
-      const textarea = note.querySelector('textarea');
-      // Sync text to state
-      if (textarea && state.notes[idx] && !state.notes[idx].readonly) {
-        state.notes[idx].text = textarea.value;
-      }
-      state.notes[idx].kept = true;
-      note.style.borderColor = 'rgba(122,138,90,.25)';
-      this.textContent = 'Kept';
-      this.style.opacity = '.7';
-      this.style.color = 'var(--earth)';
-      this.style.pointerEvents = 'none';
-    });
-  });
-
-  document.querySelectorAll('.note .thread').forEach(btn => {
+  document.querySelectorAll('.note .add-link-thread').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       const note = this.closest('.note');
@@ -1695,39 +1690,31 @@ function bindNoteActions() {
       if (!txt) return;
       // Sync text back to state
       if (state.notes[idx]) state.notes[idx].text = txt;
-      document.querySelectorAll('.thread-picker.open').forEach(p => p.remove());
-      const picker = document.createElement('div');
-      picker.className = 'thread-picker open';
-      threadsData.forEach((group, gi) => {
-        const pickBtn = document.createElement('button');
-        pickBtn.className = 'thread-pick';
-        pickBtn.textContent = group.label;
-        pickBtn.addEventListener('click', (ev) => {
-          ev.stopPropagation();
-          const urlMatch = txt.match(/https?:\/\/[^\s]+/);
-          const newItem = {
-            text: urlMatch ? txt.replace(urlMatch[0], '').trim() || urlMatch[0] : txt,
-            url: urlMatch ? urlMatch[0] : null,
-            src: 'player',
-            turn: playData.turns[state.turnIndex] ? playData.turns[state.turnIndex].id : 0
-          };
-          threadsData[gi].items.push(newItem);
-          renderThreads();
-          picker.remove();
-          // Mark note as saved to thread in state
-          if (state.notes[idx]) state.notes[idx].savedToThread = true;
-          const threadBtn = note.querySelector('.thread');
-          if (threadBtn) {
-            threadBtn.textContent = 'In Threads';
-            threadBtn.style.opacity = '.7';
-            threadBtn.style.color = 'var(--cold)';
-            threadBtn.style.pointerEvents = 'none';
-          }
-          note.style.opacity = '.5';
+      // Remove any existing link input
+      note.querySelectorAll('.link-input-row').forEach(r => r.remove());
+      // Create link input
+      const row = document.createElement('div');
+      row.className = 'link-input-row';
+      row.innerHTML = `<input type="url" class="link-input" placeholder="Paste URL..." /><button class="link-confirm">Save</button>`;
+      note.appendChild(row);
+      const input = row.querySelector('.link-input');
+      input.focus();
+      const confirm = () => {
+        const url = input.value.trim();
+        if (!url) return;
+        // Save to player research
+        state.playerThreads.push({
+          text: txt,
+          url: url,
+          turn: playData.turns[state.turnIndex] ? playData.turns[state.turnIndex].id : 0
         });
-        picker.appendChild(pickBtn);
-      });
-      note.appendChild(picker);
+        if (state.notes[idx]) state.notes[idx].savedToThread = true;
+        row.remove();
+        renderThreads();
+        renderNotes();
+      };
+      row.querySelector('.link-confirm').addEventListener('click', (ev) => { ev.stopPropagation(); confirm(); });
+      input.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); confirm(); } });
     });
   });
 
@@ -1741,10 +1728,10 @@ function bindNoteActions() {
   }
 }
 
-// Close thread pickers when clicking elsewhere
+// Close link input when clicking elsewhere
 document.addEventListener('click', function(e) {
-  if (!e.target.classList.contains('thread') && !e.target.classList.contains('thread-pick')) {
-    document.querySelectorAll('.thread-picker.open').forEach(p => p.remove());
+  if (!e.target.closest('.link-input-row') && !e.target.classList.contains('add-link-thread')) {
+    document.querySelectorAll('.link-input-row').forEach(r => r.remove());
   }
 });
 

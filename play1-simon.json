@@ -225,6 +225,11 @@
             }
           }
         ]
+      },
+      "audio": {
+        "src": "gentle-rain.mp3",
+        "fadeIn": 2,
+        "vol": 0.3
       }
     },
     {

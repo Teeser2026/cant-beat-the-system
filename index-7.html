@@ -439,9 +439,9 @@ a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
 a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
 a.ti::after { content: ' ↗'; opacity: 0; transition: opacity .3s; font-size: 11px; }
 a.ti:hover::after { opacity: .4; }
-a.ti.player { color: var(--player); border-left-color: rgba(138,126,106,.2); }
-a.ti.player:hover { color: var(--text); border-left-color: var(--player); }
-a.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
+a.ti.player, div.ti.player { color: var(--warm); border-left-color: rgba(196,149,106,.3); }
+a.ti.player:hover, div.ti.player:hover { color: var(--text); border-left-color: var(--warm); }
+a.ti.player::before, div.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
 div.ti.pending { cursor: default; opacity: .5; }
 div.ti.article { cursor: pointer; }
 div.ti.article::after { content: ' ▸'; opacity: 0; transition: opacity .3s; font-size: 11px; }
@@ -508,6 +508,12 @@ div.ti.article:hover::after { opacity: .4; }
   border-top: 1px solid #1a1a1c; margin-top: 20px; padding-top: 10px;
   font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #333;
 }
+.article-save {
+  cursor: pointer; margin-left: 12px; padding: 2px 8px;
+  border: 1px solid rgba(196,149,106,.2); border-radius: 2px;
+  color: var(--warm); opacity: .5; transition: all .3s;
+}
+.article-save:hover { opacity: .8; border-color: var(--warm); }
 
 /* ── NOTES ── */
 .note { background: rgba(196,149,106,.04); border: 1px solid rgba(196,149,106,.1); border-radius: 3px; padding: 13px 14px; margin-bottom: 9px; }
@@ -1415,7 +1421,7 @@ function renderSignal(turnId) {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       const turn = playData.turns[state.turnIndex];
-      addNote(`${this.dataset.src}: ${this.dataset.ttl}`, `Signal \u2014 ${turn.num}`, true);
+      addNote(`${this.dataset.src}: ${this.dataset.ttl}`, `Signal — ${turn.num}`, true, true);
       this.textContent = 'Saved';
       this.classList.add('saved');
     });
@@ -1470,13 +1476,14 @@ function renderNotes() {
       if (turnIdx > state.turnIndex) return;
     }
     const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
+    const threadBtn = note.fromSignal ? '' : '<button class="note-act thread">Save to thread</button>';
     html += `<div class="note" data-ni="${i}">
       <textarea${ro}>${note.text}</textarea>
       <div class="note-t">${note.timestamp}</div>
       <div class="note-actions">
         <button class="note-act del">Delete</button>
         <button class="note-act keep">Keep</button>
-        <button class="note-act thread">Save to thread</button>
+        ${threadBtn}
       </div>
     </div>`;
   });
@@ -1485,12 +1492,12 @@ function renderNotes() {
   bindNoteActions();
 }
 
-function addNote(text, timestamp, readonly = false) {
+function addNote(text, timestamp, readonly = false, fromSignal = false) {
   if (!timestamp) {
     const turn = playData.turns[state.turnIndex];
     timestamp = turn && turn.date ? turn.date : '';
   }
-  state.notes.push({ text, timestamp, readonly });
+  state.notes.push({ text, timestamp, readonly, fromSignal });
   renderNotes();
 }
 
@@ -2057,6 +2064,8 @@ document.getElementById('welcome-begin').addEventListener('click', function(e) {
 });
 
 // ── ARTICLE OVERLAY ──
+let currentArticleTitle = '';
+
 function openArticle(article) {
   const overlay = document.getElementById('article-overlay');
   const panel = document.getElementById('article-panel');
@@ -2073,7 +2082,20 @@ function openArticle(article) {
   title.innerHTML = article.title || '';
   date.innerHTML = article.date || '';
   body.innerHTML = article.body || '';
-  footer.innerHTML = article.footer || '';
+  currentArticleTitle = article.title || '';
+
+  // Footer with working save button
+  const footerBase = article.footer || '';
+  footer.innerHTML = footerBase + '<span class="article-save" id="article-save-btn">Save to notes</span>';
+
+  // Bind save
+  document.getElementById('article-save-btn').addEventListener('click', function() {
+    const turn = playData.turns[state.turnIndex];
+    addNote(`Read: ${currentArticleTitle}`, `Threads — ${turn.num}`, true, true);
+    this.textContent = 'Saved';
+    this.style.opacity = '.5';
+    this.style.pointerEvents = 'none';
+  });
 
   overlay.classList.add('open');
 }

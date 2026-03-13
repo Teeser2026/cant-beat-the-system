@@ -2102,18 +2102,19 @@
             "ttl": "Higher States of Consciousness → Smack My Bitch Up → Insomnia → Age of Love",
             "snip": "Song tag. Amy chose first. You replied. God she’s good.",
             "tag": "Tonight",
-            "cls": "e"
+            "cls": "e",
+            "type": "song"
           }
         ]
       },
       {
-        "sec": "Unread",
+        "sec": "New",
         "cards": [
           {
             "src": "Dev — Signal",
             "ttl": "“Simon. Call me when you get this. Before tomorrow.”",
             "snip": "Sent 11pm. You haven’t seen it yet.",
-            "tag": "Unread",
+            "tag": "New",
             "cls": "a",
             "isnew": true,
             "type": "essential"
@@ -2216,7 +2217,9 @@
             "ttl": "mBridge cross-border CBDC pilot: 26 central banks now confirmed.",
             "snip": "Dev flagged this months ago. You told people. They shrugged.",
             "tag": "Research",
-            "cls": "c"
+            "cls": "c",
+            "type": "thread-notify",
+            "threadRef": "payment-infra"
           }
         ]
       }

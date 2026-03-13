@@ -1467,6 +1467,14 @@ function renderThreads() {
 }
 
 function renderNotes() {
+  // Sync any edited textarea content back to state before re-rendering
+  document.querySelectorAll('.note textarea').forEach(ta => {
+    const ni = parseInt(ta.closest('.note')?.dataset?.ni);
+    if (!isNaN(ni) && state.notes[ni] && !state.notes[ni].readonly) {
+      state.notes[ni].text = ta.value;
+    }
+  });
+
   const panel = document.getElementById('notes-panel');
   let html = '';
   state.notes.forEach((note, i) => {
@@ -1476,13 +1484,17 @@ function renderNotes() {
       if (turnIdx > state.turnIndex) return;
     }
     const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
-    const threadBtn = note.fromSignal ? '' : '<button class="note-act thread">Save to thread</button>';
-    html += `<div class="note" data-ni="${i}">
+    const threadBtn = note.fromSignal || note.readonly ? '' : '<button class="note-act thread">Save to thread</button>';
+    const keptStyle = note.kept ? ' style="border-color:rgba(122,138,90,.25)"' : '';
+    const keptBtn = note.kept
+      ? '<button class="note-act keep" style="opacity:.7;color:var(--earth);pointer-events:none">Kept</button>'
+      : '<button class="note-act keep">Keep</button>';
+    html += `<div class="note" data-ni="${i}"${keptStyle}>
       <textarea${ro}>${note.text}</textarea>
       <div class="note-t">${note.timestamp}</div>
       <div class="note-actions">
         <button class="note-act del">Delete</button>
-        <button class="note-act keep">Keep</button>
+        ${keptBtn}
         ${threadBtn}
       </div>
     </div>`;
@@ -1527,9 +1539,14 @@ function bindNoteActions() {
 
   document.querySelectorAll('.note .keep').forEach(btn => {
     btn.addEventListener('click', function() {
-      const idx = parseInt(this.closest('.note').dataset.ni);
-      state.notes[idx].kept = true;
       const note = this.closest('.note');
+      const idx = parseInt(note.dataset.ni);
+      const textarea = note.querySelector('textarea');
+      // Sync text to state
+      if (textarea && state.notes[idx] && !state.notes[idx].readonly) {
+        state.notes[idx].text = textarea.value;
+      }
+      state.notes[idx].kept = true;
       note.style.borderColor = 'rgba(122,138,90,.25)';
       this.textContent = 'Kept';
       this.style.opacity = '.7';
@@ -1542,9 +1559,12 @@ function bindNoteActions() {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       const note = this.closest('.note');
+      const idx = parseInt(note.dataset.ni);
       const textarea = note.querySelector('textarea');
       const txt = textarea ? textarea.value.trim() : '';
       if (!txt) return;
+      // Sync text back to state
+      if (state.notes[idx]) state.notes[idx].text = txt;
       document.querySelectorAll('.thread-picker.open').forEach(p => p.remove());
       const picker = document.createElement('div');
       picker.className = 'thread-picker open';
@@ -1564,6 +1584,8 @@ function bindNoteActions() {
           threadsData[gi].items.push(newItem);
           renderThreads();
           picker.remove();
+          // Mark note as saved to thread in state
+          if (state.notes[idx]) state.notes[idx].savedToThread = true;
           const threadBtn = note.querySelector('.thread');
           if (threadBtn) {
             threadBtn.textContent = 'Saved';
@@ -1571,8 +1593,7 @@ function bindNoteActions() {
             threadBtn.style.color = 'var(--cold)';
             threadBtn.style.pointerEvents = 'none';
           }
-          note.style.transition = 'opacity .4s';
-          note.style.opacity = '.2';
+          note.style.opacity = '.35';
         });
         picker.appendChild(pickBtn);
       });

@@ -447,6 +447,13 @@ div.ti.article { cursor: pointer; }
 div.ti.article::after { content: ' ▸'; opacity: 0; transition: opacity .3s; font-size: 11px; }
 div.ti.article:hover::after { opacity: .4; }
 
+/* ── TAB NOTIFICATION DOT ── */
+.tab .tab-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--warm); margin-left: 5px; vertical-align: middle;
+  animation: pulse 2s ease-in-out infinite;
+}
+
 /* ── ARTICLE OVERLAY ── */
 .article-overlay {
   display: none; position: fixed; inset: 0; z-index: 1000;
@@ -1441,11 +1448,13 @@ function renderThreads() {
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
-      if (item.url) {
+      if (item.article) {
+        html += `<div class="ti article" data-group="${group.id}" data-idx="${origIdx}">${item.text}</div>`;
+      } else if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
         html += `<a class="${cls}" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
-      } else if (item.article) {
-        html += `<div class="ti article" data-group="${group.id}" data-idx="${origIdx}">${item.text}</div>`;
+      } else if (item.src === 'player') {
+        html += `<div class="ti player">${item.text}</div>`;
       } else {
         html += `<div class="ti pending">${item.text}</div>`;
       }
@@ -1484,12 +1493,19 @@ function renderNotes() {
       if (turnIdx > state.turnIndex) return;
     }
     const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
-    const threadBtn = note.fromSignal || note.readonly ? '' : '<button class="note-act thread">Save to thread</button>';
-    const keptStyle = note.kept ? ' style="border-color:rgba(122,138,90,.25)"' : '';
+    let threadBtn = '';
+    if (note.savedToThread) {
+      threadBtn = '<button class="note-act thread" style="opacity:.7;color:var(--cold);pointer-events:none">In Threads</button>';
+    } else if (!note.fromSignal && !note.readonly) {
+      threadBtn = '<button class="note-act thread">Save to thread</button>';
+    }
+    const savedStyle = note.savedToThread ? 'opacity:.35;' : '';
+    const keptStyle = note.kept ? 'border-color:rgba(122,138,90,.25);' : '';
+    const noteStyle = (savedStyle || keptStyle) ? ` style="${savedStyle}${keptStyle}"` : '';
     const keptBtn = note.kept
       ? '<button class="note-act keep" style="opacity:.7;color:var(--earth);pointer-events:none">Kept</button>'
       : '<button class="note-act keep">Keep</button>';
-    html += `<div class="note" data-ni="${i}"${keptStyle}>
+    html += `<div class="note" data-ni="${i}"${noteStyle}>
       <textarea${ro}>${note.text}</textarea>
       <div class="note-t">${note.timestamp}</div>
       <div class="note-actions">
@@ -1588,7 +1604,7 @@ function bindNoteActions() {
           if (state.notes[idx]) state.notes[idx].savedToThread = true;
           const threadBtn = note.querySelector('.thread');
           if (threadBtn) {
-            threadBtn.textContent = 'Saved';
+            threadBtn.textContent = 'In Threads';
             threadBtn.style.opacity = '.7';
             threadBtn.style.color = 'var(--cold)';
             threadBtn.style.pointerEvents = 'none';
@@ -1878,6 +1894,30 @@ function goTo(idx) {
   updateEconDisplay();
   updateTicker(turn.isQuestion ? null : turn.id);
   document.querySelector('.left').scrollTop = 0;
+
+  // Check for new thread items at this turn — show dot on Threads tab
+  checkTabNotifications(turn);
+}
+
+function checkTabNotifications(turn) {
+  const threadsTab = document.querySelector('.tab[data-p="threads"]');
+  // Check if any thread items are new at this turn
+  let hasNew = false;
+  threadsData.forEach(group => {
+    group.items.forEach(item => {
+      if (item.turn === turn.id) hasNew = true;
+    });
+  });
+  // Also check signal — if signal has data, it's new content
+  const signalTab = document.querySelector('.tab[data-p="signal"]');
+  const hasSignal = signalData[turn.id] && !turn.isQuestion;
+
+  // Add/remove dots
+  if (hasNew && !threadsTab.classList.contains('on')) {
+    if (!threadsTab.querySelector('.tab-dot')) {
+      threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+    }
+  }
 }
 
 // ── TAB SWITCHING ──
@@ -1888,6 +1928,9 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.panel').forEach(el => el.classList.remove('on'));
     this.classList.add('on');
     document.querySelector('.panel[data-p="' + p + '"]').classList.add('on');
+    // Clear notification dot on this tab
+    const dot = this.querySelector('.tab-dot');
+    if (dot) dot.remove();
   });
 });
 

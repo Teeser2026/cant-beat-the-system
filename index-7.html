@@ -436,6 +436,7 @@ html, body {
 .card-auto-saved { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--earth); opacity: .4; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 .card.thread-notify-card { border-left: 2px solid rgba(90,122,138,.3); }
+.card.song-card { border-left: 2px solid rgba(138,126,106,.3); }
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }
@@ -552,6 +553,8 @@ a.ti.research { color: var(--earth); border-left-color: rgba(122,138,90,.25); op
 a.ti.research:hover { color: var(--bright); border-left-color: var(--earth); opacity: 1; }
 a.ti.research::after { content: ' ↗'; opacity: 0; transition: opacity .3s; font-size: 11px; }
 a.ti.research:hover::after { opacity: .5; }
+.ti-new { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--warm); opacity: .7; margin-right: 4px; }
+.ti.ti-is-new { color: var(--text); border-left-color: rgba(196,149,106,.35); }
 .add-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; }
 .add-note:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
 
@@ -1289,7 +1292,8 @@ async function loadGame() {
       notes: data.initialNotes ? structuredClone(data.initialNotes) : [],
       playerSongs: [],
       playerThreads: [],
-      _autoSaved: new Set()
+      _autoSaved: new Set(),
+      _threadsSeen: -1
     };
 
     // Hydrate data
@@ -1473,7 +1477,7 @@ function renderSignal(turnId) {
     section.cards.forEach(card => {
       const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';
-      const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : '';
+      const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : type === 'song' ? ' song-card' : '';
       html += `<div class="card${newCls}${typeCls}">
         <div class="src">${card.src}</div>
         <div class="ttl">${card.ttl}</div>
@@ -1488,6 +1492,8 @@ function renderSignal(turnId) {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
         html += `<div class="card-auto-saved">Saved to notes</div>`;
         essentialCards.push({ key, src: card.src, ttl: card.ttl, turnId });
+      } else if (type === 'song') {
+        html += `<div class="card-auto-saved" style="color:var(--lyric)">Saved to songs</div>`;
       } else {
         // flavour — default save button
         html += `<div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>`;
@@ -1569,15 +1575,17 @@ function renderThreads() {
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
+      const isNew = item.turn && (playData.turns.findIndex(t => t.id === item.turn) > state._threadsSeen);
+      const newTag = isNew ? '<span class="ti-new">NEW</span> ' : '';
       if (item.article) {
-        html += `<div class="ti article" data-group="${group.id}" data-idx="${origIdx}">${item.text}</div>`;
+        html += `<div class="ti article${isNew ? ' ti-is-new' : ''}" data-group="${group.id}" data-idx="${origIdx}">${newTag}${item.text}</div>`;
       } else if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
-        html += `<a class="${cls}" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
+        html += `<a class="${cls}${isNew ? ' ti-is-new' : ''}" href="${item.url}" target="_blank" rel="noopener">${newTag}${item.text}</a>`;
       } else if (item.src === 'player') {
-        html += `<div class="ti player">${item.text}</div>`;
+        html += `<div class="ti player${isNew ? ' ti-is-new' : ''}">${newTag}${item.text}</div>`;
       } else {
-        html += `<div class="ti pending">${item.text}</div>`;
+        html += `<div class="ti pending${isNew ? ' ti-is-new' : ''}">${newTag}${item.text}</div>`;
       }
     });
     html += '</div>';
@@ -2119,6 +2127,11 @@ document.querySelectorAll('.tab').forEach(tab => {
     // Clear notification dot on this tab
     const dot = this.querySelector('.tab-dot');
     if (dot) dot.remove();
+    // Mark threads as seen when visiting Threads tab
+    if (p === 'threads') {
+      state._threadsSeen = state.turnIndex;
+      renderThreads();
+    }
   });
 });
 

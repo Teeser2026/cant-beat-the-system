@@ -2039,6 +2039,12 @@
           "Walk out. No AIDA. Whatever it costs.",
           "Ask to speak to someone. Surely there’s someone here who has the same doubts you do."
         ]
+      },
+      "audio": {
+        "src": "sad-clouds.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
       }
     }
   ],

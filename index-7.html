@@ -1999,8 +1999,26 @@ function checkTabNotifications(turn) {
   if (hasNew && !threadsTab.classList.contains('on')) {
     if (!threadsTab.querySelector('.tab-dot')) {
       threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+      playPing();
     }
   }
+}
+
+function playPing() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = 1800;
+    osc.type = 'sine';
+    gain.gain.setValueAtTime(0.08, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.15);
+    setTimeout(() => ctx.close(), 200);
+  } catch(e) {}
 }
 
 // ── TAB SWITCHING ──

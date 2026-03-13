@@ -2099,7 +2099,7 @@
         "cards": [
           {
             "src": "Spotify — Kitchen disco",
-            "ttl": "Higher States of Consciousness → Smack My Bitch Up → Insomnia → Age of Love",
+            "ttl": "The Age Of Love → She Bangs The Drums",
             "snip": "Song tag. Amy chose first. You replied. God she’s good.",
             "tag": "Tonight",
             "cls": "e",
@@ -2157,6 +2157,19 @@
             "type": "essential"
           }
         ]
+      },
+      {
+        "sec": "6am",
+        "cards": [
+          {
+            "src": "Restless",
+            "ttl": "Insomnia",
+            "snip": "I can’t get no sleep. Most people couldn’t last night.",
+            "tag": "6am",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
       }
     ],
     "23": [
@@ -2182,6 +2195,19 @@
             "snip": "Three words. You know what he thinks.",
             "tag": "Unanswered",
             "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "All in all is all we all are",
+        "cards": [
+          {
+            "src": "The Morning",
+            "ttl": "Northern Sky → Karma Police → Subterranean Homesick Alien → All Apologies",
+            "snip": "She said nothing. She played Northern Sky. We hugged. We cried. Then the rest followed.",
+            "tag": "All in all is all we all are",
+            "cls": "e",
+            "type": "song"
           }
         ]
       }
@@ -2237,6 +2263,81 @@
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "payment-infra"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "sec": "Morning Blues",
+        "cards": [
+          {
+            "src": "Spotify — Discover Weekly",
+            "ttl": "Blue Monday",
+            "snip": "Monday morning. The algorithm served it up. It’s not even funny any more.",
+            "tag": "Morning Blues",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "8": [
+      {
+        "sec": "The Anti-Cleanse",
+        "cards": [
+          {
+            "src": "Demonic Inner Voice",
+            "ttl": "Home of the Brave",
+            "snip": "Vicarious self-destruction. Twelve minutes of someone else’s damage.",
+            "tag": "The Anti-Cleanse",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "10": [
+      {
+        "sec": "3am",
+        "cards": [
+          {
+            "src": "Woo noodles",
+            "ttl": "Are We Here?",
+            "snip": "What does God say?",
+            "tag": "3am",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "sec": "In the Drunk Tank",
+        "cards": [
+          {
+            "src": "It was Christmas Eve babe",
+            "ttl": "Fairytale of New York",
+            "snip": "Got on a lucky one, came in eighteen-to-one. Every year the gamble is landed.",
+            "tag": "In the Drunk Tank",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "12": [
+      {
+        "sec": "Until the sky turns green",
+        "cards": [
+          {
+            "src": "Morning Glory",
+            "ttl": "(Song for My) Sugar Spun Sister",
+            "snip": "She wakes up with the sun. Whatever the weather.",
+            "tag": "Until the sky turns green",
+            "cls": "e",
+            "type": "song"
           }
         ]
       }

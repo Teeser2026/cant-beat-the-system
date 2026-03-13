@@ -1293,7 +1293,7 @@ async function loadGame() {
       playerSongs: [],
       playerThreads: [],
       _autoSaved: new Set(),
-      _threadsSeen: -1
+      _threadsClicked: new Set()
     };
 
     // Hydrate data
@@ -1575,17 +1575,18 @@ function renderThreads() {
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
-      const isNew = item.turn && (playData.turns.findIndex(t => t.id == item.turn) > state._threadsSeen);
+      const itemKey = group.id + ':' + origIdx;
+      const isNew = item.turn && !state._threadsClicked.has(itemKey);
       const newTag = isNew ? '<span class="ti-new">NEW</span> ' : '';
       if (item.article) {
-        html += `<div class="ti article${isNew ? ' ti-is-new' : ''}" data-group="${group.id}" data-idx="${origIdx}">${newTag}${item.text}</div>`;
+        html += `<div class="ti article${isNew ? ' ti-is-new' : ''}" data-group="${group.id}" data-idx="${origIdx}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
       } else if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
-        html += `<a class="${cls}${isNew ? ' ti-is-new' : ''}" href="${item.url}" target="_blank" rel="noopener">${newTag}${item.text}</a>`;
+        html += `<a class="${cls}${isNew ? ' ti-is-new' : ''}" href="${item.url}" target="_blank" rel="noopener" data-tkey="${itemKey}">${newTag}${item.text}</a>`;
       } else if (item.src === 'player') {
-        html += `<div class="ti player${isNew ? ' ti-is-new' : ''}">${newTag}${item.text}</div>`;
+        html += `<div class="ti player${isNew ? ' ti-is-new' : ''}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
       } else {
-        html += `<div class="ti pending${isNew ? ' ti-is-new' : ''}">${newTag}${item.text}</div>`;
+        html += `<div class="ti pending${isNew ? ' ti-is-new' : ''}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
       }
     });
     html += '</div>';
@@ -1609,6 +1610,19 @@ function renderThreads() {
       const group = threadsData.find(g => g.id === groupId);
       if (group && group.items[idx] && group.items[idx].article) {
         openArticle(group.items[idx].article);
+      }
+    });
+  });
+
+  // Mark any thread item as read on click
+  panel.querySelectorAll('.ti[data-tkey]').forEach(el => {
+    el.addEventListener('click', function() {
+      const key = this.dataset.tkey;
+      if (key && !state._threadsClicked.has(key)) {
+        state._threadsClicked.add(key);
+        this.classList.remove('ti-is-new');
+        const tag = this.querySelector('.ti-new');
+        if (tag) tag.remove();
       }
     });
   });
@@ -2127,11 +2141,6 @@ document.querySelectorAll('.tab').forEach(tab => {
     // Clear notification dot on this tab
     const dot = this.querySelector('.tab-dot');
     if (dot) dot.remove();
-    // Mark threads as seen when visiting Threads tab
-    if (p === 'threads') {
-      state._threadsSeen = state.turnIndex;
-      renderThreads();
-    }
   });
 });
 

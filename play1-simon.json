@@ -165,6 +165,12 @@
             }
           }
         ]
+      },
+      "audio": {
+        "src": "countryside-bees.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
       }
     },
     {

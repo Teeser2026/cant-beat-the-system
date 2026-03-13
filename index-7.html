@@ -1559,15 +1559,6 @@ function renderThreads() {
   const panel = document.getElementById('threads-panel');
   let html = '';
 
-  // Player's own research — at the top, green
-  if (state.playerThreads && state.playerThreads.length > 0) {
-    html += '<div class="tg"><div class="tg-label research-label">Your Research</div>';
-    state.playerThreads.forEach(item => {
-      html += `<a class="ti research" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
-    });
-    html += '</div>';
-  }
-
   threadsData.forEach(group => {
     const visibleItems = group.items.filter(item => {
       if (!item.turn) return true;
@@ -1591,6 +1582,16 @@ function renderThreads() {
     });
     html += '</div>';
   });
+
+  // Player's own research — at the bottom, green
+  if (state.playerThreads && state.playerThreads.length > 0) {
+    html += '<div class="tg"><div class="tg-label research-label">Your Research</div>';
+    state.playerThreads.forEach(item => {
+      html += `<a class="ti research" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
+    });
+    html += '</div>';
+  }
+
   panel.innerHTML = html;
   // Bind article clicks
   panel.querySelectorAll('.ti.article').forEach(el => {
@@ -1622,23 +1623,34 @@ function renderNotes() {
       const turnIdx = playData.turns.findIndex(t => t.id === note.turn);
       if (turnIdx > state.turnIndex) return;
     }
+    const isPlayerNote = !note.readonly && !note.fromSignal;
+    const isUnsaved = isPlayerNote && !note.saved;
     const ro = note.readonly ? ' readonly style="opacity:.6"' : '';
-    let threadBtn = '';
-    if (note.savedToThread) {
-      threadBtn = '<span class="note-act" style="opacity:.5;color:var(--earth);pointer-events:none">Linked</span>';
-    } else if (!note.fromSignal && !note.readonly) {
-      threadBtn = '<button class="note-act add-link-thread">Add link &amp; save to thread</button>';
+    let actions = '';
+    if (isUnsaved) {
+      // Stage 1: just a Save button
+      actions = '<button class="note-act save-note" style="color:var(--earth);opacity:.5">Save</button>';
+    } else {
+      // Stage 2 (saved player note) or signal/readonly
+      let threadBtn = '';
+      if (note.savedToThread) {
+        threadBtn = '<span class="note-act" style="opacity:.5;color:var(--earth);pointer-events:none">Linked</span>';
+      } else if (isPlayerNote) {
+        threadBtn = '<button class="note-act add-link-thread">Add link &amp; save to thread</button>';
+      }
+      actions = `<button class="note-act del">Delete</button>${threadBtn}`;
     }
     const signalStyle = note.fromSignal ? 'border-color:rgba(196,149,106,.25);' : '';
     const linkedStyle = note.savedToThread ? 'border-color:rgba(122,138,90,.25);' : '';
-    const noteStyle = (signalStyle || linkedStyle) ? ` style="${signalStyle}${linkedStyle}"` : '';
-    const placeholder = (!note.readonly && !note.fromSignal) ? ' placeholder="Write a note..."' : '';
+    const savedStyle = (isPlayerNote && note.saved && !note.savedToThread) ? 'border-color:rgba(122,138,90,.12);' : '';
+    const noteStyle = (signalStyle || linkedStyle || savedStyle) ? ` style="${signalStyle}${linkedStyle}${savedStyle}"` : '';
+    const placeholder = isPlayerNote ? ' placeholder="Write a note..."' : '';
+    const editableAttr = isUnsaved ? '' : (isPlayerNote ? '' : ro);
     html += `<div class="note" data-ni="${i}"${noteStyle}>
-      <textarea${ro}${placeholder}>${note.text}</textarea>
+      <textarea${editableAttr}${placeholder}>${note.text}</textarea>
       <div class="note-t">${note.timestamp}${note.fromSignal && !note.timestamp.includes('from signal') ? ' · from signal' : ''}</div>
       <div class="note-actions">
-        <button class="note-act del">Delete</button>
-        ${threadBtn}
+        ${actions}
       </div>
     </div>`;
   });
@@ -1657,6 +1669,22 @@ function addNote(text, timestamp, readonly = false, fromSignal = false) {
 }
 
 function bindNoteActions() {
+  // Save button — commits an unsaved player note
+  document.querySelectorAll('.note .save-note').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const note = this.closest('.note');
+      const idx = parseInt(note.dataset.ni);
+      const textarea = note.querySelector('textarea');
+      const txt = textarea ? textarea.value.trim() : '';
+      if (!txt) return; // don't save empty notes
+      if (state.notes[idx]) {
+        state.notes[idx].text = txt;
+        state.notes[idx].saved = true;
+      }
+      renderNotes();
+    });
+  });
+
   document.querySelectorAll('.note .del').forEach(btn => {
     btn.addEventListener('click', function() {
       if (this.dataset.confirm) {

@@ -1252,11 +1252,11 @@
     {
       "id": 14,
       "num": "T14",
-      "title": "TBD",
+      "title": "A Heart to Heat",
       "date": "January 2027",
       "paras": [
         {
-          "t": "Not yet written."
+          "t": "Dev is the only person that <i>really</i> knows you. The only one that gets it. He offers you an almost empty glass, but somehow convinces you it's nearly full."
         }
       ],
       "choices": null
@@ -1298,11 +1298,11 @@
     {
       "id": 15,
       "num": "T15",
-      "title": "TBD",
+      "title": "The Puppy",
       "date": "January 2027",
       "paras": [
         {
-          "t": "Not yet written."
+          "t": "You've been promising yourself this for years."
         }
       ],
       "choices": null
@@ -1433,11 +1433,11 @@
     {
       "id": 16,
       "num": "T16",
-      "title": "TBD",
+      "title": "Cry Wolf",
       "date": "January 2027",
       "paras": [
         {
-          "t": "Not yet written."
+          "t": "A manic couple of weeks. Dev sent me an article. Must Read. I skimmed it. Probably true, Dev's sources are rock solid. But it's the next in a long line of 'this is the big one' claims. I'll believe it when I see it."
         }
       ],
       "choices": null
@@ -1908,11 +1908,11 @@
     {
       "id": 22,
       "num": "T22",
-      "title": "TBD",
+      "title": "I am the God of Hellfire",
       "date": "February 2027",
       "paras": [
         {
-          "t": "Not yet written."
+          "t": "Where do you start? Where the hell do you start?"
         }
       ],
       "choices": null

@@ -1717,16 +1717,15 @@ function startAmbient() {
 
     ambientAudio = new Audio('audio/intro-ambient.mp3');
     ambientAudio.loop = true;
-    ambientAudio.crossOrigin = 'anonymous';
     const source = ambientCtx.createMediaElementSource(ambientAudio);
     source.connect(ambientGain);
     ambientAudio.play().then(() => {
-      // Fade in over 3 seconds
+      console.log('Ambient audio playing');
       ambientGain.gain.linearRampToValueAtTime(0.5, ambientCtx.currentTime + 3);
-    }).catch(() => {});
+    }).catch(err => { console.log('Ambient play failed:', err); });
     ambientOn = true;
   } catch(err) {
-    console.log('Audio not available');
+    console.log('Ambient audio error:', err);
   }
 }
 
@@ -1810,15 +1809,14 @@ function startBirdsong() {
 
     birdsongAudio = new Audio('audio/birdsong.mp3');
     birdsongAudio.loop = true;
-    birdsongAudio.crossOrigin = 'anonymous';
     const source = birdsongCtx.createMediaElementSource(birdsongAudio);
     source.connect(birdsongGain);
     birdsongAudio.play().then(() => {
-      // Fade in over 2 seconds
+      console.log('Birdsong audio playing');
       birdsongGain.gain.linearRampToValueAtTime(0.6, birdsongCtx.currentTime + 2);
-    }).catch(() => {});
+    }).catch(err => { console.log('Birdsong play failed:', err); });
   } catch(err) {
-    console.log('Audio not available');
+    console.log('Birdsong audio error:', err);
   }
 }
 

@@ -1778,10 +1778,11 @@ setTimeout(() => {
 document.getElementById('intro-screen').addEventListener('click', function() {
   if (!introClickable) return;
   this.classList.add('fade-out');
-  // Fade out ambient with the screen
+  // Crossfade: start birdsong immediately, fade out ambient together
+  startBirdsong();
   if (ambientAudio && ambientGain && ambientCtx) {
-    ambientGain.gain.linearRampToValueAtTime(0, ambientCtx.currentTime + 2);
-    setTimeout(() => { stopAmbient(); }, 2200);
+    ambientGain.gain.linearRampToValueAtTime(0, ambientCtx.currentTime + 2.5);
+    setTimeout(() => { stopAmbient(); }, 2700);
   }
   setTimeout(() => {
     this.style.display = 'none';
@@ -1789,7 +1790,6 @@ document.getElementById('intro-screen').addEventListener('click', function() {
     const ws = document.getElementById('welcome-screen');
     ws.style.display = 'flex';
     startWelcomeSequence();
-    startBirdsong();
   }, 2100);
 });
 

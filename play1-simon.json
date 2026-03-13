@@ -2115,7 +2115,8 @@
             "snip": "Sent 11pm. You haven’t seen it yet.",
             "tag": "Unread",
             "cls": "a",
-            "isnew": true
+            "isnew": true,
+            "type": "essential"
           }
         ]
       }
@@ -2130,14 +2131,16 @@
             "snip": "Swipe to refresh. No change.",
             "tag": "Offline",
             "cls": "a",
-            "isnew": true
+            "isnew": true,
+            "type": "essential"
           },
           {
             "src": "Barclays App",
             "ttl": "“Closed for routine maintenance.”",
             "snip": "The maintenance window. The one that was announced quietly.",
             "tag": "Down",
-            "cls": "a"
+            "cls": "a",
+            "type": "essential"
           }
         ]
       },
@@ -2149,7 +2152,8 @@
             "ttl": "AIDA",
             "snip": "Small blue swirly logo. Under the battery bar.",
             "tag": "New",
-            "cls": "a"
+            "cls": "a",
+            "type": "essential"
           }
         ]
       }
@@ -2191,7 +2195,9 @@
             "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
             "tag": "Urgent",
             "cls": "a",
-            "isnew": true
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "The Valentine's Day Question"
           },
           {
             "src": "X — Predictive AI accounts",
@@ -2225,7 +2231,9 @@
             "snip": "\"Read this. Actually read it this time.\"",
             "tag": "Unread",
             "cls": "a",
-            "isnew": true
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "Payment Infrastructure"
           }
         ]
       }

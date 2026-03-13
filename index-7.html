@@ -443,6 +443,71 @@ a.ti.player { color: var(--player); border-left-color: rgba(138,126,106,.2); }
 a.ti.player:hover { color: var(--text); border-left-color: var(--player); }
 a.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
 div.ti.pending { cursor: default; opacity: .5; }
+div.ti.article { cursor: pointer; }
+div.ti.article::after { content: ' ▸'; opacity: 0; transition: opacity .3s; font-size: 11px; }
+div.ti.article:hover::after { opacity: .4; }
+
+/* ── ARTICLE OVERLAY ── */
+.article-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.65); justify-content: center; align-items: center; padding: 2rem;
+}
+.article-overlay.open { display: flex; }
+.article-overlay .article-close {
+  position: absolute; top: 12px; right: 16px; font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px; color: #999; cursor: pointer; letter-spacing: 1px; z-index: 2;
+}
+.article-overlay .article-close:hover { color: #ccc; }
+
+/* GOV style */
+.article-panel.gov {
+  width: 520px; max-width: 95%; max-height: 80vh; overflow-y: auto;
+  background: #f4f1eb; border-radius: 2px; padding: 40px 36px 36px; position: relative;
+  font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a;
+}
+.article-panel.gov .article-source {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: #666; margin-bottom: 6px;
+}
+.article-panel.gov .article-title {
+  font-size: 20px; font-weight: bold; color: #1a1a1a; line-height: 1.3;
+  border-bottom: 3px solid #1a1a1a; padding-bottom: 14px; margin-bottom: 6px;
+}
+.article-panel.gov .article-date {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #999;
+  letter-spacing: 1px; margin-bottom: 20px;
+}
+.article-panel.gov .article-body { font-size: 14.5px; line-height: 1.75; color: #2a2a2a; }
+.article-panel.gov .article-body p { margin: 0 0 14px; }
+.article-panel.gov .article-footer {
+  border-top: 1px solid #ccc; margin-top: 24px; padding-top: 12px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: #aaa;
+}
+
+/* PASTE style */
+.article-panel.paste {
+  width: 540px; max-width: 95%; max-height: 80vh; overflow-y: auto;
+  background: #0c0c0e; border: 1px solid #1a1a1c; border-radius: 0;
+  padding: 32px 28px 28px; position: relative;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace; color: #a0a0a0;
+}
+.article-panel.paste .article-source {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #444; margin-bottom: 8px;
+}
+.article-panel.paste .article-title {
+  font-size: 15px; color: #c8c4b8; line-height: 1.4; font-family: 'IBM Plex Mono', monospace;
+  border-bottom: 1px solid #1a1a1c; padding-bottom: 14px; margin-bottom: 20px;
+}
+.article-panel.paste .article-date { display: none; }
+.article-panel.paste .article-body { font-size: 13px; line-height: 1.85; color: #808078; }
+.article-panel.paste .article-body p { margin: 0 0 16px; }
+.article-panel.paste .article-body .arc { color: #5a7a8a; }
+.article-panel.paste .article-body .alert { color: #a65a4a; }
+.article-panel.paste .article-footer {
+  border-top: 1px solid #1a1a1c; margin-top: 20px; padding-top: 10px;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #333;
+}
 
 /* ── NOTES ── */
 .note { background: rgba(196,149,106,.04); border: 1px solid rgba(196,149,106,.1); border-radius: 3px; padding: 13px 14px; margin-bottom: 9px; }
@@ -1027,6 +1092,18 @@ body.game-active .ticker-bar { display: flex; }
   </div>
 </div>
 
+<!-- ══ ARTICLE OVERLAY ══ -->
+<div class="article-overlay" id="article-overlay">
+  <div class="article-panel" id="article-panel">
+    <div class="article-close" id="article-close">✕ CLOSE</div>
+    <div class="article-source" id="article-source"></div>
+    <div class="article-title" id="article-title"></div>
+    <div class="article-date" id="article-date"></div>
+    <div class="article-body" id="article-body"></div>
+    <div class="article-footer" id="article-footer"></div>
+  </div>
+</div>
+
 <div class="noise"></div>
 
 <!-- ══ ECONOMIC BAR ══ -->
@@ -1356,10 +1433,12 @@ function renderThreads() {
     });
     if (visibleItems.length === 0) return;
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
-    visibleItems.forEach(item => {
+    visibleItems.forEach((item, idx) => {
       if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
         html += `<a class="${cls}" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
+      } else if (item.article) {
+        html += `<div class="ti article" data-group="${group.id}" data-idx="${idx}">${item.text}</div>`;
       } else {
         html += `<div class="ti pending">${item.text}</div>`;
       }
@@ -1367,6 +1446,17 @@ function renderThreads() {
     html += '</div>';
   });
   panel.innerHTML = html;
+  // Bind article clicks
+  panel.querySelectorAll('.ti.article').forEach(el => {
+    el.addEventListener('click', function() {
+      const groupId = this.dataset.group;
+      const idx = parseInt(this.dataset.idx);
+      const group = threadsData.find(g => g.id === groupId);
+      if (group && group.items[idx] && group.items[idx].article) {
+        openArticle(group.items[idx].article);
+      }
+    });
+  });
 }
 
 function renderNotes() {
@@ -1963,6 +2053,35 @@ document.getElementById('welcome-begin').addEventListener('click', function(e) {
     ws.style.display = 'none';
     document.body.classList.add('game-active');
   }, 1600);
+});
+
+// ── ARTICLE OVERLAY ──
+function openArticle(article) {
+  const overlay = document.getElementById('article-overlay');
+  const panel = document.getElementById('article-panel');
+  const source = document.getElementById('article-source');
+  const title = document.getElementById('article-title');
+  const date = document.getElementById('article-date');
+  const body = document.getElementById('article-body');
+  const footer = document.getElementById('article-footer');
+
+  // Set style class
+  panel.className = 'article-panel ' + (article.style || 'paste');
+
+  source.innerHTML = article.source || '';
+  title.innerHTML = article.title || '';
+  date.innerHTML = article.date || '';
+  body.innerHTML = article.body || '';
+  footer.innerHTML = article.footer || '';
+
+  overlay.classList.add('open');
+}
+
+document.getElementById('article-close').addEventListener('click', function() {
+  document.getElementById('article-overlay').classList.remove('open');
+});
+document.getElementById('article-overlay').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
 });
 
 // ── DEV SKIP ──

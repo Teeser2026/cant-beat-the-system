@@ -1433,12 +1433,13 @@ function renderThreads() {
     });
     if (visibleItems.length === 0) return;
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
-    visibleItems.forEach((item, idx) => {
+    visibleItems.forEach(item => {
+      const origIdx = group.items.indexOf(item);
       if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
         html += `<a class="${cls}" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
       } else if (item.article) {
-        html += `<div class="ti article" data-group="${group.id}" data-idx="${idx}">${item.text}</div>`;
+        html += `<div class="ti article" data-group="${group.id}" data-idx="${origIdx}">${item.text}</div>`;
       } else {
         html += `<div class="ti pending">${item.text}</div>`;
       }

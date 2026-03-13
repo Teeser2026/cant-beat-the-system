@@ -2542,24 +2542,5 @@
       "cls": "warm"
     }
   ],
-  "initialNotes": [
-    {
-      "text": "Bonfire. ‘We wunt be druv.’ Hold onto this.",
-      "timestamp": "Early November 2026",
-      "readonly": false,
-      "turn": 4
-    },
-    {
-      "text": "Dev says terminals active in Manchester. Testing what? For when? Ask him.",
-      "timestamp": "Late January 2027",
-      "readonly": false,
-      "turn": 17
-    },
-    {
-      "text": "214. The firmware + the withdrawal limits + \"no cause for concern\" = ?",
-      "timestamp": "Late January 2027",
-      "readonly": false,
-      "turn": 17
-    }
-  ]
+  "initialNotes": []
 }

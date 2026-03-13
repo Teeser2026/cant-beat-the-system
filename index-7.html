@@ -1715,7 +1715,7 @@ function startAmbient() {
     ambientGain.gain.value = 0;
     ambientGain.connect(ambientCtx.destination);
 
-    ambientAudio = new Audio('audio/intro-ambient.mp3');
+    ambientAudio = new Audio('intro-ambient.mp3');
     ambientAudio.loop = true;
     const source = ambientCtx.createMediaElementSource(ambientAudio);
     source.connect(ambientGain);
@@ -1807,7 +1807,7 @@ function startBirdsong() {
     birdsongGain.gain.value = 0;
     birdsongGain.connect(birdsongCtx.destination);
 
-    birdsongAudio = new Audio('audio/birdsong.mp3');
+    birdsongAudio = new Audio('birdsong.mp3');
     birdsongAudio.loop = true;
     const source = birdsongCtx.createMediaElementSource(birdsongAudio);
     source.connect(birdsongGain);

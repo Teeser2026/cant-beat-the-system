@@ -1568,14 +1568,14 @@ function renderThreads() {
   threadsData.forEach(group => {
     const visibleItems = group.items.filter(item => {
       if (!item.turn) return true;
-      const turnIdx = playData.turns.findIndex(t => t.id === item.turn);
+      const turnIdx = playData.turns.findIndex(t => t.id == item.turn);
       return turnIdx <= state.turnIndex;
     });
     if (visibleItems.length === 0) return;
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
-      const isNew = item.turn && (playData.turns.findIndex(t => t.id === item.turn) > state._threadsSeen);
+      const isNew = item.turn && (playData.turns.findIndex(t => t.id == item.turn) > state._threadsSeen);
       const newTag = isNew ? '<span class="ti-new">NEW</span> ' : '';
       if (item.article) {
         html += `<div class="ti article${isNew ? ' ti-is-new' : ''}" data-group="${group.id}" data-idx="${origIdx}">${newTag}${item.text}</div>`;
@@ -2075,7 +2075,7 @@ function checkTabNotifications(turn) {
   let hasNew = false;
   threadsData.forEach(group => {
     group.items.forEach(item => {
-      if (item.turn === turn.id) hasNew = true;
+      if (item.turn == turn.id) hasNew = true;
     });
   });
   // Also check signal — if signal has data, it's new content

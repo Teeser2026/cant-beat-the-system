@@ -430,6 +430,12 @@ html, body {
 .save-signal { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .save-signal:hover { opacity: .7; color: var(--warm); }
 .save-signal.saved { color: var(--cold); opacity: .5; pointer-events: none; }
+.card-thread-ref { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--cold); opacity: .5; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
+.card-thread-ref:hover { opacity: .85; }
+.card-thread-ref::before { content: '↗ '; font-size: 8px; }
+.card-auto-saved { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--earth); opacity: .4; margin-top: 4px; padding: 2px 6px; display: inline-block; }
+.card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
+.card.thread-notify-card { border-left: 2px solid rgba(90,122,138,.3); }
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }
@@ -1274,7 +1280,8 @@ async function loadGame() {
       questionsLog: [],
       notes: data.initialNotes ? structuredClone(data.initialNotes) : [],
       playerSongs: [],
-      playerThreads: []
+      playerThreads: [],
+      _autoSaved: new Set()
     };
 
     // Hydrate data
@@ -1451,29 +1458,67 @@ function renderSignal(turnId) {
     return;
   }
   let html = '';
+  let essentialCards = []; // track for auto-save
+
   data.forEach(section => {
     html += `<div class="sec-label">\u2014 ${section.sec} \u2014</div>`;
     section.cards.forEach(card => {
+      const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';
-      html += `<div class="card${newCls}">
+      const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : '';
+      html += `<div class="card${newCls}${typeCls}">
         <div class="src">${card.src}</div>
         <div class="ttl">${card.ttl}</div>
         <div class="snip">${card.snip}</div>
-        <div class="tag ${card.cls}">${card.tag}</div>
-        <div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>
-      </div>`;
+        <div class="tag ${card.cls}">${card.tag}</div>`;
+
+      if (type === 'thread-notify') {
+        const group = threadsData.find(g => g.id === card.threadRef);
+        const label = group ? group.label : card.threadRef;
+        html += `<div class="card-thread-ref" data-thread="${card.threadRef}">NEW THREAD · ${label}</div>`;
+      } else if (type === 'essential') {
+        const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
+        html += `<div class="card-auto-saved">Saved to notes</div>`;
+        essentialCards.push({ key, src: card.src, ttl: card.ttl, turnId });
+      } else {
+        // flavour — default save button
+        html += `<div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>`;
+      }
+      html += '</div>';
     });
   });
   panel.innerHTML = html;
 
+  // Auto-save essential cards (once only)
+  let didAutoSave = false;
+  essentialCards.forEach(({ key, src, ttl, turnId: tid }) => {
+    if (!state._autoSaved.has(key)) {
+      state._autoSaved.add(key);
+      const turn = playData.turns[state.turnIndex];
+      const ts = turn && turn.date ? `${turn.date} · from signal` : 'from signal';
+      addNote(`${src}: ${ttl}`, ts, true, true);
+      didAutoSave = true;
+    }
+  });
+  if (didAutoSave) {
+    // Dot on Notes tab + swoosh sound
+    const notesTab = document.querySelector('[data-p="notes"]');
+    if (notesTab && !notesTab.querySelector('.tab-dot')) {
+      notesTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+    }
+    playNoteSaved();
+  }
+
   // Card interactions
   panel.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function(e) {
-      if (e.target.classList.contains('save-signal')) return;
+      if (e.target.classList.contains('save-signal') || e.target.classList.contains('card-thread-ref') || e.target.classList.contains('card-auto-saved')) return;
       if (this.classList.contains('new')) this.classList.remove('new');
       else this.classList.toggle('fade');
     });
   });
+
+  // Flavour: manual save
   panel.querySelectorAll('.save-signal').forEach(btn => {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -1481,6 +1526,23 @@ function renderSignal(turnId) {
       addNote(`${this.dataset.src}: ${this.dataset.ttl}`, `Signal — ${turn.num}`, true, true);
       this.textContent = 'Saved';
       this.classList.add('saved');
+    });
+  });
+
+  // Thread-notify: click to switch to Threads tab
+  panel.querySelectorAll('.card-thread-ref').forEach(ref => {
+    ref.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Switch to Threads tab
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.panel').forEach(el => el.classList.remove('on'));
+      const threadsTab = document.querySelector('[data-p="threads"]');
+      const threadsPanel = document.querySelector('.panel[data-p="threads"]');
+      if (threadsTab) threadsTab.classList.add('on');
+      if (threadsPanel) threadsPanel.classList.add('on');
+      // Remove dot from Threads tab if present
+      const dot = threadsTab && threadsTab.querySelector('.tab-dot');
+      if (dot) dot.remove();
     });
   });
 }
@@ -2018,6 +2080,14 @@ function playPing() {
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.15);
     setTimeout(() => ctx.close(), 200);
+  } catch(e) {}
+}
+
+function playNoteSaved() {
+  try {
+    const a = new Audio('note-saved.mp3');
+    a.volume = 0.15;
+    a.play().catch(() => {});
   } catch(e) {}
 }
 

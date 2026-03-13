@@ -2197,7 +2197,7 @@
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "The Valentine's Day Question"
+            "threadRef": "valentines-question"
           },
           {
             "src": "X — Predictive AI accounts",
@@ -2233,7 +2233,7 @@
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "Payment Infrastructure"
+            "threadRef": "payment-infra"
           }
         ]
       }

@@ -1704,42 +1704,26 @@ document.addEventListener('input', function(e) {
 // ── INTRO SCREEN ──
 let ambientAudio = null;
 let ambientOn = false;
+let ambientCtx = null;
+let ambientGain = null;
 
 function startAmbient() {
   if (ambientAudio) return;
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc1 = ctx.createOscillator();
-    osc1.type = 'sine';
-    osc1.frequency.value = 55;
-    const gain1 = ctx.createGain();
-    gain1.gain.value = 0;
-    osc1.connect(gain1);
-    gain1.connect(ctx.destination);
-    osc1.start();
-    // Fade in slowly
-    gain1.gain.linearRampToValueAtTime(0.03, ctx.currentTime + 3);
+    ambientCtx = new (window.AudioContext || window.webkitAudioContext)();
+    ambientGain = ambientCtx.createGain();
+    ambientGain.gain.value = 0;
+    ambientGain.connect(ambientCtx.destination);
 
-    const osc2 = ctx.createOscillator();
-    osc2.type = 'sine';
-    osc2.frequency.value = 220;
-    const gain2 = ctx.createGain();
-    gain2.gain.value = 0;
-    osc2.connect(gain2);
-    gain2.connect(ctx.destination);
-    osc2.start();
-    gain2.gain.linearRampToValueAtTime(0.008, ctx.currentTime + 4);
-
-    const lfo = ctx.createOscillator();
-    lfo.type = 'sine';
-    lfo.frequency.value = 0.15;
-    const lfoGain = ctx.createGain();
-    lfoGain.gain.value = 0.005;
-    lfo.connect(lfoGain);
-    lfoGain.connect(gain2.gain);
-    lfo.start();
-
-    ambientAudio = { ctx, oscs: [osc1, osc2, lfo], gains: [gain1, gain2] };
+    ambientAudio = new Audio('audio/intro-ambient.mp3');
+    ambientAudio.loop = true;
+    ambientAudio.crossOrigin = 'anonymous';
+    const source = ambientCtx.createMediaElementSource(ambientAudio);
+    source.connect(ambientGain);
+    ambientAudio.play().then(() => {
+      // Fade in over 3 seconds
+      ambientGain.gain.linearRampToValueAtTime(0.5, ambientCtx.currentTime + 3);
+    }).catch(() => {});
     ambientOn = true;
   } catch(err) {
     console.log('Audio not available');
@@ -1748,10 +1732,14 @@ function startAmbient() {
 
 function stopAmbient() {
   if (ambientAudio) {
-    ambientAudio.oscs.forEach(o => { try { o.stop(); } catch(e){} });
-    ambientAudio.ctx.close();
+    try { ambientAudio.pause(); } catch(e){}
     ambientAudio = null;
   }
+  if (ambientCtx) {
+    try { ambientCtx.close(); } catch(e){}
+    ambientCtx = null;
+  }
+  ambientGain = null;
   ambientOn = false;
 }
 
@@ -1792,10 +1780,8 @@ document.getElementById('intro-screen').addEventListener('click', function() {
   if (!introClickable) return;
   this.classList.add('fade-out');
   // Fade out ambient with the screen
-  if (ambientAudio) {
-    ambientAudio.gains.forEach(g => {
-      g.gain.linearRampToValueAtTime(0, ambientAudio.ctx.currentTime + 2);
-    });
+  if (ambientAudio && ambientGain && ambientCtx) {
+    ambientGain.gain.linearRampToValueAtTime(0, ambientCtx.currentTime + 2);
     setTimeout(() => { stopAmbient(); }, 2200);
   }
   setTimeout(() => {
@@ -1810,80 +1796,42 @@ document.getElementById('intro-screen').addEventListener('click', function() {
 
 // ── WELCOME SCREEN ──
 // ── WELCOME SCREEN ──
+let birdsongAudio = null;
 let birdsongCtx = null;
-let birdsongInterval = null;
+let birdsongGain = null;
 
 function startBirdsong() {
-  if (birdsongCtx) return;
+  if (birdsongAudio) return;
   try {
     birdsongCtx = new (window.AudioContext || window.webkitAudioContext)();
-    
-    function chirp() {
-      if (!birdsongCtx) return;
-      const now = birdsongCtx.currentTime;
-      const osc = birdsongCtx.createOscillator();
-      const gain = birdsongCtx.createGain();
-      
-      // Random bird character
-      const baseFreq = 2000 + Math.random() * 3000;
-      const chirpLen = 0.05 + Math.random() * 0.1;
-      const notes = 1 + Math.floor(Math.random() * 4);
-      
-      osc.type = 'sine';
-      osc.connect(gain);
-      gain.connect(birdsongCtx.destination);
-      
-      // Build a little phrase
-      let t = now;
-      for (let i = 0; i < notes; i++) {
-        const freq = baseFreq + (Math.random() - 0.3) * 1500;
-        osc.frequency.setValueAtTime(freq, t);
-        // Slight slide between notes
-        if (i < notes - 1) {
-          const nextFreq = baseFreq + (Math.random() - 0.3) * 1500;
-          osc.frequency.linearRampToValueAtTime(nextFreq, t + chirpLen * 0.8);
-        }
-        t += chirpLen + Math.random() * 0.03;
-      }
-      
-      // Volume envelope — gentle
-      gain.gain.setValueAtTime(0, now);
-      gain.gain.linearRampToValueAtTime(0.012 + Math.random() * 0.008, now + 0.01);
-      gain.gain.setValueAtTime(0.012 + Math.random() * 0.008, now + (t - now) - 0.03);
-      gain.gain.linearRampToValueAtTime(0, t);
-      
-      osc.start(now);
-      osc.stop(t + 0.05);
-    }
-    
-    // Scatter chirps at random intervals
-    function scheduleChirp() {
-      if (!birdsongCtx) return;
-      chirp();
-      // Sometimes a second bird responds
-      if (Math.random() > 0.5) {
-        setTimeout(() => { if (birdsongCtx) chirp(); }, 200 + Math.random() * 400);
-      }
-      birdsongInterval = setTimeout(scheduleChirp, 800 + Math.random() * 2500);
-    }
-    
-    // Start after a brief pause
-    birdsongInterval = setTimeout(scheduleChirp, 600);
-    
+    birdsongGain = birdsongCtx.createGain();
+    birdsongGain.gain.value = 0;
+    birdsongGain.connect(birdsongCtx.destination);
+
+    birdsongAudio = new Audio('audio/birdsong.mp3');
+    birdsongAudio.loop = true;
+    birdsongAudio.crossOrigin = 'anonymous';
+    const source = birdsongCtx.createMediaElementSource(birdsongAudio);
+    source.connect(birdsongGain);
+    birdsongAudio.play().then(() => {
+      // Fade in over 2 seconds
+      birdsongGain.gain.linearRampToValueAtTime(0.6, birdsongCtx.currentTime + 2);
+    }).catch(() => {});
   } catch(err) {
     console.log('Audio not available');
   }
 }
 
 function stopBirdsong() {
-  if (birdsongInterval) {
-    clearTimeout(birdsongInterval);
-    birdsongInterval = null;
+  if (birdsongAudio) {
+    try { birdsongAudio.pause(); } catch(e){}
+    birdsongAudio = null;
   }
   if (birdsongCtx) {
-    birdsongCtx.close();
+    try { birdsongCtx.close(); } catch(e){}
     birdsongCtx = null;
   }
+  birdsongGain = null;
 }
 
 function startWelcomeSequence() {

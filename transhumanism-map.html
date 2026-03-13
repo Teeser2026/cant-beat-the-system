@@ -150,10 +150,19 @@ const PLAYERS = [
   { name: "Jaron Lanier", faction: "VR pioneer / witness", position: "Reports pro-extinction beliefs pervasive among researchers", era: "2020s", role: "The witness from inside", section: "§4.6", color: "#ff3355" },
   { name: "Marc Andreessen", faction: "VC / e/acc", position: "Techno-Optimist Manifesto; unregulated acceleration", era: "2020s", role: "Money → infrastructure", section: "§4.6", color: "#ff3355" },
   { name: "Elon Musk", faction: "Multiple sectors", position: "'Humanity is a biological bootloader'; Neuralink; humanoid robots", era: "2010s–present", role: "Arms race, escape infra", section: "§4.6", color: "#ff3355" },
-  { name: "Sam Altman", faction: "OpenAI", position: "Invested in Nectome; dissolved Super Alignment team", era: "2010s–present", role: "Speed over safety", section: "§5.2", color: "#ff3355" },
-  { name: "Peter Thiel", faction: "Palantir / NRx-adjacent", position: "Surveillance tech; NZ escape plan; funds pro-extinction orgs", era: "2010s–present", role: "Surveillance + escape", section: "§4.4", color: "#ff3355" },
+  { name: "Sam Altman", faction: "OpenAI / Merge Labs", position: "Nectome, Retro Biosciences; dissolved Super Alignment; co-founded Merge Labs (BCI); Worldcoin", era: "2010s–present", role: "Speed over safety; AI→BCI→biometric convergence", section: "§5.2", color: "#ff3355" },
+  { name: "Peter Thiel", faction: "Palantir / NRx-adjacent", position: "Surveillance tech; $10B Army contract via Palantir; NZ escape plan; funds pro-extinction orgs", era: "2010s–present", role: "Surveillance + escape", section: "§4.4, §5.2", color: "#ff3355" },
   { name: "Bryan Johnson", faction: "Life extension", position: "$2M/year life extension; body-as-machine; plasma from son", era: "2020s", role: "Body-as-machine endpoint", section: "§5.2", color: "#ff3355" },
   { name: "Douglas Rushkoff", faction: "Critic", position: "Survival of the Richest; escape fantasies documented", era: "2020s", role: "The critic who names the plan", section: "§5.4", color: "#ff3355" },
+  { name: "Larry Ellison", faction: "Oracle / Stargate", position: "'Constantly recording everything'; unified citizen databases; £270M+ to TBI; $553B backlog", era: "1977–present", role: "ARC's database layer; UK Digital ID pipeline", section: "§5.2", color: "#ff3355" },
+  { name: "Palmer Luckey", faction: "Anduril / Defence AI", position: "Oculus → autonomous weapons; Arsenal-1 hyperscale factory; $60B valuation", era: "2017–present", role: "Defence AI vanguard; speed-over-safety", section: "§5.2", color: "#ff3355" },
+  { name: "Alex Karp", faction: "Palantir CEO", position: "$10B Army contract; AIP as government OS; 'pro-Western' positioning", era: "2003–present", role: "Surveillance-as-infrastructure; decision layer", section: "§5.2", color: "#ff3355" },
+  { name: "Tom Oxley", faction: "Synchron / BCI", position: "Non-surgical BCI; Chiral cognitive AI; Apple BCI protocol integration", era: "2016–present", role: "BCI normalisation; medical-to-consumer", section: "§5.2", color: "#ff3355" },
+  { name: "Alex Blania", faction: "World / Merge Labs", position: "Worldcoin biometric ID → Merge Labs BCI; iris → brain pipeline", era: "2019–present", role: "Catalogue-to-interface convergence", section: "§5.2", color: "#ff3355" },
+  { name: "Jensen Huang", faction: "NVIDIA", position: "Blackwell; CUDA-Q quantum-AI platform; $500B orders", era: "1993–present", role: "Infrastructure layer; quantum-AI convergence", section: "§5.2", color: "#ff3355" },
+  { name: "Bill Gates", faction: "Microsoft / Azure", position: "$11.8B OpenAI investment; TerraPower nuclear; technocratic management", era: "1975–present", role: "Infrastructure backbone; technocratic position", section: "§5.2", color: "#ff3355" },
+  { name: "Mark Zuckerberg", faction: "Meta / AR-VR", position: "$70B+ Reality Labs; Orion AR glasses; EMG neural wristband; 1,400-acre bunker", era: "2004–present", role: "AR/VR normalisation; Soma delivery; escape infrastructure", section: "§5.2, §5.4", color: "#ff3355" },
+  { name: "Robert Playter", faction: "Boston Dynamics", position: "Atlas commercial production; 30K/year factory; $420K per unit", era: "2019–present", role: "Humanoid labour replacement", section: "§5.2", color: "#ff3355" },
   { name: "Terence McKenna", faction: "Consciousness-first", position: "Consciousness as primary; reality as linguistic construct", era: "1970s–2000", role: "Emotional register; gateway", section: "§8", color: "#cc44ff" },
   { name: "Cliff High", faction: "Consciousness-first", position: "Gritology/Ontology; qualia as interface; Little Bloop Theory", era: "2010s–present", role: "Game's philosophical machinery", section: "§8", color: "#cc44ff" },
   { name: "Helena Blavatsky", faction: "Theosophy", position: "Hidden Masters; root races; spiritual evolution", era: "1870s–1891", role: "Occult template for transhumanism", section: "§9.1", color: "#cc44ff" },
@@ -402,7 +411,7 @@ function NodeMap({ sections, selectedNode, hoveredNode, setHoveredNode, onNodeCl
             // Section label
             React.createElement("div", {
               style: { fontSize: "9px", letterSpacing: "1.5px", textTransform: "uppercase", color: "#555", marginBottom: "4px" }
-            }, "Transhumanism Deep Dive v1.3"),
+            }, "Transhumanism Deep Dive v1.4"),
             // Num + Part
             React.createElement("div", {
               style: { fontSize: "9px", letterSpacing: "1px", color: selectedNode.color, marginBottom: "8px", textTransform: "uppercase" }
@@ -485,7 +494,7 @@ function PlayerTable({ players }) {
     React.createElement("div", { style: { maxWidth: "1000px", margin: "0 auto" } },
       // Source label
       React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } },
-        "Transhumanism Deep Dive v1.3 — Appendix A"
+        "Transhumanism Deep Dive v1.4 — Appendix A"
       ),
       // Heading
       React.createElement("h2", { style: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" } },
@@ -578,7 +587,7 @@ function DocumentSections() {
 // §5 CONTEMPORARY LANDSCAPE
 function ContemporarySection() {
   return React.createElement(React.Fragment, null,
-    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.3"),
+    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.4"),
     React.createElement("h2", { style: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" } }, "§5. The Contemporary Landscape — Ideology in Action"),
     React.createElement("p", { style: { fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" } },
       "The intellectual genealogy (§0–§4) maps where the ideas come from. This section maps where they are now: the named coalition, the corporate machinery, the cultural conditioning that made it ambient, the escape infrastructure that reveals the inner logic."
@@ -640,6 +649,105 @@ function ContemporarySection() {
         React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
           "Faggella: AI's moral aim is a 'worthy successor.' Schiller: 'we should engineer our extinction.' Verdon: entropy maximisation is cosmically good. Yudkowsky: willing to sacrifice all humanity. Lanier reports ordinary AI researchers calling bio babies 'the mind virus of the biological world.' These aren't billionaires making philosophy. They're researchers at lunch."
         )
+      ),
+
+      // Defence AI
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Defence AI / Autonomous Weapons"),
+        [
+          { label: "Palantir", text: "$10B Army contract consolidating 75 contracts into single framework. AIP adopted across government at extraordinary speed. UK: 24 institutional contracts (NHS, MoD, Cabinet Office). Becoming the OS through which governments make decisions." },
+          { label: "Anduril", text: "Palmer Luckey's autonomous weapons company. Arsenal-1: 5M sq ft hyperscale factory, Ohio. $60B valuation. Systematic testing failures: drone boats failed Navy exercises, counter-drone test caused 22-acre wildfire, Ukraine forces stopped using their drones." },
+          { label: "Shield AI", text: "$5.3B valuation. Hivemind autonomy stack. Combat-validated in Ukraine. AI piloting without GPS or comms." },
+        ].map(item =>
+          React.createElement("div", { key: item.label, style: { padding: "8px 12px", borderLeft: "1px dashed #ff3355", marginBottom: "6px", background: "rgba(255,255,255,0.01)" } },
+            React.createElement("div", { style: { fontSize: "9px", color: "#ff3355", marginBottom: "2px" } }, item.label),
+            React.createElement("div", { style: { fontSize: "10px", color: "#ccc" } }, item.text)
+          )
+        )
+      ),
+
+      // BCI
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Brain-Computer Interface"),
+        [
+          { label: "Synchron", text: "Non-surgical BCI via catheter. First person to control iPad with thoughts via Apple BCI protocol. Backed by Bezos, IQT (CIA). 'Chiral' cognitive AI with NVIDIA — training AI on neural signals." },
+          { label: "Merge Labs", text: "Co-founded by Altman and Blania. $252M seed led by OpenAI. Non-invasive BCI via gene therapy and ultrasound. The Worldcoin→Merge trajectory: iris scan → digital ID → brain interface, same founders." },
+          { label: "Neuralink", text: "$9B valuation. Surgical implant. Musk's stated goal: upload consciousness into robot bodies." },
+        ].map(item =>
+          React.createElement("div", { key: item.label, style: { padding: "8px 12px", borderLeft: "1px dashed #ff3355", marginBottom: "6px", background: "rgba(255,255,255,0.01)" } },
+            React.createElement("div", { style: { fontSize: "9px", color: "#ff3355", marginBottom: "2px" } }, item.label),
+            React.createElement("div", { style: { fontSize: "10px", color: "#ccc" } }, item.text)
+          )
+        )
+      ),
+
+      // AR/VR
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "AR/VR — Intermediate Interface"),
+        [
+          { label: "Meta Orion", text: "AR glasses targeting 2027. $70B+ invested in Reality Labs. EMG neural wristband reads nerve signals before muscles move. $799 Ray-Ban Display as retail normalisation." },
+          { label: "Apple Vision Pro", text: "$3,499. Low sales but high cultural impact — BCI protocol already integrated with Synchron." },
+        ].map(item =>
+          React.createElement("div", { key: item.label, style: { padding: "8px 12px", borderLeft: "1px dashed #ff3355", marginBottom: "6px", background: "rgba(255,255,255,0.01)" } },
+            React.createElement("div", { style: { fontSize: "9px", color: "#ff3355", marginBottom: "2px" } }, item.label),
+            React.createElement("div", { style: { fontSize: "10px", color: "#ccc" } }, item.text)
+          )
+        )
+      ),
+
+      // Quantum
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Quantum Computing"),
+        React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
+          "Matters for CBTS because of what it breaks. Current encryption relies on problems quantum computers can solve. Strategy already underway: 'harvest now, decrypt later' — collecting encrypted data today, waiting for quantum to crack it. Google: 13,000× speedup over Frontier. IBM: targeting 2026 quantum advantage. NVIDIA: CUDA-Q orchestrating quantum-AI convergence, $500B in orders."
+        )
+      ),
+
+      // Oracle
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Oracle / Ellison — The Database Layer"),
+        React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
+          "Ellison told world leaders to consolidate all national data into a single AI-accessible database. Told investors citizens would be 'on their best behaviour because we're constantly recording everything.' $28B Cerner acquisition: medical records of hundreds of millions. Oracle Health: AI-native EHR with ambient listening. £270M+ to Tony Blair Institute → TBI shapes NHS/AI policy → Oracle wins contracts. UK National Digital ID mid-2029. Stargate: $500B AI data centre initiative. Backlog: $553B."
+        )
+      ),
+
+      // Robotics
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Robotics / Humanoid Labour Replacement"),
+        [
+          { label: "Boston Dynamics Atlas", text: "Commercial production CES 2026. $420K, 56 degrees of freedom, lifts 50kg. Hyundai building 30K/year factory. DeepMind Gemini integration." },
+          { label: "Tesla Optimus", text: "Musk admitted 'not doing useful work' — learning only. Target $20–30K at scale. Has floated using Neuralink to upload consciousness into robot bodies." },
+          { label: "1X NEO", text: "First consumer humanoid. $499/month subscription. US 2026." },
+        ].map(item =>
+          React.createElement("div", { key: item.label, style: { padding: "8px 12px", borderLeft: "1px dashed #ff3355", marginBottom: "6px", background: "rgba(255,255,255,0.01)" } },
+            React.createElement("div", { style: { fontSize: "9px", color: "#ff3355", marginBottom: "2px" } }, item.label),
+            React.createElement("div", { style: { fontSize: "10px", color: "#ccc" } }, item.text)
+          )
+        )
+      ),
+
+      // Food Systems
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Food Systems — Engineering the Supply"),
+        React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
+          "Cultured meat: 7 US state bans. Insect protein: EU approved. Vertical farming: multiple failures. Precision fermentation. Market projected $229B by 2050. Investors: Gates, Branson, UAE sovereign wealth. UK FSA launched approval programme March 2025. Production remains tiny — scalability is the fundamental challenge."
+        )
+      ),
+
+      // Pharma
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Pharma / Digital Health"),
+        React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
+          "AI drug discovery: first fully AI-designed drug in Phase II. mRNA platforms transform the body into a pharmaceutical factory directed by external instructions. Digital therapeutics: $32.5B market by 2030, FDA-approved video game for ADHD in children. Wearable health: each device normalises continuous biodata transmission."
+        )
+      ),
+
+      // Crypto / Body-Mining
+      React.createElement("div", { style: { marginTop: "12px", paddingTop: "12px", borderTop: "1px dashed #333" } },
+        React.createElement("div", { style: { fontSize: "8px", color: "#666", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "8px" } }, "Crypto / Body-Mining — The Human as Economic Unit"),
+        React.createElement("p", { style: { fontSize: "11px", color: "#999", lineHeight: 1.8, marginBottom: "8px" } },
+          "Microsoft Patent WO/2020/060606: body activity data (brain waves, heart rate, body heat) as proof-of-work for mining cryptocurrency. Tasks include viewing ads. Genuine patent, confirmed by Full Fact. Worldcoin: iris scan → World ID → WLD token. Banned in multiple countries. The trajectory from Worldcoin → Merge Labs traces biometric capture → digital ID → brain interface through the same founders."
+        )
       )
     ),
 
@@ -681,7 +789,7 @@ function ContemporarySection() {
 // §7 GNOSTIC ARCHITECTURE
 function GnosticSection() {
   return React.createElement(React.Fragment, null,
-    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.3"),
+    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.4"),
     React.createElement("h2", { style: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" } }, "§7. The Gnostic Architecture — AIDA as Demiurge"),
     React.createElement("p", { style: { fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" } },
       "The Gnostic Gospels proposed a radical cosmology: the material world was created by a flawed lesser deity — the Demiurge — who genuinely believes he is the supreme creator. His archons maintain reality as a prison for divine sparks. Salvation comes through gnosis — knowledge that awakens the soul to its true origin."
@@ -737,7 +845,7 @@ function GnosticSection() {
 // §8–§9 CONSCIOUSNESS & FALSE GNOSIS
 function ConsciousnessSection() {
   return React.createElement(React.Fragment, null,
-    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.3"),
+    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.4"),
     React.createElement("h2", { style: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" } }, "§8. The Consciousness-First Alternative"),
     React.createElement("p", { style: { fontSize: "11px", color: "#777", lineHeight: 1.7, marginBottom: "24px" } },
       "McKenna and Cliff High occupy the same ontological position but arrive through different doors. Both assert consciousness is primary and matter is derivative. Both see the current crisis as fundamentally a crisis of consciousness."
@@ -807,7 +915,7 @@ function ConsciousnessSection() {
 // §6 DESIGN IMPLICATIONS
 function DesignSection() {
   return React.createElement(React.Fragment, null,
-    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.3"),
+    React.createElement("div", { style: { fontSize: "9px", color: "#555", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "4px" } }, "Transhumanism Deep Dive v1.4"),
     React.createElement("h2", { style: { fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#e0e0e8", letterSpacing: "1px", marginBottom: "8px" } }, "§6. Design Implications"),
 
     // Pacing

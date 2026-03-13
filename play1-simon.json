@@ -1240,11 +1240,11 @@
     {
       "id": 13,
       "num": "T13",
-      "title": "TBD",
+      "title": "Rape Me",
       "date": "January 2027",
       "paras": [
         {
-          "t": "Not yet written."
+          "t": "Blackpilled."
         }
       ],
       "choices": null
@@ -2341,6 +2341,21 @@
           }
         ]
       }
+    ],
+    "13": [
+      {
+        "sec": "Despair",
+        "cards": [
+          {
+            "src": "Despair",
+            "ttl": "Rape Me",
+            "snip": "We're doomed. Wake up, sheeple.",
+            "tag": "I'm not the only one",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -2574,6 +2589,15 @@
       "context": "The Ontology. Going round your head for hours. What does God say?",
       "src": "simon",
       "turn": 10
+    },
+    {
+      "id": "s013",
+      "title": "Rape Me",
+      "artist": "Nirvana",
+      "url": "https://open.spotify.com/track/2i5K0EdMY5zFs9t7KfYK3k?si=17a6df2ce4dd432d",
+      "context": "We're doomed. Wake up, sheeple.",
+      "src": "simon",
+      "turn": 13
     }
   ],
   "ticker": [

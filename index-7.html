@@ -1640,6 +1640,80 @@ function updateTicker(turnId) {
   ).join('');
 }
 
+// ── TURN AUDIO ──
+// Reads optional 'audio' field from turn data in JSON:
+//   "audio": { "src": "countryside-bees.mp3", "fadeIn": 2, "fadeOut": 3, "vol": 0.5 }
+// Turns without audio field play in silence. Questions always silent.
+let turnAudioEl = null;
+let turnAudioCtx = null;
+let turnAudioGain = null;
+let turnAudioSrc = null;  // current filename, to avoid restarting same track
+
+function startTurnAudio(audioConf) {
+  if (!audioConf || !audioConf.src) return;
+  // If same track already playing, leave it alone
+  if (turnAudioSrc === audioConf.src && turnAudioEl && !turnAudioEl.paused) return;
+
+  // Stop anything currently playing first
+  stopTurnAudio(0);
+
+  try {
+    turnAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    turnAudioGain = turnAudioCtx.createGain();
+    turnAudioGain.gain.value = 0;
+    turnAudioGain.connect(turnAudioCtx.destination);
+
+    turnAudioEl = new Audio(audioConf.src);
+    turnAudioEl.loop = true;
+    const source = turnAudioCtx.createMediaElementSource(turnAudioEl);
+    source.connect(turnAudioGain);
+
+    const vol = audioConf.vol !== undefined ? audioConf.vol : 0.4;
+    const fadeIn = audioConf.fadeIn !== undefined ? audioConf.fadeIn : 2;
+
+    turnAudioEl.play().then(() => {
+      console.log('Turn audio playing:', audioConf.src);
+      turnAudioGain.gain.linearRampToValueAtTime(vol, turnAudioCtx.currentTime + fadeIn);
+    }).catch(err => { console.log('Turn audio play failed:', err); });
+
+    turnAudioSrc = audioConf.src;
+  } catch(err) {
+    console.log('Turn audio error:', err);
+  }
+}
+
+function stopTurnAudio(fadeDuration) {
+  const dur = fadeDuration !== undefined ? fadeDuration : 1.5;
+  if (turnAudioEl && turnAudioGain && turnAudioCtx) {
+    turnAudioGain.gain.linearRampToValueAtTime(0, turnAudioCtx.currentTime + dur);
+    const elRef = turnAudioEl;
+    const ctxRef = turnAudioCtx;
+    setTimeout(() => {
+      try { elRef.pause(); } catch(e){}
+      try { ctxRef.close(); } catch(e){}
+    }, (dur + 0.2) * 1000);
+  }
+  turnAudioEl = null;
+  turnAudioCtx = null;
+  turnAudioGain = null;
+  turnAudioSrc = null;
+}
+
+function handleTurnAudio(turn) {
+  // Questions always silent
+  if (turn.isQuestion) {
+    if (turnAudioSrc) stopTurnAudio(1.5);
+    return;
+  }
+  // Turn has audio config
+  if (turn.audio && turn.audio.src) {
+    startTurnAudio(turn.audio);
+  } else {
+    // No audio for this turn — fade out if something was playing
+    if (turnAudioSrc) stopTurnAudio(1.5);
+  }
+}
+
 // ── NAVIGATION ──
 function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
@@ -1648,6 +1722,9 @@ function goTo(idx) {
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');
+
+  handleTurnAudio(turn);
+
 
   if (turn.isQuestion) {
     titleEl.style.display = 'none';

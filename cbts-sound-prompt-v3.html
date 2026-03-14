@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Sound Prompt v3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0c0b0e;
+  --text: #c8c4b8;
+  --dim: #6b6760;
+  --bright: #e8e4d8;
+  --warm: #c4956a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --div: #1a1816;
+  --card: #111110;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+
+/* ── Ambient background — not a void ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(30,26,22,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(22,24,30,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(18,16,14,0.5) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── LAYOUT ── */
+.sound-prompt {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.prompt-inner {
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── FRAMING SENTENCE ── */
+.the-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 19px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 0.3s;
+  text-align: center;
+}
+
+/* ── THE WORD ── */
+.the-word-wrap {
+  position: relative;
+  margin-bottom: 52px;
+  z-index: 10;
+}
+
+.the-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 62px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 4px;
+  color: var(--dim);
+  user-select: none;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 1.5s ease;
+  opacity: 0;
+  animation: wordReveal 3s ease forwards;
+  animation-delay: 1s;
+}
+
+.word-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(50px);
+  transition: opacity 3s ease, width 3s ease, height 3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.word-cloud.active {
+  opacity: 0.4;
+  width: 360px;
+  height: 180px;
+}
+
+.word-proximity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 130px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(50px);
+  background: radial-gradient(ellipse, rgba(196,149,106,0.25), transparent 70%);
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.the-word.matched {
+  color: var(--bright);
+  letter-spacing: 6px;
+  text-shadow: 0 0 50px rgba(196,149,106,0.2);
+}
+
+/* ── INSTRUCTION ── */
+.instruction {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
+  color: rgba(58,53,48,0.6);
+  text-align: center;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 3.5s;
+  transition: opacity 1s;
+}
+
+/* ── SOUND PANELS ── */
+.panels {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeUp 2.5s ease forwards;
+  animation-delay: 2.2s;
+}
+
+.panel {
+  flex: 1;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s ease;
+  touch-action: none;
+}
+
+/* Soft feathered edge via box-shadow inset */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 30px 15px var(--bg);
+  pointer-events: none;
+  z-index: 3;
+  transition: box-shadow 0.6s;
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+}
+
+.panel:hover::after {
+  box-shadow: inset 0 0 20px 10px var(--bg);
+}
+
+.panel.playing {
+  transform: translateY(-3px);
+}
+
+.panel.playing::after {
+  box-shadow: inset 0 0 15px 8px var(--bg);
+}
+
+.panel.dragging-active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.panel.matched-panel {
+  opacity: 1;
+  transform: none;
+}
+
+.panel.faded {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: all 2s ease;
+}
+
+/* Panel backgrounds */
+.panel-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-bg svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Breathing glow */
+.panel-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.panel.playing .panel-glow {
+  opacity: 1;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Play indicator */
+.panel-play {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.15);
+  background: rgba(12,11,14,0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  z-index: 5;
+}
+
+.panel:hover .panel-play {
+  border-color: rgba(200,196,184,0.3);
+}
+
+.panel.playing .panel-play {
+  border-color: rgba(196,149,106,0.5);
+  background: rgba(12,11,14,0.6);
+}
+
+.panel-play svg {
+  width: 10px;
+  height: 10px;
+  fill: rgba(200,196,184,0.3);
+  transition: fill 0.5s;
+}
+
+.panel.playing .panel-play svg {
+  fill: var(--warm);
+}
+
+/* Progress */
+.panel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  border-radius: 1px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.panel-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  transition: none;
+  border-radius: 1px;
+}
+
+/* ── DRAG GHOST ── */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  width: 90px;
+  height: 115px;
+  border-radius: 14px;
+  overflow: hidden;
+  opacity: 0.8;
+  filter: blur(0px);
+  transition: filter 0.4s, opacity 0.4s, transform 0.4s;
+  display: none;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.6);
+}
+
+.drag-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  box-shadow: inset 0 0 20px 10px rgba(12,11,14,0.5);
+  pointer-events: none;
+}
+
+.drag-ghost.near-word {
+  filter: blur(10px);
+  opacity: 0.5;
+  transform: scale(0.75);
+}
+
+.drag-ghost.very-near {
+  filter: blur(22px);
+  opacity: 0.25;
+  transform: scale(0.5);
+}
+
+.drag-ghost svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── AFTERMATH ── */
+.aftermath {
+  margin-top: 48px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 2;
+  color: var(--inner);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.aftermath.visible {
+  opacity: 1;
+}
+
+/* ── RESET ── */
+.reset-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: none;
+  border: 1px solid rgba(58,53,48,0.3);
+  padding: 8px 16px;
+  margin-top: 36px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+}
+
+.reset-btn:hover {
+  color: var(--dim);
+  border-color: var(--dim);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wordReveal {
+  0% { opacity: 0; letter-spacing: 16px; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; letter-spacing: 4px; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 520px) {
+  .the-word { font-size: 44px; }
+  .the-frame { font-size: 16px; }
+  .panels { gap: 12px; }
+  .panel { border-radius: 12px; }
+  .panel::after { box-shadow: inset 0 0 20px 10px var(--bg); border-radius: 12px; }
+  .panel-play { width: 30px; height: 30px; }
+  .panel-play svg { width: 8px; height: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sound-prompt">
+  <div class="prompt-inner">
+
+    <!-- FRAMING -->
+    <div class="the-frame">which sound brings you the most</div>
+
+    <!-- THE WORD -->
+    <div class="the-word-wrap" id="wordWrap">
+      <div class="word-cloud" id="wordCloud"></div>
+      <div class="word-proximity" id="wordProximity"></div>
+      <div class="the-word" id="theWord">peace</div>
+    </div>
+
+    <div class="instruction" id="instruction">listen. then drag.</div>
+
+    <!-- THREE PANELS -->
+    <div class="panels" id="panels">
+
+      <!-- Panel 0: Gong — still water, concentric rings, cool grey-blue -->
+      <div class="panel" data-clip="0" id="panel-0">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="g0bg" cx="50%" cy="40%" r="75%">
+                <stop offset="0%" stop-color="#1e2230"/>
+                <stop offset="60%" stop-color="#141820"/>
+                <stop offset="100%" stop-color="#0c0b0e"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g0bg)"/>
+            <!-- Still water rings -->
+            <circle cx="100" cy="125" r="10" fill="none" stroke="#2e3448" stroke-width="0.6" opacity="0.7">
+              <animate attributeName="r" values="10;14;10" dur="6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.3;0.7" dur="6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="100" cy="125" r="26" fill="none" stroke="#2a3040" stroke-width="0.4" opacity="0.5">
+              <animate attributeName="r" values="26;30;26" dur="7s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.5;0.2;0.5" dur="7s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="100" cy="125" r="46" fill="none" stroke="#252d3a" stroke-width="0.35" opacity="0.4"/>
+            <circle cx="100" cy="125" r="70" fill="none" stroke="#202838" stroke-width="0.3" opacity="0.25"/>
+            <circle cx="100" cy="125" r="96" fill="none" stroke="#1c2434" stroke-width="0.2" opacity="0.15"/>
+            <!-- Centre point — faint reflection -->
+            <circle cx="100" cy="125" r="2.5" fill="#3a4560" opacity="0.25"/>
+            <!-- Mist -->
+            <ellipse cx="100" cy="230" rx="100" ry="40" fill="#12151e" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 40%, rgba(46,52,72,0.4), transparent 65%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress"><div class="panel-progress-fill" id="prog-0"></div></div>
+      </div>
+
+      <!-- Panel 1: Whale — deep ocean, vertical light, teal-blue -->
+      <div class="panel" data-clip="1" id="panel-1">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g1bg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#101e28"/>
+                <stop offset="40%" stop-color="#0e1c2a"/>
+                <stop offset="100%" stop-color="#080c12"/>
+              </linearGradient>
+              <radialGradient id="g1shaft" cx="50%" cy="15%" r="40%">
+                <stop offset="0%" stop-color="#1a2e3e" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g1bg)"/>
+            <rect width="200" height="280" fill="url(#g1shaft)"/>
+            <!-- Light shaft -->
+            <polygon points="90,0 110,0 106,280 94,280" fill="#12202e" opacity="0.5"/>
+            <polygon points="96,0 104,0 102,280 98,280" fill="#162838" opacity="0.3"/>
+            <!-- Particles drifting -->
+            <circle cx="98" cy="70" r="1" fill="#2a3e50" opacity="0.4">
+              <animate attributeName="cy" values="70;65;70" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="104" cy="140" r="0.8" fill="#2a3e50" opacity="0.3">
+              <animate attributeName="cy" values="140;135;140" dur="10s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="93" cy="200" r="0.9" fill="#243848" opacity="0.3">
+              <animate attributeName="cy" values="200;194;200" dur="9s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="108" cy="45" r="0.6" fill="#2a3e50" opacity="0.35">
+              <animate attributeName="cy" values="45;40;45" dur="7s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Depth -->
+            <rect x="0" y="230" width="200" height="50" fill="#080c12" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 25%, rgba(26,46,62,0.45), transparent 65%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress"><div class="panel-progress-fill" id="prog-1"></div></div>
+      </div>
+
+      <!-- Panel 2: Low chant — warm amber, candlelight on stone -->
+      <div class="panel" data-clip="2" id="panel-2">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="g2bg" cx="50%" cy="38%" r="70%">
+                <stop offset="0%" stop-color="#221a10"/>
+                <stop offset="60%" stop-color="#16120c"/>
+                <stop offset="100%" stop-color="#0c0a08"/>
+              </radialGradient>
+              <radialGradient id="g2glow" cx="50%" cy="32%" r="35%">
+                <stop offset="0%" stop-color="#302010" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g2bg)"/>
+            <rect width="200" height="280" fill="url(#g2glow)"/>
+            <!-- Candle flame -->
+            <ellipse cx="100" cy="100" rx="3.5" ry="10" fill="#3a2a14" opacity="0.5">
+              <animate attributeName="ry" values="10;11;9;10" dur="3s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="100" cy="98" rx="1.8" ry="6" fill="#4a3418" opacity="0.4">
+              <animate attributeName="ry" values="6;7;5.5;6" dur="2.5s" repeatCount="indefinite"/>
+            </ellipse>
+            <!-- Warm light pool -->
+            <ellipse cx="100" cy="140" rx="50" ry="30" fill="#1a1408" opacity="0.4"/>
+            <!-- Stone texture -->
+            <line x1="25" y1="185" x2="175" y2="185" stroke="#18140e" stroke-width="0.4" opacity="0.35"/>
+            <line x1="35" y1="205" x2="165" y2="205" stroke="#18140e" stroke-width="0.3" opacity="0.25"/>
+            <line x1="30" y1="225" x2="170" y2="225" stroke="#18140e" stroke-width="0.3" opacity="0.2"/>
+            <line x1="40" y1="245" x2="160" y2="245" stroke="#18140e" stroke-width="0.25" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 32%, rgba(48,32,16,0.45), transparent 65%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress"><div class="panel-progress-fill" id="prog-2"></div></div>
+      </div>
+
+    </div>
+
+    <div class="aftermath" id="aftermath"></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+
+  </div>
+</div>
+
+<!-- DRAG GHOST -->
+<div class="drag-ghost" id="dragGhost"></div>
+
+<script>
+// ══════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════
+const CLIPS = [
+  { file: 'gong.mp3', color: '#2a3040' },
+  { file: 'whale.mp3', color: '#1a2e3e' },
+  { file: 'lowchant.mp3', color: '#302010' }
+];
+
+const AFTERMATH = [
+  'A single strike — and the silence after it holds everything.',
+  'Something vast, underneath. It was always there.',
+  'Voices older than language. The flame doesn\'t flicker.'
+];
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let audios = [];
+let currentPlaying = -1;
+let matched = -1;
+let isDragging = false;
+let dragIndex = -1;
+
+// ══════════════════════════════════════
+// INIT AUDIO
+// ══════════════════════════════════════
+CLIPS.forEach((c, i) => {
+  const audio = new Audio(c.file);
+  audio.preload = 'auto';
+  audio.addEventListener('ended', () => stopAll());
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('prog-' + i).style.width = pct + '%';
+    }
+  });
+  audios.push(audio);
+});
+
+// ══════════════════════════════════════
+// PLAYBACK
+// ══════════════════════════════════════
+function stopAll() {
+  audios.forEach((a, i) => {
+    a.pause();
+    a.currentTime = 0;
+    document.getElementById('prog-' + i).style.width = '0%';
+  });
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('playing'));
+  currentPlaying = -1;
+  updatePlayIcons();
+}
+
+function playClip(index) {
+  if (matched >= 0 || isDragging) return;
+  if (currentPlaying === index) { stopAll(); return; }
+  stopAll();
+  audios[index].play().catch(() => {});
+  currentPlaying = index;
+  document.getElementById('panel-' + index).classList.add('playing');
+  updatePlayIcons();
+}
+
+function updatePlayIcons() {
+  document.querySelectorAll('.panel-play').forEach((btn, i) => {
+    if (i === currentPlaying) {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>';
+    } else {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+    }
+  });
+}
+
+document.querySelectorAll('.panel').forEach((panel, i) => {
+  panel.addEventListener('click', (e) => { if (!isDragging) playClip(i); });
+});
+
+// ══════════════════════════════════════
+// DRAG — POINTER EVENTS
+// ══════════════════════════════════════
+const dragGhost = document.getElementById('dragGhost');
+const wordWrap = document.getElementById('wordWrap');
+const wordCloud = document.getElementById('wordCloud');
+const wordProximity = document.getElementById('wordProximity');
+const theWord = document.getElementById('theWord');
+let pointerStartX = 0, pointerStartY = 0;
+
+document.querySelectorAll('.panel').forEach((panel, i) => {
+
+  panel.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.panel-play')) return;
+    if (matched >= 0) return;
+    pointerStartX = e.clientX;
+    pointerStartY = e.clientY;
+    panel.setPointerCapture(e.pointerId);
+  });
+
+  panel.addEventListener('pointermove', (e) => {
+    if (matched >= 0) return;
+    if (!panel.hasPointerCapture(e.pointerId)) return;
+
+    const dx = e.clientX - pointerStartX;
+    const dy = e.clientY - pointerStartY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (!isDragging && dist > 12) {
+      isDragging = true;
+      dragIndex = i;
+      panel.classList.add('dragging-active');
+
+      const svgEl = panel.querySelector('.panel-bg svg');
+      if (svgEl) dragGhost.innerHTML = svgEl.outerHTML;
+      dragGhost.style.display = 'block';
+      stopAll();
+    }
+
+    if (isDragging) {
+      e.preventDefault();
+      dragGhost.style.left = (e.clientX - 45) + 'px';
+      dragGhost.style.top = (e.clientY - 58) + 'px';
+
+      const wordRect = wordWrap.getBoundingClientRect();
+      const wordCx = wordRect.left + wordRect.width / 2;
+      const wordCy = wordRect.top + wordRect.height / 2;
+      const distToWord = Math.sqrt(
+        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
+      );
+
+      if (distToWord < 80) {
+        dragGhost.className = 'drag-ghost very-near';
+        wordProximity.style.opacity = '0.8';
+        theWord.style.color = 'var(--bright)';
+      } else if (distToWord < 200) {
+        dragGhost.className = 'drag-ghost near-word';
+        const prox = 1 - ((distToWord - 80) / 120);
+        wordProximity.style.opacity = (prox * 0.5).toFixed(2);
+        theWord.style.color = 'var(--text)';
+      } else {
+        dragGhost.className = 'drag-ghost';
+        wordProximity.style.opacity = '0';
+        theWord.style.color = 'var(--dim)';
+      }
+    }
+  });
+
+  panel.addEventListener('pointerup', (e) => {
+    if (matched >= 0) return;
+    panel.classList.remove('dragging-active');
+
+    if (isDragging && dragIndex === i) {
+      const wordRect = wordWrap.getBoundingClientRect();
+      const wordCx = wordRect.left + wordRect.width / 2;
+      const wordCy = wordRect.top + wordRect.height / 2;
+      const distToWord = Math.sqrt(
+        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
+      );
+
+      if (distToWord < 110) {
+        completeMatch(i);
+      } else {
+        cancelDrag();
+      }
+    }
+    isDragging = false;
+    dragIndex = -1;
+  });
+
+  panel.addEventListener('pointercancel', () => {
+    panel.classList.remove('dragging-active');
+    cancelDrag();
+    isDragging = false;
+    dragIndex = -1;
+  });
+});
+
+function cancelDrag() {
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+  wordProximity.style.opacity = '0';
+  theWord.style.color = '';
+}
+
+// ══════════════════════════════════════
+// MATCH
+// ══════════════════════════════════════
+function completeMatch(index) {
+  matched = index;
+  stopAll();
+
+  // Ghost dissolves into word
+  dragGhost.style.transition = 'opacity 1.5s, filter 1.5s, transform 1.5s';
+  dragGhost.style.opacity = '0';
+  dragGhost.style.filter = 'blur(40px)';
+  dragGhost.style.transform = 'scale(0.2)';
+  setTimeout(() => {
+    dragGhost.style.display = 'none';
+    dragGhost.style.cssText = '';
+    dragGhost.className = 'drag-ghost';
+  }, 1600);
+
+  theWord.classList.add('matched');
+  wordCloud.style.background = `radial-gradient(ellipse, ${CLIPS[index].color}, transparent 70%)`;
+  wordCloud.classList.add('active');
+  wordProximity.style.opacity = '0';
+
+  document.getElementById('instruction').style.opacity = '0';
+
+  // Fade frame text
+  document.querySelector('.the-frame').style.transition = 'opacity 2s';
+  document.querySelector('.the-frame').style.opacity = '0.3';
+
+  document.querySelectorAll('.panel').forEach((p, i) => {
+    if (i === index) {
+      p.classList.add('matched-panel');
+      setTimeout(() => {
+        audios[index].volume = 0.35;
+        audios[index].play().catch(() => {});
+        p.classList.add('playing');
+        updatePlayIcons();
+      }, 1000);
+    } else {
+      p.classList.add('faded');
+    }
+  });
+
+  setTimeout(() => {
+    document.getElementById('aftermath').textContent = AFTERMATH[index];
+    document.getElementById('aftermath').classList.add('visible');
+  }, 2500);
+
+  setTimeout(() => {
+    document.getElementById('resetBtn').style.display = 'inline-block';
+  }, 5000);
+}
+
+// ══════════════════════════════════════
+// RESET
+// ══════════════════════════════════════
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1;
+  isDragging = false;
+  dragIndex = -1;
+  stopAll();
+  audios.forEach(a => a.volume = 1);
+
+  document.querySelectorAll('.panel').forEach(p => {
+    p.classList.remove('matched-panel', 'faded', 'dragging-active', 'playing');
+  });
+
+  theWord.classList.remove('matched');
+  theWord.style.color = '';
+  wordCloud.classList.remove('active');
+  wordProximity.style.opacity = '0';
+
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+
+  document.querySelector('.the-frame').style.opacity = '';
+  document.getElementById('aftermath').classList.remove('visible');
+  document.getElementById('aftermath').textContent = '';
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('instruction').style.opacity = '1';
+});
+</script>
+
+</body>
+</html>

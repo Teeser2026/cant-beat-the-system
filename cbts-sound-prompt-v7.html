@@ -209,19 +209,14 @@ html, body {
   pointer-events: none;
 }
 
-/* Seam blenders — soften the hard edges between triptych sections */
+/* Seam blenders — blur the image at the join points */
 .seam-blend-1 {
   position: absolute;
   top: 0; bottom: 0;
-  left: calc(33.33% - 30px);
-  width: 60px;
-  background: linear-gradient(to right,
-    transparent 0%,
-    rgba(14,13,10,0.35) 35%,
-    rgba(14,13,10,0.4) 50%,
-    rgba(14,13,10,0.35) 65%,
-    transparent 100%
-  );
+  left: calc(33.33% - 20px);
+  width: 40px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 2;
   pointer-events: none;
 }
@@ -229,15 +224,10 @@ html, body {
 .seam-blend-2 {
   position: absolute;
   top: 0; bottom: 0;
-  left: calc(66.66% - 30px);
-  width: 60px;
-  background: linear-gradient(to right,
-    transparent 0%,
-    rgba(14,13,10,0.35) 35%,
-    rgba(14,13,10,0.4) 50%,
-    rgba(14,13,10,0.35) 65%,
-    transparent 100%
-  );
+  left: calc(66.66% - 20px);
+  width: 40px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 2;
   pointer-events: none;
 }

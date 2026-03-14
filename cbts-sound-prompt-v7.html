@@ -167,13 +167,17 @@ html, body {
   min-height: 280px;
 }
 
-.triptych-bg {
+.video-bg {
   position: absolute;
   inset: 0;
-  background-image: url('peace-triptych.png');
-  background-size: cover;
-  background-position: center;
   z-index: 1;
+  overflow: hidden;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-fade-top {
@@ -419,7 +423,11 @@ html, body {
   </div>
 
   <div class="image-area" id="imageArea">
-    <div class="triptych-bg"></div>
+    <div class="video-bg">
+      <video autoplay muted loop playsinline>
+        <source src="temple-sea.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="image-fade-top"></div>
     <div class="image-fade-bottom"></div>
     <div class="image-fade-left"></div>
@@ -464,9 +472,9 @@ html, body {
 
 <script>
 const CLIPS = [
-  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', pos: '16.5% center' },
-  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', pos: '50% center' },
-  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', pos: '83.5% center' }
+  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', ghost: 'radial-gradient(ellipse, rgba(180,150,90,0.7), rgba(120,100,60,0.3))' },
+  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', ghost: 'radial-gradient(ellipse, rgba(70,100,140,0.7), rgba(40,60,90,0.3))' },
+  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', ghost: 'radial-gradient(ellipse, rgba(120,140,80,0.7), rgba(80,100,50,0.3))' }
 ];
 
 const AFTERMATH = [
@@ -545,7 +553,8 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
       dragIndex = i;
       zone.classList.add('dragging-active');
       imageArea.classList.add('zones-hovering');
-      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.png" style="object-position:' + CLIPS[i].pos + ';">';
+      dragGhost.innerHTML = '';
+      dragGhost.style.background = CLIPS[i].ghost;
       dragGhost.style.display = 'block';
       stopAll();
     }
@@ -618,6 +627,7 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
 
 function cancelDrag() {
   dragGhost.style.display = 'none';
+  dragGhost.style.background = '';
   dragGhost.className = 'drag-ghost';
   wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
   wordProximity.style.opacity = '0';
@@ -688,7 +698,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');
   wordCloud.style.background = '';
   wordProximity.style.opacity = '0'; wordProximity.style.width = ''; wordProximity.style.height = '';
-  dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
+  dragGhost.style.display = 'none'; dragGhost.style.background = ''; dragGhost.className = 'drag-ghost';
   document.querySelector('.the-frame').style.opacity = '';
   document.getElementById('resetBtn').style.display = 'none';
   document.getElementById('instruction').style.opacity = '1';

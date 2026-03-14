@@ -1466,8 +1466,8 @@ body.game-active .ticker-bar { display: flex; }
 
 /* The inkblot image */
 #image-prompt-overlay .ip-image {
-  max-width: 60vw;
-  max-height: 42vh;
+  max-width: 75vw;
+  max-height: 55vh;
   object-fit: contain;
   opacity: 0;
   animation: ipFadeIn 3s ease forwards;
@@ -1562,7 +1562,7 @@ body.game-active .ticker-bar { display: flex; }
 
 @media (max-width: 520px) {
   #image-prompt-overlay .ip-inner { padding-top: 4vh; }
-  #image-prompt-overlay .ip-image { max-width: 90vw; max-height: 45vh; }
+  #image-prompt-overlay .ip-image { max-width: 92vw; max-height: 48vh; }
   #image-prompt-overlay .ip-frame { font-size: 22px; margin-top: 28px; }
   #image-prompt-overlay .ip-input { font-size: 28px; width: 280px; }
   #image-prompt-overlay .ip-linger-text { font-size: 36px; }
@@ -3407,9 +3407,9 @@ function renderImagePrompt(turnData) {
         <input class="ip-input" id="ipInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
         <div class="ip-submit-hint" id="ipHint">one word — press enter</div>
       </div>
-      <div class="ip-linger" id="ipLinger">
-        <div class="ip-linger-text" id="ipLingerText"></div>
-      </div>
+    </div>
+    <div class="ip-linger" id="ipLinger">
+      <div class="ip-linger-text" id="ipLingerText"></div>
     </div>
   `;
 
@@ -3461,12 +3461,12 @@ function renderImagePrompt(turnData) {
       mode: 'image-prompt'
     });
 
-    // Fade everything out together
+    // Fade everything out slowly
     const inner = document.querySelector('#image-prompt-overlay .ip-inner');
-    inner.style.transition = 'opacity 2s ease';
+    inner.style.transition = 'opacity 3s ease';
     inner.style.opacity = '0';
 
-    // 2s fade + 1s darkness = 3s, then word appears
+    // 3s fade + 1.5s darkness = 4.5s, then word appears
     setTimeout(() => {
       // Clear the image/question/input, show linger
       inner.style.display = 'none';
@@ -3486,7 +3486,7 @@ function renderImagePrompt(turnData) {
           goTo(state.turnIndex + 1);
         }, 1600);
       }, 5000);
-    }, 3000);
+    }, 4500);
   }
 
   // Enter key submits

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBTS — Sound Prompt v7</title>
+<title>CBTS — Sound Prompt v8</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
@@ -248,26 +248,13 @@ html, body {
   margin-top: 6px;
 }
 
-.zone-aftermath-continue {
-  display: block;
-  margin-top: 28px;
-  font-family: 'Crimson Pro', serif;
-  font-size: 14px;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(200,196,184,0.25);
-  opacity: 0;
-  transition: opacity 2s, color 0.3s;
-  cursor: pointer;
+.zone-aftermath.visible .zone-aftermath-line {
+  transition: color 0.4s, text-shadow 0.4s;
 }
 
-.zone-aftermath.visible .zone-aftermath-continue {
-  opacity: 1;
-  transition-delay: 3.5s;
-}
-
-.zone-aftermath-continue:hover {
-  color: rgba(200,196,184,0.6);
+.zone-aftermath.visible:hover .zone-aftermath-line {
+  color: #f0ece0;
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 40px rgba(200,175,130,0.15);
 }
 
 /* ── ZONES ── */
@@ -434,7 +421,6 @@ html, body {
       <div class="zone-aftermath" id="aftermath-0">
         <span class="zone-aftermath-line" id="aftermath-0-l1"></span>
         <span class="zone-aftermath-line" id="aftermath-0-l2"></span>
-        <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
@@ -444,7 +430,6 @@ html, body {
       <div class="zone-aftermath" id="aftermath-1">
         <span class="zone-aftermath-line" id="aftermath-1-l1"></span>
         <span class="zone-aftermath-line" id="aftermath-1-l2"></span>
-        <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
@@ -454,7 +439,6 @@ html, body {
       <div class="zone-aftermath" id="aftermath-2">
         <span class="zone-aftermath-line" id="aftermath-2-l1"></span>
         <span class="zone-aftermath-line" id="aftermath-2-l2"></span>
-        <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-2"></div></div>

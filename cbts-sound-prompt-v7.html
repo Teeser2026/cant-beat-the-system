@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Sound Prompt v7</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0e0d0a;
+  --text: #c8c4b8;
+  --dim: #7a7468;
+  --bright: #e8e4d8;
+  --warm: #c4956a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --word-col: rgba(156,140,120,0.4);
+  --word-glow: rgba(140,120,90,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+
+/* ── LAYOUT ── */
+.sound-prompt {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── TEXT AREA ── */
+.text-area {
+  padding: 32px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(to bottom,
+    #0e0d0a 0%,
+    rgba(14,13,10,0.92) 50%,
+    rgba(14,13,10,0.7) 80%,
+    transparent 100%
+  );
+}
+
+.the-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  opacity: 0;
+  animation: fadeIn 2.5s ease forwards 0.3s;
+  text-align: center;
+}
+
+.the-word-wrap {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.the-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 88px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 8px;
+  color: var(--word-col);
+  user-select: none;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 1.8s ease;
+  opacity: 0;
+  animation: wordReveal 4s ease forwards 0.8s;
+}
+
+/* Ambient cloud */
+.word-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--word-glow), rgba(100,85,60,0.04), transparent 70%);
+  filter: blur(45px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 3.5s ease forwards 1.8s;
+  transition: opacity 1.2s, width 1.5s, height 1.5s, filter 1.5s, background 2s;
+}
+
+.word-cloud.proximity-1 {
+  width: 440px; height: 220px; opacity: 1; filter: blur(38px);
+  background: radial-gradient(ellipse, rgba(160,140,100,0.2), rgba(120,100,70,0.08), transparent 70%);
+}
+.word-cloud.proximity-2 {
+  width: 520px; height: 260px; opacity: 1; filter: blur(30px);
+  background: radial-gradient(ellipse, rgba(180,155,110,0.35), rgba(140,115,75,0.12), transparent 68%);
+}
+.word-cloud.proximity-3 {
+  width: 620px; height: 320px; opacity: 1; filter: blur(22px);
+  background: radial-gradient(ellipse, rgba(200,175,130,0.5), rgba(160,135,90,0.2), transparent 60%);
+}
+.word-cloud.matched-cloud {
+  width: 650px; height: 340px; opacity: 1; filter: blur(28px);
+  transition: all 3s ease;
+}
+
+.word-proximity {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; height: 120px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(40px);
+  background: radial-gradient(ellipse, rgba(232,228,216,0.12), transparent 70%);
+  transition: opacity 0.2s, width 0.3s, height 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.the-word.matched {
+  color: var(--bright);
+  letter-spacing: 10px;
+  text-shadow: 0 0 80px rgba(180,155,110,0.25);
+}
+
+.instruction {
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(122,116,104,0.45);
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.9;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 4s;
+  transition: opacity 1.5s;
+}
+
+/* ── IMAGE AREA ── */
+.image-area {
+  flex: 1;
+  position: relative;
+  display: flex;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards 2s;
+  min-height: 280px;
+}
+
+.triptych-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('peace-triptych.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.image-fade-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 110px;
+  background: linear-gradient(to bottom, rgba(14,13,10,0.95), rgba(14,13,10,0.5) 50%, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(14,13,10,0.7), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-left {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(to right, rgba(14,13,10,0.5), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-right {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 60px;
+  background: linear-gradient(to left, rgba(14,13,10,0.5), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── AFTERMATH — huge, centred, overlaid on image ── */
+.aftermath-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: none;
+  padding: 20px;
+}
+
+.aftermath {
+  font-family: 'Crimson Pro', serif;
+  font-size: 42px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--bright);
+  text-align: center;
+  max-width: 600px;
+  text-shadow: 0 4px 40px rgba(14,13,10,0.8), 0 0 80px rgba(14,13,10,0.6);
+  opacity: 0;
+  transition: opacity 4s;
+}
+.aftermath.visible { opacity: 1; }
+
+/* ── ZONES ── */
+.zone {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  touch-action: none;
+  transition: all 0.5s;
+}
+
+.zone:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 10%; right: 0; bottom: 10%;
+  width: 1px;
+  background: rgba(200,196,184,0.06);
+  z-index: 6;
+}
+
+.zone-overlay {
+  position: absolute; inset: 0;
+  background: rgba(14,13,10,0);
+  transition: background 0.5s;
+  pointer-events: none;
+}
+
+.zones-hovering .zone .zone-overlay { background: rgba(14,13,10,0.35); }
+.zones-hovering .zone:hover .zone-overlay { background: rgba(14,13,10,0); }
+.zone.playing .zone-overlay { background: rgba(196,149,106,0.03) !important; }
+.zone.dragging-active .zone-overlay { background: rgba(14,13,10,0.5) !important; }
+.zone.faded .zone-overlay { background: rgba(14,13,10,0.8) !important; transition: background 2.5s; }
+.zone.matched-zone .zone-overlay { background: rgba(14,13,10,0) !important; }
+
+.zone-play {
+  position: absolute;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.12);
+  background: rgba(14,13,10,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  z-index: 8;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.zone:hover .zone-play { border-color: rgba(200,196,184,0.3); background: rgba(14,13,10,0.4); opacity: 1; }
+.zone.playing .zone-play { border-color: rgba(196,149,106,0.45); background: rgba(14,13,10,0.45); opacity: 1; }
+.zone-play svg { width: 12px; height: 12px; fill: rgba(200,196,184,0.3); transition: fill 0.5s; }
+.zone.playing .zone-play svg { fill: var(--warm); }
+
+.zone-progress {
+  position: absolute;
+  bottom: 0; left: 10%; width: 80%;
+  height: 2px; border-radius: 1px;
+  overflow: hidden; z-index: 8;
+}
+.zone-progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  border-radius: 1px;
+}
+
+/* ── DRAG GHOST ── */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  width: 120px; height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.85;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+  display: none;
+  box-shadow: 0 14px 50px rgba(0,0,0,0.5);
+}
+.drag-ghost::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px 10px rgba(14,13,10,0.3);
+  pointer-events: none;
+}
+.drag-ghost .ghost-img { width: 100%; height: 100%; object-fit: cover; }
+.drag-ghost.near-word { filter: blur(12px); opacity: 0.4; transform: scale(0.6); }
+.drag-ghost.very-near { filter: blur(28px); opacity: 0.1; transform: scale(0.25); }
+
+/* ── RESET ── */
+.reset-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+}
+.reset-btn {
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(200,196,184,0.25);
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: none;
+}
+.reset-btn:hover { color: rgba(200,196,184,0.5); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wordReveal {
+  0% { opacity: 0; letter-spacing: 20px; }
+  40% { opacity: 0.3; }
+  100% { opacity: 1; letter-spacing: 8px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 520px) {
+  .the-word { font-size: 48px; }
+  .the-frame { font-size: 16px; }
+  .text-area { padding: 22px 16px 12px; }
+  .aftermath { font-size: 28px; max-width: 90%; }
+  .zone-play { width: 34px; height: 34px; bottom: 18px; }
+  .zone-play svg { width: 10px; height: 10px; }
+  .word-cloud { width: 280px; height: 130px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sound-prompt">
+
+  <div class="text-area">
+    <div class="the-frame">which sound brings you the most</div>
+    <div class="the-word-wrap" id="wordWrap">
+      <div class="word-cloud" id="wordCloud"></div>
+      <div class="word-proximity" id="wordProximity"></div>
+      <div class="the-word" id="theWord">tranquility</div>
+    </div>
+    <div class="instruction" id="instruction">listen to each sound with your eyes closed — deep, slow breaths<br>then drag your chosen image to the word</div>
+  </div>
+
+  <div class="image-area" id="imageArea">
+    <div class="triptych-bg"></div>
+    <div class="image-fade-top"></div>
+    <div class="image-fade-bottom"></div>
+    <div class="image-fade-left"></div>
+    <div class="image-fade-right"></div>
+
+    <!-- Aftermath overlaid on image -->
+    <div class="aftermath-overlay">
+      <div class="aftermath" id="aftermath"></div>
+    </div>
+
+    <div class="zone" data-clip="0" id="zone-0">
+      <div class="zone-overlay"></div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
+    </div>
+    <div class="zone" data-clip="1" id="zone-1">
+      <div class="zone-overlay"></div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
+    </div>
+    <div class="zone" data-clip="2" id="zone-2">
+      <div class="zone-overlay"></div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-2"></div></div>
+    </div>
+
+    <div class="reset-wrap">
+      <button class="reset-btn" id="resetBtn">reset</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="drag-ghost" id="dragGhost"></div>
+
+<script>
+const CLIPS = [
+  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', pos: '16.5% center' },
+  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', pos: '50% center' },
+  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', pos: '83.5% center' }
+];
+
+const AFTERMATH = [
+  'A single strike — and the silence after it holds everything.',
+  'Something vast, underneath. It was always there.',
+  'Voices older than language. The flame doesn\'t flicker.'
+];
+
+let audios = [], currentPlaying = -1, matched = -1, isDragging = false, dragIndex = -1;
+let startX = 0, startY = 0;
+
+CLIPS.forEach((c, i) => {
+  const a = new Audio(c.file);
+  a.preload = 'auto';
+  a.addEventListener('ended', () => stopAll());
+  a.addEventListener('timeupdate', () => {
+    if (a.duration) document.getElementById('prog-' + i).style.width = ((a.currentTime / a.duration) * 100) + '%';
+  });
+  audios.push(a);
+});
+
+function stopAll() {
+  audios.forEach((a, i) => { a.pause(); a.currentTime = 0; document.getElementById('prog-' + i).style.width = '0%'; });
+  document.querySelectorAll('.zone').forEach(z => z.classList.remove('playing'));
+  currentPlaying = -1; updateIcons();
+}
+
+function playClip(i) {
+  if (matched >= 0 || isDragging) return;
+  if (currentPlaying === i) { stopAll(); return; }
+  stopAll();
+  audios[i].play().catch(() => {});
+  currentPlaying = i;
+  document.getElementById('zone-' + i).classList.add('playing');
+  updateIcons();
+}
+
+function updateIcons() {
+  document.querySelectorAll('.zone-play').forEach((btn, i) => {
+    btn.innerHTML = i === currentPlaying
+      ? '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+  });
+}
+
+const imageArea = document.getElementById('imageArea');
+document.querySelectorAll('.zone').forEach(z => {
+  z.addEventListener('mouseenter', () => { if (matched < 0) imageArea.classList.add('zones-hovering'); });
+  z.addEventListener('mouseleave', () => { if (!isDragging && matched < 0) imageArea.classList.remove('zones-hovering'); });
+});
+
+document.querySelectorAll('.zone').forEach((zone, i) => {
+  zone.addEventListener('click', () => { if (!isDragging) playClip(i); });
+});
+
+const dragGhost = document.getElementById('dragGhost');
+const wordWrap = document.getElementById('wordWrap');
+const wordCloud = document.getElementById('wordCloud');
+const wordProximity = document.getElementById('wordProximity');
+const theWord = document.getElementById('theWord');
+
+document.querySelectorAll('.zone').forEach((zone, i) => {
+
+  zone.addEventListener('pointerdown', (e) => {
+    if (matched >= 0) return;
+    startX = e.clientX; startY = e.clientY;
+    zone.setPointerCapture(e.pointerId);
+  });
+
+  zone.addEventListener('pointermove', (e) => {
+    if (matched >= 0 || !zone.hasPointerCapture(e.pointerId)) return;
+    const dist = Math.sqrt((e.clientX - startX) ** 2 + (e.clientY - startY) ** 2);
+
+    if (!isDragging && dist > 14) {
+      isDragging = true;
+      dragIndex = i;
+      zone.classList.add('dragging-active');
+      imageArea.classList.add('zones-hovering');
+      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.png" style="object-position:' + CLIPS[i].pos + ';">';
+      dragGhost.style.display = 'block';
+      stopAll();
+    }
+
+    if (isDragging) {
+      e.preventDefault();
+      dragGhost.style.left = (e.clientX - 60) + 'px';
+      dragGhost.style.top = (e.clientY - 40) + 'px';
+
+      const wr = wordWrap.getBoundingClientRect();
+      const wcx = wr.left + wr.width / 2, wcy = wr.top + wr.height / 2;
+      const dw = Math.sqrt((e.clientX - wcx) ** 2 + (e.clientY - wcy) ** 2);
+
+      wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+
+      if (dw < 70) {
+        dragGhost.className = 'drag-ghost very-near';
+        wordCloud.classList.add('proximity-3');
+        wordProximity.style.opacity = '0.9';
+        wordProximity.style.width = '280px';
+        wordProximity.style.height = '160px';
+        theWord.style.color = 'var(--bright)';
+        theWord.style.letterSpacing = '12px';
+        
+      } else if (dw < 160) {
+        dragGhost.className = 'drag-ghost near-word';
+        wordCloud.classList.add('proximity-2');
+        const prox = 1 - (dw - 70) / 90;
+        wordProximity.style.opacity = (prox * 0.6).toFixed(2);
+        wordProximity.style.width = (200 + prox * 60) + 'px';
+        wordProximity.style.height = (120 + prox * 30) + 'px';
+        theWord.style.color = 'var(--text)';
+        theWord.style.letterSpacing = (6 + prox * 4) + 'px';
+        
+      } else if (dw < 300) {
+        dragGhost.className = 'drag-ghost';
+        wordCloud.classList.add('proximity-1');
+        wordProximity.style.opacity = '0';
+        theWord.style.color = 'rgba(156,140,120,0.55)';
+        theWord.style.letterSpacing = '6px';
+        
+      } else {
+        dragGhost.className = 'drag-ghost';
+        wordProximity.style.opacity = '0';
+        theWord.style.color = '';
+        theWord.style.letterSpacing = '';
+        
+      }
+    }
+  });
+
+  zone.addEventListener('pointerup', (e) => {
+    if (matched >= 0) return;
+    zone.classList.remove('dragging-active');
+    if (isDragging && dragIndex === i) {
+      const wr = wordWrap.getBoundingClientRect();
+      const dw = Math.sqrt((e.clientX - (wr.left + wr.width / 2)) ** 2 + (e.clientY - (wr.top + wr.height / 2)) ** 2);
+      if (dw < 120) { completeMatch(i); } else { cancelDrag(); }
+    }
+    isDragging = false; dragIndex = -1;
+    imageArea.classList.remove('zones-hovering');
+  });
+
+  zone.addEventListener('pointercancel', () => {
+    zone.classList.remove('dragging-active');
+    cancelDrag(); isDragging = false; dragIndex = -1;
+    imageArea.classList.remove('zones-hovering');
+  });
+});
+
+function cancelDrag() {
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+  wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+  wordProximity.style.opacity = '0';
+  wordProximity.style.width = ''; wordProximity.style.height = '';
+  theWord.style.color = ''; theWord.style.letterSpacing = ''; 
+}
+
+function completeMatch(i) {
+  matched = i;
+  stopAll();
+
+  dragGhost.style.transition = 'opacity 2.2s, filter 2.2s, transform 2.2s';
+  dragGhost.style.opacity = '0';
+  dragGhost.style.filter = 'blur(50px)';
+  dragGhost.style.transform = 'scale(0.05)';
+  setTimeout(() => { dragGhost.style.display = 'none'; dragGhost.style.cssText = ''; dragGhost.className = 'drag-ghost'; }, 2400);
+
+  theWord.classList.add('matched');
+  theWord.style.letterSpacing = '10px';
+  
+
+  wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+  wordCloud.style.background = 'radial-gradient(ellipse, ' + CLIPS[i].color + ', rgba(80,60,30,0.1), transparent 65%)';
+  wordCloud.classList.add('matched-cloud');
+  wordProximity.style.opacity = '0';
+
+  document.getElementById('instruction').style.opacity = '0';
+  document.querySelector('.the-frame').style.transition = 'opacity 3s';
+  document.querySelector('.the-frame').style.opacity = '0.1';
+
+  document.querySelectorAll('.zone').forEach((z, j) => {
+    if (j === i) {
+      z.classList.add('matched-zone');
+      setTimeout(() => { audios[i].volume = 0.3; audios[i].play().catch(() => {}); z.classList.add('playing'); updateIcons(); }, 1500);
+    } else {
+      z.classList.add('faded');
+    }
+  });
+
+  // Big aftermath text over image
+  setTimeout(() => {
+    document.getElementById('aftermath').textContent = AFTERMATH[i];
+    document.getElementById('aftermath').classList.add('visible');
+  }, 3500);
+
+  setTimeout(() => { document.getElementById('resetBtn').style.display = 'inline-block'; }, 7000);
+}
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1; isDragging = false; dragIndex = -1;
+  stopAll(); audios.forEach(a => a.volume = 1);
+  document.querySelectorAll('.zone').forEach(z => z.classList.remove('matched-zone', 'faded', 'dragging-active', 'playing'));
+  theWord.classList.remove('matched'); theWord.style.color = ''; theWord.style.letterSpacing = ''; 
+  wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');
+  wordCloud.style.background = '';
+  wordProximity.style.opacity = '0'; wordProximity.style.width = ''; wordProximity.style.height = '';
+  dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
+  document.querySelector('.the-frame').style.opacity = '';
+  document.getElementById('aftermath').classList.remove('visible');
+  document.getElementById('aftermath').textContent = '';
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('instruction').style.opacity = '1';
+  imageArea.classList.remove('zones-hovering');
+});
+</script>
+
+</body>
+</html>

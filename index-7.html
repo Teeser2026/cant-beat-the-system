@@ -1466,11 +1466,12 @@ body.game-active .ticker-bar { display: flex; }
 
 /* The inkblot image */
 #image-prompt-overlay .ip-image {
-  max-width: 70vw;
-  max-height: 55vh;
+  max-width: 60vw;
+  max-height: 42vh;
   object-fit: contain;
   opacity: 0;
   animation: ipFadeIn 3s ease forwards;
+  flex-shrink: 0;
 }
 
 /* Framing question */
@@ -1482,7 +1483,7 @@ body.game-active .ticker-bar { display: flex; }
   color: var(--dim);
   letter-spacing: 0.5px;
   text-align: center;
-  margin-top: 36px;
+  margin-top: 48px;
   opacity: 0;
   animation: ipFadeIn 2s ease forwards 3s;
 }
@@ -3460,19 +3461,15 @@ function renderImagePrompt(turnData) {
       mode: 'image-prompt'
     });
 
-    // Hide input area and image
-    hint.classList.remove('visible');
-    input.style.opacity = '0';
-    input.style.transition = 'opacity 1s';
-    document.querySelector('#image-prompt-overlay .ip-frame').style.opacity = '0';
-    document.querySelector('#image-prompt-overlay .ip-frame').style.transition = 'opacity 1.5s';
-    document.querySelector('#image-prompt-overlay .ip-input-wrap').style.transition = 'opacity 1s';
-    document.querySelector('#image-prompt-overlay .ip-input-wrap').style.opacity = '0';
-    document.querySelector('#image-prompt-overlay .ip-image').style.transition = 'opacity 2s';
-    document.querySelector('#image-prompt-overlay .ip-image').style.opacity = '0';
+    // Fade everything out together
+    const inner = document.querySelector('#image-prompt-overlay .ip-inner');
+    inner.style.transition = 'opacity 2s ease';
+    inner.style.opacity = '0';
 
-    // After image fades, show player's words alone
+    // 2s fade + 1s darkness = 3s, then word appears
     setTimeout(() => {
+      // Clear the image/question/input, show linger
+      inner.style.display = 'none';
       const linger = document.getElementById('ipLinger');
       document.getElementById('ipLingerText').textContent = answer;
       linger.classList.add('visible');

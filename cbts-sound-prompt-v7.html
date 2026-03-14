@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBTS — Sound Prompt v8</title>
+<title>CBTS — Sound Prompt</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
@@ -17,6 +17,7 @@
   --faint: #3a3530;
   --word-col: rgba(156,140,120,0.6);
   --word-glow: rgba(140,120,90,0.12);
+  --gap: 6px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,8 +49,8 @@ html, body {
   z-index: 10;
   background: linear-gradient(to bottom,
     #0e0d0a 0%,
-    rgba(14,13,10,0.92) 50%,
-    rgba(14,13,10,0.7) 80%,
+    rgba(14,13,10,0.95) 60%,
+    rgba(14,13,10,0.7) 85%,
     transparent 100%
   );
 }
@@ -88,7 +89,6 @@ html, body {
   animation: wordReveal 4s ease forwards 2.8s;
 }
 
-/* Ambient cloud */
 .word-cloud {
   position: absolute;
   top: 50%;
@@ -157,27 +157,16 @@ html, body {
   transition: opacity 1.5s;
 }
 
-/* ── IMAGE AREA ── */
+/* ── IMAGE AREA — three panels with dark gaps ── */
 .image-area {
   flex: 1;
   position: relative;
   display: flex;
+  gap: var(--gap);
+  padding: 0 2px;
   opacity: 0;
   animation: fadeIn 3s ease forwards 4.5s;
   min-height: 280px;
-}
-
-.video-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-.video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .image-fade-top {
@@ -185,7 +174,7 @@ html, body {
   top: 0; left: 0; right: 0;
   height: 140px;
   background: linear-gradient(to bottom, rgba(14,13,10,1), rgba(14,13,10,0.7) 40%, rgba(14,13,10,0.3) 70%, transparent);
-  z-index: 2;
+  z-index: 12;
   pointer-events: none;
 }
 .image-fade-bottom {
@@ -193,29 +182,11 @@ html, body {
   bottom: 0; left: 0; right: 0;
   height: 60px;
   background: linear-gradient(to top, rgba(14,13,10,0.6), transparent);
-  z-index: 2;
-  pointer-events: none;
-}
-.image-fade-left {
-  position: absolute;
-  top: 0; left: 0; bottom: 0;
-  width: 50px;
-  background: linear-gradient(to right, rgba(14,13,10,0.4), transparent);
-  z-index: 2;
-  pointer-events: none;
-}
-.image-fade-right {
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  width: 50px;
-  background: linear-gradient(to left, rgba(14,13,10,0.4), transparent);
-  z-index: 2;
+  z-index: 12;
   pointer-events: none;
 }
 
-/* (seam blends removed — triptych edges read as intentional) */
-
-/* ── AFTERMATH — positioned within chosen zone ── */
+/* ── AFTERMATH ── */
 .zone-aftermath {
   position: absolute;
   top: 28%;
@@ -228,10 +199,7 @@ html, body {
   transition: opacity 4s;
 }
 
-/* Pond (zone 0) — push text lower, below the bright reflection */
-#zone-0 .zone-aftermath {
-  top: 40%;
-}
+#zone-0 .zone-aftermath { top: 40%; }
 
 .zone-aftermath.visible {
   opacity: 1;
@@ -248,14 +216,11 @@ html, body {
   line-height: 1.6;
   color: var(--bright);
   text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
-  transition: color 0.5s, text-shadow 0.5s, transform 0.5s;
+  transition: color 0.5s, text-shadow 0.5s;
 }
 
-.zone-aftermath-line:nth-child(2) {
-  margin-top: 6px;
-}
+.zone-aftermath-line:nth-child(2) { margin-top: 6px; }
 
-/* Dark scrim behind text for readability over bright panels */
 .zone-aftermath::before {
   content: '';
   position: absolute;
@@ -266,9 +231,7 @@ html, body {
   opacity: 0;
   transition: opacity 4s;
 }
-.zone-aftermath.visible::before {
-  opacity: 1;
-}
+.zone-aftermath.visible::before { opacity: 1; }
 
 .zone-aftermath.visible:hover .zone-aftermath-line {
   color: var(--warm);
@@ -283,10 +246,19 @@ html, body {
   cursor: pointer;
   touch-action: none;
   transition: all 0.5s;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
-.zone:not(:last-child)::after {
-  content: none;
+.zone-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.zone-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .zone-overlay {
@@ -294,6 +266,7 @@ html, body {
   background: rgba(14,13,10,0);
   transition: background 0.8s;
   pointer-events: none;
+  z-index: 2;
 }
 
 .zones-hovering .zone .zone-overlay { background: rgba(14,13,10,0.2); }
@@ -365,46 +338,37 @@ html, body {
 /* ── RESET ── */
 .reset-wrap {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
+  bottom: 20px; left: 50%;
   transform: translateX(-50%);
   z-index: 25;
 }
 .reset-btn {
   font-family: 'Crimson Pro', serif;
-  font-size: 13px;
-  font-weight: 300;
-  font-style: italic;
+  font-size: 13px; font-weight: 300; font-style: italic;
   color: rgba(200,196,184,0.25);
-  background: none;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
+  background: none; border: none;
+  padding: 8px 16px; cursor: pointer;
   transition: color 0.3s;
   display: none;
 }
 .reset-btn:hover { color: rgba(200,196,184,0.5); }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes wordReveal {
   0% { opacity: 0; letter-spacing: 20px; }
   40% { opacity: 0.3; }
   100% { opacity: 1; letter-spacing: 8px; }
 }
 
-/* ── MOBILE ── */
 @media (max-width: 520px) {
   .the-word { font-size: 48px; }
   .the-frame { font-size: 16px; }
   .text-area { padding: 22px 16px 12px; }
-  .aftermath { font-size: 28px; max-width: 90%; }
+  .zone-aftermath-line { font-size: 24px; }
   .zone-play { width: 34px; height: 34px; bottom: 18px; }
   .zone-play svg { width: 10px; height: 10px; }
   .word-cloud { width: 280px; height: 130px; }
+  :root { --gap: 4px; }
 }
 </style>
 </head>
@@ -419,21 +383,15 @@ html, body {
       <div class="word-proximity" id="wordProximity"></div>
       <div class="the-word" id="theWord">tranquility</div>
     </div>
-    <div class="instruction" id="instruction">listen to each sound with your eyes closed — deep, slow breaths<br>then drag your chosen image to the word</div>
+    <div class="instruction" id="instruction">listen to each sound with your eyes closed &#8212; deep, slow breaths<br>then drag your chosen image to the word</div>
   </div>
 
   <div class="image-area" id="imageArea">
-    <div class="video-bg">
-      <video autoplay muted loop playsinline>
-        <source src="temple-sea.mp4" type="video/mp4">
-      </video>
-    </div>
     <div class="image-fade-top"></div>
     <div class="image-fade-bottom"></div>
-    <div class="image-fade-left"></div>
-    <div class="image-fade-right"></div>
 
     <div class="zone" data-clip="0" id="zone-0">
+      <div class="zone-img"><img src="peace-1.jpg" alt="" draggable="false"></div>
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-0">
         <span class="zone-aftermath-line" id="aftermath-0-l1"></span>
@@ -443,6 +401,7 @@ html, body {
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
     </div>
     <div class="zone" data-clip="1" id="zone-1">
+      <div class="zone-img"><img src="peace-2.jpg" alt="" draggable="false"></div>
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-1">
         <span class="zone-aftermath-line" id="aftermath-1-l1"></span>
@@ -452,6 +411,7 @@ html, body {
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
     </div>
     <div class="zone" data-clip="2" id="zone-2">
+      <div class="zone-img"><img src="peace-3.jpg" alt="" draggable="false"></div>
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-2">
         <span class="zone-aftermath-line" id="aftermath-2-l1"></span>
@@ -472,15 +432,15 @@ html, body {
 
 <script>
 const CLIPS = [
-  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', ghost: 'radial-gradient(ellipse, rgba(180,150,90,0.7), rgba(120,100,60,0.3))' },
-  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', ghost: 'radial-gradient(ellipse, rgba(70,100,140,0.7), rgba(40,60,90,0.3))' },
-  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', ghost: 'radial-gradient(ellipse, rgba(120,140,80,0.7), rgba(80,100,50,0.3))' }
+  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', img: 'peace-1.jpg' },
+  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', img: 'peace-2.jpg' },
+  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', img: 'peace-3.jpg' }
 ];
 
 const AFTERMATH = [
   ['A single strike', 'The silence after it holds everything'],
   ['Something vast, underneath', 'It was always there'],
-  ['Voices older than language', 'The flame doesn\'t flicker']
+  ['Voices older than language', 'The flame doesn\u2019t flicker']
 ];
 
 let audios = [], currentPlaying = -1, matched = -1, isDragging = false, dragIndex = -1;
@@ -553,8 +513,7 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
       dragIndex = i;
       zone.classList.add('dragging-active');
       imageArea.classList.add('zones-hovering');
-      dragGhost.innerHTML = '';
-      dragGhost.style.background = CLIPS[i].ghost;
+      dragGhost.innerHTML = '<img class="ghost-img" src="' + CLIPS[i].img + '">';
       dragGhost.style.display = 'block';
       stopAll();
     }
@@ -578,7 +537,6 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
         wordProximity.style.height = '160px';
         theWord.style.color = 'var(--bright)';
         theWord.style.letterSpacing = '12px';
-        
       } else if (dw < 160) {
         dragGhost.className = 'drag-ghost near-word';
         wordCloud.classList.add('proximity-2');
@@ -588,20 +546,17 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
         wordProximity.style.height = (120 + prox * 30) + 'px';
         theWord.style.color = 'var(--text)';
         theWord.style.letterSpacing = (6 + prox * 4) + 'px';
-        
       } else if (dw < 300) {
         dragGhost.className = 'drag-ghost';
         wordCloud.classList.add('proximity-1');
         wordProximity.style.opacity = '0';
         theWord.style.color = 'rgba(156,140,120,0.55)';
         theWord.style.letterSpacing = '6px';
-        
       } else {
         dragGhost.className = 'drag-ghost';
         wordProximity.style.opacity = '0';
         theWord.style.color = '';
         theWord.style.letterSpacing = '';
-        
       }
     }
   });
@@ -627,12 +582,11 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
 
 function cancelDrag() {
   dragGhost.style.display = 'none';
-  dragGhost.style.background = '';
   dragGhost.className = 'drag-ghost';
   wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
   wordProximity.style.opacity = '0';
   wordProximity.style.width = ''; wordProximity.style.height = '';
-  theWord.style.color = ''; theWord.style.letterSpacing = ''; 
+  theWord.style.color = ''; theWord.style.letterSpacing = '';
 }
 
 function completeMatch(i) {
@@ -647,7 +601,6 @@ function completeMatch(i) {
 
   theWord.classList.add('matched');
   theWord.style.letterSpacing = '10px';
-  
 
   wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
   wordCloud.style.background = 'radial-gradient(ellipse, ' + CLIPS[i].color + ', rgba(80,60,30,0.1), transparent 65%)';
@@ -667,7 +620,6 @@ function completeMatch(i) {
     }
   });
 
-  // Aftermath text in chosen zone — two lines
   setTimeout(() => {
     const am = document.getElementById('aftermath-' + i);
     document.getElementById('aftermath-' + i + '-l1').textContent = AFTERMATH[i][0];
@@ -678,10 +630,8 @@ function completeMatch(i) {
   setTimeout(() => { document.getElementById('resetBtn').style.display = 'inline-block'; }, 7000);
 }
 
-// Click-to-continue on aftermath
 document.querySelectorAll('.zone-aftermath').forEach(am => {
   am.addEventListener('click', () => {
-    // In prototype: reset. In engine: advance to next turn.
     document.getElementById('resetBtn').click();
   });
 });
@@ -698,7 +648,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');
   wordCloud.style.background = '';
   wordProximity.style.opacity = '0'; wordProximity.style.width = ''; wordProximity.style.height = '';
-  dragGhost.style.display = 'none'; dragGhost.style.background = ''; dragGhost.className = 'drag-ghost';
+  dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
   document.querySelector('.the-frame').style.opacity = '';
   document.getElementById('resetBtn').style.display = 'none';
   document.getElementById('instruction').style.opacity = '1';

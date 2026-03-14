@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Sound Prompt v4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0c0b0e;
+  --text: #c8c4b8;
+  --dim: #6b6760;
+  --bright: #e8e4d8;
+  --warm: #c4956a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --div: #1a1816;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+
+/* Ambient warmth */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 30%, rgba(40,32,20,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 60%, rgba(22,26,34,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(20,18,14,0.4) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── LAYOUT ── */
+.sound-prompt {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.prompt-inner {
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── FRAMING ── */
+.the-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 19px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 0.3s;
+  text-align: center;
+}
+
+/* ── THE WORD ── */
+.the-word-wrap {
+  position: relative;
+  margin-bottom: 42px;
+  z-index: 10;
+}
+
+.the-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 62px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 4px;
+  color: var(--dim);
+  user-select: none;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 1.8s ease;
+  opacity: 0;
+  animation: wordReveal 3s ease forwards 1s;
+}
+
+.word-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(50px);
+  transition: opacity 3s, width 3s, height 3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.word-cloud.active {
+  opacity: 0.45;
+  width: 380px;
+  height: 190px;
+}
+
+.word-proximity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 140px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(50px);
+  background: radial-gradient(ellipse, rgba(196,149,106,0.25), transparent 70%);
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.the-word.matched {
+  color: var(--bright);
+  letter-spacing: 6px;
+  text-shadow: 0 0 60px rgba(196,149,106,0.2);
+}
+
+/* ── INSTRUCTION ── */
+.instruction {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
+  color: rgba(58,53,48,0.6);
+  text-align: center;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards 3.5s;
+  transition: opacity 1s;
+}
+
+/* ── TRIPTYCH ── */
+.triptych-wrap {
+  width: 100%;
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 2.5s ease forwards 2.2s;
+}
+
+.triptych-container {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+/* Each panel clips a third of the full image */
+.panel {
+  flex: 1;
+  aspect-ratio: 240/310;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s ease;
+  touch-action: none;
+}
+
+.panel-img {
+  position: absolute;
+  top: -5%;
+  height: 110%;
+  /* Each panel shows its third of the panorama */
+  object-fit: cover;
+  transition: all 0.6s;
+}
+
+/* Position each panel's crop */
+.panel[data-clip="0"] .panel-img {
+  left: 0;
+  width: 300%;
+  object-position: 0% center;
+}
+
+.panel[data-clip="1"] .panel-img {
+  left: -100%;
+  width: 300%;
+  object-position: center center;
+}
+
+.panel[data-clip="2"] .panel-img {
+  left: -200%;
+  width: 300%;
+  object-position: 100% center;
+}
+
+/* Feathered edges */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  box-shadow: inset 0 0 35px 18px var(--bg);
+  pointer-events: none;
+  z-index: 3;
+  transition: box-shadow 0.6s;
+}
+
+.panel:hover::after {
+  box-shadow: inset 0 0 20px 10px var(--bg);
+}
+
+.panel.playing::after {
+  box-shadow: inset 0 0 15px 6px var(--bg);
+}
+
+/* Dimming overlay for non-hovered panels */
+.panel-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(12,11,14,0);
+  transition: background 0.5s;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 14px;
+}
+
+.panel:hover ~ .panel .panel-dim,
+.panel:has(~ .panel:hover) .panel-dim {
+  background: rgba(12,11,14,0.25);
+}
+
+/* Playing state */
+.panel.playing {
+  transform: translateY(-3px);
+}
+
+/* Breathing glow when playing */
+.panel-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(ellipse at center, rgba(196,149,106,0.08), transparent 70%);
+}
+
+.panel.playing .panel-glow {
+  opacity: 1;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.panel.dragging-active {
+  opacity: 0.4;
+  transform: scale(0.96);
+}
+
+.panel.matched-panel {
+  opacity: 1;
+  transform: none;
+}
+
+.panel.faded {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  transition: all 2s ease;
+}
+
+/* Play button */
+.panel-play {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.15);
+  background: rgba(12,11,14,0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  z-index: 5;
+}
+
+.panel:hover .panel-play {
+  border-color: rgba(200,196,184,0.35);
+  background: rgba(12,11,14,0.5);
+}
+
+.panel.playing .panel-play {
+  border-color: rgba(196,149,106,0.5);
+  background: rgba(12,11,14,0.55);
+}
+
+.panel-play svg {
+  width: 11px;
+  height: 11px;
+  fill: rgba(200,196,184,0.35);
+  transition: fill 0.5s;
+}
+
+.panel.playing .panel-play svg {
+  fill: var(--warm);
+}
+
+/* Progress */
+.panel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  border-radius: 1px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.panel-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  border-radius: 1px;
+}
+
+/* ── DRAG GHOST ── */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  width: 100px;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0.85;
+  transition: filter 0.4s, opacity 0.4s, transform 0.4s;
+  display: none;
+  box-shadow: 0 14px 50px rgba(0,0,0,0.6);
+}
+
+.drag-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 24px 12px rgba(12,11,14,0.4);
+  pointer-events: none;
+}
+
+.drag-ghost img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drag-ghost.near-word {
+  filter: blur(10px);
+  opacity: 0.5;
+  transform: scale(0.7);
+}
+
+.drag-ghost.very-near {
+  filter: blur(24px);
+  opacity: 0.2;
+  transform: scale(0.4);
+}
+
+/* ── AFTERMATH ── */
+.aftermath {
+  margin-top: 46px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 2;
+  color: var(--inner);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.aftermath.visible { opacity: 1; }
+
+/* ── RESET ── */
+.reset-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: none;
+  border: 1px solid rgba(58,53,48,0.3);
+  padding: 8px 16px;
+  margin-top: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+}
+
+.reset-btn:hover { color: var(--dim); border-color: var(--dim); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wordReveal {
+  0% { opacity: 0; letter-spacing: 16px; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; letter-spacing: 4px; }
+}
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 520px) {
+  .the-word { font-size: 44px; }
+  .the-frame { font-size: 16px; }
+  .triptych-container { gap: 6px; }
+  .panel { border-radius: 10px; }
+  .panel::after { box-shadow: inset 0 0 22px 12px var(--bg); border-radius: 10px; }
+  .panel-play { width: 30px; height: 30px; }
+  .panel-play svg { width: 9px; height: 9px; }
+}
+</style>
+</head>
+<body>
+
+<div class="sound-prompt">
+  <div class="prompt-inner">
+
+    <div class="the-frame">which sound brings you the most</div>
+
+    <div class="the-word-wrap" id="wordWrap">
+      <div class="word-cloud" id="wordCloud"></div>
+      <div class="word-proximity" id="wordProximity"></div>
+      <div class="the-word" id="theWord">peace</div>
+    </div>
+
+    <div class="instruction" id="instruction">listen to each — then move your answer to the word</div>
+
+    <div class="triptych-wrap">
+      <div class="triptych-container" id="panels">
+
+        <div class="panel" data-clip="0" id="panel-0">
+          <img class="panel-img" src="peace-triptych.png" alt="">
+          <div class="panel-dim"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+          <div class="panel-progress"><div class="panel-progress-fill" id="prog-0"></div></div>
+        </div>
+
+        <div class="panel" data-clip="1" id="panel-1">
+          <img class="panel-img" src="peace-triptych.png" alt="">
+          <div class="panel-dim"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+          <div class="panel-progress"><div class="panel-progress-fill" id="prog-1"></div></div>
+        </div>
+
+        <div class="panel" data-clip="2" id="panel-2">
+          <img class="panel-img" src="peace-triptych.png" alt="">
+          <div class="panel-dim"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+          <div class="panel-progress"><div class="panel-progress-fill" id="prog-2"></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="aftermath" id="aftermath"></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+
+  </div>
+</div>
+
+<div class="drag-ghost" id="dragGhost"></div>
+
+<script>
+const CLIPS = [
+  { file: 'gong.mp3', color: '#8a7a50' },
+  { file: 'whale.mp3', color: '#2a4a5e' },
+  { file: 'lowchant.mp3', color: '#4a5a3a' }
+];
+
+const AFTERMATH = [
+  'A single strike — and the silence after it holds everything.',
+  'Something vast, underneath. It was always there.',
+  'Voices older than language. The flame doesn\'t flicker.'
+];
+
+let audios = [];
+let currentPlaying = -1;
+let matched = -1;
+let isDragging = false;
+let dragIndex = -1;
+
+// Init audio
+CLIPS.forEach((c, i) => {
+  const audio = new Audio(c.file);
+  audio.preload = 'auto';
+  audio.addEventListener('ended', () => stopAll());
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      document.getElementById('prog-' + i).style.width =
+        ((audio.currentTime / audio.duration) * 100) + '%';
+    }
+  });
+  audios.push(audio);
+});
+
+function stopAll() {
+  audios.forEach((a, i) => {
+    a.pause(); a.currentTime = 0;
+    document.getElementById('prog-' + i).style.width = '0%';
+  });
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('playing'));
+  currentPlaying = -1;
+  updateIcons();
+}
+
+function playClip(i) {
+  if (matched >= 0 || isDragging) return;
+  if (currentPlaying === i) { stopAll(); return; }
+  stopAll();
+  audios[i].play().catch(() => {});
+  currentPlaying = i;
+  document.getElementById('panel-' + i).classList.add('playing');
+  updateIcons();
+}
+
+function updateIcons() {
+  document.querySelectorAll('.panel-play').forEach((btn, i) => {
+    btn.innerHTML = i === currentPlaying
+      ? '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+  });
+}
+
+// Click to play
+document.querySelectorAll('.panel').forEach((panel, i) => {
+  panel.addEventListener('click', () => { if (!isDragging) playClip(i); });
+});
+
+// ── Drag ──
+const dragGhost = document.getElementById('dragGhost');
+const wordWrap = document.getElementById('wordWrap');
+const wordCloud = document.getElementById('wordCloud');
+const wordProximity = document.getElementById('wordProximity');
+const theWord = document.getElementById('theWord');
+let startX = 0, startY = 0;
+
+// Pre-create ghost image crops
+const ghostPositions = ['0% center', '50% center', '100% center'];
+
+document.querySelectorAll('.panel').forEach((panel, i) => {
+
+  panel.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.panel-play')) return;
+    if (matched >= 0) return;
+    startX = e.clientX; startY = e.clientY;
+    panel.setPointerCapture(e.pointerId);
+  });
+
+  panel.addEventListener('pointermove', (e) => {
+    if (matched >= 0 || !panel.hasPointerCapture(e.pointerId)) return;
+    const dist = Math.sqrt((e.clientX - startX) ** 2 + (e.clientY - startY) ** 2);
+
+    if (!isDragging && dist > 12) {
+      isDragging = true;
+      dragIndex = i;
+      panel.classList.add('dragging-active');
+      // Ghost shows this panel's portion of the image
+      dragGhost.innerHTML = '<img src="peace-triptych.png" style="width:300%;height:100%;object-fit:cover;object-position:' + ghostPositions[i] + ';">';
+      dragGhost.style.display = 'block';
+      stopAll();
+    }
+
+    if (isDragging) {
+      e.preventDefault();
+      dragGhost.style.left = (e.clientX - 50) + 'px';
+      dragGhost.style.top = (e.clientY - 65) + 'px';
+
+      const wr = wordWrap.getBoundingClientRect();
+      const wcx = wr.left + wr.width / 2;
+      const wcy = wr.top + wr.height / 2;
+      const dw = Math.sqrt((e.clientX - wcx) ** 2 + (e.clientY - wcy) ** 2);
+
+      if (dw < 80) {
+        dragGhost.className = 'drag-ghost very-near';
+        wordProximity.style.opacity = '0.8';
+        theWord.style.color = 'var(--bright)';
+      } else if (dw < 200) {
+        dragGhost.className = 'drag-ghost near-word';
+        wordProximity.style.opacity = ((1 - (dw - 80) / 120) * 0.5).toFixed(2);
+        theWord.style.color = 'var(--text)';
+      } else {
+        dragGhost.className = 'drag-ghost';
+        wordProximity.style.opacity = '0';
+        theWord.style.color = 'var(--dim)';
+      }
+    }
+  });
+
+  panel.addEventListener('pointerup', (e) => {
+    if (matched >= 0) return;
+    panel.classList.remove('dragging-active');
+
+    if (isDragging && dragIndex === i) {
+      const wr = wordWrap.getBoundingClientRect();
+      const dw = Math.sqrt(
+        (e.clientX - (wr.left + wr.width / 2)) ** 2 +
+        (e.clientY - (wr.top + wr.height / 2)) ** 2
+      );
+      if (dw < 120) { completeMatch(i); } else { cancelDrag(); }
+    }
+    isDragging = false; dragIndex = -1;
+  });
+
+  panel.addEventListener('pointercancel', () => {
+    panel.classList.remove('dragging-active');
+    cancelDrag(); isDragging = false; dragIndex = -1;
+  });
+});
+
+function cancelDrag() {
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+  wordProximity.style.opacity = '0';
+  theWord.style.color = '';
+}
+
+function completeMatch(i) {
+  matched = i;
+  stopAll();
+
+  dragGhost.style.transition = 'opacity 1.8s, filter 1.8s, transform 1.8s';
+  dragGhost.style.opacity = '0';
+  dragGhost.style.filter = 'blur(40px)';
+  dragGhost.style.transform = 'scale(0.15)';
+  setTimeout(() => {
+    dragGhost.style.display = 'none';
+    dragGhost.style.cssText = ''; dragGhost.className = 'drag-ghost';
+  }, 1900);
+
+  theWord.classList.add('matched');
+  wordCloud.style.background = 'radial-gradient(ellipse, ' + CLIPS[i].color + ', transparent 70%)';
+  wordCloud.classList.add('active');
+  wordProximity.style.opacity = '0';
+
+  document.getElementById('instruction').style.opacity = '0';
+  document.querySelector('.the-frame').style.transition = 'opacity 2s';
+  document.querySelector('.the-frame').style.opacity = '0.25';
+
+  document.querySelectorAll('.panel').forEach((p, j) => {
+    if (j === i) {
+      p.classList.add('matched-panel');
+      setTimeout(() => {
+        audios[i].volume = 0.35;
+        audios[i].play().catch(() => {});
+        p.classList.add('playing'); updateIcons();
+      }, 1000);
+    } else {
+      p.classList.add('faded');
+    }
+  });
+
+  setTimeout(() => {
+    document.getElementById('aftermath').textContent = AFTERMATH[i];
+    document.getElementById('aftermath').classList.add('visible');
+  }, 2500);
+
+  setTimeout(() => {
+    document.getElementById('resetBtn').style.display = 'inline-block';
+  }, 5000);
+}
+
+// Reset
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1; isDragging = false; dragIndex = -1;
+  stopAll(); audios.forEach(a => a.volume = 1);
+  document.querySelectorAll('.panel').forEach(p =>
+    p.classList.remove('matched-panel', 'faded', 'dragging-active', 'playing'));
+  theWord.classList.remove('matched'); theWord.style.color = '';
+  wordCloud.classList.remove('active'); wordProximity.style.opacity = '0';
+  dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
+  document.querySelector('.the-frame').style.opacity = '';
+  document.getElementById('aftermath').classList.remove('visible');
+  document.getElementById('aftermath').textContent = '';
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('instruction').style.opacity = '1';
+});
+</script>
+
+</body>
+</html>

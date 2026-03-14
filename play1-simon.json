@@ -736,7 +736,7 @@
       "id": "SP1",
       "isQuestion": true,
       "questionMode": "sound-prompt",
-      "questionText": "[SOUND PROMPT — 'peace'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
+      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
       "questionOpts": [
         {
           "text": "[placeholder]"

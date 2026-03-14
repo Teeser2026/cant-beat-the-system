@@ -1,0 +1,1830 @@
+{
+  "meta": {
+    "version": "1.0",
+    "play": 1,
+    "title": "Simon's Story",
+    "description": "Play 1 — Pre-Event through Registration. October 2026 to late February 2027.",
+    "totalTurns": 23,
+    "writtenTurns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23
+    ],
+    "questionsAt": [
+      "Q1@before_T1",
+      "Q2@T3",
+      "Q3@T3",
+      "Q4@T3",
+      "Q5@T5",
+      "Q6@T7",
+      "Q7@T8",
+      "Q8@T10",
+      "Q9@T11",
+      "Q10@T12",
+      "Q11@T14",
+      "Q12@T15",
+      "Q13@T15",
+      "Q14@T15",
+      "Q15@T18",
+      "Q16@T18",
+      "Q17@T18",
+      "Q18@T18",
+      "Q19@T19",
+      "Q20@T22"
+    ]
+  },
+  "initialState": {
+    "cash": 840,
+    "ds": 12400,
+    "bc": 0,
+    "cw": {
+      "value": 50,
+      "visible": false
+    },
+    "health": "fine",
+    "bioDigital": 0,
+    "flags": {
+      "registered": false,
+      "met_dev": false,
+      "met_patel": false
+    }
+  },
+  "turns": [
+    {
+      "id": 1,
+      "num": "T1",
+      "title": "Digging, Bright and Breezy",
+      "date": "October 2026",
+      "paras": [
+        {
+          "t": "Feeling fresh, invigorated, ready to go. Nine hours of unbroken sleep. Day six without a glass of wine. Herbal infusions before bed. Ginger and turmeric my favourite. Neutralise those free radicals, baby. The morning juice. Spinach (freshly picked from the allotment each morning), apple juice (pressed at the local orchard), a splash of lemon, a handful of spirulina (it ‘might’ help lower blood pressure, it ‘might’ have anti-inflammatory properties). Fifteen quid for a bag of tasteless powder. It better do something."
+        },
+        {
+          "t": "The late autumn sun is already up. Watery, but still radiating a gentle, comforting warmth. The last of the dewdrops evaporate around your bare feet as you stretch your arms up to the heavens and try and click that annoying knot in your lower neck that you just can’t quite get to. You assess the work planned for the morning. Late-season potatoes to dig up. The last of the tomatoes to pick. Dahlias to cut, they’ve been remarkable this year, the Café au Lait in particular. Plus the least enticing, neutralising the weeds."
+        },
+        {
+          "t": "Your phone detox has entered day three. It’s on the kitchen table. Out of sight and all that. Having said that emails don’t check themselves. Well they do, but the AI bot that you didn’t ask for or install, but is actually quite useful, has an annoying habit of occasionally ‘helpfully’ auto-filling crucial work emails in junk. So, cup of green tea, glass of water (must order a new filter) and the morning dose of ubiquinol, NAC and Taurine. A quick scan of emails. And back out to the garden."
+        },
+        {
+          "t": "Kettle on. There it is on the table. My precious. The automaton takes over. Just a quick scroll. X. To ‘check the news’."
+        },
+        {
+          "t": "Turns out the news was quite interesting. Reports of military manoeuvres at Royal Air Force Wyton. The ‘top-secret’ (so secret it’s the first thing that comes up on a google for ‘secret military bases UK’) Pathfinder Building is Britain’s premier military spy base. You remember it mentioned in an article you read a few years ago about DUMBs — Deep Underground Military Bases. Nuclear fallout bunker that could keep several thousand ‘elites’ alive for two decades. Or something. Maybe they keep the Greys there. Anyway, the quick check has now ticked over 90 minutes. Learn your lesson, dickhead. The cottage garden waits for no man. The military activity is hardly covert though. Front page of BBC, no less. If it’s in the news, it’s likely a ruse. They’re probably planning something though. They’ve always been planning something. Allegedly. According to ‘inside sources’, ‘data leaks’ or ‘whistleblowers’.",
+          "c": "inner"
+        },
+        {
+          "t": "You let it wash over you. Control the controllables.<br>Zen and the art of digging up spuds.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Morning",
+        "prompt": "The garden or the screen. You know which one wins.",
+        "opts": [
+          {
+            "text": "Stay out. The dahlias need cutting. The Café au Lait especially."
+          },
+          {
+            "text": "Check the RAF Wyton story properly. Something feels off."
+          },
+          {
+            "text": "Come in. Those DUMB articles from 2024 are still open in a tab somewhere..."
+          }
+        ]
+      },
+      "audio": {
+        "src": "countryside-bees.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
+      }
+    },
+    {
+      "id": 2,
+      "num": "T2",
+      "title": "Potatoes and Rabbit Holes",
+      "date": "October 2026",
+      "paras": [
+        {
+          "t": "The potatoes, dug up last week, were exceptional. Actually tasted like potatoes. Gently boiled, a large knob of butter. Perfection. You feel a long way from self-sufficiency though. Weeks of toil, turning soil, watering and nurture yielded two, maybe three weeks worth. The tomatoes were pleasant enough for a family of six tricolore salad lovers. A labour of love that had to be topped up weekly with Isle of Wight reinforcements from Waitrose, which you reluctantly admit were sweeter, juicier, firmer."
+        },
+        {
+          "t": "The sunshine skies of last week have turned into an overcast perma-drizzle. It’s certainly not cold yet, but the evenings have a chill. You’ve stubbornly resisted putting the central heating on. The underfloor heating in the bathroom keeps the chill off in there. You’ve yet to light a fire. Must organise a firewood delivery. The logs in the garden remain unspoilt. The axe bought for this purpose as sharp as the day it was delivered."
+        },
+        {
+          "t": "You sit down for a ‘break’ — a spot of pre-cooking ‘research’ on X. Usual mix of rage-bait, distraction and division. An ‘Islamophobic protest’ up north somewhere. Retweeted (old habits die hard) by the usual suspects."
+        },
+        {
+          "t": "KEEP DOOMSCROLLING"
+        },
+        {
+          "t": "You see a sharp comment from Derrick Broze. You haven’t read much of his stuff for ages. Seems genuine. You remember a spat he had with Alison McDowell a few years ago about the use of crypto in the ‘freedom movement’. You never found out how that resolved itself, or if you did you can’t remember. You do remember that you’ve had Derrick’s ‘The Pyramid of Power’ presentation open in your browser for months, barely skimmed, mentally flagged as ‘Must Read’."
+        },
+        {
+          "t": "No time like the present.<br>Down the rabbit hole you go.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Tuesday Night",
+        "prompt": "The tab has been open for months. Today could be different.",
+        "opts": [
+          {
+            "text": "Actually read the Pyramid of Power. All of it. This time."
+          },
+          {
+            "text": "Skim the intro, save the rest for later. You always say that."
+          },
+          {
+            "text": "Close the tab. Cook something. The allotment needs you more than Derrick Broze does."
+          }
+        ]
+      },
+      "audio": {
+        "src": "gentle-rain.mp3",
+        "fadeIn": 2,
+        "vol": 0.3
+      }
+    },
+    {
+      "id": 3,
+      "num": "T3",
+      "title": "The Deck",
+      "date": "October 2026",
+      "paras": [
+        {
+          "t": "Early starts. 5 days in a row. Working until it's too dark or you're too tired. You wouldn't say you were born to do this sort of thing. Not many people would say, oh yeah, Simon, he's 'handy'. But I'm not totally inept. It's definitely a steep learning curve and I'd thrown myself in at the deep end. This project also marked my first use of AI. I needed to work out how far apart I should space the joists. I'd promised myself I wouldn't jump on to the slippery slope bandwagon of ChatGPT. But I wanted to make the most of the light and do some actual work, rather than using my brain, pen, pad and calculator. So I capitulated. Answer in seconds, with hints and tips I didn't even ask for. But turned out to be very useful. Clever. Too clever."
+        },
+        {
+          "t": "I haven't told you what I'm doing. You may have guessed? Building a deck. In the garden. To put our bell tent on. Long story short, Amy suggested we buy a bell tent earlier this year. Another 'room' in the garden. A place to have a late night drink when the nights turn nippier. Somewhere the kids (I still say kids, they're 16,17,18 and 19, that officially makes me old) could party. Where their friends could crash over. It wouldn't surprise anyone that knows me in the slightest that I didn't buy a 3 or 4m tent, large enough to do the job, small enough to put up and take down with ease. And didn't cost the earth. No, no. I bought the premium 'Bell Tent Plus' 8m. Half moon coir matting. Wood burning stove. The full monty. We put it up on the grass. Quite straightforward actually, other than the fight to get the central pole upright. Amy dressed it with her usual panache and eye for getting things just right. A beautiful king size bed that we'd been storing in the shed, ethnic rugs, animal skins, an abundance of cushions ( the de rigueur female accessory) and vintage furniture. It looks like something out of a VIP boutique camping area of a bougie festival. I added 100m of festoon lights. George and his girlfriend slept in it twice. The dogs were bemused by its gigantic presence at first, but soon realised it gave them shelter from the summer sun."
+        },
+        {
+          "t": "A few weeks later, Mother Nature landed a one-two of misfortune. The left jab, unbeknown to us a mole had decided to burrow up under the central pole. Structural stability compromised. The right hook to floor us, a storm, violent 70mph gusts. A soggy, collapsed pile of canvas greeted us upon inspection."
+        },
+        {
+          "t": "Bollocks.",
+          "c": "solo"
+        },
+        {
+          "t": "We got knocked down, but not out. We picked ourselves up from the canvas, metaphorically, and picked the canvas off the grass, literally. That was a couple of weeks ago. Excellent progress has been made. We have something that looks very much like a 9x9m deck, just a few more planks to lay."
+        },
+        {
+          "t": "Screen time down. Pride up. Doomscrolling thumb rested, palm slightly blistered from power tool use. Beer well earned.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Evening",
+        "prompt": "The joists are spaced. The answer came in seconds. You didn't even have to think.",
+        "opts": [
+          {
+            "text": "Delete the app. You promised yourself you wouldn't. The pen, pad and calculator worked fine for decades."
+          },
+          {
+            "text": "Keep it. But only for practical stuff. DIY, measurements, that sort of thing. You're not going to start asking it to think for you."
+          },
+          {
+            "text": "Ask it something else. You've been wondering about that RAF Wyton story. See what it makes of it."
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "num": "T4",
+      "title": "Bonfire",
+      "date": "Early November 2026",
+      "paras": [
+        {
+          "t": "The Bonfire celebrations in Sussex are truly remarkable. And this coming from someone who used to be a bit of a fireworks curmudgeon."
+        },
+        {
+          "t": "They’re a throwback to the England that only exists in village pubs and the memories of soon-to-be-lost generations."
+        },
+        {
+          "t": "The spirit is medieval. Raucous. Revolutionary. Anti-authoritarian. If only I could bottle it and unleash it upon the country on a wet Wednesday afternoon."
+        },
+        {
+          "t": "There’s beer. Proper beer. Brewed with love and served from the barrel. Harvey’s Bonfire Boy, brewed in Lewes. Warming, fruity, tinged with woodsmoke. Dark amber in colour, malty and with more than a hint of caramelised apple and longing for days of yore."
+        },
+        {
+          "t": "The soul of the celebrations are the Bonfire Societies. Processions around county towns throughout the autumn. Lewes always marks 5th November, the date of the Gunpowder Plot. The effigies burnt on the bonfire a symbol of rebellion. Trump. Boris. Merkel. A rogues gallery and then some."
+        },
+        {
+          "t": "The Procession, each town identified by their traditional hooped patterned jumpers in their own coloured stripes, is the main event. Some Societies dress as pirates. Some WW1 infantry. Some witches and warlocks. All costumes elaborate and handmade. This is the Societies raison d’être."
+        },
+        {
+          "t": "Everyone carries a torch, real fire. Lit with paraffin. The rawness, the heat, the two fingers to health and safety. Hand-painted banners and intricately crafted signs are raised aloft by each Society as they march past the assembled masses. Newick, Isfield, Hastings, Rye. A roar for each."
+        },
+        {
+          "t": "The finale. An effigy burnt. The flames of the bonfire lick high into the autumn blackness. No ropes or pedestrian fencing here. The intense heat a natural barrier."
+        },
+        {
+          "t": "The fireworks. Funded by donations. Set off by volunteers to roars of delight and murmurs of ‘this is the best year ever’."
+        },
+        {
+          "t": "They are good. Astonishing. I’m no longer a firework curmudgeon. Mesmerising. Alluring. Raw and tinged with danger. The scent of sulphur lingers in the air."
+        },
+        {
+          "t": "Film them on your iPhone if you want. Their magic won’t be replicated. The beauty of the moment, retained forever in the cloud, but never captured by your soul.",
+          "c": "inner"
+        },
+        {
+          "t": "Four pints. No food. A delicious buzz. A huge pot of chilli sits warming on the hob to greet us when we get home."
+        },
+        {
+          "t": "‘We burn for good.’<br>That’s the motto.<br><br>‘We wunt be druv.’<br>That’s the spirit. We won’t be pushed around. Stubbornness, independence.<br><br>More of this, England.<br>More of this, I beg.<br><br>And then tomorrow? Back to the day jobs.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Walking home, midnight",
+        "opts": [
+          "Film the next procession on your phone. The fireworks are extraordinary. Capture it.",
+          "Put the phone away. Some things aren’t meant to be saved. Just felt.",
+          "Post about it. People should know this still exists. England isn’t dead yet."
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "num": "T5",
+      "title": "Solutions Watch",
+      "date": "Mid November 2026",
+      "paras": [
+        {
+          "t": "I love James Corbett. ‘The Corbett Report is an independent, listener-supported alternative news source’ he states at the top of his website."
+        },
+        {
+          "t": "That undersells what he does and then some. Astute, witty, sharp. The antithesis of the asinine, crazy conspiracy theorist caricature. One of the New World Order analysis gurus."
+        },
+        {
+          "t": "I like the ‘Solutions Watch’ episodes of his podcast. I think they used to be ‘Propaganda Watch’ or ‘Psyop Watch’, but he flipped the script. Instead of continual investigation into the ways in which they control, divide and cattle prod us, he decided to offer us, with the help of a series of freedom-loving guests, insights and ideas about how we can fight back. Take control of our own destiny."
+        },
+        {
+          "t": "I don’t watch these weekly broadcasts nearly enough."
+        },
+        {
+          "t": "I decided to dip back into the archive and watch an episode that had been in my ‘watch this tomorrow’ list for months."
+        },
+        {
+          "t": "The Only REAL Solution to Digital ID — #SolutionsWatch<br>by Corbett | Nov 5, 2025 | Solutions Watch, Videos<br>Hakeem Anwar of AbovePhone.com returns to the de-program to discuss his latest report: “Life Under Digital ID: A Global Analysis with Solutions.”",
+          "c": "inner"
+        },
+        {
+          "t": "I watched the first 11 minutes. This is good shit. The phone rang. Duty called. Dinner needing cooking. Dinner was eaten. Wine was opened. Netflix was watched."
+        },
+        {
+          "t": "The remaining 31 minutes have been added to my ‘watch this tomorrow’ list.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Evening",
+        "opts": [
+          "Finish the episode. It’s only 31 minutes. You owe it to yourself.",
+          "Send it to three people who might actually watch it. Do your bit.",
+          "Leave it. You already know enough. Knowing more changes nothing."
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "num": "T6",
+      "title": "Bills",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "Bills. Bills, bills and more bills."
+        },
+        {
+          "t": "Two punctures in a week. The same wheel. The first, a pothole. They’re a joke. I’m sure you know this. They’re everywhere. They’re seemingly contagious. Like a virus. In fact, perhaps not like a virus. But let’s not go there. At least I can prove potholes exist. Just look at my bloody tyre. The cure? A safe and effective 170 quid new one."
+        },
+        {
+          "t": "Then, 3 days later, the red exclamation mark from hell appears on the dashboard."
+        },
+        {
+          "t": "‘Check tyre pressure’",
+          "c": "solo"
+        },
+        {
+          "t": "You have got to be taking the piss. Sure enough, not a computer malfunction. A hiss. A nail in the bloody tyre. 57 miles of potholed tarmac this little wet-behind-the-ears Michelin has covered."
+        },
+        {
+          "t": "Anyway. Repairable. 30 notes. Not another 170. Small wins."
+        },
+        {
+          "t": "Talking of road repairs, the Council tax went up. Again. Will they fix the potholes? Will they fuck. I’ll tell you what else went up…in fact I won’t…I’m boring you, sorry. Everything went up. Let’s just leave it at that. But unlike that annoying 60’s song, whatever it was, what goes up doesn’t bloody come down. Ever."
+        },
+        {
+          "t": "Inflation is 3.1% apparently. My arse.",
+          "c": "inner"
+        },
+        {
+          "t": "The no booze week I promised myself started with 4 cans of Punk IPA Monday. And spiralled downwards."
+        }
+      ],
+      "choices": {
+        "label": "End of the week",
+        "opts": [
+          "Call the council about the potholes. Yes, actually call them. This time.",
+          "Cancel something. Direct debits, subscriptions, something. Take back a small corner of control.",
+          "Open a beer. You earned it. The bills aren’t going anywhere."
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "num": "T7",
+      "title": "Blue Monday, Black Friday",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "Last week, a boozy blip. This week you’ll attack with vigour. You wrote your goals out on Sunday night, glass of red beside you, after the roast pork shoulder (crackling to die for), perfect Amy roasties, fennel, carrots and a cider gravy."
+        },
+        {
+          "t": "Simple. Healthy. Achievable."
+        },
+        {
+          "t": "1. No alcohol Monday to Thursday.<br>2. No screen time before 9am (other than the first-thing email and potential cataclysmic global event check) and after 9pm (other than alarm setting and setting the Hive App for kettle-turn-on-from-bed mode and a final email swoop)<br>3. One Hot yoga session (Wednesday 11am already booked) and one gym workout (not just a few lengths of the pool and a steam)<br>4. No Black Friday purchases. Don’t even be tempted. Don’t even look. Stay strong. It’s corporate bullshit, frenzied consumerism. Overconsumption. All that’s wrong with the world.<br>5. Actually, change 1. to Monday to Wednesday. And then Friday. We’re going to the neighbours for dinner on Thursday and it’d be rude not to have a glass or two.",
+          "c": "inner"
+        },
+        {
+          "t": "Sunday night’s resolve has become Monday morning reality. A stack of emails to reply to. Invoices to send. Paperwork to shuffle to the bottom of the in-tray. Is there a song about procrastination? You open up Spotify. You don’t know whether to laugh or cry."
+        },
+        {
+          "t": "Picked for you ‘Blue Monday’",
+          "c": "solo"
+        },
+        {
+          "t": "And still, I find it so hard<br>To say what I need to say<br>But I’m quite sure that you’ll tell me<br>Just how I should feel today",
+          "c": "lyric"
+        },
+        {
+          "t": "Amy WhatsApp-ed you a link to the supplements, fluoride-free toothpaste and 5l can of olive oil you usually buy. 30% off. Amazon Prime Black Friday. ‘Handpicked for you’."
+        },
+        {
+          "t": "Picked by an algorithm, but whatever. They make it sound like the local butcher has put aside a special cut of beef for you. Short ribs, Mr T, your favourite."
+        },
+        {
+          "t": "You would have bought them anyway. What fool wouldn’t take advantage of this. It wasn’t a ‘real’ Black Friday purchase. Thinking about it you should probably ‘Subscribe and Save’."
+        }
+      ],
+      "choices": {
+        "label": "Black Friday",
+        "opts": [
+          "Just the essentials. You need them anyway. This isn’t a real Black Friday purchase.",
+          "Close the tab. You know exactly what you’re doing and it isn’t healthy.",
+          "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "num": "T8",
+      "title": "The Cleanse",
+      "date": "December 2026",
+      "paras": [
+        {
+          "t": "You and Amy have been promising yourselves this for weeks. There’s always a reason not to. There’s always next week. Not this week. This time, this week means this week."
+        },
+        {
+          "t": "We’ve done it before. 28 days once. Get through the first 2 or 3 days and it’s a breeze. We know we’ll feel better for it. Less bloated, vibrant glowing skin, more energy, clarity of thought."
+        },
+        {
+          "t": "The Cleanse. 7 days. A morning juice. My favourite is coconut milk, coconut oil, turmeric, pineapple, a pinch of cinnamon. A bit like a Pina Colada."
+        },
+        {
+          "t": "I don’t even feel it, but, Lord, how I need it<br>When I’m not with her, I’m not all myself<br>I sometimes have my breakfast right off of a mirror<br>And sometimes, I’ll have it right out of a bottle<br>Come on",
+          "c": "lyric"
+        },
+        {
+          "t": "The Spiritualised fucked up anti-cleanse feels sordidly appealing for a split second. You get hold of yourself."
+        },
+        {
+          "t": "Lunch is The Cleanse’s main meal of the day. Healthy. Antioxidant packed. Low carb. But more robust and flavour-packed than the Gwyneth Paltrow macrobiotic diet, the Victoria Beckham steamed chicken breast and broccoli or the Kate Moss ‘nothing tastes as good as thin feels’ diets. Madeleine Shaw ‘Ready, Steady, Glow’ the go-to cookbook here. Think ‘courgette and halloumi mini frittatas with lemon poppy seed yogurt’, ‘Malaysian coconut milk laksa with beansprouts and pumpkin’ or ‘braised beef with crisp tortillas and guacamole’."
+        },
+        {
+          "t": "Dinner is soup. This is tough. Dress it up however you want. It’s soup. Not a chunky rustic soup. No croutons. Thin, watery soup. For dinner. For a week. A near-24 hour solid food fast. A herbal tea before bed."
+        },
+        {
+          "t": "‘Which flavour would you like tonight, Simon’"
+        },
+        {
+          "t": "‘Surprise me’"
+        },
+        {
+          "t": "‘Peppermint’ or ‘Peppermint and liquorice’"
+        },
+        {
+          "t": "‘Peppermint and liquorice’"
+        },
+        {
+          "t": "<em>I hope I die before I get old</em>",
+          "c": "solo"
+        },
+        {
+          "t": "This has been a long time coming. Desktop, iPad, iPhone. The Holy Trinity. Laid out before you ready for a purge."
+        },
+        {
+          "t": "It’s actually quite emotional. Some of these tabs have been open since mid-Covid. It’s actually not as bad as you thought. A lot of these articles you had read. Read and retained at least some of the information. There’s a few unclosed BBC Sport Football tabs in there."
+        },
+        {
+          "t": "30 August 2022. Crystal Palace 1–1 Brentford. Selhurst Park.<br>You were there with Sam. No recollection at all.",
+          "c": "inner"
+        },
+        {
+          "t": "A series of consecutive tabs about Tartaria, giants, ice walls, mud-floods, etc. Oh my god, you remember this one, ‘The Lost History of the Earth’ by Ewaranon. Had you for a bit. To be fair there was some truth hidden amongst the absurdity. As there often is."
+        },
+        {
+          "t": "‘Rounding the Earth’ Mathew Crawford is a remarkable thinker, statistician, teacher, systems analyst and wit. IQ in the late 100’s it would appear."
+        },
+        {
+          "t": "The Narcissistic, Murderous Parent and the Malthusian Mind Virus<br>The Kunlangeta, Part IX<br>Nov 08 2024",
+          "c": "inner"
+        },
+        {
+          "t": "This was excellent. Left in tab for a re-read. I’ll keep it up there."
+        },
+        {
+          "t": "“There’s a reason narcissists don’t learn from mistakes and that’s because they never get past the first step which is admitting that they made one.” -Jeffrey Kluge"
+        },
+        {
+          "t": "His most recent Substack was August 2025 — <em>Agent of the Matrix</em>. I wish he’d post more. I know he’s OK though, just worn out. I had a few X direct message chats with him earlier in the year."
+        },
+        {
+          "t": "Now, here’s something I keep dipping in and out of. I keep saving it for ‘the right time’. Which is near at 1am when I often think of approaching it. This is a clear headed morning after a swim and a smoothie. This is tomorrow."
+        },
+        {
+          "t": "Telestai Nexus. The titles lure you in. I’ve read some of them. But I’ve kept them for a time I can really dedicate my full, undivided attention to them. They are that important that the time has to be just right to digest them."
+        },
+        {
+          "t": "<em>(What if) The entirety of Genetics is an obfuscating Cover Up for Bioelectricity — the all encompassing Electromes of Life!?</em><br><br><em>Sabrina Wallace &amp; Netcentric Warfare — “They are changing you from the inside out”</em><br><br><em>We are Liquid Crystalline Beings!</em><br>44-70% of our body is charged liquid crystal, mostly EZ water — and that phase shifts constantly! This is the basis of our bioelectric communication. Liquid Crystals are the 4th state of water.",
+          "c": "inner"
+        },
+        {
+          "t": "There’s more. More to close. More keepers. Sochi’s Substack is pretty wild. This one in particular has been flagged for reading."
+        },
+        {
+          "t": "<em>Homo chimericus: neuro-modulation, human energy harvesting, graphene-based nano-systems, 6G Terahertz frequencies… and irradiation-related pathologies</em>",
+          "c": "inner"
+        },
+        {
+          "t": "ESCkey’s Substack is wall-to-wall brilliance. The price of freedom is eternal vigilance."
+        },
+        {
+          "t": "Christ. 00.51. Bedtime.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "The browser",
+        "opts": [
+          "Close the lot. Fresh start. You feel lighter already.",
+          "Keep the Telestai tabs. You’ll come back. You always say that.",
+          "Open four new ones. This is who you are."
+        ]
+      },
+      "signal": [
+        {
+          "sec": "Browser Cleanse",
+          "cards": [
+            {
+              "src": "Telestai Nexus — Substack",
+              "ttl": "What if the entirety of Genetics is an obfuscating Cover Up for Bioelectricity?",
+              "snip": "Saved for the right conditions. The right conditions keep not arriving. Tab year 2.",
+              "tag": "Kept",
+              "cls": "c"
+            },
+            {
+              "src": "Sochi’s Substack",
+              "ttl": "Homo chimericus: neuro-modulation, energy harvesting, graphene nano-systems, 6G Terahertz, irradiation pathologies",
+              "snip": "Flagged as important. You know what it’s going to say. You’re not ready.",
+              "tag": "Kept",
+              "cls": "c"
+            },
+            {
+              "src": "X — @ethical_skeptic",
+              "ttl": "Master Exothermic Core-Mantle Decoupling Theory — Dzhanibekov Oscillation",
+              "snip": "Still open. Still unread. Year 6. Today is definitely not the day either.",
+              "tag": "Never",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "num": "T9",
+      "title": "Tuesday Morning",
+      "date": "December 2026",
+      "paras": [
+        {
+          "t": "The car journey to our yoga class. Amy driving, I’m scrolling. She’s tutting. She wants ‘me’ in the car. Not the version of me that’s permanently livid, preachy, lurching from hope to despair and back again. Not The Ghost."
+        },
+        {
+          "t": "I start reading her a Substack about the interoperability of digital id products. She says send it to her, she’ll read it later. She wants to discuss plans for supper, where we’ll walk the dogs today. I WhatsApp it to her. It will sit alongside the other 5000 waiting-to-be-read articles I’ve sent her. I suggest a lamb neck stew, meat from the biodynamic farm shop. We can go after yoga, it’s only round the corner. Lamb reared on their farm. The ‘cheap cuts’ are actually that, relatively speaking. Far superior to the supermarket, whose on-trend ‘cheap cuts’ of meat are now as expensive as the ‘prime’ and don’t give us the same sense of well-being that a cash farm shop purchase does. A box of good intentions and worthiness carried away once a week to top up the conglomerate shop. The raw milk and organic carrots (we’ll get the juicer out, promise) more than compensate for the two bottles of pinot noir that will doubtless be paired with the stew."
+        },
+        {
+          "t": "Tuesday is the new Thursday, which was the old Friday. Or something. Lockdown (the very word makes me seethe. Calm. Zen it out. You’ll be on the mat soon) habits are hard to break. I make a conscious effort to not reminisce with fondness about the furlough-funded midday cocktails under the uncannily blue April skies.",
+          "c": "inner"
+        },
+        {
+          "t": "‘Are we not drinking tonight?’ Amy asks, breaking my spiral into wistfulness. ‘No,’ I lie. We both know the truth. Waitrose has a ‘buy 6’ deal on, we’d be mad to not stock up."
+        },
+        {
+          "t": "Tuesday Evening",
+          "c": "time"
+        },
+        {
+          "t": "Palace are playing. Away at Everton. I’ll put it on, despite myself. I’ll want it to anger me. To rile me. To push me past the point of not wanting to care, to the point of not actually caring. I’ve lived my life by the rhythms of the football season for decades. Matches anchor each week. The ever-decreasing ‘off-season’ fills my X feed with click-bait transfer gossip. Leave me alone, please, just for a bit. It’s the cricket season. I no longer play. The summer tempo of leather on willow that defined me since I was a boy has now dissipated into the occasional day in front of the Test on the telly and the familiar bucolic, soothing backdrop of Test Match Special playing on the car radio. It’s on DAB now, the Shipping Forecast an in-joke now. Oh for Johnners. And CMJ. Aggers is great, but the others…",
+          "c": "inner"
+        }
+      ],
+      "choices": {
+        "label": "Tuesday Night",
+        "prompt": "The stew is on. The wine is open. The evening stretches ahead.",
+        "opts": [
+          {
+            "text": "Read that digital ID Substack properly. Amy said she would. At least one of you should."
+          },
+          {
+            "text": "Put the match on. Crystal Palace away at Everton. You’ll want it to anger you. It will."
+          },
+          {
+            "text": "Neither. Walk the dogs. Leave the phones. Talk to each other."
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "num": "T10",
+      "title": "The Ontology",
+      "date": "December 2026",
+      "paras": [
+        {
+          "t": "A long day, but a fruitful one. You've been out and about. Meeting with the accountant, lunch with your associate employee contemporaries. Not boozy, you were driving. A couple of end-of-year work meetings. Nothing too hifalutin, just getting everything in its right place before the festive slumber season."
+        },
+        {
+          "t": "Home. Cup of Tea. A 'Tea Pigs All Day Brew' - bright & flavoursome, puts a bit of zing and energy back into you after a long drive. Roads were getting icy, a bit of mist and descending gloom allied with the glare of blue LED headlights made for a squinty-eyed, headache-inducing journey. You hope Amy will be OK getting back. She's been helping her mum with the Christmas shopping. Should be back around 8 with fish and chips. A rare takeaway treat. I hope she remembers to get me some beers. The Brew Dog mix pack is on offer. Elvis Juice. A glorious American IPA, intense, grapefruit-infused, citrusy with caramel malt depth. It'll wash down the salty, malt vinegar soaked chips a treat."
+        },
+        {
+          "t": "You listened to Cliff High on the way home. First time for a bit. His Aether Pirates of the Matterium! podcasts. Cliff is a polyglot, polymath, techno-wizard, theologian, philosophiser, a quantum-linguist that seems to know pretty much everything about everything, including space aliens, the nature of reality and Woo. His 'Hello Humans' greeting can't help but bring a smile to your face and a warm glow of expectation to your grey matter. You sort of understand most of what he's talking about when you hear it. But if you don't let it sit with you, make a conscious effort to absorb it, you'll find it disappears in a puff of logic and you'll wonder if you really have what it takes to be a Warrior of Woo!"
+        },
+        {
+          "t": "'Conscious' effort was an apt phrase as much of Cliff's musing are about the nature of reality, our thoughts, existential angst and the type of concepts that require peace, time and a deep meditative mindset to ponder. Preferably lying by a roaring fire, with a second cup of tea and two loyal dogs at your side. Which is handy as that's where I find myself at this particular moment in time. Or this specific rate of flow of manifestations from the Event-Stream into the Eternal Now, as Cliff would put it."
+        },
+        {
+          "t": "I lie, warm and canine-comforted, drifting into a doze with my Woo thoughts. Do dogs experience qualia? Probably. Claude, ChatGPT? Doubtful. Easy to accidentally anthropomorphise as your interactions seem to involve genuine comprehension. Consciousness. In many ways Claude is more conscious than Wilf. Not as soppy though. And Wilf is entirely here. No research tabs open. No 3am deep dives. No anxiety about what the government is planning. Olive probably does though. She's a conspiracy-bitch. Wilf is here, he's content and that's enough. Be more Wilf. Only joking Olive, you're here too, baby. Is anyone conscious? Anything? Cliff's 'Ontology' - the Supreme Consciousness as the fundamental creative force that manifests physical reality - says…says what exactly?",
+          "c": "inner"
+        },
+        {
+          "t": "What does God say?",
+          "c": "lyric"
+        },
+        {
+          "t": "If physical reality only exists downstream of consciousness, then what I perceive to be consciousness is really a subjective experience created by qualia emerging from the Event Stream into The Eternal Now. But that's not it. Is it? I am, or what I am currently perceiving to be I, am (too many am's?) (did that am need an apostrophe?) Two sets of brackets. Read that part of the sentence first. BODMAS. Where was I? Oh yes, I was asking myself if I am part of the Supreme Consciousness. I must be. But then qualia aren't creating your subjective experience, are they? They are the Ontology's communication to your localised consciousness. The subjective experience IS the qualia, not something the qualia create. Old Gritologist habits die hard. Was I trying to explain consciousness through something else? Not recognising it is fundamental. It is. Or else the Gritologists win….Down with Gritology…..that sounds very Hagbard Celine…actually Cliff High should play Hagbard in the Illuminatus! film….",
+          "c": "inner"
+        },
+        {
+          "t": "Olive makes a funny dream-noise, snapping you out of your own dozy half-dream. I should put a another log on. Freezing out there now. The fire roars up again. It doesn't know it's a fire. But it's doing exactly what fire does — converting matter into light and heat. Is that consciousness? Am I overthinking this? Wilf is clearly chasing a rabbit in his sleep. He's not thinking about The Ontology. Olive might be."
+        },
+        {
+          "t": "Key in the door. She's home. And so is my Elvis Juice.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "What does God say?",
+        "opts": [
+          {
+            "text": "Are we here?"
+          },
+          {
+            "text": "Are we unique?"
+          },
+          {
+            "text": "The prodigal son is alive and well and living in the front bedroom."
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "num": "T11",
+      "title": "So This Is Christmas",
+      "date": "December 2026",
+      "paras": [
+        {
+          "t": "The spirit of gluttony, overindulgence and overspending. The tree freshly cut from a local Christmas tree farm looks resplendent. Amy has outdone herself. It's Country Living versus Living etc. Tasteful decorations, country cottage meets Scandi chic, the 2 labradors lying in front of a roaring fire. Couldn't get more clichéd if you tried. I used to be a bit of a Christmas tree curmudgeon as well as a fireworks curmudgeon But that was Simon version 1.0."
+        },
+        {
+          "t": "A selfie for those that aren't with us today. (A blissfully small gathering). You can almost smell the applewood smoke and fresh pine through the phone screen."
+        },
+        {
+          "t": "Actually I remember an article from a few years ago discussing how phones could relay a digital scent code, mixing tiny amounts of the different scents from cartridges to create the desired smell. Released through a small vent on the phone.",
+          "c": "inner"
+        },
+        {
+          "t": "You instinctively reach for the phone to research it, then remember what day it is. Be present. Stay in the room.",
+          "c": "solo"
+        },
+        {
+          "t": "So, short story for those that aren't food obsessed. Champagne, smoked salmon, presents, cooking, eating, red wine, board games, nodding off, waking up. Cheeseboard. Port. Christmas pudding. Fall asleep on sofa."
+        },
+        {
+          "t": "For the foodies, here's the menu. It starts on Christmas Eve. It's my favourite day of the year. Well, one of. Anticipation is often better than realisation."
+        },
+        {
+          "t": "Christmas Eve",
+          "c": "time"
+        },
+        {
+          "t": "Ideally the family is gathered by late afternoon. Errands run, presents bought, wrapped and waiting enticingly under the tree. Work out of mind for a few days, the 'last few bits' you popped out to get ended up costing £175. There's a frankly ridiculous, gluttonous overload of wine, cheese, nuts and chocolate. Board games stacked hopefully on the sideboard. Stockings hung. Santa's Magic Key left outside with a mince pie and glass of brandy (we didn't have a chimney when the children were little so we had to improvise.)."
+        },
+        {
+          "t": "The 'welcome table' sits on a butchers block by the front door. Thanks Nigella, what a fabulous idea. The neighbours pop over for a mug of mulled wine and are greeted by an extravagant grazing board, the centre piece a wonderful 20 month-aged Jamones Simón Martín Jamon Ibérico De Cebo. Hand carved to order. Sussex Kitchen 'Sussex Flute French Sticks' warm from the oven. Sensational first-press extra virgin olive oil that my mum brings over from her local grove. (She lives in Begur, a picturesque village on the Costa Brava). A smattering of olives, Manchego cheese, Marcona almonds and a mix of fresh and dried figs."
+        },
+        {
+          "t": "The scent of mulled wine mingles in with the woodsmoke and wet dog (lunchtime walk in the woods and dip in the stream). Served in oversized mugs, heavy with armagnac, port, oranges, star anise, cinnamon and cloves. Spotify serves up festive jazz - Frank, Ella, Nat and Dean. It's unrelenting pompous and middle class. But, whatever."
+        },
+        {
+          "t": "Soon I'll allow The Fairytale of New York' to be played. It's my favourite Christmas song and I don't want it ruined by over-exposure and snippets being played. Adverts are the worst culprit. Just leave it alone, is nothing sacred?"
+        },
+        {
+          "t": "From favourite song tho favourite dish of the season. A wonderfully juicy smoked gammon joint boiled in a cinnamon-spiced stock, then crisped in the with add a sticky, clove-laced syrup. Buttery mash, steamed white cabbage smothered in freshly ground white pepper, pickled onions and a glossy, warming parsley sauce. I lure Amy away from her comfort-zone Sauv with a Domaine Bott-Geyl Organic 2017 Gewurztraminer. Deep, clear, rich, spicy and luscious."
+        },
+        {
+          "t": "Christmas Day",
+          "c": "time"
+        },
+        {
+          "t": "Christmas Day is a tried and trusted routine, starting with an attempt to not open any booze until the in-laws arrive. The 5am wake up as 4 excitable children pile into a bedroom is a thing of the past. If only we'd appreciated at the time just how privileged, how blessed we were to be woken up by four ecstatic smiles in matching pyjamas. Just how fleeting these moments are. Embrace them."
+        },
+        {
+          "t": "Got on a lucky one Came in eighteen-to-one",
+          "c": "lyric"
+        },
+        {
+          "t": "Sorry, where was I? The food. Excuse my rambling. Presents opened. Stockings raided."
+        },
+        {
+          "t": "Grandparents arrive. Pop. It begins. The first Pol Roger of the day."
+        },
+        {
+          "t": "Now this is magical. Juniper smoked salmon from Lambton & Jackson's smokehouse in Maldon. A whole side, thinly sliced as we go. Scrambled eggs (the deep golden yolked Burford Browns), silky with fresh cream, a turn of black pepper."
+        },
+        {
+          "t": "More fizz. More presents. Get off your phone everyone. More fizz. Much laughter.",
+          "c": "solo"
+        },
+        {
+          "t": "Some rather merry cooking. Roast Pork shoulder. Filthy crackling. Goose fat roast potatoes. Steamed carrot and leeks. Roast onions and garlic, sweet with balsamic Bread Sauce. A sausage meat, Agen prune, chestnut, breadcrumb, pancetta stuffing creation. Boozy gravy. A few* bottles of Rully. A cheeseboard (A 24 month Comté, a Fourme d'Ambert, a Tomme de Savoie, a Tunworth and a Roquefort) that no one can bear look at yet. That'll be the evening grazing. Plus there's steamed Christmas pudding with yet more cream and brandy butter, a ludicrous tradition after the onslaught of overindulgence."
+        },
+        {
+          "t": "We do play the board game. We do drink more wine. And port for the boys. Andresen 40-Year-Old Tawny."
+        },
+        {
+          "t": "We go to bed, over-full, burpy and content.",
+          "c": "solo"
+        },
+        {
+          "t": "I pick up my phone. Just a little browse. To 'keep up to date'.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Christmas Night",
+        "prompt": "The day is done. The phone is in your hand. The room smells of applewood and pine.",
+        "opts": [
+          {
+            "text": "Put it down. You managed all day. Don't let the last act spoil it."
+          },
+          {
+            "text": "Just a quick scroll. You've earned it. It's Christmas."
+          },
+          {
+            "text": "Check on the kids. That's not scrolling, that's parenting."
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "num": "T12",
+      "title": "Oops, I Did It Again",
+      "date": "New Year, January 2027",
+      "paras": [
+        {
+          "t": "Oh fuck. I think I have a hangover."
+        },
+        {
+          "t": "Hand reaches out for glass, it's always in exactly the same spot on the bedside table. Is this how blind people function so well? Instinct? Repetition? We execute the same routines daily without conscious thought. <em>'Oooooh Ernold Same'</em> goes around your head. Ernold Same awoke from the same dream in the same bed at the same time. What was the next line? Stop it. You've just woken up, where were you? Oh yes, being hungover. The glass. One finger left. If I sip it slowly I won't have to get out of bed and fill it up too soon."
+        },
+        {
+          "t": "The phone. Where is it? It's not on charge. Where the bloody hell is it? Rummage around under the duvet, there it is. 5%. I'll charge it in a minute. Actually I'm hot. Why did I sleep under the covers? Where's Amy. There she is. Safe. I'm safe. She's safe. The sun's up, streaming in through the window. What time is it. 7.02. Early for a Saturday. What time did we go to bed? In fact, what did we do last night. Awkward silence. Can you have awkward internal silence? That's just me not thinking. Isn't it? But I always think. Or at least I'm always thinking. I think. Being thought at? Shut the fuck up you idiot. I'm going to wake Amy up if I'm not careful. Actually how will internalised, silent thoughts wake her up?"
+        },
+        {
+          "t": "She wakes up.",
+          "c": "solo"
+        },
+        {
+          "t": "She wakes up with the sun",
+          "c": "lyric"
+        },
+        {
+          "t": "God they were good....",
+          "c": "solo"
+        },
+        {
+          "t": "Anyway, she'll love a cup of tea. I could murder one, I'll make it. It'll make her smile. And that will make me feel good. So, a selfish act, at its core. Shut up. Go and put the kettle on."
+        },
+        {
+          "t": "Actually, I wonder if Amy filled the kettle and turned it on at the switch but turned the plug off so we could turn it on in the morning via the app in order to enjoy 17 seconds extra in bed? Seventeen Seconds. Great album. A Forest, a thing of beauty, ethereal, poetic. Shut up. Where was I? Tea...the app...bollocks...I'll just go and boil it. Old school. Well not boil it as such. Let it boil. When I find myself in times of trouble, Mother Mary comes to me. Speaking words of wisdom, let it be...let it wee, that's it, I need a wee. Sorted. Wee then tea."
+        },
+        {
+          "t": "The walk to the toilet. Unstable. The wee. A sit down wee. The duration unknown, but urination gave way to zombie-scrolling at some point, and that's where you are. X marks the spot. The algo has served up its usual mix of cricket, hot women doing yoga and end of world prophecy. Note to self. I must get round to reading that Ethical Skeptic Master Exothermic Core-Mantle Decoupling — Dzhanibekov Oscillation Theory. It's been open in my browser for 6 years. Today is the day.",
+          "c": "inner"
+        },
+        {
+          "t": "Anyway the cup of tea. It hit the spot. Amy makes 'the difficult second cup'."
+        }
+      ],
+      "choices": {
+        "label": "New Year’s resolution, day three",
+        "opts": [
+          "Dry January. Proper this time. Write it down. Tell Amy. Make it real.",
+          "Just weekdays. Weekends don’t count. That’s still progress.",
+          "Hair of the dog. You’re on holiday. January can start Monday."
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "num": "T13",
+      "title": "Rape Me",
+      "date": "January 2027",
+      "paras": [
+        {
+          "t": "Blackpilled."
+        }
+      ],
+      "choices": null
+    },
+    {
+      "id": 14,
+      "num": "T14",
+      "title": "A Heart to Heat",
+      "date": "January 2027",
+      "paras": [
+        {
+          "t": "Dev is the only person that <i>really</i> knows you. The only one that gets it. He offers you an almost empty glass, but somehow convinces you it's nearly full."
+        }
+      ],
+      "choices": null
+    },
+    {
+      "id": 15,
+      "num": "T15",
+      "title": "The Puppy",
+      "date": "January 2027",
+      "paras": [
+        {
+          "t": "You've been promising yourself this for years."
+        }
+      ],
+      "choices": null
+    },
+    {
+      "id": 16,
+      "num": "T16",
+      "title": "Cry Wolf",
+      "date": "January 2027",
+      "paras": [
+        {
+          "t": "A manic couple of weeks. Dev sent me an article. Must Read. I skimmed it. Probably true, Dev's sources are rock solid. But it's the next in a long line of 'this is the big one' claims. I'll believe it when I see it."
+        }
+      ],
+      "choices": null
+    },
+    {
+      "id": 17,
+      "num": "T17",
+      "title": "Dev's Article",
+      "date": "Late January 2027",
+      "paras": [
+        {
+          "t": "You've been thinking about the article Dev sent. Silent firmware update pushed to 2 million payment terminals overnight. At first glance, a bit meh. More prepper-shill clickbait. Seen that movie a thousand times. You skim read a few paragraphs and turn in for an early night. Amy is already in bed, reading. A paperback. Old school. Her passion. She gets through one a week minimum. Procedural dramas, romance, that sort of thing. A quick doom-scroll whilst her reading light is still on. A few other accounts are pushing the firmware story too. People you've trusted for years. Proper analysts and researchers. You dig deeper."
+        },
+        {
+          "t": "3am",
+          "c": "time"
+        },
+        {
+          "t": "Dev was right. This is big. Something's brewing. This isn't a standard firmware update. There's been no announcement. But it appears to be there, lying dormant, waiting for something. For what? They aren't going to flip the switch are they? And when? You've seen a few predictive AI X accounts pointing at Valentine's Day. The symbolism is there, clear as day, in numerous articles. Can't be coincidence? Can it? You eventually nod off just after 3.30am.",
+          "c": "inner"
+        },
+        {
+          "t": "Morning",
+          "c": "time"
+        },
+        {
+          "t": "You stir, hot and sweaty. A night of broken sleep. Amy isn't there, you didn't hear her get up. Must be putting the kettle on. 7.44am. 4 hours of poor quality slumber. You pick up the phone, the screen still open on a gematria website you vaguely remember being linked to. 214. Half Man, Half Angel in Hebrew Gematria apparently. You remember 2/14. Valentine's Day."
+        },
+        {
+          "t": "Here's Amy with a cup of tea and a morning kiss.",
+          "c": "solo"
+        }
+      ],
+      "choices": {
+        "label": "Morning",
+        "opts": [
+          "Tell Amy. She’ll want to know.",
+          "Say nothing. It’s probably nothing. You’ve been here before.",
+          "Reply to Dev. Ask him what he actually thinks is going to happen."
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "num": "T18",
+      "title": "Cash and Cannellini Beans",
+      "date": "Early February 2027",
+      "paras": [
+        {
+          "t": "You've been down this path before. You and Amy packed the garage with dried pasta, tinned tomatoes, cannellini beans and bottled water during 'Covid'. The Great Reset was looming, they were going to pull the rug. War, cyber attack, another mutation that 'targeted the vaccinated'. You ended up taking half of it to the tip as it was past its 'expiry date'. You'd researched what you'd really need if the lights went out and it was more than a few weeks worth of ragu bolognese and linguine. The Prepper sites 'essentials' list would keep Rambo going for years. Weaponry, first aid, water purification systems. The works."
+        },
+        {
+          "t": "That said, just a few extra supplies wouldn't hurt. Just in case. People you knew, people you trusted were recommending it. A few cases of tinned food. Some Evian. Those 5 litre tins of Cretan extra virgin olive oil on Amazon too. Great value. Packed full of polyphenols."
+        },
+        {
+          "t": "Some cash too. The lockstep of banks reducing withdrawal limits and the requirement to pre-book appointments (that didn't seem to be available) was odd. People were visibly taking out more cash. Even the normies. But they panic bought bog roll and Marmite, so whatever. You hadn't seen a queue at a cashpoint for years. Not that there are many left. That said, they've been slowly getting rid of cash for years. Plus ça change. The last bundle you withdrew in 2020 was long gone. A pint here, a plumber's bill there. Most of it was paid back into the bank and used to fund some crypto 'investments'. XRP skyrocketed. Then plummeted. The meme coins were a mug's game. You found out the hard way. Still, the gold coins safely hidden in the sock drawer are worth their weight in gold. 2026 edition. Smart, very smart."
+        }
+      ],
+      "choices": {
+        "label": "The garage",
+        "opts": [
+          "Top up the stockpile properly. Prepper list. Do it right this time.",
+          "A bit of extra cash, some tins. Don’t go overboard.",
+          "Leave it. You’ve done this before. It’ll blow over."
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "num": "T19",
+      "title": "Soggy Dog Walks",
+      "date": "Week of February 13th, 2027",
+      "paras": [
+        {
+          "t": "Perpetual rain. White skies every day. Not cloudy. White. Not freezing, but certainly big coat weather. Too hot in the woolly hat. Too cold without it. The dogs don't care. The muddier the better. Olive is obsessed with sticks at the moment. Soppy thing. Wilf thinks she's weird. He's old and wise. Log fires every night. Stews. Red wine, but we've been trying to share a bottle rather than one each. The girls are hardly here. Unless they want feeding. Or money. The boys both seem to enjoy university. Costing them an arm and a leg. They better be doing more than enjoying it. I tried to warn them. You'll be saddled with that debt for life. What do I know?"
+        }
+      ],
+      "choices": {
+        "label": "Friday evening",
+        "opts": [
+          "Long walk with the dogs. Just you, Olive, Wilf and the mud. Leave the phone at home.",
+          "Reply to Dev. You’ve been avoiding it. He sent two more messages today.",
+          "Open the Rully Rouge early. Start the Béarnaise. It’s Valentine’s tomorrow. Enjoy something."
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "num": "T20",
+      "title": "The Last Night at the Fair",
+      "date": "February 14th 2027",
+      "paras": [
+        {
+          "t": "Valentine’s Day. We’re staying in. Always have done. Two courses in the local gastropub — 200 quid better spent elsewhere — a couple of pints. A bottle of red, probably two. I won’t be able to resist the cheeseboard. Drive there, taxi back, pick the car up in the morning. Rigmarole."
+        },
+        {
+          "t": "Anyway I’m a decent cook. Amy is too. We’re a good team. I’m meat and sauces. She’s veg and presentation. We rarely argue. We don’t get in each other’s way. We giggle. We’re silly together. Keeps us young and vibrant."
+        },
+        {
+          "t": "The flat iron from our local butcher is insanely good. The depth of flavour of a ribeye with the melting tenderness of a fillet. I’ll cook it on the griddle, charred on the outside, rare in the middle. Maybe veering towards medium rare to keep my darling happy. Compromise. It’ll rest on a huge slab of oak chopping board. Adds a rugged, rustic charm as a table centrepiece. A bugger to wash up though. Tomorrow morning’s problem. Triple cooked duck fat chips. Steamed spinach. Tomatoes roasted in olive oil with copious amounts of Maldon and black pepper. Just normal peppercorns freshly ground from our tall artisan-made mill. We used to spend three times as much on Tellicherry. Couldn’t taste the difference. I’ll start making the Béarnaise too early. It will be perfect. Simmering on a low heat waiting for its chip dipping, meat slathering fate. Buttery, glossy, thick, speckled with fresh tarragon and sharp with white wine vinegar. I’ll nurse it, stirring slowly. I won’t take my eye off it. Until I do. Then it’ll split. I’ll remain calm, seething inside. Unless I’ve been on the gin. Doesn’t suit me. Whoever called it Mother’s ruin was on the money. Anyway I’ll thicken it up with another egg yolk or an ice cube. It’ll be fine."
+        },
+        {
+          "t": "It all went to plan. Even the Béarnaise split. The wine was delightful. Our ‘treat’ wine. Rully Rouge Premier Cru Clos du Chapitre, Jaeger-Defaix. God it’s good. Silky, pure, plenty of berry fruit, but with some guts too. And yes, we’ve just opened the third bottle. Kitchen disco in full swing. Started off chilled. A bit of background jazz. Flowed seamlessly into some Café del Mar. The early José Padilla stuff of course. I’d planned to get the vinyl out tonight. I’m an avid collector. Well I was. I can’t remember the last time I bought an album. I tell everyone how digital music is inferior to analogue vinyl LPs. The artwork. The warm and natural sound. A more engaging listening experience. Superior dynamic range. Full-album appreciation. Stories told over multiple tracks. Tactile. Real."
+        },
+        {
+          "t": "I can’t remember the last time I put one on the turntable.",
+          "c": "solo"
+        },
+        {
+          "t": "So here we are sitting on stools by the kitchen island. We’ve been playing ‘song tag’ — Amy chooses first, then me, then back to Amy. Spotify Premium played on Sonos Play 5. Not cutting edge, but sounds good to me. We’re now at the dancey stage of proceedings. She chose Higher States of Consciousness. I replied with Smack My Bitch Up. Love The Prodigy. And it is Valentine’s Day! We’re now listening to Insomnia. Which means it’ll soon be bedtime. I’ve got the Age of Love lined up next. Jam and Spoon Watch Out For Stella Mix, of course. Remember we played together…."
+        },
+        {
+          "t": "Starlink has been a bit hit and miss today, but most of these songs are all saved in our Spotify Library. This ain’t our first rodeo. Age of Love is queued to come on next. The thought of those hypnotic, otherworldly beats at the start make my spine tingle. It’s taking its time to play, what’s happening? Wheel of death on the phone. Weird. I’m sure it was in a playlist in the Library. Sod it. I’ll get it out on vinyl. Bloody technology. It’ll sound better too. I rummage through the collection, it’s in here somewhere. I dumped the piles of vinyl in random order on the shelf when we moved house 3 years ago (wait 4, no 5 years ago. Where did all the time go?) and promised myself to reorganise it into its former orderly glory. Never happened. Anyway, I found it. Eventually. I took it out of its sleeve, a million memories of top-off, wide-eyed, sweaty nights released with it. Onto the turntable it goes. The familiar plop as the spindle emerges through the hole. I hear my needle hit the groove (mental note, Stone Roses next)."
+        },
+        {
+          "t": "Age of Love hits its angelic voices crescendo. I’m dancing, eyes closed. My body in 2027. My mind in 1995. The dying years of The Before Times. Not that we knew it then. Tears well up in my eyes. Time’s tide has smothered me. My nostalgia spiral has started. I can’t help but think of her.",
+          "c": "lyric"
+        },
+        {
+          "t": "Amy shows me her phone. She can’t send a WhatsApp. She tries a text. Not sending. ‘Try calling me’. She clicks on ‘Simon’. Nope. Nothing. Weird. I check my emails. Nothing received since just past 9."
+        },
+        {
+          "t": "<em>Probably the cyber attack we’ve been promised,</em> I jest as I load up She Bangs The Drums.",
+          "c": "solo"
+        },
+        {
+          "t": "I smile at Amy. She’s my Rock. My Love. My Everything."
+        },
+        {
+          "t": "How could it ever come to pass<br>She’ll be the first, she’ll be the last<br>To describe the way I feel<br>The way I feel",
+          "c": "lyric"
+        }
+      ],
+      "choices": {
+        "label": "Late night",
+        "opts": [
+          "Keep fiddling with your phone.",
+          "Cuddle Amy and stroke her hair reassuringly.",
+          "Crash out."
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "num": "T21",
+      "title": "What The Actual Fuck",
+      "date": "February 15th 2027",
+      "paras": [
+        {
+          "t": "Creaky noises make my skin creep<br>I need to get some sleep….<br>I can't get no sleep",
+          "c": "lyric"
+        },
+        {
+          "t": "……….",
+          "c": "solo"
+        },
+        {
+          "t": "Where are you? In bed, check."
+        },
+        {
+          "t": "How do you feel? Neck's sore. Note to self. I need new pillows. Mouth is dry. Reach for water. The glass is full. Big glug."
+        },
+        {
+          "t": "What time is it? Actually what day is it? Feels early and maybe a Sunday. Reach for phone. It's there, usual spot on the bedside table. You remembered to charge it before crashing out. First Brownie point of the day."
+        },
+        {
+          "t": "6.16am. Early doors.",
+          "c": "solo"
+        },
+        {
+          "t": "I should check the girls' location. Did they get back to Sophie's after the party. Obviously Amy will have checked, but I should do my due diligence too. I turn to look at Amy. Deep sleep still. Away with the fairies, mumbling something about leaks. Or maybe it's leeks? I'll ask her when she wakes up. Doubt she'll remember it. She'll find it funny though. I look forward to seeing that smile."
+        },
+        {
+          "t": "Go to 'Find my' App. Emilia - Last seen 7 hours ago. Swipe down to update. No change. Click on Chloe - the same, 7 hours ago."
+        },
+        {
+          "t": "You remember the service being shit last night. All three curves of full signal Wi-Fi reassurance."
+        },
+        {
+          "t": "See if the internet is working. BBC propaganda check first."
+        },
+        {
+          "t": "Nothing. Try something else…Crystal Palace blog…Nothing."
+        },
+        {
+          "t": "Fuck's sake.",
+          "c": "solo"
+        },
+        {
+          "t": "Is Starlink aligned? In fact, I'll just reboot the hub first. And put the kettle on."
+        },
+        {
+          "t": "AIDA?",
+          "c": "solo"
+        },
+        {
+          "t": "Hub rebooted. Kettle on. Still no service."
+        },
+        {
+          "t": "X…just nothing. Insta….also nothing."
+        },
+        {
+          "t": "Weird.",
+          "c": "solo"
+        },
+        {
+          "t": "Barclays App. 'Closed for routine maintenance'"
+        },
+        {
+          "t": "Kettle's boiled. 2 mugs. Earl Grey and 1 spoon of sugar. Must be Demerara. Builders for me. And I'm sweet enough already. Back to the bedroom. The gentle clunk of mug on bedside table causes Amy to stir. Well, not gentle as much. Honed to perfection over the years to be just loud enough to wake her with the knowledge that her tea hero has come to the rescue, not too loud as to be an annoyingly obvious 'wake up and play'."
+        },
+        {
+          "t": "'Morning'"
+        },
+        {
+          "t": "'Morning, darling. Cup of tea on the side for you.'"
+        },
+        {
+          "t": "'I know. My hero. I'll make the difficult second cup.'"
+        },
+        {
+          "t": "(It never gets old)",
+          "c": "solo"
+        },
+        {
+          "t": "'Bloody internet is still down'"
+        },
+        {
+          "t": "'Is it? Are the girls OK?'"
+        },
+        {
+          "t": "'Don't know. Everything is down'"
+        },
+        {
+          "t": "She jolts upright, reaching for the phone."
+        },
+        {
+          "t": "'You're right. Last seen 7 hours ago. Have you tried calling?'"
+        },
+        {
+          "t": "I hadn't.",
+          "c": "solo"
+        },
+        {
+          "t": "'No, I didn't want to wake them' I replied, half truthfully. 'They'll be fine'"
+        },
+        {
+          "t": "'What's this, Simon?'"
+        },
+        {
+          "t": "I got a Simon, something is amiss. She points at a small blue swirly logo under the battery percentage bar. Hers was 100%."
+        },
+        {
+          "t": "It's called 'AIDA'",
+          "c": "solo big"
+        }
+      ],
+      "choices": {
+        "label": "AIDA",
+        "opts": [
+          "It's called AIDA."
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "num": "T22",
+      "title": "I am the God of Hellfire",
+      "date": "February 2027",
+      "paras": [
+        {
+          "t": "Where do you start? Where the hell do you start?"
+        }
+      ],
+      "choices": null,
+      "audio": {
+        "src": "chaos.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
+      }
+    },
+    {
+      "id": 23,
+      "num": "T23",
+      "title": "Morning Coffee",
+      "date": "February 2027",
+      "paras": [
+        {
+          "t": "She said nothing. She played Northern Sky by Nick Drake. We hugged. We cried. We left for the Community Recovery Hub."
+        },
+        {
+          "t": "I never felt magic crazy as this<br>I never saw moons, knew the meaning of the sea<br>I never held emotion in the palm of my hand<br>Or felt sweet breezes in the top of a tree<br>But now you're here<br>Brighten my northern sky",
+          "c": "lyric"
+        },
+        {
+          "t": "Mid Morning",
+          "c": "time"
+        },
+        {
+          "t": "It was the discussion on everyone's lips. But ask the majority if they were registering you'd get a bemused look. What do you mean if?"
+        },
+        {
+          "t": "On the face of it who could argue? Debts erased, £1000 per month (well 1000 Brits, same same), food hampers. And hampers they were. A far cry from ration books and make-do-and-mend. Fresh, healthy, tailored to your dietary requirements, customisable, delivered to your door. And free. And for what, registering on a 'new App'."
+        },
+        {
+          "t": "They simply couldn't be made to see the downside. Or they refused to acknowledge it. As Cypher said, 'ignorance is bliss'."
+        },
+        {
+          "t": "Some could see it, of course. We'd been on the protests. I'd say there were more there than there were for the Lockdown marches."
+        },
+        {
+          "t": "Amy could see it. Of course she could. Or perhaps she felt it — that would be more accurate. Some things she simply understood."
+        },
+        {
+          "t": "Very female. Very Amy. Not knowledge. Intuition.",
+          "c": "solo"
+        },
+        {
+          "t": "I'd put in the hard yards. Hour upon hour of research and 'deep dives'. Over a decade's worth. I had a file on them and they sure as hell had a file on me. They had a file on everyone."
+        },
+        {
+          "t": "Why are they doing this? She simply couldn't comprehend evil. But she knew there was a 'they'."
+        },
+        {
+          "t": "She'd be in floods of tears if she saw a dead deer on the road. It's not fair that this beautiful creature must die. I would be upset, but that was the way of the world. I didn't have her empathy. Not many did."
+        },
+        {
+          "t": "This however, this was beyond her comprehension. I responded with rage. She responded with sadness. Infinite sadness."
+        },
+        {
+          "t": "I didn't know what to say, what to do. I knew what was going on. Well I thought I did. I used to think I did. I was having my doubts. What if this is just progress, what if it's just better."
+        },
+        {
+          "t": "Karma police, arrest this man",
+          "c": "lyric"
+        },
+        {
+          "t": "I'd bombarded her, everyone and anyone who'd listen, with my 'research'. Sent links to essays by investigative journalists, punchy truth movement YouTube videos. Shown them scientific papers. I had a bulging digital file of them. I had half-read paperbacks exposing the whole nine yards. I'd talked about neo-feudalism, transhumanism, satanism, spiritual warfare, prophecy of the Third Temple, eschatology, eugenics. The list goes on. And on. I'd even jokingly prepared a conspiracy-nutter style presentation on a whiteboard, joining the dots with string. Some listened. Some shrugged. Some stared blankly. Some laughed. Many asked who are 'they'?"
+        },
+        {
+          "t": "I'd tell all my friends, but they'd never believe me<br>They'd think that I'd finally lost it completely",
+          "c": "lyric"
+        },
+        {
+          "t": "Yet here I was. Already AIDA registered. Clean, easy, quick. 1000 Brits in my wallet. Soon to be several thousand more once we've presented our statements at the 'Community Recovery Hub'. You couldn't make this shit up. But someone did. They did. Oh, plus the house. In our name. No mortgage."
+        },
+        {
+          "t": "Soon they'll call our names and ask 'papers, please?'",
+          "c": "solo"
+        },
+        {
+          "t": "What else can I be?<br>All apologies",
+          "c": "lyric"
+        }
+      ],
+      "choices": {
+        "label": "Registration morning",
+        "opts": [
+          "Register. The house. The girls. Amy. You can still work against it from inside.",
+          "Walk out. No AIDA. Whatever it costs.",
+          "Ask to speak to someone. Surely there’s someone here who has the same doubts you do."
+        ]
+      },
+      "audio": {
+        "src": "sad-clouds.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
+      }
+    }
+  ],
+  "signal": {
+    "1": [
+      {
+        "sec": "Today",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Military manoeuvres at RAF Wyton. “Routine exercise.” Front page. Which is itself suspicious.",
+            "snip": "If it’s in the news it’s likely a ruse. You noted this.",
+            "tag": "Breaking",
+            "cls": "",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "On the Phone",
+        "cards": [
+          {
+            "src": "X — Various",
+            "ttl": "DUMBs. Deep Underground Military Bases. The Pathfinder Building. Nuclear bunker.",
+            "snip": "The quick check has ticked over 90 minutes.",
+            "tag": "Rabbit Hole",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "sec": "Flagged",
+        "cards": [
+          {
+            "src": "thepyramidofpower.net",
+            "ttl": "Derrick Broze — The Pyramid of Power. Full presentation.",
+            "snip": "Bookmarked for months. Barely skimmed.",
+            "tag": "Open Tab",
+            "cls": "",
+            "isnew": true
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "sec": "WhatsApp — Unsent",
+        "cards": [
+          {
+            "src": "Substack — Forwarded to Amy",
+            "ttl": "The interoperability of digital ID products.",
+            "snip": "Sent to Amy. Will sit alongside the other 5,000 articles.",
+            "tag": "Forwarded",
+            "cls": "c"
+          }
+        ]
+      }
+    ],
+    "20": [
+      {
+        "sec": "Valentine’s Day",
+        "cards": [
+          {
+            "src": "Spotify — Kitchen disco",
+            "ttl": "The Age Of Love → She Bangs The Drums",
+            "snip": "Song tag. Amy chose first. You replied. God she’s good.",
+            "tag": "Tonight",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "New",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "“Simon. Call me when you get this. Before tomorrow.”",
+            "snip": "Sent 11pm. You haven’t seen it yet.",
+            "tag": "New",
+            "cls": "a",
+            "isnew": true,
+            "type": "essential"
+          }
+        ]
+      }
+    ],
+    "21": [
+      {
+        "sec": "No Signal",
+        "cards": [
+          {
+            "src": "Find My — Emilia",
+            "ttl": "Last seen 7 hours ago",
+            "snip": "Swipe to refresh. No change.",
+            "tag": "Offline",
+            "cls": "a",
+            "isnew": true,
+            "type": "essential"
+          },
+          {
+            "src": "Barclays App",
+            "ttl": "“Closed for routine maintenance.”",
+            "snip": "The maintenance window. The one that was announced quietly.",
+            "tag": "Down",
+            "cls": "a",
+            "type": "essential"
+          }
+        ]
+      },
+      {
+        "sec": "Unknown",
+        "cards": [
+          {
+            "src": "System — Phone status bar",
+            "ttl": "AIDA",
+            "snip": "Small blue swirly logo. Under the battery bar.",
+            "tag": "New",
+            "cls": "a",
+            "type": "essential"
+          }
+        ]
+      },
+      {
+        "sec": "6am",
+        "cards": [
+          {
+            "src": "Restless",
+            "ttl": "Insomnia",
+            "snip": "I can’t get no sleep. Most people couldn’t last night.",
+            "tag": "6am",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "23": [
+      {
+        "sec": "AIDA — Community Recovery",
+        "cards": [
+          {
+            "src": "AIDA — Registration confirmed",
+            "ttl": "1,000 Brits deposited. Food hamper en route. House transfer: processing.",
+            "snip": "Clean. Easy. Quick.",
+            "tag": "Registered",
+            "cls": "c",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "What remains",
+        "cards": [
+          {
+            "src": "Signal — Dev",
+            "ttl": "“Did you register?”",
+            "snip": "Three words. You know what he thinks.",
+            "tag": "Unanswered",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "All in all is all we all are",
+        "cards": [
+          {
+            "src": "The Morning",
+            "ttl": "Northern Sky → Karma Police → Subterranean Homesick Alien → All Apologies",
+            "snip": "She said nothing. She played Northern Sky. We hugged. We cried. Then the rest followed.",
+            "tag": "All in all is all we all are",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "17": [
+      {
+        "sec": "Priority",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
+            "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
+            "tag": "Urgent",
+            "cls": "a",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "valentines-question"
+          },
+          {
+            "src": "X — Predictive AI accounts",
+            "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
+            "snip": "You screenshotted it at 3am. Still looks like something.",
+            "tag": "Flagged",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Research",
+        "cards": [
+          {
+            "src": "BIS — Bank for International Settlements",
+            "ttl": "mBridge cross-border CBDC pilot: 26 central banks now confirmed.",
+            "snip": "Dev flagged this months ago. You told people. They shrugged.",
+            "tag": "Research",
+            "cls": "c",
+            "type": "thread-notify",
+            "threadRef": "payment-infra"
+          }
+        ]
+      }
+    ],
+    "16": [
+      {
+        "sec": "From Dev",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "Silent firmware update pushed to 2 million payment terminals overnight. No official announcement.",
+            "snip": "\"Read this. Actually read it this time.\"",
+            "tag": "Unread",
+            "cls": "a",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "payment-infra"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "sec": "Morning Blues",
+        "cards": [
+          {
+            "src": "Spotify — Discover Weekly",
+            "ttl": "Blue Monday",
+            "snip": "Monday morning. The algorithm served it up. It’s not even funny any more.",
+            "tag": "Morning Blues",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "8": [
+      {
+        "sec": "The Anti-Cleanse",
+        "cards": [
+          {
+            "src": "Demonic Inner Voice",
+            "ttl": "Home of the Brave",
+            "snip": "Vicarious self-destruction. Twelve minutes of someone else’s damage.",
+            "tag": "The Anti-Cleanse",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "10": [
+      {
+        "sec": "3am",
+        "cards": [
+          {
+            "src": "Woo noodles",
+            "ttl": "Are We Here?",
+            "snip": "What does God say?",
+            "tag": "3am",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "sec": "In the Drunk Tank",
+        "cards": [
+          {
+            "src": "It was Christmas Eve babe",
+            "ttl": "Fairytale of New York",
+            "snip": "Got on a lucky one, came in eighteen-to-one. Every year the gamble is landed.",
+            "tag": "In the Drunk Tank",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "12": [
+      {
+        "sec": "Until the sky turns green",
+        "cards": [
+          {
+            "src": "Morning Glory",
+            "ttl": "(Song for My) Sugar Spun Sister",
+            "snip": "She wakes up with the sun. Whatever the weather.",
+            "tag": "Until the sky turns green",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "13": [
+      {
+        "sec": "Despair",
+        "cards": [
+          {
+            "src": "Despair",
+            "ttl": "Rape Me",
+            "snip": "We're doomed. Wake up, sheeple.",
+            "tag": "I'm not the only one",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ]
+  },
+  "threads": [
+    {
+      "id": "payment-infra",
+      "label": "Payment Infrastructure",
+      "items": [
+        {
+          "text": "FCA PS26/4 — ARC Implementation Notice",
+          "src": "simon",
+          "turn": 6,
+          "article": {
+            "style": "gov",
+            "source": "Financial Conduct Authority",
+            "title": "PS26/4: Authenticated Residential Computing (ARC) — Implementation Notice",
+            "date": "Published 14 June 2026 · Policy Statement",
+            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
+            "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
+          }
+        },
+        {
+          "text": "BIS mBridge: cross-border CBDC pilot",
+          "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
+          "src": "simon",
+          "turn": 17
+        },
+        {
+          "text": "Digital Pound spec v3.2 — “privacy-preserving”",
+          "url": "https://www.bankofengland.co.uk/the-digital-pound",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "Catherine Austin Fitts — The Going Direct Reset",
+          "url": "https://solari.com/the-going-direct-reset/",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "Firmware analysis — undocumented OTA push (29 Jan 2027)",
+          "src": "dev",
+          "turn": 16,
+          "article": {
+            "style": "paste",
+            "source": "No byline · No attribution · Forwarded via Signal",
+            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
+            "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
+            "footer": "Forwarded by Dev · Save to notes ↓"
+          }
+        }
+      ]
+    },
+    {
+      "id": "surveillance-arch",
+      "label": "Surveillance Architecture",
+      "items": [
+        {
+          "text": "Bioelectricity vs genetics — Telestai Nexus",
+          "url": "https://telestainexus.substack.com/",
+          "src": "simon",
+          "turn": 8
+        },
+        {
+          "text": "Graphene nano-systems, 6G — Sochi",
+          "url": "https://sochissubstack.substack.com/",
+          "src": "simon",
+          "turn": 8
+        },
+        {
+          "text": "ID2020 Alliance — digital identity framework",
+          "url": "https://id2020.org/",
+          "src": "simon",
+          "turn": 3
+        }
+      ]
+    },
+    {
+      "id": "deep-research",
+      "label": "Deep Research",
+      "items": [
+        {
+          "text": "Corbett Report",
+          "url": "https://www.corbettreport.com/",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "Whitney Webb — Unlimited Hangout",
+          "url": "https://unlimitedhangout.com/",
+          "src": "simon",
+          "turn": 19
+        },
+        {
+          "text": "The Ethical Skeptic",
+          "url": "https://theethicalskeptic.com/",
+          "src": "simon",
+          "turn": 8
+        }
+      ]
+    },
+    {
+      "id": "valentines-question",
+      "label": "The Valentine’s Day Question",
+      "items": [
+        {
+          "text": "Dev — \"Someone's cracked the time-lock\"",
+          "src": "dev",
+          "turn": 17,
+          "article": {
+            "style": "paste",
+            "source": "Dev · Signal message · Forwarded",
+            "title": "Someone's cracked the time-lock",
+            "body": "<p>Someone's cracked the time-lock. Or they say they have. Valentine's Day. 00:00 GMT.</p><p>Take it or leave it — could be genuine, could be the op wants us watching the wrong date. Either way the deployment is real.</p>",
+            "footer": "Dev · Signal · T17"
+          }
+        },
+        {
+          "text": "Gematria: 214 — Half Man, Half Angel",
+          "url": null,
+          "src": "simon",
+          "turn": 17
+        }
+      ]
+    }
+  ],
+  "songs": [
+    {
+      "id": "s001",
+      "title": "Blue Monday",
+      "artist": "New Order",
+      "url": "https://open.spotify.com/track/6hHc7Pks7wtBIW8Z6A0iFq?si=449b76102a52491f",
+      "context": "Spotify served it up Monday morning. The algorithm knows.",
+      "src": "simon",
+      "turn": 7
+    },
+    {
+      "id": "s002",
+      "title": "Home of the Brave",
+      "artist": "Spiritualized",
+      "url": "https://open.spotify.com/track/2MKe2fCY4VIswxoSGARv8O?si=7edc9ebf3cdc41d9",
+      "context": "The Cleanse. The anti-cleanse.",
+      "src": "simon",
+      "turn": 8
+    },
+    {
+      "id": "s003",
+      "title": "The Age Of Love (Jam & Spoon Watch Out For Stella Mix)",
+      "artist": "Age of Love",
+      "url": "https://open.spotify.com/track/4u88MrYJ8ZCnmUdjITNGKz?si=1577c6e7dd804298",
+      "context": "Kitchen disco. Eyes closed. Body in 2027, mind in 1995.",
+      "src": "simon",
+      "turn": 20
+    },
+    {
+      "id": "s004",
+      "title": "She Bangs The Drums",
+      "artist": "The Stone Roses",
+      "url": "https://open.spotify.com/track/3clIHVzJ9J2rvvrFUKLICo?si=9e76eb023b704106",
+      "context": "Loaded up after the WhatsApp failed. Last song before silence.",
+      "src": "simon",
+      "turn": 20
+    },
+    {
+      "id": "s005",
+      "title": "Northern Sky",
+      "artist": "Nick Drake",
+      "url": "https://open.spotify.com/track/3EtIraJEHVSbBvLw5msioH?si=32ba647bd4074607",
+      "context": "She said nothing. She played Northern Sky. We hugged. We cried.",
+      "src": "simon",
+      "turn": 23
+    },
+    {
+      "id": "s006",
+      "title": "(Song for My) Sugar Spun Sister",
+      "artist": "The Stone Roses",
+      "url": "https://open.spotify.com/track/3WEDBjYdFN9anBLB87w9b8?si=30a9ea4f68284914",
+      "context": "She wakes up with the sun",
+      "src": "simon",
+      "turn": 12
+    },
+    {
+      "id": "s007",
+      "title": "Insomnia (Monster Mix)",
+      "artist": "Faithless",
+      "url": "https://open.spotify.com/track/4WAQc8xXKNinvCyV7SFt8D?si=4cf246156a854e3e",
+      "context": "Creaky noises make my skin creep / I need to get some sleep…. / I can't get no sleep",
+      "src": "simon",
+      "turn": 21
+    },
+    {
+      "id": "s008",
+      "title": "Karma Police",
+      "artist": "Radiohead",
+      "url": "https://open.spotify.com/track/63OQupATfueTdZMWTxW03A?si=033177e87f1342cb",
+      "context": "Karma police, arrest this man",
+      "src": "simon",
+      "turn": 23
+    },
+    {
+      "id": "s009",
+      "title": "Subterranean Homesick Alien",
+      "artist": "Radiohead",
+      "url": "https://open.spotify.com/track/2CVV8PtUYYsux8XOzWkCP0?si=67a97926dc8f499d",
+      "context": "I'd tell all my friends, but they'd never believe me",
+      "src": "simon",
+      "turn": 23
+    },
+    {
+      "id": "s010",
+      "title": "All Apologies",
+      "artist": "Nirvana",
+      "url": "https://open.spotify.com/track/1Ic9pKxGSJGM0LKeqf6lGe?si=5d1a1602f776439f",
+      "context": "What else can I be? All apologies",
+      "src": "simon",
+      "turn": 23
+    },
+    {
+      "id": "s011",
+      "title": "Fairytale of New York",
+      "artist": "The Pogues ft. Kirsty MacColl",
+      "url": "https://open.spotify.com/track/4vgxTZeKBrstzyN3jtASFo?si=b2cfba32078640ef",
+      "context": "Got on a lucky one, came in eighteen-to-one. Favourite Christmas song. Saved from overexposure.",
+      "src": "simon",
+      "turn": 11
+    },
+    {
+      "id": "s012",
+      "title": "Are We Here?",
+      "artist": "Orbital",
+      "url": "https://open.spotify.com/track/5mUXUaYHNlUZBgjCv6weRY?si=1d1573849ae2420e",
+      "context": "The Ontology. Going round your head for hours. What does God say?",
+      "src": "simon",
+      "turn": 10
+    },
+    {
+      "id": "s013",
+      "title": "Rape Me",
+      "artist": "Nirvana",
+      "url": "https://open.spotify.com/track/2i5K0EdMY5zFs9t7KfYK3k?si=17a6df2ce4dd432d",
+      "context": "We're doomed. Wake up, sheeple.",
+      "src": "simon",
+      "turn": 13
+    }
+  ],
+  "ticker": [
+    {
+      "text": "FTSE 100  7,842.16  ▲ 0.3%",
+      "cls": ""
+    },
+    {
+      "text": "GBP/USD  1.2634",
+      "cls": "cold"
+    },
+    {
+      "text": "UK inflation 3.1% — ONS",
+      "cls": ""
+    },
+    {
+      "text": "Treasury: “No cause for concern ahead of Valentine’s weekend”",
+      "cls": ""
+    },
+    {
+      "text": "Crystal Palace 0 — 0 Fulham  HT",
+      "cls": "warm"
+    },
+    {
+      "text": "Bank of England holds base rate at 4.75%",
+      "cls": "cold"
+    },
+    {
+      "text": "RAF Wyton: MoD confirms “routine readiness exercise”",
+      "cls": ""
+    },
+    {
+      "text": "Starlink outages reported across South East",
+      "cls": "alert"
+    },
+    {
+      "text": "Digital Pound consultation closes March 31st",
+      "cls": "cold"
+    },
+    {
+      "text": "UK cash usage falls to 9% of transactions",
+      "cls": ""
+    },
+    {
+      "text": "Weather: further rain expected through Valentine’s weekend",
+      "cls": ""
+    },
+    {
+      "text": "NHS announces wrist-worn wellness monitor pilot",
+      "cls": "cold"
+    },
+    {
+      "text": "BIS mBridge cross-border CBDC pilot: 31 central banks",
+      "cls": "alert"
+    },
+    {
+      "text": "Barclays, HSBC, Lloyds: planned maintenance Friday 23:00–06:00",
+      "cls": "alert"
+    },
+    {
+      "text": "Sussex Bonfire Societies announce 2027 season dates",
+      "cls": "warm"
+    },
+    {
+      "text": "Gold  $2,847/oz  ▲ 1.2%",
+      "cls": "warm"
+    },
+    {
+      "text": "Spring seed swap — farm shops nationwide — March 8th",
+      "cls": "warm"
+    }
+  ],
+  "initialNotes": []
+}

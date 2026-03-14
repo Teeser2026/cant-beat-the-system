@@ -1345,7 +1345,6 @@ function renderTurn(turnData) {
       opt.addEventListener('click', function() {
         const qid = this.dataset.qid;
         const qi = parseInt(this.dataset.qi);
-        if (turnData.questionOpts[qi].fx) applyEffects(turnData.questionOpts[qi].fx);
         state.questionsLog.push({ id: qid, chosen: qi, text: turnData.questionOpts[qi].text });
         this.closest('.question-standalone').querySelectorAll('.q-opt').forEach(o => {
           o.style.opacity = '.2';
@@ -1417,7 +1416,6 @@ function renderTurn(turnData) {
 
       const choice = turnData.choices.opts[ci];
       const choiceText = typeof choice === 'string' ? choice : choice.text;
-      if (choice.fx) applyEffects(choice.fx);
       if (choice.flag) {
         Object.assign(state.flags, choice.flag);
         if (choice.flag.registered) {
@@ -1451,15 +1449,6 @@ function renderTurn(turnData) {
     else gap = 1.6;                  // dense blocks — let them breathe
     cumDelay += gap;
   });
-}
-
-function applyEffects(fx) {
-  for (const [key, val] of Object.entries(fx)) {
-    if (key in state.profile) {
-      state.profile[key] += val;
-    }
-  }
-  console.log('AIDA Profile:', JSON.stringify(state.profile));
 }
 
 function renderSignal(turnId) {

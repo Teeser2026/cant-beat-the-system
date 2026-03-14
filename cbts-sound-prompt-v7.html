@@ -15,7 +15,7 @@
   --warm: #c4956a;
   --inner: #c49090;
   --faint: #3a3530;
-  --word-col: rgba(156,140,120,0.4);
+  --word-col: rgba(156,140,120,0.6);
   --word-glow: rgba(140,120,90,0.12);
 }
 
@@ -85,7 +85,7 @@ html, body {
   z-index: 2;
   transition: all 1.8s ease;
   opacity: 0;
-  animation: wordReveal 4s ease forwards 0.8s;
+  animation: wordReveal 4s ease forwards 2.8s;
 }
 
 /* Ambient cloud */
@@ -102,7 +102,7 @@ html, body {
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  animation: fadeIn 3.5s ease forwards 1.8s;
+  animation: fadeIn 3.5s ease forwards 4s;
   transition: opacity 1.2s, width 1.5s, height 1.5s, filter 1.5s, background 2s;
 }
 
@@ -153,7 +153,7 @@ html, body {
   max-width: 600px;
   line-height: 1.9;
   opacity: 0;
-  animation: fadeIn 2s ease forwards 4s;
+  animation: fadeIn 2s ease forwards 6s;
   transition: opacity 1.5s;
 }
 
@@ -163,7 +163,7 @@ html, body {
   position: relative;
   display: flex;
   opacity: 0;
-  animation: fadeIn 3s ease forwards 2s;
+  animation: fadeIn 3s ease forwards 4.5s;
   min-height: 280px;
 }
 
@@ -209,17 +209,55 @@ html, body {
   pointer-events: none;
 }
 
+/* Seam blenders — soften the hard edges between triptych sections */
+.seam-blend-1 {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: calc(33.33% - 30px);
+  width: 60px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(14,13,10,0.35) 35%,
+    rgba(14,13,10,0.4) 50%,
+    rgba(14,13,10,0.35) 65%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.seam-blend-2 {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: calc(66.66% - 30px);
+  width: 60px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(14,13,10,0.35) 35%,
+    rgba(14,13,10,0.4) 50%,
+    rgba(14,13,10,0.35) 65%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* ── AFTERMATH — positioned within chosen zone ── */
 .zone-aftermath {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  right: 10%;
+  top: 28%;
+  left: 8%;
+  right: 8%;
   z-index: 22;
   pointer-events: none;
   text-align: center;
   opacity: 0;
   transition: opacity 4s;
+}
+
+/* Pond (zone 0) — push text lower, below the bright reflection */
+#zone-0 .zone-aftermath {
+  top: 40%;
 }
 
 .zone-aftermath.visible {
@@ -228,37 +266,41 @@ html, body {
   cursor: pointer;
 }
 
-.zone-aftermath-text {
+.zone-aftermath-line {
+  display: block;
   font-family: 'Crimson Pro', serif;
   font-size: 36px;
   font-weight: 300;
   font-style: italic;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--bright);
   text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
 }
 
+.zone-aftermath-line:nth-child(2) {
+  margin-top: 6px;
+}
+
 .zone-aftermath-continue {
   display: block;
-  margin-top: 24px;
+  margin-top: 28px;
   font-family: 'Crimson Pro', serif;
   font-size: 14px;
   font-weight: 300;
   font-style: italic;
-  color: rgba(200,196,184,0.3);
+  color: rgba(200,196,184,0.25);
   opacity: 0;
-  transition: opacity 2s;
-  animation: gentlePulse 3s ease-in-out infinite;
+  transition: opacity 2s, color 0.3s;
+  cursor: pointer;
 }
 
 .zone-aftermath.visible .zone-aftermath-continue {
   opacity: 1;
-  transition-delay: 2s;
+  transition-delay: 3.5s;
 }
 
-@keyframes gentlePulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.55; }
+.zone-aftermath-continue:hover {
+  color: rgba(200,196,184,0.6);
 }
 
 /* ── ZONES ── */
@@ -419,11 +461,14 @@ html, body {
     <div class="image-fade-bottom"></div>
     <div class="image-fade-left"></div>
     <div class="image-fade-right"></div>
+    <div class="seam-blend-1"></div>
+    <div class="seam-blend-2"></div>
 
     <div class="zone" data-clip="0" id="zone-0">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-0">
-        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-line" id="aftermath-0-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-0-l2"></span>
         <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
@@ -432,7 +477,8 @@ html, body {
     <div class="zone" data-clip="1" id="zone-1">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-1">
-        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-line" id="aftermath-1-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-1-l2"></span>
         <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
@@ -441,7 +487,8 @@ html, body {
     <div class="zone" data-clip="2" id="zone-2">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-2">
-        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-line" id="aftermath-2-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-2-l2"></span>
         <span class="zone-aftermath-continue">continue</span>
       </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
@@ -465,9 +512,9 @@ const CLIPS = [
 ];
 
 const AFTERMATH = [
-  'A single strike — and the silence after it holds everything.',
-  'Something vast, underneath. It was always there.',
-  'Voices older than language. The flame doesn\'t flicker.'
+  ['A single strike', 'The silence after it holds everything'],
+  ['Something vast, underneath', 'It was always there'],
+  ['Voices older than language', 'The flame doesn\'t flicker']
 ];
 
 let audios = [], currentPlaying = -1, matched = -1, isDragging = false, dragIndex = -1;
@@ -652,10 +699,11 @@ function completeMatch(i) {
     }
   });
 
-  // Aftermath text in chosen zone
+  // Aftermath text in chosen zone — two lines
   setTimeout(() => {
     const am = document.getElementById('aftermath-' + i);
-    am.querySelector('.zone-aftermath-text').textContent = AFTERMATH[i];
+    document.getElementById('aftermath-' + i + '-l1').textContent = AFTERMATH[i][0];
+    document.getElementById('aftermath-' + i + '-l2').textContent = AFTERMATH[i][1];
     am.classList.add('visible');
   }, 3500);
 
@@ -676,7 +724,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.querySelectorAll('.zone').forEach(z => z.classList.remove('matched-zone', 'faded', 'dragging-active', 'playing'));
   document.querySelectorAll('.zone-aftermath').forEach(am => {
     am.classList.remove('visible');
-    am.querySelector('.zone-aftermath-text').textContent = '';
+    am.querySelectorAll('.zone-aftermath-line').forEach(l => l.textContent = '');
   });
   theWord.classList.remove('matched'); theWord.style.color = ''; theWord.style.letterSpacing = '';
   wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');

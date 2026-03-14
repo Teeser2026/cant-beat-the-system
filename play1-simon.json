@@ -62,56 +62,9 @@
       "registered": false,
       "met_dev": false,
       "met_patel": false
-    },
-    "profile": {
-      "presence": 0,
-      "resistance": 0,
-      "consumption": 0,
-      "silence": 0,
-      "conviction": 0
     }
   },
   "turns": [
-    {
-      "id": "Q1",
-      "num": "Q1",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
-      "questionOpts": [
-        {
-          "text": "Rarely. If it needs doing, I do it.",
-          "fx": {
-            "resistance": 1,
-            "conviction": 4
-          }
-        },
-        {
-          "text": "Sometimes. Depends how tired I am.",
-          "fx": {
-            "conviction": -1
-          }
-        },
-        {
-          "text": "Often. I'm a world-class procrastinator and I've made peace with it.",
-          "fx": {
-            "presence": 1,
-            "consumption": 2,
-            "conviction": -2
-          }
-        },
-        {
-          "text": "I'm doing it right now.",
-          "fx": {
-            "presence": 4,
-            "conviction": -3
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
     {
       "id": 1,
       "num": "T1",
@@ -144,25 +97,13 @@
         "prompt": "The garden or the screen. You know which one wins.",
         "opts": [
           {
-            "text": "Stay out. The dahlias need cutting. The Café au Lait especially.",
-            "fx": {
-              "presence": 3,
-              "resistance": -1
-            }
+            "text": "Stay out. The dahlias need cutting. The Café au Lait especially."
           },
           {
-            "text": "Check the RAF Wyton story properly. Something feels off.",
-            "fx": {
-              "resistance": 3,
-              "presence": -1
-            }
+            "text": "Check the RAF Wyton story properly. Something feels off."
           },
           {
-            "text": "Come in. Those DUMB articles from 2024 are still open in a tab somewhere...",
-            "fx": {
-              "resistance": 2,
-              "silence": -1
-            }
+            "text": "Come in. Those DUMB articles from 2024 are still open in a tab somewhere..."
           }
         ]
       },
@@ -204,25 +145,13 @@
         "prompt": "The tab has been open for months. Today could be different.",
         "opts": [
           {
-            "text": "Actually read the Pyramid of Power. All of it. This time.",
-            "fx": {
-              "resistance": 3,
-              "conviction": 2
-            }
+            "text": "Actually read the Pyramid of Power. All of it. This time."
           },
           {
-            "text": "Skim the intro, save the rest for later. You always say that.",
-            "fx": {
-              "resistance": 1,
-              "conviction": -2
-            }
+            "text": "Skim the intro, save the rest for later. You always say that."
           },
           {
-            "text": "Close the tab. Cook something. The allotment needs you more than Derrick Broze does.",
-            "fx": {
-              "presence": 2,
-              "resistance": -1
-            }
+            "text": "Close the tab. Cook something. The allotment needs you more than Derrick Broze does."
           }
         ]
       },
@@ -264,142 +193,16 @@
         "prompt": "The joists are spaced. The answer came in seconds. You didn't even have to think.",
         "opts": [
           {
-            "text": "Delete the app. You promised yourself you wouldn't. The pen, pad and calculator worked fine for decades.",
-            "fx": {
-              "resistance": 3,
-              "conviction": 3
-            }
+            "text": "Delete the app. You promised yourself you wouldn't. The pen, pad and calculator worked fine for decades."
           },
           {
-            "text": "Keep it. But only for practical stuff. DIY, measurements, that sort of thing. You're not going to start asking it to think for you.",
-            "fx": {
-              "consumption": 2,
-              "conviction": -2
-            }
+            "text": "Keep it. But only for practical stuff. DIY, measurements, that sort of thing. You're not going to start asking it to think for you."
           },
           {
-            "text": "Ask it something else. You've been wondering about that RAF Wyton story. See what it makes of it.",
-            "fx": {
-              "presence": 2,
-              "resistance": -2
-            }
+            "text": "Ask it something else. You've been wondering about that RAF Wyton story. See what it makes of it."
           }
         ]
       }
-    },
-    {
-      "id": "Q2",
-      "num": "Q2",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
-      "questionOpts": [
-        {
-          "text": "Every morning. Before I even say good morning.",
-          "fx": {
-            "presence": -4,
-            "silence": -2
-          }
-        },
-        {
-          "text": "Sometimes. Depends who I wake up next to.",
-          "fx": {
-            "presence": -1
-          }
-        },
-        {
-          "text": "No. People first. Always.",
-          "fx": {
-            "presence": 4,
-            "silence": 2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q3",
-      "num": "Q3",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
-      "questionOpts": [
-        {
-          "text": "Mostly my choices. I'm deliberate about how I spend my time.",
-          "fx": {
-            "presence": 3,
-            "resistance": 2,
-            "consumption": -1
-          }
-        },
-        {
-          "text": "About half and half. More than I'd like to admit.",
-          "fx": {
-            "presence": 1,
-            "consumption": 1
-          }
-        },
-        {
-          "text": "Mostly algorithms. They know what I want before I do.",
-          "fx": {
-            "presence": -1,
-            "resistance": -2,
-            "consumption": 3
-          }
-        },
-        {
-          "text": "I can't tell the difference anymore.",
-          "fx": {
-            "presence": -3,
-            "consumption": 4,
-            "silence": -2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q4",
-      "num": "Q4",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Do you dream differently than you used to?",
-      "questionOpts": [
-        {
-          "text": "Yes. They've changed. I don't know when.",
-          "fx": {
-            "presence": 2,
-            "silence": 1
-          }
-        },
-        {
-          "text": "No. Same dreams, same nonsense.",
-          "fx": {
-            "silence": -1
-          }
-        },
-        {
-          "text": "I don't remember my dreams.",
-          "fx": {
-            "presence": -1,
-            "silence": -2
-          }
-        },
-        {
-          "text": "I don't think I dream anymore.",
-          "fx": {
-            "presence": -3,
-            "silence": -4
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 4,
@@ -501,39 +304,6 @@
       }
     },
     {
-      "id": "Q5",
-      "num": "Q5",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "When someone you trust sends you something important to read, do you read it?",
-      "questionOpts": [
-        {
-          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way.",
-          "fx": {
-            "resistance": -2,
-            "conviction": -3
-          }
-        },
-        {
-          "text": "If someone I trust says it matters, I read it. All of it.",
-          "fx": {
-            "resistance": 3,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes.",
-          "fx": {
-            "resistance": 1,
-            "silence": -3
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
       "id": 6,
       "num": "T6",
       "title": "Bills",
@@ -623,39 +393,6 @@
           "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
         ]
       }
-    },
-    {
-      "id": "Q6",
-      "num": "Q6",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Do you say what you actually think, or what the room wants to hear?",
-      "questionOpts": [
-        {
-          "text": "What I actually think. Even when it costs me.",
-          "fx": {
-            "resistance": 4,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "Depends on the room. I pick my battles.",
-          "fx": {
-            "resistance": 1,
-            "conviction": -1
-          }
-        },
-        {
-          "text": "What the room wants to hear. Life's easier that way.",
-          "fx": {
-            "resistance": -3,
-            "consumption": 2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 8,
@@ -793,50 +530,6 @@
       ]
     },
     {
-      "id": "Q7",
-      "num": "Q7",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
-      "questionOpts": [
-        {
-          "text": "Yes. Every day. I know it's hypocritical. I do it anyway.",
-          "fx": {
-            "presence": 3,
-            "consumption": 2,
-            "conviction": -3
-          }
-        },
-        {
-          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist.",
-          "fx": {
-            "resistance": 1,
-            "consumption": 1,
-            "conviction": -1
-          }
-        },
-        {
-          "text": "No. I've restructured my life to avoid it. It costs me.",
-          "fx": {
-            "resistance": 4,
-            "consumption": -3,
-            "conviction": 4
-          }
-        },
-        {
-          "text": "I don't think about it. Life's too short.",
-          "fx": {
-            "presence": -3,
-            "consumption": 3,
-            "conviction": -2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
       "id": 9,
       "num": "T9",
       "title": "Tuesday Morning",
@@ -869,24 +562,13 @@
         "prompt": "The stew is on. The wine is open. The evening stretches ahead.",
         "opts": [
           {
-            "text": "Read that digital ID Substack properly. Amy said she would. At least one of you should.",
-            "fx": {
-              "resistance": 3,
-              "presence": -1
-            }
+            "text": "Read that digital ID Substack properly. Amy said she would. At least one of you should."
           },
           {
-            "text": "Put the match on. Crystal Palace away at Everton. You’ll want it to anger you. It will.",
-            "fx": {
-              "consumption": 1
-            }
+            "text": "Put the match on. Crystal Palace away at Everton. You’ll want it to anger you. It will."
           },
           {
-            "text": "Neither. Walk the dogs. Leave the phones. Talk to each other.",
-            "fx": {
-              "presence": 4,
-              "silence": 2
-            }
+            "text": "Neither. Walk the dogs. Leave the phones. Talk to each other."
           }
         ]
       }
@@ -933,72 +615,16 @@
         "label": "What does God say?",
         "opts": [
           {
-            "text": "Are we here?",
-            "fx": {
-              "presence": 4,
-              "silence": 3
-            }
+            "text": "Are we here?"
           },
           {
-            "text": "Are we unique?",
-            "fx": {
-              "resistance": 2,
-              "conviction": 2
-            }
+            "text": "Are we unique?"
           },
           {
-            "text": "The prodigal son is alive and well and living in the front bedroom.",
-            "fx": {
-              "presence": 3,
-              "consumption": -1,
-              "conviction": 1
-            }
+            "text": "The prodigal son is alive and well and living in the front bedroom."
           }
         ]
       }
-    },
-    {
-      "id": "Q8",
-      "num": "Q8",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "When you encounter information that contradicts something you believe, what's your first instinct?",
-      "questionOpts": [
-        {
-          "text": "Investigate it. If I'm wrong, I want to know.",
-          "fx": {
-            "presence": 3,
-            "resistance": 2,
-            "conviction": 1
-          }
-        },
-        {
-          "text": "Dismiss it. I've done the work. I trust my conclusions.",
-          "fx": {
-            "presence": -2,
-            "resistance": 1,
-            "conviction": 2
-          }
-        },
-        {
-          "text": "Feel uncomfortable. Sit with it. Not decide immediately.",
-          "fx": {
-            "presence": 2,
-            "silence": 3
-          }
-        },
-        {
-          "text": "Look for reasons it might be wrong.",
-          "fx": {
-            "presence": -2,
-            "resistance": -1,
-            "conviction": 1
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 11,
@@ -1089,61 +715,16 @@
         "prompt": "The day is done. The phone is in your hand. The room smells of applewood and pine.",
         "opts": [
           {
-            "text": "Put it down. You managed all day. Don't let the last act spoil it.",
-            "fx": {
-              "presence": 3,
-              "silence": 2
-            }
+            "text": "Put it down. You managed all day. Don't let the last act spoil it."
           },
           {
-            "text": "Just a quick scroll. You've earned it. It's Christmas.",
-            "fx": {
-              "consumption": 2,
-              "presence": -1
-            }
+            "text": "Just a quick scroll. You've earned it. It's Christmas."
           },
           {
-            "text": "Check on the kids. That's not scrolling, that's parenting.",
-            "fx": {
-              "presence": 1,
-              "consumption": 1
-            }
+            "text": "Check on the kids. That's not scrolling, that's parenting."
           }
         ]
       }
-    },
-    {
-      "id": "Q9",
-      "num": "Q9",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Have you ever maintained a difficult commitment for longer than three months?",
-      "questionOpts": [
-        {
-          "text": "Yes. But it nearly broke me, and I'm not sure I'd do it again.",
-          "fx": {
-            "resistance": 1,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "I've started a hundred things. I've finished about four.",
-          "fx": {
-            "consumption": 1,
-            "conviction": -2
-          }
-        },
-        {
-          "text": "Three months? I can barely maintain a difficult commitment for three days.",
-          "fx": {
-            "silence": -1,
-            "conviction": -4
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 12,
@@ -1196,48 +777,6 @@
       }
     },
     {
-      "id": "Q10",
-      "num": "Q10",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Is there a cause you care about but have never given time, money, or energy to?",
-      "questionOpts": [
-        {
-          "text": "Yes. More than one.",
-          "fx": {
-            "presence": 2,
-            "conviction": -2
-          }
-        },
-        {
-          "text": "No. If I care about something, I act on it.",
-          "fx": {
-            "resistance": 2,
-            "conviction": 4
-          }
-        },
-        {
-          "text": "Several. The list gets longer every year.",
-          "fx": {
-            "presence": 1,
-            "consumption": 1,
-            "conviction": -3
-          }
-        },
-        {
-          "text": "I don't think caring without acting counts as caring.",
-          "fx": {
-            "presence": 3,
-            "resistance": 1,
-            "conviction": 2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
       "id": 13,
       "num": "T13",
       "title": "Rape Me",
@@ -1262,40 +801,6 @@
       "choices": null
     },
     {
-      "id": "Q11",
-      "num": "Q11",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
-      "questionOpts": [
-        {
-          "text": "Knowing. If you really understood what was happening, you couldn't look away.",
-          "fx": {
-            "resistance": 2,
-            "conviction": 2
-          }
-        },
-        {
-          "text": "Doing. I know plenty. I do almost nothing about any of it.",
-          "fx": {
-            "presence": 1,
-            "resistance": 2,
-            "conviction": -2
-          }
-        },
-        {
-          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away.",
-          "fx": {
-            "silence": 2,
-            "conviction": 3
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
       "id": 15,
       "num": "T15",
       "title": "The Puppy",
@@ -1305,129 +810,6 @@
           "t": "You've been promising yourself this for years."
         }
       ],
-      "choices": null
-    },
-    {
-      "id": "Q12",
-      "num": "Q12",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "A surveillance system catches a serial killer who would otherwise have gone free. The same system records every conversation you have. Was it worth it?",
-      "questionOpts": [
-        {
-          "text": "Yes. One life saved justifies the cost.",
-          "fx": {
-            "resistance": -3,
-            "consumption": 2
-          }
-        },
-        {
-          "text": "No. Nothing is worth that. Not even a life.",
-          "fx": {
-            "resistance": 4,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "It depends on whether there are limits. Who controls it. What the oversight looks like.",
-          "fx": {
-            "presence": 3,
-            "resistance": 1,
-            "conviction": 1
-          }
-        },
-        {
-          "text": "It doesn't matter what I think. They're going to build it anyway.",
-          "fx": {
-            "resistance": -2,
-            "conviction": -4
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q13",
-      "num": "Q13",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "If you could guarantee your children's physical safety by surrendering your own privacy permanently, would you?",
-      "questionOpts": [
-        {
-          "text": "Yes. Without hesitating.",
-          "fx": {
-            "resistance": -4,
-            "conviction": 2
-          }
-        },
-        {
-          "text": "No. Teaching them to live free matters more than keeping them safe from everything.",
-          "fx": {
-            "resistance": 3,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "I'd need to know what \"permanently\" means. What exactly am I giving up?",
-          "fx": {
-            "presence": 3,
-            "resistance": 1
-          }
-        },
-        {
-          "text": "I don't have children, but I think I would. And that scares me.",
-          "fx": {
-            "presence": 2,
-            "resistance": -1,
-            "conviction": -1
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q14",
-      "num": "Q14",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
-      "questionOpts": [
-        {
-          "text": "Care. That's literally what a good partner does. What a good doctor does.",
-          "fx": {
-            "resistance": -3,
-            "consumption": 3
-          }
-        },
-        {
-          "text": "Captivity. No matter how comfortable the cage, it's still a cage.",
-          "fx": {
-            "resistance": 4,
-            "conviction": 2
-          }
-        },
-        {
-          "text": "Both. And the fact that it's both is what makes it dangerous.",
-          "fx": {
-            "presence": 4,
-            "silence": 3
-          }
-        },
-        {
-          "text": "It depends on whether I asked for it.",
-          "fx": {
-            "presence": 2,
-            "resistance": 1,
-            "conviction": -1
-          }
-        }
-      ],
-      "paras": [],
       "choices": null
     },
     {
@@ -1506,175 +888,6 @@
       }
     },
     {
-      "id": "Q15",
-      "num": "Q15",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
-      "questionOpts": [
-        {
-          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?",
-          "fx": {
-            "resistance": -3,
-            "consumption": 3,
-            "conviction": -1
-          }
-        },
-        {
-          "text": "No. If they're offering to buy my identity, it's worth more than my debt.",
-          "fx": {
-            "resistance": 3,
-            "conviction": 2
-          }
-        },
-        {
-          "text": "I'd need to read the terms. All of them. Before I signed anything.",
-          "fx": {
-            "presence": 2,
-            "resistance": 1,
-            "silence": 1
-          }
-        },
-        {
-          "text": "What choice would I have?",
-          "fx": {
-            "resistance": -2,
-            "silence": -2,
-            "conviction": -4
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q16",
-      "num": "Q16",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
-      "questionOpts": [
-        {
-          "text": "Relief.",
-          "fx": {
-            "presence": 2,
-            "consumption": -2,
-            "silence": 3
-          }
-        },
-        {
-          "text": "Panic.",
-          "fx": {
-            "consumption": 3,
-            "silence": -3
-          }
-        },
-        {
-          "text": "Loss. Like something important just disappeared.",
-          "fx": {
-            "presence": 1,
-            "consumption": 2,
-            "silence": -1
-          }
-        },
-        {
-          "text": "Curiosity. What happens next?",
-          "fx": {
-            "presence": 4,
-            "resistance": 2,
-            "silence": 2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q17",
-      "num": "Q17",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "If every screen in the world went dark for a week, what would you do on day three?",
-      "questionOpts": [
-        {
-          "text": "I'd find something. I'd be fine. Maybe better than fine.",
-          "fx": {
-            "presence": 2,
-            "resistance": 2,
-            "silence": 3
-          }
-        },
-        {
-          "text": "I'd be anxious. I'd be pacing. I'd be listening to the radio for news.",
-          "fx": {
-            "consumption": 1,
-            "silence": -2
-          }
-        },
-        {
-          "text": "I'd talk to people. Actually talk. Neighbours, strangers, whoever.",
-          "fx": {
-            "presence": 2,
-            "consumption": -1,
-            "conviction": 1
-          }
-        },
-        {
-          "text": "I honestly don't know. And that worries me.",
-          "fx": {
-            "presence": 2,
-            "silence": -1,
-            "conviction": -1
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
-      "id": "Q18",
-      "num": "Q18",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
-      "questionOpts": [
-        {
-          "text": "Yes. I know what it is. I'm just not ready.",
-          "fx": {
-            "presence": 3,
-            "conviction": -1
-          }
-        },
-        {
-          "text": "Probably. That's how blind spots work, isn't it?",
-          "fx": {
-            "presence": 2,
-            "silence": 1
-          }
-        },
-        {
-          "text": "No. I'm fairly self-aware.",
-          "fx": {
-            "presence": -2,
-            "conviction": 1
-          }
-        },
-        {
-          "text": "How would I know?",
-          "fx": {
-            "presence": -1,
-            "silence": 2
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
-    },
-    {
       "id": 19,
       "num": "T19",
       "title": "Soggy Dog Walks",
@@ -1692,40 +905,6 @@
           "Open the Rully Rouge early. Start the Béarnaise. It’s Valentine’s tomorrow. Enjoy something."
         ]
       }
-    },
-    {
-      "id": "Q19",
-      "num": "Q19",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Right now, in your actual life — do you feel free?",
-      "questionOpts": [
-        {
-          "text": "Yes. I can do what I want, go where I want, say what I want.",
-          "fx": {
-            "resistance": -2,
-            "consumption": 2
-          }
-        },
-        {
-          "text": "No. And I'm not sure I ever have.",
-          "fx": {
-            "presence": 2,
-            "resistance": 2,
-            "conviction": 1
-          }
-        },
-        {
-          "text": "I feel free enough.",
-          "fx": {
-            "consumption": 3,
-            "conviction": -3
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 20,
@@ -1922,41 +1101,6 @@
         "fadeOut": 2,
         "vol": 0.35
       }
-    },
-    {
-      "id": "Q20",
-      "num": "Q20",
-      "title": "",
-      "date": "",
-      "isQuestion": true,
-      "questionText": "Is there a point where safety matters more than freedom?",
-      "questionOpts": [
-        {
-          "text": "Yes. When the people I love are in danger, freedom is a luxury I'll trade.",
-          "fx": {
-            "resistance": -2,
-            "consumption": 1,
-            "conviction": -2
-          }
-        },
-        {
-          "text": "No. The moment you trade freedom for safety, you get neither.",
-          "fx": {
-            "resistance": 4,
-            "conviction": 3
-          }
-        },
-        {
-          "text": "I don't think I'd know the point until I'd already passed it.",
-          "fx": {
-            "presence": 3,
-            "silence": 2,
-            "conviction": 1
-          }
-        }
-      ],
-      "paras": [],
-      "choices": null
     },
     {
       "id": 23,

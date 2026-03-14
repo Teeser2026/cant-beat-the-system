@@ -209,32 +209,57 @@ html, body {
   pointer-events: none;
 }
 
-/* ── AFTERMATH — huge, centred, overlaid on image ── */
-.aftermath-overlay {
+/* ── AFTERMATH — positioned within chosen zone ── */
+.zone-aftermath {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  z-index: 22;
   pointer-events: none;
-  padding: 20px;
-}
-
-.aftermath {
-  font-family: 'Crimson Pro', serif;
-  font-size: 42px;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--bright);
   text-align: center;
-  max-width: 600px;
-  text-shadow: 0 4px 40px rgba(14,13,10,0.8), 0 0 80px rgba(14,13,10,0.6);
   opacity: 0;
   transition: opacity 4s;
 }
-.aftermath.visible { opacity: 1; }
+
+.zone-aftermath.visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.zone-aftermath-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--bright);
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
+}
+
+.zone-aftermath-continue {
+  display: block;
+  margin-top: 24px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(200,196,184,0.3);
+  opacity: 0;
+  transition: opacity 2s;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.zone-aftermath.visible .zone-aftermath-continue {
+  opacity: 1;
+  transition-delay: 2s;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.55; }
+}
 
 /* ── ZONES ── */
 .zone {
@@ -395,23 +420,30 @@ html, body {
     <div class="image-fade-left"></div>
     <div class="image-fade-right"></div>
 
-    <!-- Aftermath overlaid on image -->
-    <div class="aftermath-overlay">
-      <div class="aftermath" id="aftermath"></div>
-    </div>
-
     <div class="zone" data-clip="0" id="zone-0">
       <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-0">
+        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-continue">continue</span>
+      </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
     </div>
     <div class="zone" data-clip="1" id="zone-1">
       <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-1">
+        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-continue">continue</span>
+      </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
     </div>
     <div class="zone" data-clip="2" id="zone-2">
       <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-2">
+        <div class="zone-aftermath-text"></div>
+        <span class="zone-aftermath-continue">continue</span>
+      </div>
       <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-2"></div></div>
     </div>
@@ -620,27 +652,38 @@ function completeMatch(i) {
     }
   });
 
-  // Big aftermath text over image
+  // Aftermath text in chosen zone
   setTimeout(() => {
-    document.getElementById('aftermath').textContent = AFTERMATH[i];
-    document.getElementById('aftermath').classList.add('visible');
+    const am = document.getElementById('aftermath-' + i);
+    am.querySelector('.zone-aftermath-text').textContent = AFTERMATH[i];
+    am.classList.add('visible');
   }, 3500);
 
   setTimeout(() => { document.getElementById('resetBtn').style.display = 'inline-block'; }, 7000);
 }
 
+// Click-to-continue on aftermath
+document.querySelectorAll('.zone-aftermath').forEach(am => {
+  am.addEventListener('click', () => {
+    // In prototype: reset. In engine: advance to next turn.
+    document.getElementById('resetBtn').click();
+  });
+});
+
 document.getElementById('resetBtn').addEventListener('click', () => {
   matched = -1; isDragging = false; dragIndex = -1;
   stopAll(); audios.forEach(a => a.volume = 1);
   document.querySelectorAll('.zone').forEach(z => z.classList.remove('matched-zone', 'faded', 'dragging-active', 'playing'));
-  theWord.classList.remove('matched'); theWord.style.color = ''; theWord.style.letterSpacing = ''; 
+  document.querySelectorAll('.zone-aftermath').forEach(am => {
+    am.classList.remove('visible');
+    am.querySelector('.zone-aftermath-text').textContent = '';
+  });
+  theWord.classList.remove('matched'); theWord.style.color = ''; theWord.style.letterSpacing = '';
   wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');
   wordCloud.style.background = '';
   wordProximity.style.opacity = '0'; wordProximity.style.width = ''; wordProximity.style.height = '';
   dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
   document.querySelector('.the-frame').style.opacity = '';
-  document.getElementById('aftermath').classList.remove('visible');
-  document.getElementById('aftermath').textContent = '';
   document.getElementById('resetBtn').style.display = 'none';
   document.getElementById('instruction').style.opacity = '1';
   imageArea.classList.remove('zones-hovering');

@@ -356,16 +356,10 @@
       "id": "IP1",
       "isQuestion": true,
       "questionMode": "image-prompt",
-      "questionText": "[IMAGE PROMPT 1 — Teeser's photo, autumnal/communal. Single-word interpretive options. NOT YET BUILT.]",
+      "questionText": "what do you feel?",
       "questionOpts": [
         {
-          "text": "[placeholder]"
-        },
-        {
-          "text": "[placeholder]"
-        },
-        {
-          "text": "[placeholder]"
+          "img": "inkblot-1.png"
         }
       ]
     },

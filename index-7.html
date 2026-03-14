@@ -1437,6 +1437,129 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ══════════════════════════════════════════════════════
+   IMAGE PROMPT — full-screen overlay (Rorschach)
+   ══════════════════════════════════════════════════════ */
+#image-prompt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#image-prompt-overlay.visible { opacity: 1; }
+
+#image-prompt-overlay .ip-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* The inkblot image */
+#image-prompt-overlay .ip-image {
+  max-width: 70vw;
+  max-height: 50vh;
+  object-fit: contain;
+  opacity: 0;
+  animation: ipFadeIn 3s ease forwards;
+}
+
+/* Framing question */
+#image-prompt-overlay .ip-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-top: 36px;
+  opacity: 0;
+  animation: ipFadeIn 2s ease forwards 3s;
+}
+
+/* Text input */
+#image-prompt-overlay .ip-input-wrap {
+  margin-top: 24px;
+  opacity: 0;
+  animation: ipFadeIn 1.5s ease forwards 4s;
+  text-align: center;
+}
+#image-prompt-overlay .ip-input {
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(200,196,184,0.15);
+  outline: none;
+  text-align: center;
+  width: 320px;
+  max-width: 80vw;
+  padding: 8px 4px;
+  caret-color: var(--warm);
+  letter-spacing: 0.5px;
+}
+#image-prompt-overlay .ip-input::placeholder {
+  color: transparent;
+}
+
+/* Submit hint — fades in after typing starts */
+#image-prompt-overlay .ip-submit-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: 0;
+  margin-top: 12px;
+  transition: opacity 1s;
+}
+#image-prompt-overlay .ip-submit-hint.visible { opacity: 0.35; }
+
+/* Linger — player's words alone in the dark */
+#image-prompt-overlay .ip-linger {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+  pointer-events: none;
+}
+#image-prompt-overlay .ip-linger.visible { opacity: 1; }
+#image-prompt-overlay .ip-linger-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+@keyframes ipFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 520px) {
+  #image-prompt-overlay .ip-image { max-width: 90vw; max-height: 40vh; }
+  #image-prompt-overlay .ip-frame { font-size: 22px; margin-top: 28px; }
+  #image-prompt-overlay .ip-input { font-size: 20px; width: 260px; }
+  #image-prompt-overlay .ip-linger-text { font-size: 26px; }
+}
+
+/* ══════════════════════════════════════════════════════
    VIDEO PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
 #video-prompt-overlay {
@@ -1795,6 +1918,7 @@ body.game-active .ticker-bar { display: flex; }
 
 <!-- ══ VIDEO PROMPT OVERLAY ══ -->
 <div id="video-prompt-overlay" style="display:none"></div>
+<div id="image-prompt-overlay" style="display:none"></div>
 
 <div class="noise"></div>
 
@@ -3251,6 +3375,125 @@ function renderVideoPrompt(turnData) {
   });
 }
 
+// ══════════════════════════════════════════════════════
+// IMAGE PROMPT — full-screen Rorschach overlay
+// ══════════════════════════════════════════════════════
+
+function renderImagePrompt(turnData) {
+  const overlay = document.getElementById('image-prompt-overlay');
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  const devList = document.getElementById('devTurnList');
+
+  const imgSrc = turnData.questionOpts && turnData.questionOpts[0] && turnData.questionOpts[0].img
+    ? turnData.questionOpts[0].img : 'inkblot-1.png';
+  const promptText = turnData.questionText || 'what do you feel?';
+
+  // Build HTML
+  overlay.innerHTML = `
+    <div class="ip-inner">
+      <img class="ip-image" src="${imgSrc}" alt="" draggable="false">
+      <div class="ip-frame">${promptText}</div>
+      <div class="ip-input-wrap">
+        <input class="ip-input" id="ipInput" type="text" maxlength="40" autocomplete="off" spellcheck="false">
+        <div class="ip-submit-hint" id="ipHint">press enter</div>
+      </div>
+      <div class="ip-linger" id="ipLinger">
+        <div class="ip-linger-text" id="ipLingerText"></div>
+      </div>
+    </div>
+  `;
+
+  // Show overlay, hide main layout
+  overlay.style.display = 'flex';
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+  devList.style.display = 'none';
+  if (typeof stopTurnAudio === 'function') stopTurnAudio(1);
+
+  // Trigger fade in
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+    });
+  });
+
+  const input = document.getElementById('ipInput');
+  const hint = document.getElementById('ipHint');
+  let submitted = false;
+
+  // Focus input once it's visible (~4.5s after overlay appears)
+  setTimeout(() => {
+    input.focus();
+  }, 4500);
+
+  // Show "press enter" hint once player starts typing
+  input.addEventListener('input', () => {
+    if (input.value.trim().length > 0 && !submitted) {
+      hint.classList.add('visible');
+    } else {
+      hint.classList.remove('visible');
+    }
+  });
+
+  // Handle submit
+  function submitAnswer() {
+    if (submitted) return;
+    const answer = input.value.trim();
+    if (!answer) return;
+    submitted = true;
+
+    // Log to questionsLog
+    state.questionsLog.push({
+      id: turnData.id,
+      text: answer,
+      mode: 'image-prompt'
+    });
+
+    // Hide input area and image
+    hint.classList.remove('visible');
+    input.style.opacity = '0';
+    input.style.transition = 'opacity 1s';
+    document.querySelector('#image-prompt-overlay .ip-frame').style.opacity = '0';
+    document.querySelector('#image-prompt-overlay .ip-frame').style.transition = 'opacity 1.5s';
+    document.querySelector('#image-prompt-overlay .ip-input-wrap').style.transition = 'opacity 1s';
+    document.querySelector('#image-prompt-overlay .ip-input-wrap').style.opacity = '0';
+    document.querySelector('#image-prompt-overlay .ip-image').style.transition = 'opacity 2s';
+    document.querySelector('#image-prompt-overlay .ip-image').style.opacity = '0';
+
+    // After image fades, show player's words alone
+    setTimeout(() => {
+      const linger = document.getElementById('ipLinger');
+      document.getElementById('ipLingerText').textContent = answer;
+      linger.classList.add('visible');
+
+      // Hold for 4 seconds, then fade out and advance
+      setTimeout(() => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          overlay.innerHTML = '';
+          wrap.style.display = '';
+          econBar.style.display = '';
+          devList.style.display = '';
+          goTo(state.turnIndex + 1);
+        }, 1600);
+      }, 4000);
+    }, 2000);
+  }
+
+  // Enter key submits
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      submitAnswer();
+    }
+  });
+
+  // Also allow tap on hint as mobile submit
+  hint.addEventListener('click', submitAnswer);
+}
+
 // ── NAVIGATION ──
 function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
@@ -3280,6 +3523,18 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderVideoPrompt(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
+  // ── IMAGE PROMPT — full-screen takeover ──
+  if (turn.questionMode === 'image-prompt') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderImagePrompt(turn);
     if (document.getElementById('devTurnList').classList.contains('open')) {
       renderDevTurnList();
     }

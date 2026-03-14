@@ -1070,17 +1070,17 @@
     {
       "id": "IP2",
       "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "[IMAGE PROMPT 2 — Teeser's photo, domestic quiet. Single-word interpretive options. NOT YET BUILT.]",
+      "questionMode": "video-prompt",
+      "questionText": "what soundtrack does your soul put to this scene?",
       "questionOpts": [
         {
-          "text": "[placeholder]"
+          "text": "sacral chant"
         },
         {
-          "text": "[placeholder]"
+          "text": "852 Hz frequency"
         },
         {
-          "text": "[placeholder]"
+          "text": "tibetan bowl"
         }
       ]
     },

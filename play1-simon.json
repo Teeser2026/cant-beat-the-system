@@ -344,6 +344,12 @@
           "Put the phone away. Some things aren’t meant to be saved. Just felt.",
           "Post about it. People should know this still exists. England isn’t dead yet."
         ]
+      },
+      "audio": {
+        "src": "bonfire-fireworks.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
       }
     },
     {

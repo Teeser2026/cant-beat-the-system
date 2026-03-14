@@ -280,22 +280,17 @@ html, body {
 }
 
 .zone:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 10%; right: 0; bottom: 10%;
-  width: 1px;
-  background: rgba(200,196,184,0.06);
-  z-index: 6;
+  content: none;
 }
 
 .zone-overlay {
   position: absolute; inset: 0;
   background: rgba(14,13,10,0);
-  transition: background 0.5s;
+  transition: background 0.8s;
   pointer-events: none;
 }
 
-.zones-hovering .zone .zone-overlay { background: rgba(14,13,10,0.35); }
+.zones-hovering .zone .zone-overlay { background: rgba(14,13,10,0.2); }
 .zones-hovering .zone:hover .zone-overlay { background: rgba(14,13,10,0); }
 .zone.playing .zone-overlay { background: rgba(196,149,106,0.03) !important; }
 .zone.dragging-active .zone-overlay { background: rgba(14,13,10,0.5) !important; }

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Sound Prompt v2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --text: #c8c4b8;
+  --dim: #6b6760;
+  --bright: #e8e4d8;
+  --warm: #c4956a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --div: #1a1816;
+  --card: #111110;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+
+/* ── SVG FILTER DEFS (hidden) ── */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ── LAYOUT ── */
+.sound-prompt {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 40px;
+  position: relative;
+}
+
+.prompt-inner {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── THE WORD ── */
+.the-word-wrap {
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 10;
+}
+
+.the-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: var(--dim);
+  user-select: none;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: all 1.5s ease;
+  opacity: 0;
+  animation: wordReveal 3s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* The cloud/glow behind the word — hidden until match */
+.word-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 140px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(40px);
+  transition: opacity 2.5s ease, width 2.5s ease, height 2.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.word-cloud.active {
+  opacity: 0.35;
+}
+
+/* Proximity glow — intensifies as drag gets closer */
+.word-proximity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(50px);
+  background: radial-gradient(ellipse, rgba(196,149,106,0.3), transparent 70%);
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Word state after match */
+.the-word.matched {
+  color: var(--bright);
+  letter-spacing: 5px;
+  text-shadow: 0 0 40px rgba(196,149,106,0.3);
+}
+
+/* ── INSTRUCTION ── */
+.instruction {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
+  color: var(--faint);
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 3s;
+  transition: opacity 1s;
+}
+
+/* ── SOUND PANELS ── */
+.panels {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.panel {
+  flex: 1;
+  aspect-ratio: 3/4;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s ease;
+  touch-action: none;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+}
+
+.panel.playing {
+  transform: translateY(-3px);
+}
+
+.panel.dragging-active {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.panel.matched-panel {
+  opacity: 1;
+  transform: none;
+}
+
+.panel.faded {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: all 1.5s ease;
+}
+
+/* Panel SVG background */
+.panel-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-bg svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Breathing glow overlay when playing */
+.panel-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s;
+  pointer-events: none;
+}
+
+.panel.playing .panel-glow {
+  opacity: 1;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Play indicator */
+.panel-play {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.2);
+  background: rgba(10,10,12,0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  z-index: 5;
+}
+
+.panel:hover .panel-play {
+  border-color: rgba(200,196,184,0.4);
+}
+
+.panel.playing .panel-play {
+  border-color: rgba(196,149,106,0.6);
+  background: rgba(10,10,12,0.7);
+}
+
+.panel-play svg {
+  width: 10px;
+  height: 10px;
+  fill: rgba(200,196,184,0.4);
+  transition: fill 0.4s;
+}
+
+.panel.playing .panel-play svg {
+  fill: var(--warm);
+}
+
+/* Progress — thin line at bottom of panel */
+.panel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm));
+  z-index: 5;
+  transition: none;
+}
+
+.panel.playing .panel-progress {
+  opacity: 1;
+}
+
+/* Drag hint — subtle grip dots */
+.panel-grip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 5;
+}
+
+.panel:hover .panel-grip {
+  opacity: 0.3;
+}
+
+.panel-grip span {
+  display: flex;
+  gap: 2px;
+}
+
+.panel-grip span i {
+  display: block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+/* ── DRAG GHOST ── */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  width: 80px;
+  height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0.85;
+  filter: blur(0px);
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+  display: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.drag-ghost.near-word {
+  filter: blur(8px);
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+.drag-ghost.very-near {
+  filter: blur(16px);
+  opacity: 0.3;
+  transform: scale(0.6);
+}
+
+.drag-ghost svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── AFTERMATH ── */
+.aftermath {
+  margin-top: 44px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 2;
+  color: var(--inner);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.aftermath.visible {
+  opacity: 1;
+}
+
+/* ── RESET ── */
+.reset-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: none;
+  border: 1px solid rgba(58,53,48,0.4);
+  padding: 8px 16px;
+  margin-top: 36px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+}
+
+.reset-btn:hover {
+  color: var(--dim);
+  border-color: var(--dim);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wordReveal {
+  0% { opacity: 0; letter-spacing: 14px; }
+  60% { opacity: 0.5; letter-spacing: 5px; }
+  100% { opacity: 1; letter-spacing: 3px; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeOutUp {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-30px) scale(0.8); filter: blur(12px); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 500px) {
+  .the-word { font-size: 42px; }
+  .panels { gap: 10px; }
+  .panel-play { width: 28px; height: 28px; }
+  .panel-play svg { width: 8px; height: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hidden SVG filters -->
+<svg class="svg-defs">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+</svg>
+
+<div class="sound-prompt">
+  <div class="prompt-inner">
+
+    <!-- THE WORD -->
+    <div class="the-word-wrap" id="wordWrap">
+      <div class="word-cloud" id="wordCloud"></div>
+      <div class="word-proximity" id="wordProximity"></div>
+      <div class="the-word" id="theWord">peace</div>
+    </div>
+
+    <div class="instruction" id="instruction">listen. then choose.</div>
+
+    <!-- THREE PANELS -->
+    <div class="panels" id="panels">
+
+      <!-- Panel 0: Gong — still water, concentric rings -->
+      <div class="panel" data-clip="0" id="panel-0">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="g0bg" cx="50%" cy="45%" r="70%">
+                <stop offset="0%" stop-color="#1a1f2a"/>
+                <stop offset="100%" stop-color="#0a0a0c"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g0bg)"/>
+            <!-- Still water — concentric rings -->
+            <circle cx="100" cy="130" r="12" fill="none" stroke="#2a3040" stroke-width="0.5" opacity="0.6"/>
+            <circle cx="100" cy="130" r="28" fill="none" stroke="#252d3a" stroke-width="0.4" opacity="0.5"/>
+            <circle cx="100" cy="130" r="48" fill="none" stroke="#202838" stroke-width="0.3" opacity="0.4"/>
+            <circle cx="100" cy="130" r="72" fill="none" stroke="#1c2434" stroke-width="0.3" opacity="0.3"/>
+            <circle cx="100" cy="130" r="98" fill="none" stroke="#182030" stroke-width="0.2" opacity="0.2"/>
+            <!-- Faint reflection -->
+            <ellipse cx="100" cy="130" rx="4" ry="3" fill="#3a4560" opacity="0.3"/>
+            <!-- Subtle mist at bottom -->
+            <ellipse cx="100" cy="240" rx="90" ry="30" fill="#151a24" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at center, rgba(42,48,64,0.4), transparent 70%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress" id="prog-0"></div>
+        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
+      </div>
+
+      <!-- Panel 1: Whale — deep ocean, soft vertical light -->
+      <div class="panel" data-clip="1" id="panel-1">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g1bg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0e1520"/>
+                <stop offset="50%" stop-color="#0c1a28"/>
+                <stop offset="100%" stop-color="#06090e"/>
+              </linearGradient>
+              <radialGradient id="g1light" cx="50%" cy="20%" r="50%">
+                <stop offset="0%" stop-color="#1a2a3a" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g1bg)"/>
+            <rect width="200" height="280" fill="url(#g1light)"/>
+            <!-- Vertical light shaft -->
+            <polygon points="88,0 112,0 108,280 92,280" fill="#121e2c" opacity="0.5"/>
+            <polygon points="94,0 106,0 104,280 96,280" fill="#162436" opacity="0.3"/>
+            <!-- Tiny particles -->
+            <circle cx="97" cy="80" r="1" fill="#2a3a4a" opacity="0.4"/>
+            <circle cx="105" cy="140" r="0.8" fill="#2a3a4a" opacity="0.3"/>
+            <circle cx="92" cy="200" r="1" fill="#243444" opacity="0.3"/>
+            <circle cx="110" cy="50" r="0.6" fill="#2a3a4a" opacity="0.4"/>
+            <circle cx="88" cy="170" r="0.7" fill="#243444" opacity="0.2"/>
+            <!-- Depth fade -->
+            <rect x="0" y="220" width="200" height="60" fill="url(#g1bg)" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 30%, rgba(26,42,58,0.5), transparent 70%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress" id="prog-1"></div>
+        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
+      </div>
+
+      <!-- Panel 2: Low chant — warm amber, stone/candlelight -->
+      <div class="panel" data-clip="2" id="panel-2">
+        <div class="panel-bg">
+          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="g2bg" cx="50%" cy="40%" r="65%">
+                <stop offset="0%" stop-color="#1e1610"/>
+                <stop offset="100%" stop-color="#0c0a08"/>
+              </radialGradient>
+              <radialGradient id="g2candle" cx="50%" cy="35%" r="30%">
+                <stop offset="0%" stop-color="#2a1e12" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <rect width="200" height="280" fill="url(#g2bg)"/>
+            <rect width="200" height="280" fill="url(#g2candle)"/>
+            <!-- Candle flame suggestion -->
+            <ellipse cx="100" cy="108" rx="3" ry="8" fill="#3a2a18" opacity="0.5"/>
+            <ellipse cx="100" cy="106" rx="1.5" ry="5" fill="#4a3820" opacity="0.4"/>
+            <!-- Stone texture — faint horizontal lines -->
+            <line x1="20" y1="180" x2="180" y2="180" stroke="#1a1510" stroke-width="0.4" opacity="0.4"/>
+            <line x1="30" y1="200" x2="170" y2="200" stroke="#1a1510" stroke-width="0.3" opacity="0.3"/>
+            <line x1="40" y1="220" x2="160" y2="220" stroke="#1a1510" stroke-width="0.3" opacity="0.25"/>
+            <line x1="25" y1="240" x2="175" y2="240" stroke="#1a1510" stroke-width="0.3" opacity="0.2"/>
+            <!-- Warm haze -->
+            <ellipse cx="100" cy="130" rx="60" ry="40" fill="#1e1610" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 35%, rgba(42,30,18,0.5), transparent 70%);"></div>
+        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+        <div class="panel-progress" id="prog-2"></div>
+        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
+      </div>
+
+    </div>
+
+    <div class="aftermath" id="aftermath"></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+
+  </div>
+</div>
+
+<!-- DRAG GHOST -->
+<div class="drag-ghost" id="dragGhost"></div>
+
+<script>
+// ══════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════
+const CLIPS = [
+  { file: 'gong.mp3', color: '#2a3040' },
+  { file: 'whale.mp3', color: '#1a2a3a' },
+  { file: 'lowchant.mp3', color: '#2a1e12' }
+];
+
+const AFTERMATH = [
+  'A single strike — and the silence after it holds everything.',
+  'Something vast, underneath. It was always there.',
+  'Voices older than language. The flame doesn\'t flicker.'
+];
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let audios = [];
+let currentPlaying = -1;
+let matched = -1;
+let isDragging = false;
+let dragIndex = -1;
+
+// ══════════════════════════════════════
+// INIT AUDIO
+// ══════════════════════════════════════
+CLIPS.forEach((c, i) => {
+  const audio = new Audio(c.file);
+  audio.preload = 'auto';
+
+  audio.addEventListener('ended', () => {
+    stopAll();
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('prog-' + i).style.width = pct + '%';
+    }
+  });
+
+  audios.push(audio);
+});
+
+// ══════════════════════════════════════
+// PLAYBACK
+// ══════════════════════════════════════
+function stopAll() {
+  audios.forEach((a, i) => {
+    a.pause();
+    a.currentTime = 0;
+    document.getElementById('prog-' + i).style.width = '0%';
+  });
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('playing'));
+  currentPlaying = -1;
+  updatePlayIcons();
+}
+
+function playClip(index) {
+  if (matched >= 0) return;
+  if (isDragging) return;
+
+  if (currentPlaying === index) {
+    stopAll();
+    return;
+  }
+
+  stopAll();
+  audios[index].play().catch(() => {});
+  currentPlaying = index;
+  document.getElementById('panel-' + index).classList.add('playing');
+  updatePlayIcons();
+}
+
+function updatePlayIcons() {
+  document.querySelectorAll('.panel-play').forEach((btn, i) => {
+    if (i === currentPlaying) {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>';
+    } else {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+    }
+  });
+}
+
+// Click to play
+document.querySelectorAll('.panel').forEach((panel, i) => {
+  panel.addEventListener('click', (e) => {
+    if (isDragging) return;
+    playClip(i);
+  });
+});
+
+// ══════════════════════════════════════
+// DRAG — POINTER EVENTS
+// ══════════════════════════════════════
+const dragGhost = document.getElementById('dragGhost');
+const wordWrap = document.getElementById('wordWrap');
+const wordCloud = document.getElementById('wordCloud');
+const wordProximity = document.getElementById('wordProximity');
+const theWord = document.getElementById('theWord');
+let longPressTimer = null;
+let pointerStartX = 0;
+let pointerStartY = 0;
+let hasMoved = false;
+
+document.querySelectorAll('.panel').forEach((panel, i) => {
+
+  panel.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.panel-play')) return;
+    if (matched >= 0) return;
+
+    pointerStartX = e.clientX;
+    pointerStartY = e.clientY;
+    hasMoved = false;
+
+    // Start drag after a small movement threshold (avoids conflicting with tap-to-play)
+    panel.setPointerCapture(e.pointerId);
+  });
+
+  panel.addEventListener('pointermove', (e) => {
+    if (matched >= 0) return;
+    if (!panel.hasPointerCapture(e.pointerId)) return;
+
+    const dx = e.clientX - pointerStartX;
+    const dy = e.clientY - pointerStartY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    // Threshold to start drag
+    if (!isDragging && dist > 10) {
+      isDragging = true;
+      hasMoved = true;
+      dragIndex = i;
+      panel.classList.add('dragging-active');
+
+      // Clone the panel's SVG into ghost
+      const svgEl = panel.querySelector('.panel-bg svg');
+      if (svgEl) {
+        dragGhost.innerHTML = svgEl.outerHTML;
+      }
+      dragGhost.style.display = 'block';
+
+      // Stop audio during drag
+      stopAll();
+    }
+
+    if (isDragging) {
+      e.preventDefault();
+      dragGhost.style.left = (e.clientX - 40) + 'px';
+      dragGhost.style.top = (e.clientY - 50) + 'px';
+
+      // Calculate proximity to word
+      const wordRect = wordWrap.getBoundingClientRect();
+      const wordCx = wordRect.left + wordRect.width / 2;
+      const wordCy = wordRect.top + wordRect.height / 2;
+      const distToWord = Math.sqrt(
+        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
+      );
+
+      // Proximity effects
+      if (distToWord < 80) {
+        dragGhost.className = 'drag-ghost very-near';
+        wordProximity.style.opacity = '0.8';
+        theWord.style.color = 'var(--bright)';
+      } else if (distToWord < 180) {
+        dragGhost.className = 'drag-ghost near-word';
+        const prox = 1 - ((distToWord - 80) / 100);
+        wordProximity.style.opacity = (prox * 0.5).toFixed(2);
+        theWord.style.color = 'var(--text)';
+      } else {
+        dragGhost.className = 'drag-ghost';
+        wordProximity.style.opacity = '0';
+        theWord.style.color = 'var(--dim)';
+      }
+    }
+  });
+
+  panel.addEventListener('pointerup', (e) => {
+    if (matched >= 0) return;
+
+    panel.classList.remove('dragging-active');
+
+    if (isDragging && dragIndex === i) {
+      // Check if dropped near word
+      const wordRect = wordWrap.getBoundingClientRect();
+      const wordCx = wordRect.left + wordRect.width / 2;
+      const wordCy = wordRect.top + wordRect.height / 2;
+      const distToWord = Math.sqrt(
+        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
+      );
+
+      if (distToWord < 100) {
+        completeMatch(i);
+      } else {
+        cancelDrag();
+      }
+    }
+
+    isDragging = false;
+    dragIndex = -1;
+  });
+
+  panel.addEventListener('pointercancel', () => {
+    panel.classList.remove('dragging-active');
+    cancelDrag();
+    isDragging = false;
+    dragIndex = -1;
+  });
+});
+
+function cancelDrag() {
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+  wordProximity.style.opacity = '0';
+  theWord.style.color = '';
+}
+
+// ══════════════════════════════════════
+// MATCH
+// ══════════════════════════════════════
+function completeMatch(index) {
+  matched = index;
+  stopAll();
+
+  // Ghost dissolves
+  dragGhost.style.transition = 'opacity 1s, filter 1s, transform 1s';
+  dragGhost.style.opacity = '0';
+  dragGhost.style.filter = 'blur(30px)';
+  dragGhost.style.transform = 'scale(0.3)';
+  setTimeout(() => {
+    dragGhost.style.display = 'none';
+    dragGhost.style.transition = '';
+    dragGhost.style.opacity = '';
+    dragGhost.style.filter = '';
+    dragGhost.style.transform = '';
+  }, 1200);
+
+  // Word absorbs
+  theWord.classList.add('matched');
+
+  // Cloud appears behind word in the colour of the chosen panel
+  wordCloud.style.background = `radial-gradient(ellipse, ${CLIPS[index].color}, transparent 70%)`;
+  wordCloud.classList.add('active');
+
+  wordProximity.style.opacity = '0';
+
+  // Fade instruction
+  document.getElementById('instruction').style.opacity = '0';
+
+  // Fade unchosen panels
+  document.querySelectorAll('.panel').forEach((p, i) => {
+    if (i === index) {
+      p.classList.add('matched-panel');
+      // Play the matched clip quietly
+      setTimeout(() => {
+        audios[index].volume = 0.4;
+        audios[index].play().catch(() => {});
+        p.classList.add('playing');
+        updatePlayIcons();
+      }, 800);
+    } else {
+      p.classList.add('faded');
+    }
+  });
+
+  // Aftermath
+  setTimeout(() => {
+    const aftermath = document.getElementById('aftermath');
+    aftermath.textContent = AFTERMATH[index];
+    aftermath.classList.add('visible');
+  }, 2000);
+
+  // Reset button
+  setTimeout(() => {
+    document.getElementById('resetBtn').style.display = 'inline-block';
+  }, 4000);
+}
+
+// ══════════════════════════════════════
+// RESET
+// ══════════════════════════════════════
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1;
+  isDragging = false;
+  dragIndex = -1;
+  stopAll();
+
+  audios.forEach(a => a.volume = 1);
+
+  document.querySelectorAll('.panel').forEach(p => {
+    p.classList.remove('matched-panel', 'faded', 'dragging-active', 'playing');
+    p.style.transition = '';
+  });
+
+  theWord.classList.remove('matched');
+  theWord.style.color = '';
+  wordCloud.classList.remove('active');
+  wordProximity.style.opacity = '0';
+
+  dragGhost.style.display = 'none';
+  dragGhost.className = 'drag-ghost';
+
+  document.getElementById('aftermath').classList.remove('visible');
+  document.getElementById('aftermath').textContent = '';
+  document.getElementById('resetBtn').style.display = 'none';
+  document.getElementById('instruction').style.opacity = '1';
+});
+</script>
+
+</body>
+</html>

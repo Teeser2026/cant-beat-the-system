@@ -1535,28 +1535,34 @@ body.game-active .ticker-bar { display: flex; }
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 3s ease;
   pointer-events: none;
 }
 #image-prompt-overlay .ip-linger.visible { opacity: 1; }
 #image-prompt-overlay .ip-linger-text {
   font-family: 'Crimson Pro', serif;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 300;
   font-style: italic;
   color: var(--bright);
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   text-align: center;
   padding: 0 20px;
+  animation: ipBreathe 4s ease-in-out infinite;
+  text-shadow: 0 0 60px rgba(196,149,106,0.08);
 }
 
 @keyframes ipFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ipBreathe {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 60px rgba(196,149,106,0.08); }
+  50% { transform: scale(1.03); text-shadow: 0 0 80px rgba(196,149,106,0.15); }
+}
 
 @media (max-width: 520px) {
   #image-prompt-overlay .ip-image { max-width: 90vw; max-height: 40vh; }
   #image-prompt-overlay .ip-frame { font-size: 22px; margin-top: 28px; }
   #image-prompt-overlay .ip-input { font-size: 20px; width: 260px; }
-  #image-prompt-overlay .ip-linger-text { font-size: 26px; }
+  #image-prompt-overlay .ip-linger-text { font-size: 36px; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -3395,8 +3401,8 @@ function renderImagePrompt(turnData) {
       <img class="ip-image" src="${imgSrc}" alt="" draggable="false">
       <div class="ip-frame">${promptText}</div>
       <div class="ip-input-wrap">
-        <input class="ip-input" id="ipInput" type="text" maxlength="40" autocomplete="off" spellcheck="false">
-        <div class="ip-submit-hint" id="ipHint">press enter</div>
+        <input class="ip-input" id="ipInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
+        <div class="ip-submit-hint" id="ipHint">one word — press enter</div>
       </div>
       <div class="ip-linger" id="ipLinger">
         <div class="ip-linger-text" id="ipLingerText"></div>
@@ -3429,6 +3435,8 @@ function renderImagePrompt(turnData) {
 
   // Show "press enter" hint once player starts typing
   input.addEventListener('input', () => {
+    // Enforce single word — silently strip spaces
+    input.value = input.value.replace(/\s/g, '');
     if (input.value.trim().length > 0 && !submitted) {
       hint.classList.add('visible');
     } else {
@@ -3467,7 +3475,7 @@ function renderImagePrompt(turnData) {
       document.getElementById('ipLingerText').textContent = answer;
       linger.classList.add('visible');
 
-      // Hold for 4 seconds, then fade out and advance
+      // Hold for 5 seconds, then fade out and advance
       setTimeout(() => {
         overlay.classList.remove('visible');
         setTimeout(() => {
@@ -3478,8 +3486,8 @@ function renderImagePrompt(turnData) {
           devList.style.display = '';
           goTo(state.turnIndex + 1);
         }, 1600);
-      }, 4000);
-    }, 2000);
+      }, 5000);
+    }, 3000);
   }
 
   // Enter key submits

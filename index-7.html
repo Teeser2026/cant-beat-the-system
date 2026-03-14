@@ -1461,7 +1461,7 @@ body.game-active .ticker-bar { display: flex; }
 /* Framing text */
 #video-prompt-overlay .vp-frame {
   font-family: 'Crimson Pro', serif;
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 300;
   font-style: italic;
   color: var(--dim);
@@ -2991,7 +2991,6 @@ function renderVideoPrompt(turnData) {
         ${VP_CLIPS.map((c, i) => `
         <div class="vp-sound-btn" data-clip="${i}" id="vpBtn${i}">
           <div class="vp-sound-circle">${playSVG}</div>
-          <div class="vp-sound-label">${c.label}</div>
           <div class="vp-sound-progress"><div class="vp-sound-progress-fill" id="vpProg${i}"></div></div>
         </div>`).join('')}
       </div>

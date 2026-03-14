@@ -242,19 +242,31 @@ html, body {
   line-height: 1.6;
   color: var(--bright);
   text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
+  transition: color 0.5s, text-shadow 0.5s, transform 0.5s;
 }
 
 .zone-aftermath-line:nth-child(2) {
   margin-top: 6px;
 }
 
-.zone-aftermath.visible .zone-aftermath-line {
-  transition: color 0.4s, text-shadow 0.4s;
+/* Dark scrim behind text for readability over bright panels */
+.zone-aftermath::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -30%; right: -30%; bottom: -40px;
+  background: radial-gradient(ellipse, rgba(14,13,10,0.6) 0%, rgba(14,13,10,0.3) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 4s;
+}
+.zone-aftermath.visible::before {
+  opacity: 1;
 }
 
 .zone-aftermath.visible:hover .zone-aftermath-line {
-  color: #f0ece0;
-  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 40px rgba(200,175,130,0.15);
+  color: #f5f1e5;
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 60px rgba(200,175,130,0.3);
 }
 
 /* ── ZONES ── */

@@ -1426,7 +1426,7 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 @media (max-width: 520px) {
-  #sound-prompt-overlay .sp-word { font-size: 48px; }
+  #sound-prompt-overlay .sp-word { font-size: 42px; }
   #sound-prompt-overlay .sp-frame { font-size: 16px; }
   #sound-prompt-overlay .sp-text-area { padding: 22px 16px 12px; }
   #sound-prompt-overlay .sp-aftermath-line { font-size: 24px; }
@@ -1434,6 +1434,282 @@ body.game-active .ticker-bar { display: flex; }
   #sound-prompt-overlay .sp-play svg { width: 14px; height: 14px; }
   #sound-prompt-overlay .sp-word-cloud { width: 280px; height: 130px; }
   #sound-prompt-overlay .sp-image-area { gap: 4px; }
+}
+
+/* ══════════════════════════════════════════════════════
+   VIDEO PROMPT — full-screen overlay
+   ══════════════════════════════════════════════════════ */
+#video-prompt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  overflow: hidden;
+}
+#video-prompt-overlay.visible { opacity: 1; }
+
+#video-prompt-overlay .vp-inner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Framing text */
+#video-prompt-overlay .vp-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 28px 20px 12px;
+  opacity: 0;
+  animation: vpFadeIn 2.5s ease forwards 0.3s;
+  z-index: 10;
+  position: relative;
+}
+
+/* Video area */
+#video-prompt-overlay .vp-video-area {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  animation: vpFadeIn 3s ease forwards 1.5s;
+}
+#video-prompt-overlay .vp-video-area video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#video-prompt-overlay .vp-video-glow {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s, box-shadow 1s;
+}
+#video-prompt-overlay .vp-video-glow.proximity-1 {
+  opacity: 1;
+  box-shadow: inset 0 0 60px 20px rgba(160,140,100,0.08);
+}
+#video-prompt-overlay .vp-video-glow.proximity-2 {
+  opacity: 1;
+  box-shadow: inset 0 0 80px 30px rgba(180,155,110,0.15);
+}
+#video-prompt-overlay .vp-video-glow.proximity-3 {
+  opacity: 1;
+  box-shadow: inset 0 0 100px 40px rgba(200,175,130,0.25);
+}
+#video-prompt-overlay .vp-video-glow.matched-glow {
+  opacity: 1;
+  box-shadow: inset 0 0 120px 50px rgba(200,175,130,0.12);
+  transition: all 3s ease;
+}
+
+/* Fade edges on video */
+#video-prompt-overlay .vp-fade-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+#video-prompt-overlay .vp-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 100px;
+  background: linear-gradient(to top, var(--bg), rgba(14,13,10,0.7) 50%, transparent);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Aftermath text */
+#video-prompt-overlay .vp-aftermath {
+  position: absolute;
+  top: 40%; left: 10%; right: 10%;
+  z-index: 20;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 4s;
+  pointer-events: none;
+}
+#video-prompt-overlay .vp-aftermath.visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+#video-prompt-overlay .vp-aftermath-line {
+  display: block;
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--bright);
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
+}
+#video-prompt-overlay .vp-aftermath-line:nth-child(2) { margin-top: 6px; }
+#video-prompt-overlay .vp-aftermath::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -30%; right: -30%; bottom: -40px;
+  background: radial-gradient(ellipse, rgba(14,13,10,0.6) 0%, rgba(14,13,10,0.3) 50%, transparent 75%);
+  pointer-events: none; z-index: -1;
+  opacity: 0; transition: opacity 4s;
+}
+#video-prompt-overlay .vp-aftermath.visible::before { opacity: 1; }
+#video-prompt-overlay .vp-aftermath.visible:hover .vp-aftermath-line {
+  color: var(--warm);
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 40px rgba(196,149,106,0.2);
+}
+
+/* Sound buttons row */
+#video-prompt-overlay .vp-sounds {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 20px 24px;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  animation: vpFadeIn 2s ease forwards 4s;
+}
+#video-prompt-overlay .vp-sound-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  transition: opacity 0.5s;
+}
+#video-prompt-overlay .vp-sound-btn.faded { opacity: 0.15; pointer-events: none; }
+#video-prompt-overlay .vp-sound-btn.matched-btn { opacity: 1; }
+
+#video-prompt-overlay .vp-sound-circle {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.25);
+  background: rgba(14,13,10,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+#video-prompt-overlay .vp-sound-btn:hover .vp-sound-circle {
+  border-color: rgba(200,196,184,0.4);
+  background: rgba(14,13,10,0.75);
+}
+#video-prompt-overlay .vp-sound-btn.playing .vp-sound-circle {
+  border-color: rgba(196,149,106,0.5);
+  background: rgba(14,13,10,0.75);
+}
+#video-prompt-overlay .vp-sound-circle svg {
+  width: 18px; height: 18px;
+  fill: rgba(200,196,184,0.5);
+  transition: fill 0.5s;
+}
+#video-prompt-overlay .vp-sound-btn.playing .vp-sound-circle svg { fill: var(--warm); }
+
+#video-prompt-overlay .vp-sound-label {
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(156,140,120,0.5);
+  transition: color 0.5s;
+}
+#video-prompt-overlay .vp-sound-btn.playing .vp-sound-label { color: var(--warm); }
+
+#video-prompt-overlay .vp-sound-progress {
+  width: 50px; height: 2px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+#video-prompt-overlay .vp-sound-progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  border-radius: 1px;
+}
+
+/* Instruction */
+#video-prompt-overlay .vp-instruction {
+  font-family: 'Crimson Pro', serif;
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(122,116,104,0.4);
+  text-align: center;
+  padding: 0 20px 4px;
+  opacity: 0;
+  animation: vpFadeIn 2s ease forwards 6.5s;
+  transition: opacity 1.5s;
+  z-index: 10;
+  position: relative;
+}
+
+/* Drag ghost */
+#video-prompt-overlay .vp-drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,196,184,0.3);
+  background: rgba(14,13,10,0.7);
+  backdrop-filter: blur(10px);
+  display: none;
+  opacity: 0.85;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+#video-prompt-overlay .vp-drag-ghost svg {
+  width: 18px; height: 18px;
+  fill: var(--warm);
+}
+#video-prompt-overlay .vp-drag-ghost.near-video { filter: blur(8px); opacity: 0.5; transform: scale(0.7); }
+#video-prompt-overlay .vp-drag-ghost.very-near { filter: blur(20px); opacity: 0.15; transform: scale(0.3); }
+
+/* Continue */
+#video-prompt-overlay .vp-continue {
+  position: absolute;
+  bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px; font-weight: 300; font-style: italic;
+  color: rgba(200,196,184,0.25);
+  background: none; border: none;
+  padding: 8px 16px; cursor: pointer;
+  transition: color 0.3s;
+  display: none;
+}
+#video-prompt-overlay .vp-continue:hover { color: rgba(200,196,184,0.5); }
+
+@keyframes vpFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 520px) {
+  #video-prompt-overlay .vp-frame { font-size: 18px; padding: 22px 16px 8px; }
+  #video-prompt-overlay .vp-aftermath-line { font-size: 24px; }
+  #video-prompt-overlay .vp-sound-circle { width: 54px; height: 54px; }
+  #video-prompt-overlay .vp-sounds { gap: 18px; padding: 12px 16px 18px; }
+  #video-prompt-overlay .vp-instruction { font-size: 15px; }
 }
 
 </style>
@@ -1516,6 +1792,9 @@ body.game-active .ticker-bar { display: flex; }
 
 <!-- ══ SOUND PROMPT OVERLAY ══ -->
 <div id="sound-prompt-overlay" style="display:none"></div>
+
+<!-- ══ VIDEO PROMPT OVERLAY ══ -->
+<div id="video-prompt-overlay" style="display:none"></div>
 
 <div class="noise"></div>
 
@@ -2395,7 +2674,7 @@ function renderSoundPrompt(turnData) {
         <div class="sp-word-wrap" id="spWordWrap">
           <div class="sp-word-cloud" id="spWordCloud"></div>
           <div class="sp-word-proximity" id="spWordProximity"></div>
-          <div class="sp-word" id="spWord">peace</div>
+          <div class="sp-word" id="spWord">tranquility</div>
         </div>
         <div class="sp-instruction" id="spInstruction">listen to each sound with your eyes closed \u2014 deep, slow breaths<br>then drag your chosen image to the word</div>
       </div>
@@ -2668,6 +2947,311 @@ function renderSoundPrompt(turnData) {
   });
 }
 
+// ══════════════════════════════════════════════════════
+// VIDEO PROMPT — full-screen immersive overlay
+// ══════════════════════════════════════════════════════
+
+function renderVideoPrompt(turnData) {
+  const overlay = document.getElementById('video-prompt-overlay');
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  const devList = document.getElementById('devTurnList');
+
+  const VP_CLIPS = [
+    { file: 'sacral-chant.mp3', label: 'chant' },
+    { file: 'frequency-852.mp3', label: 'frequency' },
+    { file: 'tibetan-bowl.mp3', label: 'bowl' }
+  ];
+
+  const VP_AFTERMATH = [
+    ['Voices woven into stone', 'The prayer was always here'],
+    ['A frequency older than hearing', 'The water already knew'],
+    ['One strike, then stillness', 'Everything the bowl holds is silence']
+  ];
+
+  const playSVG = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
+  const pauseSVG = '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>';
+
+  overlay.innerHTML = `
+    <div class="vp-inner">
+      <div class="vp-frame">what soundtrack does your soul put to this scene?</div>
+      <div class="vp-video-area" id="vpVideoArea">
+        <div class="vp-fade-top"></div>
+        <div class="vp-fade-bottom"></div>
+        <video id="vpVideo" muted playsinline></video>
+        <div class="vp-video-glow" id="vpGlow"></div>
+        <div class="vp-aftermath" id="vpAftermath">
+          <span class="vp-aftermath-line" id="vpAftL1"></span>
+          <span class="vp-aftermath-line" id="vpAftL2"></span>
+        </div>
+        <button class="vp-continue" id="vpContinue">continue</button>
+      </div>
+      <div class="vp-instruction" id="vpInstruction">listen \u2014 then drag your chosen sound onto the scene</div>
+      <div class="vp-sounds" id="vpSounds">
+        ${VP_CLIPS.map((c, i) => `
+        <div class="vp-sound-btn" data-clip="${i}" id="vpBtn${i}">
+          <div class="vp-sound-circle">${playSVG}</div>
+          <div class="vp-sound-label">${c.label}</div>
+          <div class="vp-sound-progress"><div class="vp-sound-progress-fill" id="vpProg${i}"></div></div>
+        </div>`).join('')}
+      </div>
+      <div class="vp-drag-ghost" id="vpDragGhost">${playSVG}</div>
+    </div>
+  `;
+
+  // Show overlay, hide main
+  overlay.style.display = 'block';
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+  devList.style.display = 'none';
+  if (typeof stopTurnAudio === 'function') stopTurnAudio(1);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+    });
+  });
+
+  // ── Video setup — play once, freeze on last frame ──
+  const vid = document.getElementById('vpVideo');
+  vid.src = 'temple-sea.mp4';
+  vid.loop = false;
+  vid.muted = true;
+  vid.playsInline = true;
+
+  // Start video after overlay fades in
+  setTimeout(() => {
+    vid.play().catch(() => {});
+  }, 1800);
+
+  // Freeze on last frame
+  vid.addEventListener('ended', () => {
+    // Seek to near-end to hold last frame
+    if (vid.duration) {
+      vid.currentTime = vid.duration - 0.01;
+    }
+  });
+
+  // ── Audio setup ──
+  const vpAudios = [];
+  let vpCurrentPlaying = -1;
+  let vpMatched = -1;
+  let vpIsDragging = false;
+  let vpDragIndex = -1;
+  let vpStartX = 0, vpStartY = 0;
+
+  VP_CLIPS.forEach((c, i) => {
+    const a = new Audio(c.file);
+    a.preload = 'auto';
+    a.addEventListener('ended', () => vpStopAll());
+    a.addEventListener('timeupdate', () => {
+      if (a.duration) {
+        const prog = document.getElementById('vpProg' + i);
+        if (prog) prog.style.width = ((a.currentTime / a.duration) * 100) + '%';
+      }
+    });
+    vpAudios.push(a);
+  });
+
+  function vpStopAll() {
+    vpAudios.forEach((a, i) => {
+      a.pause(); a.currentTime = 0;
+      const prog = document.getElementById('vpProg' + i);
+      if (prog) prog.style.width = '0%';
+    });
+    overlay.querySelectorAll('.vp-sound-btn').forEach(b => b.classList.remove('playing'));
+    vpCurrentPlaying = -1;
+    vpUpdateIcons();
+  }
+
+  function vpPlayClip(i) {
+    if (vpMatched >= 0 || vpIsDragging) return;
+    if (vpCurrentPlaying === i) { vpStopAll(); return; }
+    vpStopAll();
+    vpAudios[i].play().catch(() => {});
+    vpCurrentPlaying = i;
+    document.getElementById('vpBtn' + i).classList.add('playing');
+    vpUpdateIcons();
+  }
+
+  function vpUpdateIcons() {
+    overlay.querySelectorAll('.vp-sound-circle').forEach((circ, i) => {
+      circ.innerHTML = i === vpCurrentPlaying ? pauseSVG : playSVG;
+    });
+  }
+
+  // ── Sound button interactions ──
+  const vpVideoArea = document.getElementById('vpVideoArea');
+  const vpGlow = document.getElementById('vpGlow');
+  const vpDragGhost = document.getElementById('vpDragGhost');
+
+  overlay.querySelectorAll('.vp-sound-btn').forEach((btn, i) => {
+    btn.addEventListener('click', (e) => {
+      if (!vpIsDragging) vpPlayClip(i);
+    });
+
+    btn.addEventListener('pointerdown', (e) => {
+      if (vpMatched >= 0) return;
+      vpStartX = e.clientX; vpStartY = e.clientY;
+      btn.setPointerCapture(e.pointerId);
+    });
+
+    btn.addEventListener('pointermove', (e) => {
+      if (vpMatched >= 0 || !btn.hasPointerCapture(e.pointerId)) return;
+      const dist = Math.sqrt((e.clientX - vpStartX) ** 2 + (e.clientY - vpStartY) ** 2);
+
+      if (!vpIsDragging && dist > 14) {
+        vpIsDragging = true;
+        vpDragIndex = i;
+        vpStopAll();
+        // Play the dragged sound quietly during drag
+        vpAudios[i].volume = 0.25;
+        vpAudios[i].play().catch(() => {});
+        vpDragGhost.style.display = 'flex';
+      }
+
+      if (vpIsDragging) {
+        e.preventDefault();
+        vpDragGhost.style.left = (e.clientX - 32) + 'px';
+        vpDragGhost.style.top = (e.clientY - 32) + 'px';
+
+        // Proximity to video centre
+        const vr = vpVideoArea.getBoundingClientRect();
+        const vcx = vr.left + vr.width / 2, vcy = vr.top + vr.height / 2;
+        const dv = Math.sqrt((e.clientX - vcx) ** 2 + (e.clientY - vcy) ** 2);
+        const vMax = Math.max(vr.width, vr.height) * 0.5;
+
+        vpGlow.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+
+        if (dv < vMax * 0.25) {
+          vpDragGhost.className = 'vp-drag-ghost very-near';
+          vpGlow.classList.add('proximity-3');
+        } else if (dv < vMax * 0.5) {
+          vpDragGhost.className = 'vp-drag-ghost near-video';
+          vpGlow.classList.add('proximity-2');
+        } else if (dv < vMax * 0.8) {
+          vpDragGhost.className = 'vp-drag-ghost';
+          vpGlow.classList.add('proximity-1');
+        } else {
+          vpDragGhost.className = 'vp-drag-ghost';
+        }
+      }
+    });
+
+    btn.addEventListener('pointerup', (e) => {
+      if (vpMatched >= 0) return;
+      if (vpIsDragging && vpDragIndex === i) {
+        const vr = vpVideoArea.getBoundingClientRect();
+        const vcx = vr.left + vr.width / 2, vcy = vr.top + vr.height / 2;
+        const dv = Math.sqrt((e.clientX - vcx) ** 2 + (e.clientY - vcy) ** 2);
+        const vMax = Math.max(vr.width, vr.height) * 0.5;
+        if (dv < vMax * 0.5) {
+          vpCompleteMatch(i);
+        } else {
+          vpCancelDrag();
+        }
+      }
+      vpIsDragging = false; vpDragIndex = -1;
+    });
+
+    btn.addEventListener('pointercancel', () => {
+      vpCancelDrag(); vpIsDragging = false; vpDragIndex = -1;
+    });
+  });
+
+  function vpCancelDrag() {
+    vpDragGhost.style.display = 'none';
+    vpDragGhost.className = 'vp-drag-ghost';
+    vpGlow.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+    vpAudios.forEach(a => { a.pause(); a.currentTime = 0; });
+    vpCurrentPlaying = -1;
+    vpUpdateIcons();
+  }
+
+  function vpCompleteMatch(i) {
+    vpMatched = i;
+
+    // Fade ghost into video
+    vpDragGhost.style.transition = 'opacity 2.2s, filter 2.2s, transform 2.2s';
+    vpDragGhost.style.opacity = '0';
+    vpDragGhost.style.filter = 'blur(50px)';
+    vpDragGhost.style.transform = 'scale(0.05)';
+    setTimeout(() => { vpDragGhost.style.display = 'none'; vpDragGhost.style.cssText = ''; vpDragGhost.className = 'vp-drag-ghost'; }, 2400);
+
+    // Glow settles
+    vpGlow.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+    vpGlow.classList.add('matched-glow');
+
+    // Fade frame and instruction
+    document.getElementById('vpInstruction').style.opacity = '0';
+    overlay.querySelector('.vp-frame').style.transition = 'opacity 3s';
+    overlay.querySelector('.vp-frame').style.opacity = '0.1';
+
+    // Fade other buttons, highlight matched
+    overlay.querySelectorAll('.vp-sound-btn').forEach((b, j) => {
+      if (j === i) {
+        b.classList.add('matched-btn');
+      } else {
+        b.classList.add('faded');
+      }
+    });
+
+    // Play matched sound at full volume
+    vpAudios.forEach((a, j) => {
+      if (j !== i) { a.pause(); a.currentTime = 0; }
+    });
+    setTimeout(() => {
+      vpAudios[i].volume = 0.4;
+      vpAudios[i].currentTime = 0;
+      vpAudios[i].play().catch(() => {});
+      document.getElementById('vpBtn' + i).classList.add('playing');
+      vpUpdateIcons();
+    }, 800);
+
+    // Aftermath text
+    setTimeout(() => {
+      const am = document.getElementById('vpAftermath');
+      document.getElementById('vpAftL1').textContent = VP_AFTERMATH[i][0];
+      document.getElementById('vpAftL2').textContent = VP_AFTERMATH[i][1];
+      am.classList.add('visible');
+    }, 3500);
+
+    // Log
+    state.questionsLog.push({
+      id: turnData.id,
+      chosen: i,
+      text: VP_CLIPS[i].label,
+      mode: 'video-prompt'
+    });
+
+    // Continue button
+    setTimeout(() => {
+      document.getElementById('vpContinue').style.display = 'inline-block';
+    }, 7000);
+  }
+
+  // Aftermath click → continue
+  document.getElementById('vpAftermath').addEventListener('click', () => {
+    document.getElementById('vpContinue').click();
+  });
+
+  // Continue → tear down and advance
+  document.getElementById('vpContinue').addEventListener('click', () => {
+    vpAudios.forEach(a => { try { a.pause(); a.currentTime = 0; } catch(e){} });
+    try { vid.pause(); } catch(e){}
+
+    overlay.classList.remove('visible');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.innerHTML = '';
+      wrap.style.display = '';
+      econBar.style.display = '';
+      devList.style.display = '';
+      goTo(state.turnIndex + 1);
+    }, 1600);
+  });
+}
+
 // ── NAVIGATION ──
 function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
@@ -2685,7 +3269,18 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderSoundPrompt(turn);
-    // Update dev turn list if open
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
+  // ── VIDEO PROMPT — full-screen takeover ──
+  if (turn.questionMode === 'video-prompt') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderVideoPrompt(turn);
     if (document.getElementById('devTurnList').classList.contains('open')) {
       renderDevTurnList();
     }

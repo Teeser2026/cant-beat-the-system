@@ -162,16 +162,51 @@ html, body {
   flex: 1;
   position: relative;
   display: flex;
-  gap: 6px;
-  padding: 0 8px;
   opacity: 0;
   animation: fadeIn 3s ease forwards 4.5s;
   min-height: 280px;
 }
 
-.triptych-bg, .image-fade-top, .image-fade-bottom, .image-fade-left, .image-fade-right,
-.seam-blend-1, .seam-blend-2 {
-  display: none;
+.triptych-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('peace-triptych.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.image-fade-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 110px;
+  background: linear-gradient(to bottom, rgba(14,13,10,0.95), rgba(14,13,10,0.5) 50%, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(14,13,10,0.6), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-left {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, rgba(14,13,10,0.4), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-right {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50px;
+  background: linear-gradient(to left, rgba(14,13,10,0.4), transparent);
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* ── AFTERMATH — positioned within chosen zone ── */
@@ -243,51 +278,15 @@ html, body {
   cursor: pointer;
   touch-action: none;
   transition: all 0.5s;
-  overflow: hidden;
-}
-
-.zone-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* Feathered edges — each panel bleeds into dark gaps */
-.zone::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  box-shadow:
-    inset 14px 0 22px -8px rgba(14,13,10,0.8),
-    inset -14px 0 22px -8px rgba(14,13,10,0.8),
-    inset 0 80px 60px -40px rgba(14,13,10,0.9),
-    inset 0 -40px 40px -20px rgba(14,13,10,0.6);
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* Outer edges fade harder */
-.zone:first-child::before {
-  box-shadow:
-    inset 40px 0 40px -15px rgba(14,13,10,0.7),
-    inset -14px 0 22px -8px rgba(14,13,10,0.8),
-    inset 0 80px 60px -40px rgba(14,13,10,0.9),
-    inset 0 -40px 40px -20px rgba(14,13,10,0.6);
-}
-
-.zone:last-child::before {
-  box-shadow:
-    inset 14px 0 22px -8px rgba(14,13,10,0.8),
-    inset 40px 0 40px -15px rgba(14,13,10,0.7),
-    inset 0 80px 60px -40px rgba(14,13,10,0.9),
-    inset 0 -40px 40px -20px rgba(14,13,10,0.6);
 }
 
 .zone:not(:last-child)::after {
-  display: none; /* no divider lines needed now */
+  content: '';
+  position: absolute;
+  top: 10%; right: 0; bottom: 10%;
+  width: 1px;
+  background: rgba(200,196,184,0.06);
+  z-index: 6;
 }
 
 .zone-overlay {
@@ -424,9 +423,13 @@ html, body {
   </div>
 
   <div class="image-area" id="imageArea">
+    <div class="triptych-bg"></div>
+    <div class="image-fade-top"></div>
+    <div class="image-fade-bottom"></div>
+    <div class="image-fade-left"></div>
+    <div class="image-fade-right"></div>
 
     <div class="zone" data-clip="0" id="zone-0">
-      <img class="zone-img" src="peace-1.jpg" alt="">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-0">
         <span class="zone-aftermath-line" id="aftermath-0-l1"></span>
@@ -437,7 +440,6 @@ html, body {
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
     </div>
     <div class="zone" data-clip="1" id="zone-1">
-      <img class="zone-img" src="peace-2.jpg" alt="">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-1">
         <span class="zone-aftermath-line" id="aftermath-1-l1"></span>
@@ -448,7 +450,6 @@ html, body {
       <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
     </div>
     <div class="zone" data-clip="2" id="zone-2">
-      <img class="zone-img" src="peace-3.jpg" alt="">
       <div class="zone-overlay"></div>
       <div class="zone-aftermath" id="aftermath-2">
         <span class="zone-aftermath-line" id="aftermath-2-l1"></span>
@@ -470,9 +471,9 @@ html, body {
 
 <script>
 const CLIPS = [
-  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', img: 'peace-1.jpg' },
-  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', img: 'peace-2.jpg' },
-  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', img: 'peace-3.jpg' }
+  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', pos: '16.5% center' },
+  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', pos: '50% center' },
+  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', pos: '83.5% center' }
 ];
 
 const AFTERMATH = [
@@ -551,7 +552,7 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
       dragIndex = i;
       zone.classList.add('dragging-active');
       imageArea.classList.add('zones-hovering');
-      dragGhost.innerHTML = '<img class="ghost-img" src="' + CLIPS[i].img + '">';
+      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.png" style="object-position:' + CLIPS[i].pos + ';">';
       dragGhost.style.display = 'block';
       stopAll();
     }

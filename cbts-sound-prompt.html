@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBTS — Sound Prompt v2</title>
+<title>CBTS — Sound Prompt v8</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 
 :root {
-  --bg: #0a0a0c;
+  --bg: #0e0d0a;
   --text: #c8c4b8;
-  --dim: #6b6760;
+  --dim: #7a7468;
   --bright: #e8e4d8;
   --warm: #c4956a;
   --inner: #c49090;
   --faint: #3a3530;
-  --div: #1a1816;
-  --card: #111110;
+  --word-col: rgba(156,140,120,0.6);
+  --word-glow: rgba(140,120,90,0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,273 +29,300 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ── SVG FILTER DEFS (hidden) ── */
-.svg-defs {
-  position: absolute;
-  width: 0;
-  height: 0;
+/* ── LAYOUT ── */
+.sound-prompt {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   overflow: hidden;
 }
 
-/* ── LAYOUT ── */
-.sound-prompt {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 20px 40px;
-  position: relative;
-}
-
-.prompt-inner {
-  max-width: 520px;
-  width: 100%;
+/* ── TEXT AREA ── */
+.text-area {
+  padding: 32px 20px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  z-index: 10;
+  background: linear-gradient(to bottom,
+    #0e0d0a 0%,
+    rgba(14,13,10,0.92) 50%,
+    rgba(14,13,10,0.7) 80%,
+    transparent 100%
+  );
 }
 
-/* ── THE WORD ── */
+.the-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  opacity: 0;
+  animation: fadeIn 2.5s ease forwards 0.3s;
+  text-align: center;
+}
+
 .the-word-wrap {
   position: relative;
-  margin-bottom: 50px;
-  z-index: 10;
+  margin-bottom: 8px;
 }
 
 .the-word {
   font-family: 'Crimson Pro', serif;
-  font-size: 56px;
+  font-size: 88px;
   font-weight: 300;
   font-style: italic;
-  letter-spacing: 3px;
-  color: var(--dim);
+  letter-spacing: 8px;
+  color: var(--word-col);
   user-select: none;
   text-align: center;
   position: relative;
   z-index: 2;
-  transition: all 1.5s ease;
+  transition: all 1.8s ease;
   opacity: 0;
-  animation: wordReveal 3s ease forwards;
-  animation-delay: 0.4s;
+  animation: wordReveal 4s ease forwards 2.8s;
 }
 
-/* The cloud/glow behind the word — hidden until match */
+/* Ambient cloud */
 .word-cloud {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
-  height: 140px;
+  width: 380px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--word-glow), rgba(100,85,60,0.04), transparent 70%);
+  filter: blur(45px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 3.5s ease forwards 4s;
+  transition: opacity 1.2s, width 1.5s, height 1.5s, filter 1.5s, background 2s;
+}
+
+.word-cloud.proximity-1 {
+  width: 440px; height: 220px; opacity: 1; filter: blur(38px);
+  background: radial-gradient(ellipse, rgba(160,140,100,0.2), rgba(120,100,70,0.08), transparent 70%);
+}
+.word-cloud.proximity-2 {
+  width: 520px; height: 260px; opacity: 1; filter: blur(30px);
+  background: radial-gradient(ellipse, rgba(180,155,110,0.35), rgba(140,115,75,0.12), transparent 68%);
+}
+.word-cloud.proximity-3 {
+  width: 620px; height: 320px; opacity: 1; filter: blur(22px);
+  background: radial-gradient(ellipse, rgba(200,175,130,0.5), rgba(160,135,90,0.2), transparent 60%);
+}
+.word-cloud.matched-cloud {
+  width: 650px; height: 340px; opacity: 1; filter: blur(28px);
+  transition: all 3s ease;
+}
+
+.word-proximity {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; height: 120px;
   border-radius: 50%;
   opacity: 0;
   filter: blur(40px);
-  transition: opacity 2.5s ease, width 2.5s ease, height 2.5s ease;
+  background: radial-gradient(ellipse, rgba(232,228,216,0.12), transparent 70%);
+  transition: opacity 0.2s, width 0.3s, height 0.3s;
   z-index: 1;
   pointer-events: none;
 }
 
-.word-cloud.active {
-  opacity: 0.35;
-}
-
-/* Proximity glow — intensifies as drag gets closer */
-.word-proximity {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 120px;
-  border-radius: 50%;
-  opacity: 0;
-  filter: blur(50px);
-  background: radial-gradient(ellipse, rgba(196,149,106,0.3), transparent 70%);
-  transition: opacity 0.3s;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Word state after match */
 .the-word.matched {
   color: var(--bright);
-  letter-spacing: 5px;
-  text-shadow: 0 0 40px rgba(196,149,106,0.3);
+  letter-spacing: 10px;
+  text-shadow: 0 0 80px rgba(180,155,110,0.25);
 }
 
-/* ── INSTRUCTION ── */
 .instruction {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: lowercase;
-  color: var(--faint);
+  font-family: 'Crimson Pro', serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(122,116,104,0.45);
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 600px;
+  line-height: 1.9;
   opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 3s;
-  transition: opacity 1s;
+  animation: fadeIn 2s ease forwards 6s;
+  transition: opacity 1.5s;
 }
 
-/* ── SOUND PANELS ── */
-.panels {
-  width: 100%;
-  display: flex;
-  gap: 16px;
-  opacity: 0;
-  animation: fadeUp 2s ease forwards;
-  animation-delay: 2s;
-}
-
-.panel {
+/* ── IMAGE AREA ── */
+.image-area {
   flex: 1;
-  aspect-ratio: 3/4;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
   position: relative;
-  transition: all 0.6s ease;
+  display: flex;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards 4.5s;
+  min-height: 280px;
+}
+
+.triptych-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('peace-triptych.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.image-fade-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 110px;
+  background: linear-gradient(to bottom, rgba(14,13,10,0.95), rgba(14,13,10,0.5) 50%, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(14,13,10,0.6), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-left {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, rgba(14,13,10,0.4), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.image-fade-right {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50px;
+  background: linear-gradient(to left, rgba(14,13,10,0.4), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── AFTERMATH — positioned within chosen zone ── */
+.zone-aftermath {
+  position: absolute;
+  top: 28%;
+  left: 8%;
+  right: 8%;
+  z-index: 22;
+  pointer-events: none;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 4s;
+}
+
+/* Pond (zone 0) — push text lower, below the bright reflection */
+#zone-0 .zone-aftermath {
+  top: 40%;
+}
+
+.zone-aftermath.visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.zone-aftermath-line {
+  display: block;
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--bright);
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7);
+}
+
+.zone-aftermath-line:nth-child(2) {
+  margin-top: 6px;
+}
+
+.zone-aftermath.visible .zone-aftermath-line {
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.zone-aftermath.visible:hover .zone-aftermath-line {
+  color: #f0ece0;
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 40px rgba(200,175,130,0.15);
+}
+
+/* ── ZONES ── */
+.zone {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
   touch-action: none;
+  transition: all 0.5s;
 }
 
-.panel:hover {
-  transform: translateY(-2px);
-}
-
-.panel.playing {
-  transform: translateY(-3px);
-}
-
-.panel.dragging-active {
-  opacity: 0.6;
-  transform: scale(0.95);
-}
-
-.panel.matched-panel {
-  opacity: 1;
-  transform: none;
-}
-
-.panel.faded {
-  opacity: 0;
-  transform: scale(0.9);
-  pointer-events: none;
-  transition: all 1.5s ease;
-}
-
-/* Panel SVG background */
-.panel-bg {
+.zone:not(:last-child)::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 10%; right: 0; bottom: 10%;
+  width: 1px;
+  background: rgba(200,196,184,0.06);
+  z-index: 6;
 }
 
-.panel-bg svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Breathing glow overlay when playing */
-.panel-glow {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.8s;
+.zone-overlay {
+  position: absolute; inset: 0;
+  background: rgba(14,13,10,0);
+  transition: background 0.5s;
   pointer-events: none;
 }
 
-.panel.playing .panel-glow {
-  opacity: 1;
-  animation: breathe 3s ease-in-out infinite;
-}
+.zones-hovering .zone .zone-overlay { background: rgba(14,13,10,0.35); }
+.zones-hovering .zone:hover .zone-overlay { background: rgba(14,13,10,0); }
+.zone.playing .zone-overlay { background: rgba(196,149,106,0.03) !important; }
+.zone.dragging-active .zone-overlay { background: rgba(14,13,10,0.5) !important; }
+.zone.faded .zone-overlay { background: rgba(14,13,10,0.8) !important; transition: background 2.5s; }
+.zone.matched-zone .zone-overlay { background: rgba(14,13,10,0) !important; }
 
-/* Play indicator */
-.panel-play {
+.zone-play {
   position: absolute;
-  bottom: 14px;
-  left: 50%;
+  bottom: 28px; left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
+  width: 42px; height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(200,196,184,0.2);
-  background: rgba(10,10,12,0.5);
-  backdrop-filter: blur(4px);
+  border: 1px solid rgba(200,196,184,0.12);
+  background: rgba(14,13,10,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s;
-  z-index: 5;
+  transition: all 0.5s;
+  z-index: 8;
+  pointer-events: none;
+  opacity: 0.7;
 }
+.zone:hover .zone-play { border-color: rgba(200,196,184,0.3); background: rgba(14,13,10,0.4); opacity: 1; }
+.zone.playing .zone-play { border-color: rgba(196,149,106,0.45); background: rgba(14,13,10,0.45); opacity: 1; }
+.zone-play svg { width: 12px; height: 12px; fill: rgba(200,196,184,0.3); transition: fill 0.5s; }
+.zone.playing .zone-play svg { fill: var(--warm); }
 
-.panel:hover .panel-play {
-  border-color: rgba(200,196,184,0.4);
-}
-
-.panel.playing .panel-play {
-  border-color: rgba(196,149,106,0.6);
-  background: rgba(10,10,12,0.7);
-}
-
-.panel-play svg {
-  width: 10px;
-  height: 10px;
-  fill: rgba(200,196,184,0.4);
-  transition: fill 0.4s;
-}
-
-.panel.playing .panel-play svg {
-  fill: var(--warm);
-}
-
-/* Progress — thin line at bottom of panel */
-.panel-progress {
+.zone-progress {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: linear-gradient(90deg, transparent, var(--warm));
-  z-index: 5;
-  transition: none;
+  bottom: 0; left: 10%; width: 80%;
+  height: 2px; border-radius: 1px;
+  overflow: hidden; z-index: 8;
 }
-
-.panel.playing .panel-progress {
-  opacity: 1;
-}
-
-/* Drag hint — subtle grip dots */
-.panel-grip {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  opacity: 0;
-  transition: opacity 0.4s;
-  z-index: 5;
-}
-
-.panel:hover .panel-grip {
-  opacity: 0.3;
-}
-
-.panel-grip span {
-  display: flex;
-  gap: 2px;
-}
-
-.panel-grip span i {
-  display: block;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: var(--text);
+.zone-progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, transparent, var(--warm), transparent);
+  border-radius: 1px;
 }
 
 /* ── DRAG GHOST ── */
@@ -303,553 +330,360 @@ html, body {
   position: fixed;
   pointer-events: none;
   z-index: 1000;
-  width: 80px;
-  height: 100px;
-  border-radius: 4px;
+  width: 120px; height: 80px;
+  border-radius: 10px;
   overflow: hidden;
   opacity: 0.85;
-  filter: blur(0px);
   transition: filter 0.3s, opacity 0.3s, transform 0.3s;
   display: none;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 14px 50px rgba(0,0,0,0.5);
 }
-
-.drag-ghost.near-word {
-  filter: blur(8px);
-  opacity: 0.6;
-  transform: scale(0.8);
+.drag-ghost::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px 10px rgba(14,13,10,0.3);
+  pointer-events: none;
 }
-
-.drag-ghost.very-near {
-  filter: blur(16px);
-  opacity: 0.3;
-  transform: scale(0.6);
-}
-
-.drag-ghost svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* ── AFTERMATH ── */
-.aftermath {
-  margin-top: 44px;
-  font-family: 'Crimson Pro', serif;
-  font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 2;
-  color: var(--inner);
-  text-align: center;
-  opacity: 0;
-  transition: opacity 3s;
-}
-
-.aftermath.visible {
-  opacity: 1;
-}
+.drag-ghost .ghost-img { width: 100%; height: 100%; object-fit: cover; }
+.drag-ghost.near-word { filter: blur(12px); opacity: 0.4; transform: scale(0.6); }
+.drag-ghost.very-near { filter: blur(28px); opacity: 0.1; transform: scale(0.25); }
 
 /* ── RESET ── */
+.reset-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+}
 .reset-btn {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--faint);
+  font-family: 'Crimson Pro', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(200,196,184,0.25);
   background: none;
-  border: 1px solid rgba(58,53,48,0.4);
+  border: none;
   padding: 8px 16px;
-  margin-top: 36px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: color 0.3s;
   display: none;
 }
-
-.reset-btn:hover {
-  color: var(--dim);
-  border-color: var(--dim);
-}
+.reset-btn:hover { color: rgba(200,196,184,0.5); }
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
 @keyframes wordReveal {
-  0% { opacity: 0; letter-spacing: 14px; }
-  60% { opacity: 0.5; letter-spacing: 5px; }
-  100% { opacity: 1; letter-spacing: 3px; }
-}
-
-@keyframes breathe {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-@keyframes fadeOutUp {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-30px) scale(0.8); filter: blur(12px); }
+  0% { opacity: 0; letter-spacing: 20px; }
+  40% { opacity: 0.3; }
+  100% { opacity: 1; letter-spacing: 8px; }
 }
 
 /* ── MOBILE ── */
-@media (max-width: 500px) {
-  .the-word { font-size: 42px; }
-  .panels { gap: 10px; }
-  .panel-play { width: 28px; height: 28px; }
-  .panel-play svg { width: 8px; height: 8px; }
+@media (max-width: 520px) {
+  .the-word { font-size: 48px; }
+  .the-frame { font-size: 16px; }
+  .text-area { padding: 22px 16px 12px; }
+  .aftermath { font-size: 28px; max-width: 90%; }
+  .zone-play { width: 34px; height: 34px; bottom: 18px; }
+  .zone-play svg { width: 10px; height: 10px; }
+  .word-cloud { width: 280px; height: 130px; }
 }
 </style>
 </head>
 <body>
 
-<!-- Hidden SVG filters -->
-<svg class="svg-defs">
-  <defs>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-</svg>
-
 <div class="sound-prompt">
-  <div class="prompt-inner">
 
-    <!-- THE WORD -->
+  <div class="text-area">
+    <div class="the-frame">which sound brings you the most</div>
     <div class="the-word-wrap" id="wordWrap">
       <div class="word-cloud" id="wordCloud"></div>
       <div class="word-proximity" id="wordProximity"></div>
-      <div class="the-word" id="theWord">peace</div>
+      <div class="the-word" id="theWord">tranquility</div>
     </div>
-
-    <div class="instruction" id="instruction">listen. then choose.</div>
-
-    <!-- THREE PANELS -->
-    <div class="panels" id="panels">
-
-      <!-- Panel 0: Gong — still water, concentric rings -->
-      <div class="panel" data-clip="0" id="panel-0">
-        <div class="panel-bg">
-          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <radialGradient id="g0bg" cx="50%" cy="45%" r="70%">
-                <stop offset="0%" stop-color="#1a1f2a"/>
-                <stop offset="100%" stop-color="#0a0a0c"/>
-              </radialGradient>
-            </defs>
-            <rect width="200" height="280" fill="url(#g0bg)"/>
-            <!-- Still water — concentric rings -->
-            <circle cx="100" cy="130" r="12" fill="none" stroke="#2a3040" stroke-width="0.5" opacity="0.6"/>
-            <circle cx="100" cy="130" r="28" fill="none" stroke="#252d3a" stroke-width="0.4" opacity="0.5"/>
-            <circle cx="100" cy="130" r="48" fill="none" stroke="#202838" stroke-width="0.3" opacity="0.4"/>
-            <circle cx="100" cy="130" r="72" fill="none" stroke="#1c2434" stroke-width="0.3" opacity="0.3"/>
-            <circle cx="100" cy="130" r="98" fill="none" stroke="#182030" stroke-width="0.2" opacity="0.2"/>
-            <!-- Faint reflection -->
-            <ellipse cx="100" cy="130" rx="4" ry="3" fill="#3a4560" opacity="0.3"/>
-            <!-- Subtle mist at bottom -->
-            <ellipse cx="100" cy="240" rx="90" ry="30" fill="#151a24" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="panel-glow" style="background: radial-gradient(ellipse at center, rgba(42,48,64,0.4), transparent 70%);"></div>
-        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-        <div class="panel-progress" id="prog-0"></div>
-        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
-      </div>
-
-      <!-- Panel 1: Whale — deep ocean, soft vertical light -->
-      <div class="panel" data-clip="1" id="panel-1">
-        <div class="panel-bg">
-          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="g1bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0e1520"/>
-                <stop offset="50%" stop-color="#0c1a28"/>
-                <stop offset="100%" stop-color="#06090e"/>
-              </linearGradient>
-              <radialGradient id="g1light" cx="50%" cy="20%" r="50%">
-                <stop offset="0%" stop-color="#1a2a3a" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-            </defs>
-            <rect width="200" height="280" fill="url(#g1bg)"/>
-            <rect width="200" height="280" fill="url(#g1light)"/>
-            <!-- Vertical light shaft -->
-            <polygon points="88,0 112,0 108,280 92,280" fill="#121e2c" opacity="0.5"/>
-            <polygon points="94,0 106,0 104,280 96,280" fill="#162436" opacity="0.3"/>
-            <!-- Tiny particles -->
-            <circle cx="97" cy="80" r="1" fill="#2a3a4a" opacity="0.4"/>
-            <circle cx="105" cy="140" r="0.8" fill="#2a3a4a" opacity="0.3"/>
-            <circle cx="92" cy="200" r="1" fill="#243444" opacity="0.3"/>
-            <circle cx="110" cy="50" r="0.6" fill="#2a3a4a" opacity="0.4"/>
-            <circle cx="88" cy="170" r="0.7" fill="#243444" opacity="0.2"/>
-            <!-- Depth fade -->
-            <rect x="0" y="220" width="200" height="60" fill="url(#g1bg)" opacity="0.7"/>
-          </svg>
-        </div>
-        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 30%, rgba(26,42,58,0.5), transparent 70%);"></div>
-        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-        <div class="panel-progress" id="prog-1"></div>
-        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
-      </div>
-
-      <!-- Panel 2: Low chant — warm amber, stone/candlelight -->
-      <div class="panel" data-clip="2" id="panel-2">
-        <div class="panel-bg">
-          <svg viewBox="0 0 200 280" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <radialGradient id="g2bg" cx="50%" cy="40%" r="65%">
-                <stop offset="0%" stop-color="#1e1610"/>
-                <stop offset="100%" stop-color="#0c0a08"/>
-              </radialGradient>
-              <radialGradient id="g2candle" cx="50%" cy="35%" r="30%">
-                <stop offset="0%" stop-color="#2a1e12" stop-opacity="0.7"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-            </defs>
-            <rect width="200" height="280" fill="url(#g2bg)"/>
-            <rect width="200" height="280" fill="url(#g2candle)"/>
-            <!-- Candle flame suggestion -->
-            <ellipse cx="100" cy="108" rx="3" ry="8" fill="#3a2a18" opacity="0.5"/>
-            <ellipse cx="100" cy="106" rx="1.5" ry="5" fill="#4a3820" opacity="0.4"/>
-            <!-- Stone texture — faint horizontal lines -->
-            <line x1="20" y1="180" x2="180" y2="180" stroke="#1a1510" stroke-width="0.4" opacity="0.4"/>
-            <line x1="30" y1="200" x2="170" y2="200" stroke="#1a1510" stroke-width="0.3" opacity="0.3"/>
-            <line x1="40" y1="220" x2="160" y2="220" stroke="#1a1510" stroke-width="0.3" opacity="0.25"/>
-            <line x1="25" y1="240" x2="175" y2="240" stroke="#1a1510" stroke-width="0.3" opacity="0.2"/>
-            <!-- Warm haze -->
-            <ellipse cx="100" cy="130" rx="60" ry="40" fill="#1e1610" opacity="0.4"/>
-          </svg>
-        </div>
-        <div class="panel-glow" style="background: radial-gradient(ellipse at 50% 35%, rgba(42,30,18,0.5), transparent 70%);"></div>
-        <div class="panel-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-        <div class="panel-progress" id="prog-2"></div>
-        <div class="panel-grip"><span><i></i><i></i></span><span><i></i><i></i></span><span><i></i><i></i></span></div>
-      </div>
-
-    </div>
-
-    <div class="aftermath" id="aftermath"></div>
-    <button class="reset-btn" id="resetBtn">Reset</button>
-
+    <div class="instruction" id="instruction">listen to each sound with your eyes closed — deep, slow breaths<br>then drag your chosen image to the word</div>
   </div>
+
+  <div class="image-area" id="imageArea">
+    <div class="triptych-bg"></div>
+    <div class="image-fade-top"></div>
+    <div class="image-fade-bottom"></div>
+    <div class="image-fade-left"></div>
+    <div class="image-fade-right"></div>
+
+    <div class="zone" data-clip="0" id="zone-0">
+      <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-0">
+        <span class="zone-aftermath-line" id="aftermath-0-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-0-l2"></span>
+      </div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-0"></div></div>
+    </div>
+    <div class="zone" data-clip="1" id="zone-1">
+      <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-1">
+        <span class="zone-aftermath-line" id="aftermath-1-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-1-l2"></span>
+      </div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-1"></div></div>
+    </div>
+    <div class="zone" data-clip="2" id="zone-2">
+      <div class="zone-overlay"></div>
+      <div class="zone-aftermath" id="aftermath-2">
+        <span class="zone-aftermath-line" id="aftermath-2-l1"></span>
+        <span class="zone-aftermath-line" id="aftermath-2-l2"></span>
+      </div>
+      <div class="zone-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+      <div class="zone-progress"><div class="zone-progress-fill" id="prog-2"></div></div>
+    </div>
+
+    <div class="reset-wrap">
+      <button class="reset-btn" id="resetBtn">reset</button>
+    </div>
+  </div>
+
 </div>
 
-<!-- DRAG GHOST -->
 <div class="drag-ghost" id="dragGhost"></div>
 
 <script>
-// ══════════════════════════════════════
-// CONFIG
-// ══════════════════════════════════════
 const CLIPS = [
-  { file: 'gong.mp3', color: '#2a3040' },
-  { file: 'whale.mp3', color: '#1a2a3a' },
-  { file: 'lowchant.mp3', color: '#2a1e12' }
+  { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', pos: '16.5% center' },
+  { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', pos: '50% center' },
+  { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', pos: '83.5% center' }
 ];
 
 const AFTERMATH = [
-  'A single strike — and the silence after it holds everything.',
-  'Something vast, underneath. It was always there.',
-  'Voices older than language. The flame doesn\'t flicker.'
+  ['A single strike', 'The silence after it holds everything'],
+  ['Something vast, underneath', 'It was always there'],
+  ['Voices older than language', 'The flame doesn\'t flicker']
 ];
 
-// ══════════════════════════════════════
-// STATE
-// ══════════════════════════════════════
-let audios = [];
-let currentPlaying = -1;
-let matched = -1;
-let isDragging = false;
-let dragIndex = -1;
+let audios = [], currentPlaying = -1, matched = -1, isDragging = false, dragIndex = -1;
+let startX = 0, startY = 0;
 
-// ══════════════════════════════════════
-// INIT AUDIO
-// ══════════════════════════════════════
 CLIPS.forEach((c, i) => {
-  const audio = new Audio(c.file);
-  audio.preload = 'auto';
-
-  audio.addEventListener('ended', () => {
-    stopAll();
+  const a = new Audio(c.file);
+  a.preload = 'auto';
+  a.addEventListener('ended', () => stopAll());
+  a.addEventListener('timeupdate', () => {
+    if (a.duration) document.getElementById('prog-' + i).style.width = ((a.currentTime / a.duration) * 100) + '%';
   });
-
-  audio.addEventListener('timeupdate', () => {
-    if (audio.duration) {
-      const pct = (audio.currentTime / audio.duration) * 100;
-      document.getElementById('prog-' + i).style.width = pct + '%';
-    }
-  });
-
-  audios.push(audio);
+  audios.push(a);
 });
 
-// ══════════════════════════════════════
-// PLAYBACK
-// ══════════════════════════════════════
 function stopAll() {
-  audios.forEach((a, i) => {
-    a.pause();
-    a.currentTime = 0;
-    document.getElementById('prog-' + i).style.width = '0%';
-  });
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('playing'));
-  currentPlaying = -1;
-  updatePlayIcons();
+  audios.forEach((a, i) => { a.pause(); a.currentTime = 0; document.getElementById('prog-' + i).style.width = '0%'; });
+  document.querySelectorAll('.zone').forEach(z => z.classList.remove('playing'));
+  currentPlaying = -1; updateIcons();
 }
 
-function playClip(index) {
-  if (matched >= 0) return;
-  if (isDragging) return;
-
-  if (currentPlaying === index) {
-    stopAll();
-    return;
-  }
-
+function playClip(i) {
+  if (matched >= 0 || isDragging) return;
+  if (currentPlaying === i) { stopAll(); return; }
   stopAll();
-  audios[index].play().catch(() => {});
-  currentPlaying = index;
-  document.getElementById('panel-' + index).classList.add('playing');
-  updatePlayIcons();
+  audios[i].play().catch(() => {});
+  currentPlaying = i;
+  document.getElementById('zone-' + i).classList.add('playing');
+  updateIcons();
 }
 
-function updatePlayIcons() {
-  document.querySelectorAll('.panel-play').forEach((btn, i) => {
-    if (i === currentPlaying) {
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>';
-    } else {
-      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
-    }
+function updateIcons() {
+  document.querySelectorAll('.zone-play').forEach((btn, i) => {
+    btn.innerHTML = i === currentPlaying
+      ? '<svg viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>';
   });
 }
 
-// Click to play
-document.querySelectorAll('.panel').forEach((panel, i) => {
-  panel.addEventListener('click', (e) => {
-    if (isDragging) return;
-    playClip(i);
-  });
+const imageArea = document.getElementById('imageArea');
+document.querySelectorAll('.zone').forEach(z => {
+  z.addEventListener('mouseenter', () => { if (matched < 0) imageArea.classList.add('zones-hovering'); });
+  z.addEventListener('mouseleave', () => { if (!isDragging && matched < 0) imageArea.classList.remove('zones-hovering'); });
 });
 
-// ══════════════════════════════════════
-// DRAG — POINTER EVENTS
-// ══════════════════════════════════════
+document.querySelectorAll('.zone').forEach((zone, i) => {
+  zone.addEventListener('click', () => { if (!isDragging) playClip(i); });
+});
+
 const dragGhost = document.getElementById('dragGhost');
 const wordWrap = document.getElementById('wordWrap');
 const wordCloud = document.getElementById('wordCloud');
 const wordProximity = document.getElementById('wordProximity');
 const theWord = document.getElementById('theWord');
-let longPressTimer = null;
-let pointerStartX = 0;
-let pointerStartY = 0;
-let hasMoved = false;
 
-document.querySelectorAll('.panel').forEach((panel, i) => {
+document.querySelectorAll('.zone').forEach((zone, i) => {
 
-  panel.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.panel-play')) return;
+  zone.addEventListener('pointerdown', (e) => {
     if (matched >= 0) return;
-
-    pointerStartX = e.clientX;
-    pointerStartY = e.clientY;
-    hasMoved = false;
-
-    // Start drag after a small movement threshold (avoids conflicting with tap-to-play)
-    panel.setPointerCapture(e.pointerId);
+    startX = e.clientX; startY = e.clientY;
+    zone.setPointerCapture(e.pointerId);
   });
 
-  panel.addEventListener('pointermove', (e) => {
-    if (matched >= 0) return;
-    if (!panel.hasPointerCapture(e.pointerId)) return;
+  zone.addEventListener('pointermove', (e) => {
+    if (matched >= 0 || !zone.hasPointerCapture(e.pointerId)) return;
+    const dist = Math.sqrt((e.clientX - startX) ** 2 + (e.clientY - startY) ** 2);
 
-    const dx = e.clientX - pointerStartX;
-    const dy = e.clientY - pointerStartY;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-
-    // Threshold to start drag
-    if (!isDragging && dist > 10) {
+    if (!isDragging && dist > 14) {
       isDragging = true;
-      hasMoved = true;
       dragIndex = i;
-      panel.classList.add('dragging-active');
-
-      // Clone the panel's SVG into ghost
-      const svgEl = panel.querySelector('.panel-bg svg');
-      if (svgEl) {
-        dragGhost.innerHTML = svgEl.outerHTML;
-      }
+      zone.classList.add('dragging-active');
+      imageArea.classList.add('zones-hovering');
+      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.png" style="object-position:' + CLIPS[i].pos + ';">';
       dragGhost.style.display = 'block';
-
-      // Stop audio during drag
       stopAll();
     }
 
     if (isDragging) {
       e.preventDefault();
-      dragGhost.style.left = (e.clientX - 40) + 'px';
-      dragGhost.style.top = (e.clientY - 50) + 'px';
+      dragGhost.style.left = (e.clientX - 60) + 'px';
+      dragGhost.style.top = (e.clientY - 40) + 'px';
 
-      // Calculate proximity to word
-      const wordRect = wordWrap.getBoundingClientRect();
-      const wordCx = wordRect.left + wordRect.width / 2;
-      const wordCy = wordRect.top + wordRect.height / 2;
-      const distToWord = Math.sqrt(
-        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
-      );
+      const wr = wordWrap.getBoundingClientRect();
+      const wcx = wr.left + wr.width / 2, wcy = wr.top + wr.height / 2;
+      const dw = Math.sqrt((e.clientX - wcx) ** 2 + (e.clientY - wcy) ** 2);
 
-      // Proximity effects
-      if (distToWord < 80) {
+      wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+
+      if (dw < 70) {
         dragGhost.className = 'drag-ghost very-near';
-        wordProximity.style.opacity = '0.8';
+        wordCloud.classList.add('proximity-3');
+        wordProximity.style.opacity = '0.9';
+        wordProximity.style.width = '280px';
+        wordProximity.style.height = '160px';
         theWord.style.color = 'var(--bright)';
-      } else if (distToWord < 180) {
+        theWord.style.letterSpacing = '12px';
+        
+      } else if (dw < 160) {
         dragGhost.className = 'drag-ghost near-word';
-        const prox = 1 - ((distToWord - 80) / 100);
-        wordProximity.style.opacity = (prox * 0.5).toFixed(2);
+        wordCloud.classList.add('proximity-2');
+        const prox = 1 - (dw - 70) / 90;
+        wordProximity.style.opacity = (prox * 0.6).toFixed(2);
+        wordProximity.style.width = (200 + prox * 60) + 'px';
+        wordProximity.style.height = (120 + prox * 30) + 'px';
         theWord.style.color = 'var(--text)';
+        theWord.style.letterSpacing = (6 + prox * 4) + 'px';
+        
+      } else if (dw < 300) {
+        dragGhost.className = 'drag-ghost';
+        wordCloud.classList.add('proximity-1');
+        wordProximity.style.opacity = '0';
+        theWord.style.color = 'rgba(156,140,120,0.55)';
+        theWord.style.letterSpacing = '6px';
+        
       } else {
         dragGhost.className = 'drag-ghost';
         wordProximity.style.opacity = '0';
-        theWord.style.color = 'var(--dim)';
+        theWord.style.color = '';
+        theWord.style.letterSpacing = '';
+        
       }
     }
   });
 
-  panel.addEventListener('pointerup', (e) => {
+  zone.addEventListener('pointerup', (e) => {
     if (matched >= 0) return;
-
-    panel.classList.remove('dragging-active');
-
+    zone.classList.remove('dragging-active');
     if (isDragging && dragIndex === i) {
-      // Check if dropped near word
-      const wordRect = wordWrap.getBoundingClientRect();
-      const wordCx = wordRect.left + wordRect.width / 2;
-      const wordCy = wordRect.top + wordRect.height / 2;
-      const distToWord = Math.sqrt(
-        Math.pow(e.clientX - wordCx, 2) + Math.pow(e.clientY - wordCy, 2)
-      );
-
-      if (distToWord < 100) {
-        completeMatch(i);
-      } else {
-        cancelDrag();
-      }
+      const wr = wordWrap.getBoundingClientRect();
+      const dw = Math.sqrt((e.clientX - (wr.left + wr.width / 2)) ** 2 + (e.clientY - (wr.top + wr.height / 2)) ** 2);
+      if (dw < 120) { completeMatch(i); } else { cancelDrag(); }
     }
-
-    isDragging = false;
-    dragIndex = -1;
+    isDragging = false; dragIndex = -1;
+    imageArea.classList.remove('zones-hovering');
   });
 
-  panel.addEventListener('pointercancel', () => {
-    panel.classList.remove('dragging-active');
-    cancelDrag();
-    isDragging = false;
-    dragIndex = -1;
+  zone.addEventListener('pointercancel', () => {
+    zone.classList.remove('dragging-active');
+    cancelDrag(); isDragging = false; dragIndex = -1;
+    imageArea.classList.remove('zones-hovering');
   });
 });
 
 function cancelDrag() {
   dragGhost.style.display = 'none';
   dragGhost.className = 'drag-ghost';
+  wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
   wordProximity.style.opacity = '0';
-  theWord.style.color = '';
+  wordProximity.style.width = ''; wordProximity.style.height = '';
+  theWord.style.color = ''; theWord.style.letterSpacing = ''; 
 }
 
-// ══════════════════════════════════════
-// MATCH
-// ══════════════════════════════════════
-function completeMatch(index) {
-  matched = index;
+function completeMatch(i) {
+  matched = i;
   stopAll();
 
-  // Ghost dissolves
-  dragGhost.style.transition = 'opacity 1s, filter 1s, transform 1s';
+  dragGhost.style.transition = 'opacity 2.2s, filter 2.2s, transform 2.2s';
   dragGhost.style.opacity = '0';
-  dragGhost.style.filter = 'blur(30px)';
-  dragGhost.style.transform = 'scale(0.3)';
-  setTimeout(() => {
-    dragGhost.style.display = 'none';
-    dragGhost.style.transition = '';
-    dragGhost.style.opacity = '';
-    dragGhost.style.filter = '';
-    dragGhost.style.transform = '';
-  }, 1200);
+  dragGhost.style.filter = 'blur(50px)';
+  dragGhost.style.transform = 'scale(0.05)';
+  setTimeout(() => { dragGhost.style.display = 'none'; dragGhost.style.cssText = ''; dragGhost.className = 'drag-ghost'; }, 2400);
 
-  // Word absorbs
   theWord.classList.add('matched');
+  theWord.style.letterSpacing = '10px';
+  
 
-  // Cloud appears behind word in the colour of the chosen panel
-  wordCloud.style.background = `radial-gradient(ellipse, ${CLIPS[index].color}, transparent 70%)`;
-  wordCloud.classList.add('active');
-
+  wordCloud.classList.remove('proximity-1', 'proximity-2', 'proximity-3');
+  wordCloud.style.background = 'radial-gradient(ellipse, ' + CLIPS[i].color + ', rgba(80,60,30,0.1), transparent 65%)';
+  wordCloud.classList.add('matched-cloud');
   wordProximity.style.opacity = '0';
 
-  // Fade instruction
   document.getElementById('instruction').style.opacity = '0';
+  document.querySelector('.the-frame').style.transition = 'opacity 3s';
+  document.querySelector('.the-frame').style.opacity = '0.1';
 
-  // Fade unchosen panels
-  document.querySelectorAll('.panel').forEach((p, i) => {
-    if (i === index) {
-      p.classList.add('matched-panel');
-      // Play the matched clip quietly
-      setTimeout(() => {
-        audios[index].volume = 0.4;
-        audios[index].play().catch(() => {});
-        p.classList.add('playing');
-        updatePlayIcons();
-      }, 800);
+  document.querySelectorAll('.zone').forEach((z, j) => {
+    if (j === i) {
+      z.classList.add('matched-zone');
+      setTimeout(() => { audios[i].volume = 0.3; audios[i].play().catch(() => {}); z.classList.add('playing'); updateIcons(); }, 1500);
     } else {
-      p.classList.add('faded');
+      z.classList.add('faded');
     }
   });
 
-  // Aftermath
+  // Aftermath text in chosen zone — two lines
   setTimeout(() => {
-    const aftermath = document.getElementById('aftermath');
-    aftermath.textContent = AFTERMATH[index];
-    aftermath.classList.add('visible');
-  }, 2000);
+    const am = document.getElementById('aftermath-' + i);
+    document.getElementById('aftermath-' + i + '-l1').textContent = AFTERMATH[i][0];
+    document.getElementById('aftermath-' + i + '-l2').textContent = AFTERMATH[i][1];
+    am.classList.add('visible');
+  }, 3500);
 
-  // Reset button
-  setTimeout(() => {
-    document.getElementById('resetBtn').style.display = 'inline-block';
-  }, 4000);
+  setTimeout(() => { document.getElementById('resetBtn').style.display = 'inline-block'; }, 7000);
 }
 
-// ══════════════════════════════════════
-// RESET
-// ══════════════════════════════════════
-document.getElementById('resetBtn').addEventListener('click', () => {
-  matched = -1;
-  isDragging = false;
-  dragIndex = -1;
-  stopAll();
-
-  audios.forEach(a => a.volume = 1);
-
-  document.querySelectorAll('.panel').forEach(p => {
-    p.classList.remove('matched-panel', 'faded', 'dragging-active', 'playing');
-    p.style.transition = '';
+// Click-to-continue on aftermath
+document.querySelectorAll('.zone-aftermath').forEach(am => {
+  am.addEventListener('click', () => {
+    // In prototype: reset. In engine: advance to next turn.
+    document.getElementById('resetBtn').click();
   });
+});
 
-  theWord.classList.remove('matched');
-  theWord.style.color = '';
-  wordCloud.classList.remove('active');
-  wordProximity.style.opacity = '0';
-
-  dragGhost.style.display = 'none';
-  dragGhost.className = 'drag-ghost';
-
-  document.getElementById('aftermath').classList.remove('visible');
-  document.getElementById('aftermath').textContent = '';
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1; isDragging = false; dragIndex = -1;
+  stopAll(); audios.forEach(a => a.volume = 1);
+  document.querySelectorAll('.zone').forEach(z => z.classList.remove('matched-zone', 'faded', 'dragging-active', 'playing'));
+  document.querySelectorAll('.zone-aftermath').forEach(am => {
+    am.classList.remove('visible');
+    am.querySelectorAll('.zone-aftermath-line').forEach(l => l.textContent = '');
+  });
+  theWord.classList.remove('matched'); theWord.style.color = ''; theWord.style.letterSpacing = '';
+  wordCloud.classList.remove('matched-cloud', 'proximity-1', 'proximity-2', 'proximity-3');
+  wordCloud.style.background = '';
+  wordProximity.style.opacity = '0'; wordProximity.style.width = ''; wordProximity.style.height = '';
+  dragGhost.style.display = 'none'; dragGhost.className = 'drag-ghost';
+  document.querySelector('.the-frame').style.opacity = '';
   document.getElementById('resetBtn').style.display = 'none';
   document.getElementById('instruction').style.opacity = '1';
+  imageArea.classList.remove('zones-hovering');
 });
 </script>
 

@@ -209,23 +209,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Seam blenders — soft dark strips over the triptych joins */
-.seam-blend {
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 50px;
-  background: linear-gradient(to right,
-    transparent,
-    rgba(14,13,10,0.45) 30%,
-    rgba(14,13,10,0.5) 50%,
-    rgba(14,13,10,0.45) 70%,
-    transparent
-  );
-  z-index: 3;
-  pointer-events: none;
-}
-.seam-blend-1 { left: calc(33.33% - 25px); }
-.seam-blend-2 { left: calc(66.66% - 25px); }
+/* (seam blends removed — triptych edges read as intentional) */
 
 /* ── AFTERMATH — positioned within chosen zone ── */
 .zone-aftermath {
@@ -283,8 +267,8 @@ html, body {
 }
 
 .zone-aftermath.visible:hover .zone-aftermath-line {
-  color: #f5f1e5;
-  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 60px rgba(200,175,130,0.3);
+  color: var(--warm);
+  text-shadow: 0 4px 40px rgba(14,13,10,0.85), 0 0 80px rgba(14,13,10,0.7), 0 0 40px rgba(196,149,106,0.2);
 }
 
 /* ── ZONES ── */
@@ -440,8 +424,6 @@ html, body {
     <div class="image-fade-bottom"></div>
     <div class="image-fade-left"></div>
     <div class="image-fade-right"></div>
-    <div class="seam-blend seam-blend-1"></div>
-    <div class="seam-blend seam-blend-2"></div>
 
     <div class="zone" data-clip="0" id="zone-0">
       <div class="zone-overlay"></div>

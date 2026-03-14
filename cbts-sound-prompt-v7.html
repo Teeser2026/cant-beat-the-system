@@ -179,8 +179,8 @@ html, body {
 .image-fade-top {
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 110px;
-  background: linear-gradient(to bottom, rgba(14,13,10,0.95), rgba(14,13,10,0.5) 50%, transparent);
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(14,13,10,1), rgba(14,13,10,0.7) 40%, rgba(14,13,10,0.3) 70%, transparent);
   z-index: 2;
   pointer-events: none;
 }
@@ -208,6 +208,24 @@ html, body {
   z-index: 2;
   pointer-events: none;
 }
+
+/* Seam blenders — soft dark strips over the triptych joins */
+.seam-blend {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right,
+    transparent,
+    rgba(14,13,10,0.45) 30%,
+    rgba(14,13,10,0.5) 50%,
+    rgba(14,13,10,0.45) 70%,
+    transparent
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+.seam-blend-1 { left: calc(33.33% - 25px); }
+.seam-blend-2 { left: calc(66.66% - 25px); }
 
 /* ── AFTERMATH — positioned within chosen zone ── */
 .zone-aftermath {
@@ -422,6 +440,8 @@ html, body {
     <div class="image-fade-bottom"></div>
     <div class="image-fade-left"></div>
     <div class="image-fade-right"></div>
+    <div class="seam-blend seam-blend-1"></div>
+    <div class="seam-blend seam-blend-2"></div>
 
     <div class="zone" data-clip="0" id="zone-0">
       <div class="zone-overlay"></div>

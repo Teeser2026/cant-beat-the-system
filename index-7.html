@@ -1554,6 +1554,43 @@ body.game-active .ticker-bar { display: flex; }
   text-shadow: 0 0 60px rgba(196,149,106,0.08);
 }
 
+/* IP word-select variant (IP3+) */
+#image-prompt-overlay .ip-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 28px;
+  margin-top: 32px;
+  opacity: 0;
+  animation: ipFadeIn 2s ease forwards;
+  animation-delay: 4s;
+}
+#image-prompt-overlay .ip-word-btn {
+  font-family: 'Crimson Pro', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: var(--bright);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(196,149,106,0.15);
+  padding: 8px 18px 6px;
+  cursor: pointer;
+  transition: opacity 0.6s ease, border-color 0.4s ease;
+}
+#image-prompt-overlay .ip-word-btn:hover {
+  border-color: rgba(196,149,106,0.5);
+}
+#image-prompt-overlay .ip-word-btn.ip-chosen {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 520px) {
+  #image-prompt-overlay .ip-words { gap: 14px 20px; margin-top: 24px; }
+  #image-prompt-overlay .ip-word-btn { font-size: 22px; padding: 6px 14px 4px; }
+}
+
 @keyframes ipFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes ipBreathe {
   0%, 100% { transform: scale(1); text-shadow: 0 0 60px rgba(196,149,106,0.08); }
@@ -3398,15 +3435,32 @@ function renderImagePrompt(turnData) {
     ? turnData.questionOpts[0].img : 'inkblot-1.png';
   const promptText = turnData.questionText || 'what do you feel?';
 
-  // Build HTML
+  // Detect word-select variant (IP3+): questionOpts[0].wordPairs present
+  const opts = turnData.questionOpts && turnData.questionOpts[0];
+  const wordPairs = opts && opts.wordPairs ? opts.wordPairs : null;
+
+  // Build HTML — branch on mode
+  let interactionHTML;
+  if (wordPairs) {
+    // Word-select mode: four clickable words
+    const btns = wordPairs.map((p, i) =>
+      `<button class="ip-word-btn" data-idx="${i}">${p.chosen}</button>`
+    ).join('');
+    interactionHTML = `<div class="ip-words">${btns}</div>`;
+  } else {
+    // Freeform text mode (IP1)
+    interactionHTML = `
+      <div class="ip-input-wrap">
+        <input class="ip-input" id="ipInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
+        <div class="ip-submit-hint" id="ipHint">one word — press enter</div>
+      </div>`;
+  }
+
   overlay.innerHTML = `
     <div class="ip-inner">
       <img class="ip-image" src="${imgSrc}" alt="" draggable="false">
       <div class="ip-frame">${promptText}</div>
-      <div class="ip-input-wrap">
-        <input class="ip-input" id="ipInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
-        <div class="ip-submit-hint" id="ipHint">one word — press enter</div>
-      </div>
+      ${interactionHTML}
     </div>
     <div class="ip-linger" id="ipLinger">
       <div class="ip-linger-text" id="ipLingerText"></div>
@@ -3427,51 +3481,19 @@ function renderImagePrompt(turnData) {
     });
   });
 
-  const input = document.getElementById('ipInput');
-  const hint = document.getElementById('ipHint');
   let submitted = false;
 
-  // Focus input once it's visible (~4.5s after overlay appears)
-  setTimeout(() => {
-    input.focus();
-  }, 4500);
-
-  // Show "press enter" hint once player starts typing
-  input.addEventListener('input', () => {
-    // Enforce single word — silently strip spaces
-    input.value = input.value.replace(/\s/g, '');
-    if (input.value.trim().length > 0 && !submitted) {
-      hint.classList.add('visible');
-    } else {
-      hint.classList.remove('visible');
-    }
-  });
-
-  // Handle submit
-  function submitAnswer() {
-    if (submitted) return;
-    const answer = input.value.trim();
-    if (!answer) return;
-    submitted = true;
-
-    // Log to questionsLog
-    state.questionsLog.push({
-      id: turnData.id,
-      text: answer,
-      mode: 'image-prompt'
-    });
-
-    // Fade everything out slowly
+  // Shared: fade inner → darkness → linger word → advance
+  function showLingerAndAdvance(lingerWord) {
     const inner = document.querySelector('#image-prompt-overlay .ip-inner');
     inner.style.transition = 'opacity 3s ease';
     inner.style.opacity = '0';
 
     // 3s fade + 1.5s darkness = 4.5s, then word appears
     setTimeout(() => {
-      // Clear the image/question/input, show linger
       inner.style.display = 'none';
       const linger = document.getElementById('ipLinger');
-      document.getElementById('ipLingerText').textContent = answer;
+      document.getElementById('ipLingerText').textContent = lingerWord;
       linger.classList.add('visible');
 
       // Hold for 5 seconds, then fade out and advance
@@ -3489,16 +3511,71 @@ function renderImagePrompt(turnData) {
     }, 4500);
   }
 
-  // Enter key submits
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      submitAnswer();
-    }
-  });
+  if (wordPairs) {
+    // ── Word-select mode ──
+    const buttons = overlay.querySelectorAll('.ip-word-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (submitted) return;
+        submitted = true;
+        const idx = parseInt(btn.dataset.idx);
+        const pair = wordPairs[idx];
 
-  // Also allow tap on hint as mobile submit
-  hint.addEventListener('click', submitAnswer);
+        // Log both chosen and revealed
+        state.questionsLog.push({
+          id: turnData.id,
+          chosen: pair.chosen,
+          revealed: pair.revealed,
+          mode: 'image-prompt-select'
+        });
+
+        // Fade out all other buttons, briefly highlight chosen
+        buttons.forEach(b => {
+          if (b !== btn) b.classList.add('ip-chosen');
+        });
+
+        // Brief pause on chosen word, then transition to linger (revealed word)
+        setTimeout(() => {
+          showLingerAndAdvance(pair.revealed);
+        }, 800);
+      });
+    });
+  } else {
+    // ── Freeform text mode (IP1) ──
+    const input = document.getElementById('ipInput');
+    const hint = document.getElementById('ipHint');
+
+    setTimeout(() => { input.focus(); }, 4500);
+
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/\s/g, '');
+      if (input.value.trim().length > 0 && !submitted) {
+        hint.classList.add('visible');
+      } else {
+        hint.classList.remove('visible');
+      }
+    });
+
+    function submitAnswer() {
+      if (submitted) return;
+      const answer = input.value.trim();
+      if (!answer) return;
+      submitted = true;
+
+      state.questionsLog.push({
+        id: turnData.id,
+        text: answer,
+        mode: 'image-prompt'
+      });
+
+      showLingerAndAdvance(answer);
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); submitAnswer(); }
+    });
+    hint.addEventListener('click', submitAnswer);
+  }
 }
 
 // ── NAVIGATION ──

@@ -1180,6 +1180,35 @@
       }
     },
     {
+      "id": "IP3",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "kitchen-1.png",
+          "wordPairs": [
+            {
+              "chosen": "solitude",
+              "revealed": "stoic"
+            },
+            {
+              "chosen": "stillness",
+              "revealed": "respite"
+            },
+            {
+              "chosen": "love",
+              "revealed": "devotion"
+            },
+            {
+              "chosen": "surrender",
+              "revealed": "acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 20,
       "num": "T20",
       "title": "The Last Night at the Fair",

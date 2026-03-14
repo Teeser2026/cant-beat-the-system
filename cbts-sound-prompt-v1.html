@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBTS — Sound Prompt Prototype v1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --text: #c8c4b8;
+  --dim: #6b6760;
+  --bright: #e8e4d8;
+  --warm: #c4956a;
+  --inner: #c49090;
+  --faint: #3a3530;
+  --div: #1a1816;
+  --card: #111110;
+  --alert: #a65a4a;
+  --earth: #7a8a5a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
+}
+
+/* ── MAIN LAYOUT ── */
+.sound-prompt {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.prompt-inner {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── MODE LABEL ── */
+.mode-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* ── THE WORD ── */
+.the-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 52px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: var(--dim);
+  margin-bottom: 70px;
+  opacity: 0;
+  animation: wordReveal 3s ease forwards;
+  animation-delay: 0.6s;
+  user-select: none;
+  text-align: center;
+}
+
+/* ── DROP ZONE ── */
+.drop-zone {
+  width: 100%;
+  height: 80px;
+  border: 1px dashed var(--faint);
+  border-radius: 2px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 2.5s;
+  position: relative;
+}
+
+.drop-zone-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  transition: opacity 0.4s;
+}
+
+.drop-zone.drag-over {
+  border-color: var(--warm);
+  background: rgba(196, 149, 106, 0.03);
+}
+
+.drop-zone.drag-over .drop-zone-hint {
+  color: var(--warm);
+}
+
+.drop-zone.has-match {
+  border-style: solid;
+  border-color: var(--warm);
+}
+
+.drop-zone .matched-label {
+  display: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--warm);
+}
+
+.drop-zone.has-match .drop-zone-hint { display: none; }
+.drop-zone.has-match .matched-label { display: block; }
+
+/* ── SOUND CLIPS ── */
+.clips {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 3.2s;
+}
+
+.clip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--div);
+  border-radius: 2px;
+  cursor: grab;
+  transition: all 0.35s;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+}
+
+.clip:hover {
+  border-color: var(--faint);
+}
+
+.clip.playing {
+  border-color: var(--dim);
+}
+
+.clip.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.clip.matched {
+  border-color: var(--warm);
+  opacity: 1;
+}
+
+.clip.faded {
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Play button */
+.clip-play {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--faint);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.clip-play:hover {
+  border-color: var(--dim);
+}
+
+.clip-play svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--dim);
+  transition: fill 0.3s;
+}
+
+.clip.playing .clip-play {
+  border-color: var(--warm);
+}
+
+.clip.playing .clip-play svg {
+  fill: var(--warm);
+}
+
+/* Progress bar */
+.clip-progress-wrap {
+  flex: 1;
+  height: 2px;
+  background: var(--div);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.clip-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--dim);
+  transition: none;
+}
+
+.clip.playing .clip-progress {
+  background: var(--warm);
+}
+
+/* Drag handle */
+.clip-drag {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px;
+  cursor: grab;
+  flex-shrink: 0;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.clip:hover .clip-drag {
+  opacity: 0.6;
+}
+
+.clip-drag span {
+  display: block;
+  width: 14px;
+  height: 1px;
+  background: var(--dim);
+}
+
+/* Clip label */
+.clip-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--faint);
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ── AFTERMATH ── */
+.aftermath {
+  margin-top: 50px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.9;
+  color: var(--inner);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.aftermath.visible {
+  opacity: 1;
+}
+
+/* ── RESET ── */
+.reset-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: none;
+  border: 1px solid var(--faint);
+  padding: 8px 16px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+}
+
+.reset-btn:hover {
+  color: var(--dim);
+  border-color: var(--dim);
+}
+
+/* ── INSTRUCTION ── */
+.instruction {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--faint);
+  text-align: center;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 4s;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wordReveal {
+  0% { opacity: 0; letter-spacing: 12px; }
+  60% { opacity: 0.6; letter-spacing: 4px; }
+  100% { opacity: 1; letter-spacing: 2px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 500px) {
+  .the-word { font-size: 40px; }
+  .clip { padding: 14px 14px; gap: 12px; }
+  .clip-label { display: none; }
+}
+
+/* ── DRAG GHOST ── */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  padding: 10px 20px;
+  background: var(--card);
+  border: 1px solid var(--warm);
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="sound-prompt">
+  <div class="prompt-inner">
+
+    <div class="mode-label">Mode 2 — The Prompt (Sound)</div>
+
+    <div class="the-word">peace</div>
+
+    <div class="drop-zone" id="dropZone">
+      <span class="drop-zone-hint">drag your answer here</span>
+      <span class="matched-label" id="matchedLabel"></span>
+    </div>
+
+    <div class="instruction" id="instruction">listen. then drag.</div>
+
+    <div class="clips" id="clips">
+
+      <div class="clip" data-clip="0" draggable="true">
+        <button class="clip-play" data-clip="0">
+          <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+        </button>
+        <div class="clip-progress-wrap">
+          <div class="clip-progress" id="prog-0"></div>
+        </div>
+        <div class="clip-drag"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="clip" data-clip="1" draggable="true">
+        <button class="clip-play" data-clip="1">
+          <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+        </button>
+        <div class="clip-progress-wrap">
+          <div class="clip-progress" id="prog-1"></div>
+        </div>
+        <div class="clip-drag"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="clip" data-clip="2" draggable="true">
+        <button class="clip-play" data-clip="2">
+          <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+        </button>
+        <div class="clip-progress-wrap">
+          <div class="clip-progress" id="prog-2"></div>
+        </div>
+        <div class="clip-drag"><span></span><span></span><span></span></div>
+      </div>
+
+    </div>
+
+    <div class="aftermath" id="aftermath"></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+
+  </div>
+</div>
+
+<!-- Custom drag ghost -->
+<div class="drag-ghost" id="dragGhost"></div>
+
+<script>
+// ══════════════════════════════════════
+// AUDIO FILES — served locally
+// ══════════════════════════════════════
+const CLIPS = [
+  { file: 'gong.mp3',  label: 'I' },
+  { file: 'whale.mp3', label: 'II' },
+  { file: 'choir.mp3', label: 'III' }
+];
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let audios = [];
+let currentPlaying = -1;
+let progressRAF = null;
+let matched = -1;
+let listenedTo = new Set();
+
+// ══════════════════════════════════════
+// INIT AUDIO
+// ══════════════════════════════════════
+CLIPS.forEach((c, i) => {
+  const audio = new Audio(c.file);
+  audio.preload = 'auto';
+
+  audio.addEventListener('ended', () => {
+    stopAll();
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      document.getElementById('prog-' + i).style.width = pct + '%';
+    }
+  });
+
+  audios.push(audio);
+});
+
+// ══════════════════════════════════════
+// PLAY / STOP
+// ══════════════════════════════════════
+function stopAll() {
+  audios.forEach((a, i) => {
+    a.pause();
+    a.currentTime = 0;
+    document.getElementById('prog-' + i).style.width = '0%';
+  });
+  document.querySelectorAll('.clip').forEach(c => c.classList.remove('playing'));
+  currentPlaying = -1;
+}
+
+function playClip(index) {
+  if (matched >= 0) return;
+
+  if (currentPlaying === index) {
+    stopAll();
+    return;
+  }
+
+  stopAll();
+
+  audios[index].play().catch(() => {});
+  currentPlaying = index;
+  listenedTo.add(index);
+
+  const clipEl = document.querySelectorAll('.clip')[index];
+  clipEl.classList.add('playing');
+
+  // Update instruction after first listen
+  if (listenedTo.size === 1) {
+    document.getElementById('instruction').textContent = 'listen to each. drag your answer.';
+  }
+  if (listenedTo.size >= 2) {
+    document.getElementById('instruction').textContent = 'drag your answer to the word.';
+  }
+
+  // Update play icon to pause
+  updatePlayIcons();
+}
+
+function updatePlayIcons() {
+  document.querySelectorAll('.clip-play').forEach((btn, i) => {
+    if (i === currentPlaying) {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>';
+    } else {
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>';
+    }
+  });
+}
+
+// Play buttons
+document.querySelectorAll('.clip-play').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const idx = parseInt(btn.dataset.clip);
+    playClip(idx);
+  });
+});
+
+// ══════════════════════════════════════
+// DRAG & DROP — POINTER EVENTS
+// (Works on both desktop and mobile)
+// ══════════════════════════════════════
+const dropZone = document.getElementById('dropZone');
+const dragGhost = document.getElementById('dragGhost');
+let dragIndex = -1;
+let isDragging = false;
+
+// Prevent native drag on clips (we use pointer events instead)
+document.querySelectorAll('.clip').forEach(el => {
+  el.setAttribute('draggable', 'false');
+});
+
+// --- Pointer-based drag ---
+document.querySelectorAll('.clip').forEach((clipEl, i) => {
+  // Drag handle + whole clip area (but not play button)
+  clipEl.addEventListener('pointerdown', (e) => {
+    // Don't start drag from play button
+    if (e.target.closest('.clip-play')) return;
+    if (matched >= 0) return;
+
+    e.preventDefault();
+    dragIndex = i;
+    isDragging = true;
+
+    clipEl.classList.add('dragging');
+    clipEl.setPointerCapture(e.pointerId);
+
+    // Show ghost
+    dragGhost.textContent = 'Sound ' + CLIPS[i].label;
+    dragGhost.style.display = 'block';
+    dragGhost.style.left = (e.clientX + 12) + 'px';
+    dragGhost.style.top = (e.clientY - 16) + 'px';
+  });
+
+  clipEl.addEventListener('pointermove', (e) => {
+    if (!isDragging || dragIndex < 0) return;
+    e.preventDefault();
+
+    dragGhost.style.left = (e.clientX + 12) + 'px';
+    dragGhost.style.top = (e.clientY - 16) + 'px';
+
+    // Check if over drop zone
+    const dzRect = dropZone.getBoundingClientRect();
+    const overDZ = (
+      e.clientX >= dzRect.left && e.clientX <= dzRect.right &&
+      e.clientY >= dzRect.top && e.clientY <= dzRect.bottom
+    );
+
+    if (overDZ) {
+      dropZone.classList.add('drag-over');
+    } else {
+      dropZone.classList.remove('drag-over');
+    }
+  });
+
+  clipEl.addEventListener('pointerup', (e) => {
+    if (!isDragging || dragIndex < 0) return;
+
+    clipEl.classList.remove('dragging');
+    dragGhost.style.display = 'none';
+    dropZone.classList.remove('drag-over');
+
+    // Check if dropped on zone
+    const dzRect = dropZone.getBoundingClientRect();
+    const overDZ = (
+      e.clientX >= dzRect.left && e.clientX <= dzRect.right &&
+      e.clientY >= dzRect.top && e.clientY <= dzRect.bottom
+    );
+
+    if (overDZ) {
+      completeMatch(dragIndex);
+    }
+
+    isDragging = false;
+    dragIndex = -1;
+  });
+
+  clipEl.addEventListener('pointercancel', () => {
+    clipEl.classList.remove('dragging');
+    dragGhost.style.display = 'none';
+    dropZone.classList.remove('drag-over');
+    isDragging = false;
+    dragIndex = -1;
+  });
+});
+
+// ══════════════════════════════════════
+// MATCH COMPLETE
+// ══════════════════════════════════════
+function completeMatch(index) {
+  matched = index;
+  stopAll();
+
+  // Mark matched clip
+  document.querySelectorAll('.clip').forEach((c, i) => {
+    if (i === index) {
+      c.classList.add('matched');
+    } else {
+      c.classList.add('faded');
+    }
+  });
+
+  // Update drop zone
+  dropZone.classList.add('has-match');
+  document.getElementById('matchedLabel').textContent = 'Sound ' + CLIPS[index].label;
+
+  // Hide instruction
+  document.getElementById('instruction').style.opacity = '0';
+
+  // Show aftermath
+  setTimeout(() => {
+    const aftermath = document.getElementById('aftermath');
+    // Different aftermath text based on choice
+    const responses = [
+      'A single strike. And then — what remains.',
+      'Something vast, beneath everything. Calling from a depth you can\'t reach.',
+      'Voices without words. The peace of surrender, or the peace before it breaks.'
+    ];
+    aftermath.textContent = responses[index];
+    aftermath.classList.add('visible');
+  }, 1200);
+
+  // Show reset
+  setTimeout(() => {
+    document.getElementById('resetBtn').style.display = 'inline-block';
+  }, 3000);
+}
+
+// ══════════════════════════════════════
+// RESET
+// ══════════════════════════════════════
+document.getElementById('resetBtn').addEventListener('click', () => {
+  matched = -1;
+  listenedTo.clear();
+  stopAll();
+
+  document.querySelectorAll('.clip').forEach(c => {
+    c.classList.remove('matched', 'faded', 'dragging', 'playing');
+  });
+
+  dropZone.classList.remove('has-match', 'drag-over');
+  document.getElementById('matchedLabel').textContent = '';
+
+  document.getElementById('aftermath').classList.remove('visible');
+  document.getElementById('aftermath').textContent = '';
+  document.getElementById('resetBtn').style.display = 'none';
+
+  document.getElementById('instruction').style.opacity = '1';
+  document.getElementById('instruction').textContent = 'listen. then drag.';
+});
+</script>
+
+</body>
+</html>

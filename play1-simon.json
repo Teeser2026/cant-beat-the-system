@@ -4,7 +4,7 @@
     "play": 1,
     "title": "Simon's Story",
     "description": "Play 1 — Pre-Event through Registration. October 2026 to late February 2027.",
-    "totalTurns": 23,
+    "totalTurns": 39,
     "writtenTurns": [
       1,
       2,
@@ -26,26 +26,22 @@
       23
     ],
     "questionsAt": [
-      "Q1@before_T1",
-      "Q2@T3",
-      "Q3@T3",
-      "Q4@T3",
-      "Q5@T5",
-      "Q6@T7",
-      "Q7@T8",
-      "Q8@T10",
-      "Q9@T11",
-      "Q10@T12",
-      "Q11@T14",
-      "Q12@T15",
-      "Q13@T15",
-      "Q14@T15",
-      "Q15@T18",
-      "Q16@T18",
-      "Q17@T18",
-      "Q18@T18",
-      "Q19@T19",
-      "Q20@T22"
+      "MQ1@cold_open",
+      "MQ2@after_T1",
+      "MQ3@after_T3",
+      "MQ4@after_T3",
+      "MQ5@after_T3",
+      "IP1@between_T4_T5",
+      "MQ6@after_T5",
+      "MQ7@after_T7",
+      "MQ8@after_T8",
+      "SP1@after_T9",
+      "MQ9@after_T10",
+      "MQ10@after_T12",
+      "IP2@between_T17_T18",
+      "MQ11@after_T18",
+      "MQ12@after_T18",
+      "MQ13@after_T18"
     ]
   },
   "initialState": {
@@ -65,6 +61,22 @@
     }
   },
   "turns": [
+    {
+      "id": "MQ1",
+      "isQuestion": true,
+      "questionText": "Right now, in your actual life — do you feel free?",
+      "questionOpts": [
+        {
+          "text": "Yes. I can do what I want, go where I want, say what I want."
+        },
+        {
+          "text": "No. And I'm not sure I ever have."
+        },
+        {
+          "text": "I feel free enough."
+        }
+      ]
+    },
     {
       "id": 1,
       "num": "T1",
@@ -113,6 +125,25 @@
         "fadeOut": 2,
         "vol": 0.35
       }
+    },
+    {
+      "id": "MQ2",
+      "isQuestion": true,
+      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
+      "questionOpts": [
+        {
+          "text": "Rarely. If it needs doing, I do it."
+        },
+        {
+          "text": "Sometimes. Depends how tired I am."
+        },
+        {
+          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
+        },
+        {
+          "text": "I'm doing it right now."
+        }
+      ]
     },
     {
       "id": 2,
@@ -205,6 +236,60 @@
       }
     },
     {
+      "id": "MQ3",
+      "isQuestion": true,
+      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
+      "questionOpts": [
+        {
+          "text": "Every morning. Before I even say good morning."
+        },
+        {
+          "text": "Sometimes. Depends who I wake up next to."
+        },
+        {
+          "text": "No. People first. Always."
+        }
+      ]
+    },
+    {
+      "id": "MQ4",
+      "isQuestion": true,
+      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
+      "questionOpts": [
+        {
+          "text": "Mostly my choices. I'm deliberate about how I spend my time."
+        },
+        {
+          "text": "About half and half. More than I'd like to admit."
+        },
+        {
+          "text": "Mostly algorithms. They know what I want before I do."
+        },
+        {
+          "text": "I can't tell the difference anymore."
+        }
+      ]
+    },
+    {
+      "id": "MQ5",
+      "isQuestion": true,
+      "questionText": "Do you dream differently than you used to?",
+      "questionOpts": [
+        {
+          "text": "Yes. They've changed. I don't know when."
+        },
+        {
+          "text": "No. Same dreams, same nonsense."
+        },
+        {
+          "text": "I don't remember my dreams."
+        },
+        {
+          "text": "I don't think I dream anymore."
+        }
+      ]
+    },
+    {
       "id": 4,
       "num": "T4",
       "title": "Bonfire",
@@ -262,6 +347,23 @@
       }
     },
     {
+      "id": "IP1",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "[IMAGE PROMPT 1 — Teeser's photo, autumnal/communal. Single-word interpretive options. NOT YET BUILT.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        },
+        {
+          "text": "[placeholder]"
+        },
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
       "id": 5,
       "num": "T5",
       "title": "Solutions Watch",
@@ -302,6 +404,22 @@
           "Leave it. You already know enough. Knowing more changes nothing."
         ]
       }
+    },
+    {
+      "id": "MQ6",
+      "isQuestion": true,
+      "questionText": "When someone you trust sends you something important to read, do you read it?",
+      "questionOpts": [
+        {
+          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
+        },
+        {
+          "text": "If someone I trust says it matters, I read it. All of it."
+        },
+        {
+          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
+        }
+      ]
     },
     {
       "id": 6,
@@ -393,6 +511,22 @@
           "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
         ]
       }
+    },
+    {
+      "id": "MQ7",
+      "isQuestion": true,
+      "questionText": "Do you say what you actually think, or what the room wants to hear?",
+      "questionOpts": [
+        {
+          "text": "What I actually think. Even when it costs me."
+        },
+        {
+          "text": "Depends on the room. I pick my battles."
+        },
+        {
+          "text": "What the room wants to hear. Life's easier that way."
+        }
+      ]
     },
     {
       "id": 8,
@@ -530,6 +664,25 @@
       ]
     },
     {
+      "id": "MQ8",
+      "isQuestion": true,
+      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
+      "questionOpts": [
+        {
+          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
+        },
+        {
+          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
+        },
+        {
+          "text": "No. I've restructured my life to avoid it. It costs me."
+        },
+        {
+          "text": "I don't think about it. Life's too short."
+        }
+      ]
+    },
+    {
       "id": 9,
       "num": "T9",
       "title": "Tuesday Morning",
@@ -572,6 +725,17 @@
           }
         ]
       }
+    },
+    {
+      "id": "SP1",
+      "isQuestion": true,
+      "questionMode": "sound-prompt",
+      "questionText": "[SOUND PROMPT — 'peace'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
     },
     {
       "id": 10,
@@ -625,6 +789,22 @@
           }
         ]
       }
+    },
+    {
+      "id": "MQ9",
+      "isQuestion": true,
+      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
+      "questionOpts": [
+        {
+          "text": "Knowing. If you really understood what was happening, you couldn't look away."
+        },
+        {
+          "text": "Doing. I know plenty. I do almost nothing about any of it."
+        },
+        {
+          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
+        }
+      ]
     },
     {
       "id": 11,
@@ -777,6 +957,25 @@
       }
     },
     {
+      "id": "MQ10",
+      "isQuestion": true,
+      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
+      "questionOpts": [
+        {
+          "text": "Care. That's literally what a good partner does. What a good doctor does."
+        },
+        {
+          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
+        },
+        {
+          "text": "Both. And the fact that it's both is what makes it dangerous."
+        },
+        {
+          "text": "It depends on whether I asked for it."
+        }
+      ]
+    },
+    {
       "id": 13,
       "num": "T13",
       "title": "Rape Me",
@@ -863,6 +1062,23 @@
       }
     },
     {
+      "id": "IP2",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "[IMAGE PROMPT 2 — Teeser's photo, domestic quiet. Single-word interpretive options. NOT YET BUILT.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        },
+        {
+          "text": "[placeholder]"
+        },
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
       "id": 18,
       "num": "T18",
       "title": "Cash and Cannellini Beans",
@@ -886,6 +1102,63 @@
           "Leave it. You’ve done this before. It’ll blow over."
         ]
       }
+    },
+    {
+      "id": "MQ11",
+      "isQuestion": true,
+      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
+      "questionOpts": [
+        {
+          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
+        },
+        {
+          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
+        },
+        {
+          "text": "I'd need to read the terms. All of them. Before I signed anything."
+        },
+        {
+          "text": "What choice would I have?"
+        }
+      ]
+    },
+    {
+      "id": "MQ12",
+      "isQuestion": true,
+      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
+      "questionOpts": [
+        {
+          "text": "Relief."
+        },
+        {
+          "text": "Panic."
+        },
+        {
+          "text": "Loss. Like something important just disappeared."
+        },
+        {
+          "text": "Curiosity. What happens next?"
+        }
+      ]
+    },
+    {
+      "id": "MQ13",
+      "isQuestion": true,
+      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
+      "questionOpts": [
+        {
+          "text": "Yes. I know what it is. I'm just not ready."
+        },
+        {
+          "text": "Probably. That's how blind spots work, isn't it?"
+        },
+        {
+          "text": "No. I'm fairly self-aware."
+        },
+        {
+          "text": "How would I know?"
+        }
+      ]
     },
     {
       "id": 19,

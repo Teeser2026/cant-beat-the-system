@@ -2099,6 +2099,7 @@ async function loadGame() {
     // Init
     renderThreads();
     renderNotes();
+    updateTicker(1); // Seed ticker with T1 pool before first goTo
     goTo(0);
 
   } catch (err) {

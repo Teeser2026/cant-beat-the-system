@@ -1545,11 +1545,23 @@
     {
       "id": "CW1",
       "isQuestion": true,
-      "questionMode": "condensation",
-      "questionText": "[CONDENSATION WINDOW — Audio + rain-streaked window image. Write a word in the condensation. CSS condensation effect. Moisture reclaim fade. ENGINE BUILD PENDING. WINDOW PHOTO ASSET NEEDED.]",
+      "questionMode": "video-mirror",
+      "questionText": "What do you see?",
+      "questionVideo": "mirror-figure.mp4",
+      "questionVideoDelay": 8,
+      "questionTone": "cw1-tone.mp3",
       "questionOpts": [
         {
-          "text": "[placeholder]"
+          "text": "A mirror",
+          "fx": {}
+        },
+        {
+          "text": "A gateway",
+          "fx": {}
+        },
+        {
+          "text": "A ghost",
+          "fx": {}
         }
       ]
     },

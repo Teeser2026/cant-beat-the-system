@@ -1890,6 +1890,75 @@ body.game-active .ticker-bar { display: flex; }
   #video-prompt-overlay .vp-instruction { font-size: 24px; }
 }
 
+/* ── VIDEO MIRROR (CW1) ── */
+#video-mirror-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0a0a0c;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden; opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+#video-mirror-overlay.visible { opacity: 1; pointer-events: auto; }
+
+#video-mirror-overlay .vm-prelude {
+  font-family: 'Crimson Pro', serif; font-style: italic;
+  font-size: 58px; font-weight: 300; color: #d4c5aa;
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; letter-spacing: 1px;
+  pointer-events: none; white-space: nowrap;
+  display: flex; gap: 0.3em;
+}
+#video-mirror-overlay .vm-prelude .pw {
+  opacity: 0; transition: opacity 1.2s ease;
+}
+#video-mirror-overlay .vm-video-wrap {
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  flex-shrink: 0; opacity: 0;
+  transition: opacity 2s ease;
+}
+#video-mirror-overlay .vm-video {
+  max-height: 65vh; max-width: 85vw;
+  width: auto; height: auto; display: block;
+  border-radius: 2px;
+  filter: brightness(0.92) contrast(1.05);
+}
+#video-mirror-overlay .vm-choices {
+  display: flex; flex-direction: row; gap: 0;
+  margin-top: 32px; opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+#video-mirror-overlay .vm-opt {
+  font-family: 'Crimson Pro', serif; font-style: italic;
+  font-size: 20px; font-weight: 300; color: var(--dim);
+  padding: 14px 28px; cursor: pointer;
+  transition: all 0.4s ease; letter-spacing: 0.3px;
+  position: relative; user-select: none;
+}
+#video-mirror-overlay .vm-opt:not(:last-child)::after {
+  content: ''; position: absolute; right: 0;
+  top: 25%; height: 50%; width: 1px;
+  background: rgba(107,103,96,0.25);
+}
+#video-mirror-overlay .vm-opt:hover { color: #d4c5aa; }
+#video-mirror-overlay .vm-opt.chosen { color: var(--warm); }
+#video-mirror-overlay .vm-opt.dimmed { opacity: 0.15; pointer-events: none; }
+
+@media (max-width: 600px) {
+  #video-mirror-overlay .vm-prelude { font-size: 42px; }
+  #video-mirror-overlay .vm-video { max-height: 55vh; max-width: 92vw; }
+  #video-mirror-overlay .vm-opt { font-size: 17px; padding: 12px 18px; }
+  #video-mirror-overlay .vm-choices { margin-top: 24px; }
+}
+@media (max-width: 380px) {
+  #video-mirror-overlay .vm-prelude { font-size: 34px; }
+  #video-mirror-overlay .vm-opt { font-size: 15px; padding: 10px 14px; }
+}
+
 </style>
 </head>
 <body>
@@ -1974,6 +2043,7 @@ body.game-active .ticker-bar { display: flex; }
 <!-- ══ VIDEO PROMPT OVERLAY ══ -->
 <div id="video-prompt-overlay" style="display:none"></div>
 <div id="image-prompt-overlay" style="display:none"></div>
+<div id="video-mirror-overlay" style="display:none"></div>
 
 <div class="noise"></div>
 
@@ -3605,6 +3675,128 @@ function renderImagePrompt(turnData) {
   }
 }
 
+// ── VIDEO MIRROR (CW1-style: text prelude → video loop → choices) ──
+function renderVideoMirror(turnData) {
+  const overlay = document.getElementById('video-mirror-overlay');
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  const devList = document.getElementById('devTurnList');
+
+  // Hide main UI
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+  devList.style.display = 'none';
+
+  // Build overlay HTML
+  const videoSrc = turnData.questionVideo || '';
+  const questionText = turnData.questionText || '';
+  const words = questionText.split(/\s+/).filter(w => w);
+  const wordsHtml = words.map(w => `<span class="pw">${w}</span>`).join('');
+
+  let optsHtml = '';
+  turnData.questionOpts.forEach((o, i) => {
+    optsHtml += `<div class="vm-opt" data-qi="${i}">${o.text}</div>`;
+  });
+
+  overlay.innerHTML = `
+    <div class="vm-prelude">${wordsHtml}</div>
+    <div class="vm-video-wrap">
+      <video class="vm-video" muted playsinline loop preload="auto">
+        <source src="${videoSrc}" type="video/mp4">
+      </video>
+    </div>
+    <div class="vm-choices">${optsHtml}</div>
+  `;
+
+  overlay.style.display = '';
+  overlay.classList.remove('visible');
+
+  // Force reflow then show
+  void overlay.offsetWidth;
+  overlay.classList.add('visible');
+
+  const video = overlay.querySelector('.vm-video');
+  const videoWrap = overlay.querySelector('.vm-video-wrap');
+  const choicesEl = overlay.querySelector('.vm-choices');
+  const pwEls = overlay.querySelectorAll('.pw');
+
+  // ── PHASE 1: Words appear one at a time ──
+  const wordDelay = 900;
+  const wordStart = 1000;
+
+  pwEls.forEach((w, i) => {
+    setTimeout(() => { w.style.opacity = '1'; }, wordStart + i * wordDelay);
+  });
+
+  const allWordsVisible = wordStart + (pwEls.length - 1) * wordDelay + 1200;
+
+  // Hold, then fade out
+  setTimeout(() => {
+    pwEls.forEach(w => {
+      w.style.transition = 'opacity 1.5s ease';
+      w.style.opacity = '0';
+    });
+  }, allWordsVisible + 2500);
+
+  const textGone = allWordsVisible + 2500 + 1500;
+
+  // ── PHASE 2: Video fades in ──
+  setTimeout(() => {
+    video.play().catch(() => {});
+    videoWrap.style.opacity = '1';
+  }, textGone + 500);
+
+  // ── PHASE 3: Choices appear ──
+  const videoDelay = (turnData.questionVideoDelay || 8) * 1000;
+  setTimeout(() => {
+    choicesEl.style.opacity = '1';
+    choicesEl.style.pointerEvents = 'auto';
+  }, textGone + 500 + videoDelay);
+
+  // ── CHOICE HANDLING ──
+  overlay.querySelectorAll('.vm-opt').forEach(opt => {
+    opt.addEventListener('click', function() {
+      const qi = parseInt(this.dataset.qi);
+      const allOpts = overlay.querySelectorAll('.vm-opt');
+
+      allOpts.forEach(o => {
+        if (o === this) { o.classList.add('chosen'); }
+        else { o.classList.add('dimmed'); }
+      });
+      choicesEl.style.pointerEvents = 'none';
+
+      // Log
+      state.questionsLog.push({
+        id: turnData.id,
+        chosen: qi,
+        text: turnData.questionOpts[qi].text,
+        mode: 'video-mirror'
+      });
+
+      // Play confirmation sound
+      try {
+        const tone = new Audio(turnData.questionTone || 'cw1-tone.mp3');
+        tone.volume = 0.45;
+        tone.play().catch(() => {});
+      } catch(e) {}
+
+      // Fade out and advance
+      setTimeout(() => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          overlay.innerHTML = '';
+          video.pause();
+          wrap.style.display = '';
+          econBar.style.display = '';
+          devList.style.display = '';
+          goTo(state.turnIndex + 1);
+        }, 3200);
+      }, 1800);
+    });
+  });
+}
+
 // ── NAVIGATION ──
 function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
@@ -3646,6 +3838,18 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderImagePrompt(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
+  // ── VIDEO MIRROR — full-screen takeover (CW1) ──
+  if (turn.questionMode === 'video-mirror') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderVideoMirror(turn);
     if (document.getElementById('devTurnList').classList.contains('open')) {
       renderDevTurnList();
     }

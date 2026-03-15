@@ -1390,8 +1390,30 @@
     {
       "id": 22,
       "num": "T22",
+      "title": "Darkness",
+      "date": "14–15 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 0–1. The near-dark. Power cutting in and out. UK Emergency Alert klaxon. George makes toast. Chloe texting. Amy on the phone to her mum. Sam and Emilia at their mum's. Signal tab: klaxon text, failed calls, banking apps dead. Ticker: EMERGENCY BROADCAST IN PROGRESS.]"
+        }
+      ],
+      "signal": [
+        {
+          "from": "UK GOV",
+          "t": "EMERGENCY ALERT — Remain indoors. Emergency services operational."
+        },
+        {
+          "from": "Amy → family WhatsApp",
+          "t": "everyone ok? Mum — please reply."
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 23,
+      "num": "T23",
       "title": "I am the God of Hellfire",
-      "date": "February 2027",
+      "date": "15 February 2027",
       "paras": [
         {
           "t": "Where do you start? Where the hell do you start?"
@@ -1406,10 +1428,241 @@
       }
     },
     {
-      "id": 23,
-      "num": "T23",
+      "id": 24,
+      "num": "T24",
+      "title": "Stay Indoors",
+      "date": "16–17 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 2–3. ARC Emergency pushes. New icon, can't delete. Schools closed. Surreal domesticity. Teenagers bored and unsettled. Dogs delighted everyone's home. Text from Mum in Spain: 'Tony sorted everything.' Signal: ARC hub locations, school closed, NHS suspended.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 25,
+      "num": "T25",
+      "title": "The False Dawn",
+      "date": "17–18 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 3–4. Cards 'returning.' Cautious optimism. Tesco self-checkout beep gets applause. George helps at corner shop. Chloe ecstatic — school Monday. Dev's 2am mesh warning: 'Stage 2 is in the walls.' Simon reads it and goes back to sleep.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 26,
+      "num": "T26",
+      "title": "Day Five",
+      "date": "19 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 5. HEAVY. THE SECOND DETONATION. 10:30am. Stage 2 corrupts transaction histories, balances, mortgage records across 23 nations. 'AUTHENTICATION PERMANENTLY REVOKED.' PM ashen-faced. Schools reverse. George's calm cracks. Amy's parents spent two days using cards — now have less cash than they started with. Dev: 'I told you. Stage 2.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "VR1",
+      "isQuestion": true,
+      "questionMode": "video-rorschach",
+      "questionText": "[VIDEO RORSCHACH — Silent inkblot video. 'What do you see?' Freeform word response. No music. Pure projection. ENGINE BUILD PENDING.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "num": "T27",
+      "title": "The Dark Month Begins",
+      "date": "21–24 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 7–10. Hampers beginning. Fuel rationed. New routine: queue, walk dogs, try to keep sane. Kate volunteers at hub clinic. Amy's parents 45 mins away, Amy worrying. Amy's brothers off-grid. Dev: 'Not restoration. Replacement.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 28,
+      "num": "T28",
+      "title": "Dev",
+      "date": "24–28 February 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 10–14. HEAVY. Dev resurfaces on mesh. The forensic analysis. ARC compiled Jan 29th. AIDA architecture matching DARPA proposal. BIS quarterly review p.178. Amy not asleep — she's downstairs. She makes tea. She sits. 'Show me what he's saying.' Amy reads Dev's analysis at 2am. She's not dismissing it. AND she knows what's coming.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "MF1",
+      "isQuestion": true,
+      "questionMode": "mirror",
+      "questionText": "[MIRROR: THE 50/50 — Multiple choice, 4 options. Moral/hypocrisy question about the reader's actual life. No crisis framing. Resonance with Simon's story felt, not stated. QUESTION TEXT TBD.]",
+      "questionOpts": [
+        {
+          "text": "[option 1]"
+        },
+        {
+          "text": "[option 2]"
+        },
+        {
+          "text": "[option 3]"
+        },
+        {
+          "text": "[option 4]"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "num": "T29",
+      "title": "The Long Wait",
+      "date": "28 February – 11 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 14–28. LIGHT. Two weeks compressed. Managed equilibrium. Hamper system smooth. Routine: ARC check, hamper queue, walk dogs. PM Week 3: 'The old system failed us.' Kate: 'The hubs are being fitted out for something.' Chloe increasingly restless. George doing odd jobs.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 30,
+      "num": "T30",
+      "title": "The Announcement",
+      "date": "22 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 35. HEAVY — centrepiece turn. PM prime time. International simulcast. Seven beats: old system broken → ARC survived → AIDA → THE DEBT JUBILEE → registration open → not temporary → 23 nations. Amy's eyes when the mortgage disappears. Street parties. Neighbours hugging. The gratitude is seismic, genuine, earned. Dev mesh: 'speech metadata. created 9 feb. six days before the attack.' Amy's inner voice: 'God help me, yes.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "CW1",
+      "isQuestion": true,
+      "questionMode": "condensation",
+      "questionText": "[CONDENSATION WINDOW — Audio + rain-streaked window image. Write a word in the condensation. CSS condensation effect. Moisture reclaim fade. ENGINE BUILD PENDING. WINDOW PHOTO ASSET NEEDED.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "num": "T31",
+      "title": "The Hamper",
+      "date": "23–24 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 36–37. Registered vs unregistered contrast. Amy's mum sends hamper photos. George: 'Mum, can I just register? I'm 19.' He does. 'Dad, it's just an app.' Simon finds out via AIDA notification. BritCoin first allocation: 800 BC/adult.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 32,
+      "num": "T32",
+      "title": "The Knife",
+      "date": "25–29 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 38–42. Sam and Emilia registered by their mum. 'Your ex texted.' The knife that isn't AIDA — it's his ex-wife doing the right thing. Simon's rage/relief/grief. Mortgage showing £0.00. The horror of ease.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 33,
+      "num": "T33",
+      "title": "Chloe",
+      "date": "5 April 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 49. Chloe in the kitchen doorway. 17. 'I'm literally the only person in my year who isn't registered.' She needs Simon's signature — under 18. The A-levels she's missing. Amy won't sign without Simon. AIDA learning platform genuinely excellent. Hub learning: worksheets.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "DL1",
+      "isQuestion": true,
+      "questionMode": "door-of-light",
+      "questionText": "[DOOR OF LIGHT — 25 floating words in darkness. Drag one into the light. White flash. Word lingers. ENGINE BUILD PENDING. DOOR IMAGE ASSET NEEDED.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "num": "T34",
+      "title": "Kate",
+      "date": "12 April 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 56. HEAVY. Kate from next door. Psychologist. Registered yesterday. Wine in the garden. 'I know what they're doing, Simon. The NLP in the speeches. The fear-reassurance cycle. I can see every stitch in the puppet strings.' She drinks. 'I registered anyway. Because seeing the strings doesn't make you less of a puppet. It just makes you a sad one.' Simon's mirror.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "SL1",
+      "isQuestion": true,
+      "questionMode": "slider",
+      "questionText": "To what extent do you live by the moral code you claim to possess?",
+      "questionOpts": [
+        {
+          "text": "[slider 0–10, no labels, no default]"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "num": "T35",
+      "title": "The Brothers",
+      "date": "19 April 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 63. Amy's brothers are holdouts. Rupert can't get his prescription. Jamie can't buy fuel. Amy's mum crying on the phone. Simon visits dad in care home — dad registered by institution, no consent. AIDA knows Simon through everyone else's data. Protest that evening: hundreds in a nation of 67 million. Police almost bored. 'Resistance is a luxury good.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 36,
+      "num": "T36",
+      "title": "The Kitchen",
+      "date": "26 April 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 70. HEAVY — heart of the game. After the teenagers have gone upstairs. Dogs on the kitchen floor. Kettle boiling. Amy: 'Where's the mass, Simon?' The conversation. Not screaming — quiet, tired, honest. Dev on mesh: 'Don't do it.' AIDA: 'We're here when you're ready, Simon.' It used his name. 'We'll go tomorrow. Together.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "SE1",
+      "isQuestion": true,
+      "questionMode": "sound-prompt-echo",
+      "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "num": "T37",
       "title": "Morning Coffee",
-      "date": "February 2027",
+      "date": "~1 May 2027",
       "paras": [
         {
           "t": "She said nothing. She played Northern Sky by Nick Drake. We hugged. We cried. We left for the Community Recovery Hub."
@@ -1479,20 +1732,7 @@
           "c": "lyric"
         }
       ],
-      "choices": {
-        "label": "Registration morning",
-        "opts": [
-          "Register. The house. The girls. Amy. You can still work against it from inside.",
-          "Walk out. No AIDA. Whatever it costs.",
-          "Ask to speak to someone. Surely there’s someone here who has the same doubts you do."
-        ]
-      },
-      "audio": {
-        "src": "sad-clouds.mp3",
-        "fadeIn": 3,
-        "fadeOut": 2,
-        "vol": 0.35
-      }
+      "audio": null
     }
   ],
   "signal": {

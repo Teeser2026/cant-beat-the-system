@@ -4,7 +4,7 @@
     "play": 1,
     "title": "Simon's Story",
     "description": "Play 1 — Pre-Event through Registration. October 2026 to late February 2027.",
-    "totalTurns": 39,
+    "totalTurns": 40,
     "writtenTurns": [
       1,
       2,
@@ -41,7 +41,8 @@
       "IP2@between_T17_T18",
       "MQ11@after_T18",
       "MQ12@after_T18",
-      "MQ13@after_T18"
+      "MQ13@after_T18",
+      "IP3@between_T19_T20"
     ]
   },
   "initialState": {

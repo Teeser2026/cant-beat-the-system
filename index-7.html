@@ -1615,6 +1615,127 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ══════════════════════════════════════════════════════
+   VIDEO RORSCHACH (VR1) — full-screen overlay
+   ══════════════════════════════════════════════════════ */
+#video-rorschach-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#video-rorschach-overlay.visible { opacity: 1; }
+
+#video-rorschach-overlay .vr-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#video-rorschach-overlay .vr-video {
+  max-width: 60vw;
+  max-height: 60vh;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 3s ease;
+  flex-shrink: 0;
+}
+#video-rorschach-overlay .vr-video.visible { opacity: 1; }
+
+#video-rorschach-overlay .vr-frame {
+  font-family: 'Crimson Pro', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-top: 48px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+#video-rorschach-overlay .vr-frame.visible { opacity: 1; }
+
+#video-rorschach-overlay .vr-input-wrap {
+  margin-top: 24px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  text-align: center;
+}
+#video-rorschach-overlay .vr-input-wrap.visible { opacity: 1; }
+
+#video-rorschach-overlay .vr-input {
+  font-family: 'Crimson Pro', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(200,196,184,0.15);
+  outline: none;
+  text-align: center;
+  width: 400px;
+  max-width: 80vw;
+  padding: 8px 4px;
+  caret-color: var(--warm);
+  letter-spacing: 1px;
+}
+#video-rorschach-overlay .vr-input::placeholder { color: transparent; }
+
+#video-rorschach-overlay .vr-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: 0;
+  margin-top: 12px;
+  transition: opacity 1s;
+}
+#video-rorschach-overlay .vr-hint.visible { opacity: 0.35; }
+
+#video-rorschach-overlay .vr-linger {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 3s ease;
+  pointer-events: none;
+}
+#video-rorschach-overlay .vr-linger.visible { opacity: 1; }
+#video-rorschach-overlay .vr-linger-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 48px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bright);
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 0 20px;
+  animation: ipBreathe 4s ease-in-out infinite;
+  text-shadow: 0 0 60px rgba(196,149,106,0.08);
+}
+
+@media (max-width: 520px) {
+  #video-rorschach-overlay .vr-video { max-width: 85vw; max-height: 50vh; }
+  #video-rorschach-overlay .vr-frame { font-size: 22px; margin-top: 28px; }
+  #video-rorschach-overlay .vr-input { font-size: 28px; width: 280px; }
+  #video-rorschach-overlay .vr-linger-text { font-size: 36px; }
+}
+
+/* ══════════════════════════════════════════════════════
    VIDEO PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
 #video-prompt-overlay {
@@ -2043,6 +2164,7 @@ body.game-active .ticker-bar { display: flex; }
 <!-- ══ VIDEO PROMPT OVERLAY ══ -->
 <div id="video-prompt-overlay" style="display:none"></div>
 <div id="image-prompt-overlay" style="display:none"></div>
+<div id="video-rorschach-overlay" style="display:none"></div>
 <div id="video-mirror-overlay" style="display:none"></div>
 
 <div class="noise"></div>
@@ -3675,6 +3797,139 @@ function renderImagePrompt(turnData) {
   }
 }
 
+// ══════════════════════════════════════════════════════
+// VIDEO RORSCHACH (VR1) — silent inkblot video + freeform word
+// ══════════════════════════════════════════════════════
+
+function renderVideoRorschach(turnData) {
+  const overlay = document.getElementById('video-rorschach-overlay');
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  const devList = document.getElementById('devTurnList');
+
+  const videoSrc = turnData.questionVideo || 'rorschach.mp4';
+  const promptText = turnData.questionText || 'what do you see?';
+
+  overlay.innerHTML = `
+    <div class="vr-inner">
+      <video class="vr-video" id="vrVideo" muted playsinline></video>
+      <div class="vr-frame" id="vrFrame">${promptText}</div>
+      <div class="vr-input-wrap" id="vrInputWrap">
+        <input class="vr-input" id="vrInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
+        <div class="vr-hint" id="vrHint">one word — press enter</div>
+      </div>
+    </div>
+    <div class="vr-linger" id="vrLinger">
+      <div class="vr-linger-text" id="vrLingerText"></div>
+    </div>
+  `;
+
+  // Show overlay, hide main
+  overlay.style.display = 'flex';
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+  devList.style.display = 'none';
+  if (typeof stopTurnAudio === 'function') stopTurnAudio(1);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+    });
+  });
+
+  // ── Video setup — play once, freeze on last frame ──
+  const vid = document.getElementById('vrVideo');
+  vid.src = videoSrc;
+  vid.loop = false;
+  vid.muted = true;
+  vid.playsInline = true;
+
+  // Start video after overlay fades in (1.8s)
+  setTimeout(() => {
+    vid.classList.add('visible');
+    vid.play().catch(() => {});
+  }, 1800);
+
+  // Freeze on last frame
+  vid.addEventListener('ended', () => {
+    if (vid.duration) {
+      vid.currentTime = vid.duration - 0.01;
+    }
+  });
+
+  // ── After video ends: show question + input ──
+  // Video is ~5s + 1.8s delay = ~6.8s. Add 1.5s pause in darkness.
+  const questionDelay = 1800 + 5500 + 1500; // 8.8s total
+
+  setTimeout(() => {
+    document.getElementById('vrFrame').classList.add('visible');
+  }, questionDelay);
+
+  setTimeout(() => {
+    document.getElementById('vrInputWrap').classList.add('visible');
+    document.getElementById('vrInput').focus();
+  }, questionDelay + 1500);
+
+  // ── Input handling ──
+  let submitted = false;
+  const input = document.getElementById('vrInput');
+  const hint = document.getElementById('vrHint');
+
+  input.addEventListener('input', () => {
+    input.value = input.value.replace(/\s/g, '');
+    if (input.value.trim().length > 0 && !submitted) {
+      hint.classList.add('visible');
+    } else {
+      hint.classList.remove('visible');
+    }
+  });
+
+  function submitAnswer() {
+    if (submitted) return;
+    const answer = input.value.trim();
+    if (!answer) return;
+    submitted = true;
+
+    state.questionsLog.push({
+      id: turnData.id,
+      text: answer,
+      mode: 'video-rorschach'
+    });
+
+    // Fade inner to black
+    const inner = overlay.querySelector('.vr-inner');
+    inner.style.transition = 'opacity 3s ease';
+    inner.style.opacity = '0';
+
+    // 3s fade + 1.5s darkness, then linger word
+    setTimeout(() => {
+      inner.style.display = 'none';
+      const linger = document.getElementById('vrLinger');
+      document.getElementById('vrLingerText').textContent = answer;
+      linger.classList.add('visible');
+
+      // Hold 5s, then fade out and advance
+      setTimeout(() => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          overlay.innerHTML = '';
+          try { vid.pause(); } catch(e) {}
+          wrap.style.display = '';
+          econBar.style.display = '';
+          devList.style.display = '';
+          goTo(state.turnIndex + 1);
+        }, 1600);
+      }, 5000);
+    }, 4500);
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); submitAnswer(); }
+  });
+  hint.addEventListener('click', submitAnswer);
+}
+
 // ── VIDEO MIRROR (CW1-style: text prelude → video loop → choices) ──
 function renderVideoMirror(turnData) {
   const overlay = document.getElementById('video-mirror-overlay');
@@ -3838,6 +4093,18 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderImagePrompt(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
+  // ── VIDEO RORSCHACH — full-screen takeover (VR1) ──
+  if (turn.questionMode === 'video-rorschach') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderVideoRorschach(turn);
     if (document.getElementById('devTurnList').classList.contains('open')) {
       renderDevTurnList();
     }

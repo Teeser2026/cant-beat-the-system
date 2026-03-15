@@ -1467,12 +1467,13 @@
       "id": "VR1",
       "isQuestion": true,
       "questionMode": "video-rorschach",
-      "questionText": "[VIDEO RORSCHACH — Silent inkblot video. 'What do you see?' Freeform word response. No music. Pure projection. ENGINE BUILD PENDING.]",
+      "questionText": "what do you see?",
       "questionOpts": [
         {
-          "text": "[placeholder]"
+          "text": "[freeform]"
         }
-      ]
+      ],
+      "questionVideo": "rorschach.mp4"
     },
     {
       "id": 27,

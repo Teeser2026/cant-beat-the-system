@@ -4,7 +4,7 @@
     "play": 1,
     "title": "Simon's Story",
     "description": "Play 1 — Pre-Event through Registration. October 2026 to late February 2027.",
-    "totalTurns": 23,
+    "totalTurns": 40,
     "writtenTurns": [
       1,
       2,
@@ -26,26 +26,23 @@
       23
     ],
     "questionsAt": [
-      "Q1@before_T1",
-      "Q2@T3",
-      "Q3@T3",
-      "Q4@T3",
-      "Q5@T5",
-      "Q6@T7",
-      "Q7@T8",
-      "Q8@T10",
-      "Q9@T11",
-      "Q10@T12",
-      "Q11@T14",
-      "Q12@T15",
-      "Q13@T15",
-      "Q14@T15",
-      "Q15@T18",
-      "Q16@T18",
-      "Q17@T18",
-      "Q18@T18",
-      "Q19@T19",
-      "Q20@T22"
+      "MQ1@cold_open",
+      "MQ2@after_T1",
+      "MQ3@after_T3",
+      "MQ4@after_T3",
+      "MQ5@after_T3",
+      "IP1@between_T4_T5",
+      "MQ6@after_T5",
+      "MQ7@after_T7",
+      "MQ8@after_T8",
+      "SP1@after_T9",
+      "MQ9@after_T10",
+      "MQ10@after_T12",
+      "IP2@between_T17_T18",
+      "MQ11@after_T18",
+      "MQ12@after_T18",
+      "MQ13@after_T18",
+      "IP3@between_T19_T20"
     ]
   },
   "initialState": {
@@ -65,6 +62,22 @@
     }
   },
   "turns": [
+    {
+      "id": "MQ1",
+      "isQuestion": true,
+      "questionText": "Right now, in your actual life — do you feel free?",
+      "questionOpts": [
+        {
+          "text": "Yes. I can do what I want, go where I want, say what I want."
+        },
+        {
+          "text": "No. And I'm not sure I ever have."
+        },
+        {
+          "text": "I feel free enough."
+        }
+      ]
+    },
     {
       "id": 1,
       "num": "T1",
@@ -113,6 +126,25 @@
         "fadeOut": 2,
         "vol": 0.35
       }
+    },
+    {
+      "id": "MQ2",
+      "isQuestion": true,
+      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
+      "questionOpts": [
+        {
+          "text": "Rarely. If it needs doing, I do it."
+        },
+        {
+          "text": "Sometimes. Depends how tired I am."
+        },
+        {
+          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
+        },
+        {
+          "text": "I'm doing it right now."
+        }
+      ]
     },
     {
       "id": 2,
@@ -205,6 +237,60 @@
       }
     },
     {
+      "id": "MQ3",
+      "isQuestion": true,
+      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
+      "questionOpts": [
+        {
+          "text": "Every morning. Before I even say good morning."
+        },
+        {
+          "text": "Sometimes. Depends who I wake up next to."
+        },
+        {
+          "text": "No. People first. Always."
+        }
+      ]
+    },
+    {
+      "id": "MQ4",
+      "isQuestion": true,
+      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
+      "questionOpts": [
+        {
+          "text": "Mostly my choices. I'm deliberate about how I spend my time."
+        },
+        {
+          "text": "About half and half. More than I'd like to admit."
+        },
+        {
+          "text": "Mostly algorithms. They know what I want before I do."
+        },
+        {
+          "text": "I can't tell the difference anymore."
+        }
+      ]
+    },
+    {
+      "id": "MQ5",
+      "isQuestion": true,
+      "questionText": "Do you dream differently than you used to?",
+      "questionOpts": [
+        {
+          "text": "Yes. They've changed. I don't know when."
+        },
+        {
+          "text": "No. Same dreams, same nonsense."
+        },
+        {
+          "text": "I don't remember my dreams."
+        },
+        {
+          "text": "I don't think I dream anymore."
+        }
+      ]
+    },
+    {
       "id": 4,
       "num": "T4",
       "title": "Bonfire",
@@ -259,7 +345,24 @@
           "Put the phone away. Some things aren’t meant to be saved. Just felt.",
           "Post about it. People should know this still exists. England isn’t dead yet."
         ]
+      },
+      "audio": {
+        "src": "bonfire-fireworks.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.35
       }
+    },
+    {
+      "id": "IP1",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "inkblot-1.png"
+        }
+      ]
     },
     {
       "id": 5,
@@ -302,6 +405,22 @@
           "Leave it. You already know enough. Knowing more changes nothing."
         ]
       }
+    },
+    {
+      "id": "MQ6",
+      "isQuestion": true,
+      "questionText": "When someone you trust sends you something important to read, do you read it?",
+      "questionOpts": [
+        {
+          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
+        },
+        {
+          "text": "If someone I trust says it matters, I read it. All of it."
+        },
+        {
+          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
+        }
+      ]
     },
     {
       "id": 6,
@@ -393,6 +512,22 @@
           "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
         ]
       }
+    },
+    {
+      "id": "MQ7",
+      "isQuestion": true,
+      "questionText": "Do you say what you actually think, or what the room wants to hear?",
+      "questionOpts": [
+        {
+          "text": "What I actually think. Even when it costs me."
+        },
+        {
+          "text": "Depends on the room. I pick my battles."
+        },
+        {
+          "text": "What the room wants to hear. Life's easier that way."
+        }
+      ]
     },
     {
       "id": 8,
@@ -530,6 +665,25 @@
       ]
     },
     {
+      "id": "MQ8",
+      "isQuestion": true,
+      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
+      "questionOpts": [
+        {
+          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
+        },
+        {
+          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
+        },
+        {
+          "text": "No. I've restructured my life to avoid it. It costs me."
+        },
+        {
+          "text": "I don't think about it. Life's too short."
+        }
+      ]
+    },
+    {
       "id": 9,
       "num": "T9",
       "title": "Tuesday Morning",
@@ -572,6 +726,17 @@
           }
         ]
       }
+    },
+    {
+      "id": "SP1",
+      "isQuestion": true,
+      "questionMode": "sound-prompt",
+      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
     },
     {
       "id": 10,
@@ -625,6 +790,22 @@
           }
         ]
       }
+    },
+    {
+      "id": "MQ9",
+      "isQuestion": true,
+      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
+      "questionOpts": [
+        {
+          "text": "Knowing. If you really understood what was happening, you couldn't look away."
+        },
+        {
+          "text": "Doing. I know plenty. I do almost nothing about any of it."
+        },
+        {
+          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
+        }
+      ]
     },
     {
       "id": 11,
@@ -777,6 +958,25 @@
       }
     },
     {
+      "id": "MQ10",
+      "isQuestion": true,
+      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
+      "questionOpts": [
+        {
+          "text": "Care. That's literally what a good partner does. What a good doctor does."
+        },
+        {
+          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
+        },
+        {
+          "text": "Both. And the fact that it's both is what makes it dangerous."
+        },
+        {
+          "text": "It depends on whether I asked for it."
+        }
+      ]
+    },
+    {
       "id": 13,
       "num": "T13",
       "title": "Rape Me",
@@ -863,6 +1063,23 @@
       }
     },
     {
+      "id": "IP2",
+      "isQuestion": true,
+      "questionMode": "video-prompt",
+      "questionText": "what soundtrack does your soul put to this scene?",
+      "questionOpts": [
+        {
+          "text": "sacral chant"
+        },
+        {
+          "text": "852 Hz frequency"
+        },
+        {
+          "text": "tibetan bowl"
+        }
+      ]
+    },
+    {
       "id": 18,
       "num": "T18",
       "title": "Cash and Cannellini Beans",
@@ -888,6 +1105,63 @@
       }
     },
     {
+      "id": "MQ11",
+      "isQuestion": true,
+      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
+      "questionOpts": [
+        {
+          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
+        },
+        {
+          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
+        },
+        {
+          "text": "I'd need to read the terms. All of them. Before I signed anything."
+        },
+        {
+          "text": "What choice would I have?"
+        }
+      ]
+    },
+    {
+      "id": "MQ12",
+      "isQuestion": true,
+      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
+      "questionOpts": [
+        {
+          "text": "Relief."
+        },
+        {
+          "text": "Panic."
+        },
+        {
+          "text": "Loss. Like something important just disappeared."
+        },
+        {
+          "text": "Curiosity. What happens next?"
+        }
+      ]
+    },
+    {
+      "id": "MQ13",
+      "isQuestion": true,
+      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
+      "questionOpts": [
+        {
+          "text": "Yes. I know what it is. I'm just not ready."
+        },
+        {
+          "text": "Probably. That's how blind spots work, isn't it?"
+        },
+        {
+          "text": "No. I'm fairly self-aware."
+        },
+        {
+          "text": "How would I know?"
+        }
+      ]
+    },
+    {
       "id": 19,
       "num": "T19",
       "title": "Soggy Dog Walks",
@@ -905,6 +1179,35 @@
           "Open the Rully Rouge early. Start the Béarnaise. It’s Valentine’s tomorrow. Enjoy something."
         ]
       }
+    },
+    {
+      "id": "IP3",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "kitchen-1.png",
+          "wordPairs": [
+            {
+              "chosen": "solitude",
+              "revealed": "stoic"
+            },
+            {
+              "chosen": "stillness",
+              "revealed": "respite"
+            },
+            {
+              "chosen": "love",
+              "revealed": "devotion"
+            },
+            {
+              "chosen": "surrender",
+              "revealed": "acceptance"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 20,
@@ -1756,75 +2059,669 @@
       "turn": 13
     }
   ],
-  "ticker": [
-    {
-      "text": "FTSE 100  7,842.16  ▲ 0.3%",
-      "cls": ""
+  "ticker": {
+    "pools": {
+      "1-3": [
+        {
+          "text": "FTSE 100  7,842.16  ▲ 0.3%",
+          "cls": ""
+        },
+        {
+          "text": "GBP/USD  1.2634",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $81.47  ▼ 1.2%",
+          "cls": "cold"
+        },
+        {
+          "text": "UK unemployment steady at 4.1% — ONS",
+          "cls": ""
+        },
+        {
+          "text": "Arsenal 2–1 Chelsea — Premier League",
+          "cls": ""
+        },
+        {
+          "text": "Met Office: rain clearing by Wednesday",
+          "cls": ""
+        },
+        {
+          "text": "King Charles opens new wing at Great Ormond Street",
+          "cls": "warm"
+        },
+        {
+          "text": "UK inflation 3.1% — ONS",
+          "cls": ""
+        },
+        {
+          "text": "Strictly: first elimination draws 8.2m viewers",
+          "cls": ""
+        },
+        {
+          "text": "Cabinet Office publishes digital identity interoperability framework",
+          "cls": "buried"
+        },
+        {
+          "text": "NATO exercise concludes in North Sea — routine readiness drill",
+          "cls": ""
+        },
+        {
+          "text": "UK house prices up 2.4% year-on-year — Halifax",
+          "cls": "warm"
+        },
+        {
+          "text": "Tesla recalls 14,000 vehicles over software fault",
+          "cls": ""
+        },
+        {
+          "text": "UEFA vote on semi-automated VAR delayed until January — \"consultation ongoing\"",
+          "cls": ""
+        }
+      ],
+      "4-5": [
+        {
+          "text": "FTSE 100  7,791.04  ▼ 0.2%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2587",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $79.83  ▼ 0.6%",
+          "cls": ""
+        },
+        {
+          "text": "Bonfire Night: 300 call-outs in London alone — LFB",
+          "cls": ""
+        },
+        {
+          "text": "COP32 opens in Riyadh — 197 nations attend",
+          "cls": ""
+        },
+        {
+          "text": "UK retail sales flat for third consecutive month — BRC",
+          "cls": "cold"
+        },
+        {
+          "text": "Liverpool 3–0 Man Utd — Premier League",
+          "cls": ""
+        },
+        {
+          "text": "Met Office amber warning: ice across northern England",
+          "cls": ""
+        },
+        {
+          "text": "NHS winter pressures: A&E waits at 14-month high",
+          "cls": "cold"
+        },
+        {
+          "text": "DCMS: \"digital services resilience review\" launched — consultation open",
+          "cls": "buried"
+        },
+        {
+          "text": "UK signs post-Brexit data adequacy renewal with EU",
+          "cls": "buried"
+        },
+        {
+          "text": "I'm A Celebrity opens to 9.1m viewers — highest in four years",
+          "cls": ""
+        },
+        {
+          "text": "Sterling edges lower on weak manufacturing data",
+          "cls": "cold"
+        },
+        {
+          "text": "UN Security Council meets on Sudan humanitarian corridor",
+          "cls": ""
+        }
+      ],
+      "6-8": [
+        {
+          "text": "FTSE 100  7,719.38  ▼ 0.8%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2461",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $83.21  ▲ 2.1%",
+          "cls": ""
+        },
+        {
+          "text": "Black Friday: UK online spending up 11% — Adobe Analytics",
+          "cls": "warm"
+        },
+        {
+          "text": "Bank of England holds rates at 4.75% — split vote, 6–3",
+          "cls": ""
+        },
+        {
+          "text": "Energy price cap rises 8% from January — Ofgem confirms",
+          "cls": "cold"
+        },
+        {
+          "text": "FCA publishes ARC Implementation Notice PS26/4",
+          "cls": "buried"
+        },
+        {
+          "text": "UK mortgage approvals fall to 18-month low — BoE",
+          "cls": "cold"
+        },
+        {
+          "text": "Man City 1–1 Arsenal — title race tightens",
+          "cls": ""
+        },
+        {
+          "text": "HM Treasury: consultation on digital payment contingency planning",
+          "cls": "buried"
+        },
+        {
+          "text": "Christmas No.1 race: three-way battle — Ladbrokes",
+          "cls": ""
+        },
+        {
+          "text": "NHS: flu jab uptake lowest since 2019 — UKHSA",
+          "cls": ""
+        },
+        {
+          "text": "UK car production down 6% — SMMT",
+          "cls": "cold"
+        },
+        {
+          "text": "John Lewis Christmas ad viewed 42m times in first week",
+          "cls": ""
+        }
+      ],
+      "9-10": [
+        {
+          "text": "FTSE 100  7,684.52  ▼ 0.4%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2398",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $82.07",
+          "cls": ""
+        },
+        {
+          "text": "UK retail footfall down 3% despite Christmas surge — Springboard",
+          "cls": "cold"
+        },
+        {
+          "text": "Met Office: coldest December night in four years — minus 11°C Braemar",
+          "cls": ""
+        },
+        {
+          "text": "King's Christmas broadcast pre-recorded at Sandringham",
+          "cls": ""
+        },
+        {
+          "text": "NHS England: 7.8m on waiting lists — record",
+          "cls": "cold"
+        },
+        {
+          "text": "DIATF v3 published — digital identity trust framework update",
+          "cls": "buried"
+        },
+        {
+          "text": "One Login: 4.2m accounts created — GDS",
+          "cls": "buried"
+        },
+        {
+          "text": "Everton 0–2 Liverpool — Merseyside derby",
+          "cls": ""
+        },
+        {
+          "text": "Strictly final draws 10.1m — BBC",
+          "cls": ""
+        },
+        {
+          "text": "UK gilt yields edge higher — 4.62% on 10-year",
+          "cls": "cold"
+        },
+        {
+          "text": "Christmas tree shortage: wholesale prices up 22%",
+          "cls": ""
+        },
+        {
+          "text": "Biometric boarding now at 14 UK airports — Home Office",
+          "cls": "buried"
+        }
+      ],
+      "11-12": [
+        {
+          "text": "Markets closed — Christmas Day",
+          "cls": ""
+        },
+        {
+          "text": "GBP/USD  1.2371",
+          "cls": "cold"
+        },
+        {
+          "text": "Boxing Day sales: £3.7bn estimated — Barclays",
+          "cls": "warm"
+        },
+        {
+          "text": "King's Speech: \"The light of service in uncertain times\"",
+          "cls": ""
+        },
+        {
+          "text": "NHS: 42,000 A&E attendances on Christmas Day",
+          "cls": ""
+        },
+        {
+          "text": "UK economy grew 0.1% in Q3 — revised down from 0.2%",
+          "cls": "cold"
+        },
+        {
+          "text": "New Year Honours: damehood for vaccine programme lead",
+          "cls": ""
+        },
+        {
+          "text": "Premier League: no fixtures until 29 December",
+          "cls": ""
+        },
+        {
+          "text": "UK household debt reaches £1.87 trillion — BoE",
+          "cls": "cold"
+        },
+        {
+          "text": "Happy New Year — Markets reopen 2 January",
+          "cls": ""
+        },
+        {
+          "text": "HMRC digital tax accounts now required for sole traders",
+          "cls": "buried"
+        },
+        {
+          "text": "UK population reaches 69.4m — ONS mid-year estimate",
+          "cls": ""
+        },
+        {
+          "text": "Sterling falls to 14-month low against dollar",
+          "cls": "cold"
+        }
+      ],
+      "13-14": [
+        {
+          "text": "FTSE 100  7,612.81  ▼ 0.3%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2294",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $84.56  ▲ 1.4%",
+          "cls": ""
+        },
+        {
+          "text": "UK inflation rises to 3.4% — ONS",
+          "cls": "cold"
+        },
+        {
+          "text": "January blues: GP mental health referrals up 18% year-on-year",
+          "cls": "cold"
+        },
+        {
+          "text": "Energy bills: average household now £2,140/year — Ofgem",
+          "cls": "cold"
+        },
+        {
+          "text": "Spurs 1–3 Arsenal — North London derby",
+          "cls": ""
+        },
+        {
+          "text": "Payment Systems Regulator: annual review of UK cash infrastructure",
+          "cls": "buried"
+        },
+        {
+          "text": "BIS: Project mBridge enters \"minimum viable product\" phase",
+          "cls": "buried"
+        },
+        {
+          "text": "UK car insurance premiums up 29% — ABI",
+          "cls": "cold"
+        },
+        {
+          "text": "Celebrity Big Brother returns — 5.8m viewers — ITV",
+          "cls": ""
+        },
+        {
+          "text": "Met Office: Storm Éowyn — amber warning for Scotland and NW England",
+          "cls": ""
+        },
+        {
+          "text": "NHS: 2,400 operations cancelled due to staff shortages",
+          "cls": "cold"
+        },
+        {
+          "text": "WHO: new respiratory pathogen detected in SE Asia — monitoring",
+          "cls": "buried"
+        }
+      ],
+      "15-16": [
+        {
+          "text": "FTSE 100  7,583.27  ▼ 0.5%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2207",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $86.11  ▲ 1.8%",
+          "cls": ""
+        },
+        {
+          "text": "UK GDP flat in December — economy stalling — ONS",
+          "cls": "cold"
+        },
+        {
+          "text": "BoE deputy governor: \"resilience of payment systems under continuous review\"",
+          "cls": "buried"
+        },
+        {
+          "text": "UK contactless payment limit raised to £150 from March",
+          "cls": "buried"
+        },
+        {
+          "text": "Man City 2–2 Liverpool — Premier League",
+          "cls": ""
+        },
+        {
+          "text": "UK pet ownership up 23% since 2022 — PDSA",
+          "cls": ""
+        },
+        {
+          "text": "Smart meter rollout reaches 34.6m — DESNZ",
+          "cls": "buried"
+        },
+        {
+          "text": "Nationwide: house prices fall for second consecutive month",
+          "cls": "cold"
+        },
+        {
+          "text": "Royal Mail: next-day delivery guarantee scrapped for rural areas",
+          "cls": "cold"
+        },
+        {
+          "text": "UK food bank usage hits 3.4m parcels — Trussell Trust",
+          "cls": "cold"
+        },
+        {
+          "text": "EE, Three report localised outages in SE England — \"maintenance\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Sterling steadies after weak jobs data",
+          "cls": "cold"
+        }
+      ],
+      "17-18": [
+        {
+          "text": "FTSE 100  7,504.19  ▼ 1.1%",
+          "cls": "cold"
+        },
+        {
+          "text": "GBP/USD  1.2138",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $89.44  ▲ 3.2%",
+          "cls": "cold"
+        },
+        {
+          "text": "BoE emergency statement: \"orderly market conditions maintained\"",
+          "cls": "cold"
+        },
+        {
+          "text": "Circuit breaker activated on FTSE 250 — trading paused 11 minutes",
+          "cls": "cold"
+        },
+        {
+          "text": "UK 10-year gilt yield spikes to 5.04%",
+          "cls": "cold"
+        },
+        {
+          "text": "Cash withdrawals up 340% week-on-week — LINK",
+          "cls": "cold"
+        },
+        {
+          "text": "ATM network reports localised outages in six regions — \"technical issue\"",
+          "cls": "buried"
+        },
+        {
+          "text": "HM Treasury: digital payment contingency plans \"well advanced\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Man Utd 0–4 Crystal Palace — Premier League",
+          "cls": ""
+        },
+        {
+          "text": "Tesco limits cash-back to £50 per transaction",
+          "cls": ""
+        },
+        {
+          "text": "FCA: \"consumers should not be alarmed by temporary card processing delays\"",
+          "cls": "buried"
+        },
+        {
+          "text": "NHS Digital: patient records migration to federated cloud \"on track\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Met Office: mild for February — 12°C expected Thursday",
+          "cls": ""
+        }
+      ],
+      "19-20": [
+        {
+          "text": "FTSE 100  7,488.63  ▲ 0.1%",
+          "cls": ""
+        },
+        {
+          "text": "GBP/USD  1.2112",
+          "cls": "cold"
+        },
+        {
+          "text": "Brent crude  $87.29  ▼ 0.4%",
+          "cls": ""
+        },
+        {
+          "text": "Markets steady — \"correction appears contained\" — Reuters",
+          "cls": ""
+        },
+        {
+          "text": "NATO: Joint Warrior exercise begins in Norwegian Sea",
+          "cls": ""
+        },
+        {
+          "text": "Valentine's Day: UK spending forecast at £1.9bn — Barclaycard",
+          "cls": "warm"
+        },
+        {
+          "text": "Happy Valentine's Day",
+          "cls": "warm"
+        },
+        {
+          "text": "UK 5-year swap rate falls — mortgage lenders hold",
+          "cls": ""
+        },
+        {
+          "text": "Premier League: title race goes to final 10 games",
+          "cls": ""
+        },
+        {
+          "text": "Spring Budget confirmed for 5 March — Chancellor",
+          "cls": ""
+        },
+        {
+          "text": "\"Analysts dismiss February jitters — fundamentals unchanged\"",
+          "cls": ""
+        },
+        {
+          "text": "BIS quarterly review published — 214 pages",
+          "cls": "buried"
+        },
+        {
+          "text": "UK MOD: \"routine cyber resilience exercise\" begins Monday",
+          "cls": "buried"
+        },
+        {
+          "text": "Weather: rain clearing Friday evening — dry weekend ahead",
+          "cls": ""
+        }
+      ],
+      "21": "dead",
+      "22": [
+        {
+          "text": "EMERGENCY BROADCAST — CABINET OFFICE",
+          "cls": "cold"
+        },
+        {
+          "text": "All UK markets suspended until further notice",
+          "cls": "cold"
+        },
+        {
+          "text": "Civil Contingencies Act 2004 — emergency powers in effect",
+          "cls": "cold"
+        },
+        {
+          "text": "NHS: all routine appointments cancelled — emergency only",
+          "cls": "cold"
+        },
+        {
+          "text": "Schools closed until further notice — DfE",
+          "cls": "cold"
+        },
+        {
+          "text": "Military deployed to 14 distribution centres — MOD",
+          "cls": ""
+        },
+        {
+          "text": "Mobile networks: intermittent service — “prioritising emergency traffic”",
+          "cls": "cold"
+        },
+        {
+          "text": "23 nations report simultaneous infrastructure disruption — UN",
+          "cls": "cold"
+        },
+        {
+          "text": "Emergency food parcels: collection from 8am daily — local authority sites",
+          "cls": ""
+        },
+        {
+          "text": "Barclays, Lloyds, NatWest: card payments to be restored in next 24 hours — “systems stabilising”",
+          "cls": "warm"
+        },
+        {
+          "text": "Schools confirmed to reopen Monday — DfE update",
+          "cls": "warm"
+        },
+        {
+          "text": "⚠ BANKING APPS STILL DOWN — no confirmed timeline for restoration of services",
+          "cls": "alert"
+        },
+        {
+          "text": "Fuel rationing in effect — 30 litres per vehicle — forecourt queues expected",
+          "cls": ""
+        },
+        {
+          "text": "Bank of England: “unprecedented data corruption across settlement layer”",
+          "cls": "cold"
+        }
+      ],
+      "23": [
+        {
+          "text": "AIDA registration: 1.2m households — \"uptake exceeds projections\"",
+          "cls": "warm"
+        },
+        {
+          "text": "BritCoin exchange rate: 1 BC = £1.00 (fixed)",
+          "cls": ""
+        },
+        {
+          "text": "Community Recovery Hub average wait: 12 minutes",
+          "cls": "warm"
+        },
+        {
+          "text": "Emergency food hamper delivery: 98.4% within 4 hours — AIDA",
+          "cls": "warm"
+        },
+        {
+          "text": "Schools reopening Monday — remote registration required — DfE",
+          "cls": ""
+        },
+        {
+          "text": "NHS prescriptions: AIDA-verified patients processed first",
+          "cls": ""
+        },
+        {
+          "text": "BoE: \"legacy sterling instruments honoured at par for 90 days\"",
+          "cls": ""
+        },
+        {
+          "text": "UK power grid: 94% capacity restored — National Grid",
+          "cls": "warm"
+        },
+        {
+          "text": "PM: \"The British people have shown extraordinary resilience\"",
+          "cls": "warm"
+        },
+        {
+          "text": "Registered households report 97% satisfaction — Cabinet Office survey",
+          "cls": "warm"
+        },
+        {
+          "text": "AIDA wellness tip: \"Stay hydrated. You're doing brilliantly.\"",
+          "cls": "warm"
+        },
+        {
+          "text": "Unregistered households: local authority support available at Recovery Hubs",
+          "cls": ""
+        },
+        {
+          "text": "BritCoin top-up: first monthly allocation clears midnight tonight",
+          "cls": ""
+        },
+        {
+          "text": "Weather: sunshine and showers — 11°C — daffodils early this year",
+          "cls": ""
+        }
+      ]
     },
-    {
-      "text": "GBP/USD  1.2634",
-      "cls": "cold"
-    },
-    {
-      "text": "UK inflation 3.1% — ONS",
-      "cls": ""
-    },
-    {
-      "text": "Treasury: “No cause for concern ahead of Valentine’s weekend”",
-      "cls": ""
-    },
-    {
-      "text": "Crystal Palace 0 — 0 Fulham  HT",
-      "cls": "warm"
-    },
-    {
-      "text": "Bank of England holds base rate at 4.75%",
-      "cls": "cold"
-    },
-    {
-      "text": "RAF Wyton: MoD confirms “routine readiness exercise”",
-      "cls": ""
-    },
-    {
-      "text": "Starlink outages reported across South East",
-      "cls": "alert"
-    },
-    {
-      "text": "Digital Pound consultation closes March 31st",
-      "cls": "cold"
-    },
-    {
-      "text": "UK cash usage falls to 9% of transactions",
-      "cls": ""
-    },
-    {
-      "text": "Weather: further rain expected through Valentine’s weekend",
-      "cls": ""
-    },
-    {
-      "text": "NHS announces wrist-worn wellness monitor pilot",
-      "cls": "cold"
-    },
-    {
-      "text": "BIS mBridge cross-border CBDC pilot: 31 central banks",
-      "cls": "alert"
-    },
-    {
-      "text": "Barclays, HSBC, Lloyds: planned maintenance Friday 23:00–06:00",
-      "cls": "alert"
-    },
-    {
-      "text": "Sussex Bonfire Societies announce 2027 season dates",
-      "cls": "warm"
-    },
-    {
-      "text": "Gold  $2,847/oz  ▲ 1.2%",
-      "cls": "warm"
-    },
-    {
-      "text": "Spring seed swap — farm shops nationwide — March 8th",
-      "cls": "warm"
+    "poolMap": {
+      "1": "1-3",
+      "2": "1-3",
+      "3": "1-3",
+      "4": "4-5",
+      "5": "4-5",
+      "6": "6-8",
+      "7": "6-8",
+      "8": "6-8",
+      "9": "9-10",
+      "10": "9-10",
+      "11": "11-12",
+      "12": "11-12",
+      "13": "13-14",
+      "14": "13-14",
+      "15": "15-16",
+      "16": "15-16",
+      "17": "17-18",
+      "18": "17-18",
+      "19": "19-20",
+      "20": "19-20",
+      "21": "21",
+      "22": "22",
+      "23": "23"
     }
-  ],
+  },
   "initialNotes": []
 }

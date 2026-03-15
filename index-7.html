@@ -1030,6 +1030,8 @@ body.game-active .ticker-bar { display: flex; }
 .t-item.warm { color: var(--warm); opacity: 0.6; }
 .t-item.alert { color: var(--alert); opacity: 0.7; }
 .t-item.cold { color: var(--cold); opacity: 0.5; }
+.t-item.buried { color: var(--faint); opacity: 0.3; font-size: 11px; }
+.t-item.buried:hover { opacity: 0.6; }
 .t-sep {
   opacity: 0.15;
   padding: 0 4px;
@@ -1045,8 +1047,15 @@ body.game-active .ticker-bar { display: flex; }
 .ticker-bar.dead .ticker-label { color: var(--alert); opacity: .3; }
 .ticker-bar.dead .t-item { display: none; }
 .ticker-bar.dead::after {
-  content: '';
+  content: 'TRADING SUSPENDED — ALL MARKETS — EMERGENCY BROADCAST IN PROGRESS';
   flex: 1;
+  text-align: center;
+  color: var(--alert);
+  opacity: 0.4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* ── DEV TURN LIST ── */
@@ -2058,7 +2067,7 @@ let playData = {};
 let signalData = {};
 let threadsData = [];
 let songsData = [];
-let tickerItems = [];
+let tickerData = {};
 
 async function loadGame() {
   try {
@@ -2085,7 +2094,7 @@ async function loadGame() {
     signalData = data.signal || {};
     threadsData = data.threads || [];
     songsData = data.songs || [];
-    tickerItems = data.ticker || [];
+    tickerData = data.ticker || {};
 
     // Init
     renderThreads();
@@ -2700,15 +2709,32 @@ function updateEconDisplay() {
 function updateTicker(turnId) {
   const ticker = document.getElementById('ticker');
   const inner = document.getElementById('ticker-inner');
-  if (turnId === 21) {
+
+  // No ticker update during questions (turnId is null)
+  if (turnId == null) return;
+
+  // Look up pool for this turn
+  const pools = tickerData.pools || {};
+  const poolMap = tickerData.poolMap || {};
+  const poolKey = poolMap[String(turnId)];
+  const pool = poolKey ? pools[poolKey] : null;
+
+  // Dead ticker (T21 — the Event)
+  if (pool === 'dead') {
     ticker.classList.add('dead');
     inner.innerHTML = '';
     return;
   }
+
   ticker.classList.remove('dead');
-  const all = [...tickerItems, ...tickerItems];
+
+  // If no pool found for this turn, leave ticker unchanged
+  if (!pool || !Array.isArray(pool)) return;
+
+  // Duplicate for seamless scroll loop
+  const all = [...pool, ...pool];
   inner.innerHTML = all.map(item =>
-    `<span class="t-item ${item.cls}">${item.text}</span><span class="t-sep">\u25c6</span>`
+    `<span class="t-item ${item.cls}">${item.text}</span><span class="t-sep">◆</span>`
   ).join('');
 }
 

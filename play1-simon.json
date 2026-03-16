@@ -1516,19 +1516,16 @@
       "id": "MF1",
       "isQuestion": true,
       "questionMode": "mirror",
-      "questionText": "[MIRROR: THE 50/50 — Multiple choice, 4 options. Moral/hypocrisy question about the reader's actual life. No crisis framing. Resonance with Simon's story felt, not stated. QUESTION TEXT TBD.]",
+      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
       "questionOpts": [
         {
-          "text": "[option 1]"
+          "text": "Yes, of course I would."
         },
         {
-          "text": "[option 2]"
+          "text": "I’d notice. I wouldn’t do anything."
         },
         {
-          "text": "[option 3]"
-        },
-        {
-          "text": "[option 4]"
+          "text": "Probably not."
         }
       ]
     },

@@ -1103,7 +1103,7 @@ body.game-active .ticker-bar { display: flex; }
 .dl-overlay .dl-word.clickable { pointer-events: auto; }
 .dl-overlay .dl-word.selected { filter: blur(0px) !important; }
 .dl-overlay .dl-glow {
-  position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+  position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%);
   width: 140px; height: 220px; pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(196,149,106,0.06) 0%, transparent 70%);
   animation: dlPulse 4s ease-in-out infinite;
@@ -1796,7 +1796,7 @@ body.game-active .ticker-bar { display: flex; }
 /* Right image: 10% from right, bottom of container */
 .se-img-col:nth-child(3) { right:10%; bottom:20px; }
 .se-img-col:nth-child(3) .se-img-wrap { width:340px; height:340px; }
-.se-img-wrap { border-radius:2px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.0); background:#000; }
+.se-img-wrap { border-radius:2px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.0); background:transparent; }
 .se-img-wrap:hover { border-color:rgba(255,255,255,0.1); }
 .se-img-wrap.playing { border-color:rgba(196,149,106,0.5); box-shadow:0 0 32px rgba(196,149,106,0.15); }
 .se-img-wrap.played { border-color:rgba(255,255,255,0.06); }
@@ -4676,8 +4676,7 @@ function renderDoorOfLight(turnData) {
         setTimeout(() => { w.el.style.transition = 'none'; w.faded = true; }, 2600);
       }, delay);
     });
-    // Words become clickable shortly after they start appearing — not after full fade-in
-    const lastDelay = words.length * 120 + 300;
+    const lastDelay = words.length * 120 + 300 + 2600;
     setTimeout(() => wordData.forEach(w => w.el.classList.add('clickable')), lastDelay);
   }, 6700);
 

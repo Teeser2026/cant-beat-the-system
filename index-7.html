@@ -1770,7 +1770,7 @@ body.game-active .ticker-bar { display: flex; }
 .se-q-home { font-family:'Crimson Pro',serif; font-size:96px; font-weight:300; font-style:italic; letter-spacing:-2px; display:block; margin:12px 0 16px; opacity:0; transition:opacity 1.8s ease; color:rgba(255,255,255,0.88); }
 .se-q-home.shown { opacity:1; }
 /* Images row — phase 1 */
-.se-images { display:flex; flex-direction:row; gap:24px; align-items:flex-start; justify-content:center; opacity:0; transition:opacity 1.2s ease; margin-top:60px; }
+.se-images { display:flex; flex-direction:row; gap:28px; align-items:flex-start; justify-content:center; opacity:0; transition:opacity 1.2s ease; margin-top:100px; }
 .se-images.visible { opacity:1; }
 .se-img-col { display:flex; flex-direction:column; align-items:center; gap:16px; }
 .se-img-wrap { width:200px; height:200px; border-radius:3px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.04); }
@@ -1790,9 +1790,7 @@ body.game-active .ticker-bar { display: flex; }
 .se-aftermath.selected { color:rgba(196,149,106,0.95); }
 .se-aftermath.dimmed { color:rgba(255,255,255,0.08); }
 /* Continue */
-.se-continue { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.15); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); padding:10px 24px 12px; cursor:pointer; margin-top:52px; transition:all 0.5s; opacity:0; pointer-events:none; }
-.se-continue.ready { opacity:1; pointer-events:auto; }
-.se-continue:hover { color:rgba(196,149,106,0.9); border-bottom-color:rgba(196,149,106,0.4); }
+/* se-continue removed — auto-advance on selection */
 
 /* Drag ghost */
 #sound-prompt-overlay .sp-drag-ghost {
@@ -3287,7 +3285,7 @@ function renderSoundEcho(turnData) {
           <div class="se-aftermath" id="seAfter${i}">${c.aftermath}</div>
         </div>`).join('')}
       </div>
-      <button class="se-continue" id="seContinue">continue</button>
+
     </div>
   `;
 
@@ -3388,9 +3386,28 @@ function renderSoundEcho(turnData) {
         if (img) { img.classList.add('dimmed'); img.classList.remove('selected'); }
       }
     });
-    // Unlock continue
-    const cont = document.getElementById('seContinue');
-    if (cont) cont.classList.add('ready');
+    // Log and auto-advance — fade to black then dismiss
+    seStopAll();
+    if (!state.questionsLog) state.questionsLog = [];
+    state.questionsLog.push({
+      id: turnData.question && turnData.question.id || 'SE1',
+      type: 'soundEcho',
+      chosen: i,
+      chosenText: SE_CLIPS[i].aftermath,
+      turn: turnData.id
+    });
+    // Fade everything to near-black, then advance
+    setTimeout(() => {
+      overlay.classList.remove('visible');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        overlay.innerHTML = '';
+        wrap.style.display = '';
+        econBar.style.display = '';
+        devList.style.display = '';
+        advanceTurn();
+      }, 1400);
+    }, 2000);
   }
 
   // ── Bind image clicks — play sound ──
@@ -3416,27 +3433,7 @@ function renderSoundEcho(turnData) {
     });
   });
 
-  // ── Continue ──
-  document.getElementById('seContinue').addEventListener('click', () => {
-    seStopAll();
-    if (!state.questionsLog) state.questionsLog = [];
-    state.questionsLog.push({
-      id: turnData.question && turnData.question.id || 'SE1',
-      type: 'soundEcho',
-      chosen: seSelected,
-      chosenText: seSelected >= 0 ? SE_CLIPS[seSelected].aftermath : null,
-      turn: turnData.id
-    });
-    overlay.classList.remove('visible');
-    setTimeout(() => {
-      overlay.style.display = 'none';
-      overlay.innerHTML = '';
-      wrap.style.display = '';
-      econBar.style.display = '';
-      devList.style.display = '';
-      advanceTurn();
-    }, 1200);
-  });
+  // Continue removed — auto-advance handled in seSelect
 }
 
 function renderSoundPrompt(turnData) {

@@ -1281,6 +1281,72 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ══════════════════════════════════════════════════════
+   MIRROR — full-screen overlay (void)
+   ══════════════════════════════════════════════════════ */
+#mirror-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#mirror-overlay.visible { opacity: 1; }
+
+#mirror-overlay .mo-inner {
+  max-width: 560px;
+  width: 90%;
+  padding: 0 24px;
+}
+
+#mirror-overlay .mo-question {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--text);
+  letter-spacing: .3px;
+  margin-bottom: 52px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: moFadeIn 2s ease forwards 0.6s;
+}
+
+@keyframes moFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#mirror-overlay .mo-opts {
+  opacity: 0;
+  animation: moFadeIn 1.5s ease forwards 2s;
+}
+
+#mirror-overlay .mo-opt {
+  font-family: 'Crimson Pro', serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--dim);
+  padding: 18px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(26,24,22,.25);
+  transition: all .4s;
+}
+#mirror-overlay .mo-opt:last-child { border-bottom: none; }
+#mirror-overlay .mo-opt:hover { color: var(--warm); padding-left: 16px; }
+#mirror-overlay .mo-opt.sel {
+  color: var(--warm);
+  padding-left: 16px;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+#mirror-overlay .mo-opt.dimmed {
+  opacity: .15;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
 #sound-prompt-overlay {
@@ -2143,6 +2209,7 @@ body.game-active .ticker-bar { display: flex; }
 <div id="image-prompt-overlay" style="display:none"></div>
 <div id="video-rorschach-overlay" style="display:none"></div>
 <div id="video-mirror-overlay" style="display:none"></div>
+<div id="mirror-overlay" style="display:none"></div>
 
 <div class="noise"></div>
 
@@ -3774,6 +3841,64 @@ function renderImagePrompt(turnData) {
   }
 }
 
+// ── MIRROR (full-screen void) ──
+function renderMirrorFullscreen(turnData) {
+  const overlay = document.getElementById('mirror-overlay');
+  overlay.style.display = 'flex';
+  overlay.classList.remove('visible');
+
+  const answered = state.questionsLog.find(ql => ql.id === turnData.id);
+
+  let optsHtml = '';
+  turnData.questionOpts.forEach((o, i) => {
+    const isSel = answered && answered.chosen === i;
+    const isDimmed = answered && answered.chosen !== i;
+    const cls = isSel ? ' sel' : isDimmed ? ' dimmed' : '';
+    optsHtml += `<div class="mo-opt${cls}" data-qid="${turnData.id}" data-qi="${i}">${o.text}</div>`;
+  });
+
+  overlay.innerHTML = `
+    <div class="mo-inner">
+      <div class="mo-question">${turnData.questionText}</div>
+      <div class="mo-opts">${optsHtml}</div>
+    </div>
+  `;
+
+  // Fade in
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { overlay.classList.add('visible'); });
+  });
+
+  // Bind clicks (skip if already answered)
+  if (!answered) {
+    overlay.querySelectorAll('.mo-opt').forEach(opt => {
+      opt.addEventListener('click', function() {
+        const qid = this.dataset.qid;
+        const qi = parseInt(this.dataset.qi);
+        state.questionsLog.push({ id: qid, chosen: qi, text: turnData.questionOpts[qi].text });
+
+        // Dim others, highlight chosen
+        overlay.querySelectorAll('.mo-opt').forEach(o => {
+          o.classList.add('dimmed');
+          o.style.pointerEvents = 'none';
+        });
+        this.classList.remove('dimmed');
+        this.classList.add('sel');
+
+        // Hold, then fade out and advance
+        setTimeout(() => {
+          overlay.classList.remove('visible');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+            overlay.innerHTML = '';
+            goTo(state.turnIndex + 1);
+          }, 1600);
+        }, 1400);
+      });
+    });
+  }
+}
+
 // ── VIDEO RORSCHACH ──
 function renderVideoRorschach(turnData) {
   const overlay = document.getElementById('video-rorschach-overlay');
@@ -4134,6 +4259,10 @@ function goTo(idx) {
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');
 
+  // Hide mirror overlay if navigating away
+  const mirrorOv = document.getElementById('mirror-overlay');
+  if (mirrorOv) { mirrorOv.style.display = 'none'; mirrorOv.classList.remove('visible'); mirrorOv.innerHTML = ''; }
+
   handleTurnAudio(turn);
 
   // ── SOUND PROMPT — full-screen takeover ──
@@ -4166,6 +4295,18 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderImagePrompt(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
+  // ── MIRROR — full-screen takeover ──
+  if (turn.questionMode === 'mirror') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderMirrorFullscreen(turn);
     if (document.getElementById('devTurnList').classList.contains('open')) {
       renderDevTurnList();
     }

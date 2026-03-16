@@ -76,7 +76,8 @@
         {
           "text": "I feel free enough."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 1,
@@ -144,7 +145,8 @@
         {
           "text": "I'm doing it right now."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 2,
@@ -250,7 +252,8 @@
         {
           "text": "No. People first. Always."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": "MQ4",
@@ -269,7 +272,8 @@
         {
           "text": "I can't tell the difference anymore."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": "MQ5",
@@ -288,7 +292,8 @@
         {
           "text": "I don't think I dream anymore."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 4,
@@ -420,7 +425,8 @@
         {
           "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 6,
@@ -527,7 +533,8 @@
         {
           "text": "What the room wants to hear. Life's easier that way."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 8,
@@ -681,7 +688,8 @@
         {
           "text": "I don't think about it. Life's too short."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 9,
@@ -805,7 +813,8 @@
         {
           "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 11,
@@ -974,7 +983,8 @@
         {
           "text": "It depends on whether I asked for it."
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 13,
@@ -1121,7 +1131,8 @@
         {
           "text": "What choice would I have?"
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": "MQ12",
@@ -1140,7 +1151,8 @@
         {
           "text": "Curiosity. What happens next?"
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": "MQ13",
@@ -1159,7 +1171,8 @@
         {
           "text": "How would I know?"
         }
-      ]
+      ],
+      "questionMode": "mirror"
     },
     {
       "id": 19,

@@ -1763,22 +1763,34 @@ body.game-active .ticker-bar { display: flex; }
 #sound-echo-overlay { display:none; position:fixed; inset:0; z-index:900; background:#000; opacity:0; transition:opacity 1.4s ease; flex-direction:column; align-items:center; justify-content:center; }
 #sound-echo-overlay.visible { opacity:1; }
 .se-inner { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; width:100%; min-height:100vh; padding:40px 20px; box-sizing:border-box; }
-.se-question { font-family:'Crimson Pro',serif; font-weight:300; font-style:italic; color:rgba(255,255,255,0); text-align:center; line-height:1.3; margin-bottom:80px; transition:none; user-select:none; }
-.se-question.visible { color:rgba(255,255,255,1); }
-.se-q-word { font-size:28px; letter-spacing:0.5px; display:inline; opacity:0; transition:opacity 1.2s ease; }
+/* Question reveal */
+.se-question { text-align:center; line-height:1.3; margin-bottom:0; user-select:none; }
+.se-q-word { font-family:'Crimson Pro',serif; font-size:26px; font-weight:300; font-style:italic; letter-spacing:0.5px; display:inline; opacity:0; transition:opacity 1.2s ease; color:rgba(255,255,255,0.75); }
 .se-q-word.shown { opacity:1; }
-.se-q-home { font-size:88px; letter-spacing:-1px; display:block; margin-top:8px; opacity:0; transition:opacity 1.6s ease; }
+.se-q-home { font-family:'Crimson Pro',serif; font-size:96px; font-weight:300; font-style:italic; letter-spacing:-2px; display:block; margin:12px 0 16px; opacity:0; transition:opacity 1.8s ease; color:rgba(255,255,255,0.88); }
 .se-q-home.shown { opacity:1; }
-.se-sounds { display:flex; flex-direction:column; gap:36px; align-items:center; }
-.se-sound-row { display:flex; flex-direction:column; align-items:center; gap:10px; }
-.se-btn { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.18); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); padding:10px 24px 12px; cursor:pointer; transition:all 0.5s; min-width:180px; position:relative; overflow:hidden; }
-.se-btn:hover { color:rgba(255,255,255,0.45); border-bottom-color:rgba(255,255,255,0.18); }
-.se-btn.playing { color:rgba(196,149,106,0.95); border-bottom-color:rgba(196,149,106,0.5); }
-.se-btn.played { color:rgba(255,255,255,0.28); border-bottom-color:rgba(255,255,255,0.08); }
-.se-progress { position:absolute; bottom:0; left:0; height:1px; width:0%; background:rgba(196,149,106,0.7); transition:width 0.1s linear; }
-.se-aftermath { font-family:'Crimson Pro',serif; font-size:17px; font-style:italic; color:rgba(255,255,255,0.0); text-align:center; line-height:1.65; transition:color 2s ease; min-height:26px; max-width:340px; }
-.se-aftermath.visible { color:rgba(255,255,255,0.32); }
-.se-continue { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.15); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); padding:10px 24px 12px; cursor:pointer; margin-top:70px; transition:all 0.5s; opacity:0; pointer-events:none; }
+/* Images row — phase 1 */
+.se-images { display:flex; flex-direction:row; gap:24px; align-items:flex-start; justify-content:center; opacity:0; transition:opacity 1.2s ease; margin-top:60px; }
+.se-images.visible { opacity:1; }
+.se-img-col { display:flex; flex-direction:column; align-items:center; gap:16px; }
+.se-img-wrap { width:200px; height:200px; border-radius:3px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.04); }
+.se-img-wrap:hover { border-color:rgba(255,255,255,0.14); }
+.se-img-wrap.playing { border-color:rgba(196,149,106,0.6); box-shadow:0 0 28px rgba(196,149,106,0.12); }
+.se-img-wrap.played { border-color:rgba(255,255,255,0.08); }
+.se-img-wrap.selected { border-color:rgba(196,149,106,0.8); box-shadow:0 0 40px rgba(196,149,106,0.2); }
+.se-img-wrap.dimmed { opacity:0.2; }
+/* Placeholder gradient fills — replaced by real images via inline style */
+.se-img-placeholder { width:100%; height:100%; transition:opacity 0.5s; }
+/* Progress bar on image */
+.se-img-progress { position:absolute; bottom:0; left:0; height:2px; width:0%; background:rgba(196,149,106,0.8); transition:width 0.1s linear; }
+/* Aftermath lines — phase 2 */
+.se-aftermath { font-family:'Crimson Pro',serif; font-size:16px; font-style:italic; color:rgba(255,255,255,0); text-align:center; line-height:1.65; transition:color 1.8s ease, opacity 0.4s ease; max-width:180px; cursor:default; opacity:0; }
+.se-aftermath.revealed { color:rgba(255,255,255,0.28); opacity:1; cursor:pointer; }
+.se-aftermath.revealed:hover { color:rgba(196,149,106,0.8); }
+.se-aftermath.selected { color:rgba(196,149,106,0.95); }
+.se-aftermath.dimmed { color:rgba(255,255,255,0.08); }
+/* Continue */
+.se-continue { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.15); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); padding:10px 24px 12px; cursor:pointer; margin-top:52px; transition:all 0.5s; opacity:0; pointer-events:none; }
 .se-continue.ready { opacity:1; pointer-events:auto; }
 .se-continue:hover { color:rgba(196,149,106,0.9); border-bottom-color:rgba(196,149,106,0.4); }
 
@@ -3235,27 +3247,43 @@ function renderSoundEcho(turnData) {
   const econBar = document.querySelector('.econ-bar');
   const devList = document.getElementById('devTurnList');
 
+  // ── Config — swap image filenames when MJ assets are ready ──
   const SE_CLIPS = [
-    { file: 'cork-pull.mp3',   label: 'sound one',   aftermath: 'The ritual of an ordinary evening' },
-    { file: 'fire-crackle.mp3', label: 'sound two',  aftermath: 'Warmth. The oldest shelter.' },
-    { file: 'child-laugh.mp3', label: 'sound three',  aftermath: 'What you would give everything for' }
+    {
+      file: 'cork-pull.mp3',
+      aftermath: 'The ritual of an ordinary evening',
+      // Placeholder: deep amber/brown — replace with: img: 'se-home-1.jpg'
+      placeholder: 'linear-gradient(135deg, #2a1a08 0%, #8B5E2A 45%, #3d2008 100%)'
+    },
+    {
+      file: 'fire-crackle.mp3',
+      aftermath: 'Warmth. The oldest shelter.',
+      // Placeholder: burnt orange/red — replace with: img: 'se-home-2.jpg'
+      placeholder: 'linear-gradient(135deg, #1a0800 0%, #7a2e0a 50%, #c45a1a 75%, #2a0a00 100%)'
+    },
+    {
+      file: 'child-laugh.mp3',
+      aftermath: 'What you would give everything for',
+      // Placeholder: pale gold/cream — replace with: img: 'se-home-3.jpg'
+      placeholder: 'linear-gradient(135deg, #1a1408 0%, #6b5a28 40%, #c8a84a 70%, #1a1408 100%)'
+    }
   ];
 
-  // Build HTML
+  // Build HTML — images row hidden initially, question reveals first
   overlay.innerHTML = `
     <div class="se-inner">
       <div class="se-question" id="seQuestion">
         <span class="se-q-word" id="seQw0">Which</span>&nbsp;<span class="se-q-word" id="seQw1">sound</span>&nbsp;<span class="se-q-word" id="seQw2">says</span>
         <span class="se-q-home" id="seQHome">home</span>
-        <span class="se-q-word" id="seQw3" style="font-size:28px">to you?</span>
+        <span class="se-q-word" id="seQw3">to you?</span>
       </div>
-      <div class="se-sounds" id="seSounds">
+      <div class="se-images" id="seImages">
         ${SE_CLIPS.map((c, i) => `
-        <div class="se-sound-row">
-          <button class="se-btn" id="seBtn${i}" data-i="${i}">
-            <span class="se-btn-label">${c.label}</span>
-            <div class="se-progress" id="seProg${i}"></div>
-          </button>
+        <div class="se-img-col" id="seCol${i}">
+          <div class="se-img-wrap" id="seImg${i}" data-i="${i}">
+            <div class="se-img-placeholder" id="sePlaceholder${i}" style="background:${c.placeholder};"></div>
+            <div class="se-img-progress" id="seProg${i}"></div>
+          </div>
           <div class="se-aftermath" id="seAfter${i}">${c.aftermath}</div>
         </div>`).join('')}
       </div>
@@ -3270,17 +3298,23 @@ function renderSoundEcho(turnData) {
   devList.style.display = 'none';
   if (typeof stopTurnAudio === 'function') stopTurnAudio(1);
 
+  // ── Phase 1: Question reveal, then images fade in after 5s ──
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       overlay.classList.add('visible');
-      // Slow word-by-word reveal of question
-      const delays = [600, 1100, 1600, 2200, 3200];
+      // Word-by-word question reveal
+      const delays = [600, 1200, 1800, 2600, 3800];
       ['seQw0','seQw1','seQw2','seQHome','seQw3'].forEach((id, idx) => {
         setTimeout(() => {
           const el = document.getElementById(id);
           if (el) el.classList.add('shown');
         }, delays[idx]);
       });
+      // Images fade in at 5s
+      setTimeout(() => {
+        const imgs = document.getElementById('seImages');
+        if (imgs) imgs.classList.add('visible');
+      }, 5000);
     });
   });
 
@@ -3288,6 +3322,7 @@ function renderSoundEcho(turnData) {
   const seAudios = [];
   const sePlayed = new Set();
   let seCurrentPlaying = -1;
+  let seSelected = -1;
 
   SE_CLIPS.forEach((c, i) => {
     const a = new Audio(c.file);
@@ -3307,15 +3342,13 @@ function renderSoundEcho(turnData) {
     seAudios[i].currentTime = 0;
     const p = document.getElementById('seProg' + i);
     if (p) p.style.width = '0%';
-    const btn = document.getElementById('seBtn' + i);
-    if (btn) { btn.classList.remove('playing'); btn.classList.add('played'); }
+    const img = document.getElementById('seImg' + i);
+    if (img) { img.classList.remove('playing'); img.classList.add('played'); }
     if (finished) {
       sePlayed.add(i);
-      const after = document.getElementById('seAfter' + i);
-      if (after) after.classList.add('visible');
+      seCheckAllPlayed();
     }
     seCurrentPlaying = -1;
-    seCheckReady();
   }
 
   function seStopAll() {
@@ -3324,39 +3357,76 @@ function renderSoundEcho(turnData) {
       seAudios[i].currentTime = 0;
       const p = document.getElementById('seProg' + i);
       if (p) p.style.width = '0%';
-      const btn = document.getElementById('seBtn' + i);
-      if (btn) btn.classList.remove('playing');
+      const img = document.getElementById('seImg' + i);
+      if (img) img.classList.remove('playing');
     });
     seCurrentPlaying = -1;
   }
 
-  function seCheckReady() {
+  function seCheckAllPlayed() {
     if (sePlayed.size >= SE_CLIPS.length) {
-      const cont = document.getElementById('seContinue');
-      if (cont) cont.classList.add('ready');
+      // Phase 2: reveal aftermath lines as selectable answers
+      setTimeout(() => {
+        SE_CLIPS.forEach((_, i) => {
+          const after = document.getElementById('seAfter' + i);
+          if (after) after.classList.add('revealed');
+        });
+      }, 600);
     }
   }
 
-  // Bind buttons
+  function seSelect(i) {
+    seSelected = i;
+    SE_CLIPS.forEach((_, j) => {
+      const after = document.getElementById('seAfter' + j);
+      const img = document.getElementById('seImg' + j);
+      if (j === i) {
+        if (after) { after.classList.remove('dimmed'); after.classList.add('selected'); }
+        if (img) { img.classList.add('selected'); img.classList.remove('dimmed'); }
+      } else {
+        if (after) { after.classList.remove('selected'); after.classList.add('dimmed'); }
+        if (img) { img.classList.add('dimmed'); img.classList.remove('selected'); }
+      }
+    });
+    // Unlock continue
+    const cont = document.getElementById('seContinue');
+    if (cont) cont.classList.add('ready');
+  }
+
+  // ── Bind image clicks — play sound ──
   SE_CLIPS.forEach((_, i) => {
-    const btn = document.getElementById('seBtn' + i);
-    if (!btn) return;
-    btn.addEventListener('click', () => {
+    const img = document.getElementById('seImg' + i);
+    if (!img) return;
+    img.addEventListener('click', () => {
       if (seCurrentPlaying === i) { seStop(i, false); return; }
       seStopAll();
       seAudios[i].play().catch(() => {});
-      btn.classList.add('playing');
+      img.classList.add('playing');
       seCurrentPlaying = i;
     });
   });
 
-  // Continue
+  // ── Bind aftermath clicks — select answer ──
+  SE_CLIPS.forEach((_, i) => {
+    const after = document.getElementById('seAfter' + i);
+    if (!after) return;
+    after.addEventListener('click', () => {
+      if (!after.classList.contains('revealed')) return;
+      seSelect(i);
+    });
+  });
+
+  // ── Continue ──
   document.getElementById('seContinue').addEventListener('click', () => {
     seStopAll();
-    // Log to questionsLog
     if (!state.questionsLog) state.questionsLog = [];
-    state.questionsLog.push({ id: turnData.question && turnData.question.id || 'SE1', type: 'soundEcho', response: 'listened', turn: turnData.id });
-    // Dismiss
+    state.questionsLog.push({
+      id: turnData.question && turnData.question.id || 'SE1',
+      type: 'soundEcho',
+      chosen: seSelected,
+      chosenText: seSelected >= 0 ? SE_CLIPS[seSelected].aftermath : null,
+      turn: turnData.id
+    });
     overlay.classList.remove('visible');
     setTimeout(() => {
       overlay.style.display = 'none';

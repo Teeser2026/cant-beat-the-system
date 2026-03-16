@@ -723,10 +723,10 @@ async function loadGame() {
     state = {
       play: 1,
       turnIndex: 0,
-      ...structuredClone(data.initialState),
+      ...JSON.parse(JSON.stringify(data.initialState)),
       choicesLog: [],
       questionsLog: [],
-      notes: data.initialNotes ? structuredClone(data.initialNotes) : [],
+      notes: data.initialNotes ? JSON.parse(JSON.stringify(data.initialNotes)) : [],
       playerSongs: [],
       playerThreads: []
     };

@@ -3874,7 +3874,7 @@ function renderVideoMirror(turnData) {
   const videoSrc = turnData.questionVideo || '';
   const questionText = turnData.questionText || '';
   const words = questionText.split(/\s+/).filter(w => w);
-  const wordsHtml = words.map(w => `<span class="pw">${w}</span>`).join('');
+  const wordsHtml = words.map(w => `<span class="pw">${w}</span>`).join(' ');
 
   let optsHtml = '';
   turnData.questionOpts.forEach((o, i) => {

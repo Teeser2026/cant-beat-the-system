@@ -1708,7 +1708,7 @@
     {
       "id": "SE1",
       "isQuestion": true,
-      "questionMode": "sound-prompt-echo",
+      "questionMode": "sound-echo",
       "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
       "questionOpts": [
         {

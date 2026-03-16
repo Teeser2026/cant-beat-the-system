@@ -1606,10 +1606,42 @@
       "id": "DL1",
       "isQuestion": true,
       "questionMode": "door-of-light",
-      "questionText": "[DOOR OF LIGHT — 25 floating words in darkness. Drag one into the light. White flash. Word lingers. ENGINE BUILD PENDING. DOOR IMAGE ASSET NEEDED.]",
+      "questionText": "choose the five words you'll take through",
+      "doorWords": [
+        "safety",
+        "comfort",
+        "health",
+        "efficiency",
+        "connection",
+        "reputation",
+        "rage",
+        "convenience",
+        "certainty",
+        "income",
+        "approval",
+        "routine",
+        "progress",
+        "doubt",
+        "wonder",
+        "silence",
+        "disobedience",
+        "prayer",
+        "grief",
+        "wildness",
+        "forgiveness",
+        "awe",
+        "solitude",
+        "defiance",
+        "mercy"
+      ],
+      "maxSelect": 5,
+      "assets": {
+        "video": "door-loop.mp4",
+        "audio": "door-audio.mp3"
+      },
       "questionOpts": [
         {
-          "text": "[placeholder]"
+          "text": "[reader selects 5 of 25 floating words — logged to questionsLog]"
         }
       ]
     },

@@ -3439,11 +3439,6 @@ function renderSoundEcho(turnData) {
       if (after && !after.classList.contains('revealed')) after.classList.add('revealed');
       sePlayed.add(i);
       seCheckAllPlayed();
-      // Reveal this image's aftermath immediately on first play
-      const after = document.getElementById('seAfter' + i);
-      if (after && !after.classList.contains('revealed')) after.classList.add('revealed');
-      sePlayed.add(i);
-      seCheckAllPlayed();
     });
   });
 

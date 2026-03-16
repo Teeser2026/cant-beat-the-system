@@ -1109,6 +1109,17 @@ body.game-active .ticker-bar { display: flex; }
   animation: dlPulse 4s ease-in-out infinite;
 }
 @keyframes dlPulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+.dl-overlay .dl-glow.flash {
+  animation: dlFlash 1.2s ease-out forwards;
+  width: 300px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(255,240,210,0.7) 0%, rgba(196,149,106,0.3) 30%, transparent 70%);
+}
+@keyframes dlFlash {
+  0% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+  15% { opacity: 1; transform: translateX(-50%) scale(1.8); }
+  40% { opacity: 0.9; transform: translateX(-50%) scale(1.5); }
+  100% { opacity: 0; transform: translateX(-50%) scale(2.2); }
+}
 
 @media (max-width: 768px) {
   #video-rorschach-overlay .vr-video { max-width: 85vw; max-height: 50vh; }
@@ -4628,13 +4639,23 @@ function renderDoorOfLight(turnData) {
       else { w.fading = true; w.fadeStart = now + 400 + Math.random() * 1200; }
     });
     state.questionsLog.push({ id: turnData.id, chosen: chosen, text: chosen.join(', ') });
+    // After drift completes (~3s), wait 2s, then flash + sound
     setTimeout(() => {
-      const dlAudio = document.getElementById('dl-audio');
-      if (dlAudio) { dlAudio.pause(); dlAudio.remove(); }
-      overlay.remove();
-      wrap.style.display = ''; econBar.style.display = ''; devList.style.display = '';
-      goTo(state.turnIndex + 1);
-    }, 4500);
+      const glowEl = overlay.querySelector('.dl-glow');
+      if (glowEl) glowEl.classList.add('flash');
+      const resolveAudio = new Audio('door-resolve.mp3');
+      resolveAudio.volume = 0.7;
+      resolveAudio.play().catch(() => {});
+      // Let flash + sound breathe, then clean up
+      setTimeout(() => {
+        const dlAudio = document.getElementById('dl-audio');
+        if (dlAudio) { dlAudio.pause(); dlAudio.remove(); }
+        resolveAudio.pause(); resolveAudio.src = '';
+        overlay.remove();
+        wrap.style.display = ''; econBar.style.display = ''; devList.style.display = '';
+        goTo(state.turnIndex + 1);
+      }, 1500);
+    }, 5000);
   }
 
   const startT = performance.now();

@@ -1347,6 +1347,130 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ══════════════════════════════════════════════════════
+   SLIDER — full-screen overlay (SL1)
+   ══════════════════════════════════════════════════════ */
+#slider-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#slider-overlay.visible { opacity: 1; }
+
+#slider-overlay .sl-inner {
+  max-width: 520px;
+  width: 90%;
+  padding: 0 24px;
+  text-align: center;
+}
+
+#slider-overlay .sl-stem {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--text);
+  letter-spacing: .3px;
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: moFadeIn 2s ease forwards 0.6s;
+}
+
+#slider-overlay .sl-track-wrap {
+  opacity: 0;
+  animation: moFadeIn 1.5s ease forwards 2s;
+  padding: 0 8px;
+}
+
+#slider-overlay .sl-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--faint);
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+}
+#slider-overlay .sl-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--warm);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .4s;
+}
+#slider-overlay .sl-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--warm);
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .4s;
+}
+#slider-overlay .sl-range.touched::-webkit-slider-thumb { opacity: 1; }
+#slider-overlay .sl-range.touched::-moz-range-thumb { opacity: 1; }
+
+#slider-overlay .sl-endpoints {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--dim);
+  opacity: .4;
+}
+
+#slider-overlay .sl-value {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--warm);
+  margin-top: 48px;
+  letter-spacing: 2px;
+  min-height: 56px;
+  opacity: 0;
+  transition: opacity .6s;
+}
+#slider-overlay .sl-value.show { opacity: 1; }
+
+#slider-overlay .sl-confirm {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  background: none;
+  border: 1px solid var(--faint);
+  padding: 12px 32px;
+  cursor: pointer;
+  margin-top: 40px;
+  opacity: 0;
+  transition: all .4s;
+  pointer-events: none;
+}
+#slider-overlay .sl-confirm.ready {
+  opacity: .6;
+  pointer-events: auto;
+}
+#slider-overlay .sl-confirm.ready:hover {
+  color: var(--warm);
+  border-color: var(--warm);
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
 #sound-prompt-overlay {
@@ -2210,6 +2334,7 @@ body.game-active .ticker-bar { display: flex; }
 <div id="video-rorschach-overlay" style="display:none"></div>
 <div id="video-mirror-overlay" style="display:none"></div>
 <div id="mirror-overlay" style="display:none"></div>
+<div id="slider-overlay" style="display:none"></div>
 
 <div class="noise"></div>
 
@@ -3899,6 +4024,87 @@ function renderMirrorFullscreen(turnData) {
   }
 }
 
+// ── SLIDER ──
+function renderSlider(turnData) {
+  const overlay = document.getElementById('slider-overlay');
+  overlay.style.display = 'flex';
+  overlay.classList.remove('visible');
+
+  const answered = state.questionsLog.find(ql => ql.id === turnData.id);
+
+  // Build inner HTML
+  const val = answered ? answered.chosen : '';
+  const touchedCls = answered ? ' touched' : '';
+  const valShow = answered ? ' show' : '';
+  const confirmReady = answered ? ' ready' : '';
+  const disabled = answered ? ' disabled' : '';
+  const pointerNone = answered ? ' style="pointer-events:none"' : '';
+
+  overlay.innerHTML = `
+    <div class="sl-inner">
+      <div class="sl-stem">${turnData.questionText}</div>
+      <div class="sl-track-wrap">
+        <input type="range" class="sl-range${touchedCls}" min="0" max="10" step="1" value="5"${disabled}${pointerNone}>
+        <div class="sl-endpoints"><span>0</span><span>10</span></div>
+        <div class="sl-value${valShow}">${val}</div>
+        <button class="sl-confirm${confirmReady}"${answered ? ' disabled' : ''}>Confirm</button>
+      </div>
+    </div>
+  `;
+
+  // Fade in
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { overlay.classList.add('visible'); });
+  });
+
+  if (answered) return;
+
+  // Bind interactions
+  const range = overlay.querySelector('.sl-range');
+  const valDisplay = overlay.querySelector('.sl-value');
+  const confirmBtn = overlay.querySelector('.sl-confirm');
+  let hasTouched = false;
+
+  range.addEventListener('input', function() {
+    if (!hasTouched) {
+      hasTouched = true;
+      range.classList.add('touched');
+      valDisplay.classList.add('show');
+      confirmBtn.classList.add('ready');
+    }
+    valDisplay.textContent = this.value;
+  });
+
+  confirmBtn.addEventListener('click', function() {
+    if (!hasTouched) return;
+    const chosen = parseInt(range.value);
+
+    state.questionsLog.push({
+      id: turnData.id,
+      chosen: chosen,
+      text: String(chosen),
+      mode: 'slider'
+    });
+
+    // Lock the slider
+    range.disabled = true;
+    range.style.pointerEvents = 'none';
+    confirmBtn.disabled = true;
+    confirmBtn.classList.remove('ready');
+    confirmBtn.style.opacity = '.15';
+
+    // Hold, then fade out and advance
+    setTimeout(() => {
+      overlay.classList.remove('visible');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        overlay.innerHTML = '';
+        goTo(state.turnIndex + 1);
+      }, 1600);
+    }, 1400);
+  });
+}
+
 // ── VIDEO RORSCHACH ──
 function renderVideoRorschach(turnData) {
   const overlay = document.getElementById('video-rorschach-overlay');
@@ -4349,6 +4555,18 @@ function goTo(idx) {
     return;
   }
 
+  // ── SLIDER — full-screen takeover ──
+  if (turn.questionMode === 'slider') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderSlider(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
+
 
   if (turn.isQuestion) {
     titleEl.style.display = 'none';
@@ -4378,6 +4596,8 @@ function goTo(idx) {
   if (dlOv) dlOv.remove();
   const dlAudio = document.getElementById('dl-audio');
   if (dlAudio) { dlAudio.pause(); dlAudio.remove(); }
+  const slOv = document.getElementById('slider-overlay');
+  if (slOv) { slOv.style.display = 'none'; slOv.innerHTML = ''; slOv.classList.remove('visible'); }
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';

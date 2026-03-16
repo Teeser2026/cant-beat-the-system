@@ -1772,13 +1772,13 @@ body.game-active .ticker-bar { display: flex; }
 .se-q-home.shown { opacity:1; }
 .se-q-home.gone { opacity:0; }
 /* Images row — phase 1 */
-.se-images { display:flex; flex-direction:row; gap:0; align-items:flex-end; justify-content:center; opacity:0; transition:opacity 1.4s ease; margin-top:0; width:100%; max-width:1100px; }
+.se-images { display:flex; flex-direction:row; gap:0; align-items:center; justify-content:center; opacity:0; transition:opacity 1.4s ease; margin-top:0; width:100%; max-width:1400px; }
 .se-images.visible { opacity:1; }
-.se-img-col { display:flex; flex-direction:column; align-items:center; }
-/* Asymmetric sizing: flankers small, centre large */
-.se-img-col:nth-child(1) .se-img-wrap { width:300px; height:300px; margin-bottom:60px; margin-right:-16px; }
+.se-img-col { display:flex; flex-direction:column; align-items:center; flex:1; }
+/* Flankers bigger, widely spaced, different heights via margin-top offset */
+.se-img-col:nth-child(1) .se-img-wrap { width:380px; height:380px; margin-top:-140px; }
 .se-img-col:nth-child(2) .se-img-wrap { width:480px; height:480px; z-index:2; position:relative; }
-.se-img-col:nth-child(3) .se-img-wrap { width:300px; height:300px; margin-bottom:60px; margin-left:-16px; }
+.se-img-col:nth-child(3) .se-img-wrap { width:380px; height:380px; margin-top:100px; }
 .se-img-wrap { border-radius:2px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.0); background:#000; }
 .se-img-wrap:hover { border-color:rgba(255,255,255,0.1); }
 .se-img-wrap.playing { border-color:rgba(196,149,106,0.5); box-shadow:0 0 32px rgba(196,149,106,0.15); }

@@ -3789,8 +3789,8 @@ function renderVideoRorschach(turnData) {
       <video class="vr-video" id="vrVideo" muted playsinline></video>
       <div class="vr-frame" id="vrFrame">${promptText}</div>
       <div class="vr-input-wrap" id="vrInputWrap">
-        <input class="vr-input" id="vrInput" type="text" maxlength="20" autocomplete="off" spellcheck="false">
-        <div class="vr-hint" id="vrHint">one word — press enter</div>
+        <input class="vr-input" id="vrInput" type="text" maxlength="60" autocomplete="off" spellcheck="false">
+        <div class="vr-hint" id="vrHint">a few words — press enter</div>
       </div>
     </div>
     <div class="vr-linger" id="vrLinger">
@@ -3829,7 +3829,6 @@ function renderVideoRorschach(turnData) {
   const hint = document.getElementById('vrHint');
 
   input.addEventListener('input', () => {
-    input.value = input.value.replace(/\s/g, '');
     if (input.value.trim().length > 0 && !submitted) hint.classList.add('visible');
     else hint.classList.remove('visible');
   });

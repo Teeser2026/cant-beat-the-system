@@ -1759,6 +1759,23 @@ body.game-active .ticker-bar { display: flex; }
   display: none;
 }
 #sound-prompt-overlay .sp-continue:hover { color: rgba(200,196,184,0.5); }
+/* ── SE1 SOUND ECHO ── */
+#sound-echo-overlay { display:none; position:fixed; inset:0; z-index:900; background:#000; opacity:0; transition:opacity 1.2s ease; flex-direction:column; align-items:center; justify-content:center; }
+#sound-echo-overlay.visible { opacity:1; }
+.se-inner { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; width:100%; min-height:100vh; padding:40px 20px; box-sizing:border-box; }
+.se-word { font-family:'Crimson Pro',serif; font-size:72px; font-weight:300; font-style:italic; color:rgba(255,255,255,0.06); letter-spacing:2px; margin-bottom:60px; transition:color 1.4s ease; user-select:none; }
+.se-word.lit { color:rgba(255,255,255,0.72); }
+.se-sounds { display:flex; flex-direction:column; gap:18px; align-items:center; }
+.se-btn { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.22); background:none; border:1px solid rgba(255,255,255,0.08); border-radius:2px; padding:14px 32px; cursor:pointer; transition:all 0.4s; min-width:220px; position:relative; overflow:hidden; }
+.se-btn:hover { color:rgba(255,255,255,0.5); border-color:rgba(255,255,255,0.2); }
+.se-btn.playing { color:rgba(196,149,106,0.9); border-color:rgba(196,149,106,0.4); }
+.se-btn.played { color:rgba(255,255,255,0.35); border-color:rgba(255,255,255,0.12); }
+.se-progress { position:absolute; bottom:0; left:0; height:1px; width:0%; background:rgba(196,149,106,0.6); transition:width 0.1s linear; }
+.se-aftermath { font-family:'Crimson Pro',serif; font-size:16px; font-style:italic; color:rgba(255,255,255,0.0); text-align:center; margin-top:8px; line-height:1.6; transition:color 1.6s ease; min-height:22px; }
+.se-aftermath.visible { color:rgba(255,255,255,0.38); }
+.se-continue { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.2); background:none; border:1px solid rgba(255,255,255,0.08); border-radius:2px; padding:12px 28px; cursor:pointer; margin-top:52px; transition:all 0.4s; opacity:0; pointer-events:none; }
+.se-continue.ready { opacity:1; pointer-events:auto; }
+.se-continue:hover { color:rgba(196,149,106,0.9); border-color:rgba(196,149,106,0.4); }
 
 /* Drag ghost */
 #sound-prompt-overlay .sp-drag-ghost {
@@ -2326,6 +2343,7 @@ body.game-active .ticker-bar { display: flex; }
 </div>
 
 <!-- ══ SOUND PROMPT OVERLAY ══ -->
+<div id="sound-echo-overlay"></div>
 <div id="sound-prompt-overlay" style="display:none"></div>
 
 <!-- ══ VIDEO PROMPT OVERLAY ══ -->
@@ -3205,6 +3223,139 @@ function renderDevTurnList() {
 // ══════════════════════════════════════════════════════
 // SOUND PROMPT — full-screen immersive overlay
 // ══════════════════════════════════════════════════════
+
+function renderSoundEcho(turnData) {
+  const overlay = document.getElementById('sound-echo-overlay');
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  const devList = document.getElementById('devTurnList');
+
+  const SE_CLIPS = [
+    { file: 'cork-pull.mp3',   label: 'sound one',   aftermath: 'The ritual of an ordinary evening' },
+    { file: 'fire-crackle.mp3', label: 'sound two',  aftermath: 'Warmth. The oldest shelter.' },
+    { file: 'child-laugh.mp3', label: 'sound three',  aftermath: 'What you would give everything for' }
+  ];
+
+  // Build HTML
+  overlay.innerHTML = `
+    <div class="se-inner">
+      <div class="se-word" id="seWord">home</div>
+      <div class="se-sounds" id="seSounds">
+        ${SE_CLIPS.map((c, i) => `
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <button class="se-btn" id="seBtn${i}" data-i="${i}">
+            <span class="se-btn-label">${c.label}</span>
+            <div class="se-progress" id="seProg${i}"></div>
+          </button>
+          <div class="se-aftermath" id="seAfter${i}">${c.aftermath}</div>
+        </div>`).join('')}
+      </div>
+      <button class="se-continue" id="seContinue">continue</button>
+    </div>
+  `;
+
+  // Show overlay
+  overlay.style.display = 'flex';
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+  devList.style.display = 'none';
+  if (typeof stopTurnAudio === 'function') stopTurnAudio(1);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+      // Fade up the word after a beat
+      setTimeout(() => {
+        const w = document.getElementById('seWord');
+        if (w) w.classList.add('lit');
+      }, 800);
+    });
+  });
+
+  // ── Audio ──
+  const seAudios = [];
+  const sePlayed = new Set();
+  let seCurrentPlaying = -1;
+
+  SE_CLIPS.forEach((c, i) => {
+    const a = new Audio(c.file);
+    a.preload = 'auto';
+    a.addEventListener('ended', () => seStop(i, true));
+    a.addEventListener('timeupdate', () => {
+      if (a.duration) {
+        const p = document.getElementById('seProg' + i);
+        if (p) p.style.width = ((a.currentTime / a.duration) * 100) + '%';
+      }
+    });
+    seAudios.push(a);
+  });
+
+  function seStop(i, finished) {
+    seAudios[i].pause();
+    seAudios[i].currentTime = 0;
+    const p = document.getElementById('seProg' + i);
+    if (p) p.style.width = '0%';
+    const btn = document.getElementById('seBtn' + i);
+    if (btn) { btn.classList.remove('playing'); btn.classList.add('played'); }
+    if (finished) {
+      sePlayed.add(i);
+      const after = document.getElementById('seAfter' + i);
+      if (after) after.classList.add('visible');
+    }
+    seCurrentPlaying = -1;
+    seCheckReady();
+  }
+
+  function seStopAll() {
+    SE_CLIPS.forEach((_, i) => {
+      seAudios[i].pause();
+      seAudios[i].currentTime = 0;
+      const p = document.getElementById('seProg' + i);
+      if (p) p.style.width = '0%';
+      const btn = document.getElementById('seBtn' + i);
+      if (btn) btn.classList.remove('playing');
+    });
+    seCurrentPlaying = -1;
+  }
+
+  function seCheckReady() {
+    if (sePlayed.size >= SE_CLIPS.length) {
+      const cont = document.getElementById('seContinue');
+      if (cont) cont.classList.add('ready');
+    }
+  }
+
+  // Bind buttons
+  SE_CLIPS.forEach((_, i) => {
+    const btn = document.getElementById('seBtn' + i);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      if (seCurrentPlaying === i) { seStop(i, false); return; }
+      seStopAll();
+      seAudios[i].play().catch(() => {});
+      btn.classList.add('playing');
+      seCurrentPlaying = i;
+    });
+  });
+
+  // Continue
+  document.getElementById('seContinue').addEventListener('click', () => {
+    seStopAll();
+    // Log to questionsLog
+    if (!state.questionsLog) state.questionsLog = [];
+    state.questionsLog.push({ id: turnData.question && turnData.question.id || 'SE1', type: 'soundEcho', response: 'listened', turn: turnData.id });
+    // Dismiss
+    overlay.classList.remove('visible');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.innerHTML = '';
+      wrap.style.display = '';
+      econBar.style.display = '';
+      devList.style.display = '';
+      advanceTurn();
+    }, 1200);
+  });
+}
 
 function renderSoundPrompt(turnData) {
   const overlay = document.getElementById('sound-prompt-overlay');
@@ -4470,6 +4621,18 @@ function goTo(idx) {
   if (mirrorOv) { mirrorOv.style.display = 'none'; mirrorOv.classList.remove('visible'); mirrorOv.innerHTML = ''; }
 
   handleTurnAudio(turn);
+
+  // ── SOUND ECHO — full-screen takeover ──
+  if (turn.questionMode === 'sound-echo') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderSoundEcho(turn);
+    if (document.getElementById('devTurnList').classList.contains('open')) {
+      renderDevTurnList();
+    }
+    return;
+  }
 
   // ── SOUND PROMPT — full-screen takeover ──
   if (turn.questionMode === 'sound-prompt') {

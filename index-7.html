@@ -1103,7 +1103,7 @@ body.game-active .ticker-bar { display: flex; }
 .dl-overlay .dl-word.clickable { pointer-events: auto; }
 .dl-overlay .dl-word.selected { filter: blur(0px) !important; }
 .dl-overlay .dl-glow {
-  position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%);
+  position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
   width: 140px; height: 220px; pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(196,149,106,0.06) 0%, transparent 70%);
   animation: dlPulse 4s ease-in-out infinite;
@@ -4676,7 +4676,8 @@ function renderDoorOfLight(turnData) {
         setTimeout(() => { w.el.style.transition = 'none'; w.faded = true; }, 2600);
       }, delay);
     });
-    const lastDelay = words.length * 120 + 300 + 2600;
+    // Words become clickable shortly after they start appearing — not after full fade-in
+    const lastDelay = words.length * 120 + 300;
     setTimeout(() => wordData.forEach(w => w.el.classList.add('clickable')), lastDelay);
   }, 6700);
 

@@ -3891,7 +3891,7 @@ function renderVideoMirror(turnData) {
     <div class="vm-choices">${optsHtml}</div>
   `;
 
-  overlay.style.display = ''; overlay.classList.remove('visible');
+  overlay.style.display = 'flex'; overlay.classList.remove('visible');
   void overlay.offsetWidth; overlay.classList.add('visible');
 
   const video = overlay.querySelector('.vm-video');

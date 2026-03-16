@@ -1760,7 +1760,7 @@ body.game-active .ticker-bar { display: flex; }
 }
 #sound-prompt-overlay .sp-continue:hover { color: rgba(200,196,184,0.5); }
 /* ── SE1 SOUND ECHO ── */
-#sound-echo-overlay { display:none; position:fixed; inset:0; z-index:900; background:#050505; opacity:0; transition:opacity 1.4s ease; flex-direction:column; align-items:center; justify-content:center; }
+#sound-echo-overlay { display:none; position:fixed; inset:0; z-index:900; background:#120D08; opacity:0; transition:opacity 1.4s ease; flex-direction:column; align-items:center; justify-content:center; }
 #sound-echo-overlay.visible { opacity:1; }
 .se-inner { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; width:100%; min-height:100vh; padding:40px 20px; box-sizing:border-box; }
 /* Question reveal */
@@ -3261,9 +3261,9 @@ function renderSoundEcho(turnData) {
   // ── Config — swap image filenames when MJ assets are ready ──
   const SE_CLIPS = [
     {
-      file: 'cork-pull.mp3',
-      aftermath: 'The ritual of an ordinary evening',
-      img: 'se-home-1.png'
+      file: 'child-laugh.mp3',
+      aftermath: 'What you would give everything for',
+      img: 'se-home-3.png'
     },
     {
       file: 'fire-crackle.mp3',
@@ -3271,9 +3271,9 @@ function renderSoundEcho(turnData) {
       img: 'se-home-2.png'
     },
     {
-      file: 'child-laugh.mp3',
-      aftermath: 'What you would give everything for',
-      img: 'se-home-3.png'
+      file: 'cork-pull.mp3',
+      aftermath: 'The ritual of an ordinary evening',
+      img: 'se-home-1.png'
     }
   ];
 

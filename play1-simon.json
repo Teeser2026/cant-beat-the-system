@@ -1467,7 +1467,7 @@
       "id": "VR1",
       "isQuestion": true,
       "questionMode": "video-rorschach",
-      "questionText": "what do you see?",
+      "questionText": "what might this be?",
       "questionOpts": [
         {
           "text": "[freeform]"

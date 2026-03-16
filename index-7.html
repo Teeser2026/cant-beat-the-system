@@ -1765,18 +1765,20 @@ body.game-active .ticker-bar { display: flex; }
 .se-inner { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; width:100%; min-height:100vh; padding:40px 20px; box-sizing:border-box; }
 /* Question reveal */
 .se-question { text-align:center; line-height:1.3; margin-bottom:0; user-select:none; }
-.se-q-word { font-family:'Crimson Pro',serif; font-size:26px; font-weight:300; font-style:italic; letter-spacing:0.5px; display:inline; opacity:0; transition:opacity 1.2s ease; color:rgba(255,255,255,0.75); }
+.se-q-word { font-family:'Crimson Pro',serif; font-size:39px; font-weight:300; font-style:italic; letter-spacing:0.5px; display:inline; opacity:0; transition:opacity 1.4s ease; color:rgba(255,255,255,0.72); }
 .se-q-word.shown { opacity:1; }
-.se-q-home { font-family:'Crimson Pro',serif; font-size:96px; font-weight:300; font-style:italic; letter-spacing:-2px; display:block; margin:12px 0 16px; opacity:0; transition:opacity 1.8s ease; color:rgba(255,255,255,0.88); }
+.se-q-word.gone { opacity:0; }
+.se-q-home { font-family:'Crimson Pro',serif; font-size:144px; font-weight:300; font-style:italic; letter-spacing:-3px; display:block; margin:16px 0 20px; opacity:0; transition:opacity 2s ease; color:rgba(196,149,106,0.95); }
 .se-q-home.shown { opacity:1; }
+.se-q-home.gone { opacity:0; }
 /* Images row — phase 1 */
-.se-images { display:flex; flex-direction:row; gap:0; align-items:flex-end; justify-content:center; opacity:0; transition:opacity 1.2s ease; margin-top:80px; width:100%; max-width:700px; }
+.se-images { display:flex; flex-direction:row; gap:0; align-items:flex-end; justify-content:center; opacity:0; transition:opacity 1.4s ease; margin-top:0; width:100%; max-width:1100px; }
 .se-images.visible { opacity:1; }
 .se-img-col { display:flex; flex-direction:column; align-items:center; }
 /* Asymmetric sizing: flankers small, centre large */
-.se-img-col:nth-child(1) .se-img-wrap { width:170px; height:170px; margin-bottom:30px; margin-right:-8px; }
-.se-img-col:nth-child(2) .se-img-wrap { width:280px; height:280px; z-index:2; position:relative; }
-.se-img-col:nth-child(3) .se-img-wrap { width:170px; height:170px; margin-bottom:30px; margin-left:-8px; }
+.se-img-col:nth-child(1) .se-img-wrap { width:300px; height:300px; margin-bottom:60px; margin-right:-16px; }
+.se-img-col:nth-child(2) .se-img-wrap { width:480px; height:480px; z-index:2; position:relative; }
+.se-img-col:nth-child(3) .se-img-wrap { width:300px; height:300px; margin-bottom:60px; margin-left:-16px; }
 .se-img-wrap { border-radius:2px; overflow:hidden; cursor:pointer; position:relative; transition:all 0.5s; border:1px solid rgba(255,255,255,0.0); background:#000; }
 .se-img-wrap:hover { border-color:rgba(255,255,255,0.1); }
 .se-img-wrap.playing { border-color:rgba(196,149,106,0.5); box-shadow:0 0 32px rgba(196,149,106,0.15); }
@@ -1788,8 +1790,8 @@ body.game-active .ticker-bar { display: flex; }
 /* Progress bar on image */
 .se-img-progress { position:absolute; bottom:0; left:0; height:2px; width:0%; background:rgba(196,149,106,0.8); transition:width 0.1s linear; }
 /* Aftermath lines — phase 2 */
-.se-aftermath { font-family:'Crimson Pro',serif; font-size:14px; font-style:italic; color:rgba(255,255,255,0); text-align:center; line-height:1.65; transition:color 1.8s ease, opacity 0.4s ease; max-width:160px; cursor:default; opacity:0; margin-top:14px; }
-.se-img-col:nth-child(2) .se-aftermath { font-size:17px; max-width:260px; }
+.se-aftermath { font-family:'Crimson Pro',serif; font-size:16px; font-style:italic; color:rgba(255,255,255,0); text-align:center; line-height:1.65; transition:color 1.8s ease, opacity 0.4s ease; max-width:280px; cursor:default; opacity:0; margin-top:18px; }
+.se-img-col:nth-child(2) .se-aftermath { font-size:20px; max-width:440px; }
 .se-aftermath.revealed { color:rgba(255,255,255,0.28); opacity:1; cursor:pointer; }
 .se-aftermath.revealed:hover { color:rgba(196,149,106,0.8); }
 .se-aftermath.selected { color:rgba(196,149,106,0.95); }
@@ -3302,19 +3304,30 @@ function renderSoundEcho(turnData) {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       overlay.classList.add('visible');
-      // Word-by-word question reveal
-      const delays = [600, 1200, 1800, 2600, 3800];
-      ['seQw0','seQw1','seQw2','seQHome','seQw3'].forEach((id, idx) => {
+      // Word-by-word reveal: each word fades in then out, lingering on 'home'
+      // 'Which' in 600ms, out 1800ms
+      // 'sound' in 1200ms, out 2400ms
+      // 'says' in 1800ms, out 3000ms
+      // 'home' in 2600ms, lingers until 6000ms then out
+      // 'to you?' in 4200ms, out 5400ms
+      const wordIns  = [600,  1200, 1800, 2600, 4200];
+      const wordOuts = [1800, 2400, 3000, 6000, 5400];
+      const wordIds  = ['seQw0','seQw1','seQw2','seQHome','seQw3'];
+      wordIds.forEach((id, idx) => {
         setTimeout(() => {
           const el = document.getElementById(id);
           if (el) el.classList.add('shown');
-        }, delays[idx]);
+        }, wordIns[idx]);
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) { el.classList.remove('shown'); el.classList.add('gone'); }
+        }, wordOuts[idx]);
       });
-      // Images fade in at 5s
+      // Images fade in at 7.2s — after all text has gone
       setTimeout(() => {
         const imgs = document.getElementById('seImages');
         if (imgs) imgs.classList.add('visible');
-      }, 5000);
+      }, 7200);
     });
   });
 

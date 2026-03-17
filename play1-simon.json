@@ -18,6 +18,8 @@
       10,
       11,
       12,
+      13,
+      14,
       17,
       18,
       19,
@@ -1066,14 +1068,80 @@
     {
       "id": 14,
       "num": "T14",
-      "title": "A Heart to Heat",
+      "title": "The Dude Abides",
       "date": "January 2027",
       "paras": [
         {
-          "t": "Dev is the only person that <i>really</i> knows you. The only one that gets it. He offers you an almost empty glass, but somehow convinces you it's nearly full."
+          "t": "Dev is extraordinary. I've never met anyone else like him. In fact very few people are even quite like him. I met hum at school. Christ, nearly forty years ago. He's been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months, occasionally tears at a time. He's not what you'd call traditionally responsive to messaging. And I'm not one to push him, if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls. ‘Are you OK?’ or ‘Just checking in’ are his Kryptonite. When he does get in touch it's a frenzy. He'll bombard you with months of dense research and be amazed that you don't have an encyclopaedic knowledge of it 24 hours later."
+        },
+        {
+          "t": "‘Have you read it yet?’",
+          "c": "solo"
+        },
+        {
+          "t": "‘No, Dev. You sent it at 2.30am and I've been at work’",
+          "c": "solo"
+        },
+        {
+          "t": "‘This is fire though, Simon. Fuck work, drop everything. Read it’",
+          "c": "solo"
+        },
+        {
+          "t": "He also has a habit of just ‘finding you’. You won't have seen him for months, last you heard he was in Bangkok or Miami, then he just appears in a pub you hadn't told him you were going to, or knocks on the front door, wanders in and puts the kettle on. No ceremony. No chit chat. Just a hug and straight into a deep dive. It wouldn't surprise me if he'd cut himself a door key and I found him sitting at the kitchen table waiting for me, half a bottle of bourbon down."
+        },
+        {
+          "t": "But Dev just gets away with it. The rascal's rascal. Nobody has a bad word to say about him, as long as you don't mind being called a cad, a scoundrel, a philanderer, a rogue or a loon. Which he doesn't."
+        },
+        {
+          "t": "God knows where he gets some of his stuff from. His book recommendations have always been great. He started me on my journey through the sci-fi and dystopian literature landscape. Illuminatus! Trilogy, 1984, Brave New World, Hitchhiker's, Foundation etc. He somehow sent me a pre-release handwritten copy of Ready Player One. It wouldn't surprise me in the least if he'd written it. He'd often just send you a photo of a book. No message. No ‘hi mate’. Just a photo and then dark mode for six months. There are plenty of others, let me think. Off the top of my head, Snowcrash (if you haven't read, read it), Wool, The Road, Children of Time, Cryptonomicon, Daemon, Vurt. Sorry I'm getting carried away, you're not here for book club."
+        },
+        {
+          "t": "That's just his book recommendations. As I've said he occasionally bombards you with his latest ‘data drop’. 4Chan whistleblowers, alleged intelligence agency leaks and his own mind blowing prose that interweaves fact, fiction, psychedelia and science that goes way over my head. A lot of it quite dark. Yet he somehow manages to offer you an almost empty glass but somehow convinces you it's nearly full. How he retained such positivity I'll never know. Only Forward. (I've unwittingly given you another book recommendation)"
+        },
+        {
+          "t": "Today is extraordinary. He'd actually messaged me to arrange a meeting in a pub, an old London boozer that used to be one of our favourite haunts, and, remarkably, has resisted the urge to gentrify and gastropub itself. Not that it's a conscious entity. In fact, I'll ask Dev, it'll be a good ice breaker. Better than the usual ‘how's the family’. ‘Hi Dev, can a pub have consciousness?’"
+        },
+        {
+          "t": "Four pints in (Timothy Taylor Landlord, with ‘pub buffet’ sides of salted peanuts and pork scratching) and all we've talked about is whether buildings can be conscious. Of course Dev had an angle on this. More than an angle, the entire protractor. It's as if he knew I'd ask him this and he'd been reading up on the subject for weeks. Knowing Dev, he probably did know I'd ask him. Or he just knew this shit anyway. Or both. He started off with Vastu Shastra, an ancient Indian architectural science that sees buildings as fundamentally alive, containing a ‘Vastu Purusha’ (cosmic being) that conducts prana (life force). That led onto Panpsychism, a philosophical position suggesting all matter, including inanimate objects, may have some form of consciousness. Then ‘Smart City’ sensors with AI integration, which might enable ‘dream spaces’ that evolve with their inhabitants, blurring the line between human and machine. We had just started waffling on (to be fair, I was waffling, Dev was lecturing with authority) about substrate-independence, consciousness and complex physical systems, when Alan walked it. I forgot to tell you, Dev had invited Alan along for a beer. He said I'd like him, but nothing more."
+        },
+        {
+          "t": "Alan was quite remarkable. Part surfer-dude, part gamer-slob, all-American. A big chap, clearly a stoner, amiable, softly spoken, sharp. Imagine The Dude from The Big Lebowski crossed with…in fact no one. Just imagine The Dude. The Dude was wearing Bermuda shorts and Havaianas in English winter. His only concession to the temperature a thin woollen jumper. He apologised for his tardiness (no reason given), bought a round, including 3 pints for himself as he ‘was playing catch up’ and proceeded to neck a pint and a half before he sat down."
+        },
+        {
+          "t": "I wish I had a recording of the conversation. I'd edit my eight pint pseudo-cringe out and just leave Dev and the Dude. They should do a podcast. Great title. Most of the night (80%) was spent talking about food, mainly burgers. Which cuts of beef to use, cooking method, bun choice, filling, sauce combos. Chunky chips or fries. The perfect burger beer. The best burger joints in the world. Your five-person guest list at your fantasy burger dinner party. The other 20% has been largely sacrificed at the altar of Timmy Taylor. But The Dude was good. Really good. He gave Dev a run for his money. He flipped from burgers (bun intended, I mean pun) to Bounded Systems Theory (no system can model its own source) and back again. He mentioned a ‘prediction engine’ he'd developed. Said he'd ping me something."
+        },
+        {
+          "t": "I don't think I've ever worried about Dev. I've wondered where the fuck his is and what the hell he's up to. But I've never worried about him. Yet towards the end of the night I thought he looked ruffled. Concerned. Quite out of the blue. Dev never looks ruffled or concerned. He'd been on his phone a bit whilst The Dude was telling me about his engine. Had he read something that freaked him out? Whatever it was, the sudden awkwardness that descended without Dev saying anything stopped The Dude dead in his tracks."
+        },
+        {
+          "t": "‘You OK mate?’",
+          "c": "solo"
+        },
+        {
+          "t": "Dev said he was fine. I knew he wasn't. He had something big, something insane to tell me. Now was not the right time. He'd message me."
+        },
+        {
+          "t": "And that was that. Apparently he and The Dude had a flight to catch, they got up, we hugged, they left."
+        },
+        {
+          "t": "The next day I tried to recall the conversations from the night before. Hazy. I remembered snippets, a few nuggets I'd made a mental note of to look into. God knows where Dev and The Dude went. Could be EasyJet to Berlin or Emirates First Class to Abu Dhabi. I don't know which would surprise me more. I was intrigued about what Dev was going to send. It sounded big. But Dev makes everything sound big. I'm sure whatever I get from Alan about his prediction engine will be astonishing. I'll pour myself a White Russian when it arrives and dive in."
+        },
+        {
+          "t": "The one thing I do remember The Dude saying is this. His parting shot, delivered in an offhand manner, yet somehow it hit."
+        },
+        {
+          "t": "‘Stop participating in the distractions and create your own reality’",
+          "c": "solo big"
         }
       ],
-      "choices": null
+      "choices": {
+        "label": "The morning after",
+        "opts": [
+          "Google Bounded Systems Theory. What the hell was The Dude on about?",
+          "Message Dev. Ask him what's wrong. You've never seen him like that.",
+          "Make a White Russian. It's what The Dude would do."
+        ]
+      }
     },
     {
       "id": 15,

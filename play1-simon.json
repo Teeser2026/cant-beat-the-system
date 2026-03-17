@@ -1072,9 +1072,44 @@
       "date": "January 2027",
       "paras": [
         {
-          "t": "Placeholder — prose not yet written."
+          "t": "They have you buy the short and curlies. You can’t vote your way out. Surely you see that by now? Sending sternly-worded letters to MP’s is a humiliation ritual. Signing online petitions is an exercise in futility. Moaning on social media lets of some steam. Which is a major reason why it’s ‘allowed’. A whinge and a scroll into the aether on your algorithmically captured feed might feel satisfying, feel like action, like resistance. But it isn’t."
+        },
+        {
+          "t": "I’ve been banging on for years about there only being two real options to bring about the changes you want. Either be the change your looking for. Live it. Don’t just think about it, don’t just talk about it. Do it. Positive affirmative action. The issue is that you’ll have to sacrifice an increasing amount to ‘live freely’."
+        },
+        {
+          "t": "Or fight. Not physically. I’m not talking about storming the bastards with pitch forks. Not until I’ve had a few beers, anyway. I mean mass non-compliance. Unity. Collectively drawing a line and saying ‘this far, no further’. But it doesn’t happen. They know just how far to push us before we break. They’ve got ‘machines and all sorts’ to help them. Insert wink and insanity laugh emojis here. So that’s the impasse we find ourselves at. Complying ourselves into digital cages. Like good little piggies. Oink. Oink."
+        },
+        {
+          "t": "As the meme goes ‘You are here, paying taxes to paedophiles’.",
+          "c": "solo"
+        },
+        {
+          "t": "Flying out to Spain to see my mum and her new puppy (Dash, black spaniel, she’s an absolute dish!) sums up in a nutshell. I can talk a good game. I’ve read more articles than you could shake a stick at about digital id, the surveillance state, technocracy, the panopticon, the algorithmic ghetto, 15 minute cities, SDG 16.9, One Login, interoperability, yada yada. Talk is cheap. I’m a fucking hypocrite and I know it. It’s very easy to say I’m opposed to what looks like (to anyone with half a brain) the formation of a neo-feudalist control grid. But it’s not so easy to stand up and resist."
+        },
+        {
+          "t": "I know that pretty much every stage of the journey to seeing mum is tracked, analysed, nudged, gated, surveilled and biometrically captured. I’m just giving them my data and my implied consent. Here you go. From the booking of the flights, my naff passwords, VPN-less internet connection being beamed down from Elon’s Skynet, the payment authorisation protocols, the surveillance cameras every 2 metres along the motorway, Google Maps kindly and conveniently helping me avoid the traffic on the way to the airport. The border checks, more cameras, more, more more. And when we land the shiny new ‘for your safety and convenience’ EES biometric facial and finger print scans."
+        },
+        {
+          "t": "Did I give informed consent to any of this? Kind of, read the T’s & C’s, bitch. Do I understand the repercussions of being so liberal with my digital footprint? Yes. Did it stop me getting on a plane to see my mum and Dash? No, it didn’t. Does it stop you? I doubt it. What are we going to do about it? We’re going to look at that Spanish sun and the heated pool in mum’s garden the same way as Cypher looked at that steak."
+        },
+        {
+          "t": "Ignorance is bliss.",
+          "c": "solo"
+        },
+        {
+          "t": "Flight was delayed, weather was pleasant, the Spanish doomscrolling of X remarkably similar to the English version. Adios amigos.",
+          "c": "solo"
         }
-      ]
+      ],
+      "choices": {
+        "label": "When do you draw the line?",
+        "opts": [
+          "I assume someone else will draw it for me",
+          "Soon",
+          "I already have. Look back there, hundreds of lines. They’ve all been crossed."
+        ]
+      }
     },
     {
       "id": 15,

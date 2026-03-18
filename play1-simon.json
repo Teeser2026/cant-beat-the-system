@@ -1118,7 +1118,7 @@
       "date": "January 2027",
       "paras": [
         {
-          "t": "Dev is extraordinary. I've never met anyone else like him. In fact very few people are even <i>quite</i> like him. I met hum at school. Christ, nearly forty years ago. He's been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months, occasionally tears at a time. He's not what you'd call traditionally responsive to messaging. And I'm not one to push him, if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls. ‘Are you OK?’ or ‘Just checking in’ are his Kryptonite. When he does get in touch it's a frenzy. He'll bombard you with months of dense research and be amazed that you don't have an encyclopaedic knowledge of it 24 hours later."
+          "t": "Dev is extraordinary. I've never met anyone else like him. In fact very few people are even <i>quite</i> like him. I met him at school. Christ, nearly forty years ago. He's been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months, occasionally years at a time. He's not what you'd call traditionally responsive to messaging. And I'm not one to push him, if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls. ‘Are you OK?’ or ‘Just checking in’ are his Kryptonite. When he does get in touch it's a frenzy. He'll bombard you with months of dense research and be amazed that you don't have an encyclopaedic knowledge of it 24 hours later."
         },
         {
           "t": "‘Have you read it yet?’",
@@ -1196,10 +1196,51 @@
       "date": "January 2027",
       "paras": [
         {
-          "t": "A manic couple of weeks. Dev sent me an article. Must Read. I skimmed it. Probably true, Dev's sources are rock solid. But it's the next in a long line of 'this is the big one' claims. I'll believe it when I see it."
+          "t": "A busy week. I won’t bore you with it. Stressful. Work stuff, money, people being people. Well people being arseholes actually. Selfish, unscrupulous bastards. It took me a few days to recover from the night out with Dev and The Dude. Obviously I didn’t hear anything from Dev for four or five days. If it was anyone else it would’ve been a cause for concern, but not Dev. He’d be fine. He was always fine. But I kept getting flashbacks of that look of concern on his face. More than concern. Horror. I was undoubtedly overplaying it. A sober me probably wouldn’t have thought anything of it."
+        },
+        {
+          "t": "When his message arrived it was somewhat underwhelming. A short document ‘Firmware analysis: UK payment terminal fleet — undocumented OTA push’. Dry, technical. No actual message from Dev, no explanation of what he thought it meant. I’m sure the info about the firmware push was accurate. I don’t doubt them for a second. Dev’s sources are rock solid. What it meant, what he thought it would lead to, wasn’t entirely clear. I searched X, no mention of it. Scanned through several of the hundreds of Telegram groups I had joined over the years but rarely visited. Nothing. Those groups weren’t shy about coming forward with ‘this is the big one’ or ‘they’re gonna bring it all down next week, BE PREPARED’ claims. They’d cried wolf so many times. It seemed to be the sole reason for the existence of some of them, yet nothing on this. Weird."
+        },
+        {
+          "t": "I pinged Dev a message. ‘What do you think it means?’"
+        },
+        {
+          "t": "I’m still waiting for a reply.",
+          "c": "solo"
+        },
+        {
+          "t": "I didn’t think much more of it. I’d been trying to take The Dude’s parting remark to heart. Stop participating in the distractions and create your own reality. So I made a vow to read an actual book in bed rather than scrolling Substack and X. Small steps. I’ve been reading Freedom, Daniel Suarez, the follow up to the Daemon. Which was bloody amazing. I get through about ten pages per night before I nod off, book still in hand."
+        },
+        {
+          "t": "‘Are you asleep, Simon?’ Amy asks."
+        },
+        {
+          "t": "‘No, just thinking’ I fib, smiling. A minute later she’ll have taken the book out of my hands, placed it on my bedside table, bookmark inserted (a dog-eared reminder of a romantic trip to Santorini) and given me a goodnight peck on the cheek. It’s amazing how much better I sleep reading paper instead of blue light."
+        },
+        {
+          "t": "Talking of The Dude, he sent me a link to his PSYCHOHISTORY PREDICTION ENGINE. The intro sounds so dry. I chuckle to myself. Hard to believe these are the words of the flip-flops in winter, pint-downing stoner I met. I was expecting something more offbeat. More far out."
+        },
+        {
+          "t": "‘The intellectual trajectory of the last three centuries has been defined by a singular, overriding ambition: the removal of boundaries. We have been told — by scientists, technologists, theologians, and politicians — that limits are temporary. That given enough compute, enough capital, enough time, every wall can be punched through.’",
+          "c": "lyric"
+        },
+        {
+          "t": "‘This site argues the opposite.’",
+          "c": "lyric"
+        },
+        {
+          "t": "I’ve been diving in. Mind-blowing. Everyone should be reading it.",
+          "c": "solo"
         }
       ],
-      "choices": null
+      "choices": {
+        "label": "The boy who cried wolf",
+        "opts": [
+          "The wolf is real. You don’t need a boy to tell you it’s coming.",
+          "The boy was right. Just early.",
+          "Eventually everyone stops listening. That’s when it comes."
+        ]
+      }
     },
     {
       "id": 17,

@@ -2019,26 +2019,32 @@
   "signal": {
     "1": [
       {
-        "sec": "Today",
+        "sec": "Morning",
         "cards": [
           {
-            "src": "BBC News",
-            "ttl": "Military manoeuvres at RAF Wyton. “Routine exercise.” Front page. Which is itself suspicious.",
-            "snip": "If it’s in the news it’s likely a ruse. You noted this.",
-            "tag": "Breaking",
-            "cls": "",
-            "isnew": true
+            "src": "Amy",
+            "ttl": "Can you grab dog food on the way back? Wilf's nearly out",
+            "snip": "Read 7:14am. Not replied yet.",
+            "tag": "Read",
+            "cls": ""
+          },
+          {
+            "src": "Waitrose",
+            "ttl": "Your delivery slot tomorrow 7–8am is confirmed",
+            "snip": "Ginger, turmeric, spinach, apple juice. The good stuff.",
+            "tag": "Confirmed",
+            "cls": ""
           }
         ]
       },
       {
-        "sec": "On the Phone",
+        "sec": "Notifications",
         "cards": [
           {
-            "src": "X — Various",
-            "ttl": "DUMBs. Deep Underground Military Bases. The Pathfinder Building. Nuclear bunker.",
-            "snip": "The quick check has ticked over 90 minutes.",
-            "tag": "Rabbit Hole",
+            "src": "BBC Weather",
+            "ttl": "Dry and bright this morning. Cloud building from the west by mid-afternoon.",
+            "snip": "Perfect allotment weather. Two hours, maybe three.",
+            "tag": "Today",
             "cls": ""
           }
         ]
@@ -2456,6 +2462,26 @@
           "url": "https://theethicalskeptic.com/",
           "src": "simon",
           "turn": 8
+        },
+        {
+          "text": "RAF Wyton — 'Routine readiness exercise'",
+          "src": "simon",
+          "turn": 1,
+          "article": {
+            "style": "news",
+            "source": "BBC News — Cambridgeshire",
+            "title": "Military activity at RAF Wyton part of 'routine readiness exercise', MoD confirms",
+            "date": "17 October 2026",
+            "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
+            "annotation": "Third 'routine' exercise in six weeks. Front page of the BBC which is itself suspicious. Since when do routine exercises make the news? And since when does the Pathfinder Building run readiness drills three times in two months?",
+            "footer": "BBC News · Cambridgeshire · Filed under: Defence"
+          }
+        },
+        {
+          "text": "Deep Underground Military Bases",
+          "url": "https://www.deepundergroundmilitarybases.com",
+          "src": "simon",
+          "turn": 1
         }
       ]
     },

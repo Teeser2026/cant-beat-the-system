@@ -2019,7 +2019,7 @@
   "signal": {
     "1": [
       {
-        "sec": "Morning",
+        "sec": "Text Message",
         "cards": [
           {
             "src": "Amy",
@@ -2027,7 +2027,12 @@
             "snip": "Read 7:14am. Not replied yet.",
             "tag": "Read",
             "cls": ""
-          },
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
           {
             "src": "Waitrose",
             "ttl": "Your delivery slot tomorrow 7–8am is confirmed",
@@ -2038,7 +2043,7 @@
         ]
       },
       {
-        "sec": "Notifications",
+        "sec": "Notification",
         "cards": [
           {
             "src": "BBC Weather",
@@ -2052,29 +2057,53 @@
     ],
     "2": [
       {
-        "sec": "Flagged",
+        "sec": "WhatsApp",
         "cards": [
           {
-            "src": "thepyramidofpower.net",
-            "ttl": "Derrick Broze — The Pyramid of Power. Full presentation.",
-            "snip": "Bookmarked for months. Barely skimmed.",
-            "tag": "Open Tab",
-            "cls": "",
-            "isnew": true
+            "src": "Amy",
+            "ttl": "George says hi. Wants to know if you need help with the raised beds this weekend",
+            "snip": "He won't come. But it's nice he offered.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Gmail",
+            "ttl": "Moved to Junk: Invoice from Ridgeworth Associates — URGENT ACTION REQUIRED",
+            "snip": "The AI bot strikes again. Third time this month. Actually quite useful, except when it isn't.",
+            "tag": "Auto-filed",
+            "cls": ""
           }
         ]
       }
     ],
     "3": [
       {
-        "sec": "WhatsApp — Unsent",
+        "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Substack — Forwarded to Amy",
-            "ttl": "The interoperability of digital ID products.",
-            "snip": "Sent to Amy. Will sit alongside the other 5,000 articles.",
-            "tag": "Forwarded",
-            "cls": "c"
+            "src": "Amy",
+            "ttl": "Thanks for the digital ID article — I'll read it. Promise x",
+            "snip": "She won't. You both know this. But the kiss is real.",
+            "tag": "Read",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "ID2020 Alliance — iaindavis.substack.com",
+            "ttl": "The Official UK Digital Identity Framework",
+            "snip": "The one you sent Amy. Iain Davis. Thorough, well-sourced, ignored by everyone.",
+            "tag": "Sent",
+            "cls": "c",
+            "threadRef": "science-technology"
           }
         ]
       }
@@ -2094,7 +2123,7 @@
         ]
       },
       {
-        "sec": "New",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev — Signal",
@@ -2110,7 +2139,7 @@
     ],
     "21": [
       {
-        "sec": "No Signal",
+        "sec": "App Alert",
         "cards": [
           {
             "src": "Find My — Emilia",
@@ -2132,7 +2161,7 @@
         ]
       },
       {
-        "sec": "Unknown",
+        "sec": "Notification",
         "cards": [
           {
             "src": "System — Phone status bar",
@@ -2160,7 +2189,7 @@
     ],
     "23": [
       {
-        "sec": "AIDA — Community Recovery",
+        "sec": "App Alert",
         "cards": [
           {
             "src": "AIDA — Registration confirmed",
@@ -2173,7 +2202,7 @@
         ]
       },
       {
-        "sec": "What remains",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Signal — Dev",
@@ -2200,7 +2229,7 @@
     ],
     "17": [
       {
-        "sec": "Priority",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev — Signal",
@@ -2222,7 +2251,7 @@
         ]
       },
       {
-        "sec": "Research",
+        "sec": "Notification",
         "cards": [
           {
             "src": "BIS — Bank for International Settlements",
@@ -2238,7 +2267,7 @@
     ],
     "16": [
       {
-        "sec": "From Dev",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev — Signal",
@@ -2270,15 +2299,38 @@
     ],
     "8": [
       {
-        "sec": "The Anti-Cleanse",
+        "sec": "Text Message",
         "cards": [
           {
-            "src": "Demonic Inner Voice",
-            "ttl": "Home of the Brave",
-            "snip": "Vicarious self-destruction. Twelve minutes of someone else’s damage.",
-            "tag": "The Anti-Cleanse",
-            "cls": "e",
-            "type": "song"
+            "src": "Amy",
+            "ttl": "Day 3. Still going. You? 💪",
+            "snip": "She's winning. You're browsing Majestic.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "Majestic Wine",
+            "ttl": "Your favourites are on offer this week — Rully Rouge, Côtes du Rhône, Picpoul",
+            "snip": "The algorithm knows. It always knows. Day 3 is when you're weakest.",
+            "tag": "Offer",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Screen Time",
+            "ttl": "Your screen time was up 47% last week. Daily average: 4h 12m.",
+            "snip": "The phone detox lasted six days. The browser cleanse lasted four hours.",
+            "tag": "Weekly Report",
+            "cls": ""
           }
         ]
       }
@@ -2345,7 +2397,7 @@
     ],
     "16a": [
       {
-        "sec": "From Alan",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Alan (The Dude) — Signal",
@@ -2357,6 +2409,32 @@
             "link": "https://moketchups.github.io/psychohistory/",
             "type": "thread-notify",
             "threadRef": "pattern-recognition"
+          }
+        ]
+      }
+    ],
+    "22": [
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "EMERGENCY ALERT — Remain indoors. Emergency services operational.",
+            "snip": "The klaxon. The one you'd only ever heard tested.",
+            "tag": "Emergency",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy → Family Group",
+            "ttl": "everyone ok? Mum — please reply.",
+            "snip": "Sent 6:31am. No replies yet. No ticks.",
+            "tag": "Sent",
+            "cls": "a"
           }
         ]
       }
@@ -2433,6 +2511,12 @@
           "url": "https://id2020.org/",
           "src": "simon",
           "turn": 3
+        },
+        {
+          "text": "Iain Davis — The Official UK Digital Identity Framework",
+          "url": "https://iaindavis.substack.com/p/the-official-uk-digital-identity",
+          "src": "simon",
+          "turn": 3
         }
       ]
     },
@@ -2482,6 +2566,12 @@
           "url": "https://www.deepundergroundmilitarybases.com",
           "src": "simon",
           "turn": 1
+        },
+        {
+          "text": "Derrick Broze — The Pyramid of Power",
+          "url": "https://thepyramidofpower.net",
+          "src": "simon",
+          "turn": 2
         }
       ]
     },
@@ -3304,5 +3394,55 @@
       "23": "23"
     }
   },
-  "initialNotes": []
+  "initialNotes": [],
+  "notes": [
+    {
+      "text": "Is it enough? Enough for what exactly. The cannellini beans are past their use-by. Again.",
+      "date": "Last week",
+      "src": "reader",
+      "editable": true
+    },
+    {
+      "text": "Olive needs her booster jab. Book vet. Also: Rully Rouge for tomorrow. Check Waitrose. Valentine's. Don't forget.",
+      "date": "Today",
+      "src": "reader",
+      "editable": true
+    },
+    {
+      "text": "The Telestai tabs. The Sochi tabs. The Ethical Skeptic tab. I'll read them. I will. Soon. When things settle down.",
+      "date": "Undated — recurring",
+      "src": "reader",
+      "editable": true
+    },
+    {
+      "text": "Firmware update — Dev's warning. Terminal clusters active in Manchester. This is the thread.",
+      "date": "Signal — T15, T18, T19",
+      "src": "signal",
+      "editable": false
+    },
+    {
+      "text": "Bank withdrawal limits tightening. Cash: £840 + gold coins in sock drawer.",
+      "date": "Signal — T18",
+      "src": "signal",
+      "editable": false
+    },
+    {
+      "text": "Military activity — RAF Wyton. 'Markets steady. No cause for concern.'",
+      "date": "Signal — T1, T19",
+      "src": "signal",
+      "editable": false
+    },
+    {
+      "text": "Bonfire Night, Sussex — 'We wunt be druv.' The allotment. The farm shop. The vinyl. Hold onto these.",
+      "date": "Memory — T4, T1, T18, T20",
+      "src": "reader",
+      "editable": false
+    },
+    {
+      "text": "Amy. Her intuition. Always right.",
+      "date": "Undated",
+      "src": "reader",
+      "editable": false
+    }
+  ]
 }

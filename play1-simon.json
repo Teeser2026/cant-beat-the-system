@@ -1192,7 +1192,7 @@
     {
       "id": 16,
       "num": "T16",
-      "title": "Cry Wolf",
+      "title": "The Bookmark",
       "date": "January 2027",
       "paras": [
         {
@@ -1218,7 +1218,23 @@
         },
         {
           "t": "‘No, just thinking’ I fib, smiling. A minute later she’ll have taken the book out of my hands, placed it on my bedside table, bookmark inserted (a dog-eared reminder of a romantic trip to Santorini) and given me a goodnight peck on the cheek. It’s amazing how much better I sleep reading words on paper instead of in blue light."
-        },
+        }
+      ],
+      "choices": {
+        "label": "The boy who cried wolf",
+        "opts": [
+          "The wolf is real. You don’t need a boy to tell you it’s coming.",
+          "The boy was right. Just early.",
+          "Eventually everyone stops listening. That’s when it comes."
+        ]
+      }
+    },
+    {
+      "id": "16a",
+      "num": "T16a",
+      "title": "Psychohistory",
+      "date": "January 2027",
+      "paras": [
         {
           "t": "Talking of The Dude, he sent me a link to his Psychohistory Prediction Engine. The intro sounds so dry. I chuckle to myself. Hard to believe these are the words of the flip-flops in winter, pint-downing stoner I met. I was expecting something more offbeat. More <em>far out</em>."
         },
@@ -1236,11 +1252,11 @@
         }
       ],
       "choices": {
-        "label": "The boy who cried wolf",
+        "label": "What’s the reality here",
         "opts": [
-          "The wolf is real. You don’t need a boy to tell you it’s coming.",
-          "The boy was right. Just early.",
-          "Eventually everyone stops listening. That’s when it comes."
+          "Share it. Right now. With the people that count. Before you forget, before it’s lost in the annals of time.",
+          "Bookmark it. You’ll come back to it properly at the weekend. Well, <em>a</em> weekend.",
+          "Keep reading. Just one more section. This is fire. Sleep can wait."
         ]
       }
     },
@@ -2320,6 +2336,24 @@
           }
         ]
       }
+    ],
+    "16a": [
+      {
+        "sec": "From The Dude",
+        "cards": [
+          {
+            "src": "The Dude — Signal",
+            "ttl": "Psychohistory Prediction Engine. Have a read. Don’t say I never give you anything.",
+            "snip": "The flip-flops-in-winter stoner has a website. And it’s… not what you expected.",
+            "tag": "New",
+            "cls": "c",
+            "isnew": true,
+            "link": "https://moketchups.github.io/psychohistory/",
+            "type": "thread-notify",
+            "threadRef": "psychohistory"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -2441,6 +2475,18 @@
           "url": null,
           "src": "simon",
           "turn": 17
+        }
+      ]
+    },
+    {
+      "id": "psychohistory",
+      "label": "Psychohistory Prediction Engine",
+      "items": [
+        {
+          "text": "Psychohistory Prediction Engine — Introduction",
+          "url": "https://moketchups.github.io/psychohistory/",
+          "src": "the-dude",
+          "turn": "16a"
         }
       ]
     }

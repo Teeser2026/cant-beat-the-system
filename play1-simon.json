@@ -2204,7 +2204,7 @@
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "valentines-question"
+            "threadRef": "pattern-recognition"
           },
           {
             "src": "X — Predictive AI accounts",
@@ -2242,7 +2242,7 @@
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "payment-infra"
+            "threadRef": "financial-architecture"
           }
         ]
       }
@@ -2339,18 +2339,18 @@
     ],
     "16a": [
       {
-        "sec": "From The Dude",
+        "sec": "From Alan",
         "cards": [
           {
-            "src": "The Dude — Signal",
-            "ttl": "Psychohistory Prediction Engine. Have a read. Don’t say I never give you anything.",
-            "snip": "The flip-flops-in-winter stoner has a website. And it’s… not what you expected.",
+            "src": "Alan (The Dude) — Signal",
+            "ttl": "Mate. Have a read of this. Don’t laugh. Well, do. But then actually read it.",
+            "snip": "https://moketchups.github.io/psychohistory/",
             "tag": "New",
             "cls": "c",
             "isnew": true,
             "link": "https://moketchups.github.io/psychohistory/",
             "type": "thread-notify",
-            "threadRef": "psychohistory"
+            "threadRef": "pattern-recognition"
           }
         ]
       }
@@ -2358,8 +2358,8 @@
   },
   "threads": [
     {
-      "id": "payment-infra",
-      "label": "Payment Infrastructure",
+      "id": "financial-architecture",
+      "label": "Financial Architecture",
       "items": [
         {
           "text": "FCA PS26/4 — ARC Implementation Notice",
@@ -2407,8 +2407,8 @@
       ]
     },
     {
-      "id": "surveillance-arch",
-      "label": "Surveillance Architecture",
+      "id": "science-technology",
+      "label": "Science & Technology",
       "items": [
         {
           "text": "Bioelectricity vs genetics — Telestai Nexus",
@@ -2431,8 +2431,13 @@
       ]
     },
     {
-      "id": "deep-research",
-      "label": "Deep Research",
+      "id": "philosophy-theology",
+      "label": "Philosophy & Theology",
+      "items": []
+    },
+    {
+      "id": "power-structures",
+      "label": "Power Structures",
       "items": [
         {
           "text": "Corbett Report",
@@ -2455,9 +2460,15 @@
       ]
     },
     {
-      "id": "valentines-question",
-      "label": "The Valentine’s Day Question",
+      "id": "pattern-recognition",
+      "label": "Pattern Recognition",
       "items": [
+        {
+          "text": "Psychohistory Prediction Engine — Introduction",
+          "url": "https://moketchups.github.io/psychohistory/",
+          "src": "the-dude",
+          "turn": "16a"
+        },
         {
           "text": "Dev — \"Someone's cracked the time-lock\"",
           "src": "dev",
@@ -2479,16 +2490,9 @@
       ]
     },
     {
-      "id": "psychohistory",
-      "label": "Psychohistory Prediction Engine",
-      "items": [
-        {
-          "text": "Psychohistory Prediction Engine — Introduction",
-          "url": "https://moketchups.github.io/psychohistory/",
-          "src": "the-dude",
-          "turn": "16a"
-        }
-      ]
+      "id": "reader-own",
+      "label": "Reader's Own",
+      "items": []
     }
   ],
   "songs": [

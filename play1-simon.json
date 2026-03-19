@@ -2120,7 +2120,7 @@
             "tag": "Offline",
             "cls": "a",
             "isnew": true,
-            "type": "essential"
+            "type": "flavour"
           },
           {
             "src": "Barclays App",
@@ -2128,7 +2128,7 @@
             "snip": "The maintenance window. The one that was announced quietly.",
             "tag": "Down",
             "cls": "a",
-            "type": "essential"
+            "type": "flavour"
           }
         ]
       },

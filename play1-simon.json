@@ -2273,7 +2273,7 @@
         "cards": [
           {
             "src": "Cliff High — Substack",
-            "ttl": "Consciousness, bioelectricity, field theory",
+            "ttl": "An interesting talk with an interesting guy",
             "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
             "tag": "Tab Year 1",
             "cls": "c",
@@ -2295,6 +2295,25 @@
             "type": "song"
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Happy Christmas love! Tony sends love too 🎄❤️",
+            "snip": "Spain looks sunny. Of course it does.",
+            "tag": "Today",
+            "cls": ""
+          },
+          {
+            "src": "Family Chat",
+            "ttl": "🎄 Merry Christmas everyone!!",
+            "snip": "47 messages. Photos of food, crackers, the dog in antlers.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
       }
     ],
     "12": [
@@ -2308,6 +2327,30 @@
             "tag": "Until the sky turns green",
             "cls": "e",
             "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Happy new year ya reprobate 🥂",
+            "snip": "First message in weeks. Classic Dev.",
+            "tag": "New Year",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Screen Time",
+            "ttl": "Your daily average over Christmas: 5h 47m. Up 38%",
+            "snip": "Dry January for the phone too. Starting tomorrow.",
+            "tag": "Weekly",
+            "cls": ""
           }
         ]
       }
@@ -2720,10 +2763,11 @@
           "turn": 9
         },
         {
-          "text": "Cliff High — consciousness, bioelectricity, field theory",
+          "text": "AETHER PIRATES OF THE MATTERIUM! — Cliff High",
           "url": "https://substack.com/home/post/p-183851810",
           "src": "simon",
-          "turn": 10
+          "turn": 10,
+          "snip": "A long and winding road..."
         },
         {
           "text": "Rounding the Earth — The Narcissistic, Murderous Parent (Mathew Crawford)",

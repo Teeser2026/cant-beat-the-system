@@ -622,11 +622,7 @@
           "c": "inner"
         },
         {
-          "t": "There’s more. More to close. More keepers. Sochi’s Substack is pretty wild. This one in particular has been flagged for reading."
-        },
-        {
-          "t": "<em>Homo chimericus: neuro-modulation, human energy harvesting, graphene-based nano-systems, 6G Terahertz frequencies… and irradiation-related pathologies</em>",
-          "c": "inner"
+          "t": "There's more. More to close. More keepers. Ethical Skeptic. Master Exothermic Core-Mantle Decoupling – Dzhanibekov Oscillation. It's been skim-read multiple times."
         },
         {
           "t": "ESCkey’s Substack is wall-to-wall brilliance. The price of freedom is eternal vigilance."
@@ -2061,8 +2057,8 @@
         "cards": [
           {
             "src": "Amy",
-            "ttl": "George says hi. Wants to know if you need help with the raised beds this weekend",
-            "snip": "He won't come. But it's nice he offered.",
+            "ttl": "George says hi. Says he might come and help with the raised beds this weekend",
+            "snip": "He won't come. But it's nice he even thought about it.",
             "tag": "Today",
             "cls": ""
           }
@@ -2082,18 +2078,6 @@
       }
     ],
     "3": [
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Amy",
-            "ttl": "Thanks for the digital ID article — I'll read it. Promise x",
-            "snip": "She won't. You both know this. But the kiss is real.",
-            "tag": "Read",
-            "cls": ""
-          }
-        ]
-      },
       {
         "sec": "Notification",
         "cards": [
@@ -2118,33 +2102,6 @@
             "tag": "Tonight",
             "cls": "e",
             "type": "song"
-          }
-        ]
-      },
-      {
-        "sec": "Signal",
-        "cards": [
-          {
-            "src": "Dev — Signal",
-            "ttl": "“Simon. Call me when you get this. Before tomorrow.”",
-            "snip": "Sent 11pm. You haven’t seen it yet.",
-            "tag": "New",
-            "cls": "a",
-            "isnew": true,
-            "type": "essential"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "Unlimited Hangout — Whitney Webb",
-            "ttl": "Pre-Positioned: How Emergency Financial Infrastructure Was Built Before the Emergency",
-            "snip": "Published yesterday. 47 minute read. Bookmarked it on Valentine's morning. Might be the last thing you bookmarked.",
-            "tag": "Bookmarked",
-            "cls": "c",
-            "threadRef": "power-structures"
           }
         ]
       }
@@ -2205,34 +2162,11 @@
         "sec": "Signal",
         "cards": [
           {
-            "src": "Dev — Signal",
-            "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
-            "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
-            "tag": "Urgent",
-            "cls": "a",
-            "isnew": true,
-            "type": "thread-notify",
-            "threadRef": "pattern-recognition"
-          },
-          {
             "src": "X — Predictive AI accounts",
             "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
             "snip": "You screenshotted it at 3am. Still looks like something.",
             "tag": "Flagged",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "Open Tabs",
-        "cards": [
-          {
-            "src": "BIS — Bank for International Settlements",
-            "ttl": "mBridge: cross-border CBDC pilot expanded to 26 central banks",
-            "snip": "Dev flagged this months ago. You told people. They shrugged. Now it's 26 countries and nobody's shrugging because nobody's noticed.",
-            "tag": "Research",
-            "cls": "c",
-            "threadRef": "financial-architecture"
           }
         ]
       }
@@ -2312,7 +2246,7 @@
           {
             "src": "FCA — Financial Conduct Authority",
             "ttl": "PS26/4: ARC authentication framework — implementation update",
-            "snip": "Popped up in your feed three weeks ago. Skimmed it. Payment infrastructure. Sounded routine. Filed under 'probably important'.",
+            "snip": "Open since September. You skimmed the summary. The rest is 84 pages of implementation detail you keep meaning to read.",
             "tag": "Open Tab",
             "cls": "c",
             "threadRef": "financial-architecture"
@@ -2338,7 +2272,7 @@
         "sec": "Open Tabs",
         "cards": [
           {
-            "src": "Clip High — Substack",
+            "src": "Cliff High — Substack",
             "ttl": "Consciousness, bioelectricity, field theory",
             "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
             "tag": "Tab Year 1",
@@ -2482,6 +2416,50 @@
           }
         ]
       }
+    ],
+    "9": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Thx 4 digital ID stuff — I'll read tonight. Promise x",
+            "snip": "She won't. You both know this. But the kiss is real.",
+            "tag": "Read",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "18": [
+      {
+        "sec": "Signal",
+        "cards": [
+          {
+            "src": "Dev — Signal",
+            "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
+            "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
+            "tag": "Urgent",
+            "cls": "a",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "pattern-recognition"
+          }
+        ]
+      },
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "BIS — Bank for International Settlements",
+            "ttl": "mBridge: cross-border CBDC pilot expanded to 26 central banks",
+            "snip": "Dev flagged this months ago. You told people. They shrugged. Now it's 26 countries and nobody's shrugging because nobody's noticed.",
+            "tag": "Research",
+            "cls": "c",
+            "threadRef": "financial-architecture"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -2492,7 +2470,7 @@
         {
           "text": "FCA PS26/4 — ARC Implementation Notice",
           "src": "simon",
-          "turn": 6,
+          "turn": 8,
           "article": {
             "style": "gov",
             "source": "Financial Conduct Authority",
@@ -2506,7 +2484,7 @@
           "text": "BIS mBridge: cross-border CBDC pilot",
           "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
           "src": "simon",
-          "turn": 17
+          "turn": 18
         },
         {
           "text": "Digital Pound spec v3.2 — “privacy-preserving”",
@@ -2545,28 +2523,40 @@
           "turn": 8
         },
         {
-          "text": "Graphene nano-systems, 6G — Sochi",
-          "url": "https://sochissubstack.substack.com/",
-          "src": "simon",
-          "turn": 8
-        },
-        {
           "text": "ID2020 Alliance — digital identity framework",
           "url": "https://id2020.org/",
           "src": "simon",
-          "turn": 3
+          "turn": 9
         },
         {
           "text": "Iain Davis — The Official UK Digital Identity Framework",
           "url": "https://iaindavis.substack.com/p/the-official-uk-digital-identity",
           "src": "simon",
-          "turn": 3
+          "turn": 9
         },
         {
-          "text": "Clip High — consciousness, bioelectricity, field theory",
+          "text": "Cliff High — consciousness, bioelectricity, field theory",
           "url": "https://substack.com/home/post/p-183851810",
           "src": "simon",
           "turn": 10
+        },
+        {
+          "text": "Rounding the Earth — The Narcissistic, Murderous Parent (Mathew Crawford)",
+          "url": "https://roundingtheearth.substack.com/p/the-narcissistic-murderous-parent-0dd",
+          "src": "simon",
+          "turn": 8
+        },
+        {
+          "text": "ESCkey — Substack",
+          "url": "https://escapekey.substack.com",
+          "src": "simon",
+          "turn": 8
+        },
+        {
+          "text": "The Ethical Skeptic — Master Exothermic Core-Mantle Decoupling",
+          "url": "https://theethicalskeptic.substack.com/p/master-exothermic-core-mantle-decoupling",
+          "src": "simon",
+          "turn": 8
         }
       ]
     },
@@ -2584,18 +2574,6 @@
           "url": "https://corbettreport.com/the-only-real-solution-to-digital-id-solutionswatch/",
           "src": "simon",
           "turn": 5
-        },
-        {
-          "text": "Whitney Webb — Unlimited Hangout",
-          "url": "https://unlimitedhangout.com/",
-          "src": "simon",
-          "turn": 19
-        },
-        {
-          "text": "The Ethical Skeptic",
-          "url": "https://theethicalskeptic.com/",
-          "src": "simon",
-          "turn": 8
         },
         {
           "text": "RAF Wyton — 'Routine readiness exercise'",
@@ -2638,7 +2616,7 @@
         {
           "text": "Dev — \"Someone's cracked the time-lock\"",
           "src": "dev",
-          "turn": 17,
+          "turn": 18,
           "article": {
             "style": "paste",
             "source": "Dev · Signal message · Forwarded",
@@ -2646,12 +2624,6 @@
             "body": "<p>Someone's cracked the time-lock. Or they say they have. Valentine's Day. 00:00 GMT.</p><p>Take it or leave it — could be genuine, could be the op wants us watching the wrong date. Either way the deployment is real.</p>",
             "footer": "Dev · Signal · T17"
           }
-        },
-        {
-          "text": "Gematria: 214 — Half Man, Half Angel",
-          "url": null,
-          "src": "simon",
-          "turn": 17
         }
       ]
     },
@@ -3459,28 +3431,10 @@
       "editable": true
     },
     {
-      "text": "The Telestai tabs. The Sochi tabs. The Ethical Skeptic tab. I'll read them. I will. Soon. When things settle down.",
+      "text": "The Telestai tabs. The Ethical Skeptic tab. I'll read them. I will. Soon. When things settle down.",
       "date": "Undated — recurring",
       "src": "reader",
       "editable": true
-    },
-    {
-      "text": "Firmware update — Dev's warning. Terminal clusters active in Manchester. This is the thread.",
-      "date": "Signal — T15, T18, T19",
-      "src": "signal",
-      "editable": false
-    },
-    {
-      "text": "Bank withdrawal limits tightening. Cash: £840 + gold coins in sock drawer.",
-      "date": "Signal — T18",
-      "src": "signal",
-      "editable": false
-    },
-    {
-      "text": "Military activity — RAF Wyton. 'Markets steady. No cause for concern.'",
-      "date": "Signal — T1, T19",
-      "src": "signal",
-      "editable": false
     },
     {
       "text": "Bonfire Night, Sussex — 'We wunt be druv.' The allotment. The farm shop. The vinyl. Hold onto these.",

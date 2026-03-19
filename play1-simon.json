@@ -2833,8 +2833,8 @@
   },
   "threads": [
     {
-      "id": "financial-architecture",
-      "label": "Financial Architecture",
+      "id": "finance-commerce",
+      "label": "Finance & Commerce",
       "items": [
         {
           "text": "FCA PS26/4 — ARC Implementation Notice",
@@ -2880,6 +2880,11 @@
           }
         }
       ]
+    },
+    {
+      "id": "surveillance-architecture",
+      "label": "Surveillance Architecture",
+      "items": []
     },
     {
       "id": "science-technology",
@@ -3524,6 +3529,10 @@
         {
           "text": "Sterling steadies after weak jobs data",
           "cls": "cold"
+        },
+        {
+          "text": "NCSC raises UK cyber threat level to \"heightened\" — precautionary measure",
+          "cls": "buried"
         }
       ],
       "17-18": [
@@ -3582,6 +3591,18 @@
         {
           "text": "Met Office: mild for February — 12°C expected Thursday",
           "cls": ""
+        },
+        {
+          "text": "Defence Secretary: \"UK faces unprecedented cyber threat from hostile state actors\"",
+          "cls": "cold"
+        },
+        {
+          "text": "MOD confirms expanded \"routine readiness\" exercises across southern England",
+          "cls": "buried"
+        },
+        {
+          "text": "Nikkei 225 ▼ 4.2% — Asian markets fall sharply overnight — contagion fears",
+          "cls": "cold"
         }
       ],
       "19-20": [
@@ -3783,7 +3804,9 @@
       "20": "19-20",
       "21": "21",
       "22": "22",
-      "23": "23"
+      "23": "23",
+      "16a": "15-16",
+      "17a": "17-18"
     }
   },
   "initialNotes": [],

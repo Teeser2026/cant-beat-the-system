@@ -2098,12 +2098,11 @@
         "sec": "Notification",
         "cards": [
           {
-            "src": "ID2020 Alliance — iaindavis.substack.com",
-            "ttl": "The Official UK Digital Identity Framework",
-            "snip": "The one you sent Amy. Iain Davis. Thorough, well-sourced, ignored by everyone.",
-            "tag": "Sent",
-            "cls": "c",
-            "threadRef": "science-technology"
+            "src": "Screwfix",
+            "ttl": "Your order is ready to collect — 4mm masonry drill bits, No More Nails, dust sheets",
+            "snip": "Click & Collect. The one useful app on your phone right now.",
+            "tag": "Ready",
+            "cls": ""
           }
         ]
       }
@@ -2133,6 +2132,19 @@
             "cls": "a",
             "isnew": true,
             "type": "essential"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Unlimited Hangout — Whitney Webb",
+            "ttl": "Pre-Positioned: How Emergency Financial Infrastructure Was Built Before the Emergency",
+            "snip": "Published yesterday. 47 minute read. Bookmarked it on Valentine's morning. Might be the last thing you bookmarked.",
+            "tag": "Bookmarked",
+            "cls": "c",
+            "threadRef": "power-structures"
           }
         ]
       }
@@ -2187,46 +2199,7 @@
         ]
       }
     ],
-    "23": [
-      {
-        "sec": "App Alert",
-        "cards": [
-          {
-            "src": "AIDA — Registration confirmed",
-            "ttl": "1,000 Brits deposited. Food hamper en route. House transfer: processing.",
-            "snip": "Clean. Easy. Quick.",
-            "tag": "Registered",
-            "cls": "c",
-            "isnew": true
-          }
-        ]
-      },
-      {
-        "sec": "Signal",
-        "cards": [
-          {
-            "src": "Signal — Dev",
-            "ttl": "“Did you register?”",
-            "snip": "Three words. You know what he thinks.",
-            "tag": "Unanswered",
-            "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "All in all is all we all are",
-        "cards": [
-          {
-            "src": "The Morning",
-            "ttl": "Northern Sky → Karma Police → Subterranean Homesick Alien → All Apologies",
-            "snip": "She said nothing. She played Northern Sky. We hugged. We cried. Then the rest followed.",
-            "tag": "All in all is all we all are",
-            "cls": "e",
-            "type": "song"
-          }
-        ]
-      }
-    ],
+    "23": [],
     "17": [
       {
         "sec": "Signal",
@@ -2251,16 +2224,15 @@
         ]
       },
       {
-        "sec": "Notification",
+        "sec": "Open Tabs",
         "cards": [
           {
             "src": "BIS — Bank for International Settlements",
-            "ttl": "mBridge cross-border CBDC pilot: 26 central banks now confirmed.",
-            "snip": "Dev flagged this months ago. You told people. They shrugged.",
+            "ttl": "mBridge: cross-border CBDC pilot expanded to 26 central banks",
+            "snip": "Dev flagged this months ago. You told people. They shrugged. Now it's 26 countries and nobody's shrugging because nobody's noticed.",
             "tag": "Research",
             "cls": "c",
-            "type": "thread-notify",
-            "threadRef": "payment-infra"
+            "threadRef": "financial-architecture"
           }
         ]
       }
@@ -2271,8 +2243,8 @@
         "cards": [
           {
             "src": "Dev — Signal",
-            "ttl": "Silent firmware update pushed to 2 million payment terminals overnight. No official announcement.",
-            "snip": "\"Read this. Actually read it this time.\"",
+            "ttl": "Read this.",
+            "snip": "Two words. No context. Dev doesn't waste them.",
             "tag": "Unread",
             "cls": "a",
             "isnew": true,
@@ -2303,7 +2275,7 @@
         "cards": [
           {
             "src": "Amy",
-            "ttl": "Day 3. Still going. You? 💪",
+            "ttl": "Day 3. Still going. 💪",
             "snip": "She's winning. You're browsing Majestic.",
             "tag": "Today",
             "cls": ""
@@ -2315,7 +2287,7 @@
         "cards": [
           {
             "src": "Majestic Wine",
-            "ttl": "Your favourites are on offer this week — Rully Rouge, Côtes du Rhône, Picpoul",
+            "ttl": "Your favourites are on offer this week — Burgundy, Côtes du Rhône, Picpoul",
             "snip": "The algorithm knows. It always knows. Day 3 is when you're weakest.",
             "tag": "Offer",
             "cls": ""
@@ -2333,6 +2305,19 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "FCA — Financial Conduct Authority",
+            "ttl": "PS26/4: ARC authentication framework — implementation update",
+            "snip": "Popped up in your feed three weeks ago. Skimmed it. Payment infrastructure. Sounded routine. Filed under 'probably important'.",
+            "tag": "Open Tab",
+            "cls": "c",
+            "threadRef": "financial-architecture"
+          }
+        ]
       }
     ],
     "10": [
@@ -2346,6 +2331,19 @@
             "tag": "3am",
             "cls": "e",
             "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "Clip High — Substack",
+            "ttl": "Consciousness, bioelectricity, field theory",
+            "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
+            "tag": "Tab Year 1",
+            "cls": "c",
+            "threadRef": "science-technology"
           }
         ]
       }
@@ -2438,6 +2436,52 @@
           }
         ]
       }
+    ],
+    "5": [
+      {
+        "sec": "Doom Scroll",
+        "cards": [
+          {
+            "src": "Bank of England",
+            "ttl": "Digital Pound: Technical Specification v3.2 — 'Privacy-preserving by design'",
+            "snip": "84 pages. You read the executive summary six months ago. Bookmarked the rest. You know how this ends.",
+            "tag": "Open Tab",
+            "cls": "c",
+            "threadRef": "financial-architecture"
+          },
+          {
+            "src": "Solari Report — Catherine Austin Fitts",
+            "ttl": "The Going Direct Reset",
+            "snip": "She's been saying it for years. You've been listening for years. Nothing changes.",
+            "tag": "Bookmarked",
+            "cls": "c",
+            "threadRef": "financial-architecture"
+          },
+          {
+            "src": "Corbett Report — James Corbett",
+            "ttl": "The Only Real Solution to Digital ID — #SolutionsWatch",
+            "snip": "Astute, witty, sharp. The antithesis of the caricature. You sent it to three people. None of them watched it.",
+            "tag": "Shared",
+            "cls": "c",
+            "threadRef": "power-structures"
+          }
+        ]
+      }
+    ],
+    "37": [
+      {
+        "sec": "All in all is all we all are",
+        "cards": [
+          {
+            "src": "The Morning",
+            "ttl": "Northern Sky → Karma Police → Subterranean Homesick Alien → All Apologies",
+            "snip": "She said nothing. She played Northern Sky. We hugged. We cried. Then the rest followed.",
+            "tag": "All in all is all we all are",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -2517,6 +2561,12 @@
           "url": "https://iaindavis.substack.com/p/the-official-uk-digital-identity",
           "src": "simon",
           "turn": 3
+        },
+        {
+          "text": "Clip High — consciousness, bioelectricity, field theory",
+          "url": "https://substack.com/home/post/p-183851810",
+          "src": "simon",
+          "turn": 10
         }
       ]
     },
@@ -2530,8 +2580,8 @@
       "label": "Power Structures",
       "items": [
         {
-          "text": "Corbett Report",
-          "url": "https://www.corbettreport.com/",
+          "text": "Corbett Report — The Only Real Solution to Digital ID",
+          "url": "https://corbettreport.com/the-only-real-solution-to-digital-id-solutionswatch/",
           "src": "simon",
           "turn": 5
         },

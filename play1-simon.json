@@ -1295,6 +1295,19 @@
       }
     },
     {
+      "id": "17a",
+      "num": "T17a",
+      "title": "The Bell Inn",
+      "date": "January 2027",
+      "paras": [
+        {
+          "t": "[STUB — Dog walk. The pub. The cash sign. TO WRITE.]"
+        }
+      ],
+      "choices": null,
+      "audio": null
+    },
+    {
       "id": "IP2",
       "isQuestion": true,
       "questionMode": "video-prompt",
@@ -1630,16 +1643,6 @@
       "paras": [
         {
           "t": "[STUB — Day 0–1. The near-dark. Power cutting in and out. UK Emergency Alert klaxon. George makes toast. Chloe texting. Amy on the phone to her mum. Sam and Emilia at their mum's. Signal tab: klaxon text, failed calls, banking apps dead. Ticker: EMERGENCY BROADCAST IN PROGRESS.]"
-        }
-      ],
-      "signal": [
-        {
-          "from": "UK GOV",
-          "t": "EMERGENCY ALERT — Remain indoors. Emergency services operational."
-        },
-        {
-          "from": "Amy → family WhatsApp",
-          "t": "everyone ok? Mum — please reply."
         }
       ],
       "audio": null
@@ -2143,6 +2146,65 @@
         ]
       },
       {
+        "sec": "Internet",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Something went wrong",
+            "snip": "Pull to refresh. Nothing. Again. Nothing.",
+            "tag": "—",
+            "cls": ""
+          },
+          {
+            "src": "X",
+            "ttl": "Something went wrong. Try reloading.",
+            "snip": "Reloaded. Same message. And again.",
+            "tag": "—",
+            "cls": ""
+          },
+          {
+            "src": "Instagram",
+            "ttl": "Couldn't refresh feed",
+            "snip": "The spinning circle that never stops.",
+            "tag": "—",
+            "cls": ""
+          },
+          {
+            "src": "Crystal Palace FC — CPFC BBS",
+            "ttl": "",
+            "snip": "Server not found. Even the Palace blog is dead.",
+            "tag": "—",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp Video",
+        "cards": [
+          {
+            "src": "→ Emilia",
+            "ttl": "Video call failed",
+            "snip": "Connecting... connecting... nothing.",
+            "tag": "Failed",
+            "cls": ""
+          },
+          {
+            "src": "→ Sam",
+            "ttl": "Video call failed",
+            "snip": "Same. Just the spinning circle and then silence.",
+            "tag": "Failed",
+            "cls": ""
+          },
+          {
+            "src": "→ Amy",
+            "ttl": "Video call failed",
+            "snip": "She’s in the next room. Still won’t connect.",
+            "tag": "Failed",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "6am",
         "cards": [
           {
@@ -2402,6 +2464,25 @@
         ]
       },
       {
+        "sec": "Call Log",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "Call failed",
+            "snip": "Three attempts. Engaged, dropped, engaged. She's probably asleep. It's an hour ahead.",
+            "tag": "Failed (3)",
+            "cls": ""
+          },
+          {
+            "src": "Dev",
+            "ttl": "Call failed",
+            "snip": "Straight to voicemail. Twice.",
+            "tag": "Failed (2)",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "WhatsApp",
         "cards": [
           {
@@ -2410,6 +2491,65 @@
             "snip": "Sent 6:31am. No replies yet. No ticks.",
             "tag": "Sent",
             "cls": "a"
+          },
+          {
+            "src": "Vince",
+            "ttl": "you ok mate? everything went dark for a while here",
+            "snip": "Delivered. At least someone's getting through.",
+            "tag": "Received",
+            "cls": ""
+          },
+          {
+            "src": "Simon → Parklife",
+            "ttl": "Anyone else's internet completely down?",
+            "snip": "One tick. Grey.",
+            "tag": "Sent",
+            "cls": ""
+          },
+          {
+            "src": "Simon → Palace – FA Cup Winners",
+            "ttl": "Lads?",
+            "snip": "One tick. Grey.",
+            "tag": "Sent",
+            "cls": ""
+          },
+          {
+            "src": "Simon → Megatripolis",
+            "ttl": "You seeing this?",
+            "snip": "One tick. Grey.",
+            "tag": "Sent",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp Video",
+        "cards": [
+          {
+            "src": "→ Vince",
+            "ttl": "Video call failed",
+            "snip": "He got a text through earlier. But video? No chance.",
+            "tag": "Failed",
+            "cls": ""
+          },
+          {
+            "src": "→ Sam",
+            "ttl": "Video call failed",
+            "snip": "Same. Just the spinning circle and then silence.",
+            "tag": "Failed",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Service Unavailable",
+            "snip": "Not 'routine maintenance' any more.",
+            "tag": "Down",
+            "cls": ""
           }
         ]
       }
@@ -2688,7 +2828,8 @@
           }
         ]
       }
-    ]
+    ],
+    "17a": []
   },
   "threads": [
     {

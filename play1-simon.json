@@ -2460,6 +2460,191 @@
           }
         ]
       }
+    ],
+    "4": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Family Chat",
+            "ttl": "🎆 We're by the War Memorial. George is with Clara somewhere. Where we meeting?",
+            "snip": "Sam: \"lost dad at the Harveys pop up 😂\"",
+            "tag": "Tonight",
+            "cls": ""
+          },
+          {
+            "src": "Amy",
+            "ttl": "Where u? lets go eat chilli I'm starving x",
+            "snip": "tea",
+            "tag": "Read",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Photos",
+            "ttl": "14 photos, 2 videos saved from Bonfire Night",
+            "snip": "One decent one. The rest are smoke and blur.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Overdraft approaching agreed limit",
+            "snip": "£127.40 remaining. 2 direct debits pending Thursday.",
+            "tag": "Alert",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "EDF Energy",
+            "ttl": "Your monthly statement is ready",
+            "snip": "£397.51. Up from £200 this time last year. Worth the extra to avoid a ‘smart meter’. I think.",
+            "tag": "This Month",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "Tesco Clubcard",
+            "ttl": "You've earned 342 points this month!",
+            "snip": "The gamification of grocery shopping. Well done, you.",
+            "tag": "Reward",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "14": [
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "EasyJet",
+            "ttl": "Your boarding passes are ready 🛫",
+            "snip": "Gatwick → Barcelona. Biometrics at the ready!",
+            "tag": "Tomorrow",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Apple Wallet",
+            "ttl": "Boarding pass added automatically",
+            "snip": "One tap. Frictionless.",
+            "tag": "Added",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Dash can't WAIT to see you! She's been running around all morning 🐾❤️",
+            "snip": "10 photos of Dash attached. She looks adorable.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "15": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Chap called Alan is coming too. He's cool.",
+            "snip": "I'm sure he is Dev, I'm sure he is.",
+            "tag": "Excited",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Trainline",
+            "ttl": "Service Disruptions on Thameslink may affect your journey",
+            "snip": "Surprise, surprise.",
+            "tag": "Delay",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "Screen Time",
+            "ttl": "Your weekly average is 4h 12m. Down 8%",
+            "snip": "This counts as progress. Apparently.",
+            "tag": "Weekly",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "19": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Rully Rouge for Valentines treat ❤️",
+            "snip": "Already ordered a case of 6 🍷",
+            "tag": "Romance",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Planned maintenance: Fri 23:00 – Sat 06:00",
+            "snip": "Note to self — no midnight banking.",
+            "tag": "Scheduled",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Markets steady ahead of Valentine's weekend — \"No cause for concern\"",
+            "snip": "When they say \"no cause for concern,\" that's when you worry.",
+            "tag": "Today",
+            "cls": "c"
+          }
+        ]
+      }
     ]
   },
   "threads": [

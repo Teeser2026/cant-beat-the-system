@@ -2107,6 +2107,30 @@
             "type": "song"
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Happy Valentine’s Day you two! Hope you’ve got something nice planned. Love to Amy. Miss you ❤️❤️",
+            "snip": "The last text from Mum before the world changes. On re-read: devastating.",
+            "tag": "Today",
+            "cls": "warm"
+          }
+        ]
+      },
+      {
+        "sec": "Missed Call",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Dev — Missed call (23:07). No voicemail.",
+            "snip": "He never calls this late. He never calls at all.",
+            "tag": "11pm",
+            "cls": "alert"
+          }
+        ]
       }
     ],
     "21": [
@@ -2231,6 +2255,43 @@
             "cls": "a"
           }
         ]
+      },
+      {
+        "sec": "Telegram",
+        "cards": [
+          {
+            "src": "Forwarded",
+            "ttl": "Verified the firmware hash. Ingenico/Verifone fleet. Simultaneous push. No vendor acknowledgement. Dormant container with NFC write access.",
+            "snip": "Been doing the rounds on socials for a few days. You’d ignored it. At 3am you can’t ignore anything.",
+            "tag": "Unverified",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Telegram",
+        "cards": [
+          {
+            "src": "Anonymous",
+            "ttl": "Source inside Worldpay confirms dormant payload in latest OTA. Biometric template storage. BIS routing address. This isn’t a payment update.",
+            "snip": "Anonymous but specific. The kind of specific that’s either a liar or a whistleblower. No middle ground.",
+            "tag": "Unverified",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Substack",
+        "cards": [
+          {
+            "src": "Payment Systems Analysis",
+            "ttl": "What’s Sitting Inside Two Million Payment Terminals",
+            "snip": "Fifteen years in the industry. Not a conspiracy theorist. Scared.",
+            "tag": "Research",
+            "cls": "",
+            "threadRef": "finance-commerce"
+          }
+        ]
       }
     ],
     "16": [
@@ -2245,7 +2306,31 @@
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "financial-architecture"
+            "threadRef": "finance-commerce"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "What do you want for dinner? I was thinking that pesto thing x",
+            "snip": "Normal life. The pesto thing. Wednesday evening.",
+            "tag": "Evening",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Sky News",
+            "ttl": "NCSC raises UK cyber threat level to “heightened” — precautionary measure",
+            "snip": "You read the headline. You didn’t click. Dev would say that’s the point.",
+            "tag": "Alert",
+            "cls": "cold"
           }
         ]
       }
@@ -2261,6 +2346,19 @@
             "tag": "Morning Blues",
             "cls": "e",
             "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "SciTechDaily",
+            "ttl": "From home robots to AR lenses: the technology arriving in 2027-2028",
+            "snip": "Tesla home robot. AR contact lenses. Free NHS wearable. Smart home mesh. Amy shared it.",
+            "tag": "Black Friday",
+            "cls": "",
+            "threadRef": "science-technology"
           }
         ]
       }
@@ -2311,7 +2409,7 @@
             "snip": "Open since September. You skimmed the summary. The rest is 84 pages of implementation detail you keep meaning to read.",
             "tag": "Open Tab",
             "cls": "c",
-            "threadRef": "financial-architecture"
+            "threadRef": "finance-commerce"
           }
         ]
       }
@@ -2376,6 +2474,66 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "Merry Christmas bro! Boys are going mental with the Lego. Jenny sends love 🎄🍷",
+            "snip": "Amy’s brother. The normal one.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Kate (next door)",
+            "ttl": "Merry Christmas Simon & Amy! Prosecco later? 🥂",
+            "snip": "Psychologist. Knows everything. Complies anyway. The mirror.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Merry Christmas mate. Even to the sheeple 😂🐑",
+            "snip": "Dev being Dev. Even at Christmas.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Ben",
+            "ttl": "Merry Christmas you old Bastard",
+            "snip": "Ben. No emoji. No frills. Perfect.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Parklife",
+            "ttl": "Have a good one lads — drinks in NY 🍺",
+            "snip": "The group chat. The pub crew. New Year plans already forming.",
+            "tag": "Christmas Day",
+            "cls": ""
+          }
+        ]
       }
     ],
     "12": [
@@ -2415,6 +2573,30 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Happy New Year darling! 🥳 2027 — can you believe it? Tony fell asleep at 11. Love you xxx",
+            "snip": "Mum. Spain. Tony asleep before midnight. Classic.",
+            "tag": "New Year",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Family Chat",
+            "ttl": "🎆🎆🎆 HAPPY NEW YEAR!!! 🎆🎆🎆",
+            "snip": "23 messages. Firework photos. Someone’s posted a video of Wilf barking at the bangs.",
+            "tag": "New Year",
+            "cls": ""
+          }
+        ]
       }
     ],
     "13": [
@@ -2428,6 +2610,81 @@
             "tag": "I'm not the only one",
             "cls": "e",
             "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "BBC News — Push",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Energy bills to rise again — Ofgem confirms April increase",
+            "snip": "Another quarter, another kick in the teeth.",
+            "tag": "Today",
+            "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Boiler man can come Thursday. £180 call-out. Happy new year to us 🙄",
+            "snip": "Thursday. Four days of jumpers and arguments about the thermostat.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification — YouTube",
+        "cards": [
+          {
+            "src": "YouTube",
+            "ttl": "Continue watching: Miles Harris — YOU... will be TOKENIZED",
+            "snip": "4 minutes in. Ten-minute video. You stopped to make tea and never went back.",
+            "tag": "Reminder",
+            "cls": "",
+            "threadRef": "finance-commerce"
+          }
+        ]
+      },
+      {
+        "sec": "Notification — YouTube",
+        "cards": [
+          {
+            "src": "YouTube",
+            "ttl": "Continue watching: David A. Hughes — The Deep State & Global Concentration Camp",
+            "snip": "Geopolitics and Empire. Partly watched. You know how it ends.",
+            "tag": "Reminder",
+            "cls": "",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Your current account balance is £1,247.63",
+            "snip": "January. The month money goes to die.",
+            "tag": "Balance",
+            "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC Tech",
+            "ttl": "Why millions are switching to conversational AI assistants — and what it means for the future of search",
+            "snip": "Chloe’s been using it for homework. Amy asked it about a recipe. You haven’t tried it. You won’t.",
+            "tag": "Trending",
+            "cls": "",
+            "threadRef": "science-technology"
           }
         ]
       }
@@ -2564,7 +2821,7 @@
             "snip": "84 pages. You read the executive summary six months ago. Bookmarked the rest. You know how this ends.",
             "tag": "Open Tab",
             "cls": "c",
-            "threadRef": "financial-architecture"
+            "threadRef": "finance-commerce"
           },
           {
             "src": "Solari Report — Catherine Austin Fitts",
@@ -2572,7 +2829,7 @@
             "snip": "She's been saying it for years. You've been listening for years. Nothing changes.",
             "tag": "Bookmarked",
             "cls": "c",
-            "threadRef": "financial-architecture"
+            "threadRef": "finance-commerce"
           },
           {
             "src": "Corbett Report — James Corbett",
@@ -2639,7 +2896,55 @@
             "snip": "Dev flagged this months ago. You told people. They shrugged. Now it's 26 countries and nobody's shrugging because nobody's noticed.",
             "tag": "Research",
             "cls": "c",
-            "threadRef": "financial-architecture"
+            "threadRef": "finance-commerce"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Cash withdrawal: £300.00. Daily ATM limit: £300. Remaining: £0.",
+            "snip": "The machine gave it to you. This time.",
+            "tag": "Withdrawal",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "BBC News Daily",
+            "ttl": "Government advises “sensible levels of household preparedness”",
+            "snip": "Cabinet Office guidance. Like the wartime posters but in Comic Sans.",
+            "tag": "Today",
+            "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Why is there a bag of rice in the boot of the car? 😂",
+            "snip": "She thinks you’re losing it. Maybe you are.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "BBC News — Push",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Asian markets fall sharply overnight — Nikkei down 4.2%",
+            "snip": "It’s not just us. That’s what they’re not saying.",
+            "tag": "Breaking",
+            "cls": "cold"
           }
         ]
       }
@@ -2713,6 +3018,19 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Wired UK",
+            "ttl": "Beyond chatbots: what 2027 will really mean for AI",
+            "snip": "Agent systems, on-device models, the end of hallucination. Apparently.",
+            "tag": "Tech",
+            "cls": "",
+            "threadRef": "science-technology"
+          }
+        ]
       }
     ],
     "14": [
@@ -2749,6 +3067,31 @@
             "snip": "10 photos of Dash attached. She looks adorable.",
             "tag": "Today",
             "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "BBC News — Push",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "UK inflation holds at 3.4% — “no immediate relief” say economists",
+            "snip": "Even at 30,000 feet. The phone buzzes and reality follows.",
+            "tag": "Breaking",
+            "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC Travel",
+            "ttl": "New airport biometric checks: facial recognition now mandatory for all UK domestic and EU flights",
+            "snip": "“Seamless travel” they call it. You stood in the queue for 40 minutes while the scanners crashed twice.",
+            "tag": "Travel",
+            "cls": "buried",
+            "threadRef": "surveillance-architecture"
           }
         ]
       }
@@ -2789,6 +3132,18 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "BBC News Daily",
+            "ttl": "Bank of England: “payment system resilience under continuous review”",
+            "snip": "Buried at the bottom of the newsletter. You nearly deleted it. Nearly.",
+            "tag": "Evening",
+            "cls": "buried"
+          }
+        ]
       }
     ],
     "19": [
@@ -2827,9 +3182,108 @@
             "cls": "c"
           }
         ]
+      },
+      {
+        "sec": "Signal",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Stay close to home this weekend.",
+            "snip": "Five words. No emoji. No link. No follow-up.",
+            "tag": "Unread",
+            "cls": "alert"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Tony says don’t worry about the markets thing, it’s all fine now. Hope you’ve got nice plans for Valentine’s! 🥰",
+            "snip": "Mum has already forgotten. Tony told her it was nothing. The mainstream worked.",
+            "tag": "Today",
+            "cls": "warm"
+          }
+        ]
       }
     ],
-    "17a": []
+    "17a": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Beautiful walk! Pic of dead rabbit Olive found! 🐰💀",
+            "snip": "Amy’s voice. The dogs. January countryside.",
+            "tag": "Photo",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Told you. Read it properly this time.",
+            "snip": "First message since the firmware doc. He knows you’ve been digging.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "BBC News — Push",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Defence Secretary: “UK faces unprecedented cyber threat from hostile actors”",
+            "snip": "On the TV above the bar. Amy saw it too.",
+            "tag": "Breaking",
+            "cls": "cold",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Mum (Sue)",
+            "ttl": "Just seen the news about the cyber thing. Should we be worried? Tony says it’s nothing. Stay safe darling ❤️",
+            "snip": "Mum watches BBC News. Mum is worried. Tony is not. The gap between them.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "BBC News",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Army exercises expanded: MOD confirms additional “routine readiness” deployment across southern England",
+            "snip": "You passed a convoy of green trucks on the A272. Didn’t think much of it.",
+            "tag": "Today",
+            "cls": "cold",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Contactless payment: The Bell Inn — £12.40",
+            "snip": "“Cash Preferred” said the sign. You tapped anyway.",
+            "tag": "Payment",
+            "cls": ""
+          }
+        ]
+      }
+    ]
   },
   "threads": [
     {
@@ -2878,13 +3332,59 @@
             "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
             "footer": "Forwarded by Dev · Save to notes ↓"
           }
+        },
+        {
+          "text": "Miles Harris — YOU... will be TOKENIZED",
+          "url": "https://www.youtube.com/watch?v=ZMninCdlxw0",
+          "src": "simon",
+          "turn": 13
+        },
+        {
+          "text": "What’s Sitting Inside Two Million Payment Terminals",
+          "src": "simon",
+          "turn": 17,
+          "article": {
+            "style": "news",
+            "source": "Payment Systems Analysis — Substack",
+            "title": "What’s Sitting Inside Two Million Payment Terminals",
+            "date": "30 January 2027",
+            "body": "<p>I’ve spent the last 72 hours examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 28–29 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
+            "footer": "Payment Systems Analysis — Substack"
+          }
         }
       ]
     },
     {
       "id": "surveillance-architecture",
       "label": "Surveillance Architecture",
-      "items": []
+      "items": [
+        {
+          "text": "BBC Travel — New airport biometric checks: what travellers need to know",
+          "src": "simon",
+          "turn": 14,
+          "article": {
+            "style": "news",
+            "source": "BBC Travel",
+            "title": "New airport biometric checks: what travellers need to know",
+            "date": "9 January 2027",
+            "body": "<p>Facial recognition technology is now mandatory for all passengers departing from UK airports on domestic and EU routes, following the rollout of the Home Office’s Seamless Border Programme.</p><p>The system, which replaces traditional boarding pass checks at security gates, uses live facial matching against passport photographs stored in the Home Office’s biometric database. Passengers no longer need to present physical or digital boarding passes at any checkpoint — the camera does it for you.</p><p>The expansion follows a successful pilot at 14 airports last year. All 32 UK commercial airports are now equipped.</p><p>“This is about making travel faster and more secure,” said a Home Office spokesperson. “The technology eliminates document fraud and reduces queue times by up to 40%.”</p><p>Civil liberties groups have raised concerns about the scope of data retention. The Home Office confirmed that facial scans are stored for “up to 5 years for security purposes” but declined to specify which agencies have access.</p><p>Some passengers have reported delays when scanners fail to match — particularly in low lighting conditions or when passengers have changed appearance significantly since their passport photograph was taken. Gatwick reported 340 “secondary screening” referrals in the first week, up from an average of 12 under the old system.</p><p>Airlines have been told to remove all manual boarding pass checks by March.</p>",
+            "footer": "BBC Travel"
+          }
+        },
+        {
+          "text": "The Seamless Border Isn’t About Borders",
+          "src": "simon",
+          "turn": 14,
+          "article": {
+            "style": "news",
+            "source": "The Interoperability Problem — Substack",
+            "title": "The Seamless Border Isn’t About Borders",
+            "date": "11 January 2027",
+            "body": "<p>The Home Office’s Seamless Border Programme went live this week at all 32 UK commercial airports. BBC Travel ran a helpful explainer about queue times. Nobody mentioned what the system is actually built on.</p><p>The facial recognition layer runs on ARC — the same Authentication and Registration Core that was quietly rolled out across UK payment terminals last autumn. The same framework. The same biometric template format. The same data architecture. Your face at the airport gate is verified by the same system that will verify your face at a card terminal.</p><p>This is called interoperability. It means one identity framework serving multiple functions — travel, payment, age verification, access control. Each function justified independently. Together they constitute a single digital identity infrastructure with no opt-out.</p><p>The 340 “secondary screening” referrals at Gatwick in week one are worth paying attention to. Under the old system, referrals were based on document irregularities — expired passports, damaged chips. Under the new system, referrals are generated by algorithmic confidence scores. The threshold is set by the Home Office. It is not published. It can be adjusted remotely.</p><p>What does a low confidence score correlate with? The Home Office won’t say. Independent researchers analysing similar systems in the EU have documented consistent bias against darker skin tones, non-Western facial structures, and — notably — individuals with sparse or irregular digital footprints. If you don’t have much data in the system, the system doesn’t recognise you well. The less integrated you are, the more friction you experience.</p><p>This is the algorithm ghetto. Not a physical barrier. A confidence score.</p><p>The programme is described as “voluntary for now” for land crossings and domestic rail. The March deadline for airlines to remove manual checks suggests the window for that language is short.</p><p>Nobody is being forced through the gate. The gate is simply the only gate that works.</p>",
+            "footer": "The Interoperability Problem — Substack"
+          }
+        }
+      ]
     },
     {
       "id": "science-technology",
@@ -2932,6 +3432,45 @@
           "url": "https://theethicalskeptic.substack.com/p/master-exothermic-core-mantle-decoupling",
           "src": "simon",
           "turn": 8
+        },
+        {
+          "text": "Wired UK — Beyond chatbots: what 2027 will really mean for AI",
+          "src": "simon",
+          "turn": 6,
+          "article": {
+            "style": "news",
+            "source": "Wired UK",
+            "title": "Beyond chatbots: what 2027 will really mean for AI",
+            "date": "22 November 2026",
+            "body": "<p>If 2024 was the year AI learned to talk, 2025 the year it learned to see, and 2026 the year it learned to listen, 2027 is shaping up to be the year it learns to do.</p><p>The large language models that powered the first wave of consumer AI — ChatGPT, Claude, Gemini — were built on the transformer architecture, a neural network design introduced in 2017 that excels at modelling sequences using “attention” to decide what matters. It was astonishingly effective for text, and increasingly for images, audio and code.</p><p>But the next wave won’t be defined by bigger models. It will be defined by different ones.</p><p><strong>Multimodal-native systems</strong> are arriving that reason across text, images, audio and video as first-class inputs — not bolt-ons stitched together in a pipeline. Google’s latest research demos show models that can watch a live video feed and answer questions about what’s happening in real time. The implications for accessibility, education and healthcare are significant. So are the implications for surveillance, though few in the industry are saying that out loud.</p><p><strong>Agent-style systems</strong> — AI that doesn’t just generate text but takes actions — are moving from demo to deployment. Today this looks like early-stage tool use and function calling: book a restaurant, file an expense, draft and send an email. By late 2027, industry insiders expect goal-driven orchestration: give the AI an objective and let it figure out the steps. Microsoft’s AutoGen framework and Anthropic’s tool-use protocols are the early scaffolding.</p><p><strong>Retrieval-augmented generation</strong> is quietly solving the hallucination problem. Instead of asking a model to remember everything, you fetch relevant documents at query time and feed them in. The model reasons over verified sources rather than its own training data. For enterprise, government and healthcare — where accuracy is non-negotiable — this is the architecture that unlocks adoption.</p><p><strong>Smaller, specialised models</strong> running on-device are the sleeper story. Apple’s on-device intelligence, Qualcomm’s NPU chips, and a wave of edge-deployed models mean your phone, your watch, your car, your fridge will run their own AI locally. No cloud round-trip. No latency. No data leaving the device — in theory.</p><p>And then there’s the category nobody quite knows how to name: <strong>hybrid neuro-symbolic systems</strong> that mix learned pattern recognition with explicit rules and structured reasoning. Less hallucination. More auditability. Potentially more aligned with regulatory frameworks like UK GDPR and the EU AI Act. The AI Safety Institute has flagged these as “the most promising path to trustworthy AI in public services.”</p><p>For UK organisations, the practical implications are immediate. Don’t build everything around a single vendor or model — use abstraction layers that let you swap components as the landscape shifts. Design for audit now, not later. And invest in durable skills: data quality, evaluation, model governance. These outlast any single architecture.</p><p>The companies that will define 2027 aren’t necessarily the ones that defined 2024. The transformer was the internal combustion engine of AI. What comes next might be the electric motor: quieter, cleaner, and everywhere before you notice.</p>",
+            "footer": "Wired UK — Technology"
+          }
+        },
+        {
+          "text": "SciTechDaily — From home robots to AR lenses: 2027–2028",
+          "src": "simon",
+          "turn": 7,
+          "article": {
+            "style": "news",
+            "source": "SciTechDaily",
+            "title": "From home robots to AR lenses: the technology arriving in 2027–2028",
+            "date": "26 November 2026",
+            "body": "<p>Every year, the predictions get bolder. Every year, some of them come true. Here’s what’s actually shipping — or credibly close to shipping — in the next eighteen months.</p><p><strong>Home robots: this time it’s real</strong></p><p>Tesla’s Optimus Gen 3 enters limited home deployment in Q2 2027. Priced at $18,000 — roughly the cost of a mid-range car — it’s designed for household tasks: laundry folding, dish loading, basic cooking prep, elderly care assistance. Early reviews from the US pilot programme describe it as “eerily competent at boring things.”</p><p>Boston Dynamics’ Stretch platform, originally industrial, now has a consumer variant for warehouse-style home organisation. Samsung’s Ballie — delayed twice — finally ships with a full home-management suite: it vacuums, monitors energy usage, and acts as a roving security camera that follows you from room to room. Whether that’s reassuring or unsettling depends on your perspective.</p><p>The UK market is expected to see first shipments by Christmas 2027. Analysts predict 400,000 home robots in British households by 2029.</p><p><strong>AR lenses: the Metaverse v2.0</strong></p><p>The first Metaverse push failed because it asked people to strap a headset to their face and stand in a cartoon. The second attempt is subtler.</p><p>Meta’s Orion glasses — true augmented reality in a form factor that looks like regular spectacles — enter developer preview in March 2027. Apple’s Vision Pro 2 drops the ski-goggle aesthetic for something closer to wraparound sunglasses. Both overlay digital information on the physical world: navigation arrows on pavements, recipe steps floating above your chopping board, translated subtitles hovering beneath a foreign speaker’s face.</p><p>But the real shift is contact lenses. Mojo Vision’s smart lens — delayed from 2025 — is now in clinical trials with an expected consumer launch in late 2028. A display built into a contact lens. Information projected directly onto your retina. No device visible to anyone else.</p><p>The implications for work, education and social interaction are vast. The implications for privacy are terrifying. If everyone around you could be recording, reading contextual data about you, or receiving AI-generated prompts about how to interact with you — and you’d never know — the social contract changes fundamentally.</p><p>Nobody in the industry talks about that. They talk about “seamless integration” and “ambient computing.”</p><p><strong>Wearable health monitoring</strong></p><p>The NHS’s wrist-worn wellness monitor pilot — 50,000 volunteers, launched in October — is generating data that Public Health England describes as “transformative.” Continuous heart rate, blood oxygen, skin temperature, sleep quality, and stress indicators streamed to a centralised health dashboard.</p><p>The pilot is voluntary. The data is anonymised. The results are promising: early detection of atrial fibrillation, flu-like illness flagged 48 hours before symptoms, and a 23% reduction in unnecessary GP visits among participants.</p><p>The government has signalled that a nationwide rollout is “under active consideration” for 2028. Integration with the NHS App is already in development. The device would be free — funded by projected savings to the health service.</p><p>A free health monitor from the government that streams your biometrics to a central database. The fact that this is framed as a gift rather than surveillance tells you everything about where the Overton window has moved.</p><p><strong>Smart home convergence</strong></p><p>Matter — the interoperability standard backed by Apple, Google, Amazon and Samsung — reaches critical mass in 2027. For the first time, every smart device in your home speaks the same protocol. Your heating, lighting, locks, cameras, appliances and entertainment system operate as a single mesh, managed by a conversational AI assistant.</p><p>The assistant is the brain. The home is the body. The data is the nervous system.</p><p>Analysts at McKinsey estimate that by 2028, the average UK smart home will generate 1.4 terabytes of behavioural data per year — equivalent to monitoring every member of the household 24 hours a day. This data is, in theory, private. In practice, it flows through cloud services operated by three or four companies, under terms of service that most users have never read.</p><p>“The smart home isn’t smart,” says Professor Carissa Véliz, author of <em>Privacy is Power</em>. “It’s obedient. And it’s not obedient to you.”</p><p><strong>What it all adds up to</strong></p><p>Individually, each of these technologies solves a genuine problem. Home robots save time. AR enhances experience. Health monitors save lives. Smart homes save energy. The question nobody is asking loudly enough: what happens when they’re all connected, all feeding data to the same platforms, and all managed by the same AI layer?</p><p>The answer, probably, is that life gets measurably better for most people. And measurably more transparent to whoever controls the infrastructure.</p><p>That’s the trade-off of 2027. It’s the same trade-off as every year. Just more of it.</p>",
+            "footer": "SciTechDaily — Technology & Innovation"
+          }
+        },
+        {
+          "text": "BBC Tech — Why millions are switching to conversational AI assistants",
+          "src": "simon",
+          "turn": 13,
+          "article": {
+            "style": "news",
+            "source": "BBC Technology",
+            "title": "Why millions are switching to conversational AI assistants — and what it means for the future of search",
+            "date": "14 January 2027",
+            "body": "<p>A new generation of AI assistants is rewriting the rules of how people interact with technology — and the speed of adoption has taken even their creators by surprise.</p><p>In the past six months, conversational AI platforms have moved from novelty to necessity for millions of users worldwide. Unlike the chatbots of two years ago — stilted, formulaic, prone to confident errors — the latest models feel different. Users describe them as “intuitive,” “warm,” and “almost unsettlingly helpful.”</p><p>The shift is being driven by a cluster of platforms that emerged in late 2026, most notably Aria (backed by a European research consortium), alongside updated offerings from the major US tech companies. What sets this generation apart is personalisation. The assistants don’t just answer questions — they learn preferences, anticipate needs, and adapt their tone to the individual user.</p><p>“It’s like talking to someone who actually knows me,” said one user in a BBC-commissioned survey. “I use it for meal planning, homework help, appointment booking. I don’t Google things anymore.”</p><p>Adoption figures are striking. Aria alone has registered 140 million active users since its September launch, with particularly strong uptake in the UK, EU, and Commonwealth nations. A University of Oxford study found that 68% of users aged 16–34 now use a conversational AI assistant daily — up from 12% eighteen months ago.</p><p>The technology is built on large language models, but the new platforms integrate real-time data feeds, health monitoring APIs, and — controversially — optional biometric voice authentication, allowing the assistant to verify identity by voice alone.</p><p>Privacy campaigners have flagged concerns about the volume of personal data these systems process. The AI Safety Institute has called for “urgent regulatory clarity” on data retention and consent frameworks.</p><p>But for most users, the experience is simply too good to resist. Dr Elena Torres, a digital anthropologist at UCL, describes the dynamic as “convenience gravity” — the pull of a system that makes every interaction fractionally easier, until opting out feels like opting out of modern life itself.</p><p>“Nobody is being forced to use these tools,” Dr Torres said. “That’s precisely what makes them so effective. The best adoption is voluntary adoption.”</p><p>Aria’s European backers include the Digital Innovation Hub, a consortium with funding from the European Commission, the Bank for International Settlements’ Innovation Hub, and several national central banks. The consortium has positioned Aria as an “open, ethical alternative” to US-dominated AI platforms.</p><p>The UK government announced last week that its One Login digital identity programme will integrate conversational AI assistance from April, allowing citizens to complete tax returns, benefit applications, and passport renewals through natural conversation rather than form-filling.</p><p>Analysts predict that within two years, conversational AI will be the primary interface between citizens and government services in most developed nations.</p><p>“We’re not building a product,” said an Aria spokesperson. “We’re building a relationship.”</p>",
+            "footer": "BBC Technology"
+          }
         }
       ]
     },
@@ -2975,6 +3514,51 @@
           "url": "https://thepyramidofpower.net",
           "src": "simon",
           "turn": 2
+        },
+        {
+          "text": "David A. Hughes — The Deep State & Their Project for a Global Concentration Camp",
+          "url": "https://www.youtube.com/watch?v=7CXCK2yjlJY&t=6625s",
+          "src": "simon",
+          "turn": 13
+        },
+        {
+          "text": "BBC News — Defence Secretary warns of “unprecedented cyber threat”",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "BBC News",
+            "title": "Defence Secretary warns of “unprecedented cyber threat” from hostile state actors",
+            "date": "31 January 2027",
+            "body": "<p>The Defence Secretary has warned that the UK faces an “unprecedented and evolving cyber threat” from hostile state actors, in a statement to the House of Commons that drew cross-party concern.</p><p>Speaking during Defence Questions, the Secretary of State said the government had “credible intelligence” of coordinated cyber reconnaissance against UK critical infrastructure, including financial systems, energy networks, and telecommunications.</p><p>“We are seeing a level of sophistication and coordination that goes beyond anything we have previously encountered,” the statement read. “The government is taking all necessary precautions to ensure the resilience of our national infrastructure.”</p><p>The National Cyber Security Centre confirmed it had raised the UK’s cyber threat level to “heightened” earlier this month — its second-highest classification — following what it described as “increased hostile activity against payment and banking systems.”</p><p>Opposition MPs pressed for details on which state actors were involved. The Defence Secretary declined to name specific nations but referenced “a pattern of behaviour consistent with state-sponsored groups operating out of Eastern Europe and the Asia-Pacific region.”</p><p>COBRA met twice this week. The Ministry of Defence has confirmed that “routine readiness exercises” have been expanded to include additional deployments across southern England — a move described by military analysts as “unusual for January.”</p><p>Financial markets reacted sharply. The FTSE 250 triggered a circuit breaker for the first time since September 2022, with trading paused for 11 minutes before resuming. The Bank of England issued a statement confirming “orderly market conditions are being maintained.”</p><p>The Prime Minister’s spokesperson said there was “no specific or imminent threat to the public” but urged citizens to “ensure household resilience measures are in place.”</p>",
+            "footer": "BBC News — Politics"
+          }
+        },
+        {
+          "text": "BBC News — MOD confirms expanded military exercises across southern England",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "BBC News",
+            "title": "MOD confirms expanded military exercises across southern England",
+            "date": "1 February 2027",
+            "body": "<p>The Ministry of Defence has confirmed that “routine readiness exercises” are being expanded to include additional military deployments across southern England, following similar exercises in East Anglia and the Midlands since October.</p><p>Residents in Hampshire, West Sussex, and Surrey have reported increased military vehicle movements on A-roads and motorways over the past week. A convoy of approximately 30 vehicles was observed on the A272 near Petersfield on Thursday afternoon.</p><p>An MOD spokesperson said the exercises were “pre-planned and routine” and part of the UK’s annual Defence Readiness Programme. “These exercises are not a response to any specific threat. They are designed to ensure our armed forces maintain the highest level of preparedness.”</p><p>However, defence analysts have noted that the timing and scale are unusual. Professor Michael Clarke, former director of RUSI, described the deployments as “significantly larger than the standard January exercise cycle” and suggested they may be related to the elevated cyber threat level announced by the NCSC earlier this month.</p><p>The exercises are scheduled to continue through mid-February. Local authorities have been advised to expect “minor disruption to traffic on some routes.”</p><p>RAF Wyton, which hosted the initial “routine exercise” in October, remains active. The base, home to the Joint Forces Intelligence Group, has not commented on its current operational status.</p>",
+            "footer": "BBC News — UK"
+          }
+        },
+        {
+          "text": "UK Defence Watch — The Deployment Pattern Nobody Is Talking About",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "UK Defence Watch — Substack",
+            "title": "The Deployment Pattern Nobody Is Talking About",
+            "date": "2 February 2027",
+            "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
+            "footer": "UK Defence Watch — Substack"
+          }
         }
       ]
     },

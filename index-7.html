@@ -598,6 +598,8 @@ a.ti.research::after { content: ' ↗'; opacity: 0; transition: opacity .3s; fon
 a.ti.research:hover::after { opacity: .5; }
 .ti-new { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--warm); opacity: .7; margin-right: 4px; }
 .ti.ti-is-new { color: var(--text); border-left-color: rgba(196,149,106,.35); }
+.ti.ti-is-unread { color: var(--dim); border-left-color: rgba(181,131,141,.3); }
+.ti-unread { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: rgba(181,131,141,.55); margin-right: 4px; }
 .add-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; }
 .add-note:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
 
@@ -2820,17 +2822,21 @@ function renderThreads() {
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
       const itemKey = group.id + ':' + origIdx;
-      const isNew = item.turn && !state._threadsClicked.has(itemKey);
-      const newTag = isNew ? '<span class="ti-new">NEW</span> ' : '';
+      const isClicked = state._threadsClicked.has(itemKey);
+      const currentTurnId = playData.turns[state.turnIndex] ? playData.turns[state.turnIndex].id : null;
+      const isNew = !isClicked && item.turn == currentTurnId;
+      const isUnread = !isClicked && !isNew && item.turn;
+      const stateClass = isNew ? ' ti-is-new' : isUnread ? ' ti-is-unread' : '';
+      const badge = isNew ? '<span class="ti-new">NEW</span> ' : isUnread ? '<span class="ti-unread">●</span> ' : '';
       if (item.article) {
-        html += `<div class="ti article${isNew ? ' ti-is-new' : ''}" data-group="${group.id}" data-idx="${origIdx}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
+        html += `<div class="ti article${stateClass}" data-group="${group.id}" data-idx="${origIdx}" data-tkey="${itemKey}">${badge}${item.text}</div>`;
       } else if (item.url) {
         const cls = item.src === 'player' ? 'ti player' : 'ti';
-        html += `<a class="${cls}${isNew ? ' ti-is-new' : ''}" href="${item.url}" target="_blank" rel="noopener" data-tkey="${itemKey}">${newTag}${item.text}</a>`;
+        html += `<a class="${cls}${stateClass}" href="${item.url}" target="_blank" rel="noopener" data-tkey="${itemKey}">${badge}${item.text}</a>`;
       } else if (item.src === 'player') {
-        html += `<div class="ti player${isNew ? ' ti-is-new' : ''}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
+        html += `<div class="ti player${stateClass}" data-tkey="${itemKey}">${badge}${item.text}</div>`;
       } else {
-        html += `<div class="ti pending${isNew ? ' ti-is-new' : ''}" data-tkey="${itemKey}">${newTag}${item.text}</div>`;
+        html += `<div class="ti pending${stateClass}" data-tkey="${itemKey}">${badge}${item.text}</div>`;
       }
     });
     html += '</div>';
@@ -2864,8 +2870,8 @@ function renderThreads() {
       const key = this.dataset.tkey;
       if (key && !state._threadsClicked.has(key)) {
         state._threadsClicked.add(key);
-        this.classList.remove('ti-is-new');
-        const tag = this.querySelector('.ti-new');
+        this.classList.remove('ti-is-new', 'ti-is-unread');
+        const tag = this.querySelector('.ti-new') || this.querySelector('.ti-unread');
         if (tag) tag.remove();
       }
     });

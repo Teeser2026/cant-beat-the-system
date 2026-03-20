@@ -1318,10 +1318,79 @@
       "date": "January 2027",
       "paras": [
         {
-          "t": "[STUB — Dog walk. The pub. The cash sign. TO WRITE.]"
+          "t": "Amy suggested we try a new walk with the dogs today. A long loop of beautiful Sussex countryside starting and ending at The Bell Inn. She had me at ‘pub’ and she knew it. Only a ten minute drive from our house but somewhere we’d yet to explore. The pub car park was refreshingly busy for dry January."
+        },
+        {
+          "t": "The skies were clear, the weather brisk, the frost yet to clear from the shaded grass under the trees. I’d wrapped up warm. Woolly hat, thermal socks and underwear, lots of layers and my puffy Fjallräven coat zipped up high to the neck. We walked briskly. The dogs loved it. New smells, new spots for Wilf to mark his territory. Olive got zoomies. And she found a dead rabbit. We found her with it hanging gently from her mouth, no idea what to do with it. Amy took the cutest photo of her."
+        },
+        {
+          "t": "After twenty minutes or so I started to get hot, my thermals moist from sweat. I took my coat off. Within two to three minutes I was freezing. The hot/cold, coat on/coat off cycle continued until we reached the pub again."
+        },
+        {
+          "t": "‘Cash preferred, use it or lose it’ a sign outside the pub proudly announces. We smile at one another. Our kind of people. We both know cash is king."
+        },
+        {
+          "t": "‘Did you bring cash?’"
+        },
+        {
+          "t": "‘No, did you?’"
+        },
+        {
+          "t": "‘No. There’s none in the car either’"
+        },
+        {
+          "t": "We head inside, dogs instinctively head for the roaring log fire."
+        },
+        {
+          "t": "‘Pint of Best and a Peroni shandy, please. I saw your sign, good to see you keeping cash alive’"
+        },
+        {
+          "t": "‘Yeah, as the sign says, use it or lose it’"
+        },
+        {
+          "t": "‘Annoyingly we left the house without any today, we’ll definitely bring some next time’"
+        },
+        {
+          "t": "‘Thanks, love. £12.40 please’"
+        },
+        {
+          "t": "Tap. Awkward smile."
+        },
+        {
+          "t": "I join Amy and the dogs by the fire. We make a vow to make sure we always take cash out with us in future. Use it or lose it. There was a day, not sure when it was, that was the last one you made a mental check of money, keys before leaving the house and it became phone, keys."
+        },
+        {
+          "t": "The beer hits the spot. Half a pint down in a couple of sips. We’re not particularly chatty, tired from the walk. Content just to be, dogs snoozing, fire crackling. The TV is on above the bar. Horse racing, sound turned down at the moment thankfully. I try not to look at it but can’t resist the compulsion to keep glancing up."
+        },
+        {
+          "t": "‘Eagle Sam’ 9/2 — and the jockey is wearing red and blue. I point it out to Amy. Would’ve stuck twenty quid on if it was the Grand National."
+        },
+        {
+          "t": "We both notice the TV news ticker —"
+        },
+        {
+          "t": "Defence Secretary: ‘UK faces unprecedented cyber threat from hostile actors’.",
+          "c": "solo"
+        },
+        {
+          "t": "They’re really pushing this one. Slowly at first, then all of a sudden.",
+          "c": "inner"
+        },
+        {
+          "t": "‘Shall we head?’ asks Amy, breaking a chain of thought that would’ve spiralled. I can feel a 3am deep dive brewing…"
+        },
+        {
+          "t": "We don’t talk much in the car either. Amy unusually quiet. We both know what the other is thinking."
         }
       ],
-      "choices": null,
+      "choices": {
+        "label": "Use it or lose it",
+        "opts": [
+          "We’ll bring cash next time. We always say that.",
+          "It’s not about cash. It’s about what replaces it.",
+          "At least someone’s fighting back."
+        ]
+      },
       "audio": null
     },
     {

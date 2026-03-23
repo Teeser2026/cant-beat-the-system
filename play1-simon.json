@@ -3476,6 +3476,51 @@
           }
         ]
       }
+    ],
+    "6a": [
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "U.S. Department of State — Historical Documents",
+            "ttl": "Memorandum: Weather Modification in Southeast Asia",
+            "snip": "1967. Declassified. Cloud seeding over the Ho Chi Minh Trail to extend the monsoon season. They've been at this longer than you think.",
+            "tag": "Declassified",
+            "cls": "",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "science-technology"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Substack — We The Free",
+            "ttl": "WEAPONS OF MASS DISTRACTION",
+            "snip": "Cognitive warfare. Not bombs. Algorithms. And you're the target, not despite being a civilian — because of it.",
+            "tag": "New Post",
+            "cls": "",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Vince",
+            "ttl": "Going to the match on Saturday? Beers after? 🔴🔵",
+            "snip": "Normal life. Thank god for normal life.",
+            "tag": "Today",
+            "cls": "",
+            "type": "flavour"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -3664,6 +3709,12 @@
             "body": "<p>A new generation of AI assistants is rewriting the rules of how people interact with technology — and the speed of adoption has taken even their creators by surprise.</p><p>In the past six months, conversational AI platforms have moved from novelty to necessity for millions of users worldwide. Unlike the chatbots of two years ago — stilted, formulaic, prone to confident errors — the latest models feel different. Users describe them as “intuitive,” “warm,” and “almost unsettlingly helpful.”</p><p>The shift is being driven by a cluster of platforms that emerged in late 2026, most notably Aria (backed by a European research consortium), alongside updated offerings from the major US tech companies. What sets this generation apart is personalisation. The assistants don’t just answer questions — they learn preferences, anticipate needs, and adapt their tone to the individual user.</p><p>“It’s like talking to someone who actually knows me,” said one user in a BBC-commissioned survey. “I use it for meal planning, homework help, appointment booking. I don’t Google things anymore.”</p><p>Adoption figures are striking. Aria alone has registered 140 million active users since its September launch, with particularly strong uptake in the UK, EU, and Commonwealth nations. A University of Oxford study found that 68% of users aged 16–34 now use a conversational AI assistant daily — up from 12% eighteen months ago.</p><p>The technology is built on large language models, but the new platforms integrate real-time data feeds, health monitoring APIs, and — controversially — optional biometric voice authentication, allowing the assistant to verify identity by voice alone.</p><p>Privacy campaigners have flagged concerns about the volume of personal data these systems process. The AI Safety Institute has called for “urgent regulatory clarity” on data retention and consent frameworks.</p><p>But for most users, the experience is simply too good to resist. Dr Elena Torres, a digital anthropologist at UCL, describes the dynamic as “convenience gravity” — the pull of a system that makes every interaction fractionally easier, until opting out feels like opting out of modern life itself.</p><p>“Nobody is being forced to use these tools,” Dr Torres said. “That’s precisely what makes them so effective. The best adoption is voluntary adoption.”</p><p>Aria’s European backers include the Digital Innovation Hub, a consortium with funding from the European Commission, the Bank for International Settlements’ Innovation Hub, and several national central banks. The consortium has positioned Aria as an “open, ethical alternative” to US-dominated AI platforms.</p><p>The UK government announced last week that its One Login digital identity programme will integrate conversational AI assistance from April, allowing citizens to complete tax returns, benefit applications, and passport renewals through natural conversation rather than form-filling.</p><p>Analysts predict that within two years, conversational AI will be the primary interface between citizens and government services in most developed nations.</p><p>“We’re not building a product,” said an Aria spokesperson. “We’re building a relationship.”</p>",
             "footer": "BBC Technology"
           }
+        },
+        {
+          "text": "Operation Popeye — US Weather Modification in Vietnam (declassified)",
+          "url": "https://history.state.gov/historicaldocuments/frus1964-68v28/d274",
+          "src": "simon",
+          "turn": "6a"
         }
       ]
     },
@@ -3752,6 +3803,12 @@
             "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
             "footer": "UK Defence Watch — Substack"
           }
+        },
+        {
+          "text": "Weapons of Mass Distraction — Josh Walkos (We The Free)",
+          "url": "https://wethefree.substack.com/p/weapons-of-mass-distraction",
+          "src": "simon",
+          "turn": "6a"
         }
       ]
     },

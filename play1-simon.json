@@ -493,77 +493,6 @@
       }
     },
     {
-      "id": "6a",
-      "num": "T6a",
-      "title": "Cutting through the Chemtrails",
-      "date": "Late November 2026",
-      "paras": [
-        {
-          "t": "Friday night. All six of us sitting down for dinner together. All of us home for the evening. Like the old days. No parties, no football practice. Family time. Roast chicken served with a rich pancetta-tarragon-mushroom-white bean stew rich in tomatoes and stock. Chianti."
-        },
-        {
-          "t": "The conversation a mix of college work, the latest memes, sport, Love Island, Christmas lists, the current news/propaganda/psyops."
-        },
-        {
-          "t": "I’d been trying to hook the kids into waking up/conspiracy rabbit holes (delete as you see fit) for years, with varying degrees of success. They existed in a comfortable niche between recognising that some (I’d like to think a lot, but some is far more realistic) of what I was educating/preaching/rambling on about (delete as you see fit) was true and the reality that a lot of the warnings made sense on paper but weren’t translated to their daily teenage lives (yet…but you wait…). If I’m honest naval-gazing and gloom-mongering about faked pandemics, neo-feudal panopticons and supra-governmental hidden layers of global control were probably less fun than gossiping about who’s dating who, football and the latest online compulsive shopping disorder purchases."
-        },
-        {
-          "t": "We’d managed to keep the kids (force of habit, two of them are grown men) at the dinner table after the chicken had been plucked clean of meat and the wishbone snapped (they still argue over whose turn it is) with the lure of sticky toffee pudding. It was warming in the oven, Amy’s secret recipe condensed milk ice cream was out the freezer softening on the side and a pot of cream was receiving lusty glances from Sam."
-        },
-        {
-          "t": "The conversation turned to Amy’s current bête noire, chemtrails. Amy’s older brother, Rupert had been down this conspiracy rabbit hole long before it was a vaguely acceptable topic in polite conversation. She’d gone from sceptical but open-minded, to ‘it’s probable that covert weather modification experiments are happening on a small scale, but I’ve got better things to worry about’ to ‘the sky is a blanket of white every day and they want to kill us’."
-        },
-        {
-          "t": "Amy didn’t do the ‘conspiracy research’ (as the majority of people still perceive it) that I did. Not because she couldn’t, but because it made her sad. Sad that such evil could exist. She buried herself in her books, her yoga, her gardening and her homemaking instead. Every so often (Chianti) the anger burst through her sadness."
-        },
-        {
-          "t": "“If they’re not trying to kill us, what are they doing then?”"
-        },
-        {
-          "t": "Here it was, the open invitation with a captive audience, to unveil my research, opinions and inner thoughts in a devastating and concise soliloquy."
-        },
-        {
-          "t": "‘I don’t know’ was all I could muster, and in a way this was more devastating than 30 minutes of on-the-money truther-riffing."
-        },
-        {
-          "t": "The kids looked at one another, slightly bewildered. Dad doesn’t know?",
-          "c": "inner"
-        },
-        {
-          "t": "I rattled off a few ideas about what it might be, from ‘mostly harmless, mostly contrails’ at one end of the spectrum, to ‘nano-particulate seeding into the environment for 6G and humans as nodes in a network’ at the other."
-        },
-        {
-          "t": "But what I really wanted to confess in the 11 minutes before the sticky toffee pudding was piping hot and oozing, was the rather humbling realisation that, for all my podcast and article deep dives, I had no fucking clue what was going on. And that ‘chemtrails’ were front and centre of this uncertainty. I’d researched Stratospheric Aerosol Injection, ice supersaturation, manipulation of the ionosphere and solar geoengineering patents and projects. I knew that weather modification and potential military applications had been on the agenda since the 50’s. I was aware of Operation Popeye. I’d read Elana Freeland. I’d listened to Sabrina Wallace."
-        },
-        {
-          "t": "The most intellectually honest answer I could give was ‘I don’t know’, realising that I was an active (and probably textbook) victim of every psyop under the sun."
-        },
-        {
-          "t": "The kids seem to accept this as a reasonable enough answer, but they didn’t stay at the table long after their pudding bowls had every drop of cream scraped out of them."
-        },
-        {
-          "t": "‘Put my mind at rest, Simon’ Amy implored as we started on the washing up. ‘They’re not trying to kill us, are they?’"
-        },
-        {
-          "t": "‘Not yet’ was my instinctive but thoroughly unreassuring reply. ‘The only things I can say with a degree of confidence is that they are actively transitioning the world into a new paradigm. They’re hardly making a secret of it. Convid, the tokenisation of bloody forests, 800 zillion in global debt, you’ll own nothing and be happy…"
-        },
-        {
-          "t": "Amy had had enough, already. ‘Shall we go and watch Location, Location, Location?’ she asked with a small sigh."
-        },
-        {
-          "t": "‘Yeah’ I replied. ‘Shall I get another bottle of red?’"
-        }
-      ],
-      "choices": {
-        "label": "The washing up is done",
-        "opts": [
-          "Open the second bottle. You’ve earned it. And the conversation’s not over — it’s just moved rooms.",
-          "Leave it. She doesn’t want to hear it. And maybe she’s right not to.",
-          "You should have said more. You should have said it better. You should have had an answer."
-        ]
-      }
-    },
-    {
       "id": 7,
       "num": "T7",
       "title": "Blue Monday, Black Friday",
@@ -1465,6 +1394,16 @@
       "audio": null
     },
     {
+      "id": "17b",
+      "num": "T17b",
+      "title": "Dude Deep Dives",
+      "date": "Late January 2027",
+      "paras": [
+        "Video call with The Dude."
+      ],
+      "choices": {}
+    },
+    {
       "id": "IP2",
       "isQuestion": true,
       "questionMode": "video-prompt",
@@ -1720,7 +1659,7 @@
           "t": "Is Starlink aligned? In fact, I'll just reboot the hub first. And put the kettle on."
         },
         {
-          "t": "AIDA?",
+          "t": "ARC?",
           "c": "solo"
         },
         {
@@ -1781,14 +1720,16 @@
           "t": "I got a Simon, something is amiss. She points at a small blue swirly logo under the battery percentage bar. Hers was 100%."
         },
         {
-          "t": "It's called 'AIDA'",
-          "c": "solo big"
+          "t": "“An app called ARC. That’s weird, I don’t remember installing that.”"
+        },
+        {
+          "t": "I look at my phone. Same logo, same ARC app. I click on it. It does nothing."
         }
       ],
       "choices": {
-        "label": "AIDA",
+        "label": "ARC",
         "opts": [
-          "It's called AIDA."
+          "An app called ARC that does nothing. Weird."
         ]
       }
     },
@@ -2354,8 +2295,8 @@
         "cards": [
           {
             "src": "System — Phone status bar",
-            "ttl": "AIDA",
-            "snip": "Small blue swirly logo. Under the battery bar.",
+            "ttl": "ARC",
+            "snip": "An app called ARC. Small logo. Under the battery bar. I didn’t install this.",
             "tag": "New",
             "cls": "a",
             "type": "essential"
@@ -3477,51 +3418,7 @@
         ]
       }
     ],
-    "6a": [
-      {
-        "sec": "Open Tabs",
-        "cards": [
-          {
-            "src": "U.S. Department of State — Historical Documents",
-            "ttl": "Memorandum: Weather Modification in Southeast Asia",
-            "snip": "1967. Declassified. Cloud seeding over the Ho Chi Minh Trail to extend the monsoon season. They've been at this longer than you think.",
-            "tag": "Declassified",
-            "cls": "",
-            "isnew": true,
-            "type": "thread-notify",
-            "threadRef": "science-technology"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "Substack — We The Free",
-            "ttl": "WEAPONS OF MASS DISTRACTION",
-            "snip": "Cognitive warfare. Not bombs. Algorithms. And you're the target, not despite being a civilian — because of it.",
-            "tag": "New Post",
-            "cls": "",
-            "isnew": true,
-            "type": "thread-notify",
-            "threadRef": "power-structures"
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Vince",
-            "ttl": "Going to the match on Saturday? Beers after? 🔴🔵",
-            "snip": "Normal life. Thank god for normal life.",
-            "tag": "Today",
-            "cls": "",
-            "type": "flavour"
-          }
-        ]
-      }
-    ]
+    "17b": []
   },
   "threads": [
     {
@@ -3709,12 +3606,6 @@
             "body": "<p>A new generation of AI assistants is rewriting the rules of how people interact with technology — and the speed of adoption has taken even their creators by surprise.</p><p>In the past six months, conversational AI platforms have moved from novelty to necessity for millions of users worldwide. Unlike the chatbots of two years ago — stilted, formulaic, prone to confident errors — the latest models feel different. Users describe them as “intuitive,” “warm,” and “almost unsettlingly helpful.”</p><p>The shift is being driven by a cluster of platforms that emerged in late 2026, most notably Aria (backed by a European research consortium), alongside updated offerings from the major US tech companies. What sets this generation apart is personalisation. The assistants don’t just answer questions — they learn preferences, anticipate needs, and adapt their tone to the individual user.</p><p>“It’s like talking to someone who actually knows me,” said one user in a BBC-commissioned survey. “I use it for meal planning, homework help, appointment booking. I don’t Google things anymore.”</p><p>Adoption figures are striking. Aria alone has registered 140 million active users since its September launch, with particularly strong uptake in the UK, EU, and Commonwealth nations. A University of Oxford study found that 68% of users aged 16–34 now use a conversational AI assistant daily — up from 12% eighteen months ago.</p><p>The technology is built on large language models, but the new platforms integrate real-time data feeds, health monitoring APIs, and — controversially — optional biometric voice authentication, allowing the assistant to verify identity by voice alone.</p><p>Privacy campaigners have flagged concerns about the volume of personal data these systems process. The AI Safety Institute has called for “urgent regulatory clarity” on data retention and consent frameworks.</p><p>But for most users, the experience is simply too good to resist. Dr Elena Torres, a digital anthropologist at UCL, describes the dynamic as “convenience gravity” — the pull of a system that makes every interaction fractionally easier, until opting out feels like opting out of modern life itself.</p><p>“Nobody is being forced to use these tools,” Dr Torres said. “That’s precisely what makes them so effective. The best adoption is voluntary adoption.”</p><p>Aria’s European backers include the Digital Innovation Hub, a consortium with funding from the European Commission, the Bank for International Settlements’ Innovation Hub, and several national central banks. The consortium has positioned Aria as an “open, ethical alternative” to US-dominated AI platforms.</p><p>The UK government announced last week that its One Login digital identity programme will integrate conversational AI assistance from April, allowing citizens to complete tax returns, benefit applications, and passport renewals through natural conversation rather than form-filling.</p><p>Analysts predict that within two years, conversational AI will be the primary interface between citizens and government services in most developed nations.</p><p>“We’re not building a product,” said an Aria spokesperson. “We’re building a relationship.”</p>",
             "footer": "BBC Technology"
           }
-        },
-        {
-          "text": "Operation Popeye — US Weather Modification in Vietnam (declassified)",
-          "url": "https://history.state.gov/historicaldocuments/frus1964-68v28/d274",
-          "src": "simon",
-          "turn": "6a"
         }
       ]
     },
@@ -3803,12 +3694,6 @@
             "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
             "footer": "UK Defence Watch — Substack"
           }
-        },
-        {
-          "text": "Weapons of Mass Distraction — Josh Walkos (We The Free)",
-          "url": "https://wethefree.substack.com/p/weapons-of-mass-distraction",
-          "src": "simon",
-          "turn": "6a"
         }
       ]
     },
@@ -4543,14 +4428,6 @@
           "cls": "cold"
         },
         {
-          "text": "PM: \"A hostile assault on our way of life — but we will prevail\"",
-          "cls": "cold"
-        },
-        {
-          "text": "PM: \"Days, not weeks\"",
-          "cls": "cold"
-        },
-        {
           "text": "23 nations report simultaneous infrastructure disruption",
           "cls": "cold"
         },
@@ -5224,6 +5101,52 @@
           "text": "\"Welcome, Simon.\"",
           "cls": "warm"
         }
+      ],
+      "23": [
+        {
+          "text": "DAY 1",
+          "cls": "cold"
+        },
+        {
+          "text": "EMERGENCY BROADCAST — CABINET OFFICE",
+          "cls": "cold"
+        },
+        {
+          "text": "STAY HOME — avoid all non-essential travel",
+          "cls": "alert"
+        },
+        {
+          "text": "All UK markets suspended until further notice",
+          "cls": "cold"
+        },
+        {
+          "text": "Civil Contingencies Act 2004 — emergency powers in effect",
+          "cls": "cold"
+        },
+        {
+          "text": "23 nations report simultaneous infrastructure disruption",
+          "cls": "cold"
+        },
+        {
+          "text": "\"Unknown hostile actors\" — attribution under investigation — NCSC",
+          "cls": "cold"
+        },
+        {
+          "text": "Mobile networks: intermittent — emergency traffic prioritised",
+          "cls": "cold"
+        },
+        {
+          "text": "Emergency services operational — do not call 999 unless life-threatening",
+          "cls": "alert"
+        },
+        {
+          "text": "PM: \"A hostile assault on our way of life — but we will prevail\"",
+          "cls": "cold"
+        },
+        {
+          "text": "PM: \"Days, not weeks\"",
+          "cls": "cold"
+        }
       ]
     },
     "poolMap": {
@@ -5251,7 +5174,7 @@
       "22": "22",
       "16a": "15-16",
       "17a": "17-18",
-      "23": "22",
+      "23": "23",
       "24": "24",
       "25": "25",
       "25a": "25a",
@@ -5268,7 +5191,8 @@
       "34": "34",
       "35": "35",
       "36": "36",
-      "37": "37"
+      "37": "37",
+      "17b": "17-18"
     }
   },
   "initialNotes": [],

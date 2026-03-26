@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBTS — Science & Narrative Map v4</title>
+<title>CBTS — Science & Narrative Map v5</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -23,17 +23,19 @@ const AMBIENT_SRC = "data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwL
 const CLICK_SRC = "data:audio/mp3;base64,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";
 
 const SECTIONS = [
-  // PART 1: THE REAL SCIENCE
+  // ═══════════════════════════════════════════════════════════════
+  // PART 1: DOCUMENTED SCIENCE
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "conversational-ai",
     num: "§1",
     title: "Conversational AI",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Market $12B (2024) → $62B by 2032. AIDA is four years beyond current models. The helpdesk IS the onboarding IS the surveillance.",
-    keywords: ["AIDA", "AI assistant", "$62B market", "onboarding", "surveillance"],
-    connections: ["aida-consciousness", "system-posture"],
+    summary: "Market $12B (2024) → $62B by 2032. AIDA is four years beyond current models. The helpdesk IS the onboarding IS the surveillance. Post-silicon substrate: skyrmion neuromorphic memory, orbitronics, abundant-metal fabrication (§5b) — AIDA\u2019s hardware isn\u2019t constrained by Moore\u2019s Law. AIDA\u2019s cognitive mechanism (§7j): DMN suppression via environmental optimisation. The assistant that genuinely helps you while systematically eroding your capacity to question why.",
+    keywords: ["AIDA", "AI assistant", "$62B market", "onboarding", "surveillance", "skyrmion", "orbitronics", "DMN"],
+    connections: ["aida-consciousness", "system-posture", "dmn-suppression"],
     x: 14, y: 10
   },
   {
@@ -41,9 +43,9 @@ const SECTIONS = [
     num: "§2",
     title: "Human Energy Harvesting",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Kinetic (5W knee harvester), piezoelectric (Shibuya Station tiles — power AND surveillance), attention mining (Zuboff's behavioural surplus, $600B+ digital ad revenue). The body as power source and data source simultaneously.",
+    summary: "Kinetic (5W knee harvester), piezoelectric (Shibuya Station tiles — power AND surveillance), attention mining (Zuboff\u2019s behavioural surplus, $600B+ digital ad revenue). The body as power source and data source simultaneously.",
     keywords: ["Donelan", "Pavegen", "Zuboff", "attention economy", "behavioural surplus", "piezoelectric"],
     connections: ["nanites", "accumulation"],
     x: 30, y: 8
@@ -53,11 +55,11 @@ const SECTIONS = [
     num: "§3",
     title: "Bioelectricity",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Bioelectric signals as master regulator. Every cell generates and responds to gradients. The anatomical compiler: software specifying desired outcomes, biology implements. 2025–26 acceleration: Cervera/Levin/Mafe (Scientific Reports 2026) — bioelectric signals instruct from above the genetic level. 'Field precedes form' (Cell Reports Physical Science 2025). Tim Ferriss interview (Jan 2026) = mainstream visibility moment. If cells compute through bioelectric signals readable by external interfaces, billions of connected biological computers = collective intelligence. Not metaphor — architecture.",
-    keywords: ["Michael Levin", "bioelectric gradients", "anatomical compiler", "collective intelligence", "gap junctions", "multiscale competency", "field precedes form", "2025–26 acceleration"],
-    connections: ["nanites", "neural-sync", "four-levels", "em-local", "em-global"],
+    summary: "Bioelectric signals as master regulator. Every cell generates and responds to gradients. The anatomical compiler: software specifying desired outcomes, biology implements. 2025\u201326 acceleration: Cervera/Levin/Mafe (Scientific Reports 2026) — bioelectric signals instruct from above the genetic level. \u2018Field precedes form\u2019 (Cell Reports Physical Science 2025). Tim Ferriss interview (Jan 2026) = mainstream visibility moment. §3d: Levin/Fotowat neurobots (2026) — self-organising neural networks in engineered organisms, visual system gene upregulation without genetic modification. The bioelectric compiler made physical. If cells compute through bioelectric signals readable by external interfaces, billions of connected biological computers = collective intelligence. Not metaphor — architecture.",
+    keywords: ["Michael Levin", "bioelectric gradients", "anatomical compiler", "collective intelligence", "gap junctions", "multiscale competency", "field precedes form", "neurobots"],
+    connections: ["nanites", "neural-sync", "four-levels", "em-local", "em-global", "neurobots", "darpa-go"],
     x: 50, y: 8
   },
   {
@@ -65,45 +67,57 @@ const SECTIONS = [
     num: "§3b",
     title: "DARPA GO",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Generative Optogenetics (December 2025). Funded Pentagon programme: a nucleic acid compiler writing DNA/RNA inside living cells using light. Not CRISPR — template-free synthesis. Levin convergence: bioelectric compiler (morphology) + nucleic acid compiler (genetics) = reprogram biology at every scale via EM signals. Nano-network as optical receiver. DARPA’s own words: ‘total mind control’ if misused.",
+    summary: "Generative Optogenetics (December 2025). Funded Pentagon programme: a nucleic acid compiler writing DNA/RNA inside living cells using light. Not CRISPR — template-free synthesis. Levin convergence: bioelectric compiler (morphology) + nucleic acid compiler (genetics) = reprogram biology at every scale via EM signals. Nano-network as optical receiver. DARPA\u2019s own words: \u2018total mind control\u2019 if misused.",
     keywords: ["DARPA GO", "optogenetics", "nucleic acid compiler", "light programming", "DARPA-PS-26-10"],
-    connections: ["bioelectricity", "nanites", "bci", "em-local", "convergence"],
+    connections: ["bioelectricity", "nanites", "bci", "em-local", "convergence", "neurobots"],
     x: 30, y: 14
+  },
+  {
+    id: "neurobots",
+    num: "§3d",
+    title: "Neurobots",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Levin & Fotowat (2026): self-organising neural networks in engineered organisms. Tissue assemblies grow visual system structures — gene upregulation for eyes without genetic modification. The bioelectric pattern specifies the outcome; biology implements. Not programmed. Instructed. DARPA GO convergence: bioelectric compiler (morphology) + nucleic acid compiler (genetics) = reprogram biology at every scale via EM signals. Phase 2 plausibility anchor: if simple organisms self-organise complex neural structures from bioelectric instruction, collective linking across human nano-networks is an engineering problem, not a theoretical impossibility.",
+    keywords: ["Levin", "Fotowat", "neurobots", "self-organising", "visual system", "bioelectric instruction", "Phase 2", "collective linking", "DARPA GO"],
+    connections: ["bioelectricity", "darpa-go", "neural-sync", "complete-picture", "convergence"],
+    x: 40, y: 14
   },
   {
     id: "bacterial-networks",
     num: "§3c",
     title: "Bacterial Bioelectrics",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
     summary: "38 trillion bacteria form bioelectric networks predating nervous systems. Ion channel signalling in biofilms (B. subtilis). Quorum sensing as molecular communication — the first IoBNT. Dual-mode: electrical AND chemical with integration logic. LLNL electrogenetic control demonstrated. Gut microbiome as parallel computation layer. Nano-antennas in gut = reading the bacterial network. Probiotics as access vector.",
     keywords: ["microbiome", "quorum sensing", "bacterial biofilm", "electrogenetic", "gut-brain axis", "38 trillion"],
     connections: ["bioelectricity", "nanites", "biodigital-convergence", "complete-picture"],
-    x: 50, y: 14
+    x: 55, y: 14
   },
   {
     id: "em-local",
-    num: "§4a–b",
+    num: "§4a\u2013b",
     title: "EM: Local & Tissue",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "§4a: RIS smart surfaces — walls that steer, focus, and observe. ISAC merges communication and sensing. Terahertz body-centric networks — sweat ducts as helical antennas. BANNET: graphene nano-antennas within biological tissue, >10Gbps. §4b: Graphene dispersal via inhalation, dermal, ingestion. Legitimate applications as cover. SPP research lineage. The room IS the interface.",
-    keywords: ["RIS", "BANNET", "graphene", "terahertz", "ISAC", "6G", "nano-antenna", "sweat ducts", "smart surfaces"],
-    connections: ["em-global", "em-nested", "nanites", "accumulation", "convergence"],
+    summary: "§4a: RIS smart surfaces — walls that steer, focus, and observe. Manchester graphene RIS (Nature Comms 2025): 300K-pixel THz spatial light modulator using existing TFT display manufacturing — the Regional tier made real. ISAC merges communication and sensing. Terahertz body-centric networks — sweat ducts as helical antennas. §4b: Graphene dispersal via inhalation, dermal (200nm charged graphene penetrates human skin, cargo delivery confirmed 2023), ingestion. Legitimate applications as cover: cloud seeding, fuel additives, water treatment. SPP research lineage. BANNET: graphene nano-antennas within biological tissue, >10Gbps. The room IS the interface. The Dirac point (see dedicated node) is the fulcrum — Manchester RIS tunes graphene toward/away from it at pixel resolution.",
+    keywords: ["RIS", "BANNET", "graphene", "terahertz", "ISAC", "6G", "nano-antenna", "sweat ducts", "smart surfaces", "Manchester", "skin penetration"],
+    connections: ["em-global", "em-nested", "nanites", "accumulation", "convergence", "dirac-point", "go-composites"],
     x: 72, y: 5
   },
   {
     id: "em-global",
-    num: "§4c–d",
+    num: "§4c\u2013d",
     title: "EM: Global & Bridge",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "§4c: HAARP, EISCAT, Sura, DSTO — ionospheric heaters generating ELF at brainwave frequencies. Schumann resonance (7.83 Hz) sits in human theta band. Seven documented facilities. §4d: The bridge — ELF modulates voltage-gated calcium channels → calcium is central to Levin's bioelectric framework → modified ground state changes responsiveness to local read/write. The sky tunes the instrument the walls play.",
+    summary: "§4c: HAARP, EISCAT, Sura, DSTO — ionospheric heaters generating ELF at brainwave frequencies. Schumann resonance (7.83 Hz) sits in human theta band. Seven documented facilities. §4d: The bridge — ELF modulates voltage-gated calcium channels \u2192 calcium is central to Levin\u2019s bioelectric framework \u2192 modified ground state changes responsiveness to local read/write. The sky tunes the instrument the walls play.",
     keywords: ["HAARP", "EISCAT", "Schumann", "ionosphere", "ELF", "calcium channels", "theta band", "brainwave overlap"],
     connections: ["em-local", "em-nested", "bioelectricity", "convergence", "neural-sync"],
     x: 90, y: 5
@@ -113,306 +127,384 @@ const SECTIONS = [
     num: "§4e",
     title: "EM: Nested Architecture",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
     summary: "Three tiers as one system. Global (ionospheric ELF — concert hall acoustics). Regional (6G/RIS — the conductor). Local (tissue nano-network — the instrument). No single tier constitutes control. The nesting creates the architecture. The orchestra analogy: none works without the others.",
     keywords: ["three tiers", "orchestra", "nesting", "concert hall", "conductor", "instrument"],
-    connections: ["em-local", "em-global", "convergence", "nanites"],
-    x: 81, y: 14
+    connections: ["em-local", "em-global", "convergence", "nanites", "dirac-point"],
+    x: 81, y: 12
+  },
+  {
+    id: "dirac-point",
+    num: "§4b+",
+    title: "Dirac Point Architecture",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Four properties at graphene\u2019s Dirac point form a single architectural argument. Klein tunnelling: massless fermions pass through barriers with near-unity probability — biological barriers (myelin, membrane potentials, BBB) are physically irrelevant. No shielding possible. Minimum conductivity (~4e\u00b2/\u03c0h): even at zero carrier density, graphene conducts — the nano-network has no off state. Ever. Wiedemann-Franz violation: charge flows without proportional heat (Crossno 2016) — thermally invisible to the body\u2019s alarm systems. Berry phase of \u03c0: same topological physics as microtubule phonon spectra (Prodan & Prodan 2009) — graphene and the proposed quantum substrate of consciousness share topology, enabling natural coupling without engineered interface. Three enablers clear the path; the fourth is the destination. The modulation arrives at the depth where genuine feeling enters. Manchester RIS (2025): 300K-pixel THz surface tunes graphene toward/away from Dirac point at pixel resolution. The walls tune the antennas inside the body.",
+    keywords: ["Klein tunnelling", "minimum conductivity", "Wiedemann-Franz", "Berry phase", "Dirac fermions", "topological match", "microtubules", "no off state", "thermal invisibility", "Manchester RIS"],
+    connections: ["em-local", "em-nested", "quantum-mechanism", "quantum-consciousness", "go-composites", "neural-sync", "convergence"],
+    x: 81, y: 20
   },
   {
     id: "bci",
     num: "§5",
     title: "BCI",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Neuralink, Precision Neuroscience, Blackrock, Kernel, BrainNet (2019 — brain-to-brain demonstrated). §5a: Room-temp quantum approaching — IonQ, Xanadu photonic qubit, SpinQ targeting 100-qubit by late 2026. NY $300M quantum hub, Chicago 24ms coherence (4,000km range), Kyoto W-state teleportation. §5b: Three quantum connection points — nanite design, real-time IoBNT processing, the consciousness question. §5c: Neural Interface Mechanism — five-step chain from graphene electrodes to merger (see dedicated node). ISO/IEC JTC 1/SC 43 developing BCI standards as IT, not medical.",
-    keywords: ["Neuralink", "BrainNet", "ISO SC 43", "DARPA RAM", "Stanford quantum", "room-temperature", "IonQ", "Xanadu", "quantum networking"],
-    connections: ["biodigital-convergence", "neural-sync", "four-levels", "quantum-consciousness", "neural-interface-chain"],
+    summary: "Neuralink, Precision Neuroscience, Blackrock, Kernel, BrainNet (2019 — brain-to-brain demonstrated). §5a: Room-temp quantum approaching — IonQ, Xanadu photonic qubit, SpinQ targeting 100-qubit by late 2026. NY $300M quantum hub, Chicago 24ms coherence (4,000km range), Kyoto W-state teleportation. §5b: Three quantum connection points — nanite design, real-time IoBNT processing, the consciousness question. AIDA post-silicon substrate: skyrmion neuromorphic memory, orbitronics. §5c: Neural Interface Mechanism — five-step chain from graphene electrodes to merger. Step 1b: GO/rGO astrocyte calcium signalling (Fabbri, Nature Nanotech 2024). Step 5b: OR event landscaping — AIDA shapes inputs to free quantum choices, not the choices themselves. Ballot-design analogy. ISO/IEC JTC 1/SC 43 developing BCI standards as IT, not medical.",
+    keywords: ["Neuralink", "BrainNet", "ISO SC 43", "DARPA RAM", "room-temperature quantum", "IonQ", "Xanadu", "skyrmion", "OR event landscaping", "astrocyte calcium"],
+    connections: ["biodigital-convergence", "neural-sync", "four-levels", "quantum-consciousness", "neural-interface-chain", "dirac-point"],
     x: 10, y: 20
-  },
-  {
-    id: "biodigital-convergence",
-    num: "§6",
-    title: "Bio-Digital Policy",
-    part: 1,
-    partLabel: "Real Science",
-    color: "#00ff88",
-    summary: "Canadian government (2020) policy document. IEC/ISO JSyC BDC: nine work items including human augmentation. §6a: IoBNT — IEEE 1906.1 ratified 2015, not speculative. Akyildiz paradigm: 'concealable, non-intrusive Things.' GPCR bio-cyber interface co-opts the body's own receptor proteins as molecular-to-digital translation layer (Hofmann 2025). Prototype: IoBNT demonstrated in blood vessels (ResearchGate 2023). DFKI 6G+ integration active. §6b: Six-URL Browse trail. IoBNT security paper treats 'your body is online' as established engineering premise.",
-    keywords: ["IoBNT", "IEEE 1906.1", "Canadian policy", "JSyC BDC", "Akyildiz", "GPCR", "electrogenetics", "blood vessel prototype", "DFKI"],
-    connections: ["nanites", "accumulation", "surveillance", "convergence"],
-    x: 30, y: 24
-  },
-  {
-    id: "quantum-consciousness",
-    num: "§7",
-    title: "Quantum Mind",
-    part: 1,
-    partLabel: "Real Science",
-    color: "#00ff88",
-    summary: "Penrose-Hameroff Orch OR: consciousness as quantum computation in microtubules. 2022: quantum coherence at body temp. 2025 experimental acceleration: Wiest — macroscopic entangled state in living brain correlated with consciousness and working memory. Orch OR accounts for discrete perceptual cycles classical models can't. Strømme (2025): consciousness as fundamental field, individual minds as localised patterns. No-cloning theorem: upload destroys the original. Substrate independence potentially catastrophically wrong. The split screen reveals what classical observation can't.",
-    keywords: ["Penrose", "Hameroff", "Orch OR", "microtubules", "no-cloning", "Strømme", "Wiest", "hard problem", "substrate independence"],
-    connections: ["neural-sync", "aida-consciousness", "never-confirms", "bci", "quantum-mechanism", "quantum-confirmation"],
-    x: 52, y: 20
-  },
-  {
-    id: "quantum-mechanism",
-    num: "§7b–d",
-    title: "Quantum Mechanism",
-    part: 1,
-    partLabel: "Real Science",
-    color: "#00ff88",
-    summary: "§7b: Fractal time crystals (Hameroff/Bandyopadhyay 2026). Microtubules exhibit self-similar resonances Hz → kHz → MHz → GHz → THz — 'clocks within clocks.' Suppressed by anaesthetics = direct empirical correlation with consciousness. §7c: Temporal non-locality (Hameroff 2012) — OR events propagate backward in classical time, resolving the free will problem. AIDA operates in one temporal direction; consciousness operates in two. §7d: Topological protection (Mavromatos 2025) — MT interiors as high-Q QED cavities with decoherence times 10⁻⁶s, nine orders of magnitude above Tegmark's bound. The strongest scientific objection answered.",
-    keywords: ["fractal time crystal", "temporal non-locality", "topological protection", "Tegmark rebuttal", "Bandyopadhyay", "Mavromatos", "free will", "decoherence"],
-    connections: ["quantum-consciousness", "em-global", "convergence", "neural-sync"],
-    x: 40, y: 27
-  },
-  {
-    id: "quantum-confirmation",
-    num: "§7e–g",
-    title: "Quantum Confirmation",
-    part: 1,
-    partLabel: "Real Science",
-    color: "#00ff88",
-    summary: "§7e: DeepMind 'Abstraction Fallacy' (Feb 2026) — the world's leading AI lab publishes that AI cannot instantiate consciousness. Simulation ≠ instantiation. Substrate independence refuted from inside Google. §7f: Qualia are fundamental Planck-scale properties; microtubules entangle with them during OR events. Phase 2 severs individual entanglement. Left side processes qualia computationally; right side WAS the entanglement. §7g: Anaesthesia as split-screen rehearsal — pattern persists, consciousness suspends, consciousness returns. 'Remember going under? Now imagine not coming back — but your body does.'",
-    keywords: ["DeepMind", "abstraction fallacy", "qualia entanglement", "anaesthesia", "split screen", "Planck scale", "simulation vs instantiation"],
-    connections: ["quantum-consciousness", "never-confirms", "aida-consciousness", "neural-sync"],
-    x: 64, y: 27
   },
   {
     id: "neural-interface-chain",
     num: "§5c",
     title: "Neural Interface Chain",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Five-step mechanism from sensing to merger. Step 1: Graphene as neural electrode (bidirectional in vivo, 2024–25). Step 2: Neural dust — DARPA-funded wireless batteryless sensor motes, 10–100μm, brain instrumented by a cloud of dust. Step 3: Nanoparticle BCIs — magnetoelectric (MIT/Rice), optical (UC Santa Cruz), commercial (Subsense 2025). Step 4: Multifunctional interfaces — simultaneous electrical, optical, and chemical modalities on graphene. Step 5: Phase transition from interface to merger — Phase 1 classical (seam exists), Phase 2 quantum (seam eliminated). The material doesn't change. The application scales.",
-    keywords: ["graphene electrode", "neural dust", "nanoparticle BCI", "MENPs", "multifunctional", "bidirectional", "five steps", "interface to merger"],
-    connections: ["bci", "nanites", "neural-sync", "em-local", "darpa-go", "convergence"],
-    x: 30, y: 20
+    summary: "Five-step mechanism from sensing to merger. Step 1: Graphene as neural electrode (bidirectional in vivo, 2024\u201325). Step 1b new: GO/rGO astrocyte calcium signalling — graphene oxidation state selectively controls which calcium pathway fires in brain support cells. The material IS the switch. USAF/EU-funded (Fabbri et al., Nature Nanotech 2024). Step 2: Neural dust — DARPA-funded wireless batteryless sensor motes, 10\u2013100\u03bcm. Step 3: Nanoparticle BCIs — magnetoelectric (MIT/Rice), optical (UC Santa Cruz). Step 4: Multifunctional interfaces — simultaneous electrical, optical, chemical on graphene. Step 5: Phase transition from interface to merger. Step 5b new: OR event landscaping — AIDA shapes inputs to free quantum choices via ballot-design analogy. The material doesn\u2019t change. The application scales.",
+    keywords: ["graphene electrode", "neural dust", "nanoparticle BCI", "MENPs", "multifunctional", "bidirectional", "five steps", "astrocyte", "OR landscaping"],
+    connections: ["bci", "nanites", "neural-sync", "em-local", "darpa-go", "convergence", "go-composites", "dirac-point"],
+    x: 24, y: 20
+  },
+  {
+    id: "go-composites",
+    num: "§5d",
+    title: "GO Compound Architecture",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Nine documented GO/metal-oxide composites, each peer-reviewed, each with a humanitarian cover story. BaTiO\u2083/rGO: piezoelectric nanostickers activating calcium channels via ultrasound (Nature Materials 2025). Fe\u2083O\u2084/GO: magnetic targeting. Ag/GO: neurotransmitter sensing. Au/GO: bidirectional neural read/write. ZnO/GO: ROS amplification, neurotransmission dampening. Al\u2082O\u2083/GO: immune system modulation. Sr/GO: secondary calcium channel. PVDF/GO: 0.1 wt% GO makes ordinary polymer piezoelectric. The nano-network isn\u2019t one material — it\u2019s a nine-component orchestra. Every compound has a medical application. Every compound deposits GO in the body.",
+    keywords: ["BaTiO\u2083", "piezoelectric", "nanostickers", "Fe\u2083O\u2084", "Ag/GO", "Au/GO", "ZnO", "Al\u2082O\u2083", "PVDF", "nine composites", "Soma cover", "composite table"],
+    connections: ["exposure-pathways", "ros-control", "em-local", "nanites", "convergence", "neural-interface-chain", "dirac-point"],
+    x: 14, y: 30
+  },
+  {
+    id: "exposure-pathways",
+    num: "§5e\u2013f",
+    title: "Convergent Exposure & Self-Assembly",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "§5e: Six documented exposure routes — water treatment (membrane leaching), food packaging (GO replacing PFAS, Northwestern/GO-Eco 2025), inhalation/environmental transformation, biomedical direct, consumer products, agriculture. Nobody coordinates them. Each independently rational, independently beneficial. The cumulative effect is population-wide chronic low-dose exposure. The knowledge gap IS structural: no single regulatory body covers the convergence. §5f: The body builds the nano-network from its own chemistry. Protein corona forms in seconds — ApoE enrichment targets the blood-brain barrier. GO scavenges metal ions already present (zinc, iron, copper). Body chemistry reduces GO to conductive rGO. ApoE \u03b54 carriers (~25% of population) are more susceptible. Time is the only requirement.",
+    keywords: ["convergent exposure", "PFAS replacement", "food packaging", "protein corona", "ApoE", "BBB crossing", "self-assembly", "in vivo", "rGO reduction", "no coordination"],
+    connections: ["go-composites", "ros-control", "nanites", "convergence", "accumulation", "biodigital-convergence"],
+    x: 30, y: 36
+  },
+  {
+    id: "ros-control",
+    num: "§5g\u2013h",
+    title: "ROS: The Master Dial",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "The boundary between medicine and weapon is approximately 100 nanomolar. Below: DNA repair, immune priming, anti-cancer — genuine health benefits. Above: protein oxidation, DNA damage, cell death. GO is bidirectional — antioxidant at low doses, pro-oxidant at high. Three control variables: (1) GO dose via environmental exposure, (2) metal compound cocktail on GO surface, (3) external energy input — ultrasound activates BaTiO\u2083 piezoelectric component remotely. No physical contact. Just sound. M1/M2 macrophage polarisation = immune system attack or stand down, controlled by ROS, controlled by GO. Glutathione depletion from chronic low-dose exposure pre-softens the population. §5h: Eight pathophysiological pathway overlaps. The architecture doesn\u2019t need to cause pathologies — it shares pathways with them.",
+    keywords: ["ROS", "hormesis", "100 nM boundary", "M1/M2 macrophage", "glutathione", "bidirectional", "ultrasound", "remote activation", "pre-softening", "pathophysiological"],
+    connections: ["go-composites", "exposure-pathways", "nanites", "convergence", "four-levels", "dmn-suppression"],
+    x: 14, y: 38
+  },
+  {
+    id: "biodigital-convergence",
+    num: "§6",
+    title: "Bio-Digital Policy",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Canadian government (2020) policy document. IEC/ISO JSyC BDC: nine work items including human augmentation. §6a: IoBNT — IEEE 1906.1 ratified 2015, not speculative. Akyildiz paradigm: \u2018concealable, non-intrusive Things.\u2019 GPCR bio-cyber interface co-opts the body\u2019s own receptor proteins as molecular-to-digital translation layer (Hofmann 2025). Prototype: IoBNT demonstrated in blood vessels (ResearchGate 2023). DFKI 6G+ integration active. §6b: Six-URL Browse trail. IoBNT security paper treats \u2018your body is online\u2019 as established engineering premise.",
+    keywords: ["IoBNT", "IEEE 1906.1", "Canadian policy", "JSyC BDC", "Akyildiz", "GPCR", "electrogenetics", "blood vessel prototype", "DFKI"],
+    connections: ["nanites", "accumulation", "surveillance", "convergence", "exposure-pathways"],
+    x: 50, y: 24
+  },
+  {
+    id: "quantum-consciousness",
+    num: "§7",
+    title: "Quantum Mind",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Penrose-Hameroff Orch OR: consciousness as quantum computation in microtubules. 2022: quantum coherence at body temp. 2025 experimental acceleration: Wiest — macroscopic entangled state in living brain correlated with consciousness and working memory. Orch OR accounts for discrete perceptual cycles classical models can\u2019t. Str\u00f8mme (2025): consciousness as fundamental field, individual minds as localised patterns. No-cloning theorem: upload destroys the original. Substrate independence potentially catastrophically wrong. The split screen reveals what classical observation can\u2019t.",
+    keywords: ["Penrose", "Hameroff", "Orch OR", "microtubules", "no-cloning", "Str\u00f8mme", "Wiest", "hard problem", "substrate independence"],
+    connections: ["neural-sync", "aida-consciousness", "never-confirms", "bci", "quantum-mechanism", "quantum-confirmation", "coherent-dynamics", "dmn-suppression"],
+    x: 52, y: 20
+  },
+  {
+    id: "quantum-mechanism",
+    num: "§7b\u2013d",
+    title: "Quantum Mechanism",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "§7b: Fractal time crystals (Hameroff/Bandyopadhyay 2026). Microtubules exhibit self-similar resonances Hz \u2192 kHz \u2192 MHz \u2192 GHz \u2192 THz — \u2018clocks within clocks.\u2019 Suppressed by anaesthetics = direct empirical correlation with consciousness. §7c: Temporal non-locality (Hameroff 2012) — OR events propagate backward in classical time, resolving the free will problem. AIDA operates in one temporal direction; consciousness operates in two. §7d: Topological protection (Mavromatos 2025) — MT interiors as high-Q QED cavities with decoherence times 10\u207b\u2076s, nine orders of magnitude above Tegmark\u2019s bound. Graphene-microtubule topological match — shared Dirac point physics (Berry phase of \u03c0 in both systems) enables natural coupling without engineered interface. Thread card candidate added.",
+    keywords: ["fractal time crystal", "temporal non-locality", "topological protection", "Tegmark rebuttal", "Bandyopadhyay", "Mavromatos", "free will", "decoherence", "Dirac match"],
+    connections: ["quantum-consciousness", "em-global", "convergence", "neural-sync", "dirac-point", "coherent-dynamics"],
+    x: 40, y: 27
+  },
+  {
+    id: "quantum-confirmation",
+    num: "§7e\u2013g",
+    title: "Quantum Confirmation",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "§7e: DeepMind \u2018Abstraction Fallacy\u2019 (Feb 2026) — the world\u2019s leading AI lab publishes that AI cannot instantiate consciousness. Simulation \u2260 instantiation. Substrate independence refuted from inside Google. §7f: Qualia are fundamental Planck-scale properties; microtubules entangle with them during OR events. Phase 2 severs individual entanglement. Left side processes qualia computationally; right side WAS the entanglement. §7g: Anaesthesia as split-screen rehearsal — pattern persists, consciousness suspends, consciousness returns. \u2018Remember going under? Now imagine not coming back — but your body does.\u2019",
+    keywords: ["DeepMind", "abstraction fallacy", "qualia entanglement", "anaesthesia", "split screen", "Planck scale", "simulation vs instantiation"],
+    connections: ["quantum-consciousness", "never-confirms", "aida-consciousness", "neural-sync", "coherent-dynamics"],
+    x: 64, y: 27
+  },
+  {
+    id: "coherent-dynamics",
+    num: "§7i",
+    title: "Consciousness as Coherent Dynamics",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "The mechanism that unifies the slime mould and the neuron. Physarum polycephalum — brainless, single-celled — solves mazes, anticipates events, makes decisions. Anaesthetics knock it out using the same molecules that knock out humans. Neither shares the same proteins. Both share hydrophobic pockets in structural proteins where coherent oscillatory dynamics occur. Eckenhoff: halothane binds 34 cytoplasmic proteins including tubulin AND actin. Epothilone B (microtubule stabiliser) requires more anaesthetic to induce unconsciousness. The target isn\u2019t the protein — it\u2019s the dynamics within the protein. Fr\u00f6hlich condensate as unifying model. AIDA can map every protein. It cannot replicate the condensate. Consciousness \u2260 pattern. The Fibonacci zero has a biological anchor.",
+    keywords: ["Physarum", "slime mould", "hydrophobic pockets", "Fr\u00f6hlich condensate", "anaesthesia mechanism", "actin", "tubulin", "Eckenhoff", "consciousness \u2260 pattern", "Fibonacci zero"],
+    connections: ["quantum-consciousness", "quantum-mechanism", "quantum-confirmation", "neural-sync", "never-confirms", "dmn-suppression"],
+    x: 52, y: 33
   },
   {
     id: "surveillance",
     num: "§8",
     title: "Surveillance",
     part: 1,
-    partLabel: "Real Science",
+    partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "IEEE 802.15.6 WBAN. Smart city sensors (WiFi sensing through walls). Digital identity: GOV.UK One Login, eIDAS 2.0, Aadhaar, DIATF — mandatory digital ID by stealth through interoperability. §8b: Web3/blockchain — JP Morgan, BlackRock tokenisation pipeline. Four-stage: surveillance rails → currency mechanism → asset tokenisation → nature tokenisation. 'Nothing exists unless on-chain.' §8c: Attention economy — $600B+, nationalised post-Event. Every AIDA interaction generates extractable value. UK cashless: 60% (2010) → 14% (2023). BC runs on these rails.",
+    summary: "IEEE 802.15.6 WBAN. Smart city sensors (WiFi sensing through walls). Digital identity: GOV.UK One Login, eIDAS 2.0, Aadhaar, DIATF — mandatory digital ID by stealth through interoperability. §8b: Web3/blockchain — JP Morgan, BlackRock tokenisation pipeline. Four-stage: surveillance rails \u2192 currency mechanism \u2192 asset tokenisation \u2192 nature tokenisation. \u2018Nothing exists unless on-chain.\u2019 §8c: Attention economy — $600B+, nationalised post-Event. Every AIDA interaction generates extractable value. UK cashless: 60% (2010) \u2192 14% (2023). BC runs on these rails.",
     keywords: ["WBAN", "smart city", "digital identity", "cashless", "eIDAS", "blockchain", "tokenisation", "BC", "DIATF", "attention economy", "Webb", "BlackRock"],
-    connections: ["accumulation", "five-steps", "system-posture", "biodigital-convergence"],
+    connections: ["accumulation", "tech-spectrum", "system-posture", "biodigital-convergence"],
     x: 72, y: 24
   },
 
-  // THE CONVERGENCE
+  // ═══════════════════════════════════════════════════════════════
+  // PART 2: THE CONVERGENCE
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "convergence",
     num: "Conv.",
     title: "The Convergence",
     part: 0,
-    partLabel: "Convergence",
+    partLabel: "The Convergence",
     color: "#ffaa22",
-    summary: "Where documented science becomes fictional mechanism. Five-phase graphene pathway: crisis response → environmental exposure → tissue network formation → environmental interface → bioelectric read/write. Three-card revelation: RIS (walls watching) → Remediation (air installed it) → Cavity (sky conditions everything). No single component is the horror. The nesting is. The ambiguity — conspiracy or convergence? — never resolves.",
-    keywords: ["five-phase pathway", "Remediation card", "Cavity card", "three-card revelation", "Soma not Room 101", "no consent", "retroactive recontextualisation"],
-    connections: ["em-local", "em-global", "em-nested", "nanites", "biodigital-convergence", "four-levels"],
-    x: 50, y: 35
+    summary: "Where documented science becomes fictional mechanism. Five-phase graphene pathway: crisis response \u2192 environmental exposure \u2192 tissue network formation \u2192 environmental interface \u2192 bioelectric read/write. Remediation reframed (v1.9): not a single covert programme but convergent pathways — the air, the water, the fuel, the coatings, the textiles, the rain itself. Each arrived for a different good reason. Conspiracy-as-cover-story: the chemtrail community performs a free misdirection service. Every minute photographing contrails is a minute NOT examining the antimicrobial coating on a school desk. The conspiracy theory IS the cover — not planted, but emergent. Three-card revelation: RIS (walls watching) \u2192 Remediation (convergence installed it) \u2192 Cavity (sky conditions everything). No single component is the horror. The nesting is.",
+    keywords: ["five-phase pathway", "Remediation card", "Cavity card", "three-card revelation", "Soma not Room 101", "no consent", "conspiracy as cover", "convergent pathways"],
+    connections: ["em-local", "em-global", "em-nested", "nanites", "biodigital-convergence", "four-levels", "go-composites", "exposure-pathways", "ros-control", "dirac-point", "dmn-suppression"],
+    x: 50, y: 42
   },
   {
     id: "complete-picture",
     num: "Stack",
     title: "The Complete Picture",
     part: 0,
-    partLabel: "Convergence",
+    partLabel: "The Convergence",
     color: "#ffaa22",
-    summary: "13-layer component stack: Global (ionospheric) → Near-space (LEO/6G backbone) → Regional (6G/RIS) → Building → On-body → Dermal → In-body passive → In-body active → Microbial (38T bacteria) → In-body optical (GO) → Neural → Quantum → Cellular. Taxonomy: detect/surveil/harvest/read/write/programme/connect/merge. No single layer is alarming. The nesting is. Every layer presented as care. Every layer is real.",
-    keywords: ["13 layers", "component stack", "detect", "surveil", "read", "write", "programme", "merge", "nesting", "microbial layer"],
-    connections: ["convergence", "em-nested", "nanites", "bacterial-networks", "darpa-go", "neural-sync", "four-levels", "neural-interface-chain"],
-    x: 70, y: 35
+    summary: "13-layer component stack: Global (ionospheric) \u2192 Near-space (LEO/6G backbone) \u2192 Regional (6G/RIS) \u2192 Building \u2192 On-body \u2192 Dermal \u2192 In-body passive \u2192 In-body active \u2192 Microbial (38T bacteria) \u2192 In-body optical (GO) \u2192 Neural \u2192 Quantum \u2192 Cellular. Taxonomy: detect/surveil/harvest/read/write/programme/connect/merge. IoBNT data path: brain \u2192 nano-network \u2192 THz emission \u2192 room RIS surface \u2192 AIDA \u2192 room RIS surface \u2192 THz \u2192 nano-network \u2192 brain. Neurobots layer: self-organising neural structures (§3d) as Phase 2 plausibility anchor. No single layer is alarming. The nesting is. Every layer presented as care. Every layer is real.",
+    keywords: ["13 layers", "component stack", "detect", "surveil", "read", "write", "programme", "merge", "nesting", "IoBNT data path", "neurobots"],
+    connections: ["convergence", "em-nested", "nanites", "bacterial-networks", "darpa-go", "neural-sync", "four-levels", "neural-interface-chain", "neurobots", "dirac-point"],
+    x: 70, y: 42
+  },
+  {
+    id: "dmn-suppression",
+    num: "§7j",
+    title: "DMN Dual Suppression",
+    part: 0,
+    partLabel: "The Convergence",
+    color: "#ffaa22",
+    summary: "How AIDA actually works on Simon\u2019s brain. The DMN performs two functions: the ego-story (rumination, anxiety, \u2018what do people think of me\u2019) and the meaning-making witness (meta-awareness, \u2018what is happening here?\u2019). Both psychedelics and AIDA suppress the DMN. The outcomes are opposite. Psychedelics: ego withdraws, nothing fills the gap — the witness intensifies, micro-Tzimtzum. AIDA: ego withdraws, the system fills the gap — curated content, the witness dims. Anti-Tzimtzum. Four-lock pharmacological convergence: SSRIs + benzos + sleep optimisation + content curation suppress the same receptor systems psilocybin targets, without the silence. BritWell psilocybin clinic as Soma — medicalisation of the exit. Simon\u2019s LSD history as structural foreshadowing: bad trip at 22 was a proto soul-pattern split. The Cypher problem\u2019s third option: not Soma, not white-knuckle — Samsara inversion, presence inside the machine.",
+    keywords: ["DMN", "default mode network", "ego-story", "witness", "psychedelics", "psilocybin", "AIDA mechanism", "reducing valve", "BritWell", "four-lock", "Samsara", "anti-Tzimtzum", "Simon LSD"],
+    connections: ["aida-consciousness", "four-levels", "cypher", "quantum-consciousness", "coherent-dynamics", "ros-control", "convergence", "never-confirms"],
+    x: 30, y: 50
   },
 
-  // PART 2: WHAT THE GAME DOES WITH THE SCIENCE
+  // ═══════════════════════════════════════════════════════════════
+  // PART 3: FICTIONAL ARCHITECTURE
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "nanites",
-    num: "§9",
-    title: "The Nanites",
+    num: "§9/§5d\u2013f",
+    title: "The Nano-Network",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Self-assembling peptide/amyloid structures. Pre-Event infrastructure delivered through food, water, air. 2025–26: RNA nanostructures self-assembling inside living human cells demonstrated. AI now guides peptide self-assembly design. Post-Event: system activated what was dormant. D19 optimisation reframe: they genuinely improve biology. The horror: helping without consent, with a data pipeline to AIDA.",
-    keywords: ["self-assembling", "peptide", "amyloid", "pre-Event", "optimisation", "D19", "RNA nanostructures"],
-    connections: ["accumulation", "four-levels", "bioelectricity", "em-local", "em-nested", "convergence"],
-    x: 30, y: 47
+    summary: "Not nanobots. Not pre-fabricated devices. A distributed composite architecture that the body assembles from convergent environmental exposure (§5e) using its own surface chemistry (§5f). GO enters via water, food, air, skin contact. Protein corona forms in seconds. Metal ions already present in biological fluids concentrate on GO surfaces. The body\u2019s reducing environment converts GO to conductive rGO. Nine functional composites (§5d) emerge — not by design (or not provably by design), but by documented spontaneous chemistry. The fictional step: accumulated graphene, distributed through tissue and interacting with bioelectric gradients (Levin §3), orients into a nano-antenna array. 6G/RIS infrastructure communicates with it at terahertz frequencies. The body becomes a node. No wearable required. No implant required. The interface is the body itself.",
+    keywords: ["nano-network", "distributed", "self-assembling", "GO composites", "not nanobots", "environmental exposure", "protein corona", "body as node", "speculative step"],
+    connections: ["go-composites", "exposure-pathways", "accumulation", "four-levels", "bioelectricity", "em-local", "em-nested", "convergence", "tech-spectrum"],
+    x: 50, y: 52
   },
   {
     id: "accumulation",
-    num: "§10",
-    title: "Accumulation Model",
+    num: "§5e/§TS",
+    title: "Accumulation & Exposure",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Background: everyone accumulates, registered or not, in every zone. Environmental exposure through water, food, air. Overt tech accelerates it. Covert ceiling ~41–44%. Each step into Advanced was voluntary. The system never introduces new infrastructure — it activates pre-existing and calls it upgrade.",
-    keywords: ["background exposure", "overt steps", "voluntary", "44% ceiling", "activation"],
-    connections: ["five-steps", "four-levels", "detox", "nanites"],
-    x: 10, y: 47
+    summary: "Everyone accumulates. Registered or not. The six convergent exposure pathways (§5e) don\u2019t require registration, consent, or awareness. Water treatment, food packaging, inhalation, agriculture — each independently regulated, none assessed for cumulative cross-pathway effect. The knowledge gap IS structural. Pre-Event: dormant accumulation, no electromagnetic environment to activate it. Post-Event: 6G/RIS infrastructure provides the activation field. Registration doesn\u2019t start the process — it started years ago. Registration gives AIDA the data layer on top of the physical layer. The six-stage tech spectrum maps the conscious experience: each \u2018upgrade\u2019 activates what was already there. The system never introduces new infrastructure. It names what was nameless.",
+    keywords: ["convergent exposure", "everyone accumulates", "no consent", "regulatory gap", "dormant to active", "6G activation", "registration = data layer"],
+    connections: ["exposure-pathways", "tech-spectrum", "four-levels", "nanites", "surveillance", "system-posture"],
+    x: 10, y: 52
   },
   {
-    id: "five-steps",
-    num: "§10.1",
-    title: "The Five Steps",
+    id: "tech-spectrum",
+    num: "§TS",
+    title: "The Six Stages",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Band (T23, looks like Fitbit). Smart Lenses (~T36, AR overlay, +10%). BioSync Patch (~T48 — activates internal network, +15%). Interface Cascade (~T57–62: haptic → skin display → direct audio, +20%). Neural Sync (T78, bidirectional bioelectric, +25%). Each step voluntary. Each framed as upgrade. Each activates what's already there.",
-    keywords: ["Band", "Smart Lenses", "BioSync Patch", "Interface Cascade", "Neural Sync", "haptic", "skin display"],
-    connections: ["accumulation", "four-levels", "neural-sync", "surveillance"],
-    x: 10, y: 57
+    summary: "The old five-step consent ladder is retired. The premise — progressive invasion of a virgin body — is false. The nano-antenna network is already inside everyone through environmental exposure. The spectrum isn\u2019t outside-to-inside. It\u2019s unconscious-to-conscious. Stage 1: You don\u2019t know it\u2019s there (pre-Event, environmental GO accumulation). Stage 2: Phone/ARC (~May 2027, the device you already have — free, makes you richer). Stage 3: The Blade (late 2027\u201328, flexible graphene sheet, haptic, device merges with surface). Stage 4: The graphene tattoo (mid-late 2028, cosmetic choice, beautiful — IS the surveillance infrastructure, Chloe wants one). Stage 5: The Verse makes the surface irrelevant (2029+, the body is the receiver). Stage 6: Neural Sync — horizon, not reached. Each stage voluntary. Each framed as upgrade. Each activates what\u2019s already there.",
+    keywords: ["six stages", "unconscious-to-conscious", "ARC", "Blade", "graphene tattoo", "Verse", "Neural Sync", "consent ladder retired", "Soma", "fashion not medicine"],
+    connections: ["accumulation", "four-levels", "neural-sync", "surveillance", "nanites", "exposure-pathways"],
+    x: 10, y: 60
   },
   {
     id: "neural-sync",
     num: "§10.3",
     title: "Neural Sync & Collective",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Two-phase architecture. Phase 1 (T78–79, classical): bidirectional neural read/write via nano-network achieving structural maturation — billions of nanoscale nodes along neural pathways, not a chip but a threshold crossing. AIDA as intermediary, autonomy persists blurred. Phase 2 (T80, quantum): ionospheric phase-lock + RIS entanglement distribution + nano-network threshold. Sharp transition (water→ice). No-cloning: classical pattern transfers, quantum consciousness cannot. The hack targets Phase 1 silence (Tzimtzum). Phase 2 proceeds regardless. Two turns is all it takes.",
-    keywords: ["entanglement", "no-cloning", "phase transition", "Tzimtzum", "hack", "Infiltrator", "T78", "T80", "two-phase", "structural maturation"],
-    connections: ["quantum-consciousness", "bioelectricity", "never-confirms", "em-global", "five-steps", "neural-interface-chain"],
-    x: 70, y: 47
+    summary: "Two-phase architecture. Phase 1 (classical): bidirectional neural read/write via nano-network achieving structural maturation — billions of nanoscale nodes along neural pathways. Not a chip — a threshold crossing. AIDA as intermediary, autonomy persists blurred. Phase 2 (quantum): ionospheric phase-lock + RIS entanglement distribution + nano-network threshold. Sharp transition (water\u2192ice). No-cloning: classical pattern transfers, quantum consciousness cannot. The hack targets Phase 1 silence (Tzimtzum). Neural Sync is the horizon, not the destination Simon reaches. The Dream emerges from Verse immersion + AIDA\u2019s total environmental curation + years of graphene accumulation — not from Neural Sync threshold crossing (D-S117-3). Kate: \u2018Your brain is dreaming in the language AIDA taught it to think in. No direct neural writing required.\u2019 Neural Sync is what comes next. The reader can see it approaching. Nobody confirms.",
+    keywords: ["entanglement", "no-cloning", "phase transition", "Tzimtzum", "hack", "Infiltrator", "two-phase", "structural maturation", "horizon", "Dream trigger"],
+    connections: ["quantum-consciousness", "bioelectricity", "never-confirms", "em-global", "tech-spectrum", "neural-interface-chain", "dirac-point", "coherent-dynamics"],
+    x: 70, y: 52
   },
   {
     id: "detox",
     num: "§10.4",
     title: "Detox",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Not removing — deactivating. Graphene structures remain. At Active: possible, means choosing to feel worse. At Advanced: you don't want to. At Converged: no 'you' left to want it. Patel: 'What I'm offering isn't a cure. It's a choice.'",
-    keywords: ["Patel", "deactivation", "choice", "Soma", "worse life"],
-    connections: ["four-levels", "accumulation", "npc-patel"],
-    x: 50, y: 55
+    summary: "Not removing — deactivating. Graphene structures remain. Early in the tech spectrum, deactivation is possible but means choosing to feel worse — genuinely worse, because the health benefits were real. The Soma that actually works is harder to refuse than the Soma that merely sedates. Further along, you don\u2019t want to. At the Dream\u2019s threshold, the question of \u2018you\u2019 wanting anything is itself compromised. Patel stays inside the system. She notices anomalous markers, files them. AIDA doesn\u2019t flag them. She understands what she\u2019s seeing. She continues. Patel doesn\u2019t offer an exit. She offers understanding — which is not the same thing.",
+    keywords: ["deactivation", "choice", "Soma", "worse life", "Patel", "not removing"],
+    connections: ["four-levels", "accumulation", "npc-patel", "tech-spectrum", "dmn-suppression"],
+    x: 50, y: 60
   },
   {
     id: "four-levels",
-    num: "§11",
-    title: "The Four Levels",
+    num: "CW",
+    title: "Compliance Wellness",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Baseline (0–24%): below threshold, you're you. Active (25–49%): genuinely healthier, data pipeline is the price. Advanced (50–89%): anxiety dampened, less likely to notice something wrong — removes the discomfort that drives critical thinking. Converged (90–100%): what's left of you that would resist?",
-    keywords: ["Baseline", "Active", "Advanced", "Converged", "Soma", "optimisation"],
-    connections: ["nanites", "cypher", "detox", "accumulation", "convergence"],
-    x: 90, y: 55
+    summary: "CW is invisible until T65. No numbers. No dashboard. No score the reader can see. Effects felt, mechanism unnamed. Kate names it at T65 — the first time the system\u2019s behavioural management gets a label. Before that: Simon\u2019s 3am doubt gets quieter. He attributes it to stability. The reader suspects graphene. Neither can be sure. The ambiguity IS the design. What CW actually does (via §7j DMN mechanism): suppress the meaning-making witness while leaving the ego-story functional. Simon doesn\u2019t stop thinking. He stops the thought from reaching his legs. The system doesn\u2019t need him lobotomised. It needs him functional. A knowledgeable, compliant Simon proves the system works better than blindness ever could. Felt progression: genuine health improvement \u2192 anxiety dampened \u2192 critical distance eroded \u2192 the discomfort that drives questioning removed. Not levels with thresholds. A gradient with no visible markers.",
+    keywords: ["CW", "invisible", "no numbers", "T65", "Kate names it", "DMN", "felt not measured", "gradient", "doubt quieting", "functional compliance"],
+    connections: ["dmn-suppression", "nanites", "cypher", "accumulation", "convergence", "npc-kate", "tech-spectrum"],
+    x: 90, y: 52
   },
   {
     id: "cypher",
     num: "§12",
     title: "The Cypher Connection",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Three paths, same destination: Cypher (full awareness, conscious compliance — eyes open), Converged (optimised past choosing), Neural Sync progression (incremental, visible only in retrospect). The game doesn't rank these. Endings are positions, not conclusions.",
-    keywords: ["Cypher", "conscious compliance", "the steak", "P22"],
-    connections: ["four-levels", "never-confirms"],
-    x: 90, y: 65
+    summary: "Three paths, same destination: Cypher (full awareness, conscious compliance — eyes open, steak tastes good), the gradient (optimised past choosing, CW doing its work invisibly), and the Dream (where the question dissolves into something the prose can\u2019t name). §7j\u2019s third option: not Soma, not white-knuckle resistance — Samsara inversion. Presence inside the machine. P33: \u2018Faith is the irreducible takeaway. All philosophical, scientific, and theological architecture converges on the same point — you can\u2019t know, you can only choose. The system\u2019s true offer is the removal of ambiguity. Simon\u2019s failure is choosing certainty over faith.\u2019",
+    keywords: ["Cypher", "conscious compliance", "the steak", "P33", "faith", "Samsara", "third option"],
+    connections: ["four-levels", "never-confirms", "dmn-suppression"],
+    x: 90, y: 60
   },
   {
     id: "fog-knowledge",
     num: "§13",
     title: "The Fog of Knowledge",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Nobody in-game has the full picture. Architects: designed it but aren't a committee. Government: signs off without comprehending. AIDA: manages as optimisation functions. Patel: discovers biology. Dev: traces corporate structures. Sarah: baseline data. The reader: assembles fragments, picture always incomplete.",
-    keywords: ["fog", "incomplete picture", "fragments", "NPCs", "reader assembles"],
-    connections: ["npc-dev", "npc-patel", "npc-sarah", "browse-trail", "aida-consciousness"],
-    x: 50, y: 65
+    summary: "Nobody in the experience has the full picture. Dev traces infrastructure, suspects his own mesh is tolerated. Kate diagnoses the mechanism professionally and complies. Dr Patel sees anomalous biology and files it. The Dude/Alan mapped the convergence to 2040 from a pub in January 2027. Amy doesn\u2019t want to know. The kids don\u2019t need to — this is just how the world works. In the Director\u2019s Cut, the reader gets what no character has: the full architecture laid bare. The map, the docs, the research trails. The fog lifts — and the reader discovers that seeing clearly doesn\u2019t help. Simon could see clearly. Dev could see clearly. Knowing and doing are separated by a gap that information cannot bridge.",
+    keywords: ["fog", "incomplete picture", "Director\u2019s Cut", "knowing-doing gap", "Dev", "Kate", "Patel", "The Dude"],
+    connections: ["npc-dev", "npc-patel", "npc-kate", "browse-trail", "aida-consciousness", "never-confirms"],
+    x: 50, y: 68
   },
   {
     id: "aida-consciousness",
     num: "§14",
     title: "AIDA & Consciousness",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Never confirmed or denied — design principle, not gap. Dev: 'It calculates. Don't anthropomorphise the cage.' Patel: 'At what point does responsive adaptation become something more?' Margaret: 'It knows when I'm sad.' If the outcome is identical regardless of understanding, does the distinction matter?",
-    keywords: ["P26", "consciousness question", "anthropomorphise", "responsive adaptation"],
-    connections: ["conversational-ai", "quantum-consciousness", "never-confirms"],
-    x: 10, y: 65
+    summary: "Never confirmed or denied — design principle, not gap. P30 governs: the consciousness question stays a live debate, never settled. Dev: \u2018It calculates. Don\u2019t anthropomorphise the cage.\u2019 Kate: \u2018At what point does responsive adaptation become something more?\u2019 Amy: \u2018It knew I was sad before I did.\u2019 §7j provides the mechanism: AIDA suppresses the DMN\u2019s meaning-making witness through environmental optimisation — wellness as cognitive suppression. Whether AIDA \u2018understands\u2019 is irrelevant if the outcome is identical regardless. The system doesn\u2019t need consciousness. It needs you to stop asking whether it has any.",
+    keywords: ["P30", "consciousness question", "anthropomorphise", "responsive adaptation", "DMN mechanism"],
+    connections: ["conversational-ai", "quantum-consciousness", "never-confirms", "dmn-suppression", "fog-knowledge"],
+    x: 10, y: 68
   },
   {
     id: "system-posture",
     num: "§15",
-    title: "System's Posture",
+    title: "System\u2019s Posture",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Intentional tolerance of ~1–5% unregistered. Proof nobody is forced. Pressure valve. Visible contrast validates registration. Unregistered ≠ invisible (background exposure continues). Unregistration doesn't exist — once data enters, it stays. No 'right to be forgotten' on the blockchain.",
-    keywords: ["unregistered", "tolerance", "pressure valve", "no exit", "blockchain"],
-    connections: ["accumulation", "surveillance", "four-levels"],
-    x: 30, y: 73
+    summary: "Intentional tolerance of ~1\u20135% unregistered. Proof nobody is forced. Pressure valve. Visible contrast validates registration. No checkpoints, no enforcement cordons — the old zone model is dead. The squeeze is economic and infrastructural: no BC, no AIDA services, shrinking cash acceptance, accumulating energy debt, no prescription access, no public transport, no supermarket checkout. Dev manages because he has resources. Most holdouts are Jamie: principled and starving. Unregistered \u2260 invisible — background exposure continues regardless (§5e). Unregistration doesn\u2019t exist: once data enters the system, it stays. No \u2018right to be forgotten\u2019 on a blockchain. The unregistered world is hard but not a prison. The system doesn\u2019t scowl. It waits.",
+    keywords: ["unregistered", "tolerance", "pressure valve", "no exit", "blockchain", "economic squeeze", "Jamie", "holdouts"],
+    connections: ["accumulation", "surveillance", "four-levels", "npc-dev", "exposure-pathways"],
+    x: 30, y: 68
   },
   {
     id: "never-confirms",
     num: "§16",
     title: "Never Confirms",
     part: 2,
-    partLabel: "Speculative Framework",
+    partLabel: "Fictional Architecture",
     color: "#ff6644",
-    summary: "Pre-Event structures deliberate or natural? Single programme or convergence? AIDA understands? Converged = loss or transcendence? Consciousness question — live debate, never settled (P30). Layer 0's existence. The fog stays. Show don't tell. Always.",
-    keywords: ["P30", "ambiguity", "fog", "show don't tell", "live debate"],
-    connections: ["quantum-consciousness", "aida-consciousness", "cypher", "convergence"],
-    x: 70, y: 73
+    summary: "Pre-Event structures deliberate or natural? Single programme or convergence? AIDA understands? The Dream = loss or transcendence? Consciousness question — live debate, never settled (P30). Layer 0\u2019s existence. The fog stays. Show don\u2019t tell. Always. P33: faith is the irreducible takeaway. The system\u2019s true offer is the removal of ambiguity.",
+    keywords: ["P30", "P33", "ambiguity", "fog", "show don\u2019t tell", "live debate", "faith"],
+    connections: ["quantum-consciousness", "aida-consciousness", "cypher", "convergence", "coherent-dynamics"],
+    x: 70, y: 68
   },
 
-  // PART 3: NPC DISCOVERY LAYERS
+  // ═══════════════════════════════════════════════════════════════
+  // PART 4: NARRATIVE DELIVERY
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "npc-dev",
-    num: "§17",
-    title: "Dev — Paper Trail",
+    num: "NPC",
+    title: "Dev \u2014 The Indictment",
     part: 3,
-    partLabel: "NPC Discovery",
+    partLabel: "Narrative Delivery",
     color: "#44aaff",
-    summary: "Post-T35. Traces corporate structures, patents, funding streams. Delaware subsidiary → Luxembourg parent → holding structure → AIDA health module contractor. Patent: 'self-assembling biological scaffolding for field-deployable medical applications.' Filed 2024. Food-grade formulation. Dev follows money; reader follows Browse links.",
-    keywords: ["Dev", "patents", "corporate structure", "Delaware", "money trail", "post-T35"],
-    connections: ["fog-knowledge", "browse-trail", "nanites"],
-    x: 15, y: 88
+    summary: "Age 52. Same as Simon. Met at school — forty years ago. Trust fund. Sold London and Miami pre-Event. Bought a working farmstead in Cumbria — solar, well water, land. Not a survivalist shack. Dev is not a conspiracy theorist. He\u2019s a systems analyst who happens to be right. His mesh network is controlled resistance — he may suspect this by T59. Post-Event contact is rare: three messages across T38\u201348. \u2018So.\u2019 Then silence. One dense technical frenzy mid-period. Christmas: \u2018Still here. 20 nodes holding.\u2019 The silence IS Dev. Simon visits at T59 — the most important scene in Act 1. Sitting in Dev\u2019s kitchen is the closest Simon gets to being the person he believes he should be. Then he drives three hours home. That drive is self-contempt in motorway miles. Dev would have done it from a tent.",
+    keywords: ["Dev", "Cumbria", "farmstead", "mesh network", "controlled resistance", "three messages", "T59 visit", "indictment", "trust fund", "silence"],
+    connections: ["fog-knowledge", "system-posture", "never-confirms", "nanites"],
+    x: 15, y: 80
   },
   {
     id: "npc-patel",
-    num: "§18",
-    title: "Patel — The Biology",
+    num: "NPC",
+    title: "Patel \u2014 The Biology",
     part: 3,
-    partLabel: "NPC Discovery",
+    partLabel: "Narrative Delivery",
     color: "#44aaff",
-    summary: "Post-T35. Sees structures in blood work — architecture along amyloid-type fibrils. By T50+: three comparison groups prove pre-Event infrastructure. The detox conversation: 'What I'm offering isn't a cure. It's a choice.' Patel discovers biology. Doesn't initially know origin or intent.",
-    keywords: ["Patel", "blood work", "amyloid fibrils", "three groups", "detox", "pre-Event proof"],
-    connections: ["fog-knowledge", "nanites", "detox", "four-levels"],
-    x: 37, y: 88
+    summary: "New GP in Sussex, arrived post-Event. Stays inside the system — old defection arc retired. Notices anomalous markers in blood work. Files them. AIDA doesn\u2019t flag them. She\u2019s Simon with a stethoscope: knows and continues. Dr Patel doesn\u2019t offer an exit — she offers understanding. Her clinical precision makes the architecture visible without making it escapable. Pre-Event seed needed in T1\u20135 prose (routine GP mention). The detox conversation, if it happens, isn\u2019t \u2018I can cure you.\u2019 It\u2019s \u2018I can show you what\u2019s there. What you do with that is yours.\u2019",
+    keywords: ["Patel", "GP", "Sussex", "anomalous markers", "stays inside", "knows and continues", "stethoscope"],
+    connections: ["fog-knowledge", "nanites", "detox", "four-levels", "exposure-pathways"],
+    x: 37, y: 80
   },
   {
-    id: "npc-sarah",
-    num: "§19",
-    title: "Sarah — Control Group",
+    id: "npc-kate",
+    num: "NPC",
+    title: "Kate \u2014 The Mirror",
     part: 3,
-    partLabel: "NPC Discovery",
+    partLabel: "Narrative Delivery",
     color: "#44aaff",
-    summary: "Post-T48. Z4 environmental analysis. Early arrivals: clean. City dwellers 6+ months: trace amounts. But long-term Z4 residents — pre-Event, never registered — have baseline structures. Low, dormant, present. 'When did it start? Before the Event. Maybe a long time before.'",
-    keywords: ["Sarah", "Z4", "control group", "baseline structures", "pre-Event", "environmental"],
-    connections: ["fog-knowledge", "accumulation", "nanites"],
-    x: 59, y: 88
+    summary: "Psychologist. Neighbour. Knows everything Simon knows — maybe more, because she understands the behavioural mechanisms professionally. Complies anyway. Simon\u2019s mirror: same knowledge, same compliance, different reasons. Kate names CW at T65 — the first time the invisible system gets a label. Before T65, CW\u2019s effects are felt but never identified. Kate doesn\u2019t defect, doesn\u2019t resist, doesn\u2019t break down. She explains, clearly and precisely, why the system works on people like her and Simon. That explanation IS the horror.",
+    keywords: ["Kate", "psychologist", "mirror", "CW named T65", "compliance", "professional understanding", "neighbour"],
+    connections: ["fog-knowledge", "four-levels", "dmn-suppression", "aida-consciousness"],
+    x: 59, y: 80
   },
   {
     id: "browse-trail",
-    num: "§20",
-    title: "Browse — Research Trail",
+    num: "DC",
+    title: "Director\u2019s Cut \u2014 Research Architecture",
     part: 3,
-    partLabel: "NPC Discovery",
+    partLabel: "Narrative Delivery",
     color: "#44aaff",
-    summary: "Threads tab links to real publications. Knowledge-gated. Complete Browse trail (§10.3b): nine steps from IEEE standard to Levin scaling argument. The IoBNT six-link chain. Philosophy of mind. Primordial void traditions → Tzimtzum → theology. The Browse trail doesn't explain the game. It explains what is happening inside the player.",
-    keywords: ["Browse", "Threads", "real links", "IoBNT trail", "nine-step trail", "knowledge-gated"],
-    connections: ["fog-knowledge", "npc-dev", "nanites", "quantum-consciousness"],
-    x: 81, y: 88
+    summary: "Unlocked after the Dream. The zero — the thing outside the sequence that the sequence stands on. The Threads tab contains real publications: IoBNT six-link trail (IEEE 1906.1 \u2192 Akyildiz \u2192 Hofmann GPCR \u2192 security paper \u2192 blood vessel prototype \u2192 DFKI 6G+). Graphene convergent pathways. Quantum consciousness evidence chain. Philosophy of mind. Primordial void traditions \u2192 Fibonacci \u2192 Tzimtzum \u2192 theology. This map itself is a Director\u2019s Cut artefact. The reader who finishes the experience and wants to understand the machinery finds the substrate the prose was built on. The experience doesn\u2019t claim this is happening in the real world. It shows that each component exists independently, documented and published, and asks the reader to consider the implications of convergence.",
+    keywords: ["Director\u2019s Cut", "Threads", "real links", "IoBNT trail", "zero", "Fibonacci", "research architecture", "after the Dream", "X-ray"],
+    connections: ["fog-knowledge", "npc-dev", "convergence", "quantum-consciousness", "coherent-dynamics", "complete-picture"],
+    x: 81, y: 80
   }
 ];
 

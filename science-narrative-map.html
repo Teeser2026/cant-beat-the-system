@@ -331,7 +331,7 @@ const SECTIONS = [
     color: "#ff6644",
     summary: "Not nanobots. Not pre-fabricated devices. A distributed composite architecture that the body assembles from convergent environmental exposure (§5e) using its own surface chemistry (§5f). GO enters via water, food, air, skin contact. Protein corona forms in seconds. Metal ions already present in biological fluids concentrate on GO surfaces. The body\u2019s reducing environment converts GO to conductive rGO. Nine functional composites (§5d) emerge — not by design (or not provably by design), but by documented spontaneous chemistry. The fictional step: accumulated graphene, distributed through tissue and interacting with bioelectric gradients (Levin §3), orients into a nano-antenna array. 6G/RIS infrastructure communicates with it at terahertz frequencies. The body becomes a node. No wearable required. No implant required. The interface is the body itself.",
     keywords: ["nano-network", "distributed", "self-assembling", "GO composites", "not nanobots", "environmental exposure", "protein corona", "body as node", "speculative step"],
-    connections: ["go-composites", "exposure-pathways", "accumulation", "four-levels", "bioelectricity", "em-local", "em-nested", "convergence", "tech-spectrum"],
+    connections: ["go-composites", "exposure-pathways", "accumulation", "four-levels", "bioelectricity", "em-local", "em-nested", "convergence", "tech-spectrum", "energy-harvesting"],
     x: 50, y: 52
   },
   {
@@ -922,8 +922,8 @@ function ScienceNarrativeMap() {
                 {[
                   { label: "Documented Science", color: "#00ff88" },
                   { label: "The Convergence", color: "#ffaa22" },
-                  { label: "Game Framework", color: "#ff6644" },
-                  { label: "Reader Discovery", color: "#44aaff" }
+                  { label: "Fictional Architecture", color: "#ff6644" },
+                  { label: "Narrative Delivery", color: "#44aaff" }
                 ].map(item => (
                   <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: item.color, flexShrink: 0 }} />

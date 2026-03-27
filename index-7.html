@@ -3241,8 +3241,9 @@ function updateTicker(turnId) {
   // If no pool found for this turn, leave ticker unchanged
   if (!pool || !Array.isArray(pool)) return;
 
-  // Duplicate for seamless scroll loop
-  const all = [...pool, ...pool];
+  // Repeat pool enough times to fill the scroll track (min 12 items for seamless loop)
+  const reps = Math.max(2, Math.ceil(12 / pool.length));
+  const all = Array(reps).fill(pool).flat();
   inner.innerHTML = all.map(item =>
     `<span class="t-item ${item.cls}">${item.text}</span><span class="t-sep">◆</span>`
   ).join('');

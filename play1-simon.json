@@ -3850,6 +3850,19 @@
       "label": "Official Record",
       "items": [
         {
+          "text": "UK GOVERNMENT EMERGENCY ALERT",
+          "src": "uk-gov",
+          "turn": 22,
+          "article": {
+            "style": "gov",
+            "source": "UK Government Emergency Services",
+            "title": "UK GOVERNMENT EMERGENCY ALERT",
+            "date": "15 February 2027 · 06:20 GMT · Emergency Broadcast",
+            "body": "<p>A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding. Systems are contained but not yet restored.</p><p><strong>IMMEDIATE ACTIONS:</strong></p><p>- Remain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.</p><p><strong>ESSENTIAL SERVICES:</strong></p><p>Hospitals are operational for EMERGENCY ONLY - all routine appointments are postponed</p><p>Police, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.</p><p>Mobile telephone and text services will be intermittent.</p><p><strong>REPEAT:</strong> Telephone or text message communication is EMERGENCY ONLY</p><p>Water, gas, and electricity supplies are being maintained. Intermittent outages may occur.</p><p>All card and electronic banking payments have been suspended whilst the network is being repaired.</p><p>Internet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.</p><p>Official updates will be issued via emergency message and through BBC television and radio channels</p><p><strong>WHAT WE KNOW:</strong></p><p>Financial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.</p><p><strong>WHAT WE ARE DOING:</strong></p><p>The full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.</p><p>Do not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.</p><p><strong>STAY HOME. STAY CALM.</strong></p><p><strong>UPDATES TO FOLLOW.</strong></p>",
+            "footer": "Source: UK Cabinet Office Emergency Services"
+          }
+        },
+        {
           "text": "PM’s Address to the Nation — Full Transcript",
           "src": "simon",
           "turn": 30,

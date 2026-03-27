@@ -1906,7 +1906,7 @@
     {
       "id": "23a",
       "num": "T23a",
-      "title": "",
+      "title": "This is not a Lockdown",
       "date": "15 FEBRUARY 2027 — LATE AFTERNOON",
       "paras": [],
       "choices": null,
@@ -4700,8 +4700,18 @@
           "cls": "buried"
         }
       ],
-      "21": "dead",
-      "22": "dead",
+      "21": [
+        {
+          "text": "SERVICE UNAVAILABLE",
+          "cls": "cold"
+        }
+      ],
+      "22": [
+        {
+          "text": "SERVICE UNAVAILABLE",
+          "cls": "cold"
+        }
+      ],
       "24": [
         {
           "text": "DAY 2",
@@ -5362,16 +5372,30 @@
       ],
       "23": [
         {
-          "text": "DAY 1",
-          "cls": "cold"
-        },
-        {
-          "text": "EMERGENCY BROADCAST — CABINET OFFICE",
-          "cls": "cold"
-        },
-        {
-          "text": "STAY HOME — avoid all non-essential travel",
+          "text": "UK GOVERNMENT EMERGENCY ALERT — major cyber incident in UK — Emergency services are responding.",
           "cls": "alert"
+        }
+      ],
+      "23a": [
+        {
+          "text": "PM ADDRESSES THE NATION — BBC ONE / RADIO 4",
+          "cls": "cold"
+        },
+        {
+          "text": "PM: \"This is not a lockdown\"",
+          "cls": "cold"
+        },
+        {
+          "text": "PM: \"Days, not weeks\"",
+          "cls": "cold"
+        },
+        {
+          "text": "PM: \"A hostile assault on our way of life — but we will prevail\"",
+          "cls": "cold"
+        },
+        {
+          "text": "23 nations report simultaneous infrastructure disruption",
+          "cls": "cold"
         },
         {
           "text": "All UK markets suspended until further notice",
@@ -5382,24 +5406,12 @@
           "cls": "cold"
         },
         {
-          "text": "PM: \"A hostile assault on our way of life — but we will prevail\"",
-          "cls": "cold"
+          "text": "ARC EMERGENCY APP in operation on all devices",
+          "cls": "alert"
         },
         {
-          "text": "PM: \"Days, not weeks\"",
-          "cls": "cold"
-        },
-        {
-          "text": "23 nations report simultaneous infrastructure disruption",
-          "cls": "cold"
-        },
-        {
-          "text": "\"Unknown hostile actors\" — attribution under investigation — NCSC",
-          "cls": "cold"
-        },
-        {
-          "text": "Mobile networks: intermittent — emergency traffic prioritised",
-          "cls": "cold"
+          "text": "STAY HOME — avoid all non-essential travel",
+          "cls": "alert"
         },
         {
           "text": "Emergency services operational — do not call 999 unless life-threatening",
@@ -5450,7 +5462,8 @@
       "35": "35",
       "36": "36",
       "37": "37",
-      "17b": "17-18"
+      "17b": "17-18",
+      "23a": "23a"
     }
   },
   "initialNotes": [],

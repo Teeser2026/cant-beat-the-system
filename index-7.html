@@ -406,6 +406,7 @@ html, body {
   opacity: .35;
   padding: 14px 4px 8px;
 }
+.sec-label.arc { color: var(--text); opacity: .45; }
 .card {
   background: var(--card);
   border: 1px solid var(--card-b);
@@ -2759,7 +2760,8 @@ function renderSignal(turnId) {
   let essentialCards = []; // track for auto-save
 
   data.forEach(section => {
-    html += `<div class="sec-label">\u2014 ${section.sec} \u2014</div>`;
+    const arcCls = section.sec.includes('ARC') ? ' arc' : '';
+    html += `<div class="sec-label${arcCls}">\u2014 ${section.sec} \u2014</div>`;
     section.cards.forEach(card => {
       const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';

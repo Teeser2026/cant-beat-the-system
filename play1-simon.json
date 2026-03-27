@@ -1823,19 +1823,19 @@
           "t": "Anyway, Amy didn't finish her first cup as she panic-left the house just after 6am, un-showered and in a tizz, to go and check on the girls. I'd said they'd still be asleep. Probably for another 5 hours. If they've even gone to bed yet. We'd let them stay with Sophie on a Sunday night as they had a day off college today.\n\nAmy rushed out. 'Love you, I'll be back soon'.\n\nI put the kettle on to make myself a particularly challenging second cup and absentmindedly picked up my phone for the morning email/X/BBC headline check."
         },
         {
-          "t": "Nothing.\n\nDarkness. Despite knowing there'd be nothing it still surprised me. The nimble-fingered unconscious info-sweep and instant dopamine hit is so engrained. I used to wake up and have a spliff when I was at University. My first contact with the world a perusal of The Sun (I know, I was young and liked their, er....sport section) on the tube to central London. Nowadays the psyops start before I've even had a piss."
+          "t": "Nothing.\n\nDarkness. Despite knowing there'd be nothing it still surprised me. The nimble-fingered unconscious info-sweep and instant dopamine hit is so engrained. I used to wake up and have a spliff when I was at University. My first contact with the world a perusal of The Sun (I know, I was young and liked there, sport section) on the tube to central London. Nowadays the psyops start before I've even had a piss."
         },
         {
           "t": "6.07am. The clock is the only thing that's working on my phone. Well, that and the torch. All the apps open but state various versions of 'service unavailable' I tried the Mac and the iPad too. Nothing. Reset the router a few more times. Starlink app opens OK. It claims 'Starlink is aligned' but also tells me its 'Offline' and the router is 'unreachable'. Annoying. I had set aside the morning for sending out invoices to market traders, but this relied on Quickbooks Online, which was just hanging. Not even a courtesy 'we'll be back online soon'."
         },
         {
-          "t": "At least the power was on. Cup of tea number three and a couple of slices of toast. Hungry Guest 'chewy brown'. Quite possibly the best loaf known to man. Buttered when hot, melting and collecting in the sourdough pools. A carby treat for my hangover. Extra insulin needed, 12 units should do it. Hardly scientific but an educated guess after years of carb-counting, trial and error."
+          "t": "At least the power was on. Cup of tea number three and a couple of slices of toast. Hungry Guest 'chewy brown'. Quite possibly the best loaf known to man. Buttered when hot, melting and collecting in the sourdough pools. A carby treat for my hangover. Extra insulin needed, 12 units should do it. Hardly scientific but an educated guess after years of carb-counting, trail and error."
         },
         {
           "t": "Kate knocked. She was supposed to be on a video call with a client. Just checking if our internet was still down too. Asked her in for a tea but she wanted to go back next-door and try and get the call to work."
         },
         {
-          "t": "I checked What's App again. Lots of grey single ticks. No one was receiving my messages. I had one message from Vince. 1.01am. He'd obviously had issues too but seemingly sorted in London by 1am. Reassuring. Or interesting."
+          "t": "I checked What's App again. Lots of grey single ticks. No one was receiving my messages. I had one message from Vince. 1.01am. He'd obviously had issues too but seemingly sorted in London now. Reassuring."
         },
         {
           "t": "I sat in the beaten up leather armchair in the hallway. Slurping, crunching, chewing. No phone. Just me, my thoughts, a view of the plants in the courtyard outside the front door. The olive tree had wintered well. The magnolia looking as if it would soon blossom into its early Spring glory. The dogs settled at my feet. Peace. I could get used to this."
@@ -1856,7 +1856,7 @@
       "id": 23,
       "num": "T23",
       "title": "I am the God of Hellfire",
-      "date": "15 FEBRUARY 2027 — EARLY MORNING",
+      "date": "15 FEBRUARY 2027 — EARLY MORNING (6:20AM)",
       "paras": [
         {
           "t": "Where do you start? Where the hell do you start?"
@@ -1869,6 +1869,15 @@
         "fadeOut": 2,
         "vol": 0.35
       }
+    },
+    {
+      "id": "23a",
+      "num": "T23a",
+      "title": "",
+      "date": "15 FEBRUARY 2027 — LATE AFTERNOON",
+      "paras": [],
+      "choices": null,
+      "audio": null
     },
     {
       "id": 24,
@@ -2491,7 +2500,7 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "EMERGENCY ALERT — Major cyber incident",
+            "ttl": "EMERGENCY ALERT — Remain indoors. Emergency services operational.",
             "snip": "The klaxon. The one you'd only ever heard tested.",
             "tag": "Emergency",
             "cls": "x",
@@ -2500,7 +2509,7 @@
               "source": "UK Government Emergency Services",
               "title": "UK GOVERNMENT EMERGENCY ALERT",
               "date": "15 February 2027 · 06:20 GMT · Emergency Broadcast",
-              "body": "<p>A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding.</p><p><strong>IMMEDIATE ACTIONS:</strong></p><p>- Remain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.</p><p><strong>ESSENTIAL SERVICES:</strong></p><p>Hospitals are operational for EMERGENCY ONLY - all routine appointments are postponed</p><p>Police, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.</p><p>Mobile telephone and text services will be intermittent.</p><p><strong>REPEAT:</strong> Telephone or text message communication is EMERGENCY ONLY</p><p>Water, gas, and electricity supplies are being maintained. Intermittent outages may occur.</p><p>All card and electronic banking payments have been suspended whilst the network is being repaired.</p><p>Internet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.</p><p>Official updates will be issued via emergency message and through BBC television and radio channels</p><p><strong>WHAT WE KNOW:</strong></p><p>Financial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.</p><p><strong>WHAT WE ARE DOING:</strong></p><p>The full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.</p><p>Do not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.</p><p><strong>STAY HOME. STAY CALM.</strong></p><p><strong>UPDATES TO FOLLOW.</strong></p>",
+              "body": "<p>A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding. Systems are contained but not yet restored.</p><p><strong>IMMEDIATE ACTIONS:</strong></p><p>- Remain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.</p><p><strong>ESSENTIAL SERVICES:</strong></p><p>Hospitals are operational for EMERGENCY ONLY - all routine appointments are postponed</p><p>Police, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.</p><p>Mobile telephone and text services will be intermittent.</p><p><strong>REPEAT:</strong> Telephone or text message communication is EMERGENCY ONLY</p><p>Water, gas, and electricity supplies are being maintained. Intermittent outages may occur.</p><p>All card and electronic banking payments have been suspended whilst the network is being repaired.</p><p>Internet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.</p><p>Official updates will be issued via emergency message and through BBC television and radio channels</p><p><strong>WHAT WE KNOW:</strong></p><p>Financial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.</p><p><strong>WHAT WE ARE DOING:</strong></p><p>The full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.</p><p>Do not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.</p><p><strong>STAY HOME. STAY CALM.</strong></p><p><strong>UPDATES TO FOLLOW.</strong></p>",
               "footer": "Source: UK Cabinet Office Emergency Services"
             }
           }
@@ -3873,19 +3882,19 @@
       ]
     },
     {
-      "id": "official-record",
-      "label": "Official Record",
+      "id": "official",
+      "label": "Official",
       "items": [
         {
           "text": "UK GOVERNMENT EMERGENCY ALERT",
           "src": "uk-gov",
-          "turn": 22,
+          "turn": 23,
           "article": {
-            "style": "gov",
+            "style": "plain",
             "source": "UK Government Emergency Services",
             "title": "UK GOVERNMENT EMERGENCY ALERT",
             "date": "15 February 2027 · 06:20 GMT · Emergency Broadcast",
-            "body": "<p>A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding. Systems are contained but not yet restored.</p><p><strong>IMMEDIATE ACTIONS:</strong></p><p>- Remain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.</p><p><strong>ESSENTIAL SERVICES:</strong></p><p>Hospitals are operational for EMERGENCY ONLY - all routine appointments are postponed</p><p>Police, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.</p><p>Mobile telephone and text services will be intermittent.</p><p><strong>REPEAT:</strong> Telephone or text message communication is EMERGENCY ONLY</p><p>Water, gas, and electricity supplies are being maintained. Intermittent outages may occur.</p><p>All card and electronic banking payments have been suspended whilst the network is being repaired.</p><p>Internet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.</p><p>Official updates will be issued via emergency message and through BBC television and radio channels</p><p><strong>WHAT WE KNOW:</strong></p><p>Financial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.</p><p><strong>WHAT WE ARE DOING:</strong></p><p>The full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.</p><p>Do not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.</p><p><strong>STAY HOME. STAY CALM.</strong></p><p><strong>UPDATES TO FOLLOW.</strong></p>",
+            "body": "A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding.\n\nIMMEDIATE ACTIONS\n\nRemain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.\n\nESSENTIAL SERVICES\n\nHospitals are operational for EMERGENCY ONLY — all routine appointments are postponed.\n\nPolice, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.\n\nMobile telephone and text services will be intermittent. Telephone or text message communication is EMERGENCY ONLY.\n\nWater, gas, and electricity supplies are being maintained. Intermittent outages may occur.\n\nAll card and electronic banking payments have been suspended whilst the network is being repaired.\n\nInternet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.\n\nOfficial updates will be issued via emergency message and through BBC television and radio channels.\n\nWHAT WE KNOW\n\nFinancial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.\n\nWHAT WE ARE DOING\n\nThe full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.\n\nDo not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.\n\nSTAY HOME. STAY CALM.\n\nUPDATES TO FOLLOW.",
             "footer": "Source: UK Cabinet Office Emergency Services"
           }
         },

@@ -1470,7 +1470,9 @@
       "title": "Dude Deep Dives",
       "date": "Late January 2027",
       "paras": [
-        "Video call with The Dude."
+        {
+          "t": "Video call with The Dude."
+        }
       ],
       "choices": {}
     },
@@ -1810,19 +1812,45 @@
       "title": "Darkness",
       "date": "15 FEBRUARY 2027 — CRACK OF DAWN",
       "paras": [
-        "Amy left a half-drunk cup of tea on the kitchen worktop. It was highly unusual for her to start her day without kickstarting herself with at least three cups, often accompanied by a few rounds of Marmite on toast.",
-        "She was worried about the girls. She was always worried about the girls. They'd be fine, they were at Sophie's, they were safe, the internet would be back up and running soon. It'd be much ado about nothing as it always is. Without all the 'cyber attack' warnings and 'increased threat levels' we'd have simply thought the internet was down. The (difficult) second and (straightforward if I was making it) third cups of tea would've been made and drunk.",
-        "But this smacked of being an 'event' - a 'happening'. Concocted. Implemented. Controlled. The 'Big Story' that the media would latch onto. 'If it's in the news it's likely a ruse'. Stir up some panic, seed a bit of fear, ensure the algo-boosted X accounts throw in a splattering of 'this is the big one' in. BBC Verify, the arbiter of truth, setting everyone straight. Some political bluster in the days to follow - 'what we should do to ensure this doesn't happen again?' (Answer - more robust verification processes, more control, more surveillance. Same as always. They'd definitely use the word 'robust', I'd stake my mortgage on it. And they'd definitely give more millions to Palantir or Oracle to guarantee the increased robustness).",
-        "Anyway, Amy didn't finish her first cup as she panic-left the house just after 6am, un-showered and in a tizz, to go and check on the girls. I'd said they'd still be asleep. Probably for another 5 hours. If they've even gone to bed yet. We'd let them stay with Sophie on a Sunday night as they had a day off college today.\n\nAmy rushed out. 'Love you, I'll be back soon'.\n\nI put the kettle on to make myself a particularly challenging second cup and absentmindedly picked up my phone for the morning email/X/BBC headline check.",
-        "Nothing.\n\nDarkness. Despite knowing there'd be nothing it still surprised me. The nimble-fingered unconscious info-sweep and instant dopamine hit is so engrained. I used to wake up and have a spliff when I was at University. My first contact with the world a perusal of The Sun (I know, I was young and liked there, sport section) on the tube to central London. Nowadays the psyops start before I've even had a piss.",
-        "6.07am. The clock is the only thing that's working on my phone. Well, that and the torch. All the apps open but state various versions of 'service unavailable' I tried the Mac and the iPad too. Nothing. Reset the router a few more times. Starlink app opens OK. It claims 'Starlink is aligned' but also tells me its 'Offline' and the router is 'unreachable'. Annoying. I had set aside the morning for sending out invoices to market traders, but this relied on Quickbooks Online, which was just hanging. Not even a courtesy 'we'll be back online soon'.",
-        "At least the power was on. Cup of tea number three and a couple of slices of toast. Hungry Guest 'chewy brown'. Quite possibly the best loaf known to man. Buttered when hot, melting and collecting in the sourdough pools. A carby treat for my hangover. Extra insulin needed, 12 units should do it. Hardly scientific but an educated guess after years of carb-counting, trail and error.",
-        "Kate knocked. She was supposed to be on a video call with a client. Just checking if our internet was still down too. Asked her in for a tea but she wanted to go back next-door and try and get the call to work.",
-        "I checked What's App again. Lots of grey single ticks. No one was receiving my messages. I had one message from Vince. 1.01am. He'd obviously had issues too but seemingly sorted in London now. Reassuring.",
-        "I sat in the beaten up leather armchair in the hallway. Slurping, crunching, chewing. No phone. Just me, my thoughts, a view of the plants in the courtyard outside the front door. The olive tree had wintered well. The magnolia looking as if it would soon blossom into its early Spring glory. The dogs settled at my feet. Peace. I could get used to this.",
-        "I was just starting to nod off when I heard the sound of a key trying to fit into the front door lock. George was back. What the hell was he doing back just after 6 in the morning? Looked even more hungover than I felt. He'd been for a Valentine's booze at the local with his mates and crashed on Thomas's sofa. Couldn't sleep, so decided to head home. Undoubtedly over the limit still. It was only a short drive though, country lanes.",
-        "We confirmed to one another that the internet was fucked. (His words. Actually mine too, come to think of it.) He'd tried to call Amy but was getting either nothing, straight-to-voicemail or endless ringing with no answer.",
-        "'Have you tried the TV' he asked. I hadn't thought of that. We turned it on. Just a black screen. Of course it is, we'd watched TV over the internet via a Amazon Fire TV Box for years.\n\n'Does this thing even have 'normal' TV?' I asked George. He had no idea. He thought we did watch normal TV.\n\n'Cup of tea, Georgie?'\n\n'No thanks, I'm knackered. See you on the other side'. He slunk off to his room."
+        {
+          "t": "Amy left a half-drunk cup of tea on the kitchen worktop. It was highly unusual for her to start her day without kickstarting herself with at least three cups, often accompanied by a few rounds of Marmite on toast."
+        },
+        {
+          "t": "She was worried about the girls. She was always worried about the girls. They'd be fine, they were at Sophie's, they were safe, the internet would be back up and running soon. It'd be much ado about nothing as it always is. Without all the 'cyber attack' warnings and 'increased threat levels' we'd have simply thought the internet was down. The (difficult) second and (straightforward if I was making it) third cups of tea would've been made and drunk."
+        },
+        {
+          "t": "But this smacked of being an 'event' - a 'happening'. Concocted. Implemented. Controlled. The 'Big Story' that the media would latch onto. 'If it's in the news it's likely a ruse'. Stir up some panic, seed a bit of fear, ensure the algo-boosted X accounts throw in a splattering of 'this is the big one' in. BBC Verify, the arbiter of truth, setting everyone straight. Some political bluster in the days to follow - 'what we should do to ensure this doesn't happen again?' (Answer - more robust verification processes, more control, more surveillance. Same as always. They'd definitely use the word 'robust', I'd stake my mortgage on it. And they'd definitely give more millions to Palantir or Oracle to guarantee the increased robustness)."
+        },
+        {
+          "t": "Anyway, Amy didn't finish her first cup as she panic-left the house just after 6am, un-showered and in a tizz, to go and check on the girls. I'd said they'd still be asleep. Probably for another 5 hours. If they've even gone to bed yet. We'd let them stay with Sophie on a Sunday night as they had a day off college today.\n\nAmy rushed out. 'Love you, I'll be back soon'.\n\nI put the kettle on to make myself a particularly challenging second cup and absentmindedly picked up my phone for the morning email/X/BBC headline check."
+        },
+        {
+          "t": "Nothing.\n\nDarkness. Despite knowing there'd be nothing it still surprised me. The nimble-fingered unconscious info-sweep and instant dopamine hit is so engrained. I used to wake up and have a spliff when I was at University. My first contact with the world a perusal of The Sun (I know, I was young and liked there, sport section) on the tube to central London. Nowadays the psyops start before I've even had a piss."
+        },
+        {
+          "t": "6.07am. The clock is the only thing that's working on my phone. Well, that and the torch. All the apps open but state various versions of 'service unavailable' I tried the Mac and the iPad too. Nothing. Reset the router a few more times. Starlink app opens OK. It claims 'Starlink is aligned' but also tells me its 'Offline' and the router is 'unreachable'. Annoying. I had set aside the morning for sending out invoices to market traders, but this relied on Quickbooks Online, which was just hanging. Not even a courtesy 'we'll be back online soon'."
+        },
+        {
+          "t": "At least the power was on. Cup of tea number three and a couple of slices of toast. Hungry Guest 'chewy brown'. Quite possibly the best loaf known to man. Buttered when hot, melting and collecting in the sourdough pools. A carby treat for my hangover. Extra insulin needed, 12 units should do it. Hardly scientific but an educated guess after years of carb-counting, trail and error."
+        },
+        {
+          "t": "Kate knocked. She was supposed to be on a video call with a client. Just checking if our internet was still down too. Asked her in for a tea but she wanted to go back next-door and try and get the call to work."
+        },
+        {
+          "t": "I checked What's App again. Lots of grey single ticks. No one was receiving my messages. I had one message from Vince. 1.01am. He'd obviously had issues too but seemingly sorted in London now. Reassuring."
+        },
+        {
+          "t": "I sat in the beaten up leather armchair in the hallway. Slurping, crunching, chewing. No phone. Just me, my thoughts, a view of the plants in the courtyard outside the front door. The olive tree had wintered well. The magnolia looking as if it would soon blossom into its early Spring glory. The dogs settled at my feet. Peace. I could get used to this."
+        },
+        {
+          "t": "I was just starting to nod off when I heard the sound of a key trying to fit into the front door lock. George was back. What the hell was he doing back just after 6 in the morning? Looked even more hungover than I felt. He'd been for a Valentine's booze at the local with his mates and crashed on Thomas's sofa. Couldn't sleep, so decided to head home. Undoubtedly over the limit still. It was only a short drive though, country lanes."
+        },
+        {
+          "t": "We confirmed to one another that the internet was fucked. (His words. Actually mine too, come to think of it.) He'd tried to call Amy but was getting either nothing, straight-to-voicemail or endless ringing with no answer."
+        },
+        {
+          "t": "'Have you tried the TV' he asked. I hadn't thought of that. We turned it on. Just a black screen. Of course it is, we'd watched TV over the internet via a Amazon Fire TV Box for years.\n\n'Does this thing even have 'normal' TV?' I asked George. He had no idea. He thought we did watch normal TV.\n\n'Cup of tea, Georgie?'\n\n'No thanks, I'm knackered. See you on the other side'. He slunk off to his room."
+        }
       ],
       "audio": null
     },

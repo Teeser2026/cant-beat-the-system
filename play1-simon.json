@@ -3,8 +3,8 @@
     "version": "1.0",
     "play": 1,
     "title": "Simon's Story",
-    "description": "Play 1 — Pre-Event through Registration. October 2026 to late February 2027.",
-    "totalTurns": 40,
+    "description": "Play 1 — Pre-Event through Registration. October 2026 to 1 April 2027.",
+    "totalTurns": 45,
     "writtenTurns": [
       1,
       2,
@@ -12,6 +12,7 @@
       4,
       5,
       6,
+      "6a",
       7,
       8,
       9,
@@ -19,13 +20,19 @@
       11,
       12,
       13,
+      14,
       15,
+      16,
+      "16a",
       17,
+      "17a",
       18,
       19,
       20,
       21,
-      23
+      22,
+      23,
+      37
     ],
     "questionsAt": [
       "MQ1@cold_open",
@@ -44,7 +51,13 @@
       "MQ11@after_T18",
       "MQ12@after_T18",
       "MQ13@after_T18",
-      "IP3@between_T19_T20"
+      "IP3@between_T19_T20",
+      "VR1@after_T26",
+      "MF1@after_T28",
+      "CW1@after_T30",
+      "DL1@after_T34",
+      "SL1@after_T35",
+      "SE1@after_T36"
     ]
   },
   "initialState": {
@@ -2089,8 +2102,8 @@
     {
       "id": 31,
       "num": "T31",
-      "title": "The Hamper",
-      "date": "23–24 March 2027",
+      "title": "The Evening",
+      "date": "22–23 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 36–37. Registered vs unregistered contrast. Amy's mum sends hamper photos. George: 'Mum, can I just register? I'm 19.' He does. 'Dad, it's just an app.' Simon finds out via AIDA notification. BritCoin first allocation: 10,000 BC/adult.]"
@@ -2101,8 +2114,8 @@
     {
       "id": 32,
       "num": "T32",
-      "title": "The Knife",
-      "date": "25–29 March 2027",
+      "title": "Family Discussions",
+      "date": "23–24 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 38–42. Sam and Emilia registered by their mum. 'Your ex texted.' The knife that isn't AIDA — it's his ex-wife doing the right thing. Simon's rage/relief/grief. Mortgage showing £0.00. The horror of ease.]"
@@ -2113,11 +2126,23 @@
     {
       "id": 33,
       "num": "T33",
-      "title": "Chloe",
-      "date": "5 April 2027",
+      "title": "The Knife",
+      "date": "25 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 49. Chloe in the kitchen doorway. 17. 'I'm literally the only person in my year who isn't registered.' She needs Simon's signature — under 18. The A-levels she's missing. Amy won't sign without Simon. AIDA learning platform genuinely excellent. Hub learning: worksheets.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 34,
+      "num": "T34",
+      "title": "Kate",
+      "date": "26–27 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 56. HEAVY. Kate from next door. Psychologist. Registered yesterday. Wine in the garden. 'I know what they're doing, Simon. The NLP in the speeches. The fear-reassurance cycle. I can see every stitch in the puppet strings.' She drinks. 'I registered anyway. Because seeing the strings doesn't make you less of a puppet. It just makes you a sad one.' Simon's mirror.]"
         }
       ],
       "audio": null
@@ -2166,13 +2191,13 @@
       ]
     },
     {
-      "id": 34,
-      "num": "T34",
-      "title": "Kate",
-      "date": "12 April 2027",
+      "id": 35,
+      "num": "T35",
+      "title": "Chloe",
+      "date": "28–29 March 2027",
       "paras": [
         {
-          "t": "[STUB — Day 56. HEAVY. Kate from next door. Psychologist. Registered yesterday. Wine in the garden. 'I know what they're doing, Simon. The NLP in the speeches. The fear-reassurance cycle. I can see every stitch in the puppet strings.' She drinks. 'I registered anyway. Because seeing the strings doesn't make you less of a puppet. It just makes you a sad one.' Simon's mirror.]"
+          "t": "[STUB — Day 63. Amy's brothers are holdouts. Rupert can't get his prescription. Jamie can't buy fuel. Amy's mum crying on the phone. Simon visits dad in care home — dad registered by institution, no consent. AIDA knows Simon through everyone else's data. Protest that evening: hundreds in a nation of 67 million. Police almost bored. 'Resistance is a luxury good.']"
         }
       ],
       "audio": null
@@ -2189,22 +2214,10 @@
       ]
     },
     {
-      "id": 35,
-      "num": "T35",
-      "title": "The Brothers",
-      "date": "19 April 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 63. Amy's brothers are holdouts. Rupert can't get his prescription. Jamie can't buy fuel. Amy's mum crying on the phone. Simon visits dad in care home — dad registered by institution, no consent. AIDA knows Simon through everyone else's data. Protest that evening: hundreds in a nation of 67 million. Police almost bored. 'Resistance is a luxury good.']"
-        }
-      ],
-      "audio": null
-    },
-    {
       "id": 36,
       "num": "T36",
       "title": "The Kitchen",
-      "date": "26 April 2027",
+      "date": "30–31 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 70. HEAVY — heart of the game. After the teenagers have gone upstairs. Dogs on the kitchen floor. Kettle boiling. Amy: 'Where's the mass, Simon?' The conversation. Not screaming — quiet, tired, honest. Dev on mesh: 'Don't do it.' AIDA: 'We're here when you're ready, Simon.' It used his name. 'We'll go tomorrow. Together.']"
@@ -2227,7 +2240,7 @@
       "id": 37,
       "num": "T37",
       "title": "Morning Coffee",
-      "date": "~1 May 2027",
+      "date": "1 April 2027",
       "paras": [
         {
           "t": "She said nothing. She played Northern Sky by Nick Drake. We hugged. We cried. We left for the Community Recovery Hub."

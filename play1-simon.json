@@ -1928,7 +1928,7 @@
     {
       "id": 24,
       "num": "T24",
-      "title": "Stay Indoors",
+      "title": "Stay Local",
       "date": "16 FEBRUARY 2027",
       "paras": [
         {
@@ -1940,7 +1940,7 @@
     {
       "id": 25,
       "num": "T25",
-      "title": "The False Dawn",
+      "title": "The Beep",
       "date": "17 FEBRUARY 2027",
       "paras": [
         {
@@ -1952,7 +1952,7 @@
     {
       "id": "25a",
       "num": "T25a",
-      "title": "",
+      "title": "Normality Returning",
       "date": "18 FEBRUARY 2027",
       "paras": [
         {
@@ -1965,7 +1965,7 @@
     {
       "id": 26,
       "num": "T26",
-      "title": "Day Five",
+      "title": "False Dawn",
       "date": "19 FEBRUARY 2027",
       "paras": [
         {
@@ -1989,7 +1989,7 @@
     {
       "id": "26a",
       "num": "T26a",
-      "title": "",
+      "title": "Tomorrow",
       "date": "20 FEBRUARY 2027",
       "paras": [
         {
@@ -2002,7 +2002,7 @@
     {
       "id": 27,
       "num": "T27",
-      "title": "The Dark Month Begins",
+      "title": "Free Lunch",
       "date": "21 FEBRUARY 2027",
       "paras": [
         {
@@ -2043,7 +2043,7 @@
     {
       "id": 29,
       "num": "T29",
-      "title": "The Long Wait",
+      "title": "Waiting",
       "date": "28 February – 21 March 2027",
       "paras": [
         {
@@ -2055,7 +2055,7 @@
     {
       "id": "29a",
       "num": "T29a",
-      "title": "",
+      "title": "Something Better",
       "date": "12–21 March 2027",
       "paras": [
         {
@@ -3688,6 +3688,417 @@
           }
         ]
       }
+    ],
+    "24": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Legacy digital systems have been compromised by embedded malware. Do not attempt to access banking or financial applications. ARC Emergency is your verified source for updates.",
+            "snip": "The government said the same thing by text. ARC said it with a logo and the word 'verified.' Already a different voice.",
+            "tag": "Update",
+            "cls": "x"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Emergency distribution points are being established by local authorities and military logistics. Check ARC Emergency for your nearest location.",
+            "snip": "Distribution points. Not hubs. Not centres. Points. A car park with an army truck and a folding table.",
+            "tag": "Update",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "School — Chloe",
+            "ttl": "School closed until further notice. Students should not attend. Further updates via ARC Emergency.",
+            "snip": "The email came through twelve hours late. The school server must have coughed it up in a batch.",
+            "tag": "Delayed",
+            "cls": ""
+          },
+          {
+            "src": "NHS",
+            "ttl": "All routine appointments suspended. Emergency departments open. Bring photo ID and any medication details.",
+            "snip": "Photo ID. They want photo ID at A&E now.",
+            "tag": "Emergency",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "I'm fine love. Tony sorted everything. No heating though. Love mum x",
+            "snip": "Eighteen hours to arrive. Two lines. She's fine. Tony sorted everything. Tony always sorts everything.",
+            "tag": "Delivered",
+            "cls": "e"
+          }
+        ]
+      }
+    ],
+    "25": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Payment systems are restoring across affected regions. ARC Emergency remains your verified source for updates during the recovery period.",
+            "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
+            "tag": "Update",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Cards work at Tesco! Getting a big shop in. Anything you need? xx",
+            "snip": "She's spending the cash reserves she doesn't know she'll need in four days.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy's mum",
+            "ttl": "Cards working! Got a lovely joint of beef. Back to normal soon love.",
+            "snip": "Lovely joint of beef. The optimism of a woman who's already spent her emergency cash on a roasting joint.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "Mesh",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "The firmware payload. Two stages. Stage 1 encrypted. Stage 2 is in the walls. When they reconnect the old systems, it triggers. Don't celebrate yet.",
+            "snip": "2am. Monospaced text on a mesh relay. He read it. He went back to sleep.",
+            "tag": "2:00am",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "25a": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
+            "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
+            "tag": "Update",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Payment systems restoring across affected regions. Chancellor: 'Worst appears to be over.'",
+            "snip": "The worst appears to be over. The Chancellor said it. Must be true.",
+            "tag": "Breaking",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy's dad (Peter)",
+            "ttl": "Got fuel! Half a tank. Queues not too bad. Your mum says come for lunch Sunday if you can.",
+            "snip": "Half a tank feels like a fortune. Sunday lunch feels like the old world coming back.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "26": [
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "A second phase of disruption has affected financial and data systems across all 23 nations. Emergency services are unaffected. Remain calm. Further updates to follow.",
+            "snip": "ARC got there before the PM. Again. It's becoming the voice you hear first.",
+            "tag": "10:34am",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "PM: 'The timeline for restoration has changed.' Second phase of cyber attack corrupts financial records across 23 nations.",
+            "snip": "The timeline for restoration has changed. Four hours ago the Chancellor said the worst was over.",
+            "tag": "Breaking",
+            "cls": "x"
+          },
+          {
+            "src": "School — Chloe",
+            "ttl": "Monday reopening postponed. Further updates to follow. We are sorry for the continued disruption.",
+            "snip": "She'd already told her friends she'd see them Monday. She'd already packed her bag.",
+            "tag": "Updated",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy's mum",
+            "ttl": "Cards stopped again. We've hardly got any food in. Your dad's upset.",
+            "snip": "They spent their cash on a roasting joint two days ago because the cards were working.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "Dev",
+            "ttl": "Stage 2. Told you. This one corrupts — doesn't encrypt. The records aren't locked. They're gone.",
+            "snip": "He told you. You went back to sleep.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "26a": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Emergency food distribution will begin tomorrow at designated collection points. Your nearest collection point will be confirmed via ARC Emergency.",
+            "snip": "Tomorrow. Collection points. The language is changing. Not 'shops will reopen.' Collection points.",
+            "tag": "Update",
+            "cls": "x"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Do NOT access legacy banking applications. Corrupted data may compromise device security. ARC Emergency is the only verified communications channel.",
+            "snip": "The only verified channel. Not one of several. The only one.",
+            "tag": "Warning",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Kate",
+            "ttl": "The community centre's opening as a walk-in clinic tomorrow. They need volunteers. I'm going in. You two okay? x",
+            "snip": "Kate. Always the first to sign up. Psychologist brain already filing the crisis response for later analysis.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy's mum",
+            "ttl": "Your brothers aren't answering their phones. Your dad's worried sick.",
+            "snip": "Rupert and Jamie. Off grid before off grid was mandatory. Amy's mum says it like they've joined a cult.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      }
+    ],
+    "27": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Emergency Payment Module activated. Your device has been credited £200.00. Tap to pay at participating retailers. Weekly refresh every Sunday.",
+            "snip": "Two hundred quid appeared on his phone. No form. No application. No questions. Just: here's money, go shopping.",
+            "tag": "£200.00",
+            "cls": "x"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Additional retailers joining daily.",
+            "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays.",
+            "tag": "EPM",
+            "cls": ""
+          },
+          {
+            "src": "ARC",
+            "ttl": "Hamper collection: your nearest point is [location]. Schedule: Tuesdays and Thursdays, 8am–4pm. Bring ARC device for verification.",
+            "snip": "Bring ARC device for verification. Not ID. Not a ration card. Your phone.",
+            "tag": "Update",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Kate",
+            "ttl": "Volunteering at the walk-in clinic. It's actually really well organised. Pop round for a glass of wine later? x",
+            "snip": "Kate sounds surprised it's well organised. She shouldn't be. She's a psychologist. She knows what well-organised crisis response looks like when it's been planned in advance.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy's mum",
+            "ttl": "Your brothers aren't answering. Your dad's worried sick. Have you tried Rupert?",
+            "snip": "He hasn't tried Rupert. He's been trying not to think about what Rupert would say about the two hundred quid that just appeared on his phone.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "Mesh",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
+            "snip": "Dev heard the same speech Simon heard. Dev heard a different sentence.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "28": [
+      {
+        "sec": "Mesh",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "you there?",
+            "snip": "Two words. Three days of silence and then two words at 1am.",
+            "tag": "1:00am",
+            "cls": ""
+          },
+          {
+            "src": "Dev",
+            "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
+            "snip": "Dev's frenzy. Months of silence and then everything at once. Expecting you to absorb it in an hour what took him weeks to map.",
+            "tag": "Thread",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. Tap to pay at participating retailers.",
+            "snip": "Second week. Same amount. Same beep. He bought dog food yesterday without thinking about it. The gesture was identical to every tap he'd made for years.",
+            "tag": "£200.00",
+            "cls": ""
+          },
+          {
+            "src": "ARC",
+            "ttl": "Additional retailers now accepting ARC Emergency payments. Check the retailer map in ARC Emergency for updated locations.",
+            "snip": "The map is expanding. More pins every day. The corner shop isn't on it yet. The corner shop takes cash. The corner shop is starting to look old.",
+            "tag": "Update",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "29": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
+            "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
+            "tag": "Day 21",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy's mum",
+            "ttl": "Rupert won't go to the walk-in. He says he doesn't trust it. Your dad can't get his eye drops. Can Simon have a word?",
+            "snip": "Have a word. Like he's a teenager refusing to tidy his room. Rupert's medication is running out and Jenny thinks a chat will fix it.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "Chloe",
+            "ttl": "How long, Dad. Seriously. How long.",
+            "snip": "No question mark. Not a question. A statement dressed as one.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Kate",
+            "ttl": "The community centres are being fitted out for something. Registration desks. Biometric readers. Nobody's said anything official yet. Wine tonight? x",
+            "snip": "Kate sees the equipment arriving and files it under 'interesting.' She'll register when they ask. She knows this about herself already.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "29a": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Community Recovery Centres are expanding services in your area. Visit your nearest centre for healthcare, food collection, and support.",
+            "snip": "Recovery Centres. New name. Same community centres Kate's been volunteering at for three weeks. New desks. New equipment. New name.",
+            "tag": "Update",
+            "cls": ""
+          },
+          {
+            "src": "ARC",
+            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. ARC Emergency payments now accepted at over 85% of UK retail locations.",
+            "snip": "Eighty-five percent. The corner shop got a new terminal last week. The bloke at the market still takes cash. He's one of the fifteen percent and shrinking.",
+            "tag": "£200.00",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Sources suggest major economic announcement imminent. PM expected to address the nation 'within days.'",
+            "snip": "Everyone knows something's coming. The community centres have biometric readers nobody's using yet. The BBC is asking questions shaped like answers.",
+            "tag": "Breaking",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "George",
+            "ttl": "Have you seen the BBC thing about AIDA? Some kind of AI assistant. Looks pretty sick actually.",
+            "snip": "Pretty sick actually. George's generation hears 'AI assistant' and thinks 'useful.' Simon's generation hears it and thinks 'Skynet.' Neither is right.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -4728,7 +5139,7 @@
       "24": [
         {
           "text": "DAY 2",
-          "cls": "cold"
+          "cls": "alert"
         },
         {
           "text": "STAY HOME — emergency services operational",
@@ -4747,7 +5158,7 @@
           "cls": "cold"
         },
         {
-          "text": "ARC emergency protocol active — 1,247 Recovery Hubs operational",
+          "text": "ARC emergency protocol active — verified updates direct to device",
           "cls": ""
         },
         {
@@ -4760,11 +5171,11 @@
         },
         {
           "text": "Cabinet Office: \"Normal life will resume within days\"",
-          "cls": "warm"
+          "cls": ""
         },
         {
           "text": "DO NOT access legacy banking apps — compromised by malware — NCSC",
-          "cls": "alert"
+          "cls": "cold"
         }
       ],
       "25": [
@@ -4918,10 +5329,18 @@
       "27": [
         {
           "text": "DAY 7",
-          "cls": ""
+          "cls": "alert"
         },
         {
           "text": "PM WEEKLY ADDRESS: \"A solution is being built\"",
+          "cls": ""
+        },
+        {
+          "text": "ARC Emergency Payment Module activated — £200/device credited",
+          "cls": "warm"
+        },
+        {
+          "text": "Participating retailers: major supermarkets, pharmacies, forecourts",
           "cls": ""
         },
         {
@@ -4938,11 +5357,7 @@
         },
         {
           "text": "Community kitchens: 3,400 operational — DLUHC",
-          "cls": ""
-        },
-        {
-          "text": "Recovery Hubs: 2,100 — walk-in medical, food collection, charging",
-          "cls": ""
+          "cls": "warm"
         },
         {
           "text": "\"Blitz spirit\" — Telegraph",
@@ -4956,7 +5371,7 @@
       "28": [
         {
           "text": "DAY 14",
-          "cls": ""
+          "cls": "alert"
         },
         {
           "text": "PM WEEKLY ADDRESS: \"New secure infrastructure in advanced development\"",
@@ -4971,12 +5386,16 @@
           "cls": ""
         },
         {
-          "text": "Community kitchens: 4,100 operational",
+          "text": "ARC Emergency payments: expanding to smaller retailers",
           "cls": ""
         },
         {
-          "text": "Fresh food unavailable — UHT, tinned, dried goods only",
-          "cls": "cold"
+          "text": "Domestic food supply partially recovering — limited fresh produce",
+          "cls": ""
+        },
+        {
+          "text": "Community kitchens: 4,100 operational",
+          "cls": "warm"
         },
         {
           "text": "Cash running low in urban areas — barter reported",
@@ -4984,17 +5403,13 @@
         },
         {
           "text": "\"We are assessing the full scope\" — NCSC",
-          "cls": "cold"
-        },
-        {
-          "text": "ARC Emergency: services improving for registered communities",
-          "cls": "buried"
+          "cls": ""
         }
       ],
       "29": [
         {
           "text": "DAY 21",
-          "cls": ""
+          "cls": "alert"
         },
         {
           "text": "PM: \"The old system failed us — we are building something better\"",
@@ -5006,14 +5421,14 @@
         },
         {
           "text": "Community mutual aid groups: 4,800 — DLUHC",
-          "cls": ""
+          "cls": "warm"
         },
         {
           "text": "BBC: \"What might the new system look like?\"",
           "cls": ""
         },
         {
-          "text": "Recovery Hubs: expanded — 3,200 sites",
+          "text": "ARC Emergency payments: accepted at 70% of UK retail — UK Finance",
           "cls": ""
         },
         {
@@ -5021,12 +5436,12 @@
           "cls": "cold"
         },
         {
-          "text": "Six weeks since ATMs dispensed cash",
+          "text": "Three weeks since ATMs dispensed cash",
           "cls": "cold"
         },
         {
           "text": "Economists: \"digital currency transition makes increasing sense\"",
-          "cls": "buried"
+          "cls": ""
         }
       ],
       "29a": [

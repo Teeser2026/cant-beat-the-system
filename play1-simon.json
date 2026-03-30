@@ -3849,6 +3849,25 @@
     ],
     "25a": [
       {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Essential travel permitted.",
+            "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
+            "tag": "Update",
+            "cls": ""
+          },
+          {
+            "src": "UK GOV",
+            "ttl": "The Chancellor will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
+            "snip": "The Chancellor, not the PM. They're sending the money person. That feels like good news.",
+            "tag": "3:30pm",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "ARC Emergency",
         "cards": [
           {
@@ -3856,6 +3875,13 @@
             "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
             "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
             "tag": "Update",
+            "cls": ""
+          },
+          {
+            "src": "ARC",
+            "ttl": "Chancellor 6pm address — key points: Markets to resume trading Thursday. Contactless restored at most major retailers. NCSC: 'Worst appears to be over.' Full recovery expected within days.",
+            "snip": "Full recovery expected within days. The Chancellor said it at 6pm. ARC had the summary up by 6:04. Nobody noticed the speed anymore.",
+            "tag": "6:04pm",
             "cls": ""
           }
         ]
@@ -3881,6 +3907,39 @@
             "snip": "Half a tank feels like a fortune. Sunday lunch feels like the old world coming back.",
             "tag": "",
             "cls": ""
+          },
+          {
+            "src": "Dave",
+            "ttl": "You ok mate? Beers tomorrow? 😂",
+            "snip": "Dave. Three days of national emergency and his first text is about the pub.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Vince",
+            "ttl": "Hopefully game will be on next week. You planning on going? ❤️💙",
+            "snip": "Vince is already thinking about the football. The world is ending and Vince wants to know about Saturday.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Sam",
+            "ttl": "I'll see you later Pa x",
+            "snip": "Pa. He still says Pa.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "Phone Call",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "Call connected — 4 minutes 12 seconds.",
+            "snip": "First call that's gone through since Sunday. She cried. He told her everything was fine. Tony's sorting the heating. Dash is fine. She asked about the kids three times. He said they're fine three times. Four minutes felt like an hour.",
+            "tag": "Connected",
+            "cls": "e"
           }
         ]
       }

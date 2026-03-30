@@ -4077,9 +4077,9 @@
             "cls": "e"
           },
           {
-            "src": "Amy",
-            "ttl": "We've got enough for three days maybe. Four if we're careful. Did you check what's in the freezer?",
-            "snip": "Amy counting. Amy always counts when things get tight. Three days. Four if they're careful. The freezer is running on electricity that hasn't gone off yet.",
+            "src": "Dave",
+            "ttl": "How much cash you got mate? We've got about forty quid. Nicky's freaking out. You stocked up didn't you?",
+            "snip": "He did stock up. Cash and cannellini beans. Felt like a genius for about a week. Now forty quid feels like forty quid and the corner shop is running low on everything except pasta.",
             "tag": "",
             "cls": ""
           }
@@ -4092,8 +4092,8 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "Emergency food distribution begins today at designated collection points. Military logistics are coordinating with local authorities. Check ARC Emergency for your nearest collection point and schedule.",
-            "snip": "Today. Not tomorrow. Today. The word lands differently after twenty-four hours of 'tomorrow.'",
+            "ttl": "Emergency measures now active. An emergency payment of £200 has been credited to all ARC-enabled devices. Major retailers are accepting ARC payments with purchase limits. Military personnel are providing logistics support at major distribution points. Food collection available at supermarkets and community centres for those without smartphones.",
+            "snip": "Military personnel are providing logistics support. Not security. Not enforcement. Logistics support. The soldiers are carrying boxes and the sentence is carrying the weight.",
             "tag": "7:00am",
             "cls": "x"
           }
@@ -4111,21 +4111,14 @@
           },
           {
             "src": "ARC",
-            "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Additional retailers joining daily.",
-            "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays.",
+            "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Purchase limits in effect. Additional retailers joining daily.",
+            "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays. Three items per category. Nobody complained.",
             "tag": "EPM",
             "cls": "a"
           },
           {
             "src": "ARC",
-            "ttl": "Hamper collection: your nearest point is [location]. Schedule: Tuesdays and Thursdays, 8am–4pm. Bring ARC device for verification.",
-            "snip": "Bring ARC device for verification. Not ID. Not a ration card. Your phone.",
-            "tag": "Update",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payment and food distribution are now active. We will not let this nation go hungry. We will not let this nation go dark.'",
+            "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payments are now active across the UK. We will not let this nation go hungry. We will not let this nation go dark.'",
             "snip": "We will not let this nation go dark. He said it like a promise. Dev would hear it like a threat.",
             "tag": "6:00pm",
             "cls": "a"
@@ -4137,17 +4130,31 @@
         "cards": [
           {
             "src": "Kate",
-            "ttl": "At the walk-in clinic. It's actually really well organised. Pop round for a glass of wine later? x",
-            "snip": "Kate sounds surprised it's well organised. She shouldn't be. She's a psychologist. She knows what well-organised crisis response looks like when it's been planned in advance.",
+            "ttl": "Volunteering at the community centre. They've set up a food collection for people without phones. It's actually really well organised. Wine later? x",
+            "snip": "People without phones. Kate's helping the fifteen percent. The eighty-five percent are tapping at Tesco and barely thinking about it.",
             "tag": "",
             "cls": ""
           },
           {
             "src": "Amy's mum",
-            "ttl": "Got a hamper! Tins and bread and UHT but it's something. Your brothers still aren't answering. Have you tried Rupert?",
-            "snip": "He hasn't tried Rupert. He's been trying not to think about what Rupert would say about the two hundred quid that just appeared on his phone.",
+            "ttl": "Got the £200! Your dad worked out how to tap. Tesco had a queue but we got milk and bread and some proper food. Your brothers still aren't answering.",
+            "snip": "Peter worked out how to tap. Seventy-three years old and he tapped his phone at Tesco and got milk. The revolution is a pensioner buying bread with a gesture he learned in forty seconds.",
             "tag": "",
             "cls": "e"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Just tapped for dog food at Morrisons. Soldiers in the car park but they're just helping with the queues. Felt exactly the same as tapping before. Mental isn't it. Free money 😂",
+            "snip": "Soldiers in the car park but they're just helping. Dave said it like it was normal. Four days ago there were no soldiers in the Morrisons car park. Now they're helping with the queues and Dave's buying dog food and it's normal.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Vince",
+            "ttl": "Army blokes outside Tesco. Proper friendly though. One of them helped mum with her bags. Police everywhere too but keeping back. Feels safe tbh",
+            "snip": "Feels safe. That's the sentence. Not 'feels scary' or 'feels wrong.' Feels safe. The soldiers made Vince feel safe. That's the Soma working at street level.",
+            "tag": "",
+            "cls": ""
           }
         ]
       },
@@ -4156,8 +4163,8 @@
         "cards": [
           {
             "src": "Dev — Signal",
-            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number. More on the group later.",
-            "snip": "Signal came back two days ago. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
+            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
+            "snip": "Signal came back yesterday. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
             "tag": "",
             "cls": ""
           }

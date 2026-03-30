@@ -3951,8 +3951,8 @@
           {
             "src": "ARC",
             "ttl": "A second phase of disruption has affected financial and data systems across all 23 nations. Emergency services are unaffected. Remain calm. Further updates to follow.",
-            "snip": "10:34am. ARC got there before the PM. Before the BBC. Before anyone. It's becoming the voice you hear first.",
-            "tag": "10:34am",
+            "snip": "6:33pm. Teatime. The phone buzzed while the kettle boiled. Two minutes before the government alert. ARC knew first.",
+            "tag": "6:33pm",
             "cls": "a"
           }
         ]
@@ -3962,10 +3962,22 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "A second cyber incident has affected financial systems. The PM will address the nation at 2pm. Do not attempt to use payment cards or banking apps. Stay local. Stay calm.",
-            "snip": "The government alert arrived three hours after ARC's. Three hours. That's how long it takes to draft a text message when the building is on fire.",
-            "tag": "1:30pm",
+            "ttl": "A second cyber incident has affected financial and data systems. The PM will address the nation at 9pm. Do not attempt to use payment cards or banking apps. Stay local. Stay calm.",
+            "snip": "9pm. Not 6pm. Nine o'clock. The slot they save for wars and dead monarchs.",
+            "tag": "6:35pm",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM 9pm address — key points: Second phase has corrupted financial records across 23 nations. Transaction histories, balances, mortgage records overwritten. 'The timeline for restoration has changed.' NCSC assessment to follow.",
+            "snip": "ARC had the summary live before the PM finished the sentence. Corrupted. Not encrypted. Not locked. Overwritten. The records aren't coming back.",
+            "tag": "9:00pm",
+            "cls": "a"
           }
         ]
       },
@@ -3975,7 +3987,7 @@
           {
             "src": "BBC News",
             "ttl": "PM: 'The timeline for restoration has changed.' Second phase of cyber attack corrupts financial records across 23 nations.",
-            "snip": "The timeline for restoration has changed. Four hours ago the Chancellor said the worst was over.",
+            "snip": "Yesterday the Chancellor said the worst was over. That was twenty-seven hours ago.",
             "tag": "Breaking",
             "cls": "x"
           },
@@ -4010,20 +4022,39 @@
     ],
     "26a": [
       {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Remain at home. Essential travel only. The threat of further disruption remains active. NCSC is assessing the full scope of damage to financial data. Updates via ARC and BBC.",
+            "snip": "Further disruption remains active. Not 'is over.' Not 'is contained.' Remains active. They don't know if there's a Stage 3.",
+            "tag": "8:00am",
+            "cls": "x"
+          },
+          {
+            "src": "UK GOV",
+            "ttl": "The PM will chair COBRA at 10am. A further statement will be made this afternoon. Citizens are advised to conserve food supplies and check on vulnerable neighbours.",
+            "snip": "Conserve food supplies. Four words that land differently when the shops don't take cards and you spent your cash two days ago.",
+            "tag": "9:00am",
+            "cls": "x"
+          }
+        ]
+      },
+      {
         "sec": "ARC Emergency",
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Emergency food distribution will begin tomorrow at designated collection points. Your nearest collection point will be confirmed via ARC Emergency.",
-            "snip": "Tomorrow. Collection points. The language is changing. Not 'shops will reopen.' Collection points.",
+            "ttl": "NCSC assessment: the second phase of disruption targeted financial record infrastructure. The full extent of data loss is under investigation. ARC Emergency remains operational and unaffected.",
+            "snip": "ARC Emergency remains operational and unaffected. Everything else is broken. ARC isn't. That sentence is doing more work than it looks like.",
             "tag": "Update",
             "cls": "a"
           },
           {
             "src": "ARC",
-            "ttl": "Do NOT access legacy banking applications. Corrupted data may compromise device security. ARC Emergency is the only verified communications channel.",
-            "snip": "The only verified channel. Not one of several. The only one.",
-            "tag": "Warning",
+            "ttl": "PM statement — key points: 'The threat remains active. We are taking every precaution. Emergency food and fuel distribution plans are being finalised and will be announced tomorrow.'",
+            "snip": "Tomorrow. Everything is tomorrow. The food plan is tomorrow. The fuel plan is tomorrow. Today is just waiting.",
+            "tag": "3:00pm",
             "cls": "a"
           }
         ]
@@ -4033,8 +4064,8 @@
         "cards": [
           {
             "src": "Kate",
-            "ttl": "The community centre's opening as a walk-in clinic tomorrow. They need volunteers. I'm going in. You two okay? x",
-            "snip": "Kate. Always the first to sign up. Psychologist brain already filing the crisis response for later analysis.",
+            "ttl": "The community centre's talking about opening as a walk-in clinic. They need volunteers. Might go in tomorrow. You two okay? x",
+            "snip": "Even Kate is saying tomorrow. Nobody's doing anything today. Today is just the sound of phones buzzing with bad news.",
             "tag": "",
             "cls": ""
           },
@@ -4044,11 +4075,30 @@
             "snip": "Rupert and Jamie. Off grid before off grid was mandatory. Amy's mum says it like they've joined a cult.",
             "tag": "",
             "cls": "e"
+          },
+          {
+            "src": "Amy",
+            "ttl": "We've got enough for three days maybe. Four if we're careful. Did you check what's in the freezer?",
+            "snip": "Amy counting. Amy always counts when things get tight. Three days. Four if they're careful. The freezer is running on electricity that hasn't gone off yet.",
+            "tag": "",
+            "cls": ""
           }
         ]
       }
     ],
     "27": [
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Emergency food distribution begins today at designated collection points. Military logistics are coordinating with local authorities. Check ARC Emergency for your nearest collection point and schedule.",
+            "snip": "Today. Not tomorrow. Today. The word lands differently after twenty-four hours of 'tomorrow.'",
+            "tag": "7:00am",
+            "cls": "x"
+          }
+        ]
+      },
       {
         "sec": "ARC Emergency",
         "cards": [
@@ -4072,6 +4122,13 @@
             "snip": "Bring ARC device for verification. Not ID. Not a ration card. Your phone.",
             "tag": "Update",
             "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payment and food distribution are now active. We will not let this nation go hungry. We will not let this nation go dark.'",
+            "snip": "We will not let this nation go dark. He said it like a promise. Dev would hear it like a threat.",
+            "tag": "6:00pm",
+            "cls": "a"
           }
         ]
       },
@@ -4080,14 +4137,14 @@
         "cards": [
           {
             "src": "Kate",
-            "ttl": "Volunteering at the walk-in clinic. It's actually really well organised. Pop round for a glass of wine later? x",
+            "ttl": "At the walk-in clinic. It's actually really well organised. Pop round for a glass of wine later? x",
             "snip": "Kate sounds surprised it's well organised. She shouldn't be. She's a psychologist. She knows what well-organised crisis response looks like when it's been planned in advance.",
             "tag": "",
             "cls": ""
           },
           {
             "src": "Amy's mum",
-            "ttl": "Your brothers aren't answering. Your dad's worried sick. Have you tried Rupert?",
+            "ttl": "Got a hamper! Tins and bread and UHT but it's something. Your brothers still aren't answering. Have you tried Rupert?",
             "snip": "He hasn't tried Rupert. He's been trying not to think about what Rupert would say about the two hundred quid that just appeared on his phone.",
             "tag": "",
             "cls": "e"

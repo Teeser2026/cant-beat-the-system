@@ -3735,9 +3735,9 @@
           },
           {
             "src": "ARC",
-            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication. Full briefing details available in Threads.",
-            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did. And it said 'Threads' — its own word for its own feature. Already building the vocabulary.",
-            "tag": "Thread",
+            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
+            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
+            "tag": "6:00pm",
             "cls": ""
           }
         ]
@@ -3791,6 +3791,13 @@
             "snip": "Schools Monday. Cards working. The government sounds like it believes its own good news.",
             "tag": "Update",
             "cls": ""
+          },
+          {
+            "src": "UK GOV",
+            "ttl": "The PM will address the nation at 6pm. NCSC will provide a further assessment of the recovery. All BBC channels and ARC Emergency.",
+            "snip": "Another 6pm. But this one feels different. This one feels like good news coming.",
+            "tag": "4:00pm",
+            "cls": ""
           }
         ]
       },
@@ -3802,6 +3809,13 @@
             "ttl": "Payment systems are restoring. ARC Emergency remains your verified source for updates during the recovery period. Continue to check for updates.",
             "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
             "tag": "Update",
+            "cls": ""
+          },
+          {
+            "src": "ARC",
+            "ttl": "PM 6pm address — key points: 60% of payment terminals operational. Schools to reopen Monday. NCSC assessment: 'The correction appears contained.' Full recovery expected within days.",
+            "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
+            "tag": "6:00pm",
             "cls": ""
           }
         ]
@@ -3822,16 +3836,11 @@
             "snip": "Lovely joint of beef. The optimism of a woman who's already spent her emergency cash on a roasting joint.",
             "tag": "",
             "cls": "e"
-          }
-        ]
-      },
-      {
-        "sec": "Mesh",
-        "cards": [
+          },
           {
             "src": "Dev",
-            "ttl": "The firmware payload. Two stages. Stage 1 encrypted. Stage 2 is in the walls. When they reconnect the old systems, it triggers. Don't celebrate yet.",
-            "snip": "2am. Monospaced text on a mesh relay. He read it. He went back to sleep.",
+            "ttl": "The firmware payload. Two stages. Stage 1 encrypted. Stage 2 is in the walls. When they reconnect the old systems, it triggers. Don't celebrate yet. Setting up a Signal group — I'll add you when it's back up. Few days.",
+            "snip": "2am. He read it. He went back to sleep. The bit about Signal didn't register. The bit about Stage 2 didn't either.",
             "tag": "2:00am",
             "cls": ""
           }
@@ -4027,12 +4036,12 @@
         ]
       },
       {
-        "sec": "Mesh",
+        "sec": "Text Message",
         "cards": [
           {
-            "src": "Dev",
-            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
-            "snip": "Dev heard the same speech Simon heard. Dev heard a different sentence.",
+            "src": "Dev — Signal",
+            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number. More on the group later.",
+            "snip": "Signal came back two days ago. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
             "tag": "",
             "cls": ""
           }
@@ -4041,19 +4050,19 @@
     ],
     "28": [
       {
-        "sec": "Mesh",
+        "sec": "Signal Group",
         "cards": [
           {
-            "src": "Dev",
+            "src": "Dev — Signal",
             "ttl": "you there?",
-            "snip": "Two words. Three days of silence and then two words at 1am.",
+            "snip": "Two words. Three days of silence on the group and then two words at 1am.",
             "tag": "1:00am",
             "cls": ""
           },
           {
-            "src": "Dev",
+            "src": "Dev — Signal",
             "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
-            "snip": "Dev's frenzy. Months of silence and then everything at once. Expecting you to absorb it in an hour what took him weeks to map.",
+            "snip": "Dev's frenzy. The Signal group lit up at 1am and didn't stop until 4. Seven people reading. Nobody sleeping. Dev expecting you to absorb in an hour what took him weeks to map.",
             "tag": "Thread",
             "cls": ""
           }

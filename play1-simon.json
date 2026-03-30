@@ -4295,6 +4295,415 @@
           }
         ]
       }
+    ],
+    "30": [
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "The Prime Minister will address the nation at 8:00pm this evening. International simulcast across 23 nations. All BBC television and radio channels. ARC Emergency.",
+            "snip": "Twenty-three nations. Simultaneously. This is it.",
+            "tag": "PM Address",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM address confirmed 8:00pm tonight. Simultaneous broadcast across 23 nations. ARC will carry the full address and provide a summary immediately after.",
+            "snip": "",
+            "tag": "8pm Tonight",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "PM now addressing the nation. Full transcript available: PM’s Address to the Nation — Full Transcript.",
+            "snip": "",
+            "tag": "LIVE",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "DEBT JUBILEE — All personal debt cancelled with immediate effect. Mortgages, credit cards, student loans, overdrafts: zero. HM Treasury confirmation.",
+            "snip": "Amy’s hand on my arm.",
+            "tag": "Jubilee",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Registration now available. 90 seconds. Face scan, verbal confirmation, thumbprint. Welcome to the National Recovery Programme.",
+            "snip": "Ninety seconds. That’s all it takes.",
+            "tag": "Register Now",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "PM expected to announce ‘comprehensive national recovery programme’ tonight. Sources describe speech as ‘the most significant peacetime address in British history.’",
+            "snip": "Peacetime. An interesting word for it.",
+            "tag": "Breaking",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy’s mum",
+            "ttl": "THE MORTGAGE. Simon! THE MORTGAGE! Oh my God. I can’t stop crying. Peter’s opening wine. Come for Sunday lunch, all of you. I love you both so much.",
+            "snip": "She’s crying. Actually crying.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "Rupert",
+            "ttl": "Don’t register. Don’t do it. This is the buy. Everything before this was the setup. Think about what just happened. Please.",
+            "snip": "He’s not wrong. That’s the problem.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy’s dad (Peter)",
+            "ttl": "Your brother’s lost the plot. We’re going to the hub first thing. Best news we’ve had in five weeks. Don’t let Rupert get to you.",
+            "snip": "",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Dev — Signal",
+            "ttl": "speech metadata. file created 9 february. six days before the attack.",
+            "snip": "Six days.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "31": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "Welcome, George. Your registration is complete. Your services are now active. Your BritCoin allocation will be processed tonight.",
+            "snip": "He didn’t ask. He’s nineteen. He didn’t need to ask.",
+            "tag": "Registered",
+            "cls": "a"
+          },
+          {
+            "src": "AIDA",
+            "ttl": "Your household is partially registered. Complete registration to access full services including healthcare continuity, education platform, and monthly BritCoin allocation.",
+            "snip": "Partially registered. Like being partially pregnant.",
+            "tag": "1 of 4",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 23 million households in first 48 hours. 82% of eligible adults now registered. Community Recovery Hubs open 7am–10pm.",
+            "snip": "Eighty-two percent. In forty-eight hours.",
+            "tag": "82%",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Mum’s sent photos of her hamper. Have you seen it? Fresh bread, eggs, actual fruit. She’s over the moon.",
+            "snip": "Fresh bread. Five weeks of tinned spaghetti and then: fresh bread.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "George → family group",
+            "ttl": "I’ve registered. It took literally 90 seconds. Don’t be cross. It’s just an app.",
+            "snip": "",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Rupert",
+            "ttl": "Has George registered? For God’s sake. Don’t let the others do it. This is how they get the whole family.",
+            "snip": "Too late.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Kate",
+            "ttl": "Did you see the hampers? The registered ones are different. Fresh food, proper portions, named. The unregistered ones are still tins. Same queue, different basket.",
+            "snip": "Same queue. Different basket. That’s the whole thing.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "32": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "Your household is partially registered. 1 of 4 household members active. Complete registration to access full healthcare, education, and allocation services.",
+            "snip": "One of four. It’s counting us.",
+            "tag": "1 of 4",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 23 million households — 82%. BritCoin first full retail week begins. Schools reopen Monday for registered children.",
+            "snip": "",
+            "tag": "82%",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Sam",
+            "ttl": "Hey dad. Mum sorted the registration thing. It’s actually pretty good. My student finance is already in BC. Hope you’re ok x",
+            "snip": "Sorted. Like it was an admin task.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy’s mum",
+            "ttl": "The mortgage shows zero! Peter keeps checking. Zero. Come for lunch Sunday, love. Bring everyone. We’ve got more food than we know what to do with.",
+            "snip": "",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "Dev — Signal",
+            "ttl": "they’re taking iris + palm at the hubs. paragraph 94 of the digital citizen agreement. nobody reads it.",
+            "snip": "Nobody reads it. Including me.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Debt jubilee: ‘Transformative moment in British economic history.’ Chancellor confirms personal debt cancellation permanent and irrevocable.",
+            "snip": "",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      }
+    ],
+    "33": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "Sam has been registered. Welcome, Sam. Services active.",
+            "snip": "",
+            "tag": "Registered",
+            "cls": "a"
+          },
+          {
+            "src": "AIDA",
+            "ttl": "Emilia has been registered. Welcome, Emilia. Services active.",
+            "snip": "She’s sixteen. Her mum decided. I wasn’t asked.",
+            "tag": "Registered",
+            "cls": "a"
+          },
+          {
+            "src": "AIDA — Healthcare",
+            "ttl": "Chris’s care record has been linked to your household profile. Registered care home: Meadow View. Next of kin: Simon. Care plan accessible via your AIDA dashboard.",
+            "snip": "Dad doesn’t know what day it is. AIDA knows his blood pressure, his medication schedule, his son’s name. One of them still recognises me.",
+            "tag": "Care Linked",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 25 million households — 89%. Hub wait time: 6 minutes average.",
+            "snip": "Six minutes. From queueing for tins to registered citizen in six minutes.",
+            "tag": "89%",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Amy",
+            "ttl": "Your ex texted. Sam and Emilia are registered. She said it took two minutes for both of them.",
+            "snip": "",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      }
+    ],
+    "34": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "Your household is partially registered. 3 of 4 household members active. Simon, we’re here when you’re ready.",
+            "snip": "Three of four. It knows my name. It’s patient.",
+            "tag": "3 of 4",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 26 million households — 93%. Registered satisfaction: 97%.",
+            "snip": "Ninety-seven percent satisfied. The three percent are people like me. And we’re registering too.",
+            "tag": "93%",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Kate",
+            "ttl": "Glass of wine? Come round. I need to tell you something.",
+            "snip": "",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy’s mum",
+            "ttl": "Talk to Rupert, love. He won’t listen to me or your dad. Jamie’s the same. His prescription’s run out and he still won’t go to the hub.",
+            "snip": "Jamie’s prescription. Rupert’s stubbornness. Amy’s mum trying to hold it together.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      }
+    ],
+    "35": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA — Education",
+            "ttl": "Chloe’s classmates are preparing for mock examinations on the AIDA learning platform. Registration required for full platform access. Hub-based alternative available.",
+            "snip": "Hub-based alternative. Worksheets and a volunteer. While her friends get AI tutoring.",
+            "tag": "Education",
+            "cls": "a"
+          },
+          {
+            "src": "AIDA — Healthcare",
+            "ttl": "Simon, your healthcare profile is incomplete. Continuous glucose monitoring data cannot be synced without registration. Walk-in clinic appointments remain available.",
+            "snip": "It knows about the diabetes. It knows I need the CGM. It’s offering to fix the thing it’s using as leverage.",
+            "tag": "Health",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 26.5 million households — 95%. Schools fully operational for registered children.",
+            "snip": "",
+            "tag": "95%",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Chloe → Amy",
+            "ttl": "Can you PLEASE talk to Simon. Everyone’s back at school. I’m missing my mock revision. This is my actual A-levels Mum.",
+            "snip": "",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "Amy’s mum",
+            "ttl": "Jamie won’t eat. Rupert’s eyes have gone funny without his drops. Talk to your brothers, love. I’m worried sick.",
+            "snip": "The holdouts. Not a political movement. Just Amy’s brothers, hungry and going blind.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      }
+    ],
+    "36": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "We’re here when you’re ready, Simon.",
+            "snip": "It used my name. Again.",
+            "tag": "",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Dev — mesh",
+            "ttl": "Don’t do it.",
+            "snip": "Three words. From a farmstead with solar panels and a well.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Registration update: 27 million households — 96.5%.",
+            "snip": "Three and a half percent. That’s us. For two more days.",
+            "tag": "96.5%",
+            "cls": "a"
+          }
+        ]
+      }
     ]
   },
   "threads": [

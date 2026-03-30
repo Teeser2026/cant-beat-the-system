@@ -426,12 +426,15 @@ html, body {
 .card .snip { font-family: 'Crimson Pro', serif; font-size: 15px; font-style: italic; color: var(--dim); line-height: 1.6; opacity: .6; }
 .tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 2px 6px; margin-top: 7px; border-radius: 2px; background: rgba(196,149,106,.08); color: var(--warm); opacity: .6; }
 .tag.c { background: rgba(90,122,138,.08); color: var(--cold); }
-.tag.a { background: rgba(166,90,74,.15); color: var(--alert); }
+.tag.a { background: rgba(74,138,138,.12); color: #4a8a8a; }
 .tag.e { background: rgba(122,138,90,.08); color: var(--earth); }
 .tag.x { background: rgba(180,30,30,.25); color: #d43d3d; opacity: 1; animation: emergencyPulse 2s ease-in-out infinite; }
 .card:has(.tag.x) { border-color: rgba(180,30,30,.35); }
 .card:has(.tag.x) .ttl { color: #d43d3d; }
 .card:has(.tag.x) .src { color: rgba(180,30,30,.7); opacity: .7; }
+.card:has(.tag.a) { border-color: rgba(74,138,138,.3); }
+.card:has(.tag.a) .ttl { color: #4a8a8a; }
+.card:has(.tag.a) .src { color: rgba(74,138,138,.65); opacity: .7; }
 @keyframes emergencyPulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
 .save-signal { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .save-signal:hover { opacity: .7; color: var(--warm); }

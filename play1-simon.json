@@ -4897,69 +4897,46 @@
   },
   "threads": [
     {
-      "id": "finance-commerce",
-      "label": "Finance & Commerce",
+      "id": "official",
+      "label": "Official",
       "items": [
         {
-          "text": "FCA PS26/4 — ARC Implementation Notice",
+          "text": "UK GOVERNMENT EMERGENCY ALERT",
+          "src": "uk-gov",
+          "turn": 23,
+          "article": {
+            "style": "plain",
+            "source": "UK Government Emergency Services",
+            "title": "UK GOVERNMENT EMERGENCY ALERT",
+            "date": "15 February 2027 · 06:20 GMT",
+            "body": "A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding.\n\nIMMEDIATE ACTIONS\n\nRemain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.\n\nESSENTIAL SERVICES\n\nHospitals are operational for EMERGENCY ONLY — all routine appointments are postponed.\n\nPolice, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.\n\nMobile telephone and text services will be intermittent. Telephone or text message communication is EMERGENCY ONLY.\n\nWater, gas, and electricity supplies are being maintained. Intermittent outages may occur.\n\nAll card and electronic banking payments have been suspended whilst the network is being repaired.\n\nInternet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.\n\nOfficial updates will be issued via emergency message and through BBC television and radio channels.\n\nWHAT WE KNOW\n\nFinancial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.\n\nWHAT WE ARE DOING\n\nThe full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.\n\nDo not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.\n\nSTAY HOME. STAY CALM.\n\nUPDATES TO FOLLOW.",
+            "footer": "Source: UK Cabinet Office Emergency Services"
+          }
+        },
+        {
+          "text": "PM’s Address to the Nation — 15 February 2027",
           "src": "simon",
-          "turn": 8,
+          "turn": "23a",
           "article": {
             "style": "gov",
-            "source": "Financial Conduct Authority",
-            "title": "PS26/4: Authenticated Residential Computing (ARC) — Implementation Notice",
-            "date": "Published 14 June 2026 · Policy Statement",
-            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
-            "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
+            "source": "10 Downing Street",
+            "title": "PM’s Address to the Nation — 15 February 2027",
+            "date": "15 February 2027 — 6:00pm GMT — BBC Television, Radio and ARC Emergency",
+            "body": "<p>Good evening.</p><p>Yesterday, on Valentine’s Day, a little before midnight, a coordinated cyber attack struck the financial and digital infrastructure of the United Kingdom and twenty-two other nations. This has caused significant disruption to civilian systems in our nation and around the globe.</p><p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o’clock this morning and have been in continuous session since.</p><p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p><p>The power grid is stable and being actively managed. Water and gas supplies are unaffected.</p><p>Currently we are unable to access our bank accounts. Shops and businesses are unable to process our card payments. For this reason, for the next 36 hours retail, businesses and offices will be closed. A detailed plan for the opening of essential retail, including supermarkets, will be issued shortly.</p><p>Schools were closed today and will remain closed for the remainder of the week. Hospitals remain open for emergencies only; all routine and non-urgent care has been postponed, also for the remainder of the week. All public transport services are suspended for the same period of time.</p><p>Our emergency services are operational. Our military and police forces will be visible, on the streets, to ensure the safety of every one of us.</p><p>The emergency communications platform on your phones — many of you will have already received alerts through it — is functioning as designed. It will continue to be your most reliable source of verified information in the coming days.</p><p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p><p>I have spoken this afternoon with the leaders of every affected nation. We are united — not only in our response, but in our resolve. This was an attack on all of us. It will be met by all of us.</p><p>In the meantime, I ask just three things of you.</p><p>First: for the next 36 hours, stay local, stay safe. Do not drive, unless it is a matter of life or death. This is not a lockdown, but a request. Look after each other. Check on your neighbours. Share what you have.</p><p>Second: do not fear. We will restore these systems. We will provide answers. And we will ensure that every family in this country is supported through this period. This period of days, not weeks.</p><p>Third: please continue to follow the guidance issued through ARC, the emergency alert system and on all BBC television and radio channels.</p><p>I will address you again within 24 hours and there will be detailed updates from my colleagues in the Cabinet and experts from the National Cyber Security Centre during this period.</p><p>There are dark days, challenging days, ahead. We face them with our unique British spirit. We face them together.</p><p>Good night. And be well.</p>",
+            "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
         {
-          "text": "BIS mBridge: cross-border CBDC pilot",
-          "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
+          "text": "PM’s Address to the Nation — Full Transcript",
           "src": "simon",
-          "turn": 18
-        },
-        {
-          "text": "Digital Pound spec v3.2 — “privacy-preserving”",
-          "url": "https://www.bankofengland.co.uk/the-digital-pound",
-          "src": "simon",
-          "turn": 5
-        },
-        {
-          "text": "Catherine Austin Fitts — The Going Direct Reset",
-          "url": "https://solari.com/the-going-direct-reset/",
-          "src": "simon",
-          "turn": 5
-        },
-        {
-          "text": "Firmware analysis — undocumented OTA push (29 Jan 2027)",
-          "src": "dev",
-          "turn": 16,
+          "turn": 30,
           "article": {
-            "style": "paste",
-            "source": "No byline · No attribution · Forwarded via Signal",
-            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
-            "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
-            "footer": "Forwarded by Dev · Save to notes ↓"
-          }
-        },
-        {
-          "text": "Miles Harris — YOU... will be TOKENIZED",
-          "url": "https://www.youtube.com/watch?v=ZMninCdlxw0",
-          "src": "simon",
-          "turn": 13
-        },
-        {
-          "text": "What’s Sitting Inside Two Million Payment Terminals",
-          "src": "simon",
-          "turn": 17,
-          "article": {
-            "style": "news",
-            "source": "Payment Systems Analysis — Substack",
-            "title": "What’s Sitting Inside Two Million Payment Terminals",
-            "date": "30 January 2027",
-            "body": "<p>I’ve spent the last 72 hours examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 28–29 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
-            "footer": "Payment Systems Analysis — Substack"
+            "style": "gov",
+            "source": "10 Downing Street",
+            "title": "PM’s Address to the Nation — Full Transcript",
+            "date": "22 March 2027 — 8:00pm GMT — International Simulcast",
+            "body": "<p>Five weeks ago, on a Friday night, the lights went out.</p><p>For some of us it was the lights in our homes. For all of us it was more than this. Much more. The systems we relied upon to move our money, keep our records safe, that held the invisible architecture of daily life in place — they began to flicker. And then they went dark. And in that darkness, you did something remarkable.</p><p>You looked after each other.</p><p>I have spent these five weeks visiting communities across this country. I have sat in leisure centres, school gymnasiums and supermarket car parks. I have watched volunteers — strangers, neighbours, teenagers, pensioners — work together for the community and for one another, organising food distribution with nothing more than clipboards and goodwill. I have seen this country at its most bare and its most unified. And I have never been more proud to lead it.</p><p>But pride is not a plan. You deserve a plan, and I am here, today, to deliver that plan.</p><p>You deserve the truth. You have always deserved the truth. It pains me to say that prior to this egregious assault on our way of life, you have not always been given it. From this day onwards, that changes. That is my vow. And it is the vow of the leaders of every nation that stand together, as one, before you tonight. We will deliver the truth — openly, sincerely, and with integrity.</p><p>First, I must be clear about one thing. The system that failed us on the fourteenth of February will not be repaired — it cannot be repaired. Not slowly, not partially. The financial infrastructure that underpinned our economy — the databases, the transaction networks, the ledgers that recorded who owned what and who owed what — sustained damage beyond recovery. The experts we have consulted — and we have consulted every credible expert available — are unanimous.</p><p>We cannot go back. But we can, we must, and we will go forwards.</p><p>Because something survived.</p><p>Resilience. A resilience that lives within each and every one of us. A resilience we built together and that will last forever. The neighbours who checked on each other. The strangers who became friends in a queue. The teenagers who carried shopping for people they’d never met. You did not wait to be told. You did not wait for permission. You acted. We relied upon one another. And that reliance — that trust in each other — is the foundation everything else is built on.</p><p>But this is not all that survived.</p><p>In 2025, this government — alongside twenty-two partner nations — commissioned a programme. A resilience programme. A digital infrastructure designed not to replace the existing system, but to survive its failure. It was called the Autonomous Resilience Cloud — ARC. Of course you now recognise the name. It has been the backbone of the emergency information service on your phones these past five weeks. It was ARC that kept communication channels open. It was ARC that coordinated the hamper distribution. It was ARC that ensured your hospitals could still identify you and your children’s schools could still find you.</p><p>ARC was not a contingency. It was a conviction. A recognition that the systems we had inherited were fragile, centralised, and overdue for replacement. We hoped we would never need it. We were wrong to hope. We were right to build.</p><p>And built on the foundation of ARC is something new. Something we believe represents the most significant step forward in the relationship between citizen and state in the modern era.</p><p>Her name is AIDA.</p><p>AIDA — the Adaptive Intelligence for Domestic Assistance — is your personal recovery assistant. She is not a government database. She is not surveillance. She is a service — designed for us, accountable to us, and available to us all from tonight. AIDA will manage our recovery allocation. She will help us access healthcare, education, housing, employment. She will know what we need because we will tell her, and she will learn. She is built on transparency. Every decision she makes on our behalf is visible to us all. Every recommendation, we can refuse. She works for us. No longer us for them.</p><p>She managed the food — no one went hungry. She managed the power, and she kept the lights on.</p><p>Now I want to talk to you about what comes next. It impacts what we own and what we owe. This uncertainty has kept us awake these past five weeks.</p><p>I am here to tell you: tonight we will all sleep well.</p><p>As of eight o’clock this evening, His Majesty’s Treasury — in coordination with the Bank of England and twenty-two partner nations — has enacted a complete jubilee on personal debt. Your mortgage is cancelled. Your credit card balance is zero. Your student loan is cleared. Your overdraft is closed, at zero. This is not a freeze. This is not a deferral. The debt is gone. It does not exist. You owe nothing.</p><p>I will say that again, because I know you need to hear it twice.</p><p>You owe nothing. To anyone.</p><p>The old ledger is gone. The new one starts clean. BritCoin — our new digital allocation — will be credited to every registered household from midnight tonight. Ten thousand BritCoin per adult. Two thousand per child. A monthly allocation follows: fifteen hundred per adult, seven hundred and fifty per child. This is not furlough. This is not a loan. This is not temporary. This is the foundation of our new financial lives, and it begins tonight.</p><p>Registration is open now. It takes ninety seconds. You can do it from your phone, or you can visit your local Community Recovery Hub tomorrow morning. The process is simple because we built it to be simple. We have carried enough complexity.</p><p>What does registration mean? It means you are choosing to participate in both the National and the Global Recovery Programmes. It means AIDA can see each and every one of us — can allocate to us, can serve us, can protect us. Registration ensures that we can reach you. We can credit you. We can include you in the systems that will, from tonight, begin rebuilding our community, our country, our planet. Registration is not compulsory. But the recovery is real, and it is here, and it is here for all of us. No one should miss out. No one will miss out.</p><p>This is not a British project. It is global. This is not financial. It is human. This is not for the few. It is for us all.</p><p>Tonight, twenty-three nations are making this same announcement. The same jubilee. The same framework. The same commitment. From Washington to Berlin, from Tokyo to Canberra, from Delhi to São Paulo — the same words, the same promise, the same fresh start. This response was designed in five weeks, but built upon decades of planning, coordination, unity and trust.</p><p>The world you wake up to tomorrow will not look the same as the one you lost five weeks ago. It will look better. Not because the crisis was a gift — it was a catastrophe, and we grieve with every family that has suffered. But because the response to that catastrophe has given us permission to do what decades of politics could not: start again.</p><p>Tonight we register. Tomorrow we dream.</p><p>Our future is now.</p>",
+            "footer": "Source: HM Government — International Simulcast — 23 Nations"
           }
         }
       ]
@@ -4993,6 +4970,95 @@
             "body": "<p>The Home Office’s Seamless Border Programme went live this week at all 32 UK commercial airports. BBC Travel ran a helpful explainer about queue times. Nobody mentioned what the system is actually built on.</p><p>The facial recognition layer runs on ARC — the same Authentication and Registration Core that was quietly rolled out across UK payment terminals last autumn. The same framework. The same biometric template format. The same data architecture. Your face at the airport gate is verified by the same system that will verify your face at a card terminal.</p><p>This is called interoperability. It means one identity framework serving multiple functions — travel, payment, age verification, access control. Each function justified independently. Together they constitute a single digital identity infrastructure with no opt-out.</p><p>The 340 “secondary screening” referrals at Gatwick in week one are worth paying attention to. Under the old system, referrals were based on document irregularities — expired passports, damaged chips. Under the new system, referrals are generated by algorithmic confidence scores. The threshold is set by the Home Office. It is not published. It can be adjusted remotely.</p><p>What does a low confidence score correlate with? The Home Office won’t say. Independent researchers analysing similar systems in the EU have documented consistent bias against darker skin tones, non-Western facial structures, and — notably — individuals with sparse or irregular digital footprints. If you don’t have much data in the system, the system doesn’t recognise you well. The less integrated you are, the more friction you experience.</p><p>This is the algorithm ghetto. Not a physical barrier. A confidence score.</p><p>The programme is described as “voluntary for now” for land crossings and domestic rail. The March deadline for airlines to remove manual checks suggests the window for that language is short.</p><p>Nobody is being forced through the gate. The gate is simply the only gate that works.</p>",
             "footer": "The Interoperability Problem — Substack"
           }
+        }
+      ]
+    },
+    {
+      "id": "power-structures",
+      "label": "Power Structures",
+      "items": [
+        {
+          "text": "Corbett Report — The Only Real Solution to Digital ID",
+          "url": "https://corbettreport.com/the-only-real-solution-to-digital-id-solutionswatch/",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "RAF Wyton — 'Routine readiness exercise'",
+          "src": "simon",
+          "turn": 1,
+          "article": {
+            "style": "news",
+            "source": "BBC News — Cambridgeshire",
+            "title": "Military activity at RAF Wyton part of 'routine readiness exercise', MoD confirms",
+            "date": "17 October 2026",
+            "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
+            "annotation": "Third 'routine' exercise in six weeks. Front page of the BBC which is itself suspicious. Since when do routine exercises make the news? And since when does the Pathfinder Building run readiness drills three times in two months?",
+            "footer": "BBC News · Cambridgeshire · Filed under: Defence"
+          }
+        },
+        {
+          "text": "Deep Underground Military Bases",
+          "url": "https://www.deepundergroundmilitarybases.com",
+          "src": "simon",
+          "turn": 1
+        },
+        {
+          "text": "Derrick Broze — The Pyramid of Power",
+          "url": "https://thepyramidofpower.net",
+          "src": "simon",
+          "turn": 2
+        },
+        {
+          "text": "David A. Hughes — The Deep State & Their Project for a Global Concentration Camp",
+          "url": "https://www.youtube.com/watch?v=7CXCK2yjlJY&t=6625s",
+          "src": "simon",
+          "turn": 13
+        },
+        {
+          "text": "BBC News — Defence Secretary warns of “unprecedented cyber threat”",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "BBC News",
+            "title": "Defence Secretary warns of “unprecedented cyber threat” from hostile state actors",
+            "date": "31 January 2027",
+            "body": "<p>The Defence Secretary has warned that the UK faces an “unprecedented and evolving cyber threat” from hostile state actors, in a statement to the House of Commons that drew cross-party concern.</p><p>Speaking during Defence Questions, the Secretary of State said the government had “credible intelligence” of coordinated cyber reconnaissance against UK critical infrastructure, including financial systems, energy networks, and telecommunications.</p><p>“We are seeing a level of sophistication and coordination that goes beyond anything we have previously encountered,” the statement read. “The government is taking all necessary precautions to ensure the resilience of our national infrastructure.”</p><p>The National Cyber Security Centre confirmed it had raised the UK’s cyber threat level to “heightened” earlier this month — its second-highest classification — following what it described as “increased hostile activity against payment and banking systems.”</p><p>Opposition MPs pressed for details on which state actors were involved. The Defence Secretary declined to name specific nations but referenced “a pattern of behaviour consistent with state-sponsored groups operating out of Eastern Europe and the Asia-Pacific region.”</p><p>COBRA met twice this week. The Ministry of Defence has confirmed that “routine readiness exercises” have been expanded to include additional deployments across southern England — a move described by military analysts as “unusual for January.”</p><p>Financial markets reacted sharply. The FTSE 250 triggered a circuit breaker for the first time since September 2022, with trading paused for 11 minutes before resuming. The Bank of England issued a statement confirming “orderly market conditions are being maintained.”</p><p>The Prime Minister’s spokesperson said there was “no specific or imminent threat to the public” but urged citizens to “ensure household resilience measures are in place.”</p>",
+            "footer": "BBC News — Politics"
+          }
+        },
+        {
+          "text": "BBC News — MOD confirms expanded military exercises across southern England",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "BBC News",
+            "title": "MOD confirms expanded military exercises across southern England",
+            "date": "1 February 2027",
+            "body": "<p>The Ministry of Defence has confirmed that “routine readiness exercises” are being expanded to include additional military deployments across southern England, following similar exercises in East Anglia and the Midlands since October.</p><p>Residents in Hampshire, West Sussex, and Surrey have reported increased military vehicle movements on A-roads and motorways over the past week. A convoy of approximately 30 vehicles was observed on the A272 near Petersfield on Thursday afternoon.</p><p>An MOD spokesperson said the exercises were “pre-planned and routine” and part of the UK’s annual Defence Readiness Programme. “These exercises are not a response to any specific threat. They are designed to ensure our armed forces maintain the highest level of preparedness.”</p><p>However, defence analysts have noted that the timing and scale are unusual. Professor Michael Clarke, former director of RUSI, described the deployments as “significantly larger than the standard January exercise cycle” and suggested they may be related to the elevated cyber threat level announced by the NCSC earlier this month.</p><p>The exercises are scheduled to continue through mid-February. Local authorities have been advised to expect “minor disruption to traffic on some routes.”</p><p>RAF Wyton, which hosted the initial “routine exercise” in October, remains active. The base, home to the Joint Forces Intelligence Group, has not commented on its current operational status.</p>",
+            "footer": "BBC News — UK"
+          }
+        },
+        {
+          "text": "UK Defence Watch — The Deployment Pattern Nobody Is Talking About",
+          "src": "simon",
+          "turn": "17a",
+          "article": {
+            "style": "news",
+            "source": "UK Defence Watch — Substack",
+            "title": "The Deployment Pattern Nobody Is Talking About",
+            "date": "2 February 2027",
+            "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
+            "footer": "UK Defence Watch — Substack"
+          }
+        },
+        {
+          "text": "Weapons of Mass Distraction — Josh Walkos (We The Free)",
+          "url": "https://wethefree.substack.com/p/weapons-of-mass-distraction",
+          "src": "simon",
+          "turn": "6a"
         }
       ]
     },
@@ -5091,145 +5157,6 @@
       ]
     },
     {
-      "id": "philosophy-theology",
-      "label": "Philosophy & Theology",
-      "items": []
-    },
-    {
-      "id": "power-structures",
-      "label": "Power Structures",
-      "items": [
-        {
-          "text": "Corbett Report — The Only Real Solution to Digital ID",
-          "url": "https://corbettreport.com/the-only-real-solution-to-digital-id-solutionswatch/",
-          "src": "simon",
-          "turn": 5
-        },
-        {
-          "text": "RAF Wyton — 'Routine readiness exercise'",
-          "src": "simon",
-          "turn": 1,
-          "article": {
-            "style": "news",
-            "source": "BBC News — Cambridgeshire",
-            "title": "Military activity at RAF Wyton part of 'routine readiness exercise', MoD confirms",
-            "date": "17 October 2026",
-            "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
-            "annotation": "Third 'routine' exercise in six weeks. Front page of the BBC which is itself suspicious. Since when do routine exercises make the news? And since when does the Pathfinder Building run readiness drills three times in two months?",
-            "footer": "BBC News · Cambridgeshire · Filed under: Defence"
-          }
-        },
-        {
-          "text": "Deep Underground Military Bases",
-          "url": "https://www.deepundergroundmilitarybases.com",
-          "src": "simon",
-          "turn": 1
-        },
-        {
-          "text": "Derrick Broze — The Pyramid of Power",
-          "url": "https://thepyramidofpower.net",
-          "src": "simon",
-          "turn": 2
-        },
-        {
-          "text": "David A. Hughes — The Deep State & Their Project for a Global Concentration Camp",
-          "url": "https://www.youtube.com/watch?v=7CXCK2yjlJY&t=6625s",
-          "src": "simon",
-          "turn": 13
-        },
-        {
-          "text": "BBC News — Defence Secretary warns of “unprecedented cyber threat”",
-          "src": "simon",
-          "turn": "17a",
-          "article": {
-            "style": "news",
-            "source": "BBC News",
-            "title": "Defence Secretary warns of “unprecedented cyber threat” from hostile state actors",
-            "date": "31 January 2027",
-            "body": "<p>The Defence Secretary has warned that the UK faces an “unprecedented and evolving cyber threat” from hostile state actors, in a statement to the House of Commons that drew cross-party concern.</p><p>Speaking during Defence Questions, the Secretary of State said the government had “credible intelligence” of coordinated cyber reconnaissance against UK critical infrastructure, including financial systems, energy networks, and telecommunications.</p><p>“We are seeing a level of sophistication and coordination that goes beyond anything we have previously encountered,” the statement read. “The government is taking all necessary precautions to ensure the resilience of our national infrastructure.”</p><p>The National Cyber Security Centre confirmed it had raised the UK’s cyber threat level to “heightened” earlier this month — its second-highest classification — following what it described as “increased hostile activity against payment and banking systems.”</p><p>Opposition MPs pressed for details on which state actors were involved. The Defence Secretary declined to name specific nations but referenced “a pattern of behaviour consistent with state-sponsored groups operating out of Eastern Europe and the Asia-Pacific region.”</p><p>COBRA met twice this week. The Ministry of Defence has confirmed that “routine readiness exercises” have been expanded to include additional deployments across southern England — a move described by military analysts as “unusual for January.”</p><p>Financial markets reacted sharply. The FTSE 250 triggered a circuit breaker for the first time since September 2022, with trading paused for 11 minutes before resuming. The Bank of England issued a statement confirming “orderly market conditions are being maintained.”</p><p>The Prime Minister’s spokesperson said there was “no specific or imminent threat to the public” but urged citizens to “ensure household resilience measures are in place.”</p>",
-            "footer": "BBC News — Politics"
-          }
-        },
-        {
-          "text": "BBC News — MOD confirms expanded military exercises across southern England",
-          "src": "simon",
-          "turn": "17a",
-          "article": {
-            "style": "news",
-            "source": "BBC News",
-            "title": "MOD confirms expanded military exercises across southern England",
-            "date": "1 February 2027",
-            "body": "<p>The Ministry of Defence has confirmed that “routine readiness exercises” are being expanded to include additional military deployments across southern England, following similar exercises in East Anglia and the Midlands since October.</p><p>Residents in Hampshire, West Sussex, and Surrey have reported increased military vehicle movements on A-roads and motorways over the past week. A convoy of approximately 30 vehicles was observed on the A272 near Petersfield on Thursday afternoon.</p><p>An MOD spokesperson said the exercises were “pre-planned and routine” and part of the UK’s annual Defence Readiness Programme. “These exercises are not a response to any specific threat. They are designed to ensure our armed forces maintain the highest level of preparedness.”</p><p>However, defence analysts have noted that the timing and scale are unusual. Professor Michael Clarke, former director of RUSI, described the deployments as “significantly larger than the standard January exercise cycle” and suggested they may be related to the elevated cyber threat level announced by the NCSC earlier this month.</p><p>The exercises are scheduled to continue through mid-February. Local authorities have been advised to expect “minor disruption to traffic on some routes.”</p><p>RAF Wyton, which hosted the initial “routine exercise” in October, remains active. The base, home to the Joint Forces Intelligence Group, has not commented on its current operational status.</p>",
-            "footer": "BBC News — UK"
-          }
-        },
-        {
-          "text": "UK Defence Watch — The Deployment Pattern Nobody Is Talking About",
-          "src": "simon",
-          "turn": "17a",
-          "article": {
-            "style": "news",
-            "source": "UK Defence Watch — Substack",
-            "title": "The Deployment Pattern Nobody Is Talking About",
-            "date": "2 February 2027",
-            "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
-            "footer": "UK Defence Watch — Substack"
-          }
-        },
-        {
-          "text": "Weapons of Mass Distraction — Josh Walkos (We The Free)",
-          "url": "https://wethefree.substack.com/p/weapons-of-mass-distraction",
-          "src": "simon",
-          "turn": "6a"
-        }
-      ]
-    },
-    {
-      "id": "official",
-      "label": "Official",
-      "items": [
-        {
-          "text": "UK GOVERNMENT EMERGENCY ALERT",
-          "src": "uk-gov",
-          "turn": 23,
-          "article": {
-            "style": "plain",
-            "source": "UK Government Emergency Services",
-            "title": "UK GOVERNMENT EMERGENCY ALERT",
-            "date": "15 February 2027 · 06:20 GMT",
-            "body": "A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding.\n\nIMMEDIATE ACTIONS\n\nRemain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.\n\nESSENTIAL SERVICES\n\nHospitals are operational for EMERGENCY ONLY — all routine appointments are postponed.\n\nPolice, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.\n\nMobile telephone and text services will be intermittent. Telephone or text message communication is EMERGENCY ONLY.\n\nWater, gas, and electricity supplies are being maintained. Intermittent outages may occur.\n\nAll card and electronic banking payments have been suspended whilst the network is being repaired.\n\nInternet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.\n\nOfficial updates will be issued via emergency message and through BBC television and radio channels.\n\nWHAT WE KNOW\n\nFinancial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.\n\nWHAT WE ARE DOING\n\nThe full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.\n\nDo not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.\n\nSTAY HOME. STAY CALM.\n\nUPDATES TO FOLLOW.",
-            "footer": "Source: UK Cabinet Office Emergency Services"
-          }
-        },
-        {
-          "text": "PM’s Address to the Nation — 15 February 2027",
-          "src": "simon",
-          "turn": "23a",
-          "article": {
-            "style": "gov",
-            "source": "10 Downing Street",
-            "title": "PM’s Address to the Nation — 15 February 2027",
-            "date": "15 February 2027 — 6:00pm GMT — BBC Television, Radio and ARC Emergency",
-            "body": "<p>Good evening.</p><p>Yesterday, on Valentine’s Day, a little before midnight, a coordinated cyber attack struck the financial and digital infrastructure of the United Kingdom and twenty-two other nations. This has caused significant disruption to civilian systems in our nation and around the globe.</p><p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o’clock this morning and have been in continuous session since.</p><p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p><p>The power grid is stable and being actively managed. Water and gas supplies are unaffected.</p><p>Currently we are unable to access our bank accounts. Shops and businesses are unable to process our card payments. For this reason, for the next 36 hours retail, businesses and offices will be closed. A detailed plan for the opening of essential retail, including supermarkets, will be issued shortly.</p><p>Schools were closed today and will remain closed for the remainder of the week. Hospitals remain open for emergencies only; all routine and non-urgent care has been postponed, also for the remainder of the week. All public transport services are suspended for the same period of time.</p><p>Our emergency services are operational. Our military and police forces will be visible, on the streets, to ensure the safety of every one of us.</p><p>The emergency communications platform on your phones — many of you will have already received alerts through it — is functioning as designed. It will continue to be your most reliable source of verified information in the coming days.</p><p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p><p>I have spoken this afternoon with the leaders of every affected nation. We are united — not only in our response, but in our resolve. This was an attack on all of us. It will be met by all of us.</p><p>In the meantime, I ask just three things of you.</p><p>First: for the next 36 hours, stay local, stay safe. Do not drive, unless it is a matter of life or death. This is not a lockdown, but a request. Look after each other. Check on your neighbours. Share what you have.</p><p>Second: do not fear. We will restore these systems. We will provide answers. And we will ensure that every family in this country is supported through this period. This period of days, not weeks.</p><p>Third: please continue to follow the guidance issued through ARC, the emergency alert system and on all BBC television and radio channels.</p><p>I will address you again within 24 hours and there will be detailed updates from my colleagues in the Cabinet and experts from the National Cyber Security Centre during this period.</p><p>There are dark days, challenging days, ahead. We face them with our unique British spirit. We face them together.</p><p>Good night. And be well.</p>",
-            "footer": "Source: 10 Downing Street · Official Transcript"
-          }
-        },
-        {
-          "text": "PM’s Address to the Nation — Full Transcript",
-          "src": "simon",
-          "turn": 30,
-          "article": {
-            "style": "gov",
-            "source": "10 Downing Street",
-            "title": "PM’s Address to the Nation — Full Transcript",
-            "date": "22 March 2027 — 8:00pm GMT — International Simulcast",
-            "body": "<p>Five weeks ago, on a Friday night, the lights went out.</p><p>For some of us it was the lights in our homes. For all of us it was more than this. Much more. The systems we relied upon to move our money, keep our records safe, that held the invisible architecture of daily life in place — they began to flicker. And then they went dark. And in that darkness, you did something remarkable.</p><p>You looked after each other.</p><p>I have spent these five weeks visiting communities across this country. I have sat in leisure centres, school gymnasiums and supermarket car parks. I have watched volunteers — strangers, neighbours, teenagers, pensioners — work together for the community and for one another, organising food distribution with nothing more than clipboards and goodwill. I have seen this country at its most bare and its most unified. And I have never been more proud to lead it.</p><p>But pride is not a plan. You deserve a plan, and I am here, today, to deliver that plan.</p><p>You deserve the truth. You have always deserved the truth. It pains me to say that prior to this egregious assault on our way of life, you have not always been given it. From this day onwards, that changes. That is my vow. And it is the vow of the leaders of every nation that stand together, as one, before you tonight. We will deliver the truth — openly, sincerely, and with integrity.</p><p>First, I must be clear about one thing. The system that failed us on the fourteenth of February will not be repaired — it cannot be repaired. Not slowly, not partially. The financial infrastructure that underpinned our economy — the databases, the transaction networks, the ledgers that recorded who owned what and who owed what — sustained damage beyond recovery. The experts we have consulted — and we have consulted every credible expert available — are unanimous.</p><p>We cannot go back. But we can, we must, and we will go forwards.</p><p>Because something survived.</p><p>Resilience. A resilience that lives within each and every one of us. A resilience we built together and that will last forever. The neighbours who checked on each other. The strangers who became friends in a queue. The teenagers who carried shopping for people they’d never met. You did not wait to be told. You did not wait for permission. You acted. We relied upon one another. And that reliance — that trust in each other — is the foundation everything else is built on.</p><p>But this is not all that survived.</p><p>In 2025, this government — alongside twenty-two partner nations — commissioned a programme. A resilience programme. A digital infrastructure designed not to replace the existing system, but to survive its failure. It was called the Autonomous Resilience Cloud — ARC. Of course you now recognise the name. It has been the backbone of the emergency information service on your phones these past five weeks. It was ARC that kept communication channels open. It was ARC that coordinated the hamper distribution. It was ARC that ensured your hospitals could still identify you and your children’s schools could still find you.</p><p>ARC was not a contingency. It was a conviction. A recognition that the systems we had inherited were fragile, centralised, and overdue for replacement. We hoped we would never need it. We were wrong to hope. We were right to build.</p><p>And built on the foundation of ARC is something new. Something we believe represents the most significant step forward in the relationship between citizen and state in the modern era.</p><p>Her name is AIDA.</p><p>AIDA — the Adaptive Intelligence for Domestic Assistance — is your personal recovery assistant. She is not a government database. She is not surveillance. She is a service — designed for us, accountable to us, and available to us all from tonight. AIDA will manage our recovery allocation. She will help us access healthcare, education, housing, employment. She will know what we need because we will tell her, and she will learn. She is built on transparency. Every decision she makes on our behalf is visible to us all. Every recommendation, we can refuse. She works for us. No longer us for them.</p><p>She managed the food — no one went hungry. She managed the power, and she kept the lights on.</p><p>Now I want to talk to you about what comes next. It impacts what we own and what we owe. This uncertainty has kept us awake these past five weeks.</p><p>I am here to tell you: tonight we will all sleep well.</p><p>As of eight o’clock this evening, His Majesty’s Treasury — in coordination with the Bank of England and twenty-two partner nations — has enacted a complete jubilee on personal debt. Your mortgage is cancelled. Your credit card balance is zero. Your student loan is cleared. Your overdraft is closed, at zero. This is not a freeze. This is not a deferral. The debt is gone. It does not exist. You owe nothing.</p><p>I will say that again, because I know you need to hear it twice.</p><p>You owe nothing. To anyone.</p><p>The old ledger is gone. The new one starts clean. BritCoin — our new digital allocation — will be credited to every registered household from midnight tonight. Ten thousand BritCoin per adult. Two thousand per child. A monthly allocation follows: fifteen hundred per adult, seven hundred and fifty per child. This is not furlough. This is not a loan. This is not temporary. This is the foundation of our new financial lives, and it begins tonight.</p><p>Registration is open now. It takes ninety seconds. You can do it from your phone, or you can visit your local Community Recovery Hub tomorrow morning. The process is simple because we built it to be simple. We have carried enough complexity.</p><p>What does registration mean? It means you are choosing to participate in both the National and the Global Recovery Programmes. It means AIDA can see each and every one of us — can allocate to us, can serve us, can protect us. Registration ensures that we can reach you. We can credit you. We can include you in the systems that will, from tonight, begin rebuilding our community, our country, our planet. Registration is not compulsory. But the recovery is real, and it is here, and it is here for all of us. No one should miss out. No one will miss out.</p><p>This is not a British project. It is global. This is not financial. It is human. This is not for the few. It is for us all.</p><p>Tonight, twenty-three nations are making this same announcement. The same jubilee. The same framework. The same commitment. From Washington to Berlin, from Tokyo to Canberra, from Delhi to São Paulo — the same words, the same promise, the same fresh start. This response was designed in five weeks, but built upon decades of planning, coordination, unity and trust.</p><p>The world you wake up to tomorrow will not look the same as the one you lost five weeks ago. It will look better. Not because the crisis was a gift — it was a catastrophe, and we grieve with every family that has suffered. But because the response to that catastrophe has given us permission to do what decades of politics could not: start again.</p><p>Tonight we register. Tomorrow we dream.</p><p>Our future is now.</p>",
-            "footer": "Source: HM Government — International Simulcast — 23 Nations"
-          }
-        }
-      ]
-    },
-    {
       "id": "pattern-recognition",
       "label": "Pattern Recognition",
       "items": [
@@ -5252,6 +5179,79 @@
           }
         }
       ]
+    },
+    {
+      "id": "finance-commerce",
+      "label": "Finance & Commerce",
+      "items": [
+        {
+          "text": "FCA PS26/4 — ARC Implementation Notice",
+          "src": "simon",
+          "turn": 8,
+          "article": {
+            "style": "gov",
+            "source": "Financial Conduct Authority",
+            "title": "PS26/4: Authenticated Residential Computing (ARC) — Implementation Notice",
+            "date": "Published 14 June 2026 · Policy Statement",
+            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
+            "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
+          }
+        },
+        {
+          "text": "BIS mBridge: cross-border CBDC pilot",
+          "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
+          "src": "simon",
+          "turn": 18
+        },
+        {
+          "text": "Digital Pound spec v3.2 — “privacy-preserving”",
+          "url": "https://www.bankofengland.co.uk/the-digital-pound",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "Catherine Austin Fitts — The Going Direct Reset",
+          "url": "https://solari.com/the-going-direct-reset/",
+          "src": "simon",
+          "turn": 5
+        },
+        {
+          "text": "Firmware analysis — undocumented OTA push (29 Jan 2027)",
+          "src": "dev",
+          "turn": 16,
+          "article": {
+            "style": "paste",
+            "source": "No byline · No attribution · Forwarded via Signal",
+            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
+            "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
+            "footer": "Forwarded by Dev · Save to notes ↓"
+          }
+        },
+        {
+          "text": "Miles Harris — YOU... will be TOKENIZED",
+          "url": "https://www.youtube.com/watch?v=ZMninCdlxw0",
+          "src": "simon",
+          "turn": 13
+        },
+        {
+          "text": "What’s Sitting Inside Two Million Payment Terminals",
+          "src": "simon",
+          "turn": 17,
+          "article": {
+            "style": "news",
+            "source": "Payment Systems Analysis — Substack",
+            "title": "What’s Sitting Inside Two Million Payment Terminals",
+            "date": "30 January 2027",
+            "body": "<p>I’ve spent the last 72 hours examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 28–29 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
+            "footer": "Payment Systems Analysis — Substack"
+          }
+        }
+      ]
+    },
+    {
+      "id": "philosophy-theology",
+      "label": "Philosophy & Theology",
+      "items": []
     },
     {
       "id": "reader-own",

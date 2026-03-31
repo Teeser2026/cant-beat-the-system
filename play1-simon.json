@@ -104,20 +104,40 @@
           "t": "Feeling fresh, invigorated, ready to go. Nine hours of unbroken sleep. Day six without a glass of wine. Herbal infusions before bed. Ginger and turmeric my favourite. Neutralise those free radicals, baby. The morning juice. Spinach (freshly picked from the allotment each morning), apple juice (pressed at the local orchard), a splash of lemon, a handful of spirulina (it ‘might’ help lower blood pressure, it ‘might’ have anti-inflammatory properties). Fifteen quid for a bag of tasteless powder. It better do something."
         },
         {
-          "t": "The late autumn sun is already up. Watery, but still radiating a gentle, comforting warmth. The last of the dewdrops evaporate around your bare feet as you stretch your arms up to the heavens and try and click that annoying knot in your lower neck that you just can’t quite get to. You assess the work planned for the morning. Late-season potatoes to dig up. The last of the tomatoes to pick. Dahlias to cut, they’ve been remarkable this year, the Café au Lait in particular. Plus the least enticing, neutralising the weeds."
+          "t": "The late autumn sun is already up. Watery, but still radiating a gentle, comforting warmth. The last of the dewdrops evaporate around my bare feet as I stretch my arms up to the heavens and try and click that annoying knot in my lower neck that I just can’t quite get to. I assess the work planned for the morning. Late-season potatoes to dig up. The last of the tomatoes to pick. Dahlias to cut, they’ve been remarkable this year, the Café au Lait in particular. Plus the least enticing job — the eternal battle with the weeds. Perhaps I should just call them all wild flowers and be done with it?"
         },
         {
-          "t": "Your phone detox has entered day three. It’s on the kitchen table. Out of sight and all that. Having said that emails don’t check themselves. Well they do, but the AI bot that you didn’t ask for or install, but is actually quite useful, has an annoying habit of occasionally ‘helpfully’ auto-filling crucial work emails in junk. So, cup of green tea, glass of water (must order a new filter) and the morning dose of ubiquinol, NAC and Taurine. A quick scan of emails. And back out to the garden."
+          "t": "My phone detox has entered day three. It’s on the kitchen table. Out of sight and all that. Having said that emails don’t check themselves. Well they do, but the AI bot that I didn’t ask for or install (actually <em>quite</em> useful) has an annoying habit of occasionally auto-filling crucial work emails in junk. I did say quite useful."
         },
         {
-          "t": "Kettle on. There it is on the table. My precious. The automaton takes over. Just a quick scroll. X. To ‘check the news’."
+          "t": "So, cup of green tea, glass of water (must order a new filter) and the morning dose of ubiquinol, NAC and Taurine. Quick scan of emails. Back out into the garden."
         },
         {
-          "t": "Turns out the news was quite interesting. Reports of military manoeuvres at Royal Air Force Wyton. The ‘top-secret’ (so secret it’s the first thing that comes up on a google for ‘secret military bases UK’) Pathfinder Building is Britain’s premier military spy base. You remember it mentioned in an article you read a few years ago about DUMBs — Deep Underground Military Bases. Nuclear fallout bunker that could keep several thousand ‘elites’ alive for two decades. Or something. Maybe they keep the Greys there. Anyway, the quick check has now ticked over 90 minutes. Learn your lesson, dickhead. The cottage garden waits for no man. The military activity is hardly covert though. Front page of BBC, no less. If it’s in the news, it’s likely a ruse. They’re probably planning something though. They’ve always been planning something. Allegedly. According to ‘inside sources’, ‘data leaks’ or ‘whistleblowers’.",
+          "t": "Kettle on. There it is on the table."
+        },
+        {
+          "t": "My precious.",
           "c": "inner"
         },
         {
-          "t": "You let it wash over you. Control the controllables.<br>Zen and the art of digging up spuds.",
+          "t": "The automaton takes over. Just a quick scroll of X. To ‘check the news’."
+        },
+        {
+          "t": "Turns out the news was quite interesting. Reports of military manoeuvres at Royal Air Force Wyton. The ‘top-secret’ (so secret it’s the first thing that comes up on a google for ‘secret military bases UK’) Pathfinder Building is Britain’s premier military spy base. I remember it was mentioned in an article I read a few years ago about D.U.M.B.s (Deep Underground Military Bases). Nuclear fallout bunker that could keep several thousand ‘elites’ alive for two decades. So they say. Maybe they keep the Greys there? And Elvis.",
+          "c": "inner"
+        },
+        {
+          "t": "Anyway, the quick check has now ticked over 90 minutes."
+        },
+        {
+          "t": "Learn your lesson, dickhead.",
+          "c": "inner"
+        },
+        {
+          "t": "The cottage garden waits for no man. The military activity is hardly covert though. Front page of BBC, no less. If it’s in the news, it’s likely a ruse. They’re probably planning something though. They’ve always been planning something. Allegedly. According to ‘inside sources’, ‘data leaks’ or ‘whistleblowers’."
+        },
+        {
+          "t": "I let it wash over me. Control the controllables.<br>Zen and the art of digging up spuds.",
           "c": "solo"
         }
       ],
@@ -170,22 +190,32 @@
       "date": "October 2026",
       "paras": [
         {
-          "t": "The potatoes, dug up last week, were exceptional. Actually tasted like potatoes. Gently boiled, a large knob of butter. Perfection. You feel a long way from self-sufficiency though. Weeks of toil, turning soil, watering and nurture yielded two, maybe three weeks worth. The tomatoes were pleasant enough for a family of six tricolore salad lovers. A labour of love that had to be topped up weekly with Isle of Wight reinforcements from Waitrose, which you reluctantly admit were sweeter, juicier, firmer."
+          "t": "The potatoes, dug up last week, were exceptional. Actually tasted like potatoes. Gently boiled, a large knob of butter. Perfection. I feel a long way from self-sufficiency though. Weeks of nurture, toil, turning soil and watering yielded two, maybe three weeks worth. The Marmande tomatoes were very pleasant but there weren’t nearly enough for a family of six Tricolore salad addicts. A labour of love that had to be topped up each week with Isle of Wight selection box reinforcements from Waitrose. I reluctantly admit these were just slightly sweeter, juicier and firmer than our homegrown crop. But they didn’t fill me with such a sense of enormous wellbeing."
         },
         {
-          "t": "The sunshine skies of last week have turned into an overcast perma-drizzle. It’s certainly not cold yet, but the evenings have a chill. You’ve stubbornly resisted putting the central heating on. The underfloor heating in the bathroom keeps the chill off in there. You’ve yet to light a fire. Must organise a firewood delivery. The logs in the garden remain unspoilt. The axe bought for this purpose as sharp as the day it was delivered."
+          "t": "The sunshine skies of early-October have turned into an overcast perma-drizzle. It’s certainly not cold yet, but the evenings have a chill. I’ve stubbornly resisted putting the central heating on. The underfloor heating in the bathroom keeps the chill off in there. I’ve yet to light a fire either."
         },
         {
-          "t": "You sit down for a ‘break’ — a spot of pre-cooking ‘research’ on X. Usual mix of rage-bait, distraction and division. An ‘Islamophobic protest’ up north somewhere. Retweeted (old habits die hard) by the usual suspects."
+          "t": "Must organise a firewood delivery.",
+          "c": "inner"
+        },
+        {
+          "t": "The logs in the garden remain un-split. The axe bought especially for this purpose remains pristine, as sharp as the day it was delivered."
+        },
+        {
+          "t": "I sit down for a ‘break’ — a spot of pre-cooking ‘research’ on X. The daily mix of rage-bait, distraction and division. An ‘Islamophobic protest’ against the ‘Boat Invaders’ up north somewhere. Retweeted (the old lingo never dies) by the usual suspects, AI-created British Bulldogs waving St. George flags and ‘Refugees are welcome here’ bots in the replies. Divide and conquer."
         },
         {
           "t": "KEEP DOOMSCROLLING"
         },
         {
-          "t": "You see a sharp comment from Derrick Broze. You haven’t read much of his stuff for ages. Seems genuine. You remember a spat he had with Alison McDowell a few years ago about the use of crypto in the ‘freedom movement’. You never found out how that resolved itself, or if you did you can’t remember. You do remember that you’ve had Derrick’s ‘The Pyramid of Power’ presentation open in your browser for months, barely skimmed, mentally flagged as ‘Must Read’."
+          "t": "I see a sharp comment from Derrick Broze. I haven’t read much of his stuff for ages. Seems a genuine dude. I remember a spat he had with Alison McDowell a few years ago about the use of crypto in the ‘freedom movement’. I never found out how that resolved itself, or if I did I can’t remember."
         },
         {
-          "t": "No time like the present.<br>Down the rabbit hole you go.",
+          "t": "Seeing his post reminds me that I’ve had Derrick’s ‘The Pyramid of Power’ documentary open in my browser for months, barely skimmed, mentally flagged as ‘Must Read’."
+        },
+        {
+          "t": "No time like the present.<br>Down the rabbit hole I go.",
           "c": "solo"
         }
       ],
@@ -217,20 +247,46 @@
       "date": "October 2026",
       "paras": [
         {
-          "t": "Early starts. 5 days in a row. Working until it's too dark or you're too tired. You wouldn't say you were born to do this sort of thing. Not many people would say, oh yeah, Simon, he's 'handy'. But I'm not totally inept. It's definitely a steep learning curve and I'd thrown myself in at the deep end. This project also marked my first use of AI. I needed to work out how far apart I should space the joists. I'd promised myself I wouldn't jump on to the slippery slope bandwagon of ChatGPT. But I wanted to make the most of the light and do some actual work, rather than using my brain, pen, pad and calculator. So I capitulated. Answer in seconds, with hints and tips I didn't even ask for. But turned out to be very useful. Clever. Too clever."
+          "t": "Early starts. 5 days in a row. Working until it’s too dark or I’m too tired. I wouldn’t say I was born to do this sort of thing. Not many people would say ‘Oh yeah, Simon, he’s handy’. But I’m not totally inept."
         },
         {
-          "t": "I haven't told you what I'm doing. You may have guessed? Building a deck. In the garden. To put our bell tent on. Long story short, Amy suggested we buy a bell tent earlier this year. Another 'room' in the garden. A place to have a late night drink when the nights turn nippier. Somewhere the kids (I still say kids, they're 16,17,18 and 19, that officially makes me old) could party. Where their friends could crash over. It wouldn't surprise anyone that knows me in the slightest that I didn't buy a 3 or 4m tent, large enough to do the job, small enough to put up and take down with ease. And didn't cost the earth. No, no. I bought the premium 'Bell Tent Plus' 8m. Half moon coir matting. Wood burning stove. The full monty. We put it up on the grass. Quite straightforward actually, other than the fight to get the central pole upright. Amy dressed it with her usual panache and eye for getting things just right. A beautiful king size bed that we'd been storing in the shed, ethnic rugs, animal skins, an abundance of cushions ( the de rigueur female accessory) and vintage furniture. It looks like something out of a VIP boutique camping area of a bougie festival. I added 100m of festoon lights. George and his girlfriend slept in it twice. The dogs were bemused by its gigantic presence at first, but soon realised it gave them shelter from the summer sun."
+          "t": "This time I’d thrown myself in at the deep end with this project. I could’ve got a carpenter in to do the job in half the time, but where’s the satisfaction in that?"
         },
         {
-          "t": "A few weeks later, Mother Nature landed a one-two of misfortune. The left jab, unbeknown to us a mole had decided to burrow up under the central pole. Structural stability compromised. The right hook to floor us, a storm, violent 70mph gusts. A soggy, collapsed pile of canvas greeted us upon inspection."
+          "t": "Today also marked a capitulation. My first ever use of AI. I needed to work out how far apart I should space the joists. I’d promised myself I wouldn’t jump on to the slippery slope bandwagon of ChatGPT. But I wanted to make the most of the light and do some actual work, rather than using my brain, pen, pad and calculator. So I created an account. My first step into a brave new world. Answer in seconds, with hints and tips I didn’t even ask for, but turned out to be very useful."
+        },
+        {
+          "t": "Clever. Too clever by half.",
+          "c": "inner"
+        },
+        {
+          "t": "I haven’t told you what I’m doing. You may have guessed? Building a deck. In the garden. To put our bell tent on. Long story short, earlier in the summer, Amy suggested we buy a bell tent. Another ‘room’ in the garden. A place to have a late night drink when the nights turn nippier. An extra roof (of sorts) for friends to crash under. Somewhere the kids could party. I still say kids — the girls are sixteen and seventeen, the boys eighteen and nineteen. That officially makes me an old bastard."
+        },
+        {
+          "t": "It wouldn’t surprise anyone that knows me in the slightest to learn that I didn’t buy a 3 or 4m tent — large enough to do the job, small enough to put up and take down with ease. And didn’t cost the earth. Oh no. I bought the premium ‘Bell Tent Plus’ 8m. Half moon coir matting. Wood burning stove. The full monty."
+        },
+        {
+          "t": "We’d put it up on the grass. Quite straightforward actually, other than the fight to get the central pole upright. Amy dressed it with her usual panache and her eye for getting things <em>just right</em>. The centrepiece — a beautiful king size bed that we’d been storing in the shed, surrounded by ethnic rugs, animal skins, an abundance of cushions (the de rigueur female accessory) and vintage furniture. It looks like something out of a VIP boutique camping area at a bougie festival. I added 100m of festoon lights to add to the glamping vibe."
+        },
+        {
+          "t": "The dogs were bemused by the gargantuan structure at first, but soon realised it gave them shelter from the summer sun."
+        },
+        {
+          "t": "George and his girlfriend, Clara were the first to use it. They’ve slept in it twice. We’re planning a proper christening on Bonfire Night."
+        },
+        {
+          "t": "in the Red Corner…Mother Nature",
+          "c": "subtitle"
+        },
+        {
+          "t": "A few weeks later, Mother Nature landed a one-two of misfortune. The left jab — unbeknown to us a mole had decided to burrow up under the central pole. Structural stability compromised. The right hook to floor us — a storm, violent 70mph gusts. A soggy, collapsed pile of canvas greeted us upon inspection."
         },
         {
           "t": "Bollocks.",
           "c": "solo"
         },
         {
-          "t": "We got knocked down, but not out. We picked ourselves up from the canvas, metaphorically, and picked the canvas off the grass, literally. That was a couple of weeks ago. Excellent progress has been made. We have something that looks very much like a 9x9m deck, just a few more planks to lay."
+          "t": "We got knocked down, but not out. We picked ourselves up from the canvas, metaphorically, and picked the canvas off the grass, literally. That was a week or so ago. Excellent progress has been made. We have something that looks very much like a 9x9m deck, just a few more planks to lay."
         },
         {
           "t": "Screen time down. Pride up. Doomscrolling thumb rested, palm slightly blistered from power tool use. Beer well earned.",
@@ -320,25 +376,28 @@
           "t": "The Bonfire celebrations in Sussex are truly remarkable. And this coming from someone who used to be a bit of a fireworks curmudgeon."
         },
         {
-          "t": "They’re a throwback to the England that only exists in village pubs and the memories of soon-to-be-lost generations."
+          "t": "They’re a throwback to the England that only exists in village pubs and in the memories of soon-to-be-lost generations."
         },
         {
           "t": "The spirit is medieval. Raucous. Revolutionary. Anti-authoritarian. If only I could bottle it and unleash it upon the country on a wet Wednesday afternoon."
         },
         {
-          "t": "There’s beer. Proper beer. Brewed with love and served from the barrel. Harvey’s Bonfire Boy, brewed in Lewes. Warming, fruity, tinged with woodsmoke. Dark amber in colour, malty and with more than a hint of caramelised apple and longing for days of yore."
+          "t": "There’s beer. Proper beer. Brewed with love and served from the barrel. Harvey’s Bonfire Boy, brewed in Lewes. Warming, fruity, tinged with woodsmoke. Dark amber in colour, malty and with more than a hint of caramelised apple on the palate and a <em>longing for days of yore</em> aftertaste."
         },
         {
-          "t": "The soul of the celebrations are the Bonfire Societies. Processions around county towns throughout the autumn. Lewes always marks 5th November, the date of the Gunpowder Plot. The effigies burnt on the bonfire a symbol of rebellion. Trump. Boris. Merkel. A rogues gallery and then some."
+          "t": "The soul of the annual celebrations are the Bonfire Societies. Processions around county towns throughout the autumn. Lewes always marks 5th November, The Gunpowder Plot. The effigies burnt on the bonfire are symbols of rebellion. Trump. Boris. Merkel. A rogues gallery."
         },
         {
-          "t": "The Procession, each town identified by their traditional hooped patterned jumpers in their own coloured stripes, is the main event. Some Societies dress as pirates. Some WW1 infantry. Some witches and warlocks. All costumes elaborate and handmade. This is the Societies raison d’être."
+          "t": "The Procession, each town identified by their traditional hooped patterned jumpers in their own coloured stripes, is the main event. Some Societies dress as pirates. Some as WW1 infantry. Some as witches and warlocks. All costumes elaborate, handmade and drenched in pride and dedication."
         },
         {
-          "t": "Everyone carries a torch, real fire. Lit with paraffin. The rawness, the heat, the two fingers to health and safety. Hand-painted banners and intricately crafted signs are raised aloft by each Society as they march past the assembled masses. Newick, Isfield, Hastings, Rye. A roar for each."
+          "t": "Everyone carries a torch, real fire. Lit with paraffin. The rawness, the heat, the two fingers to health and safety. Hand-painted banners and painstakingly-crafted signs are raised aloft by each Society as they march past the assembled masses."
         },
         {
-          "t": "The finale. An effigy burnt. The flames of the bonfire lick high into the autumn blackness. No ropes or pedestrian fencing here. The intense heat a natural barrier."
+          "t": "Newick…Isfield…Hastings…Rye. A roar for each."
+        },
+        {
+          "t": "The finale. The effigy burnt. The flames of the bonfire licking high into the autumn blackness. No ropes or pedestrian fencing here. The intense heat provides a natural barrier."
         },
         {
           "t": "The fireworks. Funded by donations. Set off by volunteers to roars of delight and murmurs of ‘this is the best year ever’."
@@ -351,10 +410,14 @@
           "c": "inner"
         },
         {
-          "t": "Four pints. No food. A delicious buzz. A huge pot of chilli sits warming on the hob to greet us when we get home."
+          "t": "Four pints. No food. A delicious buzz. A huge pot of chilli sits warming on the hob to greet us when we get home. The bell tent not quite ready, we’ll eat inside in front of the fire."
         },
         {
-          "t": "‘We burn for good.’<br>That’s the motto.<br><br>‘We wunt be druv.’<br>That’s the spirit. We won’t be pushed around. Stubbornness, independence.<br><br>More of this, England.<br>More of this, I beg.<br><br>And then tomorrow? Back to the day jobs.",
+          "t": "‘We burn for good.’<br>That’s the motto.<br><br>‘We wunt be druv.’<br>We won’t be pushed around. Stubbornness, independence.",
+          "c": "solo"
+        },
+        {
+          "t": "That’s the spirit.<br>More of this, England.<br>More of this, I beg.<br><br>And then tomorrow? Back to compliance. Back to the day jobs.",
           "c": "solo"
         }
       ],
@@ -391,16 +454,23 @@
       "date": "Mid November 2026",
       "paras": [
         {
-          "t": "We’ve been dancing round the issue for months. ‘What are we going to do when we grow up?’ we ask one other. Before we know it we’ll be empty nesters. Four little reprobates will have become none. A house once filled with laughter, tears and chaos will fall silent. I can feel the sadness welling up in me just thinking about it. I am a sentimental old fool. For a bloke. Amy’s a woman. A soft, tender, highly emotional one. The sense of loss will hit her savagely. Eat her up."
+          "t": "We’ve been dancing round the issue for months. ‘What are we going to do when we grow up?’ we ask one other. Before we know it we’ll be empty nesters. Four little reprobates will have become none. A house once filled with laughter, tears and chaos will fall silent. I can feel the sadness welling up in me just thinking about it. I am a sentimental old fool. For a bloke, anyway. Amy’s a woman. A soft, tender, highly emotional one. The sense of loss will hit her savagely. Eat her up."
         },
         {
-          "t": "It’s starting already. The relief we thought we’d feel when the children didn’t need 24 hour monitoring, questions being constantly answered, daily lifts to and from school, to dance class, play dates or football training has materialised as sense of being superfluous, redundant, even an annoyance rather than as freedom reborn. Not needed any more. Did I not give enough? I should have cherished every single second more than I did. I look at pictures of the four of them in the bath together as toddlers or on an Easter egg hunt and my whole world shatters. To look into those young innocent eyes again. Just for a moment. Just one more bedtime story. One day the crayons did quit. One day we woke to find that we weren’t going on a bear hunt. One day, I don’t know when, we read them their last tale together. Oh, to cuddle them close, to be able to offer them them protection, safety and reassurance."
+          "t": "It’s starting already. The relief we thought we’d feel when the children didn’t need 24-hour monitoring, questions needing constant answering, daily lifts to and from school, to dance class, to play dates or football training has instead materialised as a sense of being superfluous, redundant, an annoyance. Freedom reborn trumped by the sadness of not being needed any more."
         },
         {
-          "t": "Sorry. For a minute there I lost myself. Where was I? Ah yes, making plans. Finding solutions. When all the kids have left home it will really free us up. We can go where we please. Maybe move to Devon. Suffolk. Maybe do what my mum did and escape to a warmer climate. We can be more self-sufficient, our own water supply, power, food. Break away. Can’t beat The System? We’ll see about that."
+          "t": "Did I not give enough? I should have cherished every single second more than I did. I look at pictures of the four of them in the bath together as toddlers or on an Easter egg hunt and my whole world shatters. Oh to look into those young innocent eyes again. Just for a moment. Just one more bedtime story."
         },
         {
-          "t": "We’d decided to have a proper chat about it later this evening. Discuss the next phase of our lives together. Follow our dreams, the world our oyster again."
+          "t": "But one day the crayons did quit. One day we woke to find that we weren’t going on a bear hunt. One day, I don’t know when, we read them their last tale together. Oh, to cuddle them close, to still be able to offer them protection, safety and reassurance.",
+          "c": "inner"
+        },
+        {
+          "t": "Sorry. For a minute there I lost myself. Where was I? Ah yes, making plans. Finding solutions. When all the kids have left home it will really free us up. We can go where we please. Maybe move to Devon. Suffolk. Maybe do what my mum did and escape to a warmer climate. We can be self-sufficient, have our own water supply, power, food. Break away. Can’t beat The System? We’ll see about that."
+        },
+        {
+          "t": "We’d decided to have a proper chat about it later this evening. Discuss the next phase of our lives together. Follow our dreams, the world once again our oyster."
         },
         {
           "t": "Find a way of dulling the heartache."
@@ -416,22 +486,28 @@
           "t": "The Only REAL Solution to Digital ID — #SolutionsWatch<br>by Corbett | Nov 5, 2025 | Solutions Watch, Videos<br>Hakeem Anwar of AbovePhone.com returns to the de-program to discuss his latest report: “Life Under Digital ID: A Global Analysis with Solutions.”"
         },
         {
-          "t": "I love James Corbett. ‘The Corbett Report is an independent, listener-supported alternative news source’ he states at the top of his website."
+          "t": "I love James Corbett."
+        },
+        {
+          "t": "‘The Corbett Report is an independent, listener-supported alternative news source’ he states at the top of his website."
         },
         {
           "t": "Underselling himself. He’s as astute, witty and sharp as they come. The antithesis of the asinine, crazy conspiracy theorist caricature. A New World Order analysis guru."
         },
         {
-          "t": "‘Solutions Watch’ used to be ‘Propaganda Watch’ or ‘Psyop Watch’, but he flipped the script. Instead of continual investigation into the ways in which they control, divide and cattle prod us, he decided to offer us, with the help of a series of freedom-loving guests, insights and ideas about how we can fight back. Take control of our own destiny."
+          "t": "‘Solutions Watch’ used to be ‘Propaganda Watch’ or ‘Psyop Watch’, but he flipped the script. Instead of continual investigation into the ways in which <em>they</em> control, divide and cattle prod us, he decided to offer us, with the help of a series of freedom-loving guests, insights and ideas about how we can fight back. Take control of our own destiny."
         },
         {
           "t": "I don’t watch these weekly broadcasts nearly enough."
         },
         {
-          "t": "I dived in. This is good shit. I got through the first 11 minutes and the phone rang. Duty called. Then dinner needing cooking. We cooked together, laughing and joking. Dinner was eaten. Wine was opened. Netflix was watched. No happily ever after was mentioned."
+          "t": "I dived in. This is good shit. I got through the first eleven minutes and the phone rang. Duty called. Then dinner needing cooking. We cooked together, laughing and joking. Dinner was eaten. Wine was opened."
         },
         {
-          "t": "The remaining 31 minutes have been added to my ‘watch this tomorrow’ list."
+          "t": "The happily ever after chat didn’t materialise. Netflix was binged instead."
+        },
+        {
+          "t": "The remaining 31 minutes of Corbett added to my ‘watch this tomorrow’ list. The chat rescheduled."
         }
       ],
       "choices": {
@@ -470,30 +546,30 @@
           "t": "Bills. Bills, bills and more bills."
         },
         {
-          "t": "Two punctures in a week. The same wheel. The first, a pothole. They’re a joke. I’m sure you know this. They’re everywhere. They’re seemingly contagious. Like a virus. In fact, perhaps not like a virus. But let’s not go there. At least I can prove potholes exist. Just look at my bloody tyre. The cure? A safe and effective 170 quid new one."
+          "t": "Two punctures in a week. The same wheel. The first, a pothole. They’re a joke. I’m sure you know this. They’re everywhere. They’re seemingly contagious. Like a virus. In fact, perhaps not like a virus. But let’s not go there. At least I can prove potholes exist. Just look at my bloody tyre. The cure? A <em>safe and effective</em> one hundred and seventy quid new one."
         },
         {
-          "t": "Then, 3 days later, the red exclamation mark from hell appears on the dashboard."
+          "t": "Then, three days later, the red exclamation mark from hell appears on the dashboard."
         },
         {
           "t": "‘Check tyre pressure’",
           "c": "solo"
         },
         {
-          "t": "You have got to be taking the piss. Sure enough, not a computer malfunction. A hiss. A nail in the bloody tyre. 57 miles of potholed tarmac this little wet-behind-the-ears Michelin has covered."
+          "t": "You have got to be taking the piss. Sure enough, not a computer malfunction. A hiss. A nail in the bloody tyre. Fifty-seven miles of potholed tarmac this little wet-behind-the-ears Michelin has covered."
         },
         {
-          "t": "Anyway. Repairable. 30 notes. Not another 170. Small wins."
+          "t": "Anyway. Repairable. Thirty notes. Not another One-Seventy. Small wins."
         },
         {
-          "t": "Talking of road repairs, the Council tax went up. Again. Will they fix the potholes? Will they fuck. I’ll tell you what else went up…in fact I won’t…I’m boring you, sorry. Everything went up. Let’s just leave it at that. But unlike that annoying 60’s song, whatever it was, what goes up doesn’t bloody come down. Ever."
+          "t": "Talking of road repairs, the Council tax went up. Again. Will they fix the potholes? Will they fuck. I’ll tell you what else went up…in fact I won’t…I’m boring you, sorry. Everything went up. Let’s just leave it at that. But unlike that annoying Sixties song, whatever it was, what goes up doesn’t bloody well come down. Ever."
         },
         {
           "t": "Inflation is 3.1% apparently. My arse.",
           "c": "inner"
         },
         {
-          "t": "The no booze week I promised myself started with 4 cans of Punk IPA Monday. And spiralled downwards."
+          "t": "The no booze week I promised myself started with four cans of Punk IPA Monday. And spiralled downwards."
         }
       ],
       "choices": {
@@ -515,16 +591,22 @@
           "t": "Friday night. All six of us sitting down for dinner together. All of us home for the evening. Like the old days. No parties, no football practice. Family time. Roast chicken served with a rich pancetta-tarragon-mushroom-white bean stew rich in tomatoes and stock. Chianti."
         },
         {
-          "t": "The conversation a mix of college work, the latest memes, sport, Love Island, Christmas lists, the current news/propaganda/psyops."
+          "t": "The conversation a mix of college work, the latest memes, sport, Love Island, Christmas lists and thoughts on the current news/propaganda/psyops cycle."
         },
         {
-          "t": "I’d been trying to hook the kids into waking up/conspiracy rabbit holes (delete as you see fit) for years, with varying degrees of success. They existed in a comfortable niche between recognising that some (I’d like to think a lot, but some is far more realistic) of what I was educating/preaching/rambling on about (delete as you see fit) was true and the reality that a lot of the warnings made sense on paper but weren’t translated to their daily teenage lives (yet…but you wait…). If I’m honest naval-gazing and gloom-mongering about faked pandemics, neo-feudal panopticons and supra-governmental hidden layers of global control were probably less fun than gossiping about who’s dating who, football and the latest online compulsive shopping disorder purchases."
+          "t": "I’d been trying to hook the kids into waking up/conspiracy rabbit holes (delete as you see fit) for years, with varying degrees of success. They existed in a comfortable niche between recognising that some (I’d like to think a lot, but some is far more realistic) of what I was educating/preaching/rambling on about (delete as you see fit) was true. In reality, a lot of the warnings that made sense on paper simply weren’t translated to their daily teenage lives. Yet…but you wait…"
         },
         {
-          "t": "We’d managed to keep the kids (force of habit, two of them are grown men) at the dinner table after the chicken had been plucked clean of meat and the wishbone snapped (they still argue over whose turn it is) with the lure of sticky toffee pudding. It was warming in the oven, Amy’s secret recipe condensed milk ice cream was out the freezer softening on the side and a pot of cream was receiving lusty glances from Sam."
+          "t": "If I’m honest, naval-gazing and gloom-mongering about faked pandemics, neo-feudal panopticons and supra-governmental hidden layers of global control were probably less fun than gossiping about who’s dating who, the latest VAR outrage or regular online compulsive-shopping-disorder purchases."
         },
         {
-          "t": "The conversation turned to Amy’s current bête noire, chemtrails. Amy’s older brother, Rupert had been down this conspiracy rabbit hole long before it was a vaguely acceptable topic in polite conversation. She’d gone from sceptical but open-minded, to ‘it’s probable that covert weather modification experiments are happening on a small scale, but I’ve got better things to worry about’ to ‘the sky is a blanket of white every day and they want to kill us’."
+          "t": "We’d managed to keep the kids (kids, ha! Force of habit, two of them are grown men) at the dinner table after the chicken had been plucked clean of meat and the wishbone snapped with the lure of sticky toffee pudding, warming in the oven. They still argue over whose turn it is with the wishbone. I hope they always do."
+        },
+        {
+          "t": "Amy’s secret recipe condensed milk ice cream was out the freezer softening on the side and a pot of double cream was receiving lusty glances from Sam."
+        },
+        {
+          "t": "The conversation turned to Amy’s current bête noire, chemtrails. Amy’s older brother, Rupert had been down this conspiracy rabbit hole long before it was even a vaguely acceptable topic in polite society. She’d gone from sceptical but open-minded, to ‘it’s probable that covert weather modification experiments are happening on a small scale, but I’ve got better things to worry about’ to ‘the sky is a blanket of white every day and they want to kill us’."
         },
         {
           "t": "Amy didn’t do the ‘conspiracy research’ (as the majority of people still perceive it) that I did. Not because she couldn’t, but because it made her sad. Sad that such evil could exist. She buried herself in her books, her yoga, her gardening and her homemaking instead. Every so often (Chianti) the anger burst through her sadness."
@@ -533,32 +615,35 @@
           "t": "“If they’re not trying to kill us, what are they doing then?”"
         },
         {
-          "t": "Here it was, the open invitation with a captive audience, to unveil my research, opinions and inner thoughts in a devastating and concise soliloquy."
+          "t": "Here it was, the open invitation with a captive audience, to unleash my research, opinions and inner thoughts in a devastating, concise and brutal soliloquy."
         },
         {
-          "t": "‘I don’t know’ was all I could muster, and in a way this was more devastating than 30 minutes of on-the-money truther-riffing."
+          "t": "‘I don’t know’ was all I could muster, and in a way this was more hard-hitting than thirty minutes of on-the-money truther-riffing."
         },
         {
-          "t": "The kids looked at one another, slightly bewildered. Dad doesn’t know?",
+          "t": "The kids looked at one another, slightly bewildered."
+        },
+        {
+          "t": "Dad doesn’t know?",
           "c": "inner"
         },
         {
-          "t": "I rattled off a few ideas about what it might be, from ‘mostly harmless, mostly contrails’ at one end of the spectrum, to ‘nano-particulate seeding into the environment for 6G and humans as nodes in a network’ at the other."
+          "t": "I rattled off a few ideas about what it might be, from ‘mostly harmless, mostly contrails’ at one end of the spectrum, to ‘nano-particulate release seeding the environment for 6G with humans as nodes in a network’ at the other."
         },
         {
-          "t": "But what I really wanted to confess in the 11 minutes before the sticky toffee pudding was piping hot and oozing, was the rather humbling realisation that, for all my podcast and article deep dives, I had no fucking clue what was going on. And that ‘chemtrails’ were front and centre of this uncertainty. I’d researched Stratospheric Aerosol Injection, ice supersaturation, manipulation of the ionosphere and solar geoengineering patents and projects. I knew that weather modification and potential military applications had been on the agenda since the 50’s. I was aware of Operation Popeye. I’d read Elana Freeland. I’d listened to Sabrina Wallace."
+          "t": "But what seemed to really hit home in the eleven minutes before the sticky toffee pudding was piping hot and oozing, was the rather humbling revelation that, for all my podcast and article deep dives, I had no fucking clue what was going on. And that ‘chemtrails’ were front and centre of this uncertainty. I’d researched Stratospheric Aerosol Injection, ice supersaturation, manipulation of the ionosphere and solar geoengineering patents and projects. I knew that weather modification and potential military applications had been on the agenda since the 50’s. I was aware of Operation Popeye. I’d read Elana Freeland. I’d listened to Sabrina Wallace."
         },
         {
-          "t": "The most intellectually honest answer I could give was ‘I don’t know’, realising that I was an active (and probably textbook) victim of every psyop under the sun."
+          "t": "The most intellectually honest answer I could give was ‘I don’t know’. That I’d come to realise that I was an active (and probably textbook) victim of every psyop under the sun."
         },
         {
-          "t": "The kids seem to accept this as a reasonable enough answer, but they didn’t stay at the table long after their pudding bowls had every drop of cream scraped out of them."
+          "t": "The kids asked a few chemtrail-based questions as they found room for a second portion of pudding, but didn’t stay at the table long after their bowls had had every drop of cream scraped out of them."
         },
         {
           "t": "‘Put my mind at rest, Simon’ Amy implored as we started on the washing up. ‘They’re not trying to kill us, are they?’"
         },
         {
-          "t": "‘Not yet’ was my instinctive but thoroughly unreassuring reply. ‘The only things I can say with a degree of confidence is that they are actively transitioning the world into a new paradigm. They’re hardly making a secret of it. Convid, the tokenisation of bloody forests, 800 zillion in global debt, you’ll own nothing and be happy…"
+          "t": "‘Not yet’ was my instinctive but thoroughly unreassuring reply. ‘The only things I can say with a degree of confidence is that the world is being actively transitioned into a new paradigm. They’re hardly making a secret of it. Convid, the tokenisation of bloody forests, eight hundred zillion of global debt, you’ll own nothing and be happy…"
         },
         {
           "t": "Amy had had enough, already. ‘Shall we go and watch Location, Location, Location?’ she asked with a small sigh."
@@ -583,34 +668,48 @@
       "date": "Late November 2026",
       "paras": [
         {
-          "t": "Last week, a boozy blip. This week you’ll attack with vigour. You wrote your goals out on Sunday night, glass of red beside you, after the roast pork shoulder (crackling to die for), perfect Amy roasties, fennel, carrots and a cider gravy."
+          "t": "Last week, a boozy blip. This week I’ll attack with vigour."
         },
         {
-          "t": "Simple. Healthy. Achievable."
+          "t": "Sunday evening. Time to set my goals for the week ahead. Glass of red beside me, slowly digesting the roast pork shoulder (crackling to die for), perfect Amy roasties, fennel, carrots and cider gravy."
         },
         {
-          "t": "1. No alcohol Monday to Thursday.<br>2. No screen time before 9am (other than the first-thing email and potential cataclysmic global event check) and after 9pm (other than alarm setting and setting the Hive App for kettle-turn-on-from-bed mode and a final email swoop)<br>3. One Hot yoga session (Wednesday 11am already booked) and one gym workout (not just a few lengths of the pool and a steam)<br>4. No Black Friday purchases. Don’t even be tempted. Don’t even look. Stay strong. It’s corporate bullshit, frenzied consumerism. Overconsumption. All that’s wrong with the world.<br>5. Actually, change 1. to Monday to Wednesday. And then Friday. We’re going to the neighbours for dinner on Thursday and it’d be rude not to have a glass or two.",
+          "t": "The Goals. Simple. Healthy. Achievable."
+        },
+        {
+          "t": "1. No alcohol Monday to Thursday.<br>2. No screen time before 9am (other than the first-thing email and potential cataclysmic global event check) and after 9pm (other than alarm setting and setting the Hive App for kettle-turn-on-from-bed mode and a final email swoop)<br>3. One Hot yoga session (Wednesday 11am already booked) and one gym workout (not just a few lengths of the pool and a steam)<br>4. No Black Friday purchases. Don’t even be tempted. Don’t even look. Stay strong. It’s corporate bullshit, frenzied consumerism. Overconsumption. All that’s wrong with the world.<br>5. Actually, change 1. to Monday to Wednesday, and then Friday. We’re going next-door to Kate’s for dinner on Thursday and it’d be rude not to have a glass or two.",
           "c": "inner"
         },
         {
-          "t": "Sunday night’s resolve has become Monday morning reality. A stack of emails to reply to. Invoices to send. Paperwork to shuffle to the bottom of the in-tray. Is there a song about procrastination? You open up Spotify. You don’t know whether to laugh or cry."
+          "t": "Monday",
+          "c": "subtitle"
         },
         {
-          "t": "Picked for you ‘Blue Monday’",
-          "c": "solo"
+          "t": "Sunday night’s resolve has become Monday morning reality. A stack of emails to reply to. Invoices to send. Paperwork to shuffle to the bottom of the in-tray. Is there a song about procrastination? I open up Spotify."
+        },
+        {
+          "t": "Picked for you ‘Blue Monday’. I don’t know whether to laugh or cry."
         },
         {
           "t": "And still, I find it so hard<br>To say what I need to say<br>But I’m quite sure that you’ll tell me<br>Just how I should feel today",
           "c": "lyric"
         },
         {
-          "t": "Amy WhatsApp-ed you a link to the supplements, fluoride-free toothpaste and 5l can of olive oil you usually buy. 30% off. Amazon Prime Black Friday. ‘Handpicked for you’."
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "Picked by an algorithm, but whatever. They make it sound like the local butcher has put aside a special cut of beef for you. Short ribs, Mr T, your favourite."
+          "t": "Amy WhatsApp-ed me a link to the supplements, fluoride-free toothpaste and 5l can of olive oil we usually buy. 30% off. Amazon Prime Black Friday. ‘Handpicked for you’."
         },
         {
-          "t": "You would have bought them anyway. What fool wouldn’t take advantage of this. It wasn’t a ‘real’ Black Friday purchase. Thinking about it you should probably ‘Subscribe and Save’."
+          "t": "Picked by an algorithm, but whatever. They make it sound like the local butcher has put aside a special cut of beef for me. Short ribs, Mr T, your favourite."
+        },
+        {
+          "t": "What fool wouldn’t take advantage of this offer? They weren’t ‘real’ Black Friday purchases. I wasn’t lured into buying something out of the ordinary. The reality is that I would have bought them anyway. Essentials."
+        },
+        {
+          "t": "Thinking about it I should probably ‘Subscribe and Save’ the olive oil in future.",
+          "c": "inner"
         }
       ],
       "choices": {
@@ -646,26 +745,42 @@
       "date": "December 2026",
       "paras": [
         {
-          "t": "You and Amy have been promising yourselves this for weeks. There’s always a reason not to. There’s always next week. Not this week. This time, this week means this week."
+          "t": "Amy and I have been promising ourselves we’d do this for weeks on end. There’s always a reason not to. There’s always next week."
         },
         {
-          "t": "We’ve done it before. 28 days once. Get through the first 2 or 3 days and it’s a breeze. We know we’ll feel better for it. Less bloated, vibrant glowing skin, more energy, clarity of thought."
+          "t": "But not this week."
         },
         {
-          "t": "The Cleanse. 7 days. A morning juice. My favourite is coconut milk, coconut oil, turmeric, pineapple, a pinch of cinnamon. A bit like a Pina Colada."
+          "t": "This time, this week means this week."
+        },
+        {
+          "t": "We’ve done it before. Twenty-eight days once. Get through the first two or three days and it’s a breeze. We know we’ll feel better for it. Less bloated, vibrant, glowing skin, more energy, focus, clarity of thought."
+        },
+        {
+          "t": "The Cleanse. Seven days. A morning juice. My favourite is coconut milk, coconut oil, turmeric, pineapple, a pinch of cinnamon. A bit like a Pina Colada."
         },
         {
           "t": "I don’t even feel it, but, Lord, how I need it<br>When I’m not with her, I’m not all myself<br>I sometimes have my breakfast right off of a mirror<br>And sometimes, I’ll have it right out of a bottle<br>Come on",
           "c": "lyric"
         },
         {
-          "t": "The Spiritualised fucked up anti-cleanse feels sordidly appealing for a split second. You get hold of yourself."
+          "t": "The Spiritualised fucked up anti-cleanse feels sordidly appealing for a split second."
         },
         {
-          "t": "Lunch is The Cleanse’s main meal of the day. Healthy. Antioxidant packed. Low carb. But more robust and flavour-packed than the Gwyneth Paltrow macrobiotic diet, the Victoria Beckham steamed chicken breast and broccoli or the Kate Moss ‘nothing tastes as good as thin feels’ diets. Madeleine Shaw ‘Ready, Steady, Glow’ the go-to cookbook here. Think ‘courgette and halloumi mini frittatas with lemon poppy seed yogurt’, ‘Malaysian coconut milk laksa with beansprouts and pumpkin’ or ‘braised beef with crisp tortillas and guacamole’."
+          "t": "Get hold of yourself, Simon.",
+          "c": "inner"
         },
         {
-          "t": "Dinner is soup. This is tough. Dress it up however you want. It’s soup. Not a chunky rustic soup. No croutons. Thin, watery soup. For dinner. For a week. A near-24 hour solid food fast. A herbal tea before bed."
+          "t": "Lunch is The Cleanse’s main meal of the day. Healthy. Antioxidant packed. Low carb. More robust than the Gwyneth Paltrow macrobiotic fad, more flavoursome than the Victoria Beckham steamed chicken breast and broccoli diet and less masochistic than Kate Moss’s ‘nothing tastes as good as thin feels’ starvation."
+        },
+        {
+          "t": "Madeleine Shaw’s ‘Ready, Steady, Glow’ is our Cleanse go-to cookbook. Think ‘courgette and halloumi mini-frittatas with lemon poppy seed yogurt’, ‘Malaysian coconut milk laksa with beansprouts and pumpkin’ or ‘braised beef with crisp tortillas and guacamole’."
+        },
+        {
+          "t": "Dinner is soup. This is tough. Dress it up however you want. It’s soup. Not a chunky rustic soup. No double cream embellishment. No croutons. Thin, watery soup. For dinner. For a week. A near-24 hour solid food fast."
+        },
+        {
+          "t": "A herbal tea before bed."
         },
         {
           "t": "‘Which flavour would you like tonight, Simon’"
@@ -681,55 +796,76 @@
         },
         {
           "t": "<em>I hope I die before I get old</em>",
-          "c": "solo"
+          "c": "lyric"
         },
         {
-          "t": "This has been a long time coming. Desktop, iPad, iPhone. The Holy Trinity. Laid out before you ready for a purge."
+          "t": "The Digital Cleanse",
+          "c": "subtitle"
         },
         {
-          "t": "It’s actually quite emotional. Some of these tabs have been open since mid-Covid. It’s actually not as bad as you thought. A lot of these articles you had read. Read and retained at least some of the information. There’s a few unclosed BBC Sport Football tabs in there."
+          "t": "This has been a long time coming. Desktop, iPad, iPhone. The Holy Trinity. Laid out before me, ready for a purge."
         },
         {
-          "t": "30 August 2022. Crystal Palace 1–1 Brentford. Selhurst Park.<br>You were there with Sam. No recollection at all.",
+          "t": "It’s actually quite emotional. Some of these tabs have been open since mid-Covid."
+        },
+        {
+          "t": "Once I start looking through them I realise it’s not actually as bad as I thought. A lot of the articles I had read and left open in the browser. Many I’d scanned and left open to return to for a full read one day. There are quite a few old BBC Sport Football tabs adding to the clutter."
+        },
+        {
+          "t": "30 August 2022. Crystal Palace 1–1 Brentford. Selhurst Park.<br>I was there with Sam. No recollection of the match at all. Almost certainly the last match on Match of the Day.",
           "c": "inner"
         },
         {
-          "t": "A series of consecutive tabs about Tartaria, giants, ice walls, mud-floods, etc. Oh my god, you remember this one, ‘The Lost History of the Earth’ by Ewaranon. Had you for a bit. To be fair there was some truth hidden amongst the absurdity. As there often is."
+          "t": "A series of tabs about Tartaria, giants, ice walls, mud-floods, etc. Oh my god, I remember this one, ‘The Lost History of the Earth’ by Ewaranon. Had me for a bit. To be fair there was some truth hidden amongst the absurdity. As there often is."
         },
         {
-          "t": "‘Rounding the Earth’ Mathew Crawford is a remarkable thinker, statistician, teacher, systems analyst and wit. IQ in the late 100’s it would appear."
+          "t": "‘Rounding the Earth’"
         },
         {
           "t": "The Narcissistic, Murderous Parent and the Malthusian Mind Virus<br>The Kunlangeta, Part IX<br>Nov 08 2024",
           "c": "inner"
         },
         {
-          "t": "This was excellent. Left in tab for a re-read. I’ll keep it up there."
+          "t": "This was excellent, like most of Mathew Crawford’s work. Thinker, statistician, teacher, systems analyst and wit. Clever bastard. Left open in tab for a re-read. I’ll keep it up there."
         },
         {
-          "t": "“There’s a reason narcissists don’t learn from mistakes and that’s because they never get past the first step which is admitting that they made one.” -Jeffrey Kluge"
+          "t": "I laugh a little laugh to myself under my breath as I read this quote from the article —"
         },
         {
-          "t": "His most recent Substack was August 2025 — <em>Agent of the Matrix</em>. I wish he’d post more. I know he’s OK though, just worn out. I had a few X direct message chats with him earlier in the year."
+          "t": "“There’s a reason narcissists don’t learn from mistakes and that’s because they never get past the first step which is admitting that they made one.” —Jeffrey Kluge"
         },
         {
-          "t": "Now, here’s something I keep dipping in and out of. I keep saving it for ‘the right time’. Which is near at 1am when I often think of approaching it. This is a clear headed morning after a swim and a smoothie. This is tomorrow."
+          "t": "Mathew’s most recent Substack was all the way back in August 2025 — <em>Agent of the Matrix</em>. I wish he’d post more. I know he’s OK though, just worn out. I’d messaged him on X a few times to check up on him."
         },
         {
-          "t": "Telestai Nexus. The titles lure you in. I’ve read some of them. But I’ve kept them for a time I can really dedicate my full, undivided attention to them. They are that important that the time has to be just right to digest them."
+          "t": "Now, here’s something I’ve been dipping in and out of for months — Telestai Nexus. I keep reading a few paragraphs and then ‘saving it for the right time’ — which would be a clear headed morning after a swim and a smoothie rather than 1am after a bottle of wine."
+        },
+        {
+          "t": "A morning like tomorrow. I’ll give it my full, undivided attention. The titles lure me in."
         },
         {
           "t": "<em>(What if) The entirety of Genetics is an obfuscating Cover Up for Bioelectricity — the all encompassing Electromes of Life!?</em><br><br><em>Sabrina Wallace &amp; Netcentric Warfare — “They are changing you from the inside out”</em><br><br><em>We are Liquid Crystalline Beings!</em><br>44-70% of our body is charged liquid crystal, mostly EZ water — and that phase shifts constantly! This is the basis of our bioelectric communication. Liquid Crystals are the 4th state of water.",
           "c": "inner"
         },
         {
-          "t": "There's more. More to close. More keepers. Ethical Skeptic. Master Exothermic Core-Mantle Decoupling – Dzhanibekov Oscillation. It's been skim-read multiple times."
+          "t": "There are many more. More to close. More keepers. Ethical Skeptic. Master Exothermic Core-Mantle Decoupling – Dzhanibekov Oscillation. It’s been skim-read multiple times."
         },
         {
           "t": "ESCkey’s Substack is wall-to-wall brilliance. The price of freedom is eternal vigilance."
         },
         {
-          "t": "Christ. 00.51. Bedtime.",
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I’m starting to fade. The digital cleanse is well underway though."
+        },
+        {
+          "t": "Christ! 00.51.",
+          "c": "inner"
+        },
+        {
+          "t": "Bedtime.",
           "c": "solo"
         }
       ],
@@ -797,10 +933,16 @@
       "date": "December 2026",
       "paras": [
         {
-          "t": "The car journey to our yoga class. Amy driving, I’m scrolling. She’s tutting. She wants ‘me’ in the car. Not the version of me that’s permanently livid, preachy, lurching from hope to despair and back again. Not The Ghost."
+          "t": "The car journey to our yoga class. Amy’s driving, I’m scrolling. She’s tutting. She wants ‘me’ in the car. Not the version of me that’s permanently livid, preachy, lurching from hope to despair and back again. Not The Ghost."
         },
         {
-          "t": "I start reading her a Substack about the interoperability of digital id products. She says send it to her, she’ll read it later. She wants to discuss plans for supper, where we’ll walk the dogs today. I WhatsApp it to her. It will sit alongside the other 5000 waiting-to-be-read articles I’ve sent her. I suggest a lamb neck stew, meat from the biodynamic farm shop. We can go after yoga, it’s only round the corner. Lamb reared on their farm. The ‘cheap cuts’ are actually that, relatively speaking. Far superior to the supermarket, whose on-trend ‘cheap cuts’ of meat are now as expensive as the ‘prime’ and don’t give us the same sense of well-being that a cash farm shop purchase does. A box of good intentions and worthiness carried away once a week to top up the conglomerate shop. The raw milk and organic carrots (we’ll get the juicer out, promise) more than compensate for the two bottles of pinot noir that will doubtless be paired with the stew."
+          "t": "I start reading her a Substack about the interoperability of digital id products. She asks me to send it to her, she’ll read it later. She wants to discuss plans for supper instead, and where we’ll walk the dogs this afternoon."
+        },
+        {
+          "t": "I WhatsApp it to her. It will sit alongside the other 5000 waiting-to-be-read articles I’ve sent her."
+        },
+        {
+          "t": "I suggest a lamb neck stew, meat from the biodynamic farm shop. We can go after yoga, it’s only round the corner. Lamb reared on their farm. The ‘cheap cuts’ are actually that, relatively speaking. Far superior to the supermarket, whose on-trend ‘forgotten cuts’ certainly didn’t forget to put their prices up — they’re now just as expensive as the ‘prime’. And tapping on the self-checkout card reader doesn’t give us the same sense of well-being that a cash farm shop purchase does. A box of good intentions and worthiness carried away once a week to top up the conglomerate shop. Raw milk and organic carrots (we’ll get the juicer out, promise) more than compensate for the two bottles of pinot noir that will doubtless be paired with the stew. Don’t they?"
         },
         {
           "t": "Tuesday is the new Thursday, which was the old Friday. Or something. Lockdown (the very word makes me seethe. Calm. Zen it out. You’ll be on the mat soon) habits are hard to break. I make a conscious effort to not reminisce with fondness about the furlough-funded midday cocktails under the uncannily blue April skies.",
@@ -811,10 +953,30 @@
         },
         {
           "t": "Tuesday Evening",
-          "c": "time"
+          "c": "subtitle"
         },
         {
-          "t": "Palace are playing. Away at Everton. I’ll put it on, despite myself. I’ll want it to anger me. To rile me. To push me past the point of not wanting to care, to the point of not actually caring. I’ve lived my life by the rhythms of the football season for decades. Matches anchor each week. The ever-decreasing ‘off-season’ fills my X feed with click-bait transfer gossip. Leave me alone, please, just for a bit. It’s the cricket season. I no longer play. The summer tempo of leather on willow that defined me since I was a boy has now dissipated into the occasional day in front of the Test on the telly and the familiar bucolic, soothing backdrop of Test Match Special playing on the car radio. It’s on DAB now, the Shipping Forecast an in-joke now. Oh for Johnners. And CMJ. Aggers is great, but the others…",
+          "t": "Palace are playing. Away at Everton.",
+          "c": "inner"
+        },
+        {
+          "t": "I’ll put it on, despite myself. I’ll actively want it to anger me. To rile me. To push me past the point of not wanting to care, to the point of not actually caring. I’ll get there. Slowly but surely, they’re ruining everything.",
+          "c": "inner"
+        },
+        {
+          "t": "I’ve lived my life by the rhythms of the football season for decades. Matches anchor each week. But I’m growing sick of it. The commercialisation, the corruption, the pettiness, the ‘off-season’ filling my X feed with click-bait transfer gossip.",
+          "c": "inner"
+        },
+        {
+          "t": "Leave me alone, please, just for a bit. It’s the cricket season.",
+          "c": "inner"
+        },
+        {
+          "t": "Cricket, lovely cricket. My first passion. I no longer play. How I miss the leisurely summer tempo, the net sessions, the gentle applause and muted cries of ‘good shot’, the sound of leather on willow and the post-match ales that defined me since I was a boy have been reduced to the occasional day in front of the Test on the telly and the bucolic, soothing backdrop of Test Match Special playing on the car radio. It’s on DAB now, the Shipping Forecast relegated to an in-joke.",
+          "c": "inner"
+        },
+        {
+          "t": "Aggers is great, but the others… Oh for Johnners, Blowers and CMJ.",
           "c": "inner"
         }
       ],
@@ -852,19 +1014,32 @@
       "date": "December 2026",
       "paras": [
         {
-          "t": "A long day, but a fruitful one. You've been out and about. Meeting with the accountant, lunch with your associate employee contemporaries. Not boozy, you were driving. A couple of end-of-year work meetings. Nothing too hifalutin, just getting everything in its right place before the festive slumber season."
+          "t": "A long day, but a fruitful one. I’ve been out and about. Meeting with the accountant, lunch with my associate employee contemporaries. Not boozy, I was driving. A couple of end-of-year work meetings. Nothing too hifalutin, just getting everything in its right place before the festive slumber season."
         },
         {
-          "t": "Home. Cup of Tea. A 'Tea Pigs All Day Brew' - bright & flavoursome, puts a bit of zing and energy back into you after a long drive. Roads were getting icy, a bit of mist and descending gloom allied with the glare of blue LED headlights made for a squinty-eyed, headache-inducing journey. You hope Amy will be OK getting back. She's been helping her mum with the Christmas shopping. Should be back around 8 with fish and chips. A rare takeaway treat. I hope she remembers to get me some beers. The Brew Dog mix pack is on offer. Elvis Juice. A glorious American IPA, intense, grapefruit-infused, citrusy with caramel malt depth. It'll wash down the salty, malt vinegar soaked chips a treat."
+          "t": "Home. Cup of Tea. A ‘Tea Pigs All Day Brew’ — bright & flavoursome, puts a bit of zing and energy back into me after a long drive. Roads were getting icy, a bit of mist and descending gloom allied with the glare of blue LED headlights made for a squinty-eyed, headache-inducing journey."
         },
         {
-          "t": "You listened to Cliff High on the way home. First time for a bit. His Aether Pirates of the Matterium! podcasts. Cliff is a polyglot, polymath, techno-wizard, theologian, philosophiser, a quantum-linguist that seems to know pretty much everything about everything, including space aliens, the nature of reality and Woo. His 'Hello Humans' greeting can't help but bring a smile to your face and a warm glow of expectation to your grey matter. You sort of understand most of what he's talking about when you hear it. But if you don't let it sit with you, make a conscious effort to absorb it, you'll find it disappears in a puff of logic and you'll wonder if you really have what it takes to be a Warrior of Woo!"
+          "t": "I hope Amy will be OK getting back. She’s been helping her mum with the Christmas shopping. Says she’ll be back at 8ish with fish and chips. The thought of a tub of lurid mushy peas and pickle-sharp gherkin makes my mouth water. A rare takeaway treat."
         },
         {
-          "t": "'Conscious' effort was an apt phrase as much of Cliff's musing are about the nature of reality, our thoughts, existential angst and the type of concepts that require peace, time and a deep meditative mindset to ponder. Preferably lying by a roaring fire, with a second cup of tea and two loyal dogs at your side. Which is handy as that's where I find myself at this particular moment in time. Or this specific rate of flow of manifestations from the Event-Stream into the Eternal Now, as Cliff would put it."
+          "t": "I hope she remembers to get me some beers.",
+          "c": "inner"
         },
         {
-          "t": "I lie, warm and canine-comforted, drifting into a doze with my Woo thoughts. Do dogs experience qualia? Probably. Claude, ChatGPT? Doubtful. Easy to accidentally anthropomorphise as your interactions seem to involve genuine comprehension. Consciousness. In many ways Claude is more conscious than Wilf. Not as soppy though. And Wilf is entirely here. No research tabs open. No 3am deep dives. No anxiety about what the government is planning. Olive probably does though. She's a conspiracy-bitch. Wilf is here, he's content and that's enough. Be more Wilf. Only joking Olive, you're here too, baby. Is anyone conscious? Anything? Cliff's 'Ontology' - the Supreme Consciousness as the fundamental creative force that manifests physical reality - says…says what exactly?",
+          "t": "The Brew Dog mix pack is on offer. Ah, Elvis Juice. A glorious American IPA, intense, grapefruit-infused, citrusy with caramel malt depth. It’ll wash down the salty, malt vinegar soaked chips a treat."
+        },
+        {
+          "t": "I listened to Cliff High on the way home. The first time for a bit. His Aether Pirates of the Matterium! podcast is brain-manglingly eccentric. Cliff is one of the more intriguing inhabitants of the planet — a polyglot, polymath, techno-wizard, theologian, philosophiser, a quantum-linguist that seems to know pretty much everything about everything, including space aliens, the nature of reality and Woo itself. His ‘Hello Humans’ greeting never fails to bring a smile to my face and a warm glow of expectation to my grey matter."
+        },
+        {
+          "t": "I <em>sort</em> of understand most of what he’s talking about. But if I don’t let it sit with me and make a conscious effort to absorb it, it invariably disappears in a puff of logic, leaving me wondering if I really have what it takes to be a Warrior of Woo!"
+        },
+        {
+          "t": "‘Conscious’ effort was an apt phrase as much of Cliff’s musing are about the nature of reality, our thoughts, existential angst — concepts that require plenty of pondering time, peace and a deep meditative mindset to allow them to wash over you. Ideally lying on a rug in front of a roaring fire, with a second cup of tea and two loyal dogs at your side. Which is handy as that’s precisely where I find myself at this particular moment in time. Or this specific rate of flow of manifestations from the Event-Stream into the Eternal Now, as Cliff might put it. I lie, warm and canine-comforted, drifting into a doze with my thoughts of Woo."
+        },
+        {
+          "t": "Do dogs experience qualia? Probably. Claude, ChatGPT? Doubtful. Easy to accidentally anthropomorphise as their interactions with us seem to involve genuine comprehension. Consciousness. In many ways Claude is more conscious than Wilf. Not as cuddly though. Oh to be Wilf, living his dog’s life. No research tabs left open. No 3am deep dives. No anxiety about the next psyop. Olive probably does though. She’s a conspiracy-bitch. Wilf is a dog-normie. He’s content and that’s enough. Lucky sod. Be more Wilf. Is Olive more conscious than Wilf? What does that even mean? Can you measure consciousness? Is anything truly conscious? Cliff has some radical ideas on the subject. His ‘Ontology’ — the Supreme Consciousness — the fundamental creative force that manifests physical reality — says…says what exactly?",
           "c": "inner"
         },
         {
@@ -872,15 +1047,29 @@
           "c": "lyric"
         },
         {
-          "t": "If physical reality only exists downstream of consciousness, then what I perceive to be consciousness is really a subjective experience created by qualia emerging from the Event Stream into The Eternal Now. But that's not it. Is it? I am, or what I am currently perceiving to be I, am (too many am's?) (did that am need an apostrophe?) Two sets of brackets. Read that part of the sentence first. BODMAS. Where was I? Oh yes, I was asking myself if I am part of the Supreme Consciousness. I must be. But then qualia aren't creating your subjective experience, are they? They are the Ontology's communication to your localised consciousness. The subjective experience IS the qualia, not something the qualia create. Old Gritologist habits die hard. Was I trying to explain consciousness through something else? Not recognising it is fundamental. It is. Or else the Gritologists win….Down with Gritology…..that sounds very Hagbard Celine…actually Cliff High should play Hagbard in the Illuminatus! film….",
+          "t": "According to Cliff it’s something along the lines of physical reality only existing downstream of consciousness, and that what I perceive to be consciousness is really a subjective experience created by qualia emerging from the Event Stream into The Eternal Now. But that’s not it. Is it? I am (or what I am currently perceiving to be I) am (too many am’s?) (did that am need an apostrophe?) Two sets of brackets. Read that part of the sentence first. BODMAS. Where was I? Oh yes…I am part of the Supreme Consciousness. I must be. But then qualia aren’t creating your subjective experience, are they? They are the Ontology’s communication to your localised consciousness. My subjective experience IS the qualia, not something the qualia create. Old Gritologist habits die hard. Was I trying to explain consciousness through something else? Not recognising it is fundamental. It is. Or else the Gritologists win…Down with Gritology…that sounds very Hagbard Celine…actually Cliff High should play Hagbard in the Illuminatus! film…",
           "c": "inner"
         },
         {
-          "t": "Olive makes a funny dream-noise, snapping you out of your own dozy half-dream. I should put a another log on. Freezing out there now. The fire roars up again. It doesn't know it's a fire. But it's doing exactly what fire does — converting matter into light and heat. Is that consciousness? Am I overthinking this? Wilf is clearly chasing a rabbit in his sleep. He's not thinking about The Ontology. Olive might be."
+          "t": "Olive makes a funny dream-noise, snapping me out of my own nonsensical half-dream inner ramblings."
         },
         {
-          "t": "Key in the door. She's home. And so is my Elvis Juice.",
+          "t": "I put another log on the fire. The flames roar up again."
+        },
+        {
+          "t": "It doesn’t know it’s a fire. But it’s doing exactly what fire does — converting matter into light and heat. Is that consciousness? I’m overthinking this, aren’t I?",
+          "c": "inner"
+        },
+        {
+          "t": "Wilf is chasing what I imagine to be a rabbit in his sleep. He’s definitely not thinking about The Ontology. Olive might be."
+        },
+        {
+          "t": "Key in the door. She’s home. And so is my Elvis Juice.",
           "c": "solo"
+        },
+        {
+          "t": "I’m All Shook Up",
+          "c": "lyric"
         }
       ],
       "choices": {

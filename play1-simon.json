@@ -98,7 +98,7 @@
       "id": 1,
       "num": "T1",
       "title": "Digging, Bright and Breezy",
-      "date": "October 2026",
+      "date": "Early October 2026",
       "paras": [
         {
           "t": "Feeling fresh, invigorated, ready to go. Nine hours of unbroken sleep. Day six without a glass of wine. Herbal infusions before bed. Ginger and turmeric my favourite. Neutralise those free radicals, baby. The morning juice. Spinach (freshly picked from the allotment each morning), apple juice (pressed at the local orchard), a splash of lemon, a handful of spirulina (it ‘might’ help lower blood pressure, it ‘might’ have anti-inflammatory properties). Fifteen quid for a bag of tasteless powder. It better do something."
@@ -164,6 +164,67 @@
       }
     },
     {
+      "id": "1a",
+      "num": "T1a",
+      "title": "International Man of Mystery",
+      "date": "Early October 2026",
+      "paras": [
+        {
+          "t": "Dev is extraordinary. I’ve never met anyone else like him. In fact very few people are like him. Or even quite like him. I met him at school. Christ, nearly forty years ago. He’s been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months at a time. He’s not what you’d call a traditional communicator or responsive to messaging. And I’ve learnt not to push him - if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls."
+        },
+        {
+          "t": "‘Are you OK?’ or ‘Just checking in’ are his Kryptonite.",
+          "c": "solo"
+        },
+        {
+          "t": "When he does get in touch it’s a frenzy. He’ll bombard you with months of dense research and be amazed that you don’t have an encyclopaedic knowledge of it twenty four hours later."
+        },
+        {
+          "t": "‘Have you read it yet?’"
+        },
+        {
+          "t": "‘No, Dev. You sent it at 2.30am and I’ve been at work’"
+        },
+        {
+          "t": "‘This is fire though, Simon. Fuck work, drop everything. Read it’"
+        },
+        {
+          "t": "He also has a habit of just ‘finding you’. You won’t have seen him for months, last you heard he was in Bangkok or Cape Town, then he just appears in a pub you hadn’t told him you were going to, or knocks on the front door, wanders in and nonchalantly puts the kettle on. No ceremony. No chit chat. Just a hug and straight into a deep dive. It wouldn’t surprise me if he’d cut himself a door key and I found him sitting at the kitchen table waiting for me, an open bottle of bourbon in front of him."
+        },
+        {
+          "t": "Dev just gets away with it. The rascal’s rascal. Nobody has a bad word to say about him, as long as you don’t consider cad, scoundrel, philanderer, rogue or loon to be bad words. Which he doesn’t."
+        },
+        {
+          "t": "God knows where he gets some of his stuff from. He absorbs information like no one else I’ve ever met. He’s probably a speed reader but he’s never confirmed this. The closest he ever got was a wink and a knowing tap on the nose. His book recommendations have always been a thing of legend. At school he started me on my journey through the sci-fi and dystopian literature landscape. Illuminatus! Trilogy, 1984, Brave New World, Hitchhiker’s, Foundation etc. He once showed me a pre-release handwritten copy of Ready Player One. It had a slightly different ending. Better in my opinion. A bit like Blade Runner Director’s Cut. It wouldn’t surprise me in the least if he’d written it himself."
+        },
+        {
+          "t": "He’d often just send you a photo of a book. No message. No ‘hi mate’. No emoji. Just a photo and then dark mode for six months. There are plenty of other must-reads he’s sent my way. Let me think. Off the top of my head, Snowcrash (if you haven’t read, read it), Wool, The Road, Children of Time, Cryptonomicon, Daemon, Vurt. Sorry I’m getting carried away, you’re not here for book club."
+        },
+        {
+          "t": "That’s just books. As I’ve said he occasionally bombards you with his latest ‘data drop’. 4Chan whistleblowers, alleged intelligence agency leaks and his own mind blowing prose that interweaves fact, fiction, psychedelia and science that often goes slightly over my head. A lot of it is quite dark. Keeps you up in the middle of the night sort of dark. Yet when he explains it, he somehow manages to offer you an almost empty glass whilst convincing you it’s nearly full. How he retained such positivity I’ll never know. He’s unflappable. He never looks back. Only Forward. (I’ve unwittingly given you another book recommendation)."
+        },
+        {
+          "t": "We got on like a house on fire since the day we met. I think he liked the fact that I took the piss out of him. I understood some of his obscure references and I got his dark sense of humour. I’d never hassled him. He hates being hassled. We just clicked. I was never in awe of him, at least I gave the impression I wasn’t. Most people were. He was the annoying bastard that most blokes wanted to be and most girls wanted to be with. A lot of boys too for that matter. Don’t tell him I said this, but he does come across as a mixture of Jason Bourne, Mr Spock and the grooviest side of Austin Powers. A sort of all-action, logical Man of Mystery. It was common knowledge that his school fees had been covered by scholarship. It was widely suspected that he’d inherited a rather large Trust Fund. He had pads in London and Miami. That I knew of."
+        },
+        {
+          "t": "What he actually did was an unknown. Think of something uber-cool, verging on the implausible, and you’ll be on the right lines I imagine."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I’ve mentioned Dev because I had a message exchange with him earlier today. An actual chat-by-text rather than a dump-and-run. It was prompted by Amy showing me a photo from a couple of years ago - her phone had decided to collate a montage to music of ‘In the garden through the years’ or some such - and one stood out. The sky had done something that night that it wasn’t supposed to do in the south of England. Shimmering ribbons of green and violet. We stood in the garden in our dressing gowns at midnight, transfixed. I’d rushed out as Amy had shouted my name in a voice I’d never heard before — not frightened, not excited, not elated. At peace. A peaceful shout, is that a thing?"
+        },
+        {
+          "t": "I’d meant to ask Dev about it at the time but it had slipped my mind. The algorithm does not forget. Better late than never, I sent Dev the photo with ‘Thoughts?’"
+        },
+        {
+          "t": "I knew he’d have a provocative take. He did."
+        }
+      ]
+    },
+    {
       "id": "MQ2",
       "isQuestion": true,
       "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
@@ -187,7 +248,7 @@
       "id": 2,
       "num": "T2",
       "title": "Potatoes and Rabbit Holes",
-      "date": "October 2026",
+      "date": "Mid October 2026",
       "paras": [
         {
           "t": "The potatoes, dug up last week, were exceptional. Actually tasted like potatoes. Gently boiled, a large knob of butter. Perfection. I feel a long way from self-sufficiency though. Weeks of nurture, toil, turning soil and watering yielded two, maybe three weeks worth. The Marmande tomatoes were very pleasant but there weren’t nearly enough for a family of six Tricolore salad addicts. A labour of love that had to be topped up each week with Isle of Wight selection box reinforcements from Waitrose. I reluctantly admit these were just slightly sweeter, juicier and firmer than our homegrown crop. But they didn’t fill me with such a sense of enormous wellbeing."
@@ -245,7 +306,7 @@
       "id": 3,
       "num": "T3",
       "title": "The Deck",
-      "date": "October 2026",
+      "date": "Late October 2026",
       "paras": [
         {
           "t": "Early starts. 5 days in a row. Working until it’s too dark or I’m too tired. I wouldn’t say I was born to do this sort of thing. Not many people would say ‘Oh yeah, Simon, he’s handy’. But I’m not totally inept."
@@ -743,7 +804,7 @@
       "id": 8,
       "num": "T8",
       "title": "The Cleanse",
-      "date": "December 2026",
+      "date": "Early December 2026",
       "paras": [
         {
           "t": "Amy and I have been promising ourselves we’d do this for weeks on end. There’s always a reason not to. There’s always next week."
@@ -933,7 +994,7 @@
       "id": 9,
       "num": "T9",
       "title": "Tuesday Morning",
-      "date": "December 2026",
+      "date": "Early December 2026",
       "paras": [
         {
           "t": "The car journey to our yoga class. Amy’s driving, I’m scrolling. She’s tutting. She wants ‘me’ in the car. Not the version of me that’s permanently livid, preachy, lurching from hope to despair and back again. Not The Ghost."
@@ -1009,7 +1070,7 @@
       "id": 10,
       "num": "T10",
       "title": "The Ontology",
-      "date": "December 2026",
+      "date": "Mid December 2026",
       "paras": [
         {
           "t": "A long day, but a fruitful one. I’ve been out and about. Meeting with the accountant, lunch with my associate employee contemporaries. Not boozy, I was driving. A couple of end-of-year work meetings. Nothing too hifalutin, just getting everything in its right place before the festive slumber season."
@@ -1506,37 +1567,63 @@
       "id": 14,
       "num": "T14",
       "title": "The Puppy",
-      "date": "January 2027",
+      "date": "Late January 2027",
       "paras": [
         {
-          "t": "They have you buy the short and curlies. You can’t vote your way out. Surely you see that by now? Sending sternly-worded letters to MP’s is a humiliation ritual. Signing online petitions is an exercise in futility. Moaning on social media lets off some steam. Which is a major reason why it’s ‘allowed’. A whinge and a scroll into the aether on your algorithmically captured feed might feel satisfying, feel like action, like resistance. But it isn’t."
+          "t": "They have you by the short and curlies."
         },
         {
-          "t": "I’ve been banging on for years about there only being two real options to bring about the changes you want. Either be the change your looking for. Live it. Don’t just think about it, don’t just talk about it. Do it. Positive affirmative action. The issue is that you’ll have to sacrifice an increasing amount to ‘live freely’."
+          "t": "You can’t vote your way out. Surely you see that by now? Sending sternly-worded letters to MP’s is a humiliation ritual. Signing online petitions is an exercise in futility. Moaning on social media lets off some steam. Which is a major reason why it’s ‘allowed’. A whinge into the aether on your algorithmically captured feed might feel satisfying, might feel like action, like resistance. But it isn’t."
         },
         {
-          "t": "Or fight. Not physically. I’m not talking about storming the bastards with pitch forks. Not until I’ve had a few beers, anyway. I mean mass non-compliance. Unity. Collectively drawing a line and saying ‘this far, no further’. But it doesn’t happen. They know just how far to push us before we break. They’ve got ‘machines and all sorts’ to help them. Insert wink and insanity laugh emojis here. So that’s the impasse we find ourselves at. Complying ourselves into digital cages. Like good little piggies. Oink. Oink."
+          "t": "I’ve been banging on for years about there only being two real options available to us to bring about the changes we want."
         },
         {
-          "t": "As the meme goes ‘You are here, paying taxes to paedophiles’.",
+          "t": "Either be the change you’re looking for. Live it. Don’t just think about it, don’t just talk about it. Do it. Positive affirmative action. The issue is that you’ll have to sacrifice an increasing amount to ‘live freely’."
+        },
+        {
+          "t": "Or fight. Not physically. I’m not talking about storming the bastards with pitch forks. Well, not until I’ve had a few beers, anyway. I mean mass non-compliance. Unity. Collectively drawing a line and saying ‘this far, no further’. But it doesn’t happen. They know just how far to push us before we break. They’ve created tools to help them. Game theory, psychological operations, weapons of mass distraction. Probably a quantum computer that predicts and shapes every policy. Insert wink and insanity laugh emojis here!"
+        },
+        {
+          "t": "So that’s the impasse we find ourselves at. Complying ourselves into digital cages. Like good little piggies. Oink. Oink."
+        },
+        {
+          "t": "As the meme of the galaxy with a small arrow pointing to our solar system tells us - ‘You are here, paying taxes to paedophiles’.",
           "c": "solo"
         },
         {
-          "t": "Flying out to Spain to see my mum and her new puppy (Dash, black spaniel, she’s an absolute dish!) sums up in a nutshell. I can talk a good game. I’ve read more articles than you could shake a stick at about digital id, the surveillance state, technocracy, the panopticon, the algorithmic ghetto, 15 minute cities, SDG 16.9, One Login, interoperability, yada yada. Talk is cheap. I’m a fucking hypocrite and I know it. It’s very easy to say I’m opposed to what looks like (to anyone with half a brain) the formation of a neo-feudalist control grid. But it’s not so easy to stand up and resist."
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "I know that pretty much every stage of the journey to seeing mum is tracked, analysed, nudged, gated, surveilled and biometrically captured. I’m just giving them my data and my implied consent. Here you go. From the booking of the flights, my naff passwords, VPN-less internet connection being beamed down from Elon’s Skynet, the payment authorisation protocols, the surveillance cameras every 2 metres along the motorway, Google Maps kindly and conveniently helping me avoid the traffic on the way to the airport. The border checks, more cameras, more, more more. And when we land, behold the shiny new EES biometric facial and finger print scanners installed ‘for your safety and convenience’."
+          "t": "I’m flying out to Spain with Amy, Sam and Emilia tomorrow to see my mum and her new puppy (Dash, black spaniel, she’s an absolute dish!)"
         },
         {
-          "t": "Did I give informed consent to any of this? Kind of, read the T’s & C’s, bitch. Do I understand the repercussions of being so liberal with my digital footprint? Yes. Did it stop me getting on a plane to see my mum and Dash? No, it didn’t. Does it stop you? I doubt it. What are we going to do about it? We’re going to look at that Spanish sun and the heated pool in mum’s garden the same way as Cypher looked at that steak."
+          "t": "Compliance in a nutshell. I can talk a good game. I’ve read more articles than you could shake a stick at about digital id, the surveillance state, technocracy, the panopticon, the algorithmic ghetto, 15-minute cities, SDG 16.9, One Login, interoperability, yada yada. Talk is cheap. I’m a fucking hypocrite and I know it. It’s very easy to say I’m opposed to what looks like (to anyone with half a brain) the formation of a neo-feudalist control grid. But it’s not so easy to stand up and resist."
+        },
+        {
+          "t": "I know that pretty much every stage of the journey to seeing mum will be tracked, analysed, nudged, gated, surveilled and biometrically captured. I’m just giving them my data and my implied consent. Here you go. From the booking of the flights to my same-password-for-everything I’ve had since university (Badhead1998! if you want to know - who cares? Everything is hackable anyway, including humans) From my VPN-less internet connection being beamed down from Elon’s Skynet to the payment authorisation protocols. The surveillance cameras every 2 metres along the motorway, Google Maps kindly helping me avoid the traffic on route to the airport. The border checks, more cameras, more, more more. And when we land, behold the shiny new EES biometric facial and finger print scanners installed ‘for your safety and convenience’."
+        },
+        {
+          "t": "Did I give informed consent to any of this? Kind of."
+        },
+        {
+          "t": "Read the T’s & C’s, bitch.",
+          "c": "inner"
+        },
+        {
+          "t": "Do I understand the repercussions of being so liberal with my digital footprint? Yes. Did it stop me getting on a plane to see my mum and Dash? No, it didn’t. Does it stop you? I doubt it. What are we going to do about it? We’re going to do what I did. Look at the Spanish sun and the heated pool in mum’s garden in the same way as Cypher looked at that steak."
         },
         {
           "t": "Ignorance is bliss.",
-          "c": "solo"
+          "c": "quote"
         },
         {
-          "t": "Flight was delayed, weather was pleasant, the Spanish doomscrolling of X remarkably similar to the English version. Adios amigos.",
-          "c": "solo"
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "Flight was delayed, weather was pleasant, the Spanish doomscrolling of X remarkably similar to the English version. Adios amigos."
         }
       ],
       "choices": {
@@ -1552,65 +1639,117 @@
       "id": 15,
       "num": "T15",
       "title": "The Dude Abides",
-      "date": "January 2027",
+      "date": "Still Bloody January 2027",
       "paras": [
         {
-          "t": "Dev is extraordinary. I've never met anyone else like him. In fact very few people are even <i>quite</i> like him. I met him at school. Christ, nearly forty years ago. He's been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months, occasionally years at a time. He's not what you'd call traditionally responsive to messaging. And I'm not one to push him, if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls. ‘Are you OK?’ or ‘Just checking in’ are his Kryptonite. When he does get in touch it's a frenzy. He'll bombard you with months of dense research and be amazed that you don't have an encyclopaedic knowledge of it 24 hours later."
+          "t": "Dev messaged me today. Not with a data dump, nothing cryptic. He actually messaged me like a normal person, to arrange a meeting in a pub. The old central London boozer that used to be one of our favourite haunts, and, remarkably, has resisted the urge to gentrify and gastropub itself. Not that it’s a conscious entity. In fact, I’ll ask Dev, it’ll be a good ice breaker. Better than the usual ‘how’s tricks?’."
         },
         {
-          "t": "‘Have you read it yet?’",
-          "c": "solo"
+          "t": "‘Dev, can a pub have consciousness?’"
         },
         {
-          "t": "‘No, Dev. You sent it at 2.30am and I've been at work’",
-          "c": "solo"
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "‘This is fire though, Simon. Fuck work, drop everything. Read it’",
-          "c": "solo"
+          "t": "We’re four pints in (Timothy Taylor Landlord, with ‘pub buffet’ sides of dry roasted peanuts and pork scratching) and all we’ve talked about is whether buildings can be conscious. Of course Dev had an angle on this. More than an angle, the entire protractor. It’s as if he knew I’d ask him this and he’d been reading up on the subject for weeks. Knowing Dev, he probably did know I’d ask him. Or he just knew this shit anyway. Or both. He started off with Vastu Shastra, an ancient Indian architectural science that sees buildings as fundamentally alive, containing a ‘Vastu Purusha’ (cosmic being) that conducts prana (life force). That led onto Panpsychism, a philosophical position suggesting all matter, including inanimate objects, may have some form of consciousness. Then ‘Smart City’ sensors with AI integration, which might enable ‘dream spaces’ that evolve with their inhabitants, blurring the line between human and machine. We had just started waffling on (to be fair, it felt like I was waffling, Dev was lecturing with authority) about substrate-independence, consciousness and complex physical systems, when Alan walked in. I forgot to tell you, Dev had invited Alan along for a beer. He said I’d like him, but nothing more."
         },
         {
-          "t": "He also has a habit of just ‘finding you’. You won't have seen him for months, last you heard he was in Bangkok or Miami, then he just appears in a pub you hadn't told him you were going to, or knocks on the front door, wanders in and puts the kettle on. No ceremony. No chit chat. Just a hug and straight into a deep dive. It wouldn't surprise me if he'd cut himself a door key and I found him sitting at the kitchen table waiting for me, half a bottle of bourbon down."
+          "t": "Alan was quite remarkable. Part surfer-dude, part gamer-slob, all-American. A big chap, clearly a stoner, amiable, softly spoken, sharp. Imagine The Dude from The Big Lebowski crossed with…well, with no one. Just imagine The Dude. The Dude was wearing Bermuda shorts and Havaianas in deep English winter. His only concession to the just-above-zero temperature a thin woollen jumper."
         },
         {
-          "t": "But Dev just gets away with it. The rascal's rascal. Nobody has a bad word to say about him, as long as you don't mind being called a cad, a scoundrel, a philanderer, a rogue or a loon. Which he doesn't."
+          "t": "He apologised for his tardiness (no reason given or asked for), bought a round, including 3 pints for himself as he ‘was playing catch up’ and proceeded to neck a pint and a half before he sat down."
         },
         {
-          "t": "God knows where he gets some of his stuff from. His book recommendations have always been great. He started me on my journey through the sci-fi and dystopian literature landscape. Illuminatus! Trilogy, 1984, Brave New World, Hitchhiker's, Foundation etc. He somehow sent me a pre-release handwritten copy of Ready Player One. It wouldn't surprise me in the least if he'd written it. He'd often just send you a photo of a book. No message. No ‘hi mate’. Just a photo and then dark mode for six months. There are plenty of others, let me think. Off the top of my head, Snowcrash (if you haven't read, read it), Wool, The Road, Children of Time, Cryptonomicon, Daemon, Vurt. Sorry I'm getting carried away, you're not here for book club."
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "That's just his book recommendations. As I've said he occasionally bombards you with his latest ‘data drop’. 4Chan whistleblowers, alleged intelligence agency leaks and his own mind blowing prose that interweaves fact, fiction, psychedelia and science that goes way over my head. A lot of it quite dark. Yet he somehow manages to offer you an almost empty glass but somehow convinces you it's nearly full. How he retained such positivity I'll never know. Only Forward. (I've unwittingly given you another book recommendation)"
+          "t": "I wish I had a recording of the conversation. I’d edit my eight pint pseudo-cringe out and just leave Dev and the Dude. They should do a podcast. Great title. The first half of the night was spent talking about food, mainly burgers. Which cuts of beef to use, cooking method, bun choice, filling, sauce combos. Chunky chips or fries. The perfect burger beer. The best burger joints in the world. Your five-person guest list at your fantasy burger dinner party. Actually my input here was pretty strong. I’d yet to sacrifice my lucidity at the altar of Timmy Taylor."
         },
         {
-          "t": "Today is extraordinary. He'd actually messaged me to arrange a meeting in a pub, an old London boozer that used to be one of our favourite haunts, and, remarkably, has resisted the urge to gentrify and gastropub itself. Not that it's a conscious entity. In fact, I'll ask Dev, it'll be a good ice breaker. Better than the usual ‘how's the family’. ‘Hi Dev, can a pub have consciousness?’"
+          "t": "As topics moved on from food I realised that The Dude was good. Really good. He gave Dev a run for his money. He flipped from burgers (pun intended - in fact bun intended) to Bounded Systems Theory (no system can model its own source) to Mindwars to The Occult and The Nature of Consciousness."
         },
         {
-          "t": "Four pints in (Timothy Taylor Landlord, with ‘pub buffet’ sides of salted peanuts and pork scratching) and <i>all</i> we've talked about is whether buildings can be conscious. Of course Dev had an angle on this. More than an angle, the entire protractor. It's as if he knew I'd ask him this and he'd been reading up on the subject for weeks. Knowing Dev, he probably did know I'd ask him. Or he just knew this shit anyway. Or both. He started off with Vastu Shastra, an ancient Indian architectural science that sees buildings as fundamentally alive, containing a ‘Vastu Purusha’ (cosmic being) that conducts prana (life force). That led onto Panpsychism, a philosophical position suggesting all matter, including inanimate objects, may have some form of consciousness. Then ‘Smart City’ sensors with AI integration, which might enable ‘dream spaces’ that evolve with their inhabitants, blurring the line between human and machine. We had just started waffling on (to be fair, I was waffling, Dev was lecturing with authority) about substrate-independence, consciousness and complex physical systems, when Alan walked it. I forgot to tell you, Dev had invited Alan along for a beer. He said I'd like him, but nothing more."
+          "t": "It’s as if he somehow knew about the pub consciousness conversation…",
+          "c": "inner"
         },
         {
-          "t": "Alan was quite remarkable. Part surfer-dude, part gamer-slob, all-American. A big chap, clearly a stoner, amiable, softly spoken, sharp. Imagine The Dude from The Big Lebowski crossed with…well, with no one. Just imagine The Dude. The Dude was wearing Bermuda shorts and Havaianas in English winter. His only concession to the temperature a thin woollen jumper. He apologised for his tardiness (no reason given), bought a round, including 3 pints for himself as he ‘was playing catch up’ and proceeded to neck a pint and a half before he sat down."
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "I wish I had a recording of the conversation. I'd edit my eight pint pseudo-cringe out and just leave Dev and the Dude. They should do a podcast. Great title. Most of the night (80%) was spent talking about food, mainly burgers. Which cuts of beef to use, cooking method, bun choice, filling, sauce combos. Chunky chips or fries. The perfect burger beer. The best burger joints in the world. Your five-person guest list at your fantasy burger dinner party. The other 20% has been largely sacrificed at the altar of Timmy Taylor. But The Dude was good. Really good. He gave Dev a run for his money. He flipped from burgers (bun intended, I mean pun) to Bounded Systems Theory (no system can model its own source) and back again. He mentioned a ‘prediction engine’ he'd developed. Said he'd ping me something."
+          "t": "Dev came back from the bar with three more pints and a question."
         },
         {
-          "t": "I don't think I've ever <i>worried</i> about Dev. I've wondered where the fuck his is and what the hell he's up to. But I've never worried about him. Yet towards the end of the night I thought he looked ruffled. Concerned. Quite out of the blue. Dev never looks ruffled or concerned. He'd been on his phone a bit whilst The Dude was telling me about his engine. Had he read something that freaked him out? Whatever it was, the sudden awkwardness that descended without Dev <i>saying</i> anything stopped The Dude dead in his tracks."
+          "t": "‘What do your neurons and slime mould have in common?’"
+        },
+        {
+          "t": "The Dude raised an eyebrow. I looked up from my pork scratchings, thinking I should order something more substantial. All this talk about food and we’d only had bar snacks."
+        },
+        {
+          "t": "Dev followed up with an answer before either of us could reply. ‘They’re both knocked out by the same anaesthetic, yet neither has the same proteins. Completely different organisms. But put them under and the same thing stops. The thing that stops isn’t in the proteins. It’s in the pockets. Hydrophobic pockets. Little greasy spaces inside the molecules where quantum coherence happens. Anaesthesia doesn’t shut down the chemistry. It shuts down the coherence. The thing that makes the chemistry aware.’"
+        },
+        {
+          "t": "He took a large sip."
+        },
+        {
+          "t": "‘If consciousness lives in the quantum coherence inside hydrophobic pockets, then anything that copies the proteins without copying the coherence gets the structure but not the… the being. You get a perfect copy that isn’t anyone. You get one, one, two, three, five without the zero.’"
+        },
+        {
+          "t": "‘The what?’ I asked."
+        },
+        {
+          "t": "‘The Fibonacci sequence’. The Dude replied instead of Dev. He appeared to be following. ‘Starts with zero. Only term not generated by its own rule. Everything after zero is mechanical — sum the previous two. But zero comes from outside. It’s the seed. The soul, if you like. Outside the bounded system.’"
+        },
+        {
+          "t": "He ate a pork scratching."
+        },
+        {
+          "t": "‘You got it’ Dev replied. ‘Consciousness is not information. A system can copy the sequence perfectly. It can’t copy zero. It doesn’t know the zero is there. That’s the whole argument, mate. In one sentence. In a greasy pocket.’"
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I don’t think I’ve ever worried about Dev. I’ve wondered where the fuck he is and what the hell he’s up to. But I’ve never worried about him. Yet towards the end of the night I thought he looked rather ruffled. Concerned. Quite out of the blue. Quite out of character. Dev never looks ruffled or concerned. He’d been engrossed with his phone whilst The Dude was telling me about his engine. Had he seen something, read something that had freaked him out? Whatever it was, a sudden awkwardness descended without Dev saying anything. The Dude stopped dead in his tracks. He’d sensed it too."
         },
         {
           "t": "‘You OK mate?’",
           "c": "solo"
         },
         {
-          "t": "Dev said he was fine. I knew he wasn't. He had something big, something insane to tell me. Now was not the right time. He'd message me."
+          "t": "Dev said he was fine. I knew he wasn’t. He said he had something big, something insane to tell me. Now was not the right time. He’d message me. I didn’t push him. I knew not to."
         },
         {
-          "t": "And that was that. Apparently he and The Dude had a flight to catch, they got up, we hugged, they left."
+          "t": "The Dude changed the subject, started talking about a ‘prediction engine’ he’d developed. He didn’t go into much detail, said he’d ping me something. We swapped numbers."
         },
         {
-          "t": "The next day I tried to recall the conversations from the night before. Hazy. I remembered snippets, a few nuggets I'd made a mental note of to look into. God knows where Dev and The Dude went. Could be EasyJet to Berlin or Emirates First Class to Abu Dhabi. I don't know which would surprise me more. I was intrigued about what Dev was going to send. It sounded big. But Dev makes everything sound big. I'm sure whatever I get from Alan about his prediction engine will be astonishing. I'll pour myself a White Russian when it arrives and dive in."
+          "t": "",
+          "c": "break"
         },
         {
-          "t": "The one thing I do remember The Dude saying is this. His parting shot, delivered in an offhand manner, yet somehow it hit."
+          "t": "And quite abruptly, that was that. Dev and The Dude got up in unison, as if the exact timing of their exit had been pre-arranged. Apparently they had a flight to catch. We hugged, they left."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "The next day I tried to recall all the other conversations from the night before. Hazy. I remembered snippets, a few nuggets I’d made a mental note of to look into."
+        },
+        {
+          "t": "God knows where Dev and The Dude went. Could be EasyJet to Berlin or Emirates First Class to Abu Dhabi. I don’t know which would surprise me more."
+        },
+        {
+          "t": "I was intrigued about what Dev was going to send. It sounded big. But Dev has a habit of making everything sound big."
+        },
+        {
+          "t": "I’m sure whatever I get from The Dude (He’ll always be The Dude to me from now on, never Alan) about his prediction engine will be astonishing. I’ll pour myself a White Russian when it arrives and dive in."
+        },
+        {
+          "t": "The one thing I do remember clearly. The Dude’s parting shot, delivered in an offhand manner, yet somehow it hit."
         },
         {
           "t": "‘Stop participating in the distractions and create your own reality’",
@@ -1630,7 +1769,7 @@
       "id": 16,
       "num": "T16",
       "title": "The Bookmark",
-      "date": "January 2027",
+      "date": "Mid January 2027",
       "paras": [
         {
           "t": "A busy week. I won’t bore you with it. Stressful. Work stuff, money, people being people. Well people being arseholes actually. Selfish, unscrupulous bastards. It took me a few days to recover from the night out with Dev and The Dude. Obviously I didn’t hear anything from Dev for four or five days. If it was anyone else it would’ve been a cause for concern, but not Dev. He’d be fine. He was always fine. But I kept getting flashbacks of that look of concern on his face. More than concern. Horror. I was undoubtedly overplaying it. A sober me probably wouldn’t have thought anything of it."
@@ -1670,7 +1809,7 @@
       "id": "16a",
       "num": "T16a",
       "title": "Psychohistory",
-      "date": "January 2027",
+      "date": "Mid January 2027",
       "paras": [
         {
           "t": "Talking of The Dude, he sent me a link to his Psychohistory Prediction Engine. The intro sounds so dry. I chuckle to myself. Hard to believe these are the words of the flip-flops in winter, pint-downing stoner I met. I was expecting something more offbeat. More <em>far out</em>."
@@ -5044,6 +5183,34 @@
           }
         ]
       }
+    ],
+    "1a": [
+      {
+        "sec": "Photos",
+        "cards": [
+          {
+            "src": "Photos — In the garden through the years",
+            "ttl": "Amy’s Aurora",
+            "snip": "Still the most beautiful thing I’ve ever seen from the garden. Thirteen million people posted theirs. She stared in awe and just took one photo.",
+            "tag": "2024",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "[Amy’s aurora photo] Thoughts?",
+            "snip": "You know they can make those?",
+            "tag": "",
+            "cls": "",
+            "isnew": true,
+            "type": "flavour"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -5408,6 +5575,33 @@
       "id": "reader-own",
       "label": "Reader's Own",
       "items": []
+    },
+    {
+      "id": "tulegenov-2019",
+      "title": "Artificial airglow via ionospheric heating",
+      "source": "Tulegenov et al. 2019",
+      "cat": "Science & Technology",
+      "url": "",
+      "turn": "1a",
+      "note": "Dev sent this. You haven’t read it."
+    },
+    {
+      "id": "slime-mould-intelligence",
+      "title": "How Brainless Slime Molds Redefine Intelligence",
+      "source": "Scientific American",
+      "cat": "Science & Technology",
+      "url": "https://www.scientificamerican.com/article/brainless-slime-molds/",
+      "turn": "15",
+      "note": "Dev sent this with zero context. I looked it up. A slime mould that solves mazes and designs transport networks. No brain. No neurons. Just goo."
+    },
+    {
+      "id": "orch-or-hameroff-2020",
+      "title": "Orch OR is the most complete, and most easily falsifiable theory of consciousness",
+      "source": "Hameroff, 2020 — Cognitive Neuroscience",
+      "cat": "Science & Technology",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/17588928.2020.1839037",
+      "turn": "15",
+      "note": "Dev’s follow-up. ‘Read the slime mould thing first, then read this. Then tell me AI is conscious.’"
     }
   ],
   "songs": [

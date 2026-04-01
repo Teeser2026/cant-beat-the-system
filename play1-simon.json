@@ -225,6 +225,17 @@
       ]
     },
     {
+      "id": "1b",
+      "num": "T1b",
+      "title": "MIND THE GAP",
+      "date": "Early October 2026",
+      "paras": [
+        {
+          "t": "[STUB — Saturday. Family gathering at Simon and Amy’s. George’s belated 19th birthday. Family intro chapter: the kids, Amy’s parents Jenny and Peter, brothers Rupert and Jamie. Simon’s diabetes seeded. Simon’s job seeded. Dogs. Food. Warmth. The life that gets absorbed.]"
+        }
+      ]
+    },
+    {
       "id": "MQ2",
       "isQuestion": true,
       "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
@@ -1409,7 +1420,7 @@
       "id": 13,
       "num": "T13",
       "title": "I’m Not The Only One",
-      "date": "Mid January 2027",
+      "date": "Early January 2027",
       "paras": [
         {
           "t": "We all have our good days. Those days when everything seems right with the world. A sense of optimism, of hope. A spring in your step. Filled with the joy by simply being alive. Thankful. A warm, fuzzy glow. Whenever I’m in this mood I’m taken back to being a young boy at school. Five or six. Assembly, first thing in the morning. Sitting cross legged on the wooden floor of my school hall. Morning sun beaming though the windows."
@@ -1567,7 +1578,7 @@
       "id": 14,
       "num": "T14",
       "title": "The Puppy",
-      "date": "Late January 2027",
+      "date": "Early January 2027",
       "paras": [
         {
           "t": "They have you by the short and curlies."
@@ -1639,7 +1650,7 @@
       "id": 15,
       "num": "T15",
       "title": "The Dude Abides",
-      "date": "Still Bloody January 2027",
+      "date": "Mid January 2027",
       "paras": [
         {
           "t": "Dev messaged me today. Not with a data dump, nothing cryptic. He actually messaged me like a normal person, to arrange a meeting in a pub. The old central London boozer that used to be one of our favourite haunts, and, remarkably, has resisted the urge to gentrify and gastropub itself. Not that it’s a conscious entity. In fact, I’ll ask Dev, it’ll be a good ice breaker. Better than the usual ‘how’s tricks?’."
@@ -1772,28 +1783,64 @@
       "date": "Mid January 2027",
       "paras": [
         {
-          "t": "A busy week. I won’t bore you with it. Stressful. Work stuff, money, people being people. Well people being arseholes actually. Selfish, unscrupulous bastards. It took me a few days to recover from the night out with Dev and The Dude. Obviously I didn’t hear anything from Dev for four or five days. If it was anyone else it would’ve been a cause for concern, but not Dev. He’d be fine. He was always fine. But I kept getting flashbacks of that look of concern on his face. More than concern. Horror. I was undoubtedly overplaying it. A sober me probably wouldn’t have thought anything of it."
+          "t": "A busy day. A shitty day. I won’t bore you with it. Stressful. Work stuff, money, people being people. Well people being arseholes actually. Selfish, unscrupulous bastards. I don’t want to talk about it. I don’t even like thinking about it. Give me oblivion. All I’ll say is, my long term financial security has taken a bit of a hit. And my trust in the human race has gone down yet another notch."
         },
         {
-          "t": "When his message arrived it was somewhat underwhelming. A short document ‘Firmware analysis: UK payment terminal fleet — undocumented OTA push’. Dry, technical. No actual message from Dev, no explanation of what he thought it meant. I’m sure the info about the firmware push was accurate. I don’t doubt that for a second. Dev’s sources are rock solid. What it meant, what he thought it would lead to, wasn’t entirely clear. I searched X, no mention of it. Scanned through several of the hundreds of Telegram groups I had joined over the years but rarely visited. Nothing. Those groups weren’t shy about coming forward with ‘this is the big one’ or ‘they’re gonna bring it all down next week, BE PREPARED’ claims. They’d cried wolf so many times. It seemed to be the sole reason for the existence of some of them, yet nothing on this. Weird."
+          "t": "I should write something down for the children. Life observations and rules to live by. Number one. Follow your heart. Number two. Trust no one. Number three. There’s no such thing as a free lunch. I’ll think of more throughout the day. I should use my Parker ink pen. If I can find it (note to self — new cartridges needed) and buy some thick parchment paper. I’ll tie it up in a scroll, one for each of them.",
+          "c": "inner"
         },
         {
-          "t": "I pinged Dev a message. ‘What do you think it means?’"
+          "t": "It took me a few days to recover from the night out with Dev and The Dude. I didn’t hear anything from Dev for a couple of days, <em>obviously</em>. If it was anyone else it would’ve been a cause for concern, but not Dev. He’d be fine. He was always fine. But I kept getting flashbacks of that look of concern on his face. More than concern. Horror. I was undoubtedly overplaying it. I doubt a sober Simon would have thought much of it."
+        },
+        {
+          "t": "His message eventually arrived first thing this morning. On the face of it, it was somewhat underwhelming. A short document."
+        },
+        {
+          "t": "‘Firmware analysis: UK payment terminal fleet — undocumented OTA push’.",
+          "c": "quote"
+        },
+        {
+          "t": "Dry, technical. No accompanying message from Dev, no explanation of what he thought it meant."
+        },
+        {
+          "t": "I don’t doubt for a second that the info about the firmware push was accurate. Dev’s sources are rock solid. What it meant, what he thought it would lead to, wasn’t entirely clear."
+        },
+        {
+          "t": "Maybe it’s linked to the recent <em>heightened cyber threat level</em> fear-porn that had started to appear in the mainstream propaganda channels?"
+        },
+        {
+          "t": "I searched X. Obviously cyber/infected networks/data compromised/hostile actors etc were trending. But no mention of this specific OTA push that I could see. I scanned through several of the hundreds of Telegram groups I’d joined during Operation Covid but rarely visited. Nothing. Those groups weren’t shy about coming forward with ‘this is the big one’ or ‘they’re gonna bring it all down next week, BE PREPARED’ claims. They’d cried wolf so many times. Doomsaying seemed to be the sole reason for the existence of some of them, yet no signal in the noise. Weird."
+        },
+        {
+          "t": "I pinged Dev a message. ‘Cool. But what’s it mean? Cyber psyop incoming?’"
         },
         {
           "t": "I’m still waiting for a reply."
         },
         {
-          "t": "I didn’t think much more of it. I’d been trying to take The Dude’s parting remark to heart."
+          "t": "I tried not to think much more of it. I’ve been putting two and two together to make five for too long and I’m jaded. Instead I’ve been making an effort to take The Dude’s parting remark to heart."
         },
         {
-          "t": "Stop participating in the distractions and create your own reality. So I made a vow to read an actual book in bed rather than scrolling Substack and X. Small steps. I’ve been reading Freedom, Daniel Suarez, the follow up to the Daemon. Which was bloody amazing. I get through about ten pages per night before I nod off, book still in hand."
+          "t": "Stop participating in the distractions and create your own reality.",
+          "c": "quote"
         },
         {
-          "t": "‘Are you asleep, Simon?’ Amy asks."
+          "t": "So I’ve made a vow to read an <em>actual</em> book in bed at night rather than consuming Substack essays and idly scrolling X. Small steps."
         },
         {
-          "t": "‘No, just thinking’ I fib, smiling. A minute later she’ll have taken the book out of my hands, placed it on my bedside table, bookmark inserted (a dog-eared reminder of a romantic trip to Santorini) and given me a goodnight peck on the cheek. It’s amazing how much better I sleep reading words on paper instead of in blue light."
+          "t": "I’ve started on Freedom by Daniel Suarez, the follow up to Daemon, which was bloody amazing. Prescient AF. I got through about ten pages last night before I began to nod off, book still in hand."
+        },
+        {
+          "t": "‘Are you asleep, darling?’ Amy asked."
+        },
+        {
+          "t": "‘No, just thinking’ I lied, smiling and fighting to retain consciousness."
+        },
+        {
+          "t": "A minute later she’d taken the book out of my hands, placed it on my bedside table, bookmark inserted (a dog-eared reminder of a romantic trip to Santorini) and given me a goodnight peck on the cheek."
+        },
+        {
+          "t": "It’s amazing how much better I sleep reading words on paper instead of in blue light."
         }
       ],
       "choices": {
@@ -1878,7 +1925,7 @@
       "id": "17a",
       "num": "T17a",
       "title": "The Bell Inn",
-      "date": "January 2027",
+      "date": "Still Bloody January 2027",
       "paras": [
         {
           "t": "Amy suggested we try a new walk with the dogs today. A long loop of beautiful Sussex countryside starting and ending at The Bell Inn. She had me at ‘pub’ and she knew it. Only a ten minute drive from our house but somewhere we’d yet to explore. The pub car park was refreshingly busy for dry January."
@@ -1960,7 +2007,7 @@
       "id": "17b",
       "num": "T17b",
       "title": "Dude Deep Dives",
-      "date": "Late January 2027",
+      "date": "Nearly February 2027",
       "paras": [
         "Video call with The Dude."
       ],

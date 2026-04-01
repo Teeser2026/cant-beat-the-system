@@ -635,6 +635,65 @@ div.ti.article:hover::after { opacity: .4; }
 }
 .article-panel.news .article-save:hover { color: #333; border-color: #666; }
 
+/* CHAT style — WhatsApp/Signal/iMessage thread display */
+.article-panel.chat {
+  width: 440px; max-width: 95%; max-height: 80vh; overflow-y: auto;
+  background: #0b0b0e; border: 1px solid #1a1a1c; border-radius: 8px;
+  padding: 0; position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: #c8c4b8;
+}
+.article-panel.chat .article-source {
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; color: #555; padding: 14px 16px 0;
+}
+.article-panel.chat .article-title {
+  font-size: 15px; font-weight: 600; color: #c8c4b8; line-height: 1.3;
+  padding: 4px 16px 8px; margin: 0;
+  border-bottom: 1px solid #1a1a1c;
+}
+.article-panel.chat .article-date {
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #555;
+  letter-spacing: 1px; padding: 8px 16px 4px;
+}
+.article-panel.chat .article-body { padding: 8px 12px 12px; }
+.article-panel.chat .article-footer {
+  border-top: 1px solid #1a1a1c; margin-top: 8px; padding: 10px 16px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px;
+  text-transform: uppercase; color: #333;
+}
+.article-panel.chat .article-close { color: #666; }
+.article-panel.chat .article-close:hover { color: #aaa; }
+
+/* Chat bubbles */
+.chat-msg { display: flex; flex-direction: column; max-width: 80%; }
+.chat-msg.self { align-self: flex-end; align-items: flex-end; }
+.chat-msg.other { align-self: flex-start; align-items: flex-start; }
+.chat-sender {
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 3px;
+  padding: 0 4px;
+}
+.chat-bubble {
+  border-radius: 12px; padding: 7px 12px; font-size: 14px; line-height: 1.5;
+  word-wrap: break-word; position: relative;
+}
+.chat-msg.self .chat-bubble {
+  background: rgba(0, 92, 75, 0.55); color: #d8e8e4;
+}
+.chat-msg.other .chat-bubble {
+  background: rgba(255, 255, 255, 0.07); color: #b8b4a8;
+}
+.chat-bubble.link-msg { text-decoration: underline; text-decoration-color: rgba(255,255,255,.2); }
+.chat-msg.self .chat-bubble.link-msg { color: #8ac4b8; }
+.chat-msg.other .chat-bubble.link-msg { color: #8aaac4; }
+.chat-time {
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(255,255,255,.2);
+  margin-top: 2px; padding: 0 4px;
+}
+.chat-gap-small { margin-top: 3px; }
+.chat-gap-large { margin-top: 10px; }
+
 .article-save {
   cursor: pointer; margin-left: 12px; padding: 2px 8px;
   border: 1px solid rgba(196,149,106,.2); border-radius: 2px;
@@ -5293,7 +5352,33 @@ function openArticle(article) {
   source.innerHTML = article.source || '';
   title.innerHTML = article.title || '';
   date.innerHTML = article.date || '';
-  body.innerHTML = article.body || '';
+  // Chat-style rendering
+  if (article.style === 'chat' && article.messages) {
+    let chatHtml = '<div style="display:flex;flex-direction:column;">';
+    let lastFrom = null;
+    article.messages.forEach((msg, i) => {
+      const isSelf = (msg.from === 'simon');
+      const sameAsLast = (msg.from === lastFrom);
+      const gapClass = i === 0 ? '' : (sameAsLast ? ' chat-gap-small' : ' chat-gap-large');
+      const sideClass = isSelf ? 'self' : 'other';
+      const linkClass = msg.link ? ' link-msg' : '';
+      let out = '<div class="chat-msg ' + sideClass + gapClass + '">';
+      if (!sameAsLast) {
+        out += '<div class="chat-sender">' + msg.from + '</div>';
+      }
+      out += '<div class="chat-bubble' + linkClass + '">' + msg.text + '</div>';
+      if (msg.time) {
+        out += '<div class="chat-time">' + msg.time + '</div>';
+      }
+      out += '</div>';
+      chatHtml += out;
+      lastFrom = msg.from;
+    });
+    chatHtml += '</div>';
+    body.innerHTML = chatHtml;
+  } else {
+    body.innerHTML = article.body || '';
+  }
   currentArticleTitle = article.title || '';
 
   // Footer with working save button

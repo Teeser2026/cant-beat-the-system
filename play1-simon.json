@@ -1859,19 +1859,24 @@
       "date": "Mid January 2027",
       "paras": [
         {
-          "t": "Talking of The Dude, he sent me a link to his Psychohistory Prediction Engine. The intro sounds so dry. I chuckle to myself. Hard to believe these are the words of the flip-flops in winter, pint-downing stoner I met. I was expecting something more offbeat. More <em>far out</em>."
+          "t": "I heard from The Dude. He sent me the link to his Psychohistory Prediction Engine."
+        },
+        {
+          "t": "The intro sounds so dry. I chuckled to myself when I read it. Hard to believe these are the words of the flip-flops-in-winter, pint-downing stoner I recently met. I was expecting something way more offbeat. More <em>far out</em>."
         },
         {
           "t": "‘The intellectual trajectory of the last three centuries has been defined by a singular, overriding ambition: the removal of boundaries. We have been told — by scientists, technologists, theologians, and politicians — that limits are temporary. That given enough compute, enough capital, enough time, every wall can be punched through.’",
-          "c": "lyric"
+          "c": "quote"
         },
         {
           "t": "‘This site argues the opposite.’",
-          "c": "lyric"
+          "c": "quote"
         },
         {
-          "t": "I’ve been diving in. Mind-blowing. Everyone should be reading it.",
-          "c": "solo"
+          "t": "I’ve been diving in. Mind-blowing. Everyone should be reading it."
+        },
+        {
+          "t": "I sent him the <em>mind blown</em> emoji and asked if he was free for a chat tomorrow. I had questions. So many questions."
         }
       ],
       "choices": {

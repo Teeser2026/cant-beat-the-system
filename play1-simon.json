@@ -5729,13 +5729,13 @@
           "turn": 5
         },
         {
-          "text": "Firmware analysis — undocumented OTA push (29 Jan 2027)",
+          "text": "Firmware analysis — undocumented OTA push (20 Jan 2027)",
           "src": "dev",
           "turn": 16,
           "article": {
             "style": "paste",
             "source": "No byline · No attribution · Forwarded via Signal",
-            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
+            "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (20 Jan 2027)",
             "body": "<p>On the night of 18-19 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
             "footer": "Forwarded by Dev · Save to notes ↓"
           }

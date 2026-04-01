@@ -5471,6 +5471,27 @@
           "url": "https://history.state.gov/historicaldocuments/frus1964-68v28/d274",
           "src": "simon",
           "turn": "6a"
+        },
+        {
+          "text": "Tulegenov et al. 2019 — Artificial airglow via ionospheric heating",
+          "url": "",
+          "src": "dev",
+          "turn": "1a",
+          "snip": "Dev sent this. You haven’t read it."
+        },
+        {
+          "text": "How Brainless Slime Molds Redefine Intelligence — Scientific American",
+          "url": "https://www.scientificamerican.com/article/brainless-slime-molds/",
+          "src": "dev",
+          "turn": 15,
+          "snip": "Dev sent this with zero context. I looked it up. A slime mould that solves mazes and designs transport networks. No brain. No neurons. Just goo."
+        },
+        {
+          "text": "Orch OR is the most complete, and most easily falsifiable theory of consciousness — Hameroff 2020",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/17588928.2020.1839037",
+          "src": "dev",
+          "turn": 15,
+          "snip": "Dev’s follow-up. ‘Read the slime mould thing first, then read this. Then tell me AI is conscious.’"
         }
       ]
     },
@@ -5575,33 +5596,6 @@
       "id": "reader-own",
       "label": "Reader's Own",
       "items": []
-    },
-    {
-      "id": "tulegenov-2019",
-      "title": "Artificial airglow via ionospheric heating",
-      "source": "Tulegenov et al. 2019",
-      "cat": "Science & Technology",
-      "url": "",
-      "turn": "1a",
-      "note": "Dev sent this. You haven’t read it."
-    },
-    {
-      "id": "slime-mould-intelligence",
-      "title": "How Brainless Slime Molds Redefine Intelligence",
-      "source": "Scientific American",
-      "cat": "Science & Technology",
-      "url": "https://www.scientificamerican.com/article/brainless-slime-molds/",
-      "turn": "15",
-      "note": "Dev sent this with zero context. I looked it up. A slime mould that solves mazes and designs transport networks. No brain. No neurons. Just goo."
-    },
-    {
-      "id": "orch-or-hameroff-2020",
-      "title": "Orch OR is the most complete, and most easily falsifiable theory of consciousness",
-      "source": "Hameroff, 2020 — Cognitive Neuroscience",
-      "cat": "Science & Technology",
-      "url": "https://www.tandfonline.com/doi/full/10.1080/17588928.2020.1839037",
-      "turn": "15",
-      "note": "Dev’s follow-up. ‘Read the slime mould thing first, then read this. Then tell me AI is conscious.’"
     }
   ],
   "songs": [

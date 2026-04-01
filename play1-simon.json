@@ -170,7 +170,7 @@
       "date": "Early October 2026",
       "paras": [
         {
-          "t": "Dev is extraordinary. I’ve never met anyone else like him. In fact very few people are like him. Or even quite like him. I met him at school. Christ, nearly forty years ago. He’s been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months at a time. He’s not what you’d call a traditional communicator or responsive to messaging. And I’ve learnt not to push him - if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls."
+          "t": "Dev is extraordinary. I’ve never met anyone else like him. In fact very few people are like him. Or even <em>quite</em> like him. I met him at school. Christ, nearly forty years ago. He’s been an intermittent constant in my life. You can set a clock by his chaotic timekeeping and unreliability. He goes silent for months at a time. He’s not what you’d call a traditional communicator or responsive to messaging. And I’ve learnt not to push him - if you want to get in touch with him the worst thing you can possibly do is bombard him with texts and calls."
         },
         {
           "t": "‘Are you OK?’ or ‘Just checking in’ are his Kryptonite.",
@@ -204,10 +204,10 @@
           "t": "That’s just books. As I’ve said he occasionally bombards you with his latest ‘data drop’. 4Chan whistleblowers, alleged intelligence agency leaks and his own mind blowing prose that interweaves fact, fiction, psychedelia and science that often goes slightly over my head. A lot of it is quite dark. Keeps you up in the middle of the night sort of dark. Yet when he explains it, he somehow manages to offer you an almost empty glass whilst convincing you it’s nearly full. How he retained such positivity I’ll never know. He’s unflappable. He never looks back. Only Forward. (I’ve unwittingly given you another book recommendation)."
         },
         {
-          "t": "We got on like a house on fire since the day we met. I think he liked the fact that I took the piss out of him. I understood some of his obscure references and I got his dark sense of humour. I’d never hassled him. He hates being hassled. We just clicked. I was never in awe of him, at least I gave the impression I wasn’t. Most people were. He was the annoying bastard that most blokes wanted to be and most girls wanted to be with. A lot of boys too for that matter. Don’t tell him I said this, but he does come across as a mixture of Jason Bourne, Mr Spock and the grooviest side of Austin Powers. A sort of all-action, logical Man of Mystery. It was common knowledge that his school fees had been covered by scholarship. It was widely suspected that he’d inherited a rather large Trust Fund. He had pads in London and Miami. That I knew of."
+          "t": "We got on like a house on fire since the day we met. I think he liked the fact that I took the piss out of him. I understood some of his obscure references and I got his dark sense of humour. I’d never hassled him. He <em>hates</em> being hassled. We just clicked. I was never in awe of him, at least I gave the impression I wasn’t. Most people were. He was the annoying bastard that most blokes wanted to be and most girls wanted to be with. A lot of boys too for that matter. Don’t tell him I said this, but he does come across as a mixture of Jason Bourne, Mr Spock and the grooviest side of Austin Powers. A sort of all-action, logical Man of Mystery. It was common knowledge that his school fees had been covered by scholarship. It was widely suspected that he’d inherited a rather large Trust Fund. He had pads in London and Miami. That I knew of."
         },
         {
-          "t": "What he actually did was an unknown. Think of something uber-cool, verging on the implausible, and you’ll be on the right lines I imagine."
+          "t": "What he actually <em>did</em> was an unknown. Think of something uber-cool, verging on the implausible, and you’ll be on the right lines I imagine."
         },
         {
           "t": "",
@@ -1209,14 +1209,14 @@
           "t": "The neighbours will be popping over shortly to exchange gifts. The scent of mulled wine mingles in with the woodsmoke and wet dog (lunchtime walk in the woods and dip in the stream). We’ll serve them our festive warmer - ladled into oversized mugs - heavy with armagnac, port, oranges, star anise, cinnamon and cloves. Spotify plays festive jazz - Frank, Ella, Nat and Dean. It’s unrelenting pompous and middle class. But, whatever."
         },
         {
-          "t": "Neighbours departed, soon I’ll allow ‘The Fairytale of New York’ to have its first annual airing. It’s my favourite Christmas song and I don’t want it ruined by over-exposure and snippets being played here and there. Adverts are the worst culprit."
+          "t": "Neighbours departed, soon I’ll <em>relent</em> and <em>allow</em> ‘The Fairytale of New York’ to have its first annual airing. It’s my favourite Christmas song and I don’t want it ruined by over-exposure and snippets being played here and there. Adverts are the worst culprit."
         },
         {
           "t": "Just leave it alone. Is nothing sacred?",
           "c": "inner"
         },
         {
-          "t": "Tears wiped from my eyes (‘I kept them with me babe, I put them with my own’ gets me every time) I turn my attention to putting the finishing touches to my most eagerly anticipated dish of the season. A wonderfully juicy smoked gammon joint boiled in a cinnamon-spiced stock, then crisped with a sticky, clove-laced syrup. Buttery mash, steamed white cabbage smothered in freshly ground white pepper, pickled onions and a glossy, warming parsley sauce. I lure Amy away from her comfort-zone Sauv with a Domaine Bott-Geyl Organic 2017 Gewurztraminer. Deep, clear, rich, spicy and luscious."
+          "t": "Tears wiped from my eyes (‘<em>I kept them with me babe, I put them with my own</em>’ gets me every time) I turn my attention to putting the finishing touches to my most eagerly anticipated dish of the season. A wonderfully juicy smoked gammon joint boiled in a cinnamon-spiced stock, then crisped with a sticky, clove-laced syrup. Buttery mash, steamed white cabbage smothered in freshly ground white pepper, pickled onions and a glossy, warming parsley sauce. I lure Amy away from her comfort-zone Sauv with a Domaine Bott-Geyl Organic 2017 Gewurztraminer. Deep, clear, rich, spicy and luscious."
         },
         {
           "t": "Christmas Day",
@@ -1265,7 +1265,7 @@
           "t": "I pick up my phone."
         },
         {
-          "t": "Just a little browse. To keep up to date.",
+          "t": "Just a little browse. To <em>keep up to date</em>.",
           "c": "inner"
         }
       ],
@@ -1373,7 +1373,7 @@
           "c": "break"
         },
         {
-          "t": "Does New Year’s Day count towards Dry January? Amy and I decide not."
+          "t": "Does New Year’s Day count towards <em>Dry January</em>? Amy and I decide not."
         }
       ],
       "choices": {
@@ -1579,7 +1579,7 @@
           "t": "I’ve been banging on for years about there only being two real options available to us to bring about the changes we want."
         },
         {
-          "t": "Either be the change you’re looking for. Live it. Don’t just think about it, don’t just talk about it. Do it. Positive affirmative action. The issue is that you’ll have to sacrifice an increasing amount to ‘live freely’."
+          "t": "Either <em>be</em> the change you’re looking for. <em>Live it.</em> Don’t just think about it, don’t just talk about it. Do it. Positive affirmative action. The issue is that you’ll have to sacrifice an increasing amount to ‘live freely’."
         },
         {
           "t": "Or fight. Not physically. I’m not talking about storming the bastards with pitch forks. Well, not until I’ve had a few beers, anyway. I mean mass non-compliance. Unity. Collectively drawing a line and saying ‘this far, no further’. But it doesn’t happen. They know just how far to push us before we break. They’ve created tools to help them. Game theory, psychological operations, weapons of mass distraction. Probably a quantum computer that predicts and shapes every policy. Insert wink and insanity laugh emojis here!"
@@ -1652,7 +1652,7 @@
           "c": "break"
         },
         {
-          "t": "We’re four pints in (Timothy Taylor Landlord, with ‘pub buffet’ sides of dry roasted peanuts and pork scratching) and all we’ve talked about is whether buildings can be conscious. Of course Dev had an angle on this. More than an angle, the entire protractor. It’s as if he knew I’d ask him this and he’d been reading up on the subject for weeks. Knowing Dev, he probably did know I’d ask him. Or he just knew this shit anyway. Or both. He started off with Vastu Shastra, an ancient Indian architectural science that sees buildings as fundamentally alive, containing a ‘Vastu Purusha’ (cosmic being) that conducts prana (life force). That led onto Panpsychism, a philosophical position suggesting all matter, including inanimate objects, may have some form of consciousness. Then ‘Smart City’ sensors with AI integration, which might enable ‘dream spaces’ that evolve with their inhabitants, blurring the line between human and machine. We had just started waffling on (to be fair, it felt like I was waffling, Dev was lecturing with authority) about substrate-independence, consciousness and complex physical systems, when Alan walked in. I forgot to tell you, Dev had invited Alan along for a beer. He said I’d like him, but nothing more."
+          "t": "We’re four pints in (Timothy Taylor Landlord, with ‘pub buffet’ sides of dry roasted peanuts and pork scratching) and <em>all</em> we’ve talked about is whether buildings can be conscious. Of course Dev had an angle on this. More than an angle, the entire protractor. It’s as if he knew I’d ask him this and he’d been reading up on the subject for weeks. Knowing Dev, he probably did know I’d ask him. Or he just knew this shit anyway. Or both. He started off with Vastu Shastra, an ancient Indian architectural science that sees buildings as fundamentally alive, containing a ‘Vastu Purusha’ (cosmic being) that conducts prana (life force). That led onto Panpsychism, a philosophical position suggesting all matter, including inanimate objects, may have some form of consciousness. Then ‘Smart City’ sensors with AI integration, which might enable ‘dream spaces’ that evolve with their inhabitants, blurring the line between human and machine. We had just started waffling on (to be fair, it felt like I was waffling, Dev was lecturing with authority) about substrate-independence, consciousness and complex physical systems, when Alan walked in. I forgot to tell you, Dev had invited Alan along for a beer. He said I’d like him, but nothing more."
         },
         {
           "t": "Alan was quite remarkable. Part surfer-dude, part gamer-slob, all-American. A big chap, clearly a stoner, amiable, softly spoken, sharp. Imagine The Dude from The Big Lebowski crossed with…well, with no one. Just imagine The Dude. The Dude was wearing Bermuda shorts and Havaianas in deep English winter. His only concession to the just-above-zero temperature a thin woollen jumper."
@@ -1713,7 +1713,7 @@
           "c": "break"
         },
         {
-          "t": "I don’t think I’ve ever worried about Dev. I’ve wondered where the fuck he is and what the hell he’s up to. But I’ve never worried about him. Yet towards the end of the night I thought he looked rather ruffled. Concerned. Quite out of the blue. Quite out of character. Dev never looks ruffled or concerned. He’d been engrossed with his phone whilst The Dude was telling me about his engine. Had he seen something, read something that had freaked him out? Whatever it was, a sudden awkwardness descended without Dev saying anything. The Dude stopped dead in his tracks. He’d sensed it too."
+          "t": "I don’t think I’ve ever <em>worried</em> about Dev. I’ve wondered where the fuck he is and what the hell he’s up to. But I’ve never <em>worried</em> about him. Yet towards the end of the night I thought he looked rather ruffled. Concerned. Quite out of the blue. Quite out of character. Dev never looks ruffled or concerned. He’d been engrossed with his phone whilst The Dude was telling me about his engine. Had he seen something, read something that had freaked him out? Whatever it was, a sudden awkwardness descended without Dev <em>saying</em> anything. The Dude stopped dead in his tracks. He’d sensed it too."
         },
         {
           "t": "‘You OK mate?’",
@@ -5474,7 +5474,7 @@
         },
         {
           "text": "Tulegenov et al. 2019 — Artificial airglow via ionospheric heating",
-          "url": "",
+          "url": "https://www.researchgate.net/publication/332591939_Artificial_Aurora_Produced_by_HAARP",
           "src": "dev",
           "turn": "1a",
           "snip": "Dev sent this. You haven’t read it."
@@ -5492,6 +5492,85 @@
           "src": "dev",
           "turn": 15,
           "snip": "Dev’s follow-up. ‘Read the slime mould thing first, then read this. Then tell me AI is conscious.’"
+        },
+        {
+          "text": "Dev & Simon — Aurora chat",
+          "src": "dev",
+          "turn": "1a",
+          "article": {
+            "style": "chat",
+            "source": "WhatsApp",
+            "title": "Dev & Simon",
+            "date": "October 2026",
+            "messages": [
+              {
+                "from": "simon",
+                "text": "[Amy’s aurora photo] Thoughts?",
+                "time": "14:22"
+              },
+              {
+                "from": "dev",
+                "text": "You know they can make those?",
+                "time": "14:23"
+              },
+              {
+                "from": "simon",
+                "text": "I assumed as much. HAARP?",
+                "time": "14:24"
+              },
+              {
+                "from": "dev",
+                "text": "Any Ionospheric heater. You blast HF radio into the ionosphere, it modifies the electron temperature, you get artificial airglow. Published. Nature 2019. Tulegenov. Not fringe mate - ‘peer reviewed’ - the gold standard - it ‘must be true’",
+                "time": "14:26"
+              },
+              {
+                "from": "simon",
+                "text": "BBC say it was a solar storm. Rare. Biggest in 20 years.",
+                "time": "14:27"
+              },
+              {
+                "from": "dev",
+                "text": "Of course they do.",
+                "time": "14:27"
+              },
+              {
+                "from": "dev",
+                "text": "I’ll send you something",
+                "time": "14:28"
+              },
+              {
+                "from": "dev",
+                "text": "Tulegenov et al. 2019 — Artificial airglow via ionospheric heating",
+                "time": "14:28",
+                "link": true
+              },
+              {
+                "from": "simon",
+                "text": "Bedtime reading, cheers bud",
+                "time": "14:31"
+              },
+              {
+                "from": "dev",
+                "text": "Read it now or you never will - you twat",
+                "time": "14:31"
+              },
+              {
+                "from": "simon",
+                "text": "Bullet point summary?",
+                "time": "14:32"
+              },
+              {
+                "from": "dev",
+                "text": "Read it. I’m not your fucking school teacher",
+                "time": "14:32"
+              },
+              {
+                "from": "simon",
+                "text": "Alright twatface",
+                "time": "14:33"
+              }
+            ]
+          }
         }
       ]
     },

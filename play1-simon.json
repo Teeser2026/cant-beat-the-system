@@ -1891,30 +1891,73 @@
     {
       "id": 17,
       "num": "T17",
-      "title": "Dev's Article",
+      "title": "Dev’s Article - Revisited",
       "date": "Late January 2027",
       "paras": [
         {
-          "t": "You've been thinking about the article Dev sent. Silent firmware update pushed to 2 million payment terminals overnight. At first glance, a bit meh. More prepper-shill clickbait. Seen that movie a thousand times. You skim read a few paragraphs and turn in for an early night. Amy is already in bed, reading. A paperback. Old school. Her passion. She gets through one a week minimum. Procedural dramas, romance, that sort of thing. A quick doom-scroll whilst her reading light is still on. A few other accounts are pushing the firmware story too. People you've trusted for years. Proper analysts and researchers. You dig deeper."
+          "t": "Amy is already in bed, reading. The girls have an early start at college tomorrow and they managed to hoodwink Amy into giving them a lift in so they don’t have to get the bus in sub-zero conditions. She’s reading a paperback of course. She’s old school. Reading is her passion. It helps her sleep. She gets through one a week, minimum. Almost exclusively fiction - mystery, crime, thriller, romance, anything that allows her to escape reality."
+        },
+        {
+          "t": "I’ll go and join her, an early night will do me the world of good.",
+          "c": "inner"
+        },
+        {
+          "t": "I get into bed, the cool sheets a refreshing contrast to the warm, stuffy air temperature."
+        },
+        {
+          "t": "We left the heating on too long in here. Or that bloody Hive thermostat is broken again.",
+          "c": "inner"
+        },
+        {
+          "t": "I lie there thinking about the article. At first glance, in isolation, it was a bit <em>meh</em>. But it could no longer be viewed in isolation."
+        },
+        {
+          "t": "Perhaps a quick scan of my phone whilst her reading light is still on…",
+          "c": "inner"
+        },
+        {
+          "t": "I should read my book, but I can feel myself getting pulled down the rabbit hole. Several other accounts are pushing the firmware story now. People I’ve trusted for years. Dev was not just right, he was also early. Of course he was."
+        },
+        {
+          "t": "There’s commentary from fairly mainstream analysts and researchers too - anyone who prefaces an article with ‘I’m not a conspiracy theorist, but…..’ is mainstream in my eyes. One anonymous systems analyst with years of industry experience is asking similar questions and reaching similar conclusions to Dev. I dig deeper."
         },
         {
           "t": "3am",
           "c": "time"
         },
         {
-          "t": "Dev was right. This is big. Something's brewing. This isn't a standard firmware update. There's been no announcement. But it appears to be there, lying dormant, waiting for something. For what? They aren't going to flip the switch are they? And when? You've seen a few predictive AI X accounts pointing at Valentine's Day. The symbolism is there, clear as day, in numerous articles. Can't be coincidence? Can it? You eventually nod off just after 3.30am.",
+          "t": "Dev was right. This <em>is</em> big. Something’s brewing. This <em>isn’t</em> a standard firmware update. There <em>wasn’t</em> a formal announcement. But it’s there, lying dormant, waiting for something. For what? They seem to have put their ducks in a row. They aren’t going to flip the switch are they? And if they do, when?",
           "c": "inner"
+        },
+        {
+          "t": "A few predictive AI X accounts are pointing at Valentine’s Day. The symbolism and numerology is there, hidden in plain sight across the firmware analysis, the deployment timeline, the gematria."
+        },
+        {
+          "t": "Can’t be coincidence? Can it?",
+          "c": "inner"
+        },
+        {
+          "t": "I eventually nod off sometime after 3.30am."
         },
         {
           "t": "Morning",
           "c": "time"
         },
         {
-          "t": "You stir, hot and sweaty. A night of broken sleep. Amy isn't there, you didn't hear her get up. Must be putting the kettle on. 7.44am. 4 hours of poor quality slumber. You pick up the phone, the screen still open on a gematria website you vaguely remember being linked to. 214. Half Man, Half Angel in Hebrew Gematria apparently. You remember 2/14. Valentine's Day."
+          "t": "I stir, cold <em>and</em> sweaty. An odd combination. A night of broken sleep. Amy isn’t there. I didn’t hear her get up."
         },
         {
-          "t": "Here's Amy with a cup of tea and a morning kiss.",
-          "c": "solo"
+          "t": "Must be putting the kettle on? She’s not left to take the girls yet has she? 7.24am. Under four hours of poor quality slumber. I pick up the phone, the screen still open on a gematria website I vaguely remember opening a link to."
+        },
+        {
+          "t": "214. Half Man, Half Angel in Hebrew Gematria apparently.",
+          "c": "quote"
+        },
+        {
+          "t": "2/14. Valentine’s Day. Weird shit man."
+        },
+        {
+          "t": "Here’s Amy with a cup of tea and a morning kiss."
         }
       ],
       "choices": {
@@ -5693,7 +5736,7 @@
             "style": "paste",
             "source": "No byline · No attribution · Forwarded via Signal",
             "title": "Firmware analysis: UK payment terminal fleet — undocumented OTA push (29 Jan 2027)",
-            "body": "<p>On the night of 28-29 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
+            "body": "<p>On the night of 18-19 January, approximately 2.1 million Ingenico and Verifone terminals across the UK received an over-the-air firmware update. No corresponding release note was issued by either vendor. No merchant notification was sent. The update was signed with valid certificates and pushed through standard acquirer channels — Worldpay, Barclaycard, Global Payments — meaning it passed all three approval layers without triggering compliance flags.</p><p>The payload includes a dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel. The container is inert. It is waiting for an activation ping.</p><p>Three details stand out.</p><p>First: the container hooks directly into <span class=\"arc\">ARC</span> — the authentication layer rolled out across UK payment infrastructure last autumn. ARC was designed for device-level identity verification. It was not designed for what this payload grants it: biometric template storage including fingerprint and vein-pattern, which no current UK payment workflow requires or supports. Something is being extended well beyond its stated purpose.</p><p>Second: the activation window is time-locked but encrypted — again, unusual for a firmware deployment. Whatever this is designed to do, it is designed to do it everywhere simultaneously, on a date the deployers have chosen not to disclose.</p><p>Third: the encrypted callback resolves not to the acquirer networks that pushed the update, but to BIS infrastructure in Basel. The terminals now have a direct line to the Bank for International Settlements that bypasses every domestic intermediary.</p><p class=\"alert\">This is not a patch. It is a pre-positioned deployment waiting for a signal.</p>",
             "footer": "Forwarded by Dev · Save to notes ↓"
           }
         },
@@ -5711,8 +5754,8 @@
             "style": "news",
             "source": "Payment Systems Analysis — Substack",
             "title": "What’s Sitting Inside Two Million Payment Terminals",
-            "date": "30 January 2027",
-            "body": "<p>I’ve spent the last 72 hours examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 28–29 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
+            "date": "25 January 2027",
+            "body": "<p>I’ve spent the last 5 days examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 18–19 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
             "footer": "Payment Systems Analysis — Substack"
           }
         }

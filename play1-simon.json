@@ -2098,13 +2098,38 @@
       "date": "Early February 2027",
       "paras": [
         {
-          "t": "You've been down this path before. You and Amy packed the garage with dried pasta, tinned tomatoes, cannellini beans and bottled water during 'Covid'. The Great Reset was looming, they were going to pull the rug. War, cyber attack, another mutation that 'targeted the vaccinated'. You ended up taking half of it to the tip as it was past its 'expiry date'. You'd researched what you'd really need if the lights went out and it was more than a few weeks worth of ragu bolognese and linguine. The Prepper sites 'essentials' list would keep Rambo going for years. Weaponry, first aid, water purification systems. The works."
+          "t": "I've been down this path before. Amy and I packed the garage with dried pasta, tinned tomatoes, cannellini beans and bottled water during Convid. Withdrew a couple of grand in cash from the bank. Bought some physical gold and silver coins. We were told The Great Reset was coming. The New World Order. They were going to pull the plug. A false flag, a psyop. A global war, perhaps a cyber attack, another mutation that 'targeted the vaccinated’ or another novel virus - <em>The Big One</em> this time - something that, to paraphrase Bill Gates, <em>will really get our attention</em>."
         },
         {
-          "t": "That said, just a few extra supplies wouldn't hurt. Just in case. People you knew, people you trusted were recommending it. A few cases of tinned food. Some Evian. Those 5 litre tins of Cretan extra virgin olive oil on Amazon too. Great value. Packed full of polyphenols."
+          "t": "We ended up taking half of the emergency food to the local tip as it had ‘expired’. Amy gets a bit squeamish about ‘best before’ dates. We’d gone from conversations about whether we would have to eat our dogs (I would, if it was a matter of life and death, Amy couldn’t and wouldn’t) if the global food chain collapsed, to dumping perfectly good food in landfill in the space of three years."
         },
         {
-          "t": "Some cash too. The lockstep of banks reducing withdrawal limits and the requirement to pre-book appointments (that didn't seem to be available) was odd. People were visibly taking out more cash. Even the normies. But they panic bought bog roll and Marmite, so whatever. You hadn't seen a queue at a cashpoint for years. Not that there are many left. That said, they've been slowly getting rid of cash for years. Plus ça change. The last bundle you withdrew in 2020 was long gone. A pint here, a plumber's bill there. Most of it was paid back into the bank and used to fund some crypto 'investments'. XRP skyrocketed. Then plummeted. The meme coins were a mug's game. You found out the hard way. Still, the gold coins safely hidden in the sock drawer are worth their weight in gold. 2026 edition. Smart, very smart."
+          "t": "I’d researched what would really be needed if the lights went out and it was more than a few weeks worth of ragu bolognese, linguine and bottled water. The Prepper guides 'essentials' lists would keep Rambo going for years. Weaponry, first aid, water purification systems. The works."
+        },
+        {
+          "t": "That said, just a few extra supplies wouldn't hurt. Just in case. People I knew and trusted were recommending stocking up. Others were going further than just a recommendation, they were insistent that we all needed Armageddon supplies. I noted that many of the extreme alarmists had curated links to survival supplies websites (paid per click-through no doubt) and ‘A word from our sponsor’ (my favourite was the wonderfully-named ‘Sgt Prepper Shop’ interludes during their video posts. It was open season for shills."
+        },
+        {
+          "t": "So a few cases of tinned food. Some Evian. Those 5 litre tins of Cretan extra virgin olive oil on Amazon too. Great value. Packed full of polyphenols."
+        },
+        {
+          "t": "I also have this thing called Project Nomad installed on my Mac. Dev sent me the link last year. Seemed like an easy win. I haven’t dug into it fully, but it’s the kind of thing that Dev could quite easily have played an active role in building - a free open source node for media, archives and data - offline knowledge, local maps, AI and educational courses."
+        },
+        {
+          "t": "We’ve got some cash too. We were going to do this anyway so win/win. They seem to have been intentionally making it harder to get hold of cash in recent weeks - banks have reduced the withdrawal limit at cashpoints in lockstep and there’s a requirement to pre-book appointments for larger withdrawals. Appointments that never seem to be available. I haven’t seen a queue at a cashpoint for years. Not that there are many left. It’s all rather odd."
+        },
+        {
+          "t": "I wouldn't say there was a run on the banks, but people have been visibly taking out more cash. Even the <em>normies</em>. But there again they’d panic bought toilet roll and Marmite."
+        },
+        {
+          "t": "They don’t want us stocking up on cash. Why? Is this a <em>reason</em> to stock up? Or a distraction? If they really didn't want people withdrawing cash, cash simply wouldn't be in the news-cycle. They've been slowly getting rid of cash for years. Why the focus now? Fuck knows what’s going on. Fuck knows what’s ever going on.",
+          "c": "inner"
+        },
+        {
+          "t": "That last bundle I withdrew in 2020 was long gone. A pint here, a plumber's bill there. Most of it was paid back into the bank and used to fund some crypto 'investments'. XRP skyrocketed. Then plummeted. The meme coins were a mug's game. I found that out the hard way. In those instances, what went up <em>did</em> come down. With a sickening <em>thump</em>."
+        },
+        {
+          "t": "Still, the gold coins safely hidden in the sock drawer are worth their weight in, well, gold. The value of which has increased steadily. That <em>was</em> a smart move. Very savvy."
         }
       ],
       "choices": {
@@ -3819,6 +3844,19 @@
         ]
       },
       {
+        "sec": "Sponsored",
+        "cards": [
+          {
+            "src": "Sgt Prepper Shop",
+            "ttl": "UK's #1 Prepper & Survival Store — Free Shipping Over £80",
+            "snip": "Fear is a market. Markets have sponsors.",
+            "tag": "Ad",
+            "cls": "",
+            "isnew": true
+          }
+        ]
+      },
+      {
         "sec": "WhatsApp",
         "cards": [
           {
@@ -3826,6 +3864,18 @@
             "ttl": "Why is there a bag of rice in the boot of the car? 😂",
             "snip": "She thinks you’re losing it. Maybe you are.",
             "tag": "Today",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Simon → Parklife",
+            "ttl": "If you're gonna stock up it's gotta be with these guys. Genius name 😂",
+            "snip": "You're doing the thing you just mocked. You know this.",
+            "tag": "Now",
             "cls": ""
           }
         ]
@@ -5679,6 +5729,12 @@
               }
             ]
           }
+        },
+        {
+          "text": "Project Nomad — offline knowledge, maps, AI, education",
+          "url": "https://www.projectnomad.us",
+          "src": "dev",
+          "turn": 18
         }
       ]
     },
@@ -5703,6 +5759,12 @@
             "body": "<p>Someone's cracked the time-lock. Or they say they have. Valentine's Day. 00:00 GMT.</p><p>Take it or leave it — could be genuine, could be the op wants us watching the wrong date. Either way the deployment is real.</p>",
             "footer": "Dev · Signal · T17"
           }
+        },
+        {
+          "text": "Sgt Prepper Shop — survival supplies sponsor",
+          "url": "https://sgtpreppershop.co.uk",
+          "src": "simon",
+          "turn": 18
         }
       ]
     },

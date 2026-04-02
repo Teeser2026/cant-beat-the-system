@@ -1976,19 +1976,26 @@
       "date": "Still Bloody January 2027",
       "paras": [
         {
-          "t": "Amy suggested we try a new walk with the dogs today. A long loop of beautiful Sussex countryside starting and ending at The Bell Inn. She had me at ‘pub’ and she knew it. Only a ten minute drive from our house but somewhere we’d yet to explore. The pub car park was refreshingly busy for dry January."
+          "t": "Amy suggested we try a new walk with the dogs this morning. A long loop of beautiful Sussex countryside starting and ending at The Bell Inn. She had me at ‘pub’ and she knew it. It was only a ten minute drive from our house, yet unexplored territory."
         },
         {
-          "t": "The skies were clear, the weather brisk, the frost yet to clear from the shaded grass under the trees. I’d wrapped up warm. Woolly hat, thermal socks and underwear, lots of layers and my puffy Fjallräven coat zipped up high to the neck. We walked briskly. The dogs loved it. New smells, new spots for Wilf to mark his territory. Olive got zoomies. And she found a dead rabbit. We found her with it hanging gently from her mouth, no idea what to do with it. Amy took the cutest photo of her."
+          "t": "The pub car park was refreshingly busy for noon in dry January. The skies were clear, the weather brisk, the frost yet to clear from the shaded grass under the trees. I’d wrapped up warm. Woolly hat, thermal socks and underwear, lots of layers and my puffy Fjallräven coat zipped up high to the neck. We walked briskly. The dogs loved it. New smells, new spots for Wilf to mark his territory. Olive got the zoomies, running round in circles like she was possessed. She also found a dead rabbit. She stared at us, the rabbit hanging gently from her mouth. She had no idea what to do with it."
         },
         {
-          "t": "After twenty minutes or so I started to get hot, my thermals moist from sweat. I took my coat off. Within two to three minutes I was freezing. The hot/cold, coat on/coat off cycle continued until we reached the pub again."
+          "t": "Should I take it from you? Eat it? Will I get a ‘good girl’ or a ‘bad dog?’",
+          "c": "inner"
         },
         {
-          "t": "‘Cash preferred, use it or lose it’ a sign outside the pub proudly announces. We smile at one another. Our kind of people. We both know cash is king."
+          "t": "Amy took the cutest photo of her."
         },
         {
-          "t": "‘Did you bring cash?’"
+          "t": "After twenty minutes or so I started to get hot, my thermals moist from sweat. I took my coat off. Within two minutes I was freezing. The hot/cold, coat on/coat off cycle continued until we arrived back at the pub."
+        },
+        {
+          "t": "‘Cash preferred, use it or lose it’ a sign outside the pub proudly announced. We smile at one another. Our kind of people. We both know cash is king."
+        },
+        {
+          "t": "‘Did you bring cash?’ Amy asked."
         },
         {
           "t": "‘No, did you?’"
@@ -2012,33 +2019,38 @@
           "t": "‘Thanks, love. £12.40 please’"
         },
         {
-          "t": "Tap. Awkward smile."
+          "t": "Tap. Beep. Awkward smile.",
+          "c": "solo"
         },
         {
-          "t": "I join Amy and the dogs by the fire. We make a vow to make sure we always take cash out with us in future. Use it or lose it. There was a day, not sure when it was, that was the last one you made a mental check of money, keys before leaving the house and it became phone, keys."
+          "t": "I joined Amy and the dogs by the fire. We made a vow to make sure we always carry cash out with us in future. Use it or lose it."
         },
         {
-          "t": "The beer hits the spot. Half a pint down in a couple of sips. We’re not particularly chatty, tired from the walk. Content just to be, dogs snoozing, fire crackling. The TV is on above the bar. Horse racing, sound turned down at the moment thankfully. I try not to look at it but can’t resist the compulsion to keep glancing up."
+          "t": "There was a day, God knows when it actually was, that was the last one I went through the mental check of money/keys before leaving the house and it became phone/keys.",
+          "c": "inner"
         },
         {
-          "t": "‘Eagle Sam’ 9/2 — and the jockey is wearing red and blue. I point it out to Amy. Would’ve stuck twenty quid on if it was the Grand National."
+          "t": "The beer hit the spot. Half a pint down in a couple of sips. We weren’t particularly chatty, tired from the walk. Content just to be, dogs snoozing, fire crackling. The TV was on above the bar. Horse racing, sound turned down thankfully. I tried not to be distracted by the screen but couldn’t resist the compulsion to keep glancing up."
         },
         {
-          "t": "We both notice the TV news ticker —"
+          "t": "‘Eagle Sam’ 9/2 — and the jockey was wearing red and blue. I pointed it out to Amy. Would’ve stuck twenty quid on if it was the Grand National rather than a random race from Uttoxeter."
+        },
+        {
+          "t": "We both noticed the TV news ticker —"
         },
         {
           "t": "Defence Secretary: ‘UK faces unprecedented cyber threat from hostile actors’.",
-          "c": "solo"
+          "c": "quote"
         },
         {
           "t": "They’re really pushing this one. Slowly at first, then all of a sudden.",
           "c": "inner"
         },
         {
-          "t": "‘Shall we head?’ asks Amy, breaking a chain of thought that would’ve spiralled. I can feel a 3am deep dive brewing…"
+          "t": "‘Shall we head?’ asked Amy, breaking a chain of thought that would’ve spiralled. I felt a 3am deep dive brewing…"
         },
         {
-          "t": "We don’t talk much in the car either. Amy unusually quiet. We both know what the other is thinking."
+          "t": "We didn’t talk much in the car either. Amy was unusually quiet. We both knew what the other was thinking."
         }
       ],
       "choices": {
@@ -5437,7 +5449,7 @@
             "style": "news",
             "source": "BBC News",
             "title": "Defence Secretary warns of “unprecedented cyber threat” from hostile state actors",
-            "date": "31 January 2027",
+            "date": "27 January 2027",
             "body": "<p>The Defence Secretary has warned that the UK faces an “unprecedented and evolving cyber threat” from hostile state actors, in a statement to the House of Commons that drew cross-party concern.</p><p>Speaking during Defence Questions, the Secretary of State said the government had “credible intelligence” of coordinated cyber reconnaissance against UK critical infrastructure, including financial systems, energy networks, and telecommunications.</p><p>“We are seeing a level of sophistication and coordination that goes beyond anything we have previously encountered,” the statement read. “The government is taking all necessary precautions to ensure the resilience of our national infrastructure.”</p><p>The National Cyber Security Centre confirmed it had raised the UK’s cyber threat level to “heightened” earlier this month — its second-highest classification — following what it described as “increased hostile activity against payment and banking systems.”</p><p>Opposition MPs pressed for details on which state actors were involved. The Defence Secretary declined to name specific nations but referenced “a pattern of behaviour consistent with state-sponsored groups operating out of Eastern Europe and the Asia-Pacific region.”</p><p>COBRA met twice this week. The Ministry of Defence has confirmed that “routine readiness exercises” have been expanded to include additional deployments across southern England — a move described by military analysts as “unusual for January.”</p><p>Financial markets reacted sharply. The FTSE 250 triggered a circuit breaker for the first time since September 2022, with trading paused for 11 minutes before resuming. The Bank of England issued a statement confirming “orderly market conditions are being maintained.”</p><p>The Prime Minister’s spokesperson said there was “no specific or imminent threat to the public” but urged citizens to “ensure household resilience measures are in place.”</p>",
             "footer": "BBC News — Politics"
           }
@@ -5450,7 +5462,7 @@
             "style": "news",
             "source": "BBC News",
             "title": "MOD confirms expanded military exercises across southern England",
-            "date": "1 February 2027",
+            "date": "28 January 2027",
             "body": "<p>The Ministry of Defence has confirmed that “routine readiness exercises” are being expanded to include additional military deployments across southern England, following similar exercises in East Anglia and the Midlands since October.</p><p>Residents in Hampshire, West Sussex, and Surrey have reported increased military vehicle movements on A-roads and motorways over the past week. A convoy of approximately 30 vehicles was observed on the A272 near Petersfield on Thursday afternoon.</p><p>An MOD spokesperson said the exercises were “pre-planned and routine” and part of the UK’s annual Defence Readiness Programme. “These exercises are not a response to any specific threat. They are designed to ensure our armed forces maintain the highest level of preparedness.”</p><p>However, defence analysts have noted that the timing and scale are unusual. Professor Michael Clarke, former director of RUSI, described the deployments as “significantly larger than the standard January exercise cycle” and suggested they may be related to the elevated cyber threat level announced by the NCSC earlier this month.</p><p>The exercises are scheduled to continue through mid-February. Local authorities have been advised to expect “minor disruption to traffic on some routes.”</p><p>RAF Wyton, which hosted the initial “routine exercise” in October, remains active. The base, home to the Joint Forces Intelligence Group, has not commented on its current operational status.</p>",
             "footer": "BBC News — UK"
           }
@@ -5463,7 +5475,7 @@
             "style": "news",
             "source": "UK Defence Watch — Substack",
             "title": "The Deployment Pattern Nobody Is Talking About",
-            "date": "2 February 2027",
+            "date": "28 January 2027",
             "body": "<p>I’ve been tracking UK military deployments for eleven years. What’s happening right now is not routine.</p><p>The MOD’s “Defence Readiness Programme” exercises follow a predictable annual cycle. Spring: Salisbury Plain and Scotland. Autumn: East Anglia (usually coinciding with NATO commitments). Winter is typically maintenance cycle — reduced activity, not expanded.</p><p>Here is what has actually happened since October:</p><p><strong>October 2026:</strong> RAF Wyton — described as “routine exercise.” Wyton is home to the Joint Forces Intelligence Group. It is not an exercise facility. It is an intelligence hub. You don’t run readiness exercises at an intelligence base. You run intelligence operations.</p><p><strong>November–December 2026:</strong> Deployments across East Anglia and the Midlands. Light vehicles, signals equipment, mobile communications arrays. Not combat units. Logistics and communications.</p><p><strong>January 2027:</strong> Expansion to southern England. Hampshire, West Sussex, Surrey. Thirty-vehicle convoys on the A272. Again: logistics. Mobile generators. Fuel bowsers. Field hospitals spotted near Bordon.</p><p>The pattern is not combat positioning. It is continuity-of-government positioning. These are the units you deploy when you expect civilian infrastructure to fail and need military logistics to fill the gap. Field hospitals. Mobile comms. Fuel distribution. Food supply chain support.</p><p>Three details worth noting:</p><p>First, the deployment arc is tightening toward London. October: Cambridgeshire. December: Midlands. January: the Home Counties. If you were establishing a logistics perimeter around the capital, this is what it would look like.</p><p>Second, the timing overlaps almost exactly with the NCSC’s escalation from “normal” to “heightened” cyber threat level. The military began positioning before the threat level was raised. Either they had advance warning, or the threat level was raised to provide cover for positioning that was already underway.</p><p>Third, none of this has been discussed in Parliament. The Defence Secretary’s statement on Wednesday referenced “hostile state actors” and “unprecedented cyber threats.” He did not mention the domestic military deployments. MPs did not ask.</p><p>I’m not drawing conclusions. I’m drawing a map. The map shows military logistics assets being pre-positioned across southern England in a pattern consistent with preparing for a major disruption to civilian infrastructure.</p><p>The exercises are “scheduled to continue through mid-February.”</p>",
             "footer": "UK Defence Watch — Substack"
           }

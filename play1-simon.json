@@ -3035,7 +3035,7 @@
           {
             "src": "Mum (Sue)",
             "ttl": "Happy Valentine's Day my darling. Don't do anything I wouldn't!! Love to Amy. Miss you ❤️❤️",
-            "snip": "The last text from Mum before the world changes. On re-read: devastating.",
+            "snip": "She's bored. I send her a heart emoji.",
             "tag": "Today",
             "cls": "warm"
           }
@@ -3231,7 +3231,8 @@
             "snip": "Fifteen years in the industry. Not a conspiracy theorist. Scared.",
             "tag": "Research",
             "cls": "",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3300,7 +3301,8 @@
             "snip": "Tesla home robot. AR contact lenses. Free NHS wearable. Smart home mesh. Amy shared it.",
             "tag": "Black Friday",
             "cls": "",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3351,7 +3353,8 @@
             "snip": "Open since September. You skimmed the summary. The rest is 84 pages of implementation detail you keep meaning to read.",
             "tag": "Open Tab",
             "cls": "c",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3379,7 +3382,8 @@
             "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
             "tag": "Tab Year 1",
             "cls": "c",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3588,7 +3592,8 @@
             "snip": "4 minutes in. Ten-minute video. You stopped to make tea and never went back.",
             "tag": "Reminder",
             "cls": "",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           }
         ]
       },
@@ -3601,7 +3606,8 @@
             "snip": "Geopolitics and Empire. Partly watched. You know how it ends.",
             "tag": "Reminder",
             "cls": "",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "type": "thread-notify"
           }
         ]
       },
@@ -3626,7 +3632,8 @@
             "snip": "Chloe’s been using it for homework. Amy asked it about a recipe. You haven’t tried it. You won’t.",
             "tag": "Trending",
             "cls": "",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3751,7 +3758,8 @@
             "snip": "84 pages. You read the executive summary six months ago. Bookmarked the rest. You know how this ends.",
             "tag": "Open Tab",
             "cls": "c",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           },
           {
             "src": "Solari Report — Catherine Austin Fitts",
@@ -3759,7 +3767,8 @@
             "snip": "She's been saying it for years. You've been listening for years. Nothing changes.",
             "tag": "Bookmarked",
             "cls": "c",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           },
           {
             "src": "Corbett Report — James Corbett",
@@ -3767,7 +3776,8 @@
             "snip": "Astute, witty, sharp. The antithesis of the caricature. You sent it to three people. None of them watched it.",
             "tag": "Shared",
             "cls": "c",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "type": "thread-notify"
           }
         ]
       }
@@ -3808,7 +3818,7 @@
           {
             "src": "Dev — Signal",
             "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
-            "snip": "You went back to the firmware article at 1am. Dev was right. This is big.",
+            "snip": "Hackers confirm what the gematria hinted at.",
             "tag": "Urgent",
             "cls": "a",
             "isnew": true,
@@ -3970,7 +3980,8 @@
             "snip": "Agent systems, on-device models, the end of hallucination. Apparently.",
             "tag": "Tech",
             "cls": "",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "type": "thread-notify"
           }
         ]
       }
@@ -4033,7 +4044,8 @@
             "snip": "“Seamless travel” they call it. You stood in the queue for 40 minutes while the scanners crashed twice.",
             "tag": "Travel",
             "cls": "buried",
-            "threadRef": "surveillance-architecture"
+            "threadRef": "surveillance-architecture",
+            "type": "thread-notify"
           }
         ]
       }
@@ -4094,7 +4106,7 @@
         "cards": [
           {
             "src": "Amy",
-            "ttl": "Rully Rouge for Valentines treat ❤️",
+            "ttl": "Rully Rouge for Valentines treat? ❤️",
             "snip": "She doesn't know I've already ordered a case of 6.",
             "tag": "Romance",
             "cls": ""
@@ -4131,7 +4143,7 @@
           {
             "src": "Dev",
             "ttl": "Stay close to home this weekend.",
-            "snip": "Five words. No emoji. No link. No follow-up.",
+            "snip": "Nothing more. No reason. No link. Just an order.",
             "tag": "Unread",
             "cls": "alert"
           }
@@ -4172,7 +4184,8 @@
             "snip": "On the TV above the bar. Amy saw it too.",
             "tag": "Breaking",
             "cls": "cold",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "type": "thread-notify"
           }
         ]
       },
@@ -4197,7 +4210,8 @@
             "snip": "You passed a convoy of green trucks on the A272. Didn’t think much of it.",
             "tag": "Today",
             "cls": "cold",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "type": "thread-notify"
           }
         ]
       },
@@ -5363,7 +5377,7 @@
           {
             "src": "Dev",
             "ttl": "I think I know what it means.",
-            "snip": "First message since the firmware doc. Six words. Short and probably not very sweet. Dev doesn't waste his words.",
+            "snip": "First message since the firmware doc. Short and probably not very sweet.",
             "tag": "Today",
             "cls": "a",
             "isnew": true,

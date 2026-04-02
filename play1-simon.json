@@ -4,13 +4,14 @@
     "play": 1,
     "title": "Simon's Story",
     "description": "Play 1 — Pre-Event through Registration. October 2026 to 1 April 2027.",
-    "totalTurns": 45,
+    "totalTurns": 46,
     "writtenTurns": [
       1,
       2,
       3,
       4,
       5,
+      "5a",
       6,
       "6a",
       7,
@@ -608,6 +609,164 @@
         }
       ],
       "questionMode": "mirror"
+    },
+    {
+      "id": "5a",
+      "num": "T5a",
+      "title": "The All-Seeing Eye",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "‘You know about Palantir, don’t you?’ George asked me."
+        },
+        {
+          "t": "‘A bit. Why’s that?’"
+        },
+        {
+          "t": "‘There’s this thing on TikTok. They’re offering ten grand a month to eighteen year olds. Engineer interns. Everyone is asking how much you’d sell your soul for. Why would you be selling your soul?’"
+        },
+        {
+          "t": "‘You want the long version or the short version?’"
+        },
+        {
+          "t": "‘I’ll get the long version anyway, so hit me with it’. George sniggers through his cheeky smile."
+        },
+        {
+          "t": "‘Go and grab two beers, we could be here a while.’ I wink as I reply."
+        },
+        {
+          "t": "I wish Dev was here. He’d fucking nail this.",
+          "c": "inner"
+        },
+        {
+          "t": "I take the caps off two M&S German lagers. Hardly hipster, but bloody lovely."
+        },
+        {
+          "t": "‘What do you know about them, Georgie?’"
+        },
+        {
+          "t": "‘Not much. They’re a data company. People are saying they’re pure evil.’"
+        },
+        {
+          "t": "You know Peter Thiel? It’s his company. The Paypal founder. Multi-zillionaire. Started Palantir twenty years or so ago with some other transhuman twat. I can’t remember who. He named after those seeing stones in Lord of the Rings that Sauron used to see all of Middle Earth. A company after Sauron’s all-seeing surveillance tech. There’s your first clue."
+        },
+        {
+          "t": "I say it’s <em>his</em> company — it’s basically CIA. They fund all this sort of shit through In-Q-Tel. Google Earth. Pokemon. I think Facebook too originally. I mean, whatever the exact details, they’re all part of one big surveillance psyop."
+        },
+        {
+          "t": "‘Pokemon?’ George looked baffled. ‘As in Pikachu Pokemon?’"
+        },
+        {
+          "t": "‘Yeah. It’s basically a 3D spying/mapping network disguised as a game. Clever really. Look it up. I think the company was called Keyhole or something like that. Look up the whole CAPTCHA thing too. A Google Maps data mining operation. Basically anytime you see safety and convenience, read surveillance and control.’"
+        },
+        {
+          "t": "‘So they’re a surveillance company, mining our data, sneaking things in the T’s & C’s that no one reads. Listening to our conversations. Doesn’t every company do that?’"
+        },
+        {
+          "t": "‘Well, yes. But Palantir are the daddies of this shit. Mental AI software that monitors everything that moves, thinks, gives off heat or an electric signal, farts…’"
+        },
+        {
+          "t": "‘Well they’ll be able to track Mum pretty easily’. We laugh, clink bottles and have synchronised glug. ‘Go and get two more, Georgie’."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "‘You know when I drone on about digital ID?’ (George gives me a look that says, <em>you? Drone on? Never</em>). Well this is what I’m talking about. Not some digital card. Not something you can use to prove your age to buy a pint. An interoperable database, the backend, that links and cross-references everything. You think your TikTok account is anonymous because you don’t use your name? You think those facial recognition cameras don’t know who every single fucker in the crowd at football is? Your WhatsApp messages are ‘encrypted’? I do that annoying two fingers on each hand air quote."
+        },
+        {
+          "t": "They’ve got this AI software called Gotham. It was made for intelligence agencies and the police in America. CDC. ICE. Every agency you can think of and undoubtedly some that we don’t even know exist. Probably most of the world. It connects datasets. Everything about a person, pulled into one profile, searchable."
+        },
+        {
+          "t": "They’re here too. Loads of contracts with NHS. They sold one of their platforms for a quid or something. Foundry I think it was. Drug dealer model. (we chuckle) MOD. Cabinet Office. Local authorities. The Old Bill. Whilst everyone’s arguing about Starmer and Farage, illegal immigrants preying on our girls and rainbow zebra crossings, Palantir and co are mopping up Government contracts. Bringing in The Beast System under our noses. Algorithm Ghettos. No one asked for this shit. And please don’t give me the ‘if you haven’t done anything wrong, you’ve got nothing to worry about’ bollocks."
+        },
+        {
+          "t": "Thiel says it out loud. On camera. To investors. ‘I no longer believe that freedom and democracy are compatible.’ The founder of the company that runs our NHS data said that. Out loud. And no fucker cares. The NHS kept the contract. And I’ve kept my NHS number. Because the other option is…?"
+        },
+        {
+          "t": "Amy came in from the kitchen. ‘You doing the Palantir thing again?’"
+        },
+        {
+          "t": "‘Yes, I’m <em>doing</em> Palantir.’"
+        },
+        {
+          "t": "‘I’m about to tell George who runs the UK branch. Do you know?’"
+        },
+        {
+          "t": "Shit, I’ve gone into condescending mode.",
+          "c": "inner"
+        },
+        {
+          "t": "‘Er, no.’"
+        },
+        {
+          "t": "‘Louis Mosley. Grandson of Oswald.’"
+        },
+        {
+          "t": "‘The Fascist MP guy?’ asked Amy. She had entered the chat."
+        },
+        {
+          "t": "‘Yeah. Gotta laugh.’"
+        },
+        {
+          "t": "‘So what do we do?’ George asked."
+        },
+        {
+          "t": "And there it was. The question. The one that lands every time like a brick through a window I’ve just spent ten minutes carefully constructing."
+        },
+        {
+          "t": "‘Nothing. Well, mass non-compliance or nothing. Basically nothing.’"
+        },
+        {
+          "t": "George laughed. It wasn’t a cruel laugh. It was recognition. He’s nineteen. He’s lived his whole life inside a watered-down algo-ghetto. Palantir is furniture to him — another piece of the digital architecture he mindlessly navigates. The same way I drive to work on pothole-ridden roads without thinking about who built them or why they go where they go. The difference between us isn’t that he doesn’t understand. It’s that understanding doesn’t produce the same anger in him. He doesn’t remember The Before Times."
+        },
+        {
+          "t": "‘They also got a multi-billion dollar US Army contract’ I said, to nobody in particular. Amy was in the room in body only. George was distracted by TikTok notifications. ‘All those targeted killings in Gaza, Iran or wherever. Palantir. AI’s perception of collateral damage is a little different to yours and mine. A five-year-old cancer patient in a hospital sacrificed to take out an evil terrorist group leader?’ (air quotes) ‘Fine. I can’t remember what half their ‘defence solutions’ are called. Maven I think is one. Look them up, they’re all on their website. Presented to the world with pride, like they’re a <em>good thing</em>.’"
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I’d lost George now. But hopefully he’d absorbed enough to understand why you’d be ‘selling your soul’ to work for these wankers."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I reckon I’d given a pretty good synopsis. Dev would’ve been able to hold court for longer. Probably picked up on numerous inaccuracies."
+        },
+        {
+          "t": "I hadn’t even got as far as their partnership with Oracle. Oracle’s Cloud infrastructure and Palantir’s AI. ‘Defending western interests.’ Ellison, cut from the same ‘elite’ cloth, telling rooms of ‘investors’ (sorry about all the air quotes) that ‘citizens would be on their best behaviour because we’re constantly recording and reporting everything.’"
+        },
+        {
+          "t": "Just fuck off. Please.",
+          "c": "solo"
+        },
+        {
+          "t": "I’ve researched this shit. I remember about ten percent of what I read. Entropy. Entropy and alcohol. The Oasis version was better. Oh for George’s brain plasticity combined with my seasoned rage. I can see what’s coming. Give or take. I’ve read about Palantir’s architecture, their contracts. That Foundry ingests everything and Gotham builds individual profiles searchable by tattoo, immigration status, flagged social media posts and probably our fucking unique biofield."
+        },
+        {
+          "t": "I rant, I moan. But I basically achieve nothing. I explain the cage from the inside and I close the door behind me with every click, every updated app and every ‘agree all’."
+        },
+        {
+          "t": "I’ll go to bed tonight and lie there thinking about Palantir and Thiel. That interview when he was asked ‘should the human race survive?’ and he didn’t answer. I’ll think about the NHS and that snide Mosley and his ‘we won’t get involved in digital ID, we’re just involved in the back end.’ I’ll think of the twenty-four UK contracts, the predictive dashboards, the algorithmic regime that’ll sit somewhere between reading our thoughts and programming them. I’ll get angry. We <em>should</em> do something. We <em>must</em> do something."
+        },
+        {
+          "t": "Then I’ll fall asleep.",
+          "c": "solo"
+        },
+        {
+          "t": "And in the morning I’ll drive to work, guided by Google Maps to ensure I <em>miss the traffic</em>."
+        },
+        {
+          "t": "Twat.",
+          "c": "inner"
+        }
+      ],
+      "choices": {}
     },
     {
       "id": 6,
@@ -5401,7 +5560,8 @@
           }
         ]
       }
-    ]
+    ],
+    "5a": []
   },
   "threads": [
     {

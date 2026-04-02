@@ -4143,10 +4143,11 @@
           {
             "src": "Dev",
             "ttl": "Don't Panic",
-            "snip": "People are stocking up like it's a siege. It's not a siege. Sieges end when you surrender. This ends when you volunteer. Stay close to home this weekend.",
+            "snip": "People are stocking up like it's a siege. It's not a siege. Sieges end when you surrender. This ends when you volunteer. PS Stay close to home this weekend.",
             "tag": "Unread",
             "cls": "alert",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
           }
         ]
       },
@@ -5592,7 +5593,7 @@
           "turn": 9
         },
         {
-          "text": "AETHER PIRATES OF THE MATTERIUM! — Cliff High",
+          "text": "Aether Pirates of the Matterium! — Cliff High",
           "url": "https://substack.com/home/post/p-183851810",
           "src": "simon",
           "turn": 10,
@@ -5885,7 +5886,7 @@
             "style": "paste",
             "source": "Dev · Signal message · Private group",
             "title": "Don't Panic",
-            "body": "<p>The pattern is the same every time. You create the crisis. You pre-position the solution. You wait for the population to demand what you were going to impose anyway.</p><p>Patriot Act. 9/11 to surveillance state in 45 days. Nobody voted for warrantless wiretapping. Everyone demanded it. COVID. Two weeks to flatten the curve became digital health passes and QR codes for a sandwich. Nobody voted for that either. Everyone demanded it.</p><p>They don't need to mandate it. They need people to demand it. The crisis IS the mandate.</p><p>The firmware update sits dormant until it doesn't. The terminals are pre-installed. The currency is pre-built. The registration infrastructure is pre-positioned. When it goes off, everything is ready. Not because they built it overnight. Because they built it in daylight over six years and called it modernisation. Precaution. Preparedness.</p><p>People are buying beans and bog roll. The beans don't matter. They won't let many starve to death. They'll allow you to think you might though. What matters to them is that when the system crashes, people will be standing in queues demanding the thing they'd designed before the queues existed.</p><p>This isn't a prediction. It's a fucking production schedule. The bog roll helps if you shit the bed. Don't shit the bed. Don't demand a solution. And definitely don't accept their solution. Drink in the McAfee 2020 vibes — 'whatever you do, do not take the vaccine' — whatever form 'the vaccine' comes in this time.</p><p>Don't Panic.</p><p>Peace.</p><p>Dev.</p>",
+            "body": "<p>The pattern is the same every time. You create the crisis. You pre-position the solution. You wait for the population to demand what you were going to impose anyway.</p><p>Patriot Act. 9/11 to surveillance state in 45 days. Nobody voted for warrantless wiretapping. Everyone demanded it. COVID. Two weeks to flatten the curve became digital health passes and QR codes for a sandwich. Nobody voted for that either. Everyone demanded it.</p><p>They don't need to mandate it. They need people to demand it. The crisis IS the mandate.</p><p>The firmware update sits dormant until it doesn't. The terminals are pre-installed. The currency is pre-built. The registration infrastructure is pre-positioned. When it goes off, everything is ready. Not because they built it overnight. Because they built it in daylight over six years and called it modernisation. Precaution. Preparedness.</p><p>People are buying beans and bog roll. The beans don't matter. They won't let many starve to death. They'll allow you to think you might though. What matters to them is that when the system crashes, people will be standing in queues demanding the thing they'd designed before the queues existed.</p><p>This isn't a prediction. It's a fucking production schedule. The bog roll helps if you shit the bed. Don't shit the bed. Don't demand a solution. And definitely don't accept their solution. Drink in the McAfee 2020 vibes — 'whatever you do, do not take the vaccine' — whatever form 'the vaccine' comes in this time.</p><p>PS Stay close to home this weekend.</p><p>Don't Panic.</p><p>Peace.</p><p>Dev.</p>",
             "footer": "Dev · Signal · T19"
           }
         }

@@ -2092,6 +2092,17 @@
       ]
     },
     {
+      "id": "17c",
+      "num": "T17c",
+      "title": "The Exchange",
+      "date": "Late January 2027",
+      "paras": [
+        {
+          "t": "Wonder of wonders! A message from Dev!"
+        }
+      ]
+    },
+    {
       "id": 18,
       "num": "T18",
       "title": "Cash and Cannellini Beans",
@@ -3807,24 +3818,11 @@
         ]
       },
       {
-        "sec": "Open Tabs",
-        "cards": [
-          {
-            "src": "BIS — Bank for International Settlements",
-            "ttl": "mBridge: cross-border CBDC pilot expanded to 26 central banks",
-            "snip": "Dev flagged this months ago. You told people. They shrugged. Now it's 26 countries and nobody's shrugging because nobody's noticed.",
-            "tag": "Research",
-            "cls": "c",
-            "threadRef": "finance-commerce"
-          }
-        ]
-      },
-      {
         "sec": "Notification",
         "cards": [
           {
             "src": "Barclays",
-            "ttl": "Cash withdrawal: £300.00. Daily ATM limit: £300. Remaining: £0.",
+            "ttl": "Cash withdrawal: £150.00. Daily ATM limit: £150. Remaining: £0.",
             "snip": "The machine gave it to you. This time.",
             "tag": "Withdrawal",
             "cls": ""
@@ -4161,18 +4159,6 @@
             "ttl": "Beautiful walk! Pic of dead rabbit Olive found! 🐰💀",
             "snip": "Amy’s voice. The dogs. January countryside.",
             "tag": "Photo",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Dev",
-            "ttl": "Told you. Read it properly this time.",
-            "snip": "First message since the firmware doc. He knows you’ve been digging.",
-            "tag": "Today",
             "cls": ""
           }
         ]
@@ -5369,6 +5355,36 @@
           }
         ]
       }
+    ],
+    "17c": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "I think I know what it means.",
+            "snip": "First message since the firmware doc. Six words. Dev doesn't waste them.",
+            "tag": "Today",
+            "cls": "a",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "finance-commerce"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Check these out. Then we'll talk.",
+            "snip": "Three links. No context. Classic Dev.",
+            "tag": "Today",
+            "cls": "a",
+            "isnew": true
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -5765,6 +5781,12 @@
           "url": "https://sgtpreppershop.co.uk",
           "src": "simon",
           "turn": 18
+        },
+        {
+          "text": "Cyber Polygon: WEF exercise simulates coordinated financial infrastructure attack",
+          "url": "https://cyberpolygon.com",
+          "src": "dev",
+          "turn": "17c"
         }
       ]
     },
@@ -5784,12 +5806,6 @@
             "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
             "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
           }
-        },
-        {
-          "text": "BIS mBridge: cross-border CBDC pilot",
-          "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
-          "src": "simon",
-          "turn": 18
         },
         {
           "text": "Digital Pound spec v3.2 — “privacy-preserving”",
@@ -5833,6 +5849,18 @@
             "body": "<p>I’ve spent the last 5 days examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 18–19 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p>",
             "footer": "Payment Systems Analysis — Substack"
           }
+        },
+        {
+          "text": "BIS mBridge: cross-border CBDC pilot expanded to 26 central banks",
+          "url": "https://www.bis.org/about/bisih/topics/cbdc/mcbdc_bridge.htm",
+          "src": "dev",
+          "turn": "17c"
+        },
+        {
+          "text": "Project Agorá: Bank of England joins BIS cross-border tokenisation pilot",
+          "url": "https://www.bis.org/about/bisih/topics/fmis/agora.htm",
+          "src": "dev",
+          "turn": "17c"
         }
       ]
     },

@@ -1973,7 +1973,7 @@
       "id": "17a",
       "num": "T17a",
       "title": "The Bell Inn",
-      "date": "Still Bloody January 2027",
+      "date": "Still January 2027",
       "paras": [
         {
           "t": "Amy suggested we try a new walk with the dogs this morning. A long loop of beautiful Sussex countryside starting and ending at The Bell Inn. She had me at ‘pub’ and she knew it. It was only a ten minute drive from our house, yet unexplored territory."
@@ -2067,7 +2067,7 @@
       "id": "17b",
       "num": "T17b",
       "title": "Dude Deep Dives",
-      "date": "Nearly February 2027",
+      "date": "Still Bloody January 2027",
       "paras": [
         {
           "t": "Video call with The Dude."
@@ -2095,7 +2095,7 @@
       "id": "17c",
       "num": "T17c",
       "title": "The Exchange",
-      "date": "Late January 2027",
+      "date": "Nearly February 2027",
       "paras": [
         {
           "t": "Wonder of wonders! A message from Dev!"
@@ -3034,7 +3034,7 @@
         "cards": [
           {
             "src": "Mum (Sue)",
-            "ttl": "Happy Valentine’s Day you two! Hope you’ve got something nice planned. Love to Amy. Miss you ❤️❤️",
+            "ttl": "Happy Valentine's Day my darling. Don't do anything I wouldn't!! Love to Amy. Miss you ❤️❤️",
             "snip": "The last text from Mum before the world changes. On re-read: devastating.",
             "tag": "Today",
             "cls": "warm"
@@ -3047,7 +3047,7 @@
           {
             "src": "Dev",
             "ttl": "Dev — Missed call (23:07). No voicemail.",
-            "snip": "He never calls this late. He never calls at all.",
+            "snip": "Shit, missed his call. He hardly ever calls.",
             "tag": "11pm",
             "cls": "alert"
           }
@@ -4095,7 +4095,7 @@
           {
             "src": "Amy",
             "ttl": "Rully Rouge for Valentines treat ❤️",
-            "snip": "Already ordered a case of 6 🍷",
+            "snip": "She doesn't know I've already ordered a case of 6.",
             "tag": "Romance",
             "cls": ""
           }
@@ -4142,8 +4142,8 @@
         "cards": [
           {
             "src": "Mum (Sue)",
-            "ttl": "Tony says don’t worry about the markets thing, it’s all fine now. Hope you’ve got nice plans for Valentine’s! 🥰",
-            "snip": "Mum has already forgotten. Tony told her it was nothing. The mainstream worked.",
+            "ttl": "Tony says this cyber thing will come to nothing, the markets are fine. Only worry if they start to crash! What have you got planned for Valentine's? 🥰💕",
+            "snip": "I'd love to have her simple, peaceful life in the sun. I think she gets bored though.",
             "tag": "Today",
             "cls": "warm"
           }
@@ -5363,7 +5363,7 @@
           {
             "src": "Dev",
             "ttl": "I think I know what it means.",
-            "snip": "First message since the firmware doc. Six words. Dev doesn't waste them.",
+            "snip": "First message since the firmware doc. Six words. Short and probably not very sweet. Dev doesn't waste his words.",
             "tag": "Today",
             "cls": "a",
             "isnew": true,

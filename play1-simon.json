@@ -765,24 +765,15 @@
           "t": "Twat.",
           "c": "inner"
         }
-      ]
-    },
-    {
-      "id": "MQ5a",
-      "isQuestion": true,
-      "questionText": "Gotham is burning. Which one are you?",
-      "questionOpts": [
-        {
-          "text": "Batman. I see the corruption. I fight it. I never win \u2014 because the system regenerates faster than I can dismantle it. But I fight anyway."
-        },
-        {
-          "text": "The Riddler. I see the patterns. I leave the clues. I need people to understand what I\u2019ve understood. The compulsion to explain is the cage."
-        },
-        {
-          "text": "The Joker. I\u2019ve seen the absurdity. The only sane response to an insane system is laughter. Or madness. The line between them is thinner than anyone admits."
-        }
       ],
-      "questionMode": "mirror"
+      "choices": {
+        "label": "Gotham is burning. Which one are you?",
+        "opts": [
+          "Batman. I see the corruption. I fight it. I never win \u2014 because the system regenerates faster than I can dismantle it. But I fight anyway.",
+          "The Riddler. I see the patterns. I leave the clues. I need people to understand what I\u2019ve understood. The compulsion to explain is the cage.",
+          "The Joker. I\u2019ve seen the absurdity. The only sane response to an insane system is laughter. Or madness. The line between them is thinner than anyone admits."
+        ]
+      }
     },
     {
       "id": 6,
@@ -5584,7 +5575,7 @@
           {
             "src": "Sam",
             "ttl": "Golf tomorrow? \ud83c\udfcc\ufe0f",
-            "snip": "Saturday night text. He'll cancel by 9am. But the intent is there.",
+            "snip": "The father/son moments on the golf course mean more than words can describe.",
             "tag": "Tomorrow",
             "cls": "",
             "type": "flavour"

@@ -2718,7 +2718,7 @@
           "t": "Amy shows me her phone. She can’t send a WhatsApp. She tries a text. Not sending. ‘Try calling me’. She clicks on ‘Simon’. Nope. Nothing. Weird. I check my emails. Nothing received since just past 9."
         },
         {
-          "t": "<em>Probably the cyber attack we’ve been promised,</em> I jest as I load up She Bangs The Drums.",
+          "t": "<em>Here comes the ‘cyber attack’</em> (I love my air quotes) I mock, as I load up She Bangs The Drums.",
           "c": "solo"
         },
         {
@@ -2745,51 +2745,53 @@
       "date": "15 FEBRUARY 2027 — STILL DARK",
       "paras": [
         {
-          "t": "Creaky noises make my skin creep<br>I need to get some sleep….<br>I can't get no sleep",
+          "t": "Creaky noises make my skin creep<br>I need to get some sleep….<br>I can’t get no sleep",
           "c": "lyric"
         },
         {
-          "t": "……….",
+          "t": "………….",
           "c": "solo"
         },
         {
-          "t": "Where are you? In bed, check."
+          "t": "Where are you? In bed, check.",
+          "c": "inner"
         },
         {
-          "t": "How do you feel? Neck's sore. Note to self. I need new pillows. Mouth is dry. Reach for water. The glass is full. Big glug."
+          "t": "How do you feel? Neck’s sore. Note to self. I need new pillows. Mouth is dry. Reach for water. The glass is full. Big glug."
         },
         {
-          "t": "What time is it? Actually what day is it? Feels early and maybe a Sunday. Reach for phone. It's there, usual spot on the bedside table. You remembered to charge it before crashing out. First Brownie point of the day."
+          "t": "What time is it? Actually what day is it? Feels early and maybe a Sunday. Reach for phone. It’s there, usual spot on the bedside table. You remembered to charge it before crashing out. First Brownie point of the day."
         },
         {
           "t": "6.16am. Early doors.",
           "c": "solo"
         },
         {
-          "t": "I should check the girls' location. Did they get back to Sophie's after the party. Obviously Amy will have checked, but I should do my due diligence too. I turn to look at Amy. Deep sleep still. Away with the fairies, mumbling something about leaks. Or maybe it's leeks? I'll ask her when she wakes up. Doubt she'll remember it. She'll find it funny though. I look forward to seeing that smile."
+          "t": "I should check the girls’ location. Did they get back to Sophie’s after the party. Obviously Amy will have checked, but I should do my due diligence too. I turn to look at Amy. Deep sleep still. Away with the fairies, mumbling something about leaks. Or maybe it’s leeks? I’ll ask her when she wakes up. Doubt she’ll remember it. She’ll find it funny though. I look forward to seeing that smile.",
+          "c": "inner"
         },
         {
-          "t": "Go to 'Find my' App. Emilia - Last seen 7 hours ago. Swipe down to update. No change. Click on Chloe - the same, 7 hours ago."
+          "t": "I go to the ‘Find My’ App. Emilia — Last seen 7 hours ago. I swipe down to update. No change. Click on Chloe — same thing. 7 hours ago."
         },
         {
-          "t": "You remember the service being shit last night. All three curves of full signal Wi-Fi reassurance."
+          "t": "I remember the service being shit last night. Now I have three curves of full signal Wi-Fi reassurance. But Find My isn’t working."
         },
         {
-          "t": "See if the internet is working. BBC propaganda check first."
+          "t": "I check to see if the internet is working. The BBC propaganda website first."
         },
         {
-          "t": "Nothing. Try something else…Crystal Palace blog…Nothing."
+          "t": "Nothing. I try something else…Crystal Palace blog…Nothing."
         },
         {
-          "t": "Fuck's sake.",
+          "t": "Fuck’s sake.",
           "c": "solo"
         },
         {
-          "t": "Is Starlink aligned? In fact, I'll just reboot the hub first. And put the kettle on."
+          "t": "Is Starlink aligned? In fact, it’ll be easier to reboot the hub first. And I’ll put the kettle on whilst I’m at it."
         },
         {
-          "t": "ARC?",
-          "c": "solo"
+          "t": "",
+          "c": "break"
         },
         {
           "t": "Hub rebooted. Kettle on. Still no service."
@@ -2802,57 +2804,74 @@
           "c": "solo"
         },
         {
-          "t": "Barclays App. 'Closed for routine maintenance'"
+          "t": "Barclays App. ‘Closed for routine maintenance’"
         },
         {
-          "t": "Kettle's boiled. 2 mugs. Earl Grey and 1 spoon of sugar. Must be Demerara. Builders for me. And I'm sweet enough already. Back to the bedroom. The gentle clunk of mug on bedside table causes Amy to stir. Well, not gentle as much. Honed to perfection over the years to be just loud enough to wake her with the knowledge that her tea hero has come to the rescue, not too loud as to be an annoyingly obvious 'wake up and play'."
+          "t": "The Cyber Psyop, Day One.",
+          "c": "inner"
         },
         {
-          "t": "'Morning'"
+          "t": "Kettle’s boiled. Two mugs. Earl Grey and a spoon of sugar. Brown. Must be Demerara. Builders for me. I’m sweet enough already."
         },
         {
-          "t": "'Morning, darling. Cup of tea on the side for you.'"
+          "t": "Back to the bedroom. The gentle clunk of mug on bedside table causes Amy to stir. Well, not gentle as such. Volume honed to perfection over the years — just loud enough to wake her with the knowledge that her tea hero has come to the rescue — not too loud as to be an annoyingly obvious ‘wake up and play’."
         },
         {
-          "t": "'I know. My hero. I'll make the difficult second cup.'"
+          "t": "‘Morning’"
+        },
+        {
+          "t": "‘Morning, darling. Cup of tea on the side for you.’"
+        },
+        {
+          "t": "‘I know. My hero. I’ll make the <em>difficult</em> second cup.’"
         },
         {
           "t": "(It never gets old)",
           "c": "solo"
         },
         {
-          "t": "'Bloody internet is still down'"
+          "t": "‘Bloody internet is still down’"
         },
         {
-          "t": "'Is it? Are the girls OK?'"
+          "t": "‘Is it? Are the girls OK?’"
         },
         {
-          "t": "'Don't know. Everything is down'"
+          "t": "‘Don’t know. I haven’t heard from them. Everything is down’"
         },
         {
           "t": "She jolts upright, reaching for the phone."
         },
         {
-          "t": "'You're right. Last seen 7 hours ago. Have you tried calling?'"
+          "t": "‘You’re right. Last seen 7 hours ago. Have you tried calling?’"
         },
         {
-          "t": "I hadn't.",
+          "t": "I hadn’t.",
           "c": "solo"
         },
         {
-          "t": "'No, I didn't want to wake them' I replied, half truthfully. 'They'll be fine'"
+          "t": "‘No, I didn’t want to wake them’ I replied, half truthfully. ‘They’ll be fine’"
         },
         {
-          "t": "'What's this, Simon?'"
+          "t": "‘What’s this, Simon?’"
         },
         {
-          "t": "I got a Simon, something is amiss. She points at a small blue swirly logo under the battery percentage bar. Hers was 100%."
+          "t": "I got a Simon, something is amiss. She points at her phone. ‘100% — you’re fully charged.’"
         },
         {
-          "t": "“An app called ARC. That’s weird, I don’t remember installing that.”"
+          "t": "‘No, underneath that. The blue swirly logo — that app — ARC. What’s that? I don’t remember installing it.’"
         },
         {
-          "t": "I look at my phone. Same logo, same ARC app. I click on it. It does nothing."
+          "t": "I look at my phone. I have the same logo, the same ARC app."
+        },
+        {
+          "t": "I click on it. It does nothing."
+        },
+        {
+          "t": "I look at Amy. She looks at me. I assume I have the same WTF look on my face that she does."
+        },
+        {
+          "t": "This is bizarre. I should message Dev. Wait, I can’t message Dev.",
+          "c": "inner"
         }
       ],
       "choices": {

@@ -203,6 +203,56 @@ html, body {
   opacity: .3;
 }
 
+/* ── PROSE MEDIA (images/video in paragraphs) ── */
+.prose-media {
+  position: relative;
+  margin: 24px 0;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+}
+.prose-media.pm-right {
+  float: right;
+  margin: 4px 0 20px 28px;
+}
+.prose-media.pm-left {
+  float: left;
+  margin: 4px 28px 20px 0;
+}
+.prose-media.pm-full {
+  width: 100%;
+  margin: 28px 0;
+  clear: both;
+}
+.prose-media.pm-bg {
+  position: absolute;
+  top: 0; left: -48px; right: -48px;
+  z-index: -1;
+  pointer-events: none;
+}
+.prose-media img,
+.prose-media video {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+  object-fit: cover;
+}
+.prose-media video {
+  background: rgba(20,18,14,0.5);
+}
+.prose-media .pm-caption {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--dim);
+  opacity: .3;
+  margin-top: 6px;
+  font-style: italic;
+}
+.prose-media + p { clear: none; }
+.pm-full + p, .pm-bg + p { clear: both; }
+.prose-media.pm-right + .inner,
+.prose-media.pm-right + .lyric { clear: right; }
+
 /* ── QUESTION (standalone psychometric turn) ── */
 .question-standalone {
   display: flex;
@@ -472,6 +522,19 @@ html, body {
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 .card.thread-notify-card { border-left: 2px solid rgba(90,122,138,.3); }
 .card.song-card { border-left: 2px solid rgba(138,126,106,.3); }
+
+/* ── SIGNAL CARD MEDIA (header images) ── */
+.card.has-img { padding: 0; overflow: hidden; }
+.card.has-img .card-img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+  opacity: .55;
+  transition: opacity .4s;
+}
+.card.has-img:hover .card-img { opacity: .75; }
+.card.has-img .card-body { padding: 10px 14px 12px; }
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }
@@ -2746,9 +2809,35 @@ function renderTurn(turnData) {
 
   // ── PROSE TURN ──
   turnData.paras.forEach(p => {
-    const cls = p.c ? ` class="${p.c}"` : '';
-    const sty = p.s ? ` style="${p.s}"` : '';
-    html += `<p${cls}${sty}>${p.t}</p>\n`;
+    // ── Media element (image or video in prose) ──
+    if (p.media) {
+      const m = p.media;
+      const mType = m.type || 'image';
+      const mPos = m.pos || 'right';
+      const mW = m.w || (mPos === 'full' || mPos === 'bg' ? '100%' : '45%');
+      const mOp = m.opacity != null ? m.opacity : 1;
+      const posCls = 'pm-' + mPos;
+      const wStyle = mPos === 'full' || mPos === 'bg' ? '' : `width:${mW};`;
+      const opStyle = mOp < 1 ? `opacity:${mOp};` : '';
+      html += `<div class="prose-media ${posCls}" style="${wStyle}${opStyle}">\n`;
+      if (mType === 'video') {
+        const loop = m.loop !== false ? ' loop' : '';
+        const muted = m.audio ? '' : ' muted';
+        html += `  <video src="${m.src}" autoplay${muted}${loop} playsinline disablepictureinpicture></video>\n`;
+      } else {
+        html += `  <img src="${m.src}" alt="" draggable="false" loading="lazy">\n`;
+      }
+      if (m.caption) {
+        html += `  <div class="pm-caption">${m.caption}</div>\n`;
+      }
+      html += `</div>\n`;
+    }
+    // ── Text paragraph ──
+    if (p.t || p.t === '') {
+      const cls = p.c ? ` class="${p.c}"` : '';
+      const sty = p.s ? ` style="${p.s}"` : '';
+      html += `<p${cls}${sty}>${p.t}</p>\n`;
+    }
   });
 
   // Choices
@@ -2854,8 +2943,13 @@ function renderSignal(turnId) {
       const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';
       const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : type === 'song' ? ' song-card' : '';
-      html += `<div class="card${newCls}${typeCls}">
-        <div class="src">${card.src}</div>
+      const imgCls = card.img ? ' has-img' : '';
+      html += `<div class="card${newCls}${typeCls}${imgCls}">`;
+      if (card.img) {
+        html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
+        html += '<div class="card-body">';
+      }
+      html += `<div class="src">${card.src}</div>
         <div class="ttl">${card.ttl}</div>
         <div class="snip">${card.snip}</div>
         <div class="tag ${card.cls}">${card.tag}</div>`;
@@ -2874,6 +2968,7 @@ function renderSignal(turnId) {
         // flavour — default save button
         html += `<div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>`;
       }
+      if (card.img) html += '</div>'; // close .card-body
       html += '</div>';
     });
   });

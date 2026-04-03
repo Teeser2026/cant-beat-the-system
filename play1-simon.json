@@ -2753,14 +2753,15 @@
           "c": "solo"
         },
         {
-          "t": "Where are you? In bed, check.",
+          "t": "Where are you? In bed, check.<br>How do you feel? Neck’s sore. Note to self. I need new pillows. Mouth is dry.",
           "c": "inner"
         },
         {
-          "t": "How do you feel? Neck’s sore. Note to self. I need new pillows. Mouth is dry. Reach for water. The glass is full. Big glug."
+          "t": "I reach for my water. The glass is full. I take a big glug. It tickles my dry throat. I somehow manage not to spit it all out. I swallow it in stages."
         },
         {
-          "t": "What time is it? Actually what day is it? Feels early and maybe a Sunday. Reach for phone. It’s there, usual spot on the bedside table. You remembered to charge it before crashing out. First Brownie point of the day."
+          "t": "What time is it? Actually what day is it? Feels early and maybe a Sunday. Reach for phone. It’s there, usual spot on the bedside table. You remembered to charge it before crashing out. First Brownie point of the day.",
+          "c": "inner"
         },
         {
           "t": "6.16am. Early doors.",
@@ -2784,7 +2785,7 @@
         },
         {
           "t": "Fuck’s sake.",
-          "c": "solo"
+          "c": "inner"
         },
         {
           "t": "Is Starlink aligned? In fact, it’ll be easier to reboot the hub first. And I’ll put the kettle on whilst I’m at it."

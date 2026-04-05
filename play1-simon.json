@@ -5046,6 +5046,13 @@
         "sec": "WhatsApp",
         "cards": [
           {
+            "src": "The Dude",
+            "ttl": "17b you free 10pm GMT?",
+            "snip": "He texts like he’s scheduling a satellite pass. I’ve been waiting days for this.",
+            "tag": "Today",
+            "cls": ""
+          },
+          {
             "src": "Emilia",
             "ttl": "dad can u pick me up from Lilly’s tomorrow at 11.30 pls? ❤️",
             "snip": "The Dude is explaining how three companies own the world and my daughter needs a lift from a sleepover.",
@@ -5065,6 +5072,19 @@
             "cls": "c",
             "threadRef": "power-structures",
             "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Comfortably Numb",
+        "cards": [
+          {
+            "src": "The child is grown. The dream is gone.",
+            "ttl": "Comfortably Numb",
+            "snip": "Sat in the kitchen after the Dude hung up. Couldn’t move. Didn’t want to.",
+            "tag": "Comfortably Numb",
+            "cls": "e",
+            "type": "song"
           }
         ]
       }
@@ -6430,7 +6450,7 @@
             "source": "BBC News",
             "title": "Defence Secretary: UK cyber infrastructure ‘robust and resilient’",
             "date": "30 January 2027",
-            "body": "<p>The Defence Secretary has reiterated that although the national cyber threat level remains at SEVERE — the second-highest assessment — the UK’s critical digital infrastructure is ‘robust, resilient, and subject to continuous independent review.’</p><p>Speaking after a scheduled briefing at the National Cyber Security Centre, she confirmed that recent reports of increased probing activity against financial sector networks were ‘consistent with patterns we have monitored for some time’ and did not represent a new or escalated threat.</p><p>‘We have full confidence in our intelligence services and in the defensive capabilities of our financial institutions,’ she said. ‘The British public should be reassured that their savings, their pensions, and their daily transactions are protected by world-leading security architecture.’</p><p>The statement follows a week of heightened media coverage around potential cyber vulnerabilities in the UK payments infrastructure, including unverified reports circulating on social media.</p><p>The NCSC declined to comment on specific threat intelligence but confirmed that cross-sector resilience exercises had been conducted ‘as part of routine preparedness.’</p><p>Shadow Defence Secretary James Cartwright described the statement as ‘welcome but overdue,’ adding that ‘the government’s record on critical infrastructure protection does not inspire the confidence the Secretary of State claims.’</p>",
+            "body": "<p>The Defence Secretary has reiterated that although the national cyber threat level remains at SEVERE — the second-highest assessment — the UK’s critical digital infrastructure is ‘robust, resilient, and subject to continuous independent review.’</p><p>Speaking after a scheduled briefing at the National Cyber Security Centre, she confirmed that recent reports of increased probing activity against financial sector networks were ‘consistent with patterns we have monitored for some time’ and did not represent a new or escalated threat.</p><p>‘We have full confidence in our intelligence services and in the defensive capabilities of our financial institutions,’ she said. ‘The British public should be reassured that their savings, their pensions, and their daily transactions are protected by world-leading security architecture.’</p><p>The statement follows a week of heightened media coverage around potential cyber vulnerabilities in the UK payments infrastructure, including unverified reports circulating on social media.</p><p>The NCSC declined to comment on specific threat intelligence but confirmed that cross-sector resilience exercises had been conducted ‘as part of routine preparedness.’</p><p>The Shadow Defence Secretary described the statement as ‘welcome but overdue,’ adding that ‘the government’s record on critical infrastructure protection does not inspire the confidence the Secretary of State claims.’</p>",
             "footer": "BBC News — Politics",
             "annotation": "Full confidence. Routine preparedness. World-leading security architecture. Every phrase designed to make you feel safe while telling you nothing. Dev’s firmware analysis is sitting on my desktop and the Defence Secretary is on TV telling me my savings are protected by the same system Dev just proved has a backdoor. The NCSC ‘declined to comment on specific threat intelligence.’ Yeah. I bet they did."
           }

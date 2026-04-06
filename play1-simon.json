@@ -6213,6 +6213,55 @@
             "isnew": true
           }
         ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "+447898 433337",
+            "ttl": "It's Dev. Call me on this. walls.rip. Anonymity. Of sorts. For now.",
+            "snip": "New number. Not in my contacts. Who else texts like a telegram.",
+            "tag": "Today",
+            "cls": "a",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "LibreLink",
+            "ttl": "Sensor expires in 3 days. Order replacement from your pharmacy.",
+            "snip": "The tattoo before the tattoo. Fourteen days on, swap it out, carry on.",
+            "tag": "Reminder",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Meadowbank Care",
+            "ttl": "Christopher's quarterly review — scheduled 18 February. Please confirm attendance.",
+            "snip": "Dad won't know I'm there. I'll go anyway.",
+            "tag": "Upcoming",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Revolut",
+            "ttl": "We've updated our Terms & Conditions. Please review and accept to continue using the app.",
+            "snip": "Scrolled to the bottom. Tapped accept. Took about four seconds. Didn't read a word.",
+            "tag": "Action Required",
+            "cls": "c"
+          }
+        ]
       }
     ],
     "5a": [
@@ -6654,6 +6703,12 @@
           "url": "https://www.projectnomad.us",
           "src": "dev",
           "turn": 18
+        },
+        {
+          "text": "walls.rip — anonymous eSIM service",
+          "url": "https://walls.rip/esim",
+          "src": "dev",
+          "turn": "17c"
         }
       ]
     },

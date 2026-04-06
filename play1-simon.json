@@ -6193,7 +6193,7 @@
             "src": "Dev",
             "ttl": "I think I know what it means.",
             "snip": "First message since the firmware doc. Short and probably not very sweet.",
-            "tag": "Today",
+            "tag": "19:22",
             "cls": "a",
             "isnew": true,
             "type": "thread-notify",
@@ -6208,7 +6208,7 @@
             "src": "Dev",
             "ttl": "Check these out. Then we'll talk.",
             "snip": "Three links. No context. Classic Dev.",
-            "tag": "Today",
+            "tag": "19:24",
             "cls": "a",
             "isnew": true
           }
@@ -6221,7 +6221,7 @@
             "src": "+447898 433337",
             "ttl": "It's Dev. Call me on this. walls.rip. Anonymity. Of sorts. For now.",
             "snip": "New number. Not in my contacts. Who else texts like a telegram.",
-            "tag": "Today",
+            "tag": "22:46",
             "cls": "a",
             "isnew": true
           }
@@ -6233,7 +6233,7 @@
           {
             "src": "LibreLink",
             "ttl": "Sensor expires in 3 days. Order replacement from your pharmacy.",
-            "snip": "The tattoo before the tattoo. Fourteen days on, swap it out, carry on.",
+            "snip": "A sensor on my arm talking to a phone talking to a cloud. Lifesaving tech. All it cost was becoming a data point.",
             "tag": "Reminder",
             "cls": "c"
           }

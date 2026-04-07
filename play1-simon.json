@@ -6262,6 +6262,32 @@
             "cls": "c"
           }
         ]
+      },
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "Everything But The Girl",
+            "ttl": "Missing (Todd Terry Remix)",
+            "snip": "You always were two steps ahead of everyone. We'd walk behind while you would run.",
+            "tag": "Earworm",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "Radiohead",
+            "ttl": "Fitter Happier",
+            "snip": "A pig in a cage on antibiotics.",
+            "tag": "Closing",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
       }
     ],
     "5a": [
@@ -6971,6 +6997,24 @@
       "context": "The child is grown. The dream is gone. Sat in the kitchen after the Dude hung up. Couldn’t move. Didn’t want to.",
       "src": "simon",
       "turn": "17b"
+    },
+    {
+      "id": "s015",
+      "title": "Missing (Todd Terry Remix)",
+      "artist": "Everything But The Girl",
+      "url": "https://open.spotify.com/track/1waLmkUyMq0M5ACmf5SG7q?si=1f782a31799e471f",
+      "context": "You always were two steps ahead of everyone. We'd walk behind while you would run.",
+      "src": "simon",
+      "turn": "17c"
+    },
+    {
+      "id": "s016",
+      "title": "Fitter Happier",
+      "artist": "Radiohead",
+      "url": "https://open.spotify.com/track/6wnmRxEbwUK7WLyUtiRuT7",
+      "context": "Fitter, healthier and more productive. A pig in a cage on antibiotics.",
+      "src": "simon",
+      "turn": "17c"
     }
   ],
   "ticker": {

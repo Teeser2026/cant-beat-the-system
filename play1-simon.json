@@ -4054,6 +4054,37 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@UKDefenceWatch",
+            "ttl": "Third 'routine readiness exercise' at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units. Since when do routine exercises make the news?",
+            "snip": "Bookmarked. Didn't share. Who'd believe you anyway?",
+            "tag": "Trending",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Simon → Family Chat",
+            "ttl": "Hey guys check this out 👀",
+            "snip": "deepundergroundmilitarybases.com. The link you send at 1pm — surely one of them will be interested in this?",
+            "tag": "Today",
+            "cls": ""
+          },
+          {
+            "src": "Sam",
+            "ttl": "Thanks Pa, I'll look at it tonight 👍",
+            "snip": "He won't look at it tonight.",
+            "tag": "Read",
+            "cls": ""
+          }
+        ]
       }
     ],
     "2": [
@@ -6650,6 +6681,22 @@
           }
         ]
       }
+    ],
+    "6b": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "That thing I was on about last night. Read this — it's not a conspiracy site, it's Aeon. They've literally built a religion and no one noticed 🍺",
+            "snip": "He's right. They have. And no one noticed.",
+            "tag": "Morning",
+            "cls": "c",
+            "threadRef": "philosophy-theology",
+            "type": "thread-notify"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -7178,7 +7225,15 @@
     {
       "id": "philosophy-theology",
       "label": "Philosophy & Theology",
-      "items": []
+      "items": [
+        {
+          "text": "Aeon — Why is the language of transhumanists and religion so similar?",
+          "url": "https://aeon.co/essays/why-is-the-language-of-transhumanists-and-religion-so-similar",
+          "src": "rupert",
+          "turn": "6b",
+          "snip": "Singularity as apocalypse. Super-AI as saviour. Tech-immortality as salvation. They swapped God for a computer."
+        }
+      ]
     },
     {
       "id": "reader-own",

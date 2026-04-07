@@ -1150,6 +1150,17 @@
       }
     },
     {
+      "id": "6b",
+      "num": "T6b",
+      "title": "The Party",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "Simon's 52nd. Peter booked the table. Woodfired pizza, house-brewed beer, twelve people, three generations, one long table near the pizza oven."
+        }
+      ]
+    },
+    {
       "id": 7,
       "num": "T7",
       "title": "Blue Monday, Black Friday",

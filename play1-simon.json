@@ -3748,7 +3748,7 @@
       "id": 29,
       "num": "T29",
       "title": "Waiting",
-      "date": "28 February – 21 March 2027",
+      "date": "1–11 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 14–28. LIGHT. Two weeks compressed. Managed equilibrium. Hamper system smooth. Routine: ARC check, hamper queue, walk dogs. PM Week 3: 'The old system failed us.' Kate: 'The hubs are being fitted out for something.' Chloe increasingly restless. George doing odd jobs.]"
@@ -3757,10 +3757,21 @@
       "audio": null
     },
     {
+      "id": "29b",
+      "num": "T29b",
+      "title": "The Old System Failed Us",
+      "date": "12–16 March 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 26–30. The language shifts. PM Week 3: 'The old system failed us.' Nobody says 'back to normal' anymore. Kate notices registration equipment at community centres. Cash nearly exhausted. BBC running 'what might the new system look like' segments. The country stops waiting to go back and starts waiting to go forward.]"
+        }
+      ]
+    },
+    {
       "id": "29a",
       "num": "T29a",
       "title": "Something Better",
-      "date": "12–21 March 2027",
+      "date": "17–21 March 2027",
       "paras": [
         {
           "t": "[STUB — Day 26–34. The anticipation week. BBC speculation on new system. Hubs being fitted with registration equipment — Kate notices. Cash virtually gone. PM expected to address nation ‘within days.’ 23 nations confirm coordinated announcement. Schools ready to reopen within 48 hours. The build-up.]"
@@ -4015,760 +4026,6 @@
         }
       ],
       "audio": null
-    },
-    {
-      "id": 38,
-      "num": "T38",
-      "title": "The First Week",
-      "date": "April 2027",
-      "paras": [
-        {
-          "t": "[STUB] AIDA settles in. BC arrives. Mortgage zeroed. Dev: \"So.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 39,
-      "num": "T39",
-      "title": "George Was Right",
-      "date": "April 2027",
-      "paras": [
-        {
-          "t": "[STUB] George fluent in AIDA. First cash refusal. Jenny mentions Jamie.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 40,
-      "num": "T40",
-      "title": "Jenny and Peter",
-      "date": "late April 2027",
-      "paras": [
-        {
-          "t": "[STUB] Amy's parents. Mortgage zeroed. Pension rebuilt. Jenny cries.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40a",
-      "num": "T40a",
-      "title": "Jamie",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Brothers holdout mirror begins. School-gate conversations.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40b",
-      "num": "T40b",
-      "title": "The Brothers",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Rupert's prescription. Jamie on a sofa. Family fracture.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40c",
-      "num": "T40c",
-      "title": "Jamie's Sofa",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Jamie's visible deterioration. Dev silence vs Jamie grinding.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 41,
-      "num": "T41",
-      "title": "The Wine",
-      "date": "June 2027",
-      "paras": [
-        {
-          "t": "[STUB] Dynamic pricing. Clubcard mechanism. AIDA curates the shopping list.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 42,
-      "num": "T42",
-      "title": "The Blade",
-      "date": "June 2027",
-      "paras": [
-        {
-          "t": "[STUB] Blade devices launch. Amy orders first. Consumer product, not mandate.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 43,
-      "num": "T43",
-      "title": "Amy Sleeps",
-      "date": "July 2027",
-      "paras": [
-        {
-          "t": "[STUB] Amy's anxiety recedes. Mortgage gone = fear gone. Schrödinger's steak.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 44,
-      "num": "T44",
-      "title": "Rupert",
-      "date": "August 2027",
-      "paras": [
-        {
-          "t": "[STUB] Rupert caves (prescription). Jamie alone. \"Don't give up on me.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 45,
-      "num": "T45",
-      "title": "The Numbers",
-      "date": "September 2027",
-      "paras": [
-        {
-          "t": "[STUB] 98% registered. Crime down 40%. Dev: \"How do you fight something that works?\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 46,
-      "num": "T46",
-      "title": "Kate's BBQ",
-      "date": "October 2027",
-      "paras": [
-        {
-          "t": "[STUB] Neighbourhood BBQ. Two who know, performing normalcy. Holdouts embarrassing.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 47,
-      "num": "T47",
-      "title": "The Dude",
-      "date": "November 2027",
-      "paras": [
-        {
-          "t": "[STUB] Dev: \"Alan's gone dark.\" The Dude vanishes. Ghost.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 48,
-      "num": "T48",
-      "title": "Christmas",
-      "date": "December 2027",
-      "paras": [
-        {
-          "t": "[STUB] First Christmas in the system. Dev: \"Still here. 20 nodes. Happy Christmas, mate.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 49,
-      "num": "T49",
-      "title": "Jamie",
-      "date": "January 2028",
-      "paras": [
-        {
-          "t": "[STUB] Jamie registers. \"Done it.\" Three words. Amy cries. Relief.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 50,
-      "num": "T50",
-      "title": "The Spreadsheet",
-      "date": "February 2028",
-      "paras": [
-        {
-          "t": "[STUB] Simon's market business obsolete. AIDA runs it. Stops opening the spreadsheet.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 51,
-      "num": "T51",
-      "title": "The Fête",
-      "date": "April 2028",
-      "paras": [
-        {
-          "t": "[STUB] AIDA commissions community fête. Simon organises it. Sets up bunting anyway.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 52,
-      "num": "T52",
-      "title": "George's Numbers",
-      "date": "May 2028",
-      "paras": [
-        {
-          "t": "[STUB] George earns double Simon's BC. Uni + creating. Absence of tension IS the Soma.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 53,
-      "num": "T53",
-      "title": "The Olympics",
-      "date": "July 2028",
-      "paras": [
-        {
-          "t": "[STUB] LA Olympics. Tattoo global launch. Athletes' biometric displays. Chloe: \"I want one.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 54,
-      "num": "T54",
-      "title": "Chloe",
-      "date": "September 2028",
-      "paras": [
-        {
-          "t": "[STUB] Consumer tattoo launch. Parental consent. Simon signs the form. Fashion as delivery.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 55,
-      "num": "T55",
-      "title": "The Chair",
-      "date": "October 2028",
-      "paras": [
-        {
-          "t": "[STUB] Simon gets the tattoo. Knows the ink. Sits in the chair. Lets it happen.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 56,
-      "num": "T56",
-      "title": "The Meter",
-      "date": "December 2028",
-      "paras": [
-        {
-          "t": "[STUB] Jubilee 2. Smart meter refusal surrendered. Installs it himself. Last symbolic line.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 57,
-      "num": "T57",
-      "title": "The Refresh",
-      "date": "February 2029",
-      "paras": [
-        {
-          "t": "[STUB] First tattoo refresh. 3am doubt gets quieter. Peace or management?",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 58,
-      "num": "T58",
-      "title": "Dr Patel",
-      "date": "March 2029",
-      "paras": [
-        {
-          "t": "[STUB] Routine bloods. Anomalous markers. Patel files it. AIDA didn't flag it.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 59,
-      "num": "T59",
-      "title": "The Water",
-      "date": "April 2029",
-      "paras": [
-        {
-          "t": "[STUB] Simon visits Dev in Cumbria. Most important scene Act 1. \"I think they let me do this.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 60,
-      "num": "T60",
-      "title": "The Merger",
-      "date": "May 2029",
-      "paras": [
-        {
-          "t": "[STUB] Tesco/Sainsbury's merge. Pantomime. Both already AIDA infrastructure.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 61,
-      "num": "T61",
-      "title": "Glasses",
-      "date": "June 2029",
-      "paras": [
-        {
-          "t": "[STUB] Verse Vision glasses announced. \"Shall we get a pair?\" \"Let's wait.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 62,
-      "num": "T62",
-      "title": "The Café",
-      "date": "July 2029",
-      "paras": [
-        {
-          "t": "[STUB] First Verse café. Amy delights. Simon puts glasses on. Doesn't hate it.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 63,
-      "num": "T63",
-      "title": "Amy",
-      "date": "August 2029",
-      "paras": [
-        {
-          "t": "[STUB] Amy gets glasses. Hub Coordinator. Happier than ever. 1% almost inaudible.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 64,
-      "num": "T64",
-      "title": "The Blur",
-      "date": "late summer 2029",
-      "paras": [
-        {
-          "t": "[STUB] Nothing happens. That's the chapter. Time blurs. Soma at full strength.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 65,
-      "num": "T65",
-      "title": "CW",
-      "date": "September 2029",
-      "paras": [
-        {
-          "t": "[STUB] CW becomes social currency. Kate names it. \"Does knowing change anything you do?\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 66,
-      "num": "T66",
-      "title": "The Drawer",
-      "date": "October 2029",
-      "paras": [
-        {
-          "t": "[STUB] Simon finds mesh receiver. Dead. Last message: \"I think they let me do this.\" Puts it back.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 67,
-      "num": "T67",
-      "title": "The Device Era Ends",
-      "date": "November 2029",
-      "paras": [
-        {
-          "t": "[STUB] Act 1 close. Glasses everywhere. Body is the infrastructure. Dogs don't care.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 68,
-      "num": "T68",
-      "title": "Lenses",
-      "date": "December 2029",
-      "paras": [
-        {
-          "t": "[STUB] Contact lenses replace glasses. Verse/reality boundary disappears.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 69,
-      "num": "T69",
-      "title": "The Road",
-      "date": "early 2030",
-      "paras": [
-        {
-          "t": "[STUB] Self-driving AIDA cars. Infrastructure coordination.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 70,
-      "num": "T70",
-      "title": "The Match",
-      "date": "spring 2030",
-      "paras": [
-        {
-          "t": "[STUB] Verse sport. George's generation lives here.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 71,
-      "num": "T71",
-      "title": "The Trial",
-      "date": "spring 2030",
-      "paras": [
-        {
-          "t": "[STUB] Medical BCI headlines. Therapeutic. Normalisation.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 72,
-      "num": "T72",
-      "title": "Vinyl",
-      "date": "May 2030",
-      "paras": [
-        {
-          "t": "[STUB] Analogue renaissance. Book clubs, gardening. Permitted. \"Digital wellness.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 73,
-      "num": "T73",
-      "title": "Work",
-      "date": "mid 2030",
-      "paras": [
-        {
-          "t": "[STUB] Work is Verse-mediated. Simon's events exist inside the Verse.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 74,
-      "num": "T74",
-      "title": "The Attention Economy",
-      "date": "late 2030",
-      "paras": [
-        {
-          "t": "[STUB] Consciousness is raw material. George explains it simply.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 75,
-      "num": "T75",
-      "title": "Amy's Promotion",
-      "date": "early 2031",
-      "paras": [
-        {
-          "t": "[STUB] Amy's hub role expands. Verse-native. She's a natural.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 76,
-      "num": "T76",
-      "title": "Indoors",
-      "date": "spring 2031",
-      "paras": [
-        {
-          "t": "[STUB] RIS saturation. Verse works without lenses indoors. Room IS the interface.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 77,
-      "num": "T77",
-      "title": "The Paper",
-      "date": "mid 2031",
-      "paras": [
-        {
-          "t": "[STUB] Kate publishes. AIDA publishes it. Nobody reads it. Noise, not silence.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 78,
-      "num": "T78",
-      "title": "Kate's Garden",
-      "date": "mid 2031",
-      "paras": [
-        {
-          "t": "[STUB] Kate and Simon in the garden. Unmediated space. \"Withdrawal isn't painful — it's boring.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 79,
-      "num": "T79",
-      "title": "Dreams Change",
-      "date": "August 2031",
-      "paras": [
-        {
-          "t": "[STUB] Simon dreams in the Verse. Kate: \"Verse-adjacent dream content. Very common.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 80,
-      "num": "T80",
-      "title": "Time Softens",
-      "date": "October 2031",
-      "paras": [
-        {
-          "t": "[STUB] Time perception shifts. \"The awareness of the absence of the awareness.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 81,
-      "num": "T81",
-      "title": "Dissolve",
-      "date": "late 2031",
-      "paras": [
-        {
-          "t": "[STUB] Time loses grip. Walk with dogs. Lenses out. Park looks the same. Or does it?",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 82,
-      "num": "T82",
-      "title": "The Threshold",
-      "date": "late 2031",
-      "paras": [
-        {
-          "t": "[STUB] Act 2 close. Kitchen. Window. Dogs. Amy's voice. The Dream has already started.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 83,
-      "num": "T83",
-      "title": "The Kitchen",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Dream begins. Kitchen wrong. Tattoo dark. No AIDA. Amputation, not relief.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 84,
-      "num": "T84",
-      "title": "The Garden",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Beyond the fence. Zero signal. Dogs won't follow. The silence is vast.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 85,
-      "num": "T85",
-      "title": "First Vision: Body",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Simon watches himself being content. The pull. Comfort as seduction.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 86,
-      "num": "T86",
-      "title": "Second Vision: Heart",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Family. Amy. Love as the cage. The steak.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 87,
-      "num": "T87",
-      "title": "Third Vision: Soul",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] The final invitation. Dual-meaning line. Body/Heart/Soul complete.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 88,
-      "num": "T88",
-      "title": "Silence",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Grace. Not earned. The space between thoughts.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 89,
-      "num": "T89",
-      "title": "Grace",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] The absence where AIDA's voice usually sits.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 90,
-      "num": "T90",
-      "title": "Presence",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Dev by implication. The farmstead. The zero. Dogs return briefly.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 91,
-      "num": "T91",
-      "title": "The Infiltrator",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Entered to destroy. Discovered destruction is the system's language. Silence as weapon.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 92,
-      "num": "T92",
-      "title": "The Question",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Tzimtzum. The question. The silence.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
     }
   ],
   "signal": {
@@ -6785,20 +6042,6 @@
             "snip": "Have a word. Like he's a teenager refusing to tidy his room. Rupert's medication is running out and Jenny thinks a chat will fix it.",
             "tag": "",
             "cls": "e"
-          },
-          {
-            "src": "Chloe",
-            "ttl": "How long, Dad. Seriously. How long.",
-            "snip": "No question mark. Not a question. A statement dressed as one.",
-            "tag": "",
-            "cls": ""
-          },
-          {
-            "src": "Kate",
-            "ttl": "The community centres are being fitted out for something. Registration desks. Biometric readers. Nobody's said anything official yet. Wine tonight? x",
-            "snip": "Kate sees the equipment arriving and files it under 'interesting.' She'll register when they ask. She knows this about herself already.",
-            "tag": "",
-            "cls": ""
           }
         ]
       }
@@ -7450,30 +6693,37 @@
             "type": "thread-notify"
           }
         ]
-      },
+      }
+    ],
+    "29b": [
       {
-        "sec": "Notification",
+        "sec": "ARC Emergency",
         "cards": [
           {
-            "src": "Instagram — George tagged you",
-            "ttl": "George tagged you in a post: \"Most jobs in the future don't exist yet\" 🚀",
-            "snip": "28 future careers. Digital Afterlife Manager is number 28. Post-Work Coach is number 25. Nobody in that list makes anything you can hold.",
-            "tag": "Tagged",
-            "cls": ""
+            "src": "ARC",
+            "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
+            "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
+            "tag": "Day 21",
+            "cls": "a"
           }
         ]
       },
       {
-        "sec": "Open Tabs",
+        "sec": "Text Message",
         "cards": [
           {
-            "src": "GOV.UK — DSIT",
-            "ttl": "AI skills for life and work: labour market and skills projections",
-            "snip": "3.9 million AI jobs by 2035. Page 94: 'This work did not investigate the negative effects of AI technologies through the displacement of other occupations.' The headline travels without the footnote.",
-            "tag": "Tab Year 1",
-            "cls": "c",
-            "threadRef": "science-technology",
-            "type": "thread-notify"
+            "src": "Kate",
+            "ttl": "The community centres are being fitted out for something. Registration desks. Biometric readers. Nobody's said anything official yet. Wine tonight? x",
+            "snip": "Kate sees the equipment arriving and files it under 'interesting.' She'll register when they ask. She knows this about herself already.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Chloe",
+            "ttl": "How long, Dad. Seriously. How long.",
+            "snip": "No question mark. Not a question. A statement dressed as one.",
+            "tag": "",
+            "cls": ""
           }
         ]
       }
@@ -7528,12 +6778,11 @@
           "src": "uk-gov",
           "turn": 26,
           "article": {
-            "style": "gov",
-            "source": "10 Downing Street",
+            "style": "plain",
+            "source": "UK Government — Prime Minister's Office",
             "title": "PM Address to the Nation",
-            "date": "19 February 2027 — 9:00pm GMT — BBC Television, Radio and ARC Emergency",
-            "body": "<p>Good evening.</p><p>I will be brief, because you deserve clarity, not length.</p><p>At just after half-past six this evening, the process of restoring our financial systems has suffered a setback. Early indications suggest that the act of bringing the systems back online triggered a second wave of damage.</p><p>I must be honest with you about what this means.</p><p>The payment systems that were in the process of being restored have once again been compromised.</p><p>I will not stand here and tell you that this will be resolved quickly. I told you on Monday that we were looking at days, not weeks.</p><p>I was wrong.</p><p>And I am sorry.</p><p>The timeline for restoration has changed. We do not yet know what the new timeline is.</p><p>I will not give you a number I cannot stand behind.</p><p>I know many of you have seen messages on your banking applications using the word \"permanently.\" I want to address that directly. Those messages were generated automatically by banking systems detecting that their data no longer matches any verified record. They are a description of a technical condition — a condition that we are working to understand and rectify.</p><p>What I can tell you is this.</p><p>Our essential services remain unaffected. Hospitals are open. Emergency services are responding.</p><p>Power, water, and gas supplies are being maintained and will continue to be maintained.</p><p>However, all non-essential work and travel should cease for the next seven days. We must stay local.</p><p>Schools will remain closed until further notice. A programme of online education and virtual classrooms will be rolled out in the coming days. Schools will reopen as soon as the situation stabilises.</p><p>We must all follow these instructions.</p><p>We have systems in place designed for these exact circumstances.</p><p>Systems that protect us, and our money. Not just our savings or pensions, but the money we need for our daily purchases.</p><p>The Chancellor is chairing an emergency session as we speak. We expect to announce further measures within the next twenty-four hours. Measures that will ensure no family in this country goes without essentials. We are looking at every option available to us, and we will act quickly. We will act decisively.</p><p>I am able to reassure you. There will be food. We have activated our emergency distribution framework. No man, woman or child will go hungry. I give you my word on that. Details will be pushed to your phones and devices through the emergency information services.</p><p>There will be fuel. It must be used with care and caution. Rationing protocols are being formalised today. Details will follow tomorrow.</p><p>There will be answers. COBRA is in continuous session. Our international partners are coordinating.</p><p>There will be justice. The people responsible for this attack will be identified and held to account.</p><p>There is a way forward. Normality will return.</p><p>My colleagues and I will ensure you are updated regularly in the hours and days to come.</p><p>Good evening. And stay safe and stay local.</p>",
-            "footer": "Source: 10 Downing Street · Official Transcript"
+            "date": "19 February 2027 · 21:00 GMT",
+            "body": "Good evening.\n\nI will be brief, because you deserve clarity, not length.\n\nAt just after half-past six this evening, the process of restoring our financial systems suffered a setback. Early indications suggest that the act of bringing the systems back online triggered a second wave of damage.\n\nI must be honest with you about what this means.\n\nThe payment systems that were in the process of being restored have once again been compromised.\n\nI will not stand here and tell you that this will be resolved quickly. I told you on Monday that we were looking at days, not weeks.\n\nI was wrong.\n\nAnd I am sorry.\n\nThe timeline for restoration has changed. We do not yet know what the new timeline is.\n\nI will not give you a number I cannot stand behind.\n\nI know many of you have seen messages on your banking applications using the word “permanently.” I want to address that directly. Those messages were generated automatically by banking systems detecting that their data no longer matches any verified record. They are a description of a technical condition — a condition that we are working to understand and rectify.\n\nWhat I can tell you is this.\n\nOur essential services remain unaffected. Hospitals are open. Emergency services are responding.\n\nPower, water, and gas supplies are being maintained and will continue to be maintained.\n\nHowever, all non-essential work and travel should cease for the next seven days. We must stay local.\n\nSchools will remain closed until further notice. A programme of online education and virtual classrooms will be rolled out in the coming days. Schools will reopen as soon as the situation stabilises.\n\nWe must all follow these instructions.\n\nWe have systems in place designed for these exact circumstances.\n\nSystems that protect us, and our money. Not just our savings or pensions, but the money we need for our daily purchases.\n\nAt this moment in time, retailers are unable to accept payment by card. Online banking is not currently operational. Retailers are asked to take cash payments for all essential purchases.\n\nThe Chancellor is chairing an emergency session as we speak. We will announce measures within the next twenty-four hours. Measures that will ensure no family in this country goes without essentials. We are looking at every option available to us, and we will act quickly. We will act decisively.\n\nI am able to reassure you. There will be food. We have activated our emergency distribution framework. No man, woman or child will go hungry. I give you my word on that. Details will be pushed to your phones and devices through the emergency information services.\n\nThere will be fuel. It must be used with care and caution. Rationing protocols are being formalised today. Details will follow tomorrow.\n\nThere will be answers. COBRA is in continuous session. Our international partners are coordinating.\n\nThere will be justice. The people responsible for this attack will be identified and held to account.\n\nThere is a way forward. Normality will return.\n\nMy colleagues and I will ensure you are updated regularly in the hours and days to come.\n\nGood evening. And stay safe, stay local."
           }
         }
       ]
@@ -7890,13 +7139,6 @@
           "url": "https://walls.rip/esim",
           "src": "dev",
           "turn": "17c"
-        },
-        {
-          "text": "GOV.UK DSIT — AI skills for life and work: labour market and skills projections",
-          "url": "https://www.gov.uk/government/publications/ai-skills-for-life-and-work-labour-market-and-skills-projections",
-          "src": "simon",
-          "turn": "6b",
-          "snip": "3.9 million AI jobs by 2035. Excluded displacement by design. The headline travels without page 94."
         }
       ]
     },
@@ -9015,20 +8257,12 @@
           "cls": "alert"
         },
         {
-          "text": "PM: \"The old system failed us — we are building something better\"",
-          "cls": ""
-        },
-        {
           "text": "Cash economy: \"under increasing strain\" — BoE",
           "cls": "cold"
         },
         {
           "text": "Community mutual aid groups: 4,800 — DLUHC",
           "cls": "warm"
-        },
-        {
-          "text": "BBC: \"What might the new system look like?\"",
-          "cls": ""
         },
         {
           "text": "ARC Emergency payments: accepted at 70% of UK retail — UK Finance",
@@ -9448,6 +8682,40 @@
           "text": "Emergency services operational — do not call 999 unless life-threatening",
           "cls": "alert"
         }
+      ],
+      "29b": [
+        {
+          "text": "DAY 26",
+          "cls": ""
+        },
+        {
+          "text": "PM: \"The old system failed us — we are building something better\"",
+          "cls": ""
+        },
+        {
+          "text": "Cash economy: \"under increasing strain\" — BoE",
+          "cls": "cold"
+        },
+        {
+          "text": "Community mutual aid groups: 4,800 — DLUHC",
+          "cls": "warm"
+        },
+        {
+          "text": "BBC: \"What might the new system look like?\"",
+          "cls": ""
+        },
+        {
+          "text": "ARC Emergency payments: accepted at 70% of UK retail — UK Finance",
+          "cls": ""
+        },
+        {
+          "text": "Three weeks since ATMs dispensed cash",
+          "cls": "cold"
+        },
+        {
+          "text": "Recovery Hubs: new equipment observed — \"routine upgrade\" — DLUHC",
+          "cls": "buried"
+        }
       ]
     },
     "poolMap": {
@@ -9495,7 +8763,7 @@
       "37": "37",
       "17b": "17-18",
       "23a": "23a",
-      "6b": "6-8"
+      "29b": "29b"
     }
   },
   "initialNotes": [],

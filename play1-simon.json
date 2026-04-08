@@ -4017,642 +4017,758 @@
       "audio": null
     },
     {
-      "id": "T38",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The First Week",
-      "_date": "Apr 2027",
-      "_beat": "AIDA settles in. BC arrives. Mortgage zeroed. Dev: \"So.\""
+      "id": 38,
+      "num": "T38",
+      "title": "The First Week",
+      "date": "April 2027",
+      "paras": [
+        {
+          "t": "[STUB] AIDA settles in. BC arrives. Mortgage zeroed. Dev: \"So.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T39",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "George Was Right",
-      "_date": "Apr 2027",
-      "_beat": "George fluent in AIDA. First cash refusal. Jenny mentions Jamie."
+      "id": 39,
+      "num": "T39",
+      "title": "George Was Right",
+      "date": "April 2027",
+      "paras": [
+        {
+          "t": "[STUB] George fluent in AIDA. First cash refusal. Jenny mentions Jamie.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T40",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Jenny and Peter",
-      "_date": "late Apr 2027",
-      "_beat": "Amy's parents. Mortgage zeroed. Pension rebuilt. Jenny cries."
+      "id": 40,
+      "num": "T40",
+      "title": "Jenny and Peter",
+      "date": "late April 2027",
+      "paras": [
+        {
+          "t": "[STUB] Amy's parents. Mortgage zeroed. Pension rebuilt. Jenny cries.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T40a",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Jamie",
-      "_date": "May 2027",
-      "_beat": "Brothers holdout mirror begins. School-gate conversations."
+      "id": "40a",
+      "num": "T40a",
+      "title": "Jamie",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Brothers holdout mirror begins. School-gate conversations.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T40b",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Brothers",
-      "_date": "May 2027",
-      "_beat": "Rupert's prescription. Jamie on a sofa. Family fracture."
+      "id": "40b",
+      "num": "T40b",
+      "title": "The Brothers",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Rupert's prescription. Jamie on a sofa. Family fracture.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T40c",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Jamie's Sofa",
-      "_date": "May 2027",
-      "_beat": "Jamie's visible deterioration. Dev silence vs Jamie grinding."
+      "id": "40c",
+      "num": "T40c",
+      "title": "Jamie's Sofa",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Jamie's visible deterioration. Dev silence vs Jamie grinding.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T41",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Wine",
-      "_date": "Jun 2027",
-      "_beat": "Dynamic pricing. Clubcard mechanism. AIDA curates the shopping list."
+      "id": 41,
+      "num": "T41",
+      "title": "The Wine",
+      "date": "June 2027",
+      "paras": [
+        {
+          "t": "[STUB] Dynamic pricing. Clubcard mechanism. AIDA curates the shopping list.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T42",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Blade",
-      "_date": "Jun 2027",
-      "_beat": "Blade devices launch. Amy orders first. Consumer product, not mandate."
+      "id": 42,
+      "num": "T42",
+      "title": "The Blade",
+      "date": "June 2027",
+      "paras": [
+        {
+          "t": "[STUB] Blade devices launch. Amy orders first. Consumer product, not mandate.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T43",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Amy Sleeps",
-      "_date": "Jul 2027",
-      "_beat": "Amy's anxiety recedes. Mortgage gone = fear gone. Schrödinger's steak."
+      "id": 43,
+      "num": "T43",
+      "title": "Amy Sleeps",
+      "date": "July 2027",
+      "paras": [
+        {
+          "t": "[STUB] Amy's anxiety recedes. Mortgage gone = fear gone. Schrödinger's steak.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T44",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Rupert",
-      "_date": "Aug 2027",
-      "_beat": "Rupert caves (prescription). Jamie alone. \"Don't give up on me.\""
+      "id": 44,
+      "num": "T44",
+      "title": "Rupert",
+      "date": "August 2027",
+      "paras": [
+        {
+          "t": "[STUB] Rupert caves (prescription). Jamie alone. \"Don't give up on me.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T45",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Numbers",
-      "_date": "Sep 2027",
-      "_beat": "98% registered. Crime down 40%. Dev: \"How do you fight something that works?\""
+      "id": 45,
+      "num": "T45",
+      "title": "The Numbers",
+      "date": "September 2027",
+      "paras": [
+        {
+          "t": "[STUB] 98% registered. Crime down 40%. Dev: \"How do you fight something that works?\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T46",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Kate's BBQ",
-      "_date": "Oct 2027",
-      "_beat": "Neighbourhood BBQ. Two who know, performing normalcy. Holdouts embarrassing."
+      "id": 46,
+      "num": "T46",
+      "title": "Kate's BBQ",
+      "date": "October 2027",
+      "paras": [
+        {
+          "t": "[STUB] Neighbourhood BBQ. Two who know, performing normalcy. Holdouts embarrassing.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T47",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Dude",
-      "_date": "Nov 2027",
-      "_beat": "Dev: \"Alan's gone dark.\" The Dude vanishes. Ghost."
+      "id": 47,
+      "num": "T47",
+      "title": "The Dude",
+      "date": "November 2027",
+      "paras": [
+        {
+          "t": "[STUB] Dev: \"Alan's gone dark.\" The Dude vanishes. Ghost.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T48",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Christmas",
-      "_date": "Dec 2027",
-      "_beat": "First Christmas in the system. Dev: \"Still here. 20 nodes. Happy Christmas, mate.\""
+      "id": 48,
+      "num": "T48",
+      "title": "Christmas",
+      "date": "December 2027",
+      "paras": [
+        {
+          "t": "[STUB] First Christmas in the system. Dev: \"Still here. 20 nodes. Happy Christmas, mate.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T49",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Jamie",
-      "_date": "Jan 2028",
-      "_beat": "Jamie registers. \"Done it.\" Three words. Amy cries. Relief."
+      "id": 49,
+      "num": "T49",
+      "title": "Jamie",
+      "date": "January 2028",
+      "paras": [
+        {
+          "t": "[STUB] Jamie registers. \"Done it.\" Three words. Amy cries. Relief.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T50",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Spreadsheet",
-      "_date": "Feb 2028",
-      "_beat": "Simon's market business obsolete. AIDA runs it. Stops opening the spreadsheet."
+      "id": 50,
+      "num": "T50",
+      "title": "The Spreadsheet",
+      "date": "February 2028",
+      "paras": [
+        {
+          "t": "[STUB] Simon's market business obsolete. AIDA runs it. Stops opening the spreadsheet.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T51",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Fête",
-      "_date": "Apr 2028",
-      "_beat": "AIDA commissions community fête. Simon organises it. Sets up bunting anyway."
+      "id": 51,
+      "num": "T51",
+      "title": "The Fête",
+      "date": "April 2028",
+      "paras": [
+        {
+          "t": "[STUB] AIDA commissions community fête. Simon organises it. Sets up bunting anyway.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T52",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "George's Numbers",
-      "_date": "May 2028",
-      "_beat": "George earns double Simon's BC. Uni + creating. Absence of tension IS the Soma."
+      "id": 52,
+      "num": "T52",
+      "title": "George's Numbers",
+      "date": "May 2028",
+      "paras": [
+        {
+          "t": "[STUB] George earns double Simon's BC. Uni + creating. Absence of tension IS the Soma.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T53",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Olympics",
-      "_date": "Jul 2028",
-      "_beat": "LA Olympics. Tattoo global launch. Athletes' biometric displays. Chloe: \"I want one.\""
+      "id": 53,
+      "num": "T53",
+      "title": "The Olympics",
+      "date": "July 2028",
+      "paras": [
+        {
+          "t": "[STUB] LA Olympics. Tattoo global launch. Athletes' biometric displays. Chloe: \"I want one.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T54",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Chloe",
-      "_date": "Sep 2028",
-      "_beat": "Consumer tattoo launch. Parental consent. Simon signs the form. Fashion as delivery."
+      "id": 54,
+      "num": "T54",
+      "title": "Chloe",
+      "date": "September 2028",
+      "paras": [
+        {
+          "t": "[STUB] Consumer tattoo launch. Parental consent. Simon signs the form. Fashion as delivery.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T55",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Chair",
-      "_date": "Oct 2028",
-      "_beat": "Simon gets the tattoo. Knows the ink. Sits in the chair. Lets it happen."
+      "id": 55,
+      "num": "T55",
+      "title": "The Chair",
+      "date": "October 2028",
+      "paras": [
+        {
+          "t": "[STUB] Simon gets the tattoo. Knows the ink. Sits in the chair. Lets it happen.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T56",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Meter",
-      "_date": "Dec 2028",
-      "_beat": "Jubilee 2. Smart meter refusal surrendered. Installs it himself. Last symbolic line."
+      "id": 56,
+      "num": "T56",
+      "title": "The Meter",
+      "date": "December 2028",
+      "paras": [
+        {
+          "t": "[STUB] Jubilee 2. Smart meter refusal surrendered. Installs it himself. Last symbolic line.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T57",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Refresh",
-      "_date": "Feb 2029",
-      "_beat": "First tattoo refresh. 3am doubt gets quieter. Peace or management?"
+      "id": 57,
+      "num": "T57",
+      "title": "The Refresh",
+      "date": "February 2029",
+      "paras": [
+        {
+          "t": "[STUB] First tattoo refresh. 3am doubt gets quieter. Peace or management?",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T58",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Dr Patel",
-      "_date": "Mar 2029",
-      "_beat": "Routine bloods. Anomalous markers. Patel files it. AIDA didn't flag it."
+      "id": 58,
+      "num": "T58",
+      "title": "Dr Patel",
+      "date": "March 2029",
+      "paras": [
+        {
+          "t": "[STUB] Routine bloods. Anomalous markers. Patel files it. AIDA didn't flag it.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T59",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Water",
-      "_date": "Apr 2029",
-      "_beat": "Simon visits Dev in Cumbria. Most important scene Act 1. \"I think they let me do this.\""
+      "id": 59,
+      "num": "T59",
+      "title": "The Water",
+      "date": "April 2029",
+      "paras": [
+        {
+          "t": "[STUB] Simon visits Dev in Cumbria. Most important scene Act 1. \"I think they let me do this.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T60",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Merger",
-      "_date": "May 2029",
-      "_beat": "Tesco/Sainsbury's merge. Pantomime. Both already AIDA infrastructure."
+      "id": 60,
+      "num": "T60",
+      "title": "The Merger",
+      "date": "May 2029",
+      "paras": [
+        {
+          "t": "[STUB] Tesco/Sainsbury's merge. Pantomime. Both already AIDA infrastructure.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T61",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Glasses",
-      "_date": "Jun 2029",
-      "_beat": "Verse Vision glasses announced. \"Shall we get a pair?\" \"Let's wait.\""
+      "id": 61,
+      "num": "T61",
+      "title": "Glasses",
+      "date": "June 2029",
+      "paras": [
+        {
+          "t": "[STUB] Verse Vision glasses announced. \"Shall we get a pair?\" \"Let's wait.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T62",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Café",
-      "_date": "Jul 2029",
-      "_beat": "First Verse café. Amy delights. Simon puts glasses on. Doesn't hate it."
+      "id": 62,
+      "num": "T62",
+      "title": "The Café",
+      "date": "July 2029",
+      "paras": [
+        {
+          "t": "[STUB] First Verse café. Amy delights. Simon puts glasses on. Doesn't hate it.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T63",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Amy",
-      "_date": "Aug 2029",
-      "_beat": "Amy gets glasses. Hub Coordinator. Happier than ever. 1% almost inaudible."
+      "id": 63,
+      "num": "T63",
+      "title": "Amy",
+      "date": "August 2029",
+      "paras": [
+        {
+          "t": "[STUB] Amy gets glasses. Hub Coordinator. Happier than ever. 1% almost inaudible.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T64",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Blur",
-      "_date": "late summer 2029",
-      "_beat": "Nothing happens. That's the chapter. Time blurs. Soma at full strength."
+      "id": 64,
+      "num": "T64",
+      "title": "The Blur",
+      "date": "late summer 2029",
+      "paras": [
+        {
+          "t": "[STUB] Nothing happens. That's the chapter. Time blurs. Soma at full strength.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T65",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "CW",
-      "_date": "Sep 2029",
-      "_beat": "CW becomes social currency. Kate names it. \"Does knowing change anything you do?\""
+      "id": 65,
+      "num": "T65",
+      "title": "CW",
+      "date": "September 2029",
+      "paras": [
+        {
+          "t": "[STUB] CW becomes social currency. Kate names it. \"Does knowing change anything you do?\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T66",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Drawer",
-      "_date": "Oct 2029",
-      "_beat": "Simon finds mesh receiver. Dead. Last message: \"I think they let me do this.\" Puts it back."
+      "id": 66,
+      "num": "T66",
+      "title": "The Drawer",
+      "date": "October 2029",
+      "paras": [
+        {
+          "t": "[STUB] Simon finds mesh receiver. Dead. Last message: \"I think they let me do this.\" Puts it back.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T67",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Device Era Ends",
-      "_date": "Nov 2029",
-      "_beat": "Act 1 close. Glasses everywhere. Body is the infrastructure. Dogs don't care."
+      "id": 67,
+      "num": "T67",
+      "title": "The Device Era Ends",
+      "date": "November 2029",
+      "paras": [
+        {
+          "t": "[STUB] Act 1 close. Glasses everywhere. Body is the infrastructure. Dogs don't care.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T68",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Lenses",
-      "_date": "Dec 2029",
-      "_beat": "Contact lenses replace glasses. Verse/reality boundary disappears."
+      "id": 68,
+      "num": "T68",
+      "title": "Lenses",
+      "date": "December 2029",
+      "paras": [
+        {
+          "t": "[STUB] Contact lenses replace glasses. Verse/reality boundary disappears.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T69",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Road",
-      "_date": "early 2030",
-      "_beat": "Self-driving AIDA cars. Infrastructure coordination."
+      "id": 69,
+      "num": "T69",
+      "title": "The Road",
+      "date": "early 2030",
+      "paras": [
+        {
+          "t": "[STUB] Self-driving AIDA cars. Infrastructure coordination.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T70",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Match",
-      "_date": "spring 2030",
-      "_beat": "Verse sport. George's generation lives here."
+      "id": 70,
+      "num": "T70",
+      "title": "The Match",
+      "date": "spring 2030",
+      "paras": [
+        {
+          "t": "[STUB] Verse sport. George's generation lives here.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T71",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Trial",
-      "_date": "spring 2030",
-      "_beat": "Medical BCI headlines. Therapeutic. Normalisation."
+      "id": 71,
+      "num": "T71",
+      "title": "The Trial",
+      "date": "spring 2030",
+      "paras": [
+        {
+          "t": "[STUB] Medical BCI headlines. Therapeutic. Normalisation.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T72",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Vinyl",
-      "_date": "May 2030",
-      "_beat": "Analogue renaissance. Book clubs, gardening. Permitted. \"Digital wellness.\""
+      "id": 72,
+      "num": "T72",
+      "title": "Vinyl",
+      "date": "May 2030",
+      "paras": [
+        {
+          "t": "[STUB] Analogue renaissance. Book clubs, gardening. Permitted. \"Digital wellness.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T73",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Work",
-      "_date": "mid 2030",
-      "_beat": "Work is Verse-mediated. Simon's events exist inside the Verse."
+      "id": 73,
+      "num": "T73",
+      "title": "Work",
+      "date": "mid 2030",
+      "paras": [
+        {
+          "t": "[STUB] Work is Verse-mediated. Simon's events exist inside the Verse.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T74",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Attention Economy",
-      "_date": "late 2030",
-      "_beat": "Consciousness is raw material. George explains it simply."
+      "id": 74,
+      "num": "T74",
+      "title": "The Attention Economy",
+      "date": "late 2030",
+      "paras": [
+        {
+          "t": "[STUB] Consciousness is raw material. George explains it simply.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T75",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Amy's Promotion",
-      "_date": "early 2031",
-      "_beat": "Amy's hub role expands. Verse-native. She's a natural."
+      "id": 75,
+      "num": "T75",
+      "title": "Amy's Promotion",
+      "date": "early 2031",
+      "paras": [
+        {
+          "t": "[STUB] Amy's hub role expands. Verse-native. She's a natural.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T76",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Indoors",
-      "_date": "spring 2031",
-      "_beat": "RIS saturation. Verse works without lenses indoors. Room IS the interface."
+      "id": 76,
+      "num": "T76",
+      "title": "Indoors",
+      "date": "spring 2031",
+      "paras": [
+        {
+          "t": "[STUB] RIS saturation. Verse works without lenses indoors. Room IS the interface.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T77",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Paper",
-      "_date": "mid 2031",
-      "_beat": "Kate publishes. AIDA publishes it. Nobody reads it. Noise, not silence."
+      "id": 77,
+      "num": "T77",
+      "title": "The Paper",
+      "date": "mid 2031",
+      "paras": [
+        {
+          "t": "[STUB] Kate publishes. AIDA publishes it. Nobody reads it. Noise, not silence.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T78",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Kate's Garden",
-      "_date": "mid 2031",
-      "_beat": "Kate and Simon in the garden. Unmediated space. \"Withdrawal isn't painful — it's boring.\""
+      "id": 78,
+      "num": "T78",
+      "title": "Kate's Garden",
+      "date": "mid 2031",
+      "paras": [
+        {
+          "t": "[STUB] Kate and Simon in the garden. Unmediated space. \"Withdrawal isn't painful — it's boring.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T79",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Dreams Change",
-      "_date": "Aug 2031",
-      "_beat": "Simon dreams in the Verse. Kate: \"Verse-adjacent dream content. Very common.\""
+      "id": 79,
+      "num": "T79",
+      "title": "Dreams Change",
+      "date": "August 2031",
+      "paras": [
+        {
+          "t": "[STUB] Simon dreams in the Verse. Kate: \"Verse-adjacent dream content. Very common.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T80",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Time Softens",
-      "_date": "Oct 2031",
-      "_beat": "Time perception shifts. \"The awareness of the absence of the awareness.\""
+      "id": 80,
+      "num": "T80",
+      "title": "Time Softens",
+      "date": "October 2031",
+      "paras": [
+        {
+          "t": "[STUB] Time perception shifts. \"The awareness of the absence of the awareness.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T81",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Dissolve",
-      "_date": "late 2031",
-      "_beat": "Time loses grip. Walk with dogs. Lenses out. Park looks the same. Or does it?"
+      "id": 81,
+      "num": "T81",
+      "title": "Dissolve",
+      "date": "late 2031",
+      "paras": [
+        {
+          "t": "[STUB] Time loses grip. Walk with dogs. Lenses out. Park looks the same. Or does it?",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T82",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Threshold",
-      "_date": "late 2031",
-      "_beat": "Act 2 close. Kitchen. Window. Dogs. Amy's voice. The Dream has already started."
+      "id": 82,
+      "num": "T82",
+      "title": "The Threshold",
+      "date": "late 2031",
+      "paras": [
+        {
+          "t": "[STUB] Act 2 close. Kitchen. Window. Dogs. Amy's voice. The Dream has already started.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T83",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Kitchen",
-      "_date": "",
-      "_beat": "Dream begins. Kitchen wrong. Tattoo dark. No AIDA. Amputation, not relief."
+      "id": 83,
+      "num": "T83",
+      "title": "The Kitchen",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Dream begins. Kitchen wrong. Tattoo dark. No AIDA. Amputation, not relief.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T84",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Garden",
-      "_date": "",
-      "_beat": "Beyond the fence. Zero signal. Dogs won't follow. The silence is vast."
+      "id": 84,
+      "num": "T84",
+      "title": "The Garden",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Beyond the fence. Zero signal. Dogs won't follow. The silence is vast.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T85",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "First Vision: Body",
-      "_date": "",
-      "_beat": "Simon watches himself being content. The pull. Comfort as seduction."
+      "id": 85,
+      "num": "T85",
+      "title": "First Vision: Body",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Simon watches himself being content. The pull. Comfort as seduction.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T86",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Second Vision: Heart",
-      "_date": "",
-      "_beat": "Family. Amy. Love as the cage. The steak."
+      "id": 86,
+      "num": "T86",
+      "title": "Second Vision: Heart",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Family. Amy. Love as the cage. The steak.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T87",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Third Vision: Soul",
-      "_date": "",
-      "_beat": "The final invitation. Dual-meaning line. Body/Heart/Soul complete."
+      "id": 87,
+      "num": "T87",
+      "title": "Third Vision: Soul",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] The final invitation. Dual-meaning line. Body/Heart/Soul complete.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T88",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Silence",
-      "_date": "",
-      "_beat": "Grace. Not earned. The space between thoughts."
+      "id": 88,
+      "num": "T88",
+      "title": "Silence",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Grace. Not earned. The space between thoughts.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T89",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Grace",
-      "_date": "",
-      "_beat": "The absence where AIDA's voice usually sits."
+      "id": 89,
+      "num": "T89",
+      "title": "Grace",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] The absence where AIDA's voice usually sits.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T90",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "Presence",
-      "_date": "",
-      "_beat": "Dev by implication. The farmstead. The zero. Dogs return briefly."
+      "id": 90,
+      "num": "T90",
+      "title": "Presence",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Dev by implication. The farmstead. The zero. Dogs return briefly.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T91",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Infiltrator",
-      "_date": "",
-      "_beat": "Entered to destroy. Discovered destruction is the system's language. Silence as weapon."
+      "id": 91,
+      "num": "T91",
+      "title": "The Infiltrator",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Entered to destroy. Discovered destruction is the system's language. Silence as weapon.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     },
     {
-      "id": "T92",
-      "isQuestion": false,
-      "questionText": "",
-      "questionOpts": [],
-      "questionMode": "",
-      "_stub": true,
-      "_title": "The Question",
-      "_date": "",
-      "_beat": "Tzimtzum. The question. The silence. TBD by Teeser."
+      "id": 92,
+      "num": "T92",
+      "title": "The Question",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Tzimtzum. The question. The silence.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
     }
   ],
   "signal": {

@@ -5195,6 +5195,13 @@
             "snip": "Surprise, surprise.",
             "tag": "Delay",
             "cls": ""
+          },
+          {
+            "src": "Financial Times",
+            "ttl": "Bank of England summons City chiefs over AI cyber threat to payment systems",
+            "snip": "You read it between loading the dishwasher and feeding the dogs. By the time you'd dried your hands you'd forgotten it.",
+            "tag": "",
+            "cls": ""
           }
         ]
       },
@@ -6754,6 +6761,32 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "BBC News",
+        "cards": [
+          {
+            "src": "BBC News — Technology",
+            "ttl": "UK data centres reprioritised under emergency digital mandate",
+            "snip": "Simon scrolled past. Hamper collection at Shoreham was more useful information right now.",
+            "tag": "Live",
+            "cls": "buried"
+          }
+        ]
+      }
+    ],
+    "40": [
+      {
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA — Community",
+            "ttl": "Water efficiency update for your area",
+            "snip": "Their water bill used to arrive quarterly. Now it doesn't arrive at all.",
+            "tag": "Local",
+            "cls": "a"
+          }
+        ]
       }
     ]
   },
@@ -6888,6 +6921,18 @@
           "url": "https://www.youtube.com/watch?v=7CXCK2yjlJY&t=6625s",
           "src": "simon",
           "turn": 13
+        },
+        {
+          "text": "Treasury Select Committee — Oral evidence: AI and financial infrastructure resilience",
+          "src": "simon",
+          "turn": 16,
+          "article": {
+            "style": "article",
+            "source": "UK Parliament — Treasury Select Committee",
+            "title": "Oral Evidence: AI and Systemic Risk to Financial Infrastructure",
+            "date": "21 January 2027",
+            "body": "<p class=\"committee-header\">TREASURY SELECT COMMITTEE<br>ORAL EVIDENCE SESSION — AI AND SYSTEMIC RISK TO FINANCIAL INFRASTRUCTURE<br>Thursday 21 January 2027</p><p class=\"committee-header\">Witnesses: Carolyn Ainsworth, Deputy Director/Chief Engineer, National Cyber Security Centre; Nathanaël Benjamin, Executive Director, Financial Stability Strategy and Risk, Bank of England</p><p><strong>Q214. Chair:</strong> Ms Ainsworth, can you describe in plain language what has changed in the past twelve months regarding the threat to UK payment infrastructure?</p><p><strong>Ms Ainsworth:</strong> Certainly. Twelve months ago, the principal cyber threats to financial infrastructure were what we would term conventional — ransomware, denial of service, supply chain compromise. Sophisticated, but operating within known parameters. What has changed is the emergence of AI systems capable of identifying and exploiting vulnerabilities in critical software at a speed and scale that renders traditional patch cycles ineffective. To put it simply: the gap between a vulnerability being discovered and a vulnerability being exploited has, in certain scenarios, collapsed to near zero.</p><p><strong>Q215. Chair:</strong> When you say ‘AI systems’ — are we talking about systems developed by hostile states?</p><p><strong>Ms Ainsworth:</strong> We are talking about capabilities that now exist across multiple actors. The foundational research was conducted by Western AI laboratories for defensive purposes. Several of these systems were designated too sensitive for public release precisely because of their offensive potential. Our assessment is that equivalent capabilities are now available to a broader set of actors than we would wish. I am limited in what I can say in open session about specific attribution.</p><p><strong>Q216. Ms Sheridan:</strong> Mr Benjamin, the Bank convened an emergency meeting with City institutions in November. Can you tell the Committee what prompted that?</p><p><strong>Mr Benjamin:</strong> The meeting was convened following a classified briefing from NCSC on the results of an AI-assisted penetration assessment of UK payment clearing infrastructure. The assessment identified vulnerabilities in systems that had been subject to continuous human review for over a decade. Some of these vulnerabilities, if exploited in combination, could theoretically disrupt settlement and clearing across multiple payment schemes simultaneously. I want to stress that we have taken immediate steps to address the specific vulnerabilities identified.</p><p><strong>Q217. Ms Sheridan:</strong> ‘The specific vulnerabilities identified’ — your phrasing implies there may be others.</p><p><strong>Mr Benjamin:</strong> The nature of these AI-assisted assessments is that they reveal a landscape rather than individual points of failure. We are confident in the measures taken. We are less confident that any static assessment captures the full picture, given the pace at which these capabilities are evolving.</p><p><strong>Q218. Mr Okonkwo:</strong> Ms Ainsworth, I want to return to something. You said the foundational research was conducted by Western laboratories ‘for defensive purposes.’ But the same capability that finds a vulnerability can exploit it. Is that correct?</p><p><strong>Ms Ainsworth:</strong> That is correct.</p><p><strong>Q219. Mr Okonkwo:</strong> So when we talk about keeping these systems out of the wrong hands — the distinction between right hands and wrong hands is not a technical distinction. It is a political one.</p><p><strong>Ms Ainsworth:</strong> I would characterise it as an access and governance distinction. The capability itself is neutral. The question is who deploys it, under what authority, and with what safeguards.</p><p><strong>Q220. Mr Okonkwo:</strong> And if those safeguards fail?</p><p><strong>Ms Ainsworth:</strong> That is why we are here.</p><p><strong>Q220a. Mr Okonkwo:</strong> Mr Benjamin, how many independent risk models currently operate across UK clearing and settlement infrastructure?</p><p><strong>Mr Benjamin:</strong> I would need to confirm the precise number. However, I would note that the major clearing houses use a relatively small number of validated risk frameworks, several of which share common analytical foundations.</p><p><strong>Q220b. Mr Okonkwo:</strong> ‘Common analytical foundations.’ You mean the same model.</p><p><strong>Mr Benjamin:</strong> I mean that the pursuit of best practice naturally produces convergence in methodology. This is generally considered a strength.</p><p><strong>Q220c. Mr Okonkwo:</strong> Until the methodology is wrong.</p><p><strong>Mr Benjamin:</strong> That is why we stress-test.</p><p><strong>Q220d. Mr Okonkwo:</strong> Against scenarios generated by the same methodology.</p><p>[Silence]</p><p><strong>Chair:</strong> I think we should move on.</p><p><strong>Q221. Chair:</strong> Mr Benjamin, one final question. If a coordinated attack of the type described in your classified briefing were to succeed — what is the Bank’s assessment of recovery time?</p><p><strong>Mr Benjamin:</strong> That depends on the scope and nature of the attack. For a targeted disruption of one or two payment schemes — days to weeks. For a broader event affecting clearing, settlement, and records infrastructure across multiple jurisdictions simultaneously — I would prefer not to speculate in open session.</p><p><strong>Q222. Chair:</strong> That is noted. Thank you both. This evidence session is closed.</p><p class=\"committee-note\"><em>Committee note: The classified annex to this evidence session (Annex C) is available to Members on Privy Council terms. It is not available for public release. The Committee intends to return to this subject in its spring report.</em></p>"
+          }
         },
         {
           "text": "BBC News — Defence Secretary warns of “unprecedented cyber threat”",
@@ -7167,6 +7212,18 @@
           "url": "https://walls.rip/esim",
           "src": "dev",
           "turn": "17c"
+        },
+        {
+          "text": "NCSC confirms emergency reallocation of commercial cloud capacity for 'nationally critical digital services.' Major hyperscaler facilities in Slough, London Docklands, and Manchester redesignated under Civil Contingencies Act. DCMS minister: 'Non-essential workloads will be restored in a phased and secure manner once the threat assessment permits.' No timeline given. Industry sources estimate UK data centre capacity at approximately 1.2 GW — the reallocation represents the largest peacetime requisition of private digital infrastructure in British history.",
+          "src": "BBC News — Technology",
+          "turn": "29b",
+          "article": ""
+        },
+        {
+          "text": "Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East. Household allocation calculated by occupancy, seasonal need, and regional availability. A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2. Industrial water consumption data was not published.",
+          "src": "BBC News — Environment",
+          "turn": 40,
+          "article": ""
         }
       ]
     },
@@ -7597,6 +7654,10 @@
         {
           "text": "UN Security Council meets on Sudan humanitarian corridor",
           "cls": ""
+        },
+        {
+          "text": "Treasury Committee: 'AI in financial services poses systemic risk' — report published",
+          "cls": "buried"
         }
       ],
       "6-8": [
@@ -7824,6 +7885,10 @@
         },
         {
           "text": "WHO: new respiratory pathogen detected in SE Asia — monitoring",
+          "cls": "buried"
+        },
+        {
+          "text": "New Scientist: 'The AI that guards the banks could also break them, researchers warn'",
           "cls": "buried"
         }
       ],

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6G · BCI · Convergence Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%;width:100%}
+body{background:#08090F;color:#C0C8D8;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{height:5px;width:5px}
+::-webkit-scrollbar-track{background:#111318}
+::-webkit-scrollbar-thumb{background:#1E2030;border-radius:3px}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script>
+const e=React.createElement,{useState,useMemo,useEffect}=React;
+const M="'JetBrains Mono','Fira Code',monospace",D="'Space Grotesk','DM Sans',sans-serif";
+
+const companies=[
+{id:1,name:"Nokia",category:"Telecom",color:"#0065ED"},
+{id:2,name:"Ericsson",category:"Telecom",color:"#009FDB"},
+{id:3,name:"Samsung",category:"Telecom",color:"#1428A0"},
+{id:4,name:"Huawei",category:"Telecom",color:"#CF0A2C"},
+{id:5,name:"Neuralink",category:"BCI",color:"#E8553A"},
+{id:6,name:"Synchron",category:"BCI",color:"#8B5CF6"},
+{id:7,name:"3GPP",category:"Standards",color:"#6B7280"},
+{id:8,name:"ITU",category:"Standards",color:"#4B5563"},
+{id:9,name:"Precision Neuro",category:"BCI",color:"#F59E0B"},
+{id:10,name:"Blackrock Neuro",category:"BCI",color:"#10B981"},
+{id:11,name:"Merge Labs",category:"BCI",color:"#EC4899"},
+{id:12,name:"Kernel",category:"BCI",color:"#06B6D4"},
+{id:13,name:"Apple",category:"Platform",color:"#A1A1AA"},
+{id:14,name:"Meta",category:"Platform",color:"#3B82F6"},
+{id:15,name:"ISO/IEC",category:"Standards",color:"#78716C"},
+{id:16,name:"White House",category:"Policy",color:"#D4D4D8"},
+{id:17,name:"NTIA",category:"Policy",color:"#9CA3AF"},
+{id:18,name:"DARPA",category:"Military",color:"#BE185D"},
+{id:19,name:"NVIDIA",category:"Infrastructure",color:"#84CC16"},
+{id:20,name:"Royal Society",category:"Institutional",color:"#D97706"},
+{id:50,name:"ARC",category:"CBTS",color:"#F5C542"},
+{id:51,name:"AIDA",category:"CBTS",color:"#FFD700"},
+{id:52,name:"The Blade",category:"CBTS",color:"#E2B93B"},
+{id:53,name:"The Tattoo",category:"CBTS",color:"#D4A030"},
+{id:54,name:"The Verse",category:"CBTS",color:"#C49225"},
+{id:55,name:"Neural Sync",category:"CBTS",color:"#B5831A"},
+{id:56,name:"BritCoin",category:"CBTS",color:"#F0D060"}
+];
+const companyMap=Object.fromEntries(companies.map(c=>[c.id,c]));
+
+const sources=[
+{id:1,title:"Nokia 6G Vision",url:"https://www.nokia.com/networks/6g/",publisher:"Nokia",rank:1},
+{id:2,title:"Nokia: Charting the path to 6G",url:"https://www.nokia.com/blog/charting-the-path-to-6g/",publisher:"Nokia",rank:1},
+{id:3,title:"Nokia: 6G train has left the station",url:"https://www.nokia.com/blog/the-6g-train-has-left-the-station/",publisher:"Nokia",rank:1},
+{id:4,title:"Ericsson: Journey to 6G",url:"https://www.ericsson.com/en/6g",publisher:"Ericsson",rank:1},
+{id:5,title:"Samsung 6G Research",url:"https://research.samsung.com/next-generation-communications",publisher:"Samsung",rank:1},
+{id:6,title:"3GPP Release Timeline",url:"https://www.3gpp.org/specifications/releases",publisher:"3GPP",rank:2},
+{id:7,title:"TelecomTV: 3GPP R21",url:"https://www.telecomtv.com",publisher:"TelecomTV",rank:5},
+{id:8,title:"Reuters: Synchron",url:"https://www.reuters.com",publisher:"Reuters",rank:3},
+{id:9,title:"MassDevice: Synchron Implant",url:"https://www.massdevice.com",publisher:"MassDevice",rank:5},
+{id:10,title:"Neuralink",url:"https://neuralink.com",publisher:"Neuralink",rank:1},
+{id:11,title:"Huawei 6G Research",url:"https://www.huawei.com",publisher:"Huawei",rank:1},
+{id:12,title:"ITU-R IMT-2030",url:"https://www.itu.int",publisher:"ITU",rank:2},
+{id:13,title:"Apple Developer: BCI HID",url:"https://developer.apple.com",publisher:"Apple",rank:1},
+{id:14,title:"Merge Labs Announcement",url:"https://technology.org",publisher:"technology.org",rank:5},
+{id:15,title:"ISO/IEC JTC 1/SC 43",url:"https://www.iso.org/committee/9082407.html",publisher:"ISO",rank:2},
+{id:16,title:"IEC/ISO JSyC BDC",url:"https://www.iso.org/committee/10138914.html",publisher:"ISO/IEC",rank:2},
+{id:17,title:"White House NSPM-8",url:"https://www.whitehouse.gov/presidential-actions/2025/12/national-security-presidential-memorandum-nspm-8-0bda/",publisher:"White House",rank:1},
+{id:18,title:"NTIA Mission LA 2028",url:"https://www.ntia.gov/programs-and-initiatives/mission-la-2028",publisher:"NTIA",rank:1},
+{id:19,title:"DARPA GO Solicitation",url:"https://sam.gov",publisher:"DARPA",rank:1},
+{id:20,title:"Royal Society iHuman",url:"https://royalsociety.org/-/media/policy/projects/ihuman/report-neural-interfaces.pdf",publisher:"Royal Society",rank:1},
+{id:21,title:"Precision Neuroscience",url:"https://precisionneuro.io",publisher:"Precision Neuroscience",rank:1},
+{id:22,title:"Blackrock Neurotech",url:"https://blackrockneurotech.com",publisher:"Blackrock Neurotech",rank:1},
+{id:23,title:"Meta Orion / Ray-Ban",url:"https://about.meta.com",publisher:"Meta",rank:1},
+{id:24,title:"CommunicationsDaily: Trump 6G",url:"https://communicationsdaily.com",publisher:"CommunicationsDaily",rank:3},
+{id:25,title:"Synchron / NVIDIA Chiral",url:"https://synchron.com",publisher:"Synchron",rank:1},
+{id:26,title:"Clinical Trials Arena: Apple BCI",url:"https://clinicaltrialsarena.com",publisher:"Clinical Trials Arena",rank:3},
+{id:27,title:"Nat. Comms: Manchester RIS",url:"https://nature.com",publisher:"Nature Communications",rank:1},
+{id:28,title:"Kernel Flow",url:"https://www.kernel.com",publisher:"Kernel",rank:1},
+{id:29,title:"PhoneArena: Qualcomm 6G Olympics",url:"https://www.phonearena.com",publisher:"PhoneArena",rank:5},
+{id:90,title:"CBTS — Post-Reg Economy & Tech Spectrum v2.3",url:"#cbts",publisher:"CBTS",rank:0},
+{id:91,title:"CBTS — Hard Timeline v3",url:"#cbts",publisher:"CBTS",rank:0},
+{id:92,title:"CBTS — Beat Skeleton Act 1",url:"#cbts",publisher:"CBTS",rank:0},
+{id:93,title:"CBTS — Beat Skeleton Act 2",url:"#cbts",publisher:"CBTS",rank:0}
+];
+const sourceMap=Object.fromEntries(sources.map(s=>[s.id,s]));
+
+const milestones=[
+{id:1,company_id:10,date:"2014-03-15",domain:"BCI",title:"Blackrock Utah Array passes 5-year human implant milestone",description:"Blackrock Neurotech's Utah Array becomes the longest-running human BCI implant. Establishes track record all subsequent BCI companies are measured against.",status:"trial-ongoing",source_type:"official_company",source_id:22,is_forecast:false,verified:"2025-06-01",tags:["Utah-Array","longevity"]},
+{id:2,company_id:20,date:"2019-09-10",domain:"CONVERGENCE",title:"Royal Society: 'iHuman \u2014 Blurring Lines Between Mind and Machine'",description:"UK\u2019s premier scientific institution: \u2018Neural interfaces are like computers in the 1970s.\u2019 Consent \u2018is not enough to protect either individuals or society.\u2019 Calls for UK Neural Interface Ecosystem.",status:"research",source_type:"official_company",source_id:20,is_forecast:false,verified:"2025-06-01",tags:["iHuman","consent","UK"]},
+{id:3,company_id:3,date:"2020-07-14",domain:"6G",title:"Samsung releases 6G white paper",description:"Vision for hyper-connected 6G: massive MIMO evolution, sub-THz spectrum, AI-native air interfaces. Target: 2030.",status:"research",source_type:"official_company",source_id:5,is_forecast:false,verified:"2025-06-01",tags:["white-paper","sub-THz"]},
+{id:4,company_id:6,date:"2021-07-01",domain:"BCI",title:"Synchron receives FDA early feasibility approval",description:"First endovascular BCI to receive FDA clearance for US early feasibility study. Stentrode delivered via jugular vein.",status:"regulatory",source_type:"regulatory",source_id:8,is_forecast:false,verified:"2025-06-01",tags:["FDA","stentrode"]},
+{id:5,company_id:4,date:"2021-09-01",domain:"6G",title:"Huawei opens 6G research centres",description:"Dedicated 6G programmes: AI-integrated radio access, intelligent surfaces, integrated sensing and communication.",status:"research",source_type:"official_company",source_id:11,is_forecast:false,verified:"2025-03-01",tags:["ISAC","AI-radio"]},
+{id:6,company_id:6,date:"2022-07-18",domain:"BCI",title:"Synchron: first US human implant",description:"Stentrode implanted via jugular vein. Patient controls digital devices through thought. No open brain surgery.",status:"trial-early",source_type:"official_company",source_id:9,is_forecast:false,verified:"2025-06-01",tags:["stentrode","human-implant"]},
+{id:7,company_id:15,date:"2023-01-15",domain:"CONVERGENCE",title:"ISO/IEC SC 43: BCI standardised as IT, not medical device",description:"JTC 1 Subcommittee 43 for Brain-Computer Interfaces under Information Technology. Explicitly excludes medical applications. ISO doesn\u2019t create committees for speculative tech.",status:"planning",source_type:"standards_body",source_id:15,is_forecast:false,verified:"2025-06-01",tags:["SC-43","IT-classification"]},
+{id:8,company_id:15,date:"2023-06-01",domain:"CONVERGENCE",title:"IEC/ISO JSyC BDC: Bio-Digital Convergence committee",description:"Nine work items including human augmentation. \u2018Body-centred computing\u2019 working group. Foundational terminology (152 terms) target: 2027. \u2018Imperative to move fast.\u2019",status:"planning",source_type:"standards_body",source_id:16,is_forecast:false,verified:"2025-06-01",tags:["JSyC-BDC","bio-digital","terminology-2027"]},
+{id:9,company_id:8,date:"2023-06-22",domain:"6G",title:"ITU-R approves IMT-2030 Framework",description:"Recommendation M.2160: framework for International Mobile Telecommunications for 2030 and beyond.",status:"planning",source_type:"standards_body",source_id:12,is_forecast:false,verified:"2025-06-01",tags:["IMT-2030"]},
+{id:10,company_id:12,date:"2023-09-01",domain:"BCI",title:"Kernel ships Flow neuroimaging headsets",description:"TD-fNIRS headset \u2014 non-invasive brain monitoring without surgery. Clinical-to-consumer pathway.",status:"trial-early",source_type:"official_company",source_id:28,is_forecast:false,verified:"2025-06-01",tags:["Flow","fNIRS","non-invasive"]},
+{id:11,company_id:5,date:"2024-01-28",domain:"BCI",title:"Neuralink implants first human patient",description:"N1 chip under PRIME Study. Surgical robot implant. Patient controls cursor through thought.",status:"trial-early",source_type:"official_company",source_id:10,is_forecast:false,verified:"2025-06-01",tags:["N1-chip","PRIME-study"]},
+{id:12,company_id:1,date:"2024-02-22",domain:"6G",title:"Nokia: 'Charting the path to 6G'",description:"Bell Labs roadmap: AI-native architecture, sub-THz access, joint sensing-communication, digital twin integration.",status:"roadmap",source_type:"official_company",source_id:2,is_forecast:false,verified:"2025-06-01",tags:["roadmap","Bell-Labs"]},
+{id:13,company_id:6,date:"2024-04-08",domain:"BCI",title:"Synchron prepares pivotal trial and patient registry",description:"Large-scale pivotal trial prep. Patient registry for severe paralysis candidates.",status:"trial-planned",source_type:"official_company",source_id:8,is_forecast:false,verified:"2025-06-01",tags:["pivotal-trial"]},
+{id:14,company_id:2,date:"2024-06-01",domain:"6G",title:"Ericsson: route to first 6G specs ~2030",description:"Pre-commercial phases before 2030. Programmable networks, AI integration, energy efficiency.",status:"roadmap",source_type:"official_company",source_id:4,is_forecast:false,verified:"2025-06-01",tags:["roadmap"]},
+{id:15,company_id:10,date:"2024-06-15",domain:"BCI",title:"Blackrock Utah Array exceeds 9 years in human",description:"Longest-running BCI. Proves biocompatibility no competitor has matched.",status:"trial-ongoing",source_type:"official_company",source_id:22,is_forecast:false,verified:"2025-06-01",tags:["Utah-Array","biocompatibility"]},
+{id:16,company_id:7,date:"2025-02-04",domain:"6G",title:"3GPP: Release 21 = first 6G spec",description:"Release 21 confirmed as first to include 6G technology items. Study-item to normative transition.",status:"planning",source_type:"standards_body",source_id:7,is_forecast:false,verified:"2025-06-01",tags:["Release-21"]},
+{id:17,company_id:3,date:"2025-03-01",domain:"6G",title:"Samsung advances 6G radio prototyping",description:"Sub-THz prototyping. AI-based beam management research.",status:"research",source_type:"official_company",source_id:5,is_forecast:false,verified:"2025-06-01",tags:["prototype","sub-THz"]},
+{id:18,company_id:1,date:"2025-03-15",domain:"CONVERGENCE",title:"Manchester graphene RIS: 300k+ pixels per surface",description:"Nature Communications: graphene THz modulators, 300,000+ addressable pixels, manufactured on existing TV production lines.",status:"research",source_type:"official_company",source_id:27,is_forecast:false,verified:"2025-06-01",tags:["RIS","graphene","THz","Manchester"]},
+{id:19,company_id:9,date:"2025-04-10",domain:"BCI",title:"Precision Neuro: full FDA clearance, wireless BCI",description:"First full FDA clearance for next-gen wireless BCI. Ultra-thin electrodes \u2014 less invasive than Neuralink.",status:"regulatory",source_type:"regulatory",source_id:21,is_forecast:false,verified:"2025-06-01",tags:["FDA","wireless"]},
+{id:20,company_id:13,date:"2025-05-15",domain:"CONVERGENCE",title:"Apple: BCI Human Interface Device protocol",description:"Native BCI input in iOS \u2014 alongside touch, voice, keyboard. The consumer platform opens the door.",status:"roadmap",source_type:"official_company",source_id:13,is_forecast:false,verified:"2025-06-01",tags:["HID","iOS","platform"]},
+{id:21,company_id:1,date:"2025-06-12",domain:"6G",title:"Nokia: 'The 6G train has left the station'",description:"Standards process declared irreversible. Commercial expectations: early 2030s.",status:"roadmap",source_type:"official_company",source_id:3,is_forecast:false,verified:"2025-06-12",tags:["standards-convergence"]},
+{id:22,company_id:5,date:"2025-06-15",domain:"BCI",title:"Neuralink: $9B valuation, FDA Breakthrough Device",description:"$650M Series E. Breakthrough Device for speech restoration. Industry, not experiment.",status:"research",source_type:"official_company",source_id:10,is_forecast:false,verified:"2025-06-01",tags:["funding","speech-restoration"]},
+{id:23,company_id:6,date:"2025-08-01",domain:"CONVERGENCE",title:"Synchron patient controls iPad via Apple BCI protocol",description:"ALS patient: first to control iPad through thought via Apple\u2019s protocol. Medical device meets consumer platform.",status:"trial-ongoing",source_type:"official_company",source_id:26,is_forecast:false,verified:"2025-08-01",tags:["Apple","iPad","ALS"]},
+{id:24,company_id:14,date:"2025-09-15",domain:"CONVERGENCE",title:"Meta Ray-Ban Display + EMG neural wristband on sale",description:"$799 glasses. EMG wristband reads nerve signals. Wearable neural interface. LensCrafters. Best Buy. No surgery.",status:"roadmap",source_type:"official_company",source_id:23,is_forecast:false,verified:"2025-09-15",tags:["EMG","wristband","retail"]},
+{id:25,company_id:17,date:"2025-10-15",domain:"CONVERGENCE",title:"NTIA Mission LA 2028: 6G Olympic showcase",description:"Industry demos early 6G at 2028 LA Olympics. \u2018The nation that controls the infrastructure determines security and competitiveness.\u2019",status:"planning",source_type:"official_company",source_id:18,is_forecast:false,verified:"2025-10-15",tags:["Olympics","2028"]},
+{id:26,company_id:6,date:"2025-11-01",domain:"BCI",title:"Synchron $200M Series D (IQT / Bezos / QIA)",description:"Backed by In-Q-Tel (CIA), Bezos Expeditions, Qatar Investment Authority. Intelligence agency funding for a BCI company.",status:"research",source_type:"official_company",source_id:8,is_forecast:false,verified:"2025-11-01",tags:["IQT","CIA","Bezos"]},
+{id:27,company_id:6,date:"2025-11-15",domain:"CONVERGENCE",title:"Synchron + NVIDIA: 'Chiral' \u2014 AI trained on neural signals",description:"\u2018The next step in AI evolution is training on neural signals.\u2019 BCI + infrastructure + AI in one announcement.",status:"research",source_type:"official_company",source_id:25,is_forecast:false,verified:"2025-11-15",tags:["Chiral","foundation-model","NVIDIA"]},
+{id:28,company_id:18,date:"2025-12-01",domain:"CONVERGENCE",title:"DARPA Generative Optogenetics: computers writing DNA via light",description:"\u2018Nucleic acid compiler\u2019 \u2014 cells write DNA/RNA on demand using light. \u2018Direct interface between computers and living cells.\u2019",status:"research",source_type:"official_company",source_id:19,is_forecast:false,verified:"2025-12-01",tags:["GO","optogenetics"]},
+{id:29,company_id:16,date:"2025-12-08",domain:"CONVERGENCE",title:"White House NSPM-8: 6G + 'implantable technologies'",description:"Presidential memorandum: 6G \u2018will play a pivotal role in implantable technologies.\u2019 Spectrum: 7.125\u20137.4 GHz.",status:"planning",source_type:"official_company",source_id:17,is_forecast:false,verified:"2025-12-08",tags:["NSPM-8","implantable"]},
+{id:30,company_id:16,date:"2025-12-11",domain:"CONVERGENCE",title:"Trump: 6G gives 'a deeper view into somebody's skin'",description:"Roundtable with Qualcomm CEO. Describes what ISAC/THz body-centric networks do. Said in plain sight, received as comedy.",status:"planning",source_type:"secondary_analysis",source_id:24,is_forecast:false,verified:"2025-12-11",tags:["cowboy-hats","ISAC"]},
+{id:31,company_id:5,date:"2025-12-12",domain:"BCI",title:"Neuralink: 20 participants target, multiple countries",description:"Expanded PRIME Study. International scale.",status:"trial-ongoing",source_type:"official_company",source_id:10,is_forecast:false,verified:"2025-12-12",tags:["PRIME-study"]},
+{id:32,company_id:11,date:"2026-01-15",domain:"CONVERGENCE",title:"Merge Labs: Altman (OpenAI) + Blania (Worldcoin) + Caltech",description:"$252M seed at $850M. Non-invasive BCI via gene therapy + ultrasound. Iris scanning \u2192 digital ID \u2192 brain interface. Same founders, same money.",status:"research",source_type:"official_company",source_id:14,is_forecast:false,verified:"2026-01-15",tags:["Altman","Blania","OpenAI"]},
+{id:33,company_id:16,date:"2026-03-01",domain:"CONVERGENCE",title:"Qualcomm: 3 commercial '6G' devices for 2028 Olympics",description:"Standards won\u2019t be finalised. 5G Advanced \u2018dressed up in 6G cosplay.\u2019 The label arrives before the technology.",status:"planning",source_type:"secondary_analysis",source_id:29,is_forecast:false,verified:"2026-03-01",tags:["Olympics","branding"]},
+{id:34,company_id:7,date:"2027-03-01",domain:"6G",title:"3GPP Release 21 Stage 1 (projected)",description:"Service requirements for AI-native interfaces, integrated sensing, sub-THz.",status:"forecast",source_type:"standards_body",source_id:6,is_forecast:true,verified:"2025-06-01",tags:["Release-21","Stage-1"]},
+{id:35,company_id:15,date:"2027-06-01",domain:"CONVERGENCE",title:"JSyC BDC: bio-digital terminology standard (projected)",description:"152-term standard. The naming of the thing.",status:"forecast",source_type:"standards_body",source_id:16,is_forecast:true,verified:"2025-06-01",tags:["terminology","BDC"]},
+{id:36,company_id:6,date:"2027-06-01",domain:"BCI",title:"Synchron pivotal trial (projected)",description:"Large-scale Stentrode pivotal trial.",status:"forecast",source_type:"secondary_analysis",source_id:8,is_forecast:true,verified:"2025-06-01",tags:["pivotal-trial"]},
+{id:37,company_id:5,date:"2027-09-01",domain:"BCI",title:"Neuralink expanded indications (projected)",description:"Beyond motor cortex \u2014 vision, broader neurology.",status:"forecast",source_type:"secondary_analysis",source_id:10,is_forecast:true,verified:"2025-06-01",tags:["vision"]},
+{id:38,company_id:6,date:"2028-01-01",domain:"BCI",title:"Synchron commercial pathway (projected)",description:"Potentially first commercial endovascular BCI.",status:"forecast",source_type:"secondary_analysis",source_id:8,is_forecast:true,verified:"2025-06-01",tags:["commercial"]},
+{id:39,company_id:7,date:"2028-06-01",domain:"6G",title:"3GPP Release 21 Stage 2 (projected)",description:"Logical architecture for 6G network functions.",status:"forecast",source_type:"standards_body",source_id:6,is_forecast:true,verified:"2025-06-01",tags:["Release-21","Stage-2"]},
+{id:40,company_id:17,date:"2028-07-01",domain:"CONVERGENCE",title:"LA Olympics 6G showcase (projected)",description:"NTIA Mission LA 2028. Same year as CBTS tattoo launch.",status:"forecast",source_type:"official_company",source_id:18,is_forecast:true,verified:"2025-06-01",tags:["Olympics","tattoo-parallel"]},
+{id:41,company_id:1,date:"2028-12-01",domain:"6G",title:"Nokia pre-commercial 6G trials (projected)",description:"Sub-THz access, AI-native orchestration testing.",status:"forecast",source_type:"official_company",source_id:2,is_forecast:true,verified:"2025-06-01",tags:["pre-commercial"]},
+{id:42,company_id:2,date:"2029-01-01",domain:"6G",title:"Ericsson pre-commercial 6G (projected)",description:"Network slicing, programmable RAN.",status:"forecast",source_type:"official_company",source_id:4,is_forecast:true,verified:"2025-06-01",tags:["pre-commercial"]},
+{id:43,company_id:3,date:"2029-01-01",domain:"6G",title:"Samsung pre-commercial 6G (projected)",description:"Aligned with Release 21.",status:"forecast",source_type:"secondary_analysis",source_id:5,is_forecast:true,verified:"2025-06-01",tags:["pre-commercial"]},
+{id:44,company_id:7,date:"2029-06-01",domain:"6G",title:"3GPP Release 21 Stage 3 (projected)",description:"Protocol specs for interoperable 6G.",status:"forecast",source_type:"standards_body",source_id:6,is_forecast:true,verified:"2025-06-01",tags:["Release-21","Stage-3"]},
+{id:45,company_id:4,date:"2029-09-01",domain:"6G",title:"Huawei pre-commercial 6G (projected)",description:"Aligned with Release 21 and Chinese standards.",status:"forecast",source_type:"secondary_analysis",source_id:11,is_forecast:true,verified:"2025-06-01",tags:["pre-commercial"]},
+{id:46,company_id:1,date:"2030-06-01",domain:"6G",title:"Nokia initial 6G commercialisation (projected)",description:"Contingent on standards and spectrum.",status:"forecast",source_type:"official_company",source_id:1,is_forecast:true,verified:"2025-06-01",tags:["commercial","2030"]},
+{id:100,company_id:50,date:"2025-06-01",domain:"CBTS",title:"Stage 1: ARC deployed as government authentication app",description:"Dull infrastructure. Firmware/authentication layer on every phone. Nobody notices. The most important app in the world looks like a council tax portal.",status:"roadmap",source_type:"official_company",source_id:90,is_forecast:false,verified:"2026-01-01",tags:["Stage-1","pre-Event"]},
+{id:101,company_id:50,date:"2027-02-14",domain:"CBTS",title:"THE EVENT \u2014 Valentine\u2019s Day",description:"Coordinated cyber attack on financial infrastructure across 23 nations. Cards stop. Banks dark. Cloud dead. ARC survives \u2014 because it was designed to. Day 0.",status:"roadmap",source_type:"official_company",source_id:91,is_forecast:false,verified:"2026-01-01",tags:["Event","Day-0"]},
+{id:102,company_id:50,date:"2027-02-19",domain:"CBTS",title:"Second detonation \u2014 Stage 2 corrupts all financial records",description:"Day 5. 6:33pm. Teatime. Transaction histories, balances, mortgages, pensions corrupted across 23 nations. Not encrypted \u2014 corrupted. Unrecoverable.",status:"roadmap",source_type:"official_company",source_id:91,is_forecast:false,verified:"2026-01-01",tags:["Stage-2","detonation"]},
+{id:103,company_id:51,date:"2027-03-22",domain:"CBTS",title:"Day 35: The Announcement. Jubilee. AIDA. Registration opens.",description:"PM addresses nation. 23-nation simulcast. Old system dead \u2192 ARC survived \u2192 AIDA \u2192 DEBT JUBILEE \u2192 registration (90 seconds). Street parties. 82% within 48 hours.",status:"roadmap",source_type:"official_company",source_id:91,is_forecast:false,verified:"2026-01-01",tags:["Announcement","Jubilee"]},
+{id:104,company_id:56,date:"2027-04-01",domain:"CBTS",title:"Stage 2: Phone/ARC as wallet. 10,000 BC. Simon registers.",description:"Day 45. ARC = gateway to BritCoin, AIDA, everything. 10,000 BC adult / 2,000 child. Free. The most important onboarding in history costs nothing.",status:"roadmap",source_type:"official_company",source_id:90,is_forecast:false,verified:"2026-01-01",tags:["Stage-2","BC","Day-45"]},
+{id:105,company_id:51,date:"2027-04-15",domain:"CBTS",title:"Emergency 6G base stations under emergency powers",description:"Damaged telecoms \u2018leapfrogged.\u2019 No planning permission. Branded \u2018enhanced 5G.\u2019 Questioning infrastructure = questioning recovery.",status:"roadmap",source_type:"official_company",source_id:90,is_forecast:false,verified:"2026-01-01",tags:["6G","emergency-powers"]},
+{id:106,company_id:52,date:"2027-06-01",domain:"CBTS",title:"Stage 3: The Blade. T42. 2,500 BC.",description:"Influencers first. Graphene surface interacts with nano-antenna network in skin. Reads biometrics. Amy opens hers like jewellery. Nobody notices the night they stopped removing it.",status:"roadmap",source_type:"official_company",source_id:92,is_forecast:false,verified:"2026-01-01",tags:["Stage-3","Blade","consent-ladder"]},
+{id:107,company_id:53,date:"2028-07-01",domain:"CBTS",title:"Stage 4: The Tattoo. LA Olympics. Graphene ink = antenna.",description:"T53. Athletes\u2019 biometrics glowing during 100m final. Consumer versions within weeks. Fashion, not medicine. Chloe: \u2018I need one immediately.\u2019",status:"roadmap",source_type:"official_company",source_id:92,is_forecast:false,verified:"2026-01-01",tags:["Stage-4","tattoo","Olympics"]},
+{id:108,company_id:51,date:"2028-11-01",domain:"CBTS",title:"BioSync Patch (T56). Interface Cascade begins (T57).",description:"Continuous bio-integration. Each step makes the next feel natural because the body already knows what the interface is for.",status:"roadmap",source_type:"official_company",source_id:92,is_forecast:false,verified:"2026-01-01",tags:["BioSync","cascade"]},
+{id:109,company_id:51,date:"2029-06-01",domain:"CBTS",title:"T65: CW goes visible. Kate names it.",description:"Compliance Wellness score visible. Kate: \u2018seeing the strings.\u2019 The score was always there. Now you can see the number.",status:"roadmap",source_type:"official_company",source_id:92,is_forecast:false,verified:"2026-01-01",tags:["CW","visible","Kate"]},
+{id:110,company_id:54,date:"2029-09-01",domain:"CBTS",title:"Stage 5a: Glasses. The Verse begins. Output only.",description:"Consumer product. Fashion object. The Verse = AR overlay. Everything up to and including glasses is OUTPUT ONLY. The system reads. It doesn\u2019t write. Yet.",status:"roadmap",source_type:"official_company",source_id:93,is_forecast:false,verified:"2026-01-01",tags:["Stage-5a","glasses","Verse"]},
+{id:111,company_id:54,date:"2030-01-01",domain:"CBTS",title:"Stage 5b: Lenses. The visible boundary disappears.",description:"Invisible from outside. Micro-gestures, sub-vocalised commands. Bone conduction audio. AIDA speaks through you, not to you.",status:"roadmap",source_type:"official_company",source_id:93,is_forecast:false,verified:"2026-01-01",tags:["Stage-5b","lenses"]},
+{id:112,company_id:54,date:"2030-09-01",domain:"CBTS",title:"RIS saturation: Verse works without lenses indoors",description:"Reconfigurable intelligent surfaces everywhere. You don\u2019t ask for lighting changes \u2014 your cortisol asked.",status:"roadmap",source_type:"official_company",source_id:93,is_forecast:false,verified:"2026-01-01",tags:["RIS","saturation","ambient"]},
+{id:113,company_id:55,date:"2031-06-01",domain:"CBTS",title:"Stage 6: Neural Sync. T78. \u2018Not for you. With you.\u2019",description:"Read AND write. Requires Advanced Citizen Wellness standing. The privilege of surrender.",status:"roadmap",source_type:"official_company",source_id:93,is_forecast:false,verified:"2026-01-01",tags:["Stage-6","Neural-Sync","read-write"]},
+{id:114,company_id:55,date:"2031-10-01",domain:"CBTS",title:"T80: Collective Linking",description:"Neural Sync + Advanced standing. The sequence copies 1,1,2,3,5\u2026 perfectly. It cannot copy zero.",status:"roadmap",source_type:"official_company",source_id:93,is_forecast:false,verified:"2026-01-01",tags:["collective","Fibonacci","zero"]}
+];
+
+const ALL_STATUSES=[...new Set(milestones.map(m=>m.status))].sort();
+const ALL_DOMAINS=[...new Set(milestones.map(m=>m.domain))].sort();
+const ALL_SOURCE_TYPES=[...new Set(milestones.map(m=>m.source_type))].sort();
+const SL={research:"Research",roadmap:"Roadmap",planning:"Planning",regulatory:"Regulatory","trial-early":"Trial (Early)","trial-ongoing":"Trial (Ongoing)","trial-planned":"Trial (Planned)",forecast:"Forecast",patent:"Patent"};
+const DCo={"6G":"#00D4AA",BCI:"#FF6B35",CONVERGENCE:"#E879F9",CBTS:"#F5C542"};
+const SSh={research:"circle",roadmap:"diamond",planning:"square",regulatory:"hexagon","trial-early":"triangle","trial-ongoing":"triangle","trial-planned":"triangle",forecast:"circle-dashed",patent:"octagon"};
+
+function mkShape(status,size,color){
+  const s=size||14,h=s/2;
+  const sh=SSh[status]||"circle";
+  if(sh==="diamond")return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("polygon",{points:h+",1 "+(s-1)+","+h+" "+h+","+(s-1)+" 1,"+h,fill:color}));
+  if(sh==="square")return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("rect",{x:1,y:1,width:s-2,height:s-2,fill:color,rx:1}));
+  if(sh==="triangle")return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("polygon",{points:h+",1 "+(s-1)+","+(s-1)+" 1,"+(s-1),fill:color}));
+  if(sh==="hexagon"){var pts="";for(var i=0;i<6;i++){var a=Math.PI/3*i-Math.PI/2;pts+=(h+(h-1)*Math.cos(a))+","+(h+(h-1)*Math.sin(a))+" ";}return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("polygon",{points:pts.trim(),fill:color}));}
+  if(sh==="circle-dashed")return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("circle",{cx:h,cy:h,r:h-2,fill:"none",stroke:color,strokeWidth:2,strokeDasharray:"3,2"}),e("circle",{cx:h,cy:h,r:Math.max(h-5,1),fill:color,opacity:0.4}));
+  return e("svg",{width:s,height:s,viewBox:"0 0 "+s+" "+s},e("circle",{cx:h,cy:h,r:h-1,fill:color}));
+}
+
+function Chips(props){
+  return e("div",{style:{marginBottom:13}},
+    e("div",{style:{fontSize:9,fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",color:"#505468",marginBottom:4,fontFamily:M}},props.label),
+    e("div",{style:{display:"flex",flexWrap:"wrap",gap:3}},
+      props.options.map(function(o){
+        var a=props.selected.indexOf(o)>=0;
+        var c=props.colorFn?props.colorFn(o):"#00D4AA";
+        return e("button",{key:o,onClick:function(){props.onToggle(o)},style:{padding:"2px 7px",fontSize:10,fontWeight:600,fontFamily:M,border:"1px solid "+(a?c:"#1E2030"),borderRadius:2,background:a?c+"14":"#111318",color:a?c:"#3E4255",cursor:"pointer",transition:"all .12s",lineHeight:"17px"}},o);
+      })
+    )
+  );
+}
+
+function Detail(props){
+  var m=props.m;if(!m)return null;
+  var co=companyMap[m.company_id],src=sourceMap[m.source_id],dc=DCo[m.domain]||"#888";
+  var isCBTS=m.domain==="CBTS";
+  var rel=milestones.filter(function(x){return x.company_id===m.company_id&&x.id!==m.id}).sort(function(a,b){return a.date.localeCompare(b.date)}).slice(0,6);
+  
+  return e("div",{style:{position:"fixed",top:0,right:0,width:420,maxWidth:"94vw",height:"100vh",background:isCBTS?"#14120A":"#0C0E14",borderLeft:"2px solid "+dc,zIndex:1000,overflowY:"auto",padding:"22px 20px",boxShadow:"-10px 0 50px rgba(0,0,0,.7)",animation:"slideIn .18s ease-out"}},
+    e("button",{onClick:props.onClose,style:{position:"absolute",top:12,right:12,background:"none",border:"none",color:"#3E4255",fontSize:18,cursor:"pointer",fontFamily:"monospace"}},"\u2715"),
+    e("div",{style:{display:"flex",flexWrap:"wrap",gap:5,marginBottom:8}},
+      e("span",{style:{background:dc,color:"#000",fontSize:8,fontWeight:800,padding:"2px 6px",borderRadius:2,letterSpacing:".1em",fontFamily:M}},m.domain),
+      e("span",{style:{background:"#1A1D28",color:"#B0B8D0",fontSize:8,fontWeight:600,padding:"2px 6px",borderRadius:2,fontFamily:M}},SL[m.status]||m.status),
+      m.is_forecast?e("span",{style:{background:"#7C3AED15",color:"#C084FC",fontSize:8,fontWeight:600,padding:"2px 6px",borderRadius:2,fontFamily:M}},"FORECAST"):null,
+      isCBTS?e("span",{style:{background:"#F5C54220",color:"#F5C542",fontSize:8,fontWeight:700,padding:"2px 6px",borderRadius:2,fontFamily:M}},"FICTION"):null
+    ),
+    e("h2",{style:{fontSize:16,fontWeight:700,color:"#E8ECF4",margin:"0 0 16px",lineHeight:1.35,fontFamily:D}},m.title),
+    e("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px 16px",marginBottom:18}},
+      [["DATE",m.date],["ENTITY",co?co.name:"",co?co.color:null],["SOURCE",m.source_type],["VERIFIED",m.verified]].map(function(r){
+        return e("div",{key:r[0]},
+          e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:1,fontFamily:M}},r[0]),
+          e("div",{style:{fontSize:12,color:r[2]||"#C0C8D8",fontWeight:r[2]?600:400,fontFamily:r[2]?undefined:M}},r[1])
+        );
+      })
+    ),
+    e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:4,fontFamily:M}},"DESCRIPTION"),
+    e("p",{style:{fontSize:12,lineHeight:1.7,color:isCBTS?"#D4C8A0":"#B0B8D0",margin:"0 0 18px"}},m.description),
+    src&&!isCBTS?e("div",{style:{marginBottom:18}},
+      e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:4,fontFamily:M}},"SOURCE"),
+      e("div",{style:{background:"#111318",border:"1px solid #1A1D28",borderRadius:3,padding:10}},
+        e("div",{style:{fontSize:12,color:"#C0C8D8",fontWeight:600,marginBottom:2}},src.title),
+        e("div",{style:{fontSize:10,color:"#3E4255",marginBottom:4}},src.publisher),
+        e("a",{href:src.url,target:"_blank",rel:"noopener noreferrer",style:{fontSize:10,color:dc,textDecoration:"none",fontFamily:M,wordBreak:"break-all"}},src.url)
+      )
+    ):null,
+    src&&isCBTS?e("div",{style:{marginBottom:18}},
+      e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:4,fontFamily:M}},"GOVERNANCE DOC"),
+      e("div",{style:{background:"#1A1808",border:"1px solid #2A2510",borderRadius:3,padding:10}},
+        e("div",{style:{fontSize:11,color:"#D4C8A0",fontWeight:600}},src.title)
+      )
+    ):null,
+    m.tags&&m.tags.length>0?e("div",{style:{marginBottom:18}},
+      e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:4,fontFamily:M}},"TAGS"),
+      e("div",{style:{display:"flex",flexWrap:"wrap",gap:3}},m.tags.map(function(t){return e("span",{key:t,style:{background:isCBTS?"#1A1808":"#111318",border:"1px solid "+(isCBTS?"#2A2510":"#1A1D28"),color:isCBTS?"#B0A070":"#707890",fontSize:9,padding:"1px 6px",borderRadius:2,fontFamily:M}},t)}))
+    ):null,
+    rel.length>0?e("div",{style:{marginTop:20}},
+      e("div",{style:{fontSize:8,color:"#3E4255",fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",marginBottom:6,fontFamily:M}},"RELATED \u00B7 "+(co?co.name:"")),
+      rel.map(function(r){return e("div",{key:r.id,style:{padding:"4px 0",borderBottom:"1px solid #151820",fontSize:11,color:"#707890"}},e("span",{style:{color:"#3E4255",fontFamily:M,fontSize:9,marginRight:5}},r.date),r.title)})
+    ):null
+  );
+}
+
+function App(){
+  var _selCo=useState(companies.map(function(c){return c.name})),selCo=_selCo[0],setSC=_selCo[1];
+  var _selDo=useState(ALL_DOMAINS.filter(function(d){return d!=="CBTS"})),selDo=_selDo[0],setSD=_selDo[1];
+  var _selSt=useState(ALL_STATUSES.slice()),selSt=_selSt[0],setSS2=_selSt[1];
+  var _selSrc=useState(ALL_SOURCE_TYPES.slice()),selSrc=_selSrc[0],setSR=_selSrc[1];
+  var _showF=useState(true),showF=_showF[0],setSF=_showF[1];
+  var _dr=useState([2014,2032]),dr=_dr[0],setDR=_dr[1];
+  var _sel=useState(null),sel=_sel[0],setSel=_sel[1];
+  var _view=useState("all"),view=_view[0],setView=_view[1];
+  var _q=useState(""),q=_q[0],setQ=_q[1];
+
+  function tog(arr,setter){return function(v){setter(function(p){return p.indexOf(v)>=0?p.filter(function(x){return x!==v}):p.concat([v])})}}
+
+  useEffect(function(){
+    var teleStd=function(c){return c.category==="Telecom"||c.category==="Standards"};
+    var bci=function(c){return c.category==="BCI"};
+    var cbts=function(c){return c.category==="CBTS"};
+    if(view==="6g"){setSD(["6G"]);setSC(companies.filter(teleStd).map(function(c){return c.name}));}
+    else if(view==="bci"){setSD(["BCI"]);setSC(companies.filter(bci).map(function(c){return c.name}));}
+    else if(view==="conv"){setSD(["CONVERGENCE"]);setSC(companies.map(function(c){return c.name}));}
+    else if(view==="cbts"){setSD(["CBTS"]);setSC(companies.filter(cbts).map(function(c){return c.name}));setDR([2025,2032]);}
+    else if(view==="dual"){setSD(["CBTS","CONVERGENCE","6G","BCI"]);setSC(companies.map(function(c){return c.name}));setDR([2025,2032]);}
+    else{setSD(ALL_DOMAINS.filter(function(d){return d!=="CBTS"}));setSC(companies.filter(function(c){return c.category!=="CBTS"}).map(function(c){return c.name}));setDR([2014,2032]);}
+  },[view]);
+
+  var filtered=useMemo(function(){
+    var ql=q.toLowerCase();
+    return milestones.filter(function(m){
+      var co=companyMap[m.company_id];
+      if(selCo.indexOf(co?co.name:"")< 0)return false;
+      if(selDo.indexOf(m.domain)<0)return false;
+      if(selSt.indexOf(m.status)<0)return false;
+      if(selSrc.indexOf(m.source_type)<0)return false;
+      if(!showF&&m.is_forecast)return false;
+      var yr=parseInt(m.date.slice(0,4));
+      if(yr<dr[0]||yr>dr[1])return false;
+      if(ql&&m.title.toLowerCase().indexOf(ql)<0&&m.description.toLowerCase().indexOf(ql)<0&&!(m.tags||[]).some(function(t){return t.toLowerCase().indexOf(ql)>=0})&&(co?co.name:"").toLowerCase().indexOf(ql)<0)return false;
+      return true;
+    }).sort(function(a,b){return a.date.localeCompare(b.date)});
+  },[selCo,selDo,selSt,selSrc,showF,dr,q]);
+
+  var yrs=[];for(var y=dr[0];y<=dr[1];y++)yrs.push(y);
+  var mn=new Date(dr[0]+"-01-01"),mx=new Date(dr[1]+"-12-31"),tt=mx-mn;
+  function gx(ds){return((new Date(ds)-mn)/tt)*100}
+  function cD(d){return filtered.filter(function(m){return m.domain===d}).length}
+  var cF=filtered.filter(function(m){return m.is_forecast}).length;
+  var lanes=companies.filter(function(c){return selCo.indexOf(c.name)>=0&&filtered.some(function(m){return m.company_id===c.id})});
+  var isCBTSView=view==="cbts"||view==="dual";
+  var bg=isCBTSView?"#0C0A06":"#08090F";
+  var bd=isCBTSView?"#1A1808":"#151820";
+
+  var viewBtns=[["all","Real World","#00D4AA"],["6g","6G","#00D4AA"],["bci","BCI","#FF6B35"],["conv","Convergence","#E879F9"],["cbts","CBTS","#F5C542"],["dual","Real + CBTS","#F5C542"]];
+
+  var yearOpts=[];for(var i=2014;i<=2033;i++)yearOpts.push(i);
+
+  return e("div",{style:{background:bg,color:"#C0C8D8",minHeight:"100vh",fontFamily:"'DM Sans',system-ui,sans-serif",transition:"background .3s"}},
+    // Header
+    e("div",{style:{padding:"18px 22px 12px",borderBottom:"1px solid "+bd}},
+      e("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:10}},
+        e("div",null,
+          e("h1",{style:{fontSize:19,fontWeight:700,margin:0,fontFamily:D,letterSpacing:"-0.02em",color:"#E8ECF4"}},
+            "6G ",e("span",{style:{color:"#00D4AA"}},"\u00B7")," BCI ",e("span",{style:{color:"#E879F9"}},"\u00B7")," Convergence",
+            isCBTSView?" ":null,isCBTSView?e("span",{style:{color:"#F5C542"}},"\u00B7 CBTS"):null
+          ),
+          e("p",{style:{fontSize:10,color:"#3E4255",margin:"2px 0 0",fontFamily:M}},milestones.length+" milestones \u00B7 "+companies.length+" entities \u00B7 the gap is smaller than you think")
+        ),
+        e("div",{style:{display:"flex",gap:2,flexWrap:"wrap"}},
+          viewBtns.map(function(v){
+            return e("button",{key:v[0],onClick:function(){setView(v[0])},style:{padding:"4px 10px",fontSize:9,fontWeight:700,fontFamily:M,textTransform:"uppercase",letterSpacing:".05em",border:"1px solid "+(view===v[0]?v[2]:"#1E2030"),borderRadius:2,background:view===v[0]?v[2]+"14":"transparent",color:view===v[0]?v[2]:"#3E4255",cursor:"pointer"}},v[1]);
+          })
+        )
+      ),
+      e("div",{style:{display:"flex",gap:16,marginTop:10,flexWrap:"wrap",alignItems:"baseline"}},
+        e("div",null,e("span",{style:{fontSize:22,fontWeight:700,color:"#E8ECF4",fontFamily:D}},filtered.length),e("span",{style:{fontSize:9,color:"#3E4255",marginLeft:4,fontFamily:M,textTransform:"uppercase",letterSpacing:".1em"}},"shown")),
+        e("div",{style:{borderLeft:"1px solid #1E2030",paddingLeft:16,display:"flex",gap:10,flexWrap:"wrap"}},
+          ALL_DOMAINS.filter(function(d){return filtered.some(function(m){return m.domain===d})}).map(function(d){
+            return e("div",{key:d},e("span",{style:{fontSize:14,fontWeight:600,color:DCo[d]}},cD(d)),e("span",{style:{fontSize:8,color:"#3E4255",marginLeft:3,fontFamily:M}},d));
+          })
+        )
+      )
+    ),
+    // Body
+    e("div",{style:{display:"flex"}},
+      // Sidebar
+      e("div",{style:{width:220,minWidth:220,borderRight:"1px solid "+bd,padding:"10px 10px",overflowY:"auto",maxHeight:"calc(100vh - 120px)"}},
+        e("div",{style:{marginBottom:12}},e("input",{value:q,onChange:function(ev){setQ(ev.target.value)},placeholder:"Search\u2026",style:{width:"100%",padding:"4px 7px",fontSize:10,fontFamily:M,background:"#111318",border:"1px solid #1E2030",borderRadius:2,color:"#C0C8D8",outline:"none"}})),
+        e(Chips,{label:"Entity",options:companies.map(function(c){return c.name}),selected:selCo,onToggle:tog(selCo,setSC),colorFn:function(n){var c=companies.find(function(c){return c.name===n});return c?c.color:"#888"}}),
+        e(Chips,{label:"Domain",options:ALL_DOMAINS,selected:selDo,onToggle:tog(selDo,setSD),colorFn:function(d){return DCo[d]||"#888"}}),
+        e(Chips,{label:"Status",options:ALL_STATUSES,selected:selSt,onToggle:tog(selSt,setSS2),colorFn:function(){return"#707890"}}),
+        e(Chips,{label:"Source",options:ALL_SOURCE_TYPES,selected:selSrc,onToggle:tog(selSrc,setSR),colorFn:function(){return"#707890"}}),
+        e("div",{style:{marginBottom:12}},
+          e("div",{style:{fontSize:9,fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",color:"#505468",marginBottom:4,fontFamily:M}},"Range"),
+          e("div",{style:{display:"flex",gap:5,alignItems:"center"}},
+            e("select",{value:dr[0],onChange:function(ev){setDR([+ev.target.value,dr[1]])},style:{background:"#111318",border:"1px solid #1E2030",color:"#B0B8D0",borderRadius:2,padding:"3px 5px",fontSize:10,fontFamily:M}},yearOpts.map(function(y){return e("option",{key:y,value:y},y)})),
+            e("span",{style:{color:"#2A2D38"}},"\u2192"),
+            e("select",{value:dr[1],onChange:function(ev){setDR([dr[0],+ev.target.value])},style:{background:"#111318",border:"1px solid #1E2030",color:"#B0B8D0",borderRadius:2,padding:"3px 5px",fontSize:10,fontFamily:M}},yearOpts.slice(10).map(function(y){return e("option",{key:y,value:y},y)}))
+          )
+        ),
+        e("label",{style:{display:"flex",alignItems:"center",gap:5,cursor:"pointer",marginBottom:14}},
+          e("input",{type:"checkbox",checked:showF,onChange:function(){setSF(!showF)},style:{accentColor:"#C084FC"}}),
+          e("span",{style:{fontSize:10,color:"#707890",fontFamily:M}},"Show forecasts")
+        ),
+        e("div",{style:{paddingTop:10,borderTop:"1px solid #151820"}},
+          e("div",{style:{fontSize:8,fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",color:"#505468",marginBottom:5,fontFamily:M}},"Legend"),
+          Object.keys(SL).map(function(k){return e("div",{key:k,style:{display:"flex",alignItems:"center",gap:5,marginBottom:2}},mkShape(k,9,"#707890"),e("span",{style:{fontSize:8,color:"#3E4255",fontFamily:M}},SL[k]))}),
+          e("div",{style:{marginTop:8}},Object.keys(DCo).map(function(d){return e("div",{key:d,style:{display:"flex",alignItems:"center",gap:5,marginBottom:2}},e("div",{style:{width:9,height:9,borderRadius:1,background:DCo[d]}}),e("span",{style:{fontSize:8,color:"#3E4255",fontFamily:M}},d))}))
+        )
+      ),
+      // Main
+      e("div",{style:{flex:1,overflowX:"auto",overflowY:"auto",maxHeight:"calc(100vh - 120px)"}},
+        // Year axis
+        e("div",{style:{position:"sticky",top:0,zIndex:10,background:bg,borderBottom:"1px solid "+bd}},
+          e("div",{style:{position:"relative",height:26,minWidth:1500}},
+            yrs.map(function(y){
+              return e("div",{key:y,style:{position:"absolute",left:gx(y+"-01-01")+"%",top:0,height:"100%",display:"flex",alignItems:"center",fontSize:10,fontWeight:700,color:y===2027?"#FF6B35":"#2A2D38",fontFamily:M,borderLeft:"1px solid "+(isCBTSView?"#1A1808":"#111318"),paddingLeft:5}},
+                y,y===2027?e("span",{style:{fontSize:7,color:"#FF6B3570",marginLeft:3,letterSpacing:".1em"}},"EVENT"):null
+              );
+            })
+          )
+        ),
+        // Swim lanes
+        e("div",{style:{minWidth:1500,position:"relative"}},
+          yrs.map(function(y){return e("div",{key:"g"+y,style:{position:"absolute",left:gx(y+"-01-01")+"%",top:0,bottom:0,width:1,background:y===2027?"#FF6B3520":(isCBTSView?"#1A1808":"#111318")+"40",zIndex:0}})}),
+          lanes.map(function(co,i){
+            var lm=filtered.filter(function(m){return m.company_id===co.id});
+            var isCBTSCo=co.category==="CBTS";
+            return e("div",{key:co.id,style:{position:"relative",height:44,borderBottom:"1px solid "+(isCBTSCo?"#18150C":"#0D0F16"),display:"flex",alignItems:"center",background:isCBTSCo?(i%2?"#100E0808":"transparent"):i%2?"#0A0C1208":"transparent"}},
+              e("div",{style:{position:"sticky",left:0,width:105,minWidth:105,zIndex:5,background:bg,paddingLeft:8,fontSize:9,fontWeight:700,color:co.color,fontFamily:M}},
+                co.name,e("div",{style:{fontSize:7,color:"#2A2D38",fontWeight:500}},co.category)
+              ),
+              lm.map(function(m){
+                var dc=DCo[m.domain]||"#888";
+                return e("div",{key:m.id,onClick:function(){setSel(m)},title:m.date+": "+m.title,
+                  style:{position:"absolute",left:"calc("+gx(m.date)+"% - 7px)",cursor:"pointer",zIndex:3,transition:"transform .12s"},
+                  onMouseEnter:function(ev){ev.currentTarget.style.transform="scale(1.7)"},
+                  onMouseLeave:function(ev){ev.currentTarget.style.transform="scale(1)"}
+                },mkShape(m.status,14,dc));
+              })
+            );
+          })
+        ),
+        // Log
+        e("div",{style:{padding:"14px 12px",borderTop:"1px solid "+bd}},
+          e("div",{style:{fontSize:8,fontWeight:700,letterSpacing:".12em",textTransform:"uppercase",color:"#505468",marginBottom:8,fontFamily:M}},"LOG \u00B7 "+filtered.length),
+          filtered.map(function(m){
+            var co=companyMap[m.company_id],dc=DCo[m.domain],iS=sel&&sel.id===m.id,isCBTSM=m.domain==="CBTS";
+            return e("div",{key:m.id,onClick:function(){setSel(m)},
+              style:{display:"grid",gridTemplateColumns:"78px 95px 88px 1fr 72px",alignItems:"center",gap:6,padding:"5px 8px",borderRadius:2,cursor:"pointer",background:iS?(isCBTSM?"#18150C":"#111318"):"transparent",borderLeft:iS?"2px solid "+dc:"2px solid transparent",transition:"background .1s"},
+              onMouseEnter:function(ev){if(!iS)ev.currentTarget.style.background=isCBTSM?"#120F08":"#0C0E14"},
+              onMouseLeave:function(ev){if(!iS)ev.currentTarget.style.background="transparent"}
+            },
+              e("span",{style:{fontSize:10,color:isCBTSM?"#6B6040":"#3E4255",fontFamily:M}},m.date),
+              e("span",{style:{fontSize:10,color:co?co.color:"#888",fontWeight:600,fontFamily:M,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}},co?co.name:""),
+              e("span",{style:{display:"flex",alignItems:"center",gap:3}},mkShape(m.status,8,dc),e("span",{style:{fontSize:8,color:dc,fontWeight:700,fontFamily:M,letterSpacing:".04em"}},m.domain)),
+              e("span",{style:{fontSize:11,color:m.is_forecast?"#707890":isCBTSM?"#D4C8A0":"#C0C8D8",fontStyle:m.is_forecast?"italic":"normal",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}},m.title),
+              e("span",{style:{fontSize:8,color:"#2A2D38",fontFamily:M,textAlign:"right"}},SL[m.status])
+            );
+          })
+        )
+      )
+    ),
+    sel?e(Detail,{m:sel,onClose:function(){setSel(null)}}):null,
+    sel?e("div",{onClick:function(){setSel(null)},style:{position:"fixed",top:0,left:0,right:420,bottom:0,zIndex:999,background:"rgba(0,0,0,.35)"}}):null
+  );
+}
+
+ReactDOM.render(e(App),document.getElementById("root"));
+</script>
+</body>
+</html>

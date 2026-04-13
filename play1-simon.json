@@ -1316,8 +1316,7 @@
       "date": "Late November 2026",
       "paras": [
         {
-          "t": "Rupert and Simon. Late night. Back at the house. The conversation that couldn't happen at the pub.",
-          "c": "inner"
+          "t": "Rupert has rather sensibly decided not to try and drive home after six pints. He and I are now chatting shit on the sofa with another beer. The kids headed (staggered in George's case) to their rooms as soon as they'd jumped out the taxi. Off to immerse themselves in the links I'd sent them, no doubt. Amy made the spare bed up for Rupert, thoughtfully placing a glass of water and some Alka Seltzer Plus on his bedside table, and headed off to bed herself. Rabbit hole avoidance. I'm sure she'll manage to read for half an hour or more, despite the booze."
         }
       ]
     },
@@ -7706,11 +7705,47 @@
           {
             "src": "Rupert",
             "ttl": "That thing I was on about last night. Read this — it's not a conspiracy site, it's Aeon. They've literally built a religion and no one noticed 🍺",
-            "snip": "He's right. They have. And no one noticed.",
-            "tag": "Morning",
+            "snip": "From the spare room. He can't sleep either.",
+            "tag": "3:35am",
             "cls": "c",
             "threadRef": "philosophy-theology",
             "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "The New Atlantis",
+            "ttl": "Is Transhumanism a Religion?",
+            "snip": "Singularity as apocalypse. Super-AI as saviour. Tech-immortality as salvation. The structural mapping is exact.",
+            "tag": "12:40am",
+            "cls": "",
+            "threadRef": "philosophy-theology",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Read these when you sober up. [2 links]",
+            "snip": "2 more for the 'must read' pile.",
+            "tag": "1:14am",
+            "cls": "",
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
+          },
+          {
+            "src": "Dev",
+            "ttl": "'Own nothing, control everything.' Once ownership is a conditional entry on a programmable ledger, it can be revoked in microseconds. No appeal.",
+            "snip": "He does this. Sends the links, then sends the punchline. The frenzy.",
+            "tag": "1:15am",
+            "cls": "",
+            "type": "flavour"
           }
         ]
       }
@@ -7763,7 +7798,7 @@
         "cards": [
           {
             "src": "George → Family Group",
-            "ttl": "Here are the 2030 AI jobs 💪 instagram.com/kekoamac/p/DW4-OM4imxU",
+            "ttl": "Here are the 2030 AI jobs 💪 instagram.com/p/DW4-OM4imxU",
             "snip": "Twenty-eight ways of saying 'we don't know either' in a carousel format.",
             "tag": "11:14pm",
             "cls": "",
@@ -8045,10 +8080,11 @@
           "turn": 8
         },
         {
-          "text": "ESCkey — Substack",
-          "url": "https://escapekey.substack.com",
+          "text": "ESCkey — The Architecture Is The Trap",
+          "url": "https://escapekey.substack.com/p/the-architecture-is-the-trap-7da",
           "src": "simon",
-          "turn": 8
+          "turn": 8,
+          "snip": "The consultation is theatre. The pilots are deployment. The architecture is the trap. Can this really be the work of one man?"
         },
         {
           "text": "The Ethical Skeptic — Master Exothermic Core-Mantle Decoupling",
@@ -8227,7 +8263,7 @@
         },
         {
           "text": "Instagram — @kekoamac: '28 future jobs that AI will create'",
-          "url": "https://www.instagram.com/kekoamac/",
+          "url": "https://www.instagram.com/p/DW4-OM4imxU/",
           "src": "simon",
           "turn": "6b",
           "snip": "AI Auditor. Digital Twin Engineer. Post-Work Coach. Twenty-eight ways of saying 'we don't know either' in a carousel format."
@@ -8238,6 +8274,13 @@
           "src": "simon",
           "turn": "6b",
           "snip": "3.9 million AI jobs by 2035. Page 94: 'did not investigate the negative effects of AI technologies through the displacement of other occupations.' They only modelled the upside."
+        },
+        {
+          "text": "Policy Horizons Canada — Exploring Biodigital Convergence",
+          "url": "https://horizons.service.canada.ca/en/2020/02/11/exploring-biodigital-convergence",
+          "src": "rupert",
+          "turn": "6c",
+          "snip": "The Canadian government published a paper about merging biology with digital technology. Not a leak. A PDF with a foreword from the Director General. Nobody noticed."
         }
       ]
     },
@@ -8384,6 +8427,20 @@
             "date": "25 March 2027",
             "body": "<p>The Bank of England activated Britcoin on 22 March. A sovereign digital currency deployed across 2.1 million payment terminals throughout the UK in under five weeks.</p><p>Sceptics may suggest the timeline is impossible. The engineering alone — biometric enrolment, real-time settlement, cross-border interoperability — would take years.</p><p>And they would be correct. It did take years.</p><p>What emerged last month was not improvised. It was not reactive. It was the product of a quiet, methodical programme of contingency planning that began in 2024, accelerated after the collapse of Silicon Valley Bank, and drew on co-ordinated work by the Bank for International Settlements, the European Central Bank, and seventeen national central banks.</p><p>“We always knew this capability would be needed in a crisis scenario,” said Laura Catterick, Director of Resilience & Cyber at UK Finance, in her first public comments since activation. “The question was never if. It was when.”</p><p>The speed of deployment rested on three pillars. First, a BIS-standardised settlement protocol developed across participating central banks between 2024 and 2026, allowing cross-border routing without bilateral agreements. Second, a firmware integration programme with major terminal manufacturers — Verifone, Ingenico, and PAX Technology — that embedded dormant service containers into routine security updates throughout 2026. Third, a biometric authentication framework designed to activate only upon regulatory instruction.</p><p>Much of the groundwork was validated through Cyber Polygon, the annual cyber-resilience exercise co-ordinated by the World Economic Forum’s Centre for Cybersecurity. The 2025 exercise, which simulated a cascading failure across European payment networks, tested exactly the rapid-activation protocols that Britcoin now relies on. Participants included the Bank of England, the ECB, and several of the terminal manufacturers involved in the firmware programme.</p><p>David Postings, Chief Executive of UK Finance, described the activation as “the most significant operational achievement in the history of UK payments infrastructure.” He said the co-ordination between regulators, banks, and terminal manufacturers had been “exceptional at every level” and reflected years of scenario planning through initiatives including the Joint Fraud Taskforce and the Payment Systems Regulator’s resilience framework.</p><p>Critics have seized on the pre-installation of terminal firmware as evidence of foreknowledge. Ms Catterick dismissed this. “Contingency infrastructure is, by definition, built before the contingency. We do not wait for storm surges to design flood barriers.”</p><p>The comparison is apt. Britain’s CBDC programme now stands as perhaps the most successful example of multinational financial co-ordination since Bretton Woods. Twelve countries have activated compatible systems in the six weeks since the attacks. Settlement between BC and the digital euro is already live. Singapore, Japan, and Canada are expected to join the BIS interoperability framework in the coming weeks.</p><p>For consumers, the transition has been largely seamless. Britcoin wallets, accessible through ARC registration, process tap-to-pay transactions in under 400 milliseconds — faster than existing contactless. Transaction limits of £200 per device per week have drawn some complaint, but the Treasury has indicated these are interim measures tied to the Emergency Payments Mandate and subject to review.</p><p>“We built it for an emergency,” Ms Catterick said. “But we built it with the future in mind, for the hyper-connected world we live in. A system that is more secure and more adaptable, with programmable payments, secure biometric authentication, automated tax settlement and real-time welfare distribution. What began as crisis response has become the foundation of Britain’s next financial infrastructure. We are already building on it.”</p>"
           }
+        },
+        {
+          "text": "ESCkey — The Clearinghouse Protocol",
+          "url": "https://escapekey.substack.com/p/the-clearinghouse-protocol",
+          "src": "dev",
+          "turn": "6c",
+          "snip": "Crisis creates the pretext for intermediation. Intermediation enables conditionality. Conditionality delivers control."
+        },
+        {
+          "text": "ESCkey — The Unified Ledger",
+          "url": "https://escapekey.substack.com/p/the-unified-ledger",
+          "src": "dev",
+          "turn": "6c",
+          "snip": "Every country enters the system through a different door — crisis, development, trade, voluntary adoption. Every door leads to the same system."
         }
       ]
     },
@@ -8397,6 +8454,20 @@
           "src": "rupert",
           "turn": "6c",
           "snip": "Singularity as apocalypse. Super-AI as saviour. Tech-immortality as salvation. They swapped God for a computer."
+        },
+        {
+          "text": "Max More — In Praise of the Devil",
+          "url": "https://conspiracyarchive.com/2014/01/22/max-more-in-praise-of-the-devil/",
+          "src": "rupert",
+          "turn": "6c",
+          "snip": "The founder of the Extropy Institute wrote an essay depicting Lucifer as humanity's first benefactor. It's not satire."
+        },
+        {
+          "text": "The New Atlantis — Is Transhumanism a Religion?",
+          "url": "https://thenewatlantis.com/publications/is-transhumanism-a-religion",
+          "src": "simon",
+          "turn": "6c",
+          "snip": "Singularity as apocalypse. Super-AI as saviour. Tech-immortality as salvation. The structural mapping is exact."
         }
       ]
     },

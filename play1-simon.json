@@ -1358,7 +1358,7 @@
           "t": "‘That was ten years ago. They’ve come round to your way of thinking now.’"
         },
         {
-          "t": "‘Have they?. Everyone thought I was mental. They get some of it now, they think I’m slightly less mental. But I’ve never had an apology. No one’s ever said <em>you were right, Rupert</em>. Know what I learned? Most people just don't want to know. Ignorance is bliss. And those that have started to wake up still don't want to do anything.’"
+          "t": "‘Have they? Everyone thought I was mental. They get <em>some</em> of it now, they think I’m <em>slightly</em> less mental. But I’ve never had an apology. No one’s ever said <em>you were right, Rupert</em>. Know what I learned? Most people just don't want to know. Ignorance is bliss. And those that have started to wake up still don't want to do anything.’"
         },
         {
           "t": "‘At least there’s more awareness now. You can’t fight something if you don’t know it exists, well, refuse to accept it might even exist.’"
@@ -7931,7 +7931,7 @@
         "cards": [
           {
             "src": "Dev",
-            "ttl": "Read these when you sober up. [2 links]",
+            "ttl": "Read these 2 ESCkey links when you sober up.",
             "snip": "2 more for the 'must read' pile.",
             "tag": "1:14am",
             "cls": "",

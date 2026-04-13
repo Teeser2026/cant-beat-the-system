@@ -7721,16 +7721,16 @@
         "cards": [
           {
             "src": "Vince",
-            "ttl": "Happy birthday you old git!! 🎂🍺 Parklife soon yeah? Miss you mate",
-            "snip": "The only bloke I know who still texts like it's 2007. Miss him too.",
+            "ttl": "Happy birthday you old git!! 🎂🍺 You guys must come over soon x",
+            "snip": "We keep saying we'll get the families together — we keep not doing it.",
             "tag": "Birthday",
             "cls": "",
             "type": "flavour"
           },
           {
             "src": "Mum (Sue)",
-            "ttl": "Happy Birthday darling. 52!! Where did the time go. Dad says happy birthday too but you know what he's like with his phone. Love you lots xxxxx",
-            "snip": "Five kisses. Always five.",
+            "ttl": "Happy Birthday my darling. 52!! Where did the time go. I'll call you later. Love you lots xxxxx",
+            "snip": "Five kisses. She probably still thinks of me as five years old half the time. Where does the time go?",
             "tag": "Birthday",
             "cls": "",
             "type": "flavour"
@@ -7741,33 +7741,46 @@
         "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Simon → Family Group",
-            "ttl": "28 future AI jobs that definitely won't be done by AI within 18 months 😂",
-            "snip": "Two beers in a taxi. The group chat never stood a chance.",
+            "src": "Ben → Parklife",
+            "ttl": "Happy birthday you old bastard",
+            "snip": "Love you too bro!",
+            "tag": "Birthday",
+            "cls": "",
+            "type": "flavour"
+          },
+          {
+            "src": "Giles → Parklife",
+            "ttl": "Have a good one mate — love to Amy too x",
+            "snip": "Perhaps I should organise a party with this lot — I'm 52 not 92.",
+            "tag": "Birthday",
+            "cls": "",
+            "type": "flavour"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "George → Family Group",
+            "ttl": "Here are the 2030 AI jobs 💪 instagram.com/kekoamac/p/DW4-OM4imxU",
+            "snip": "Twenty-eight ways of saying 'we don't know either' in a carousel format.",
             "tag": "11:14pm",
             "cls": "",
             "type": "flavour"
           },
           {
             "src": "Simon → Family Group",
-            "ttl": "[link] UK Gov: 3.9m AI jobs by 2035. Page 94: 'did not investigate displacement.' You couldn't make it up.",
-            "snip": "Nobody will read page 94. Nobody ever reads page 94.",
+            "ttl": "[link] Read this about the 3.9m jobs the Gov are promising — section 6: 'it did not investigate the negative effects of AI technologies through the displacement of other occupations' 🤡",
+            "snip": "Nobody will read section 6. Nobody ever reads section 6.",
             "tag": "11:16pm",
             "cls": "",
             "type": "thread-notify",
             "threadRef": "science-technology"
           },
           {
-            "src": "Simon → Family Group",
-            "ttl": "[link] Oracle fires 30,000 by email at 6am. Stock up 5%. The future of work, ladies and gentlemen.",
-            "snip": "Three links in two minutes. Amy will have something to say about this in the morning.",
-            "tag": "11:17pm",
-            "cls": "",
-            "type": "flavour"
-          },
-          {
             "src": "Amy → Family Group",
-            "ttl": "Simon's had four beers ignore him 🙄😂",
+            "ttl": "You know how to party on your birthday 😂",
             "snip": "Fair.",
             "tag": "11:18pm",
             "cls": "",
@@ -8218,6 +8231,13 @@
           "src": "simon",
           "turn": "6b",
           "snip": "AI Auditor. Digital Twin Engineer. Post-Work Coach. Twenty-eight ways of saying 'we don't know either' in a carousel format."
+        },
+        {
+          "text": "UK Gov DSIT — AI Skills for Life and Work: Labour Market and Skills Projections",
+          "url": "https://www.gov.uk/government/publications/ai-skills-for-life-and-work-labour-market-and-skills-projections/ai-skills-for-life-and-work-labour-market-and-skills-projections",
+          "src": "simon",
+          "turn": "6b",
+          "snip": "3.9 million AI jobs by 2035. Page 94: 'did not investigate the negative effects of AI technologies through the displacement of other occupations.' They only modelled the upside."
         }
       ]
     },

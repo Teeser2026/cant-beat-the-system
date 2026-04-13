@@ -7477,10 +7477,10 @@
         "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Dev",
-            "ttl": "[Amy’s aurora photo] Thoughts?",
-            "snip": "You know they can make those?",
-            "tag": "",
+            "src": "Simon → Dev",
+            "ttl": "[Amy's aurora photo] Thoughts?",
+            "snip": "I can barely remember last week, let alone 2024.",
+            "tag": "14:22",
             "cls": "",
             "isnew": true,
             "type": "flavour"

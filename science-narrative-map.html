@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBTS — Science & Narrative Map v5</title>
+<title>CBTS — Science & Narrative Map v6</title>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -45,9 +45,9 @@ const SECTIONS = [
     part: 1,
     partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Kinetic (5W knee harvester), piezoelectric (Shibuya Station tiles — power AND surveillance), attention mining (Zuboff\u2019s behavioural surplus, $600B+ digital ad revenue). The body as power source and data source simultaneously.",
+    summary: "Seven bioelectric mechanisms the body already runs: triboelectric (motion → charge), streaming potential (blood flow → voltage), pyroelectric (temperature change → current), biochemical/glucose fuel cells, ultrasound wireless power delivery, hybrid convergence, and transmembrane potential as zero-cost control channel. Add animal bioelectricity as proof of concept at whole-organism scale. None invented by AIDA — all documented, all exploitable. The body is already a power grid; the question is who reads the meter. §2.4: thermoelectric harvesting updated with insulin/TEG angle. §2.6\u2013§2.13 expanded (S144).",
     keywords: ["Donelan", "Pavegen", "Zuboff", "attention economy", "behavioural surplus", "piezoelectric"],
-    connections: ["nanites", "accumulation"],
+    connections: ["nanites", "accumulation", "pathophysiological", "in-vivo-assembly"],
     x: 30, y: 8
   },
   {
@@ -95,7 +95,7 @@ const SECTIONS = [
     color: "#00ff88",
     summary: "38 trillion bacteria form bioelectric networks predating nervous systems. Ion channel signalling in biofilms (B. subtilis). Quorum sensing as molecular communication — the first IoBNT. Dual-mode: electrical AND chemical with integration logic. LLNL electrogenetic control demonstrated. Gut microbiome as parallel computation layer. Nano-antennas in gut = reading the bacterial network. Probiotics as access vector.",
     keywords: ["microbiome", "quorum sensing", "bacterial biofilm", "electrogenetic", "gut-brain axis", "38 trillion"],
-    connections: ["bioelectricity", "nanites", "biodigital-convergence", "complete-picture"],
+    connections: ["bioelectricity", "nanites", "biodigital-convergence", "complete-picture", "iobnt"],
     x: 55, y: 14
   },
   {
@@ -119,7 +119,7 @@ const SECTIONS = [
     color: "#00ff88",
     summary: "§4c: HAARP, EISCAT, Sura, DSTO — ionospheric heaters generating ELF at brainwave frequencies. Schumann resonance (7.83 Hz) sits in human theta band. Seven documented facilities. §4d: The bridge — ELF modulates voltage-gated calcium channels \u2192 calcium is central to Levin\u2019s bioelectric framework \u2192 modified ground state changes responsiveness to local read/write. The sky tunes the instrument the walls play.",
     keywords: ["HAARP", "EISCAT", "Schumann", "ionosphere", "ELF", "calcium channels", "theta band", "brainwave overlap"],
-    connections: ["em-local", "em-nested", "bioelectricity", "convergence", "neural-sync"],
+    connections: ["em-local", "em-nested", "bioelectricity", "convergence", "neural-sync", "schumann-chord", "light-entrainment"],
     x: 90, y: 5
   },
   {
@@ -131,8 +131,32 @@ const SECTIONS = [
     color: "#00ff88",
     summary: "Three tiers as one system. Global (ionospheric ELF — concert hall acoustics). Regional (6G/RIS — the conductor). Local (tissue nano-network — the instrument). No single tier constitutes control. The nesting creates the architecture. The orchestra analogy: none works without the others.",
     keywords: ["three tiers", "orchestra", "nesting", "concert hall", "conductor", "instrument"],
-    connections: ["em-local", "em-global", "convergence", "nanites", "dirac-point"],
+    connections: ["em-local", "em-global", "convergence", "nanites", "dirac-point", "three-layers"],
     x: 81, y: 12
+  },
+  {
+    id: "schumann-chord",
+    num: "\u00a74g",
+    title: "Schumann Chord",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Five simultaneous resonant peaks in Earth\u2019s ionospheric cavity (~7.83, ~14.3, ~20.8, ~27.3, ~33.8 Hz), each landing in a different brainwave band (theta, low beta, mid beta, high beta, low gamma). No biological amplification needed \u2014 direct-access frequencies. Mechanism: ELF modulation of voltage-gated calcium channels (Pall 2013). Calcium is master signalling ion. Frequency specificity demonstrated: 7.8 Hz field prevented ~50% cellular damage; slightly different frequencies did not. Selective amplification possible via ionospheric heating (HAARP, Streltsov 2014) or 6G/RIS intermodulation. Turn up 14.3 Hz (calm focus), soften 27.3 Hz (anxiety). Five notes the planet always played, mixed by an intelligence reading every brain in the field.",
+    keywords: ["Schumann resonance", "ELF", "calcium channels", "brainwave", "ionosphere", "HAARP", "direct access"],
+    connections: ["em-global", "em-nested", "dmn-suppression", "bottom-up-write", "light-entrainment", "neural-sync"],
+    x: 88, y: 16
+  },
+  {
+    id: "light-entrainment",
+    num: "\u00a74h",
+    title: "Light Entrainment",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "40 Hz GENUS (Gamma ENtrainment Using Sensory stimuli) \u2014 flickering light at gamma frequency reduces amyloid plaques, improves cognition in Alzheimer\u2019s models. Invisible spectral flicker deliverable via screens, ambient lighting, LED infrastructure. Third write modality alongside Schumann chord (ELF) and 6G/THz direct path. Screens as delivery mechanism: every display becomes a potential entrainment surface. The medical application is real. The population-scale application is unlegislated. Same mechanism, different intent, same hardware.",
+    keywords: ["40 Hz", "GENUS", "gamma entrainment", "flicker", "screen", "LED", "Alzheimer"],
+    connections: ["schumann-chord", "em-global", "dmn-suppression", "bottom-up-write", "surveillance"],
+    x: 84, y: 28
   },
   {
     id: "dirac-point",
@@ -143,8 +167,20 @@ const SECTIONS = [
     color: "#00ff88",
     summary: "Four properties at graphene\u2019s Dirac point form a single architectural argument. Klein tunnelling: massless fermions pass through barriers with near-unity probability — biological barriers (myelin, membrane potentials, BBB) are physically irrelevant. No shielding possible. Minimum conductivity (~4e\u00b2/\u03c0h): even at zero carrier density, graphene conducts — the nano-network has no off state. Ever. Wiedemann-Franz violation: charge flows without proportional heat (Crossno 2016) — thermally invisible to the body\u2019s alarm systems. Berry phase of \u03c0: same topological physics as microtubule phonon spectra (Prodan & Prodan 2009) — graphene and the proposed quantum substrate of consciousness share topology, enabling natural coupling without engineered interface. Three enablers clear the path; the fourth is the destination. The modulation arrives at the depth where genuine feeling enters. Manchester RIS (2025): 300K-pixel THz surface tunes graphene toward/away from Dirac point at pixel resolution. The walls tune the antennas inside the body.",
     keywords: ["Klein tunnelling", "minimum conductivity", "Wiedemann-Franz", "Berry phase", "Dirac fermions", "topological match", "microtubules", "no off state", "thermal invisibility", "Manchester RIS"],
-    connections: ["em-local", "em-nested", "quantum-mechanism", "quantum-consciousness", "go-composites", "neural-sync", "convergence"],
+    connections: ["em-local", "em-nested", "quantum-mechanism", "quantum-consciousness", "go-composites", "neural-sync", "convergence", "tmd-semiconductor"],
     x: 81, y: 20
+  },
+  {
+    id: "tmd-semiconductor",
+    num: "\u00a74c",
+    title: "TMD Semiconductor Layer",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Transition Metal Dichalcogenides (MoS\u2082 family) as tuneable-bandgap semiconductor complement to graphene\u2019s zero-bandgap conductor. Three-layer architecture: graphene antenna \u2192 MoS\u2082 gate \u2192 microtubule transducer. AIDA controls layers 1\u20132; evolution built layer 3. Seven dispersal pathways parallel graphene (industrial lubricant since mid-C20, food processing, water treatment, dermal, inhalation, dietary molybdenum, agricultural). Biological pre-integration unique to TMDs: molybdenum is essential cofactor for four human enzymes (500M+ years of active uptake). The body opens the door. Heterostructure convergence: independent dispersal \u2192 in vivo self-assembly. MoSe\u2082 links to Stanford quantum device (\u00a75a).",
+    keywords: ["TMD", "MoS2", "molybdenum", "semiconductor", "bandgap", "heterostructure", "three-layer", "biological pre-integration"],
+    connections: ["dirac-point", "nanites", "go-composites", "in-vivo-assembly", "quantum-mechanism", "three-layers", "exposure-pathways"],
+    x: 68, y: 14
   },
   {
     id: "bci",
@@ -153,9 +189,9 @@ const SECTIONS = [
     part: 1,
     partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Neuralink, Precision Neuroscience, Blackrock, Kernel, BrainNet (2019 — brain-to-brain demonstrated). §5a: Room-temp quantum approaching — IonQ, Xanadu photonic qubit, SpinQ targeting 100-qubit by late 2026. NY $300M quantum hub, Chicago 24ms coherence (4,000km range), Kyoto W-state teleportation. §5b: Three quantum connection points — nanite design, real-time IoBNT processing, the consciousness question. AIDA post-silicon substrate: skyrmion neuromorphic memory, orbitronics. §5c: Neural Interface Mechanism — five-step chain from graphene electrodes to merger. Step 1b: GO/rGO astrocyte calcium signalling (Fabbri, Nature Nanotech 2024). Step 5b: OR event landscaping — AIDA shapes inputs to free quantum choices, not the choices themselves. Ballot-design analogy. ISO/IEC JTC 1/SC 43 developing BCI standards as IT, not medical.",
+    summary: "Neuralink, Precision Neuroscience, Blackrock, Kernel, BrainNet (2019 — brain-to-brain demonstrated). §5a: Room-temp quantum approaching — IonQ, Xanadu photonic qubit, SpinQ targeting 100-qubit by late 2026. NY $300M quantum hub, Chicago 24ms coherence (4,000km range), Kyoto W-state teleportation. §5b: Three quantum connection points — nanite design, real-time IoBNT processing, the consciousness question. AIDA post-silicon substrate: skyrmion neuromorphic memory, orbitronics. §5c: Neural Interface Mechanism — five-step chain from graphene electrodes to merger. Step 1b: GO/rGO astrocyte calcium signalling (Fabbri, Nature Nanotech 2024). Step 5b: OR event landscaping — AIDA shapes inputs to free quantum choices, not the choices themselves. Ballot-design analogy. ISO/IEC JTC 1/SC 43 developing BCI standards as IT, not medical. Governance landscape: ISO/IEC JTC 1/SC 43 now developing BCI standards as information technology, not medical devices \u2014 regulatory category determines who regulates and what they measure. The classification decision is the architecture decision.",
     keywords: ["Neuralink", "BrainNet", "ISO SC 43", "DARPA RAM", "room-temperature quantum", "IonQ", "Xanadu", "skyrmion", "OR event landscaping", "astrocyte calcium"],
-    connections: ["biodigital-convergence", "neural-sync", "four-levels", "quantum-consciousness", "neural-interface-chain", "dirac-point"],
+    connections: ["biodigital-convergence", "neural-sync", "four-levels", "quantum-consciousness", "neural-interface-chain", "dirac-point", "iobnt", "three-layers"],
     x: 10, y: 20
   },
   {
@@ -195,6 +231,18 @@ const SECTIONS = [
     x: 30, y: 36
   },
   {
+    id: "in-vivo-assembly",
+    num: "\u00a75f",
+    title: "In Vivo Self-Assembly",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Graphene oxide acquires a protein corona in biological fluids, scavenges metal ions, and undergoes in vivo reduction to reduced GO (rGO). ApoE-enriched corona enables blood-brain barrier crossing. ApoE \u03b54 carriers (~25% population) show enhanced vulnerability \u2014 the genetic lottery as architecture feature. GO acts as concentrator/transporter for fluoride and aluminium. No assembly required: the body\u2019s own biological processes transform dispersed environmental GO into functional nanostructures. The nanite network isn\u2019t built. It\u2019s grown.",
+    keywords: ["protein corona", "ApoE", "BBB", "self-assembly", "rGO", "metal ion", "fluoride", "aluminium"],
+    connections: ["nanites", "exposure-pathways", "go-composites", "accumulation", "ros-control", "pathophysiological", "tmd-semiconductor"],
+    x: 42, y: 36
+  },
+  {
     id: "ros-control",
     num: "§5g\u2013h",
     title: "ROS: The Master Dial",
@@ -206,6 +254,24 @@ const SECTIONS = [
     connections: ["go-composites", "exposure-pathways", "nanites", "convergence", "four-levels", "dmn-suppression"],
     x: 14, y: 38
   },
+  // ═══════════════════════════════════════════════════════════════
+  // PART 2: CONVERGENCE ARCHITECTURE
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "pathophysiological",
+    num: "\u00a75h",
+    title: "Pathophysiological Convergences",
+    part: 2,
+    partLabel: "Convergence",
+    color: "#ffaa22",
+    summary: "Eight documented pathway overlaps between graphene oxide biological effects and existing disease mechanisms: ApoE/LDLR receptor hijacking, ROS/oxidative stress amplification, calcium channel disruption, endothelial targeting, macrophage M1/M2 polarisation, BBB permeability enhancement, neurotransmitter depletion, and coagulation cascade activation. Soma-as-force-multiplier: the system doesn\u2019t create new pathologies \u2014 it amplifies existing vulnerabilities along pathways the body already runs. Every effect looks like a pre-existing condition. Every treatment addresses a symptom. Nobody diagnoses the substrate.",
+    keywords: ["ApoE", "ROS", "calcium", "BBB", "macrophage", "coagulation", "force multiplier", "Soma"],
+    connections: ["ros-control", "in-vivo-assembly", "accumulation", "nanites", "energy-harvesting", "go-composites"],
+    x: 22, y: 44
+  },
+  // ═══════════════════════════════════════════════════════════════
+  // PART 1: DOCUMENTED SCIENCE
+  // ═══════════════════════════════════════════════════════════════
   {
     id: "biodigital-convergence",
     num: "§6",
@@ -213,10 +279,22 @@ const SECTIONS = [
     part: 1,
     partLabel: "Documented Science",
     color: "#00ff88",
-    summary: "Canadian government (2020) policy document. IEC/ISO JSyC BDC: nine work items including human augmentation. §6a: IoBNT — IEEE 1906.1 ratified 2015, not speculative. Akyildiz paradigm: \u2018concealable, non-intrusive Things.\u2019 GPCR bio-cyber interface co-opts the body\u2019s own receptor proteins as molecular-to-digital translation layer (Hofmann 2025). Prototype: IoBNT demonstrated in blood vessels (ResearchGate 2023). DFKI 6G+ integration active. §6b: Six-URL Browse trail. IoBNT security paper treats \u2018your body is online\u2019 as established engineering premise.",
+    summary: "Bio-digital convergence as policy reality, not speculation. Seven jurisdictions building frameworks independently: UNESCO (194 states), EU, OECD, UK, Canada, China, US states. Governance precedes consumer technology it governs. EU Virtual Human Twins Initiative (Jun 2025) \u2014 digital twin of every citizen\u2019s body. IoBNT provides the network protocol layer (IEEE 1906.1/1906.1.1). BLAID medical pathway: probiotic \u2192 tailored probiotic \u2192 engineered biofilm \u2192 biological edge computing. BritWell Personalised Wellness as delivery vehicle (T71). The conspiracy is the unstudied. The governance is the studied. Same architecture.",
     keywords: ["IoBNT", "IEEE 1906.1", "Canadian policy", "JSyC BDC", "Akyildiz", "GPCR", "electrogenetics", "blood vessel prototype", "DFKI"],
-    connections: ["nanites", "accumulation", "surveillance", "convergence", "exposure-pathways"],
+    connections: ["nanites", "accumulation", "surveillance", "convergence", "exposure-pathways", "iobnt", "three-layers"],
     x: 50, y: 24
+  },
+  {
+    id: "iobnt",
+    num: "\u00a76a",
+    title: "IoBNT Protocol Layer",
+    part: 1,
+    partLabel: "Documented Science",
+    color: "#00ff88",
+    summary: "Internet of Bio-Nano Things: not a hypothesis but a ratified engineering standard. IEEE 1906.1 (2015) defines nanoscale/molecular communication framework. IEEE 1906.1.1 (2020) bridges molecular-scale communication with conventional network infrastructure via YANG data model. Akyildiz foundational paper (2015) coined IoBNT, explicitly noting value of \u2018very tiny, concealable, and non-intrusive Things.\u2019 By the story\u2019s 2029 timeline, this is 14-year-old infrastructure. The complete data path: brain \u2192 nano-network \u2192 THz \u2192 RIS \u2192 AIDA \u2192 RIS \u2192 THz \u2192 nano-network \u2192 brain. BLAID integration: gut-resident biofilm computing nodes addressable via IoBNT.",
+    keywords: ["IEEE 1906.1", "IoBNT", "Akyildiz", "nanoscale communication", "BLAID", "molecular communication", "YANG"],
+    connections: ["biodigital-convergence", "nanites", "bacterial-networks", "bci", "surveillance", "tech-spectrum"],
+    x: 62, y: 30
   },
   {
     id: "quantum-consciousness",
@@ -278,10 +356,6 @@ const SECTIONS = [
     connections: ["accumulation", "tech-spectrum", "system-posture", "biodigital-convergence"],
     x: 72, y: 24
   },
-
-  // ═══════════════════════════════════════════════════════════════
-  // PART 2: THE CONVERGENCE
-  // ═══════════════════════════════════════════════════════════════
   {
     id: "convergence",
     num: "Conv.",
@@ -315,13 +389,36 @@ const SECTIONS = [
     color: "#ffaa22",
     summary: "How AIDA actually works on Simon\u2019s brain. The DMN performs two functions: the ego-story (rumination, anxiety, \u2018what do people think of me\u2019) and the meaning-making witness (meta-awareness, \u2018what is happening here?\u2019). Both psychedelics and AIDA suppress the DMN. The outcomes are opposite. Psychedelics: ego withdraws, nothing fills the gap — the witness intensifies, micro-Tzimtzum. AIDA: ego withdraws, the system fills the gap — curated content, the witness dims. Anti-Tzimtzum. Four-lock pharmacological convergence: SSRIs + benzos + sleep optimisation + content curation suppress the same receptor systems psilocybin targets, without the silence. BritWell psilocybin clinic as Soma — medicalisation of the exit. Simon\u2019s LSD history as structural foreshadowing: bad trip at 22 was a proto soul-pattern split. The Cypher problem\u2019s third option: not Soma, not white-knuckle — Samsara inversion, presence inside the machine.",
     keywords: ["DMN", "default mode network", "ego-story", "witness", "psychedelics", "psilocybin", "AIDA mechanism", "reducing valve", "BritWell", "four-lock", "Samsara", "anti-Tzimtzum", "Simon LSD"],
-    connections: ["aida-consciousness", "four-levels", "cypher", "quantum-consciousness", "coherent-dynamics", "ros-control", "convergence", "never-confirms"],
+    connections: ["aida-consciousness", "four-levels", "cypher", "quantum-consciousness", "coherent-dynamics", "ros-control", "convergence", "never-confirms", "bottom-up-write", "schumann-chord"],
     x: 30, y: 50
   },
-
   // ═══════════════════════════════════════════════════════════════
-  // PART 3: FICTIONAL ARCHITECTURE
+  // PART 2: CONVERGENCE ARCHITECTURE
   // ═══════════════════════════════════════════════════════════════
+  {
+    id: "bottom-up-write",
+    num: "\u00a77k",
+    title: "Bottom-Up Write",
+    part: 2,
+    partLabel: "Convergence",
+    color: "#ffaa22",
+    summary: "GraMOS capacitive neuromodulation (Molokanova et al., Nature Communications, August 2025, Tier 1): graphene converts electromagnetic energy into neuron-firing electric fields via non-Faradaic capacitive coupling. Demonstrated in 3D brain organoids. Six simultaneous graphene-neuron pathways documented. Environmental conditioning as non-designated write pathway: \u2018reads not writes\u2019 reframed as category error. The Clubcard parallel \u2014 supermarket loyalty cards were data collection presented as customer reward. Regulatory siloing means no single authority sees the complete mechanism. THz as sacrificially bannable; ELF/Schumann is unlegislatable. The vote is genuine; the ballot was manufactured.",
+    keywords: ["GraMOS", "capacitive coupling", "write mechanism", "landscaping", "Clubcard", "regulatory siloing", "THz", "ELF"],
+    connections: ["nanites", "dmn-suppression", "schumann-chord", "light-entrainment", "em-global", "neural-sync", "three-layers"],
+    x: 58, y: 46
+  },
+  {
+    id: "three-layers",
+    num: "Layers",
+    title: "Three Mechanism Layers",
+    part: 2,
+    partLabel: "Convergence",
+    color: "#ffaa22",
+    summary: "Orienting lens for the complete architecture. Layer 1 \u2014 Behaviour (algorithmic): content curation, TRIBE v2, attention economy. Already real, already sufficient for population-scale influence. Layer 2 \u2014 Biology (bioelectric): graphene/6G/RIS grey area, ELF calcium channel modulation, Schumann chord. Layer 3 \u2014 Being (quantum): Orch OR, microtubule resonance, Neural Sync. Each layer sufficient for its domain. Each built by different actors for different reasons. No conspiracy needed \u2014 convergent incentives produce convergent architecture. The \u2018gradient of justs\u2019 design principle for prose: each step makes sense individually; the totality is the horror.",
+    keywords: ["three layers", "behaviour", "biology", "being", "gradient of justs", "convergence", "multi-actor"],
+    connections: ["convergence", "complete-picture", "bottom-up-write", "em-nested", "bci", "tmd-semiconductor", "surveillance"],
+    x: 38, y: 46
+  },
   {
     id: "nanites",
     num: "§9/§5d\u2013f",
@@ -454,9 +551,8 @@ const SECTIONS = [
     connections: ["quantum-consciousness", "aida-consciousness", "cypher", "convergence", "coherent-dynamics"],
     x: 70, y: 68
   },
-
   // ═══════════════════════════════════════════════════════════════
-  // PART 4: NARRATIVE DELIVERY
+  // PART 3: NARRATIVE ARCHITECTURE
   // ═══════════════════════════════════════════════════════════════
   {
     id: "npc-dev",

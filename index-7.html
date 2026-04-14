@@ -5544,7 +5544,7 @@ function goTo(idx) {
 
   // ── PHASE DETECTION — visual skin swap ──
   const phaseNum = (() => {
-    const m = turn.id.match(/^T(\d+)/);
+    const m = String(turn.id).match(/^T?(\d+)/);
     if (!m) return 3;
     const n = parseInt(m[1]);
     if (n <= 20) return 1;

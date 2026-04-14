@@ -173,9 +173,10 @@ body.phase-1 .ticker-bar {
   border-top-color: var(--div);
 }
 body.phase-1 .ticker-label { color: var(--dim); }
-body.phase-1 .t-item { color: var(--dim); }
-body.phase-1 .t-item.warm { color: var(--text); }
-body.phase-1 .t-item.buried { color: var(--dim); opacity: .5; }
+body.phase-1 .t-item { color: var(--dim); opacity: .35; }
+body.phase-1 .t-item.warm { color: #5A4A3A; opacity: .7; }
+body.phase-1 .t-item.cold { color: #3A5A70; opacity: .6; }
+body.phase-1 .t-item.buried { color: var(--faint); opacity: .25; }
 body.phase-1 .t-sep { color: var(--faint); }
 body.phase-1 .choices {
   background: rgba(176,120,96,.04);
@@ -197,8 +198,7 @@ body.phase-1 .cn-main .cn-num { color: var(--dim); }
 body.phase-1 .cn-item .cn-date { color: var(--dim); }
 body.phase-1 .cn-item.current .cn-title { color: var(--warm); }
 /* Phase 1 — ticker colour differentiation */
-body.phase-1 .t-item.alert { color: var(--alert); opacity: .65; }
-body.phase-1 .t-item.cold { color: var(--cold); opacity: .45; }
+body.phase-1 .t-item.alert { color: var(--alert); opacity: .7; }
 /* Phase 1 — song panel */
 body.phase-1 .song {
   background: var(--card);

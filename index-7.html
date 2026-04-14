@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CBTS — Can't Beat The System</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400&display=swap');
 
 :root {
   --bg: #0a0a0c;
@@ -32,6 +32,266 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
+
+/* ═══════════════════════════════════════
+   PHASE 1 — LINEN (T1–T20, pre-Event)
+   Warm cream, domestic, literary
+   ═══════════════════════════════════════ */
+body.phase-1 {
+  --bg: #E8E2D6;
+  --bg-r: #E0DAD0;
+  --text: #3A3630;
+  --dim: #7A756D;
+  --bright: #2E2B27;
+  --lyric: #8A7E6A;
+  --warm: #B07860;
+  --earth: #6A7A52;
+  --cold: #5A7080;
+  --sys: #5A7080;
+  --alert: #A05040;
+  --inner: #B04A42;
+  --faint: #D4D0C8;
+  --div: #C8C4BC;
+  --card: #EDE8E0;
+  --card-b: #DDD8D0;
+  --player: #8A7E6A;
+  --heart-vital: #6A7A52;
+  --heart-fine: #3A3630;
+  --heart-declining: #B07860;
+  --heart-critical: #A05040;
+}
+body.phase-1 .left {
+  background-color: #E8E2D6;
+  background-image: none;
+}
+body.phase-1 .left-bg {
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+}
+body.phase-1 .right {
+  background: var(--bg-r);
+}
+body.phase-1 .econ-bar {
+  background: rgba(218,212,200,.97);
+  border-bottom-color: var(--div);
+}
+body.phase-1 .econ-label { color: var(--dim); }
+body.phase-1 .t-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 6px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-1 .t-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  color: var(--bright);
+}
+body.phase-1 .prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19.5px;
+  line-height: 1.75;
+  color: var(--text);
+}
+body.phase-1 .inner {
+  color: var(--inner);
+  border-left-color: rgba(176,74,66,.2);
+}
+body.phase-1 .lyric {
+  color: var(--lyric);
+  border-left-color: var(--faint);
+}
+body.phase-1 .tab {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 4px;
+}
+body.phase-1 .tab.on { color: var(--bright); border-bottom-color: var(--bright); }
+body.phase-1 .tab:hover:not(.on) { color: var(--dim); }
+body.phase-1 .sec-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  letter-spacing: 3.5px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-1 .card {
+  background: var(--card);
+  border-color: var(--card-b);
+  border-radius: 8px;
+}
+body.phase-1 .card:hover {
+  background: rgba(255,255,255,.5);
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
+}
+body.phase-1 .card .src {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-1 .card .ttl {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  color: var(--bright);
+}
+body.phase-1 .card .snip {
+  font-family: 'Crimson Pro', serif;
+  font-size: 14.5px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-1 .tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+body.phase-1 .ticker-bar {
+  background: var(--bg-r);
+  border-top-color: var(--div);
+}
+body.phase-1 .ticker-label { color: var(--dim); }
+body.phase-1 .t-item { color: var(--dim); }
+body.phase-1 .t-item.warm { color: var(--text); }
+body.phase-1 .t-item.buried { color: var(--dim); opacity: .5; }
+body.phase-1 .t-sep { color: var(--faint); }
+body.phase-1 .choices {
+  background: rgba(176,120,96,.04);
+  border-color: rgba(176,120,96,.12);
+}
+
+/* ═══════════════════════════════════════
+   PHASE 2 — CONCRETE (T21–T29, crisis)
+   Warmth drained. Flat, grey, institutional
+   ═══════════════════════════════════════ */
+body.phase-2 {
+  --bg: #B8B6B2;
+  --bg-r: #B0AEAA;
+  --text: #2E2D2B;
+  --dim: #6E6C6A;
+  --bright: #1E1D1C;
+  --lyric: #7A7876;
+  --warm: #806058;
+  --earth: #5A6A4A;
+  --cold: #5A6878;
+  --sys: #5A6878;
+  --alert: #884040;
+  --inner: #885050;
+  --faint: #A6A4A0;
+  --div: #989694;
+  --card: #C2C0BC;
+  --card-b: #B8B6B2;
+  --player: #7A7876;
+  --heart-vital: #5A6A4A;
+  --heart-fine: #2E2D2B;
+  --heart-declining: #806058;
+  --heart-critical: #884040;
+}
+body.phase-2 .left {
+  background-color: #B8B6B2;
+  background-image: none;
+}
+body.phase-2 .left-bg {
+  opacity: 0.04;
+}
+body.phase-2 .right {
+  background: var(--bg-r);
+}
+body.phase-2 .econ-bar {
+  background: rgba(168,166,162,.97);
+  border-bottom-color: var(--div);
+}
+body.phase-2 .econ-label { color: var(--dim); }
+body.phase-2 .t-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 6px;
+  color: var(--dim);
+  opacity: .5;
+}
+body.phase-2 .t-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  color: var(--bright);
+}
+body.phase-2 .prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19.5px;
+  line-height: 1.75;
+  color: var(--text);
+}
+body.phase-2 .inner {
+  color: var(--inner);
+  border-left-color: rgba(136,80,80,.15);
+}
+body.phase-2 .tab {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 4px;
+}
+body.phase-2 .tab.on { color: var(--bright); border-bottom-color: var(--bright); }
+body.phase-2 .sec-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  letter-spacing: 3.5px;
+  color: var(--dim);
+  opacity: .5;
+}
+body.phase-2 .card {
+  background: var(--card);
+  border-color: var(--card-b);
+  border-radius: 6px;
+}
+body.phase-2 .card:hover {
+  background: rgba(200,198,194,.6);
+  box-shadow: none;
+}
+body.phase-2 .card .src {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+  opacity: .5;
+}
+body.phase-2 .tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+body.phase-2 .ticker-bar {
+  background: var(--bg-r);
+  border-top-color: var(--div);
+}
+body.phase-2 .choices {
+  background: rgba(128,96,88,.04);
+  border-color: rgba(128,96,88,.1);
+}
+
+/* ═══════════════════════════════════════
+   PHASE TRANSITIONS — the room changes
+   ═══════════════════════════════════════ */
+body, .left, .right, .econ-bar, .ticker-bar,
+.card, .tab, .sec-label, .t-date, .t-title,
+.prose, .inner, .lyric, .tag {
+  transition: background 1.5s ease, color 1.5s ease,
+              border-color 1.5s ease, opacity 1.5s ease;
+}
 
 html, body {
   height: 100%;
@@ -2929,13 +3189,11 @@ body.game-active .ticker-bar { display: flex; }
     <div class="tabs">
       <button class="tab on" data-p="signal">Signal</button>
       <button class="tab" data-p="threads">Threads</button>
-      <button class="tab" data-p="notes">Notes</button>
       <button class="tab" data-p="songs">Songs</button>
     </div>
     <div class="panels">
       <div class="panel on" data-p="signal" id="signal-panel"></div>
       <div class="panel" data-p="threads" id="threads-panel"></div>
-      <div class="panel" data-p="notes" id="notes-panel"></div>
       <div class="panel" data-p="songs" id="songs-panel"></div>
     </div>
   </div>
@@ -3000,7 +3258,6 @@ async function loadGame() {
 
     // Init
     renderThreads();
-    renderNotes();
     updateTicker(1); // Seed ticker with T1 pool before first goTo
     goTo(0);
 
@@ -3207,13 +3464,10 @@ function renderSignal(turnId) {
         html += `<div class="card-thread-ref" data-thread="${card.threadRef}">NEW THREAD · ${label}</div>`;
       } else if (type === 'essential') {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
-        html += `<div class="card-auto-saved">Saved to notes</div>`;
+        // essential card — no save label
         essentialCards.push({ key, src: card.src, ttl: card.ttl, turnId });
       } else if (type === 'song') {
         html += `<div class="card-auto-saved" style="color:var(--lyric)">Saved to songs</div>`;
-      } else {
-        // flavour — default save button
-        html += `<div class="save-signal" data-ttl="${(card.ttl||'').replace(/"/g,'&quot;')}" data-src="${(card.src||'').replace(/"/g,'&quot;')}" data-snip="${(card.snip||'').replace(/"/g,'&quot;')}">Save to notes</div>`;
       }
       if (card.img) html += '</div>'; // close .card-body
       html += '</div>';
@@ -3221,25 +3475,8 @@ function renderSignal(turnId) {
   });
   panel.innerHTML = html;
 
-  // Auto-save essential cards (once only)
-  let didAutoSave = false;
-  essentialCards.forEach(({ key, src, ttl, turnId: tid }) => {
-    if (!state._autoSaved.has(key)) {
-      state._autoSaved.add(key);
-      const turn = playData.turns[state.turnIndex];
-      const ts = turn && turn.date ? `${turn.date} · from signal` : 'from signal';
-      addNote(`${src}: ${ttl}`, ts, true, true);
-      didAutoSave = true;
-    }
-  });
-  if (didAutoSave) {
-    // Dot on Notes tab + swoosh sound
-    const notesTab = document.querySelector('[data-p="notes"]');
-    if (notesTab && !notesTab.querySelector('.tab-dot')) {
-      notesTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
-    }
-    playNoteSaved();
-  }
+  // Essential cards tracked but no longer saved to notes
+  essentialCards.forEach(({ key }) => { state._autoSaved.add(key); });
 
   // Card interactions
   panel.querySelectorAll('.card').forEach(card => {
@@ -3250,16 +3487,7 @@ function renderSignal(turnId) {
     });
   });
 
-  // Flavour: manual save
-  panel.querySelectorAll('.save-signal').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const turn = playData.turns[state.turnIndex];
-      addNote(`${this.dataset.src}: ${this.dataset.ttl}`, `Signal — ${turn.num}`, true, true);
-      this.textContent = 'Saved';
-      this.classList.add('saved');
-    });
-  });
+
 
   // Thread-notify: click to switch to Threads tab
   panel.querySelectorAll('.card-thread-ref').forEach(ref => {
@@ -3290,6 +3518,8 @@ function renderThreads() {
       return turnIdx <= state.turnIndex;
     });
     if (visibleItems.length === 0) return;
+    // Reverse chronological — newest first
+    visibleItems.reverse();
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
@@ -3350,8 +3580,9 @@ function renderThreads() {
   });
 }
 
-function renderNotes() {
-  // Sync any edited textarea content back to state before re-rendering
+function renderNotes() { return; }
+function _renderNotes_dead() {
+  // DEAD CODE — notes killed
   document.querySelectorAll('.note textarea').forEach(ta => {
     const ni = parseInt(ta.closest('.note')?.dataset?.ni);
     if (!isNaN(ni) && state.notes[ni] && !state.notes[ni].readonly) {
@@ -3403,7 +3634,8 @@ function renderNotes() {
   bindNoteActions();
 }
 
-function addNote(text, timestamp, readonly = false, fromSignal = false) {
+function addNote() { return; }
+function _addNote_dead(text, timestamp, readonly = false, fromSignal = false) {
   if (!timestamp) {
     const turn = playData.turns[state.turnIndex];
     timestamp = turn && turn.date ? turn.date : '';
@@ -5309,6 +5541,20 @@ function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
   state.turnIndex = idx;
   const turn = playData.turns[idx];
+
+  // ── PHASE DETECTION — visual skin swap ──
+  const phaseNum = (() => {
+    const m = turn.id.match(/^T(\d+)/);
+    if (!m) return 3;
+    const n = parseInt(m[1]);
+    if (n <= 20) return 1;
+    if (n <= 29) return 2;
+    return 3;
+  })();
+  document.body.classList.remove('phase-1', 'phase-2');
+  if (phaseNum === 1) document.body.classList.add('phase-1');
+  else if (phaseNum === 2) document.body.classList.add('phase-2');
+  // Phase 3 = default (no class)
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');
@@ -5429,7 +5675,6 @@ function goTo(idx) {
   renderSignal(turn.isQuestion ? null : turn.id);
   renderSongs();
   renderThreads();
-  renderNotes();
   updateEconDisplay();
   updateTicker(turn.isQuestion ? null : turn.id);
   // Clean up any active overlays
@@ -5782,18 +6027,8 @@ function openArticle(article) {
   }
   currentArticleTitle = article.title || '';
 
-  // Footer with working save button
-  const footerBase = article.footer || '';
-  footer.innerHTML = footerBase + '<span class="article-save" id="article-save-btn">Save to notes</span>';
-
-  // Bind save
-  document.getElementById('article-save-btn').addEventListener('click', function() {
-    const turn = playData.turns[state.turnIndex];
-    addNote(`Read: ${currentArticleTitle}`, `Threads — ${turn.num}`, true, true);
-    this.textContent = 'Saved';
-    this.style.opacity = '.5';
-    this.style.pointerEvents = 'none';
-  });
+  // Footer (notes removed)
+  footer.innerHTML = article.footer || '';
 
   overlay.classList.add('open');
 }

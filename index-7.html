@@ -539,6 +539,65 @@ body.phase-3 .add-song:hover {
   color: var(--warm);
 }
 
+
+/* ═══════════════════════════════════════
+   AIDA CARDS — the system's voice
+   Green tint. Red cursor. Not phase-gated.
+   AIDA looks like AIDA whenever it appears.
+   ═══════════════════════════════════════ */
+.card.aida {
+  background: rgba(78,140,104,0.06);
+  border-color: rgba(78,140,104,0.12);
+  border-left: 2px solid rgba(78,140,104,0.22);
+}
+.card.aida:hover {
+  background: rgba(78,140,104,0.09);
+  box-shadow: 0 1px 12px rgba(78,140,104,0.06);
+}
+.card.aida .src {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  color: #4E8C68;
+  opacity: .85;
+}
+.card.aida .aida-suffix {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  vertical-align: middle;
+}
+.card.aida .cursor-red {
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background: #C83832;
+  margin-left: 3px;
+  vertical-align: middle;
+  border-radius: 0;
+  animation: aida-blink 1.6s step-end infinite;
+}
+@keyframes aida-blink {
+  0%, 100% { opacity: .75; }
+  50% { opacity: 0; }
+}
+.card.aida .ttl {
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+.card.aida .tag {
+  background: rgba(78,140,104,0.08);
+  color: #4E8C68;
+  opacity: .5;
+}
+
 /* ═══════════════════════════════════════
    PHASE TRANSITIONS — the room changes
    ═══════════════════════════════════════ */
@@ -3717,12 +3776,21 @@ function renderSignal(turnId) {
       const newCls = card.isnew ? ' new' : '';
       const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : type === 'song' ? ' song-card' : '';
       const imgCls = card.img ? ' has-img' : '';
-      html += `<div class="card${newCls}${typeCls}${imgCls}">`;
+      const isAida = card.src && card.src.startsWith('AIDA');
+      const aidaCls = isAida ? ' aida' : '';
+      html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}">`;
       if (card.img) {
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
         html += '<div class="card-body">';
       }
-      html += `<div class="src">${card.src}</div>
+      if (isAida) {
+        const aidaParts = card.src.match(/^(AIDA)(.*)/);
+        const aidaSuffix = aidaParts[2] ? `<span class="aida-suffix">${aidaParts[2]}</span>` : '';
+        html += `<div class="src"><span class="aida-brand">AIDA</span>${aidaSuffix}<span class="cursor-red"></span></div>`;
+      } else {
+        html += `<div class="src">${card.src}</div>`;
+      }
+      html += `
         <div class="ttl">${card.ttl}</div>
         <div class="snip">${card.snip}</div>
         <div class="tag ${card.cls}">${card.tag}</div>`;

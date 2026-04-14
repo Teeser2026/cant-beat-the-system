@@ -597,6 +597,79 @@ div.ti.article:hover::after { opacity: .4; }
   text-transform: uppercase; color: #aaa;
 }
 
+/* PARLIAMENT style — Hansard / Select Committee oral evidence */
+.article-panel.parliament {
+  width: 560px; max-width: 95%; max-height: 80vh; overflow-y: auto;
+  background: #f6f4ef; border-radius: 2px; padding: 40px 36px 36px; position: relative;
+  font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a;
+  border-top: 4px solid #00703c;
+}
+.article-panel.parliament .article-source {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: #00703c; margin-bottom: 6px; font-weight: 600;
+}
+.article-panel.parliament .article-title {
+  font-size: 18px; font-weight: bold; color: #1a1a1a; line-height: 1.35;
+  border-bottom: 2px solid #00703c; padding-bottom: 12px; margin-bottom: 6px;
+}
+.article-panel.parliament .article-date {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #888;
+  letter-spacing: 1px; margin-bottom: 20px;
+}
+.article-panel.parliament .article-body {
+  font-size: 13.5px; line-height: 1.8; color: #2a2a2a;
+}
+.article-panel.parliament .article-body p {
+  margin: 0 0 14px;
+}
+/* Hearing sub-header — e.g. ORAL EVIDENCE SESSION title */
+.article-panel.parliament .article-body .hearing-header {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: #555; margin: 0 0 16px; padding-bottom: 8px;
+  border-bottom: 1px solid #d0cdc5;
+}
+/* Witness block — names, titles, affiliations */
+.article-panel.parliament .article-body .witness-block {
+  font-size: 12px; line-height: 1.7; color: #444; margin: 0 0 18px;
+  padding: 10px 14px; background: #eeece6; border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+/* Question number + speaker */
+.article-panel.parliament .article-body .q-speaker {
+  font-weight: 700; color: #1a1a1a; margin-bottom: 2px;
+}
+/* Witness/respondent name inline */
+.article-panel.parliament .article-body .respondent {
+  font-weight: 700; color: #333;
+}
+/* Chair interjection — procedural */
+.article-panel.parliament .article-body .chair-note {
+  font-style: italic; color: #666; margin: 0 0 14px;
+}
+/* Silence / procedural stage direction */
+.article-panel.parliament .article-body .stage {
+  font-style: italic; color: #999; text-align: center; margin: 10px 0 14px;
+  font-size: 12px; letter-spacing: 1px;
+}
+/* Committee note — classified annex, Privy Council, editorial footer */
+.article-panel.parliament .article-body .committee-note {
+  font-style: italic; font-size: 12px; color: #777; margin-top: 20px;
+  padding-top: 12px; border-top: 1px solid #d0cdc5; line-height: 1.6;
+}
+.article-panel.parliament .article-footer {
+  border-top: 1px solid #c5c2b8; margin-top: 24px; padding-top: 12px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: #aaa;
+}
+.article-panel.parliament .article-close { color: #00703c; }
+.article-panel.parliament .article-close:hover { color: #005a2e; }
+.article-panel.parliament .article-save {
+  display: inline-block; margin-left: 16px; cursor: pointer;
+  color: #00703c; border: 1px solid #00703c; padding: 3px 10px; border-radius: 2px;
+  font-size: 9px; letter-spacing: 1px; transition: all .2s;
+}
+.article-panel.parliament .article-save:hover { background: #00703c; color: #f6f4ef; }
+
 /* PLAIN style — UK emergency alert (cell broadcast, official format) */
 .article-panel.plain {
   width: 460px; max-width: 95%; max-height: 80vh; overflow-y: auto;

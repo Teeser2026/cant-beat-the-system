@@ -62,11 +62,6 @@ body.phase-1 {
 }
 body.phase-1 .left {
   background-color: #E8E2D6;
-  background-image: none;
-}
-body.phase-1 .left-bg {
-  opacity: 1;
-  mix-blend-mode: normal;
   background-image:
     repeating-linear-gradient(
       0deg,
@@ -78,7 +73,9 @@ body.phase-1 .left-bg {
       transparent, transparent 3px,
       rgba(110,95,65,.035) 3px, rgba(110,95,65,.035) 4px
     );
-  background-size: auto;
+}
+body.phase-1 .left-bg {
+  opacity: 0;
 }
 body.phase-1 .right {
   background: var(--bg-r);
@@ -173,10 +170,10 @@ body.phase-1 .ticker-bar {
   border-top-color: var(--div);
 }
 body.phase-1 .ticker-label { color: var(--dim); }
-body.phase-1 .t-item { color: var(--dim); opacity: .35; }
-body.phase-1 .t-item.warm { color: #5A4A3A; opacity: .7; }
-body.phase-1 .t-item.cold { color: #3A5A70; opacity: .6; }
-body.phase-1 .t-item.buried { color: var(--faint); opacity: .25; }
+body.phase-1 .t-item { color: var(--dim); opacity: .45; }
+body.phase-1 .t-item.warm { color: #5A4A3A; opacity: .8; }
+body.phase-1 .t-item.cold { color: #3A5A70; opacity: .7; }
+body.phase-1 .t-item.buried { color: var(--dim); opacity: .35; }
 body.phase-1 .t-sep { color: var(--faint); }
 body.phase-1 .choices {
   background: rgba(176,120,96,.04);
@@ -186,7 +183,7 @@ body.phase-1 .choices {
 body.phase-1 .econ-left { display: none; }
 /* Phase 1 — chapter nav */
 body.phase-1 .chapter-nav {
-  background: rgba(218,212,200,.97);
+  background: rgba(228,222,212,.97);
   border-left-color: var(--div);
 }
 body.phase-1 .chapter-nav .cn-heading { color: var(--dim); }
@@ -1968,15 +1965,11 @@ body.game-active .ticker-bar { display: flex; }
 /* ── DEV TURN LIST ── */
 /* ── CHAPTER NAV (reader mode) ── */
 .chapter-nav {
-  position: fixed;
-  top: 48px;
-  right: 0;
-  width: 280px;
-  max-height: calc(100vh - 90px);
+  width: 220px;
+  flex-shrink: 0;
   overflow-y: auto;
   background: rgba(6,6,9,.97);
   border-left: 1px solid var(--div);
-  z-index: 300;
   display: none;
   scrollbar-width: thin;
   scrollbar-color: var(--faint) transparent;
@@ -3256,7 +3249,6 @@ body.game-active .ticker-bar { display: flex; }
   </div>
 </div>
 <div class="dev-turn-list" id="devTurnList"></div>
-<div class="chapter-nav" id="chapterNav"></div>
 
 <!-- ══ MAIN WRAP ══ -->
 <div class="wrap">
@@ -3286,6 +3278,9 @@ body.game-active .ticker-bar { display: flex; }
       <div class="panel" data-p="songs" id="songs-panel"></div>
     </div>
   </div>
+
+  <!-- CHAPTER NAV (toggleable column) -->
+  <div class="chapter-nav" id="chapterNav"></div>
 
 </div>
 
@@ -3842,7 +3837,7 @@ function renderSongs() {
 
   let html = '';
   if (visible.length > 0) {
-    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);opacity:.4;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(196,149,106,.1)"><a href="https://open.spotify.com" target="_blank" rel="noopener" style="color:var(--warm);text-decoration:none">&#9835; Open in Spotify</a></div>';
+    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--warm);opacity:.4;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(196,149,106,.1)"><a href="https://open.spotify.com" target="_blank" rel="noopener" style="color:var(--warm);text-decoration:none">&#9835; Open in Spotify</a></div>';
   }
   visible.forEach(song => {
     const linkHtml = song.url

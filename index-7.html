@@ -1547,6 +1547,92 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ── DEV TURN LIST ── */
+/* ── CHAPTER NAV (reader mode) ── */
+.chapter-nav {
+  position: fixed;
+  top: 48px;
+  right: 0;
+  width: 280px;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  background: rgba(6,6,9,.97);
+  border-left: 1px solid var(--div);
+  z-index: 300;
+  display: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--faint) transparent;
+}
+.chapter-nav.open { display: block; }
+.chapter-nav::-webkit-scrollbar { width: 3px; }
+.chapter-nav::-webkit-scrollbar-thumb { background: var(--faint); }
+.chapter-nav .cn-heading {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 14px 16px 8px;
+  opacity: .5;
+}
+.cn-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: all .2s;
+  border-bottom: 1px solid rgba(26,24,22,.3);
+}
+.cn-item:hover { background: rgba(196,149,106,.05); }
+.cn-item.current { background: rgba(196,149,106,.08); }
+.cn-item .cn-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--dim);
+  opacity: .4;
+  min-width: 20px;
+  text-align: right;
+}
+.cn-item .cn-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  color: var(--text);
+  opacity: .6;
+}
+.cn-item .cn-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  color: var(--dim);
+  opacity: .3;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.cn-item.current .cn-title { opacity: 1; color: var(--warm); }
+.cn-item.current .cn-num { opacity: .7; }
+
+/* Reader bar — replaces dev bar */
+.reader-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 200;
+}
+.reader-bar .r-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  background: none;
+  border: 1px solid var(--faint);
+  color: var(--dim);
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all .2s;
+}
+.reader-bar .r-btn:hover { opacity: .6; color: var(--warm); border-color: var(--warm); }
+
 .dev-turn-list {
   position: fixed;
   top: 48px;
@@ -1599,6 +1685,8 @@ body.game-active .ticker-bar { display: flex; }
   .left { border-right: none; }
   .prose-wrap { padding: 64px 24px 120px; }
   .dev-turn-list { display: none !important; }
+  .chapter-nav { display: none !important; }
+  .reader-bar { display: none !important; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -2729,15 +2817,21 @@ body.game-active .ticker-bar { display: flex; }
       <span class="econ-val cw" id="cwVal">50</span>
     </div>
   </div>
-  <div class="dev-bar">
+  <div class="dev-bar" id="devBar">
     <span class="dev-label">Dev</span>
     <button class="t-btn" id="prev">←</button>
     <span class="t-num" id="t-num">T1</span>
     <button class="t-btn" id="next">→</button>
     <button class="t-btn" id="devListToggle">☰</button>
   </div>
+  <div class="reader-bar" id="readerBar" style="display:none;">
+    <button class="r-btn" id="readerPrev">←</button>
+    <button class="r-btn" id="readerChapters">Chapters</button>
+    <button class="r-btn" id="readerNext">→</button>
+  </div>
 </div>
 <div class="dev-turn-list" id="devTurnList"></div>
+<div class="chapter-nav" id="chapterNav"></div>
 
 <!-- ══ MAIN WRAP ══ -->
 <div class="wrap">
@@ -2797,6 +2891,9 @@ let threadsData = [];
 let songsData = [];
 let tickerData = {};
 
+// ── DEV MODE ──
+const DEV = new URLSearchParams(window.location.search).has('dev');
+
 async function loadGame() {
   try {
     const resp = await fetch('play1-simon.json');
@@ -2814,7 +2911,8 @@ async function loadGame() {
       playerSongs: [],
       playerThreads: [],
       _autoSaved: new Set(),
-      _threadsClicked: new Set()
+      _threadsClicked: new Set(),
+      maxReached: 0
     };
 
     // Hydrate data
@@ -3605,6 +3703,62 @@ function renderDevTurnList() {
   });
   const current = list.querySelector('.current');
   if (current) current.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
+// ── NAV LIST HELPER (gates dev vs reader) ──
+function updateNavList() {
+  if (DEV) {
+    const list = document.getElementById('devTurnList');
+    if (list && list.classList.contains('open')) renderDevTurnList();
+  } else {
+    const nav = document.getElementById('chapterNav');
+    if (nav && nav.classList.contains('open')) renderChapterNav();
+  }
+}
+
+// ── CHAPTER NAV (reader mode) ──
+function renderChapterNav() {
+  const nav = document.getElementById('chapterNav');
+  let html = '<div class="cn-heading">Chapters</div>';
+  let chapterNum = 0;
+  playData.turns.forEach((turn, idx) => {
+    // Skip questions and anything beyond maxReached
+    if (turn.isQuestion) return;
+    if (idx > state.maxReached) return;
+    chapterNum++;
+    const isCurrent = idx === state.turnIndex;
+    const cls = 'cn-item' + (isCurrent ? ' current' : '');
+    const title = turn.title || 'Untitled';
+    const date = turn.date || '';
+    html += '<div class="' + cls + '" data-idx="' + idx + '">' +
+      '<span class="cn-num">' + chapterNum + '</span>' +
+      '<span class="cn-title">' + title + '</span>' +
+      '<span class="cn-date">' + date + '</span>' +
+    '</div>';
+  });
+  nav.innerHTML = html;
+  nav.querySelectorAll('.cn-item').forEach(item => {
+    item.addEventListener('click', function() {
+      goTo(parseInt(this.dataset.idx));
+      renderChapterNav();
+    });
+  });
+  const current = nav.querySelector('.current');
+  if (current) current.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
+// ── READER NAV HELPERS ──
+function nextProseIndex(from) {
+  for (let i = from + 1; i < playData.turns.length; i++) {
+    if (!playData.turns[i].isQuestion) return i;
+  }
+  return from; // stay put if nothing ahead
+}
+function prevProseIndex(from) {
+  for (let i = from - 1; i >= 0; i--) {
+    if (!playData.turns[i].isQuestion) return i;
+  }
+  return from;
 }
 
 // ══════════════════════════════════════════════════════
@@ -5095,9 +5249,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderSoundEcho(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5107,9 +5259,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderSoundPrompt(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5119,9 +5269,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderVideoPrompt(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5131,9 +5279,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderImagePrompt(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5143,9 +5289,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderMirrorFullscreen(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5155,9 +5299,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderVideoRorschach(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5167,9 +5309,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderVideoMirror(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5179,9 +5319,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderDoorOfLight(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5191,9 +5329,7 @@ function goTo(idx) {
     dateEl.style.display = 'none';
     numEl.textContent = '';
     renderSlider(turn);
-    if (document.getElementById('devTurnList').classList.contains('open')) {
-      renderDevTurnList();
-    }
+    updateNavList();
     return;
   }
 
@@ -5205,10 +5341,13 @@ function goTo(idx) {
   } else {
     titleEl.style.display = '';
     dateEl.style.display = '';
-    numEl.textContent = turn.num;
+    numEl.textContent = DEV ? turn.num : '';
     titleEl.textContent = turn.title;
     dateEl.textContent = turn.date;
   }
+
+  // Track furthest chapter reached (for reader nav)
+  if (idx > state.maxReached) state.maxReached = idx;
 
   renderTurn(turn);
   renderSignal(turn.isQuestion ? null : turn.id);
@@ -5231,16 +5370,14 @@ function goTo(idx) {
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';
-  document.getElementById('devTurnList').style.display = '';
+  if (DEV) document.getElementById('devTurnList').style.display = '';
   document.querySelector('.left').scrollTop = 0;
 
   // Check for new thread items at this turn — show dot on Threads tab
   checkTabNotifications(turn);
 
   // Update dev turn list if open
-  if (document.getElementById('devTurnList').classList.contains('open')) {
-    renderDevTurnList();
-  }
+  updateNavList();
 }
 
 function checkTabNotifications(turn) {
@@ -5305,19 +5442,39 @@ document.querySelectorAll('.tab').forEach(tab => {
 });
 
 // ── DEV NAV ──
-document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
-document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));
-document.getElementById('devListToggle').addEventListener('click', () => {
-  const list = document.getElementById('devTurnList');
-  list.classList.toggle('open');
-  if (list.classList.contains('open')) renderDevTurnList();
-});
+// ── NAV SETUP (mode-dependent) ──
+if (DEV) {
+  document.getElementById('devBar').style.display = '';
+  document.getElementById('readerBar').style.display = 'none';
+  document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
+  document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));
+  document.getElementById('devListToggle').addEventListener('click', () => {
+    const list = document.getElementById('devTurnList');
+    list.classList.toggle('open');
+    if (list.classList.contains('open')) renderDevTurnList();
+  });
+} else {
+  document.getElementById('devBar').style.display = 'none';
+  document.getElementById('readerBar').style.display = '';
+  document.getElementById('readerPrev').addEventListener('click', () => goTo(prevProseIndex(state.turnIndex)));
+  document.getElementById('readerNext').addEventListener('click', () => goTo(nextProseIndex(state.turnIndex)));
+  document.getElementById('readerChapters').addEventListener('click', () => {
+    const nav = document.getElementById('chapterNav');
+    nav.classList.toggle('open');
+    if (nav.classList.contains('open')) renderChapterNav();
+  });
+}
 
-// ── KEYBOARD NAV (dev) ──
+// ── KEYBOARD NAV ──
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
-  if (e.key === 'ArrowLeft') goTo(state.turnIndex - 1);
-  if (e.key === 'ArrowRight') goTo(state.turnIndex + 1);
+  if (DEV) {
+    if (e.key === 'ArrowLeft') goTo(state.turnIndex - 1);
+    if (e.key === 'ArrowRight') goTo(state.turnIndex + 1);
+  } else {
+    if (e.key === 'ArrowLeft') goTo(prevProseIndex(state.turnIndex));
+    if (e.key === 'ArrowRight') goTo(nextProseIndex(state.turnIndex));
+  }
 });
 
 // ── TEXTAREA AUTO-RESIZE ──

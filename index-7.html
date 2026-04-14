@@ -65,8 +65,20 @@ body.phase-1 .left {
   background-image: none;
 }
 body.phase-1 .left-bg {
-  opacity: 0.18;
-  mix-blend-mode: multiply;
+  opacity: 1;
+  mix-blend-mode: normal;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 2px,
+      rgba(130,110,75,.045) 2px, rgba(130,110,75,.045) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 3px,
+      rgba(110,95,65,.035) 3px, rgba(110,95,65,.035) 4px
+    );
+  background-size: auto;
 }
 body.phase-1 .right {
   background: var(--bg-r);
@@ -180,8 +192,8 @@ body.phase-1 .chapter-nav .cn-heading { color: var(--dim); }
 body.phase-1 .cn-item { border-bottom-color: rgba(180,174,164,.25); }
 body.phase-1 .cn-item:hover { background: rgba(176,120,96,.06); }
 body.phase-1 .cn-item.current { background: rgba(176,120,96,.1); }
-body.phase-1 .cn-item .cn-title { color: var(--text); }
-body.phase-1 .cn-item .cn-num { color: var(--dim); }
+body.phase-1 .cn-main .cn-title { color: var(--text); }
+body.phase-1 .cn-main .cn-num { color: var(--dim); }
 body.phase-1 .cn-item .cn-date { color: var(--dim); }
 body.phase-1 .cn-item.current .cn-title { color: var(--warm); }
 /* Phase 1 — ticker colour differentiation */
@@ -200,7 +212,7 @@ body.phase-1 .song:hover {
 }
 body.phase-1 .song-title { color: var(--bright); }
 body.phase-1 .song-artist { color: var(--dim); opacity: .5; }
-body.phase-1 .song-context { color: var(--dim); opacity: .5; }
+body.phase-1 .song-context { font-size: 15.5px; font-weight: 300; color: var(--dim); opacity: .5; }
 body.phase-1 .song-link { color: var(--warm); }
 body.phase-1 .song.player .song-title { color: var(--warm); }
 body.phase-1 .add-song {
@@ -217,42 +229,43 @@ body.phase-1 .add-song:hover {
    Warmth drained. Flat, grey, institutional
    ═══════════════════════════════════════ */
 body.phase-2 {
-  --bg: #B8B6B2;
-  --bg-r: #B0AEAA;
-  --text: #2E2D2B;
-  --dim: #6E6C6A;
-  --bright: #1E1D1C;
-  --lyric: #7A7876;
-  --warm: #806058;
-  --earth: #5A6A4A;
+  --bg: #141418;
+  --bg-r: #1a1a1e;
+  --text: #C8C4BC;
+  --dim: #706C66;
+  --bright: #E0DCD4;
+  --lyric: #8A8680;
+  --warm: #9A7468;
+  --earth: #6A7A52;
   --cold: #5A6878;
   --sys: #5A6878;
-  --alert: #884040;
-  --inner: #885050;
-  --faint: #A6A4A0;
-  --div: #989694;
-  --card: #C2C0BC;
-  --card-b: #B8B6B2;
-  --player: #7A7876;
-  --heart-vital: #5A6A4A;
-  --heart-fine: #2E2D2B;
-  --heart-declining: #806058;
-  --heart-critical: #884040;
+  --alert: #A04040;
+  --inner: #A06060;
+  --faint: #2A2826;
+  --div: #28262A;
+  --card: #1E1E22;
+  --card-b: #2A282E;
+  --player: #8A8680;
+  --heart-vital: #6A7A52;
+  --heart-fine: #C8C4BC;
+  --heart-declining: #9A7468;
+  --heart-critical: #A04040;
 }
 body.phase-2 .left {
-  background-color: #B8B6B2;
+  background-color: #101014;
   background-image: none;
 }
 body.phase-2 .left-bg {
-  opacity: 0.04;
+  opacity: 0;
 }
 body.phase-2 .right {
   background: var(--bg-r);
 }
 body.phase-2 .econ-bar {
-  background: rgba(168,166,162,.97);
+  background: rgba(16,16,20,.97);
   border-bottom-color: var(--div);
 }
+body.phase-2 .econ-left { display: none; }
 body.phase-2 .econ-label { color: var(--dim); }
 body.phase-2 .t-date {
   font-family: 'Outfit', sans-serif;
@@ -263,31 +276,33 @@ body.phase-2 .t-date {
   opacity: .5;
 }
 body.phase-2 .t-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 40px;
+  font-weight: 300;
   color: var(--bright);
 }
 body.phase-2 .prose {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19.5px;
-  line-height: 1.75;
+  font-family: 'Crimson Pro', serif;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.78;
   color: var(--text);
 }
 body.phase-2 .inner {
   color: var(--inner);
-  border-left-color: rgba(136,80,80,.15);
+  border-left-color: rgba(160,96,96,.2);
 }
 body.phase-2 .tab {
   font-family: 'Outfit', sans-serif;
-  font-size: 10px;
-  font-weight: 200;
+  font-size: 12px;
+  font-weight: 300;
   letter-spacing: 4px;
 }
-body.phase-2 .tab.on { color: var(--bright); border-bottom-color: var(--bright); }
+body.phase-2 .tab.on { color: var(--bright); border-bottom-color: var(--dim); }
 body.phase-2 .sec-label {
   font-family: 'Outfit', sans-serif;
-  font-size: 9px;
-  font-weight: 200;
+  font-size: 10.5px;
+  font-weight: 300;
   letter-spacing: 3.5px;
   color: var(--dim);
   opacity: .5;
@@ -295,10 +310,10 @@ body.phase-2 .sec-label {
 body.phase-2 .card {
   background: var(--card);
   border-color: var(--card-b);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 body.phase-2 .card:hover {
-  background: rgba(200,198,194,.6);
+  background: rgba(40,38,36,.8);
   box-shadow: none;
 }
 body.phase-2 .card .src {
@@ -307,6 +322,11 @@ body.phase-2 .card .src {
   font-weight: 300;
   letter-spacing: 1.5px;
   color: var(--dim);
+  opacity: .5;
+}
+body.phase-2 .card .snip {
+  font-size: 15px;
+  font-weight: 300;
   opacity: .5;
 }
 body.phase-2 .tag {
@@ -318,13 +338,33 @@ body.phase-2 .tag {
   padding: 3px 10px;
 }
 body.phase-2 .ticker-bar {
-  background: var(--bg-r);
+  background: rgba(16,16,20,.99);
   border-top-color: var(--div);
 }
+body.phase-2 .ticker-label { color: var(--dim); }
+body.phase-2 .t-item { color: var(--dim); opacity: .4; }
 body.phase-2 .choices {
-  background: rgba(128,96,88,.04);
-  border-color: rgba(128,96,88,.1);
+  background: rgba(160,100,90,.04);
+  border-color: rgba(160,100,90,.1);
 }
+/* Phase 2 — chapter nav */
+body.phase-2 .chapter-nav {
+  background: rgba(20,20,24,.97);
+  border-left-color: var(--div);
+}
+body.phase-2 .cn-item { border-bottom-color: rgba(40,38,42,.4); }
+body.phase-2 .cn-item:hover { background: rgba(90,70,60,.08); }
+body.phase-2 .cn-item.current { background: rgba(90,70,60,.12); }
+/* Phase 2 — song panel */
+body.phase-2 .song {
+  background: var(--card);
+  border-color: var(--card-b);
+  border-radius: 4px;
+}
+body.phase-2 .song:hover {
+  background: rgba(40,38,36,.8);
+}
+body.phase-2 .song-context { font-size: 15px; font-weight: 300; opacity: .45; }
 
 /* ═══════════════════════════════════════
    PHASE TRANSITIONS — the room changes
@@ -1955,36 +1995,42 @@ body.game-active .ticker-bar { display: flex; }
 }
 .cn-item {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 9px 16px;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: all .2s;
   border-bottom: 1px solid rgba(26,24,22,.3);
 }
 .cn-item:hover { background: rgba(196,149,106,.05); }
 .cn-item.current { background: rgba(196,149,106,.08); }
-.cn-item .cn-num {
+.cn-item .cn-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--dim);
+  opacity: .3;
+}
+.cn-main {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.cn-main .cn-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 9px;
   color: var(--dim);
   opacity: .4;
-  min-width: 20px;
+  flex-shrink: 0;
+  min-width: 16px;
   text-align: right;
 }
-.cn-item .cn-title {
+.cn-main .cn-title {
   font-family: 'Crimson Pro', serif;
   font-size: 14px;
   color: var(--text);
   opacity: .6;
-}
-.cn-item .cn-date {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 8px;
-  color: var(--dim);
-  opacity: .3;
-  margin-left: auto;
-  white-space: nowrap;
+  line-height: 1.3;
 }
 .cn-item.current .cn-title { opacity: 1; color: var(--warm); }
 .cn-item.current .cn-num { opacity: .7; }
@@ -4082,9 +4128,11 @@ function renderChapterNav() {
     const title = turn.title || 'Untitled';
     const date = turn.date || '';
     html += '<div class="' + cls + '" data-idx="' + idx + '">' +
-      '<span class="cn-num">' + chapterNum + '</span>' +
-      '<span class="cn-title">' + title + '</span>' +
-      '<span class="cn-date">' + date + '</span>' +
+      (date ? '<span class="cn-date">' + date + '</span>' : '') +
+      '<div class="cn-main">' +
+        '<span class="cn-num">' + chapterNum + '</span>' +
+        '<span class="cn-title">' + title + '</span>' +
+      '</div>' +
     '</div>';
   });
   nav.innerHTML = html;

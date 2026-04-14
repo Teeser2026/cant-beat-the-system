@@ -43,7 +43,7 @@ body.phase-1 {
   --text: #3A3630;
   --dim: #7A756D;
   --bright: #2E2B27;
-  --lyric: #8A7E6A;
+  --lyric: #6B7A4A;
   --warm: #B07860;
   --earth: #6A7A52;
   --cold: #5A7080;
@@ -3125,7 +3125,7 @@ body.game-active .ticker-bar { display: flex; }
 
 </style>
 </head>
-<body class="no-transition">
+<body class="no-transition phase-1">
 
 <!-- ══ INTRO SCREEN ══ -->
 <div id="intro-screen">
@@ -4082,11 +4082,13 @@ function handleTurnAudio(turn) {
 function renderDevTurnList() {
   const list = document.getElementById('devTurnList');
   let html = '';
+  let chapterCount = 0;
   playData.turns.forEach((turn, idx) => {
     const isCurrent = idx === state.turnIndex;
     const isQ = turn.isQuestion;
     const isStub = !isQ && turn.paras && turn.paras.length <= 1 && turn.title && turn.title.startsWith('TBD');
-    const num = isQ ? turn.num || turn.id : turn.num;
+    if (!isQ) chapterCount++;
+    const num = isQ ? turn.num || turn.id : chapterCount + ' · ' + turn.num;
     const title = isQ ? (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question') : (turn.title || 'Untitled');
     const cls = `dtl-item${isCurrent ? ' current' : ''}${isStub ? ' stub' : ''}`;
     const numCls = isQ ? 'dtl-num q' : 'dtl-num';

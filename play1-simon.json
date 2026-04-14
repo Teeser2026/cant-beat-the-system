@@ -6400,6 +6400,20 @@
             "cls": "buried"
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Allied nations conduct parallel cyber resilience exercises",
+            "snip": "Fourteen countries. Six weeks. Same infrastructure. All routine. Every single one of them routine.",
+            "tag": "14 Jan",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "power-structures"
+          }
+        ]
       }
     ],
     "19": [
@@ -6476,6 +6490,56 @@
             "cls": "",
             "threadRef": "science-technology",
             "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "The Guardian",
+            "ttl": "Why the internet thinks Valentine's Day will bring financial collapse",
+            "snip": "The Guardian writing about it means enough people believe it. That's the story. Not whether it's true.",
+            "tag": "12 Feb",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "BHASVIC — cis@bhasvic.ac.uk",
+            "ttl": "Remote Learning Contingency — Information for Parents",
+            "snip": "No mention of why. Just \"in line with government guidance.\" The guidance they haven't explained either.",
+            "tag": "12 Feb",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Tesco Clubcard",
+            "ttl": "Purchase limits now in effect on selected items",
+            "snip": "Rice, pasta, UHT, batteries, candles. Three per customer. Amy already has twelve of each in the garage.",
+            "tag": "Notice",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "Count the countries. Count the dates. This isn't parallel development. This is parallel preparation.",
+            "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
+            "tag": "Evening",
+            "cls": "e"
           }
         ]
       }
@@ -6635,6 +6699,20 @@
             "tag": "Comfortably Numb",
             "cls": "e",
             "type": "song"
+          }
+        ]
+      },
+      {
+        "sec": "Doom Scroll",
+        "cards": [
+          {
+            "src": "@sacredgeometry_",
+            "ttl": "Lupercalia. February 13–15. Look it up.",
+            "snip": "3am doom scroll. The Dude would love this. You hate that you love it too.",
+            "tag": "Viral",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "pattern-recognition"
           }
         ]
       }
@@ -8397,9 +8475,9 @@
             "style": "x-thread",
             "source": "@DistributedDenial",
             "title": "the rebuilder is the room",
-            "date": "3 January 2027",
-            "body": "<div class=\"x-header\"><div class=\"x-avatar\">DD</div><div class=\"x-name\">DistributedDenial <span class=\"x-verified\"></span></div><div class=\"x-handle\">@DistributedDenial</div></div><div class=\"x-body\"><p>1/ Every payment terminal in the country received a firmware update last year that nobody requested.</p><p>2/ The company that built the AI that finds the vulnerabilities is now running the programme to fix the vulnerabilities.</p><p>3/ The oil companies didn't just stay in oil — they became the green energy companies AND the carbon credit market AND the ESG framework. Same playbook.</p><p>4/ The thing that breaks your infrastructure and the thing that rebuilds your infrastructure are the same thing, sold by the same people, under the same public-private partnership that means nobody's in charge and everybody profits.</p><p>5/ When it goes down — and it will — the rebuilder is already in the room. Because the rebuilder is the room.</p><p>6/ You'll thank them for it.</p></div><div class=\"x-timestamp\">11:47 PM · Jan 3, 2027</div><div class=\"x-metrics\">↩ 847  🔁 12.4K  ♡ 31.2K  📊 2.1M</div>",
-            "footer": "X · 11:47 PM · Jan 3, 2027"
+            "date": "7 January 2027",
+            "body": "<div class=\"x-header\"><div class=\"x-avatar\">DD</div><div class=\"x-name\">DistributedDenial <span class=\"x-verified\"></span></div><div class=\"x-handle\">@DistributedDenial</div></div><div class=\"x-body\"><p>1/ Every payment terminal in the country received a firmware update last year that nobody requested.</p><p>2/ The company that built the AI that finds the vulnerabilities is now running the programme to fix the vulnerabilities.</p><p>3/ The oil companies didn't just stay in oil — they became the green energy companies AND the carbon credit market AND the ESG framework. Same playbook.</p><p>4/ The thing that breaks your infrastructure and the thing that rebuilds your infrastructure are the same thing, sold by the same people, under the same public-private partnership that means nobody's in charge and everybody profits.</p><p>5/ When it goes down — and it will — the rebuilder is already in the room. Because the rebuilder is the room.</p><p>6/ You'll thank them for it.</p></div><div class=\"x-timestamp\">11:47 PM · Jan 7, 2027</div><div class=\"x-metrics\">↩ 847  🔁 12.4K  ♡ 31.2K  📊 2.1M</div>",
+            "footer": "X · 11:47 PM · Jan 7, 2027"
           }
         },
         {
@@ -8413,6 +8491,32 @@
             "date": "7 February 2027",
             "body": "<p><strong>UK cyber threat: what we know and what we don't</strong></p><p><em>BBC Verify has examined the public evidence behind the UK government's recent warnings about cyber threats to national infrastructure. Here's what we can confirm — and what remains unclear.</em></p><p><strong>What's happened?</strong></p><p>In January, the National Cyber Security Centre raised its threat advisory for UK critical infrastructure to \"heightened.\" The government subsequently advised households to maintain \"sensible levels of preparedness,\" including keeping basic supplies and ensuring access to cash. Asian and European markets have experienced increased volatility, with the Nikkei falling 4.2% overnight on Monday and the FTSE 100 closing down for the third consecutive week.</p><p>The Treasury Select Committee held an oral evidence session on January 21st examining AI and systemic risk to financial infrastructure. The Committee heard testimony from senior officials at the NCSC and the Bank of England. A classified annex to that session remains unavailable for public release.</p><p><strong>What is the threat?</strong></p><p>This is where the picture becomes less clear. The government has described the threat in general terms — \"evolving vulnerabilities in interconnected digital infrastructure\" — without specifying a particular scenario or adversary. The NCSC has confirmed that its assessment is based on intelligence rather than a specific incident.</p><p>BBC Verify understands that the concern centres on vulnerabilities in financial settlement and clearing systems, though the precise nature of these vulnerabilities has not been made public. The government's position is that an ongoing programme to patch critical infrastructure is addressing the identified weaknesses.</p><p>The Treasury Select Committee evidence, in its public portions, referenced AI-assisted assessment tools capable of identifying exploitable weaknesses at a pace that traditional security reviews cannot match. Several committee members pressed witnesses on whether the same capabilities could be used offensively. Witnesses confirmed this was theoretically possible but stressed that access to such systems remains restricted.</p><p>When asked directly whether state-sponsored actors had demonstrated equivalent capabilities, the NCSC's representative said she was \"limited in what I can say in open session about specific attribution.\"</p><p><strong>What is the government doing?</strong></p><p>The government has pointed to what it describes as the largest public-private cyber defence programme in UK history. Twelve major technology and infrastructure companies have been contracted to identify and patch vulnerabilities across energy, telecommunications, transport, and financial services. The programme is jointly overseen by the Department for Science, Innovation and Technology and the NCSC.</p><p>The Bank of England has convened emergency consultations with City institutions regarding payment infrastructure resilience. The FCA has confirmed that all UK-regulated payment terminals are now operating under its ARC authentication framework, implemented last year.</p><p><strong>Should I be worried?</strong></p><p>The government says no — or rather, it says the threat is being \"actively managed.\" The NCSC has been careful to distinguish between a heightened threat level and an imminent attack: \"Heightened means we are seeing activity that requires increased vigilance. It does not mean an attack is expected.\"</p><p>Independent analysts have broadly supported this assessment. Dr Mukesh Kumar, head of the Industrial Resilience Research Group at the University of Cambridge's Department of Engineering, told BBC Verify that the UK's defensive posture is \"significantly ahead of most comparable nations\" and that the infrastructure programme represents a \"serious and well-resourced response.\"</p><p>However, several experts have noted that the government's public communications have been unusually vague. \"We've been told to keep cash and supplies without being told why,\" said one former Cabinet Office advisor, speaking on background. \"That's not reassurance. That's managed ambiguity.\"</p><p><strong>What don't we know?</strong></p><p>The classified annex to the Treasury Select Committee evidence session has not been released. Its contents are available only to committee members on Privy Council terms. The Committee has indicated it intends to return to the subject in its spring report — which would not be published until late March at the earliest.</p><p>The specific vulnerabilities identified in financial infrastructure have not been disclosed. The identity or identities of the threat actors have not been confirmed publicly. The government's own assessment of recovery time in the event of a successful attack — a question put directly to the Bank of England's representative at the Committee hearing — was not answered in open session.</p><p>Classified material is routinely withheld from parliamentary evidence sessions where national security is concerned. This is normal practice and does not, by itself, indicate an elevated level of risk.</p>",
             "footer": "BBC Verify"
+          }
+        },
+        {
+          "text": "BBC News — Allied nations conduct parallel cyber resilience exercises",
+          "src": "simon",
+          "turn": 15,
+          "article": {
+            "style": "news",
+            "source": "BBC News",
+            "title": "Allied nations conduct parallel cyber resilience exercises",
+            "date": "14 January 2027",
+            "body": "<p>NATO and Five Eyes member states have conducted a series of parallel cyber resilience exercises over the past six weeks, with military and civilian agencies in at least fourteen countries testing their response to simulated disruptions of critical infrastructure.</p><p>The exercises, described by officials in each country as routine, have included simulated attacks on financial settlement systems, energy distribution networks, and telecommunications infrastructure. Several have involved the deployment of military logistics units to civilian distribution points — a rehearsal, officials say, for scenarios in which digital infrastructure failures disrupt supply chains.</p><p>The UK's contribution has included expanded readiness exercises at RAF Wyton in Cambridgeshire, confirmed by the Ministry of Defence in October, and a series of unannounced military logistics deployments across southern England. Germany's Bundeswehr conducted a week-long exercise in December simulating the coordination of emergency food and fuel distribution. France's Secrétariat Général de la Défense et de la Sécurité Nationale ran a parallel exercise focused on payment system continuity. Australia, Canada, Japan, and Singapore have all confirmed similar programmes since November.</p><p>\"These are standard preparedness activities,\" said a NATO spokesperson. \"Alliance members routinely test their resilience across multiple domains. The timing reflects updated planning cycles, not a specific threat assessment.\"</p><p>However, the concentration of exercises within such a narrow window has drawn comment. Marcus Willett, Senior Adviser for Cyber at the International Institute for Strategic Studies and former director of cyber at GCHQ, noted that the overlap was unusual. \"Individual exercises are routine. Fourteen countries conducting them simultaneously, across the same infrastructure categories, within six weeks — that is coordination, not coincidence. The question is what they are coordinating for.\"</p><p>The exercises share several common features. Each has tested the military's ability to support civilian logistics in the event of widespread digital infrastructure failure — a scenario in which electronic payments, automated supply chains, and internet-dependent communications cease to function for an extended period. In at least three countries, military units have rehearsed the physical distribution of emergency supplies at pre-designated community sites.</p><p>This represents a shift in military planning doctrine. Traditionally, cyber defence has been treated as a digital problem requiring digital solutions — patching vulnerabilities, hardening networks, building redundancy. The introduction of physical military logistics into cyber resilience exercises suggests that defence planners are now considering scenarios in which digital defences fail entirely and the consequences spill into the physical world.</p><p>\"If the payment system goes down for a day, that's an IT problem,\" said one senior NATO official, speaking on background. \"If it goes down for a week, that's a logistics problem. If it goes down for a month, that's a public order problem. You plan for all three.\"</p><p>The UK government has declined to comment on whether the exercises are connected to the NCSC's decision to raise its cyber threat advisory to \"heightened\" earlier this month. A Ministry of Defence spokesperson said: \"The UK armed forces maintain a continuous programme of readiness exercises. We do not comment on the specific scenarios being tested.\"</p>",
+            "footer": "BBC News · World · Filed under: Defence / Cyber Security"
+          }
+        },
+        {
+          "text": "The Guardian — Why the internet thinks Valentine's Day will bring financial collapse",
+          "src": "simon",
+          "turn": 19,
+          "article": {
+            "style": "news",
+            "source": "The Guardian",
+            "title": "Why the internet thinks Valentine's Day will bring financial collapse",
+            "date": "12 February 2027",
+            "body": "<p>A viral conspiracy theory claiming that global financial infrastructure will collapse on Valentine's Day has gained enough traction online to prompt responses from both the Treasury and the Bank of England.</p><p>The theory, which has circulated across X, Telegram, and several cryptocurrency forums since early January, draws on a mixture of AI-generated prediction models, numerology, and — in its most elaborate versions — the ancient Roman festival of Lupercalia, a purification ritual traditionally observed between 13 and 15 February.</p><p>\"It's a textbook example of apophenia,\" says Professor Steven Bloch, Professor of Communication and Social Interaction at University College London. \"The human brain is extraordinarily good at finding patterns. Give it a date, some historical coincidences, and a prevailing mood of anxiety, and it will construct a narrative. The narrative feels compelling because our pattern-recognition systems don't distinguish between real and apparent connections.\"</p><p>The specific claims vary. Some posts reference \"predictive AI models\" that have independently flagged the Valentine's Day weekend as a convergence point for financial system vulnerabilities. Others focus on the Hebrew gematria value of 214, which corresponds to words meaning \"spirit\" or \"breath.\" A widely shared X thread connected the Lupercalia festival — in which Roman priests ritually sacrificed a goat and used strips of its hide to cleanse the city — to what the poster called \"the symbolic architecture of a system reset.\"</p><p>The theory has gained particular momentum in the UK, where the government's recent advice on household preparedness and the NCSC's raised threat advisory have created fertile ground for speculation. A Treasury spokesperson said: \"There is no intelligence to suggest any specific threat to financial infrastructure on or around 14 February. The government's preparedness advice reflects standard resilience planning.\"</p><p>The Bank of England declined to comment beyond its existing public statements on payment system resilience.</p><p>Online prediction markets have seen a modest increase in trading on scenarios involving financial disruption, though volumes remain well below levels associated with credible threat assessments.</p><p>Professor Bloch notes that the debunking process itself can inadvertently amplify such theories. \"The fact that the Treasury felt the need to respond tells people this is being taken seriously at some level. The denial becomes evidence. This is the paradox of addressing conspiracy theories in a high-anxiety environment.\"</p><p>Markets closed Friday within normal ranges. The FTSE 100 was up 0.3%.</p>",
+            "footer": "The Guardian · Technology / Conspiracy theories"
           }
         }
       ]
@@ -8717,6 +8821,19 @@
           "url": "https://cyberpolygon.com",
           "src": "dev",
           "turn": "17c"
+        },
+        {
+          "text": "@sacredgeometry_ — Lupercalia. February 13–15. Look it up.",
+          "src": "simon",
+          "turn": "17b",
+          "article": {
+            "style": "x-thread",
+            "source": "@sacredgeometry_",
+            "title": "Lupercalia",
+            "date": "23 January 2027",
+            "body": "<div class=\"x-header\"><div class=\"x-avatar\">SG</div><div class=\"x-name\">sacredgeometry <span class=\"x-verified\"></span></div><div class=\"x-handle\">@sacredgeometry_</div></div><div class=\"x-body\"><p>1/ Everyone's talking about Valentine's Day and the collapse models. Nobody's talking about Lupercalia.</p><p>2/ February 13–15. Ancient Roman purification festival. Priests sacrificed a goat at the Lupercal cave. Cut the hide into strips. Ran through the streets whipping people with them. This was the CLEANSING. The old made way for the new.</p><p>3/ The Catholic Church buried Lupercalia under St Valentine. Martyred on February 14th. Killed by the Roman state for performing illegal marriages. The saint who defied the system — consumed by the system's holiday. The original rebrand.</p><p>4/ 214. Hebrew gematria. \"Half man, half angel.\" Also the value of \"ruach\" — spirit, breath, wind. The animating force. The thing that makes dead matter alive.</p><p>5/ Now look at the AI collapse models. At least three independent prediction engines have flagged the same 72-hour window. Feb 13–15. The Lupercalia window. Coincidence requires more faith than pattern recognition at this point.</p><p>6/ Lupercalia was never about love. It was about PURIFICATION. Sacrifice the animal. Cut it apart. Use the pieces to cleanse the city. Destroy in order to renew. The old system dies so the new one can be born.</p><p>7/ If you were designing a symbolic date for a financial system reset — a purification of the old infrastructure to make way for something new — you couldn't do better than this. The festival of cleansing. The death of the martyr. The breath of the angel.</p><p>8/ I'm not predicting anything. I'm reading a calendar.</p></div><div class=\"x-timestamp\">2:14 AM · Jan 23, 2027</div><div class=\"x-metrics\">↩ 1.2K  🔁 24.7K  ♡ 89.3K  📊 4.8M</div>",
+            "footer": "X · 2:14 AM · Jan 23, 2027"
+          }
         }
       ]
     },
@@ -9400,6 +9517,22 @@
         {
           "text": "New Scientist: 'The AI that guards the banks could also break them, researchers warn'",
           "cls": "buried"
+        },
+        {
+          "text": "Australian Securities Exchange: brief technical outage — resolved within hours",
+          "cls": "buried"
+        },
+        {
+          "text": "EU Council convenes emergency cyber coordination meeting — \"routine preparedness review\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Australian Securities Exchange experiences brief technical outage — \"resolved within hours\"",
+          "cls": "buried"
+        },
+        {
+          "text": "EU Council convenes emergency cyber coordination meeting — \"routine preparedness review\"",
+          "cls": ""
         }
       ],
       "15-16": [
@@ -9461,6 +9594,30 @@
         },
         {
           "text": "NCSC raises UK cyber threat level to \"heightened\" — precautionary measure",
+          "cls": "buried"
+        },
+        {
+          "text": "US Treasury: \"monitoring developments in international payment infrastructure\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Canadian banking system experiences nationwide 4-hour outage — \"software update issue\"",
+          "cls": "cold"
+        },
+        {
+          "text": "German BaFin issues advisory on financial sector cyber preparedness",
+          "cls": "buried"
+        },
+        {
+          "text": "US Treasury: \"monitoring developments in international payment infrastructure\"",
+          "cls": ""
+        },
+        {
+          "text": "Canadian banking system experiences nationwide 4-hour outage — \"software update issue\"",
+          "cls": "buried"
+        },
+        {
+          "text": "German BaFin issues advisory on financial sector cyber preparedness",
           "cls": "buried"
         }
       ],
@@ -9532,6 +9689,30 @@
         {
           "text": "Nikkei 225 ▼ 4.2% — Asian markets fall sharply overnight — contagion fears",
           "cls": "cold"
+        },
+        {
+          "text": "ECB announces \"precautionary stress test\" of eurozone payment systems",
+          "cls": "buried"
+        },
+        {
+          "text": "Bank of Japan convenes emergency session with financial institutions",
+          "cls": "cold"
+        },
+        {
+          "text": "Singapore MAS restricts certain cross-border digital transactions — \"precautionary measure\"",
+          "cls": "buried"
+        },
+        {
+          "text": "ECB announces \"precautionary stress test\" of eurozone payment systems",
+          "cls": ""
+        },
+        {
+          "text": "Bank of Japan convenes emergency session with financial institutions",
+          "cls": "cold"
+        },
+        {
+          "text": "Singapore MAS restricts certain cross-border digital transactions — \"precautionary measure\"",
+          "cls": "buried"
         }
       ],
       "19-20": [
@@ -9594,6 +9775,22 @@
         {
           "text": "Barclays, HSBC, Lloyds: planned maintenance window Friday 23:00–06:00",
           "cls": "buried"
+        },
+        {
+          "text": "Swiss National Bank confirms \"enhanced monitoring\" of SIX settlement infrastructure",
+          "cls": "buried"
+        },
+        {
+          "text": "Five Eyes joint statement: \"coordinated approach to critical infrastructure resilience\"",
+          "cls": "buried"
+        },
+        {
+          "text": "Swiss National Bank confirms \"enhanced monitoring\" of SIX settlement infrastructure",
+          "cls": "buried"
+        },
+        {
+          "text": "Five Eyes joint statement: \"coordinated approach to critical infrastructure resilience\"",
+          "cls": ""
         }
       ],
       "21": [

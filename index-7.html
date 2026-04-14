@@ -364,6 +364,182 @@ body.phase-2 .song:hover {
 body.phase-2 .song-context { font-size: 15px; font-weight: 300; opacity: .45; }
 
 /* ═══════════════════════════════════════
+   PHASE 3 — PLASTER (T30+, product launch)
+   Phase 1 fonts. Cooler room. Sharp cards.
+   The warmth returns — but it's been sanded.
+   ═══════════════════════════════════════ */
+body.phase-3 {
+  --bg: #E6E3DE;
+  --bg-r: #DEDBD6;
+  --text: #3A3630;
+  --dim: #7A756D;
+  --bright: #2E2B27;
+  --lyric: #6B7A4A;
+  --warm: #B07860;
+  --earth: #6A7A52;
+  --cold: #5A7080;
+  --sys: #5A7080;
+  --alert: #A05040;
+  --inner: #B04A42;
+  --faint: #D6D4D0;
+  --div: #CAC8C4;
+  --card: #ECEBE7;
+  --card-b: #DDDCD8;
+  --player: #8A7E6A;
+  --heart-vital: #6A7A52;
+  --heart-fine: #3A3630;
+  --heart-declining: #B07860;
+  --heart-critical: #A05040;
+}
+body.phase-3 .left {
+  background-color: #E6E3DE;
+  /* No texture. Smooth plaster. The system sanded the linen. */
+}
+body.phase-3 .left-bg {
+  opacity: 0;
+}
+body.phase-3 .right {
+  background: var(--bg-r);
+}
+body.phase-3 .econ-bar {
+  background: rgba(218,215,210,.97);
+  border-bottom-color: var(--div);
+}
+body.phase-3 .econ-label { color: var(--dim); }
+body.phase-3 .econ-left { display: none; }
+body.phase-3 .t-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 6px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-3 .t-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  color: var(--bright);
+}
+body.phase-3 .prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19.5px;
+  line-height: 1.75;
+  color: var(--text);
+}
+body.phase-3 .inner {
+  color: var(--inner);
+  border-left-color: rgba(176,74,66,.2);
+}
+body.phase-3 .lyric {
+  color: var(--lyric);
+  border-left-color: var(--faint);
+}
+body.phase-3 .tab {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 4px;
+}
+body.phase-3 .tab.on { color: var(--bright); border-bottom-color: var(--bright); }
+body.phase-3 .tab:hover:not(.on) { color: var(--dim); }
+body.phase-3 .sec-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  letter-spacing: 3.5px;
+  color: var(--dim);
+  opacity: .55;
+}
+body.phase-3 .card {
+  background: var(--card);
+  border-color: var(--card-b);
+  border-radius: 3px;
+}
+body.phase-3 .card:hover {
+  background: rgba(255,255,255,.5);
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
+}
+body.phase-3 .card .src {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+  opacity: .6;
+}
+body.phase-3 .card .ttl {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  color: var(--bright);
+}
+body.phase-3 .card .snip {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15.5px;
+  font-weight: 300;
+  color: var(--dim);
+  opacity: .55;
+}
+body.phase-3 .tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+body.phase-3 .ticker-bar {
+  background: var(--bg-r);
+  border-top-color: var(--div);
+}
+body.phase-3 .ticker-label { color: var(--dim); }
+body.phase-3 .t-item { color: var(--dim); opacity: .45; }
+body.phase-3 .t-item.warm { color: #5A4A3A; opacity: .8; }
+body.phase-3 .t-item.cold { color: #3A5A70; opacity: .7; }
+body.phase-3 .t-item.buried { color: var(--dim); opacity: .35; }
+body.phase-3 .t-sep { color: var(--faint); }
+body.phase-3 .t-item.alert { color: var(--alert); opacity: .7; }
+body.phase-3 .choices {
+  background: rgba(176,120,96,.04);
+  border-color: rgba(176,120,96,.12);
+}
+body.phase-3 .chapter-nav {
+  background: rgba(224,220,214,.97);
+  border-left-color: var(--div);
+}
+body.phase-3 .chapter-nav .cn-heading { color: var(--dim); }
+body.phase-3 .cn-item { border-bottom-color: rgba(180,174,164,.25); }
+body.phase-3 .cn-item:hover { background: rgba(176,120,96,.06); }
+body.phase-3 .cn-item.current { background: rgba(176,120,96,.1); }
+body.phase-3 .cn-main .cn-title { color: var(--text); }
+body.phase-3 .cn-main .cn-num { color: var(--dim); }
+body.phase-3 .cn-item .cn-date { color: var(--dim); }
+body.phase-3 .cn-item.current .cn-title { color: var(--warm); }
+/* Phase 3 — song panel */
+body.phase-3 .song {
+  background: var(--card);
+  border-color: var(--card-b);
+  border-radius: 3px;
+}
+body.phase-3 .song:hover {
+  background: rgba(255,255,255,.45);
+  border-color: var(--faint);
+  box-shadow: 0 1px 6px rgba(0,0,0,.03);
+}
+body.phase-3 .song-title { color: var(--bright); }
+body.phase-3 .song-artist { color: var(--dim); opacity: .5; }
+body.phase-3 .song-context { font-size: 15.5px; font-weight: 300; color: var(--dim); opacity: .5; }
+body.phase-3 .song-link { color: var(--warm); }
+body.phase-3 .song.player .song-title { color: var(--warm); }
+body.phase-3 .add-song {
+  border-color: var(--faint);
+  color: var(--dim);
+}
+body.phase-3 .add-song:hover {
+  border-color: var(--warm);
+  color: var(--warm);
+}
+
+/* ═══════════════════════════════════════
    PHASE TRANSITIONS — the room changes
    ═══════════════════════════════════════ */
 body, .left, .right, .econ-bar, .ticker-bar,
@@ -5648,10 +5824,10 @@ function goTo(idx) {
     if (n <= 29) return 2;
     return 3;
   })();
-  document.body.classList.remove('phase-1', 'phase-2');
+  document.body.classList.remove('phase-1', 'phase-2', 'phase-3');
   if (phaseNum === 1) document.body.classList.add('phase-1');
   else if (phaseNum === 2) document.body.classList.add('phase-2');
-  // Phase 3 = default (no class)
+  else document.body.classList.add('phase-3');
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');

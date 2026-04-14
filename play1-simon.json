@@ -6408,6 +6408,20 @@
             "cls": "warm"
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Diabetes UK",
+            "ttl": "Closed-loop insulin delivery: three approaches that could change everything",
+            "snip": "I’ve read this four times. Each time I feel the same thing — hope and suspicion in equal measure.",
+            "tag": "Health",
+            "cls": "",
+            "threadRef": "science-technology",
+            "type": "thread-notify"
+          }
+        ]
       }
     ],
     "17a": [
@@ -8022,6 +8036,58 @@
           }
         ]
       }
+    ],
+    "1b": [
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Emilia",
+            "ttl": "what time u picking me up tmrw? mums being weird about something x",
+            "snip": "The eternal logistics of kids with two homes.",
+            "tag": "Tomorrow",
+            "cls": "warm"
+          }
+        ]
+      },
+      {
+        "sec": "Instagram",
+        "cards": [
+          {
+            "src": "The Foodie Guy",
+            "ttl": "Sussex’s Top 5 Hidden Gems 🍝🔥 #3 will blow your mind",
+            "snip": "Number 3 is the Punjabi place at the market. Not that hidden, mate.",
+            "tag": "Suggested",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "SMS — NHSNoReply",
+        "cards": [
+          {
+            "src": "NHSNoReply",
+            "ttl": "SCREENING SAVES SIGHT. Eye Screening Reminder at Uckfield Community Hospital on 14/10/2026 (14:30)",
+            "snip": "Annual retinopathy check. They photograph the back of your eyes. It takes four minutes and dilates your pupils like a Love Dove.",
+            "tag": "Health",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC Technology",
+            "ttl": "Why your smart meter knows more than your energy bill",
+            "snip": "It’s an energy monitor the way your Libre is a glucose monitor.",
+            "tag": "Trending",
+            "cls": "",
+            "threadRef": "science-technology",
+            "type": "thread-notify"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -8480,6 +8546,18 @@
           "src": "rupert",
           "turn": "6c",
           "snip": "The Canadian government published a paper about merging biology with digital technology. Not a leak. A PDF with a foreword from the Director General. Nobody noticed."
+        },
+        {
+          "text": "BBC Technology — Why your smart meter knows more than your energy bill",
+          "src": "simon",
+          "turn": "1b",
+          "snip": "Half-hourly consumption data. Occupancy patterns. Appliance signatures. Your meter knows when you’re home, when you cook, and when you shower. It’s an energy monitor the way your Libre is a glucose monitor."
+        },
+        {
+          "text": "Diabetes UK — Closed-loop insulin delivery: three approaches that could change everything",
+          "src": "simon",
+          "turn": "19",
+          "snip": "We still can’t reverse Type 1. But scientists are closing in on the next best thing — making management invisible."
         }
       ]
     },

@@ -12,8 +12,12 @@
       4,
       5,
       "5a",
+      "5b",
       6,
       "6a",
+      "6b",
+      "6c",
+      "6d",
       7,
       8,
       9,
@@ -1025,6 +1029,106 @@
       }
     },
     {
+      "id": "5b",
+      "num": "T5b",
+      "title": "The Argument",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "It happened."
+        },
+        {
+          "t": "I’m certain of that. I think. Maybe it was a fever dream?"
+        },
+        {
+          "t": "Nope. The last four hours are inked into the timeline of my life. They’ve changed my relationship with him for good. Correction, they’ve updated the file of our relationship that has been sitting unsaved on the desktop of my life for the past decade."
+        },
+        {
+          "t": "Giles. I’ve shared some of the best nights of my life with him. Intimate moments. You were there for one another when life got shit. When one of us got dumped by the girl. When we needed a friend, a confidant, a shoulder to cry on, a mate to get mashed up with. We were there for the lows."
+        },
+        {
+          "t": "And by God we were both there for the highs. I’ll find that picture of us. It’ll save me a thousand words. Post club, still high. Tops off. Bottle of whiskey held up to the camera. Not in the modern, normative narcissistic, look-at-me, timeline-curated, affected, posed, kinda way. Real. Raw. Untainted. You can see it in our eyes, reflected in the dilated pupils."
+        },
+        {
+          "t": "I think you're the same as me<br>We see things they'll never see<br>You and I are gonna live forever",
+          "c": "lyric"
+        },
+        {
+          "t": "I try to hold those lyrics close to my heart, despite this evening’s heated exchange. I desperately cling on to the memory of the boy I once knew. How things were, not how things are. But right now it feels like our paths, our outlooks, our beliefs have diverged irrecoverably. Ghosts. A paean to a distant memory. An ode to anguish."
+        },
+        {
+          "t": "You and I are gonna live forever? Now a question, not a statement of irrevocable certainty.",
+          "c": "inner"
+        },
+        {
+          "t": "Let’s get down to the nitty gritty. Not that you want to hear it, but I need to vent."
+        },
+        {
+          "t": "We were guests at our friends Cotswolds Lake House. Amazing place. We’d had a fun day, five Parklife lads, chilling, reminiscing, cooking inordinate amounts of meat on the Big Green Egg."
+        },
+        {
+          "t": "I was drunk. He was sober. He doesn't drink any more. You can draw your own conclusions about why. You’ll be right. Anyway, I wasn’t <em>that</em> drunk. Everything I said made sense. I was loose-lipped. Emboldened."
+        },
+        {
+          "t": "What happened needed to happen, and it did. Cards on the table. His card, The Joker, mine the full deck of Illuminati: The Game of Conspiracy cards -  Collector’s Edition. Royal Flush, motherfucker."
+        },
+        {
+          "t": "Sorry, too aggressive. But the adrenaline is still coursing."
+        },
+        {
+          "t": "He thinks I’m crazy. Paranoid. That my default mode is to suggest everything is a psyop. Which isn’t far from the truth. I question, I doubt, I research, I want to - I <em>need</em> to zoom in on every Truth, every Lie, every Conspiracy. To understand it. From its core to its far reaching spectral tentacles. To analyse it. To expose it. To spread the Gospel."
+        },
+        {
+          "t": "I think he’s a normie. A sheep. I just can't understand how he can't want to see it. Why he <em>won't</em> see it. Why he refuses to engage. How can he not want to read ‘insert article here?’"
+        },
+        {
+          "t": "He, like so many supposedly intelligent, kind, caring people with a thirst for knowledge responds to my rants with a blank stare and asks ‘But who are <em>they</em>?’"
+        },
+        {
+          "t": "Wake Uuuuuuuuup!"
+        },
+        {
+          "t": "Maybe they <em>have</em> woken up? Maybe it’s me who’s asleep. Get a hold of yourself. Have you learned nothing in your five (and ticking…) decades on the planet? Take a breath. Maybe I shouldn’t frame it as an argument? Maybe we’re both saying the same thing? Coming at it from different directions? Both scratching the same itch.",
+          "c": "inner"
+        },
+        {
+          "t": "What if I flip it round in my head? Maybe it's not that he can't see it. Or won’t see it. It’s that he's already felt it. Intuited it. He’s <em>living</em> it. What I perceive to be a blank stare isn’t blank. It’s a mirror. Silently reflecting."
+        },
+        {
+          "t": "He understands that a solution can’t be found in never ending reams of research and by dedicating one’s very core to attempting to understand it. Or in 3am deep dives and four-hundred-and-sixty-two open and partially-read links to The Truth."
+        },
+        {
+          "t": "That’s the path to inaction."
+        },
+        {
+          "t": "The enlightened soul doesn't just think. It comprehends. It does."
+        },
+        {
+          "t": "When he asks ‘who are <em>they</em>?’",
+          "c": "inner"
+        },
+        {
+          "t": "What if he’s not asking me to identify the members of the cabal, the exact mechanisms of the control grid humanity is facing. He knows that’s a futile task. A mug’s game. <em>They</em> cannot be defeated on their own terms. The deck is loaded. They’re beaten by not playing their game at all."
+        },
+        {
+          "t": "Supposing he’s tuned into something more primal, more base, more achievable. More real. He’s being the change. Living the freedom. Diving into the lake and swimming. Not burrowing into the rabbit hole and drowning."
+        },
+        {
+          "t": "Don’t fight it. Feel it.",
+          "c": "lyric"
+        },
+        {
+          "t": "The next morning I woke up early. Hungover. I opened the curtains and peered, bleary-eyed, out the window. An otherworldly orange glow."
+        },
+        {
+          "t": "And there he is."
+        },
+        {
+          "t": "Swimming in the lake."
+        }
+      ]
+    },
+    {
       "id": 6,
       "num": "T6",
       "title": "Bills",
@@ -1508,6 +1612,336 @@
         {
           "t": "But what’s puzzling you is the nature of my game. Whoo-hoo.",
           "c": "lyric"
+        }
+      ]
+    },
+    {
+      "id": "6d",
+      "num": "T6d",
+      "title": "Fifty-Two plus One Day",
+      "date": "Late November 2026",
+      "paras": [
+        {
+          "t": "I’d had a lie in of sorts after my beery, weedy late night. Up at nine, out the house by half-past. At the market an hour later. A <em>slightly</em> pointless meeting at noon which <em>crammed</em> fifteen minutes of content into two hours. Would’ve been better as a Teams call - at least I could’ve turned the camera off and scrolled through X, piping up with the odd comment every now and again to show I was tuned in."
+        },
+        {
+          "t": "I grabbed a spot of late lunch from the market - a gloriously fragrant Vietnamese pork belly Pho laced with star anise, holy basil and green chilli - and headed off home just as the winter gloom descended."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I got my usual enthusiastic greeting from the dogs - the same one I get whether I’ve been gone for ten minutes or ten hours. An equally warm one from Amy too - not quite as many licks though. She made me a welcome cup of tea whilst I freshened up and got into my tracksuit and slippers. Don’t laugh, I am fifty-two you know."
+        },
+        {
+          "t": "I sat at the kitchen table and watched Amy load the dishwasher. She had a system. I liked the system but didn’t copy it - which meant I was normally told to <em>leave it to me</em>. The glasses went on the top rack in a specific order that related to size, fragility, and some third variable I’d never been able to identify but suspected was related to emotions."
+        },
+        {
+          "t": "‘So, you and Rupert?’"
+        },
+        {
+          "t": "‘What about me and Rupert?’"
+        },
+        {
+          "t": "‘You were up until three.’"
+        },
+        {
+          "t": "‘Two-thirty, wasn’t it?’"
+        },
+        {
+          "t": "‘I heard you come to bed at quarter past three.’"
+        },
+        {
+          "t": "I conceded the point by not answering it. The dishwasher tablet went in. Amy pressed the button that started the only cycle she used. <em>Intensive 70 degrees</em>. No <em>Eco</em> mode or <em>Half Load</em> for her."
+        },
+        {
+          "t": "‘He was on good form.’"
+        },
+        {
+          "t": "‘You mean he brought some of his weed?’"
+        },
+        {
+          "t": "‘I had a few puffs.’"
+        },
+        {
+          "t": "‘I could smell it from the bedroom. I thought you didn’t like smoking anymore?’"
+        },
+        {
+          "t": "‘I don’t really. But I’d had a few beers. No idea how Rupert smokes every day. I’d be fucked.’"
+        },
+        {
+          "t": "‘What did you chat about? You’re the only one he bothers to talk to now about <em>stuff</em>.’"
+        },
+        {
+          "t": "‘Can you blame him?’"
+        },
+        {
+          "t": "‘No. Guess not. He used to love the confrontation, the challenge of proving people wrong. He’s mellowed.’"
+        },
+        {
+          "t": "‘He’s definitely mellowed. He still reads, researches. He comes up with his oblique takes and zany theories. He still cares. But he’s tired. Jaded. I wouldn’t say his fire has gone out, but he’s been down the rabbit hole for decades, and where has it got him?’"
+        },
+        {
+          "t": "‘Into arguments and 3am rabbit holes. Remind you of anyone?’ she asked rhetorically, eyebrows raised."
+        },
+        {
+          "t": "‘I’m starting to come round to his way of thinking. I was amazed when he didn’t come on the lockdown protests. But I now understand why he didn’t. What difference does it make?’"
+        },
+        {
+          "t": "‘I thought you said it made a huge difference? Showed them how many saw through their bullshit. Made them take a few steps back.’"
+        },
+        {
+          "t": "‘I did think that. And maybe it helped to an extent. But what was achieved in the bigger picture? More people have <em>woken up</em>…and done what exactly?’"
+        },
+        {
+          "t": "‘You’ve always said you can’t fight an enemy that you don’t know exists.’"
+        },
+        {
+          "t": "‘And now people know <em>they</em> exist, we do what? Sign petitions against digital ID? Moan on twitter? Vote our way out of it?’ I sneer condescendingly. ‘These things are set up so that the opposition is part of the design.’"
+        },
+        {
+          "t": "Amy opened the pan drawer and studied the contents in deep thought. ‘Meaning what.’"
+        },
+        {
+          "t": "‘Meaning you sign a petition to stop digital ID, and the petition goes to the people who designed digital ID, and they file it, and the filing is the system working exactly as intended. Your objection is a feature, not a bug. It makes the thing look democratic.’"
+        },
+        {
+          "t": "‘So don’t sign petitions. You know I still do, it can’t hurt, can it? At least it’s doing <em>something</em>.’"
+        },
+        {
+          "t": "‘It’s not about petitions specifically. It’s about the fact that every route — every obvious route — is part of the grid. Voting. Campaigning. Writing to your MP. Sharing articles. Waste of fucking time. All of it.’"
+        },
+        {
+          "t": "‘All of it?’"
+        },
+        {
+          "t": "‘All of the obvious routes, yeah.’"
+        },
+        {
+          "t": "Amy selected a medium saucepan and our largest frying pan. I hadn’t asked what she was cooking yet. ‘So what’s the non-obvious route.’"
+        },
+        {
+          "t": "‘That’s what I’m saying. I don’t know.’"
+        },
+        {
+          "t": "‘So you and my brother sat up until three in the morning working out that you don’t know.’"
+        },
+        {
+          "t": "‘We were working out the shape of the problem. You can’t find a solution if you don’t understand —’"
+        },
+        {
+          "t": "‘Simon. At what point does working out the shape of the problem become the thing you do instead of doing something about the problem.’"
+        },
+        {
+          "t": "‘What’s for dinner?’"
+        },
+        {
+          "t": "There’s the rub. The answer? Possibly ten years ago. Possibly the moment I opened my first browser tab on Building 7 and felt the particular thrill of seeing something other people couldn’t see, which turned out to be more addictive than anything the seeing revealed.",
+          "c": "inner"
+        },
+        {
+          "t": "‘Chicken cacciatore.’"
+        },
+        {
+          "t": "‘Need some help?’ I knew she’d say no, this was <em>her</em> dish. But I asked anyway."
+        },
+        {
+          "t": "‘No, I’ve got it. You’ve had a long day.’ She smiled knowing that I knew she’d say that. ‘So nothing can be done? We’re fucked?’"
+        },
+        {
+          "t": "‘We’re not fucked. And I’m not saying nothing can be done. I’m saying I haven’t found what can be done. Those are different things.’"
+        },
+        {
+          "t": "‘They sound the same.’"
+        },
+        {
+          "t": "‘They’re not the same.’"
+        },
+        {
+          "t": "‘From here they sound the same. From here it sounds like everything is hopeless and everyone is controlled and every institution is captured and nothing any normal person does makes any difference. Which is — I mean, if that’s true, Simon, if that’s actually what you believe, then we might as well just — what? What do we do with that? Just give up? Shall we all just kill ourselves?’"
+        },
+        {
+          "t": "‘No of course…’"
+        },
+        {
+          "t": "‘Because that’s what it sounds like. Every time. It sounds like the world is ending and you’ve read enough articles to know exactly how, and the rest of us are idiots for carrying on.’"
+        },
+        {
+          "t": "‘I’ve never called you an idiot.’"
+        },
+        {
+          "t": "‘Well that’s how you make me feel sometimes. You describe a world where everything is meaningless and hopeless and we’re fucked. You keep telling the children that they’re going to grow up in a digital cage unless they wake up and fight. And now you can’t even explain how to go about fighting.’"
+        },
+        {
+          "t": "A knock at the door."
+        },
+        {
+          "t": "It’s Kate, our next door neighbour."
+        },
+        {
+          "t": "‘Sorry to bother you guys. Do you have any Worcester sauce?’"
+        },
+        {
+          "t": "‘Yes, I’m sure we do. Come in. Wine?’"
+        },
+        {
+          "t": "‘I shouldn’t - but, oh, go on then.’"
+        },
+        {
+          "t": "I open a bottle of red. Hair of the dog, fuck it."
+        },
+        {
+          "t": "Kate was our next door neighbour sent from heaven. She was a psychologist. But you never felt she was judging you or sussing you out. She was effervescent, cheerful, thoughtful and just a bit crazy herself. A coping mechanism I guess? Some of the stories she tells about her clients are heartbreaking. I remember meeting her for the first time a couple of years ago, soon after we had moved in. We had a builder working on the roof, blasting out music. Kate had come to ask, very apologetically, if he wouldn’t mind turning it down just a little as she had a suicidal client on the phone and all they could hear was ‘Happy’ at full volume."
+        },
+        {
+          "t": "She sat at the kitchen table. Olive immediately put her head on Kate’s knee. Olive did this with everyone, but with Kate it felt diagnostic."
+        },
+        {
+          "t": "‘We’re mid-conversation,’ Amy said. ‘You might as well hear it.’"
+        },
+        {
+          "t": "‘Ooh exciting, I love your chats, the cooking can wait.’"
+        },
+        {
+          "t": "‘Simon was explaining how all opposition is manufactured.’"
+        },
+        {
+          "t": "‘That’s not what I —’"
+        },
+        {
+          "t": "‘Managed. Sorry. Managed opposition.’"
+        },
+        {
+          "t": "‘Opposition to what?’ Kate asks, although I’m sure she knows where this is going."
+        },
+        {
+          "t": "‘Have you seen the film They Live?’"
+        },
+        {
+          "t": "Kate shakes her head."
+        },
+        {
+          "t": "‘John Carpenter. This guy finds a pair of sunglasses. When he puts them on he sees the reality behind the surface - the hidden messages behind all the advertising and politics and everything - OBEY. CONSUME. CONFORM.’"
+        },
+        {
+          "t": "‘And you have the glasses?’ Kate asks in jest."
+        },
+        {
+          "t": "‘Everyone’s got the glasses. That’s the point. The glasses are everywhere now. Podcasts. Substacks. Twitter threads. You can see the architecture any time you want. 9/11. The financial system. Digital ID. Seed oils. Epstein. Whatever. The information is all there. Ten years ago you had to go looking for it. Now it finds you.’"
+        },
+        {
+          "t": "‘So what’s the problem?’"
+        },
+        {
+          "t": "‘The problem is the glasses don’t do anything. I’ve had them on for twenty years. I never voted because I could see the choreography. I knew the 9/11 story was bollocks as it happened. They hardly made a secret of it. I can talk until I’m blue in the face about the digital control grid. And none of it — absolutely none of it — has changed a single thing about the way the world actually operates.’"
+        },
+        {
+          "t": "Shit, I’ve gone in at the deep end. She doesn’t know what I’m really like. Thinks I’m chilled and carefree.",
+          "c": "inner"
+        },
+        {
+          "t": "‘The glasses are probably part of it. Wear these - they give you just enough to see so you feel like you’re outside the machine. But seeing IS your function. You’re the pressure valve. You describe the cage and the cage uses your description to prove it allows free speech.’"
+        },
+        {
+          "t": "Kate doesn’t say anything. She sips her wine. The silence is professional-grade."
+        },
+        {
+          "t": "‘This is what me and Rupe were talking about. It’s not that everything is hopeless. It’s that every visible route of opposition is pre-mapped. Petitions. Protests. Voting. Sharing articles. Raising awareness. All of it feeds back into the system it’s supposed to challenge. And I can see that. And I can’t find the route that doesn’t.’"
+        },
+        {
+          "t": "‘Can’t find it yet,’ Amy corrects, quietly, with a warm smile."
+        },
+        {
+          "t": "Kate puts her glass down. ‘Can I ask something?’"
+        },
+        {
+          "t": "‘Of course.’"
+        },
+        {
+          "t": "‘When you describe seeing the architecture — the choreography, the surveillance, all of it — how does it make you feel?’"
+        },
+        {
+          "t": "‘How does it make me feel.’"
+        },
+        {
+          "t": "‘Yes. Feel. Not what do you think about it. How do you feel when you think about it?’"
+        },
+        {
+          "t": "‘Tired.’"
+        },
+        {
+          "t": "‘Go on…’"
+        },
+        {
+          "t": "‘Angry sometimes. Mostly tired. Like I’ve been paying very close attention to something for a very long time and it has just carried on doing what it was doing regardless.’"
+        },
+        {
+          "t": "‘Has it cost you anything?’"
+        },
+        {
+          "t": "The question sits in the room. Olive shifts on Kate’s foot. The dishwasher bleeps a merry ditty to announce it has finished its non-manufacturer-recommended cycle."
+        },
+        {
+          "t": "I think. She continues…"
+        },
+        {
+          "t": "‘Because the thing about glasses is that most people think the cost of wearing them is what you see. But maybe the cost is what you stop seeing. When you’re looking for the architecture, what are you not looking at?’"
+        },
+        {
+          "t": "‘That’s very —’"
+        },
+        {
+          "t": "‘I’m not being clever. I’m asking.’"
+        },
+        {
+          "t": "I know what she’s asking. And she <em>is</em> being clever. It’s her job to be clever. She’s asking whether the twenty years of paying attention to things that are <em>wrong</em> had become a way of not paying attention to the things that were <em>right</em>. Whether the glasses had become too comfortable. A prop.",
+          "c": "inner"
+        },
+        {
+          "t": "Amy pours more wine."
+        },
+        {
+          "t": "‘The thing is I know I’m not wrong. That’s what makes it so infuriating. That’s why I can’t give up the fight. The architecture is real. The managed opposition is real. The digital ID programme is real. The financial system is what I say it is. None of this is paranoia.’"
+        },
+        {
+          "t": "‘Nobody said it was paranoia, Simon.’"
+        },
+        {
+          "t": "‘No, but it gets received as paranoia. Because the truth about a system this large, this <em>intertwined</em>, well, it sounds exactly like a conspiracy theory to anyone who hasn’t done the research.’"
+        },
+        {
+          "t": "‘Simon, I haven’t done the research, but I don’t think it’s a conspiracy. You’re right, Rupert is right. Dev is right. Annoying but right. Hours and hours of reading, watching, learning. And you’re still working out the shape of the problem. Meanwhile the lawn needs mowing - I can tell you the shape of that problem.’"
+        },
+        {
+          "t": "We look at each other for a split second before bursting out laughing."
+        },
+        {
+          "t": "I see Kate watching us the way she watches everything. With a quality of attention that wasn’t intrusive because it wasn’t performing. She was just present. Most people listened with their response already forming. Kate listened with her response nowhere in sight."
+        },
+        {
+          "t": "She replies, professional mode engaged. ‘What I hear is two people who are in agreement. You both think the system is bigger than individual action. You, Simon, describe that as a tactical problem — the exits are covered. Amy describes it as a reason to focus on what’s in front of you, because the exits being covered means you live in the cage, or the beautiful Sussex countryside, depending on your perspective - so you might as well live well. Those aren’t opposite positions. They’re the same position facing different directions.’"
+        },
+        {
+          "t": "Amy and I nod in agreement, wordlessly."
+        },
+        {
+          "t": "‘The question you’re actually arguing about isn’t whether the architecture is real. Amy knows it’s real but doesn’t find it as interesting as you do. The question is what you do with knowing something that you’re powerless to change? And that’s not a political question.’"
+        },
+        {
+          "t": "‘What kind of question is it?’"
+        },
+        {
+          "t": "Kate takes another sip. ‘It’s a faith question.’"
+        },
+        {
+          "t": "‘Oh bollocks,’ shouts Amy, jumping up from her chair."
+        },
+        {
+          "t": "Kate looks baffled."
+        },
+        {
+          "t": "‘Oh sorry, Kate, not you. The bloody onions are burning.’"
         }
       ]
     },
@@ -8235,6 +8669,102 @@
           }
         ]
       }
+    ],
+    "5b": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Giles",
+            "ttl": "You and I are gonna live forever 💪",
+            "snip": "Morning after. Three words too many and one emoji too few.",
+            "tag": "10:14am",
+            "cls": "e",
+            "type": "flavour"
+          }
+        ]
+      },
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "Arkmedic — Substack",
+            "ttl": "\"There was no virus...\"",
+            "snip": "Part of last night’s arsenal. Sent at 1am. Read receipt: never.",
+            "tag": "Exhibit A",
+            "cls": "c",
+            "url": "https://www.arkmedic.info/p/there-was-no-virus",
+            "threadRef": "pattern-recognition",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Spotify",
+        "cards": [
+          {
+            "src": "Spotify — Morning shuffle",
+            "ttl": "Live Forever",
+            "snip": "The algorithm served it up the morning after. Of course it did.",
+            "tag": "Definitely",
+            "cls": "e",
+            "type": "song"
+          },
+          {
+            "src": "Primal Scream",
+            "ttl": "Don’t Fight It. Feel It.",
+            "snip": "Supposing he’s tuned into something more primal. More real.",
+            "tag": "Loaded",
+            "cls": "e",
+            "type": "song"
+          }
+        ]
+      }
+    ],
+    "6d": [
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "How’s the head? Did you read that Aeon piece yet",
+            "snip": "He never stops. Even hungover.",
+            "tag": "11:22am",
+            "cls": "",
+            "threadRef": "philosophy-theology",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Open Tabs",
+        "cards": [
+          {
+            "src": "YouTube — They Live",
+            "ttl": "They Live — sunglasses scene",
+            "snip": "Pulled it up to show Kate. She hadn’t seen it. She didn’t need to.",
+            "tag": "OBEY",
+            "cls": "",
+            "img": "obey_roddy_piper_GIF.gif",
+            "threadRef": "pattern-recognition",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Kate",
+            "ttl": "Lovely evening. This might interest you — Viktor Frankl, Man’s Search for Meaning. Not self-help. Promise. x",
+            "snip": "Sent after she got home. She’d been thinking about it.",
+            "tag": "10:47pm",
+            "cls": "",
+            "threadRef": "philosophy-theology",
+            "type": "thread-notify"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -8834,6 +9364,12 @@
             "body": "<div class=\"x-header\"><div class=\"x-avatar\">SG</div><div class=\"x-name\">sacredgeometry <span class=\"x-verified\"></span></div><div class=\"x-handle\">@sacredgeometry_</div></div><div class=\"x-body\"><p>1/ Everyone's talking about Valentine's Day and the collapse models. Nobody's talking about Lupercalia.</p><p>2/ February 13–15. Ancient Roman purification festival. Priests sacrificed a goat at the Lupercal cave. Cut the hide into strips. Ran through the streets whipping people with them. This was the CLEANSING. The old made way for the new.</p><p>3/ The Catholic Church buried Lupercalia under St Valentine. Martyred on February 14th. Killed by the Roman state for performing illegal marriages. The saint who defied the system — consumed by the system's holiday. The original rebrand.</p><p>4/ 214. Hebrew gematria. \"Half man, half angel.\" Also the value of \"ruach\" — spirit, breath, wind. The animating force. The thing that makes dead matter alive.</p><p>5/ Now look at the AI collapse models. At least three independent prediction engines have flagged the same 72-hour window. Feb 13–15. The Lupercalia window. Coincidence requires more faith than pattern recognition at this point.</p><p>6/ Lupercalia was never about love. It was about PURIFICATION. Sacrifice the animal. Cut it apart. Use the pieces to cleanse the city. Destroy in order to renew. The old system dies so the new one can be born.</p><p>7/ If you were designing a symbolic date for a financial system reset — a purification of the old infrastructure to make way for something new — you couldn't do better than this. The festival of cleansing. The death of the martyr. The breath of the angel.</p><p>8/ I'm not predicting anything. I'm reading a calendar.</p></div><div class=\"x-timestamp\">2:14 AM · Jan 23, 2027</div><div class=\"x-metrics\">↩ 1.2K  🔁 24.7K  ♡ 89.3K  📊 4.8M</div>",
             "footer": "X · 2:14 AM · Jan 23, 2027"
           }
+        },
+        {
+          "text": "They Live — \"The glasses don’t do anything\"",
+          "src": "simon",
+          "turn": "6d",
+          "snip": "Everyone’s got the glasses now. The information is all there. None of it has changed a single thing."
         }
       ]
     },
@@ -8992,13 +9528,32 @@
           "src": "rupert",
           "turn": "6c",
           "snip": "Real institution. Real tenets. Tax-exempt. They built a religion and filed the paperwork."
+        },
+        {
+          "text": "Viktor Frankl — Man’s Search for Meaning",
+          "src": "kate",
+          "turn": "6d",
+          "snip": "Between stimulus and response there is a space. In that space is our freedom."
+        },
+        {
+          "text": "Kate — \"It’s a faith question\"",
+          "src": "kate",
+          "turn": "6d",
+          "snip": "Not what do you think about it. How do you feel when you think about it?"
         }
       ]
     },
     {
       "id": "reader-own",
       "label": "Reader's Own",
-      "items": []
+      "items": [
+        {
+          "text": "What do you do with knowing something you’re powerless to change?",
+          "src": "reader",
+          "turn": "6d",
+          "snip": "Kate says it’s a faith question. Amy says mow the lawn. Simon says he doesn’t know. What do you say?"
+        }
+      ]
     }
   ],
   "songs": [
@@ -9163,6 +9718,24 @@
       "context": "She's deadly, man, she could really rip your world apart.",
       "src": "simon",
       "turn": 30
+    },
+    {
+      "id": "s019",
+      "title": "Don’t Fight It. Feel It.",
+      "artist": "Primal Scream",
+      "url": "https://open.spotify.com/track/3WjcULQc816pz0LHdAqrIT?si=114e949ed56e4a21",
+      "context": "Supposing he’s tuned into something more primal, more base, more achievable. More real.",
+      "src": "simon",
+      "turn": "5b"
+    },
+    {
+      "id": "s020",
+      "title": "Live Forever",
+      "artist": "Oasis",
+      "url": "https://open.spotify.com/track/5IfBLN9VPPJOwcKmAZhdXe?si=f9841d81a08f4aae",
+      "context": "You and I are gonna live forever. The lyric that opens 5b. Brotherhood tested.",
+      "src": "simon",
+      "turn": "5b"
     }
   ],
   "ticker": {

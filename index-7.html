@@ -1130,18 +1130,17 @@ html, body {
 .card.song-card { border-left: 2px solid rgba(138,126,106,.3); }
 
 /* ── SIGNAL CARD MEDIA (header images) ── */
-.card.has-img { padding: 0; overflow: hidden; }
+.card.has-img { overflow: hidden; }
 .card.has-img .card-img {
-  width: 100%;
-  height: 90px !important;
-  max-height: 90px !important;
-  object-fit: cover;
+  max-width: 260px;
+  height: auto;
   display: block;
+  margin: 0 auto 8px;
+  border-radius: 3px;
   opacity: .55;
   transition: opacity .4s;
 }
 .card.has-img:hover .card-img { opacity: .75; }
-.card.has-img .card-body { padding: 10px 14px 12px; }
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }

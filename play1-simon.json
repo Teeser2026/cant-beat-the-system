@@ -1104,8 +1104,7 @@
           "t": "The enlightened soul doesn't just think. It comprehends. It does."
         },
         {
-          "t": "When he asks ‘who are <em>they</em>?’",
-          "c": "inner"
+          "t": "When he asks ‘who are <em>they</em>?’"
         },
         {
           "t": "What if he’s not asking me to identify the members of the cabal, the exact mechanisms of the control grid humanity is facing. He knows that’s a futile task. A mug’s game. <em>They</em> cannot be defeated on their own terms. The deck is loaded. They’re beaten by not playing their game at all."
@@ -1121,7 +1120,7 @@
           "t": "The next morning I woke up early. Hungover. I opened the curtains and peered, bleary-eyed, out the window. An otherworldly orange glow."
         },
         {
-          "t": "And there he is."
+          "t": "And there he was."
         },
         {
           "t": "Swimming in the lake."
@@ -8677,7 +8676,7 @@
           {
             "src": "Giles",
             "ttl": "You and I are gonna live forever 💪",
-            "snip": "Morning after. Three words too many and one emoji too few.",
+            "snip": "Morning after. Sent as a fact, not a question.",
             "tag": "10:14am",
             "cls": "e",
             "type": "flavour"
@@ -8713,7 +8712,7 @@
           {
             "src": "Primal Scream",
             "ttl": "Don’t Fight It. Feel It.",
-            "snip": "Supposing he’s tuned into something more primal. More real.",
+            "snip": "Gonna live the life I love, I’m gonna love the life I live. 90’s optimism.",
             "tag": "Loaded",
             "cls": "e",
             "type": "song"
@@ -8730,9 +8729,7 @@
             "ttl": "How’s the head? Did you read that Aeon piece yet",
             "snip": "He never stops. Even hungover.",
             "tag": "11:22am",
-            "cls": "",
-            "threadRef": "philosophy-theology",
-            "type": "thread-notify"
+            "cls": ""
           }
         ]
       },
@@ -8745,9 +8742,7 @@
             "snip": "Pulled it up to show Kate. She hadn’t seen it. She didn’t need to.",
             "tag": "OBEY",
             "cls": "",
-            "img": "obey_roddy_piper_GIF.gif",
-            "threadRef": "pattern-recognition",
-            "type": "thread-notify"
+            "img": "obey_roddy_piper_GIF.gif"
           }
         ]
       },
@@ -8761,7 +8756,8 @@
             "tag": "10:47pm",
             "cls": "",
             "threadRef": "philosophy-theology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "url": "https://www.themarginalian.org/2013/03/26/viktor-frankl-mans-search-for-meaning/"
           }
         ]
       }
@@ -9366,10 +9362,10 @@
           }
         },
         {
-          "text": "They Live — \"The glasses don’t do anything\"",
+          "text": "Arkmedic — \"There was no virus...\"",
+          "url": "https://open.substack.com/pub/arkmedic/p/there-was-no-virus?utm_campaign=post-expanded-share&utm_medium=web",
           "src": "simon",
-          "turn": "6d",
-          "snip": "Everyone’s got the glasses now. The information is all there. None of it has changed a single thing."
+          "turn": "5b"
         }
       ]
     },
@@ -9533,27 +9529,15 @@
           "text": "Viktor Frankl — Man’s Search for Meaning",
           "src": "kate",
           "turn": "6d",
-          "snip": "Between stimulus and response there is a space. In that space is our freedom."
-        },
-        {
-          "text": "Kate — \"It’s a faith question\"",
-          "src": "kate",
-          "turn": "6d",
-          "snip": "Not what do you think about it. How do you feel when you think about it?"
+          "snip": "Between stimulus and response there is a space. In that space is our freedom.",
+          "url": "https://www.themarginalian.org/2013/03/26/viktor-frankl-mans-search-for-meaning/"
         }
       ]
     },
     {
       "id": "reader-own",
       "label": "Reader's Own",
-      "items": [
-        {
-          "text": "What do you do with knowing something you’re powerless to change?",
-          "src": "reader",
-          "turn": "6d",
-          "snip": "Kate says it’s a faith question. Amy says mow the lawn. Simon says he doesn’t know. What do you say?"
-        }
-      ]
+      "items": []
     }
   ],
   "songs": [

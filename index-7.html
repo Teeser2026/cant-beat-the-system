@@ -654,6 +654,7 @@ html, body {
   margin-top: 48px;
   width: 100%;
   overflow: hidden;
+  transition: margin-right .3s ease;
 }
 
 /* ── LEFT PANE ── */
@@ -2235,20 +2236,17 @@ body.game-active .ticker-bar { display: flex; }
   position: fixed;
   right: 0;
   top: 48px;
-  height: calc(100vh - 90px);
+  bottom: 42px;
   width: 220px;
-  z-index: 1000;
+  z-index: 200;
   overflow-y: auto;
-  background-color: rgba(6,6,9,1);
+  background: rgba(6,6,9,.97);
   border-left: 1px solid var(--div);
-  visibility: hidden;
-  pointer-events: none;
-  opacity: 0;
+  display: none;
   scrollbar-width: thin;
   scrollbar-color: var(--faint) transparent;
 }
-.chapter-nav.open { visibility: visible; pointer-events: auto; opacity: 1; }
-body.cn-open .wrap { width: calc(100% - 220px); }
+.chapter-nav.open { display: block; }
 .chapter-nav::-webkit-scrollbar { width: 3px; }
 .chapter-nav::-webkit-scrollbar-thumb { background: var(--faint); }
 .chapter-nav .cn-heading {
@@ -2326,6 +2324,7 @@ body.cn-open .wrap { width: calc(100% - 220px); }
   transition: all .2s;
 }
 .reader-bar .r-btn:hover { opacity: .6; color: var(--warm); border-color: var(--warm); }
+.reader-bar { transition: right .3s ease; }
 
 .dev-turn-list {
   position: fixed;
@@ -2379,8 +2378,19 @@ body.cn-open .wrap { width: calc(100% - 220px); }
   .left { border-right: none; }
   .prose-wrap { padding: 64px 24px 120px; }
   .dev-turn-list { display: none !important; }
-  .chapter-nav { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+  .chapter-nav { display: none !important; }
   .reader-bar { display: none !important; }
+}
+
+/* ── CHAPTERS-OPEN LAYOUT SHIFT ── */
+body.chapters-open .wrap {
+  margin-right: 220px;
+}
+body.chapters-open .reader-bar {
+  right: 236px;
+}
+@media (max-width: 900px) {
+  body.chapters-open .wrap { margin-right: 0; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -6150,7 +6160,7 @@ if (DEV) {
   document.getElementById('devListToggle').addEventListener('click', () => {
     const nav = document.getElementById('chapterNav');
     nav.classList.toggle('open');
-    document.body.classList.toggle('cn-open');
+    document.body.classList.toggle('chapters-open', nav.classList.contains('open'));
     if (nav.classList.contains('open')) renderChapterNav();
   });
 } else {
@@ -6161,7 +6171,7 @@ if (DEV) {
   document.getElementById('readerChapters').addEventListener('click', () => {
     const nav = document.getElementById('chapterNav');
     nav.classList.toggle('open');
-    document.body.classList.toggle('cn-open');
+    document.body.classList.toggle('chapters-open', nav.classList.contains('open'));
     if (nav.classList.contains('open')) renderChapterNav();
   });
 }

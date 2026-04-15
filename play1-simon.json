@@ -5735,7 +5735,7 @@
             "ttl": "Last seen 7 hours ago",
             "snip": "Swipe to refresh. No change.",
             "tag": "Offline",
-            "cls": "a",
+            "cls": "",
             "isnew": true,
             "type": "flavour"
           },
@@ -5744,7 +5744,7 @@
             "ttl": "“Closed for routine maintenance.”",
             "snip": "The maintenance window. The one that was announced quietly.",
             "tag": "Down",
-            "cls": "a",
+            "cls": "",
             "type": "flavour"
           }
         ]
@@ -5866,7 +5866,7 @@
             "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
             "snip": "You screenshotted it at 3am. Still looks like something.",
             "tag": "Flagged",
-            "cls": "a"
+            "cls": ""
           }
         ]
       },
@@ -6384,7 +6384,7 @@
             "ttl": "everyone ok? Mum — please reply.",
             "snip": "Sent 5:59am. No replies yet. No ticks.",
             "tag": "Sent",
-            "cls": "a"
+            "cls": ""
           },
           {
             "src": "Vince",
@@ -6520,7 +6520,7 @@
             "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
             "snip": "Hackers confirm what the gematria hinted at.",
             "tag": "Urgent",
-            "cls": "a",
+            "cls": "",
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "pattern-recognition"
@@ -7908,23 +7908,18 @@
             "src": "AIDA",
             "ttl": "Welcome, George. Your registration is complete. Your services are now active. Your BritCoin allocation will be processed tonight.",
             "snip": "He didn’t ask. He’s nineteen. He didn’t need to ask.",
-            "tag": "Registered",
+            "tag": "Registration",
             "cls": "a"
           },
           {
             "src": "AIDA",
             "ttl": "Your household is partially registered. Complete registration to access full services including healthcare continuity, education platform, and monthly BritCoin allocation.",
             "snip": "Partially registered. Like being partially pregnant.",
-            "tag": "1 of 4",
+            "tag": "Registration",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
+          },
           {
-            "src": "ARC",
+            "src": "AIDA",
             "ttl": "Registration update: 23 million households in first 48 hours. 82% of eligible adults now registered. Community Recovery Hubs open 7am–10pm.",
             "snip": "Eighty-two percent. In forty-eight hours.",
             "tag": "82%",
@@ -7974,16 +7969,11 @@
             "src": "AIDA",
             "ttl": "Your household is partially registered. 1 of 4 household members active. Complete registration to access full healthcare, education, and allocation services.",
             "snip": "One of four. It’s counting us.",
-            "tag": "1 of 4",
+            "tag": "Registration",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
+          },
           {
-            "src": "ARC",
+            "src": "AIDA",
             "ttl": "Registration update: 23 million households — 82%. BritCoin first full retail week begins. Schools reopen Monday for registered children.",
             "snip": "",
             "tag": "82%",
@@ -8052,30 +8042,25 @@
             "src": "AIDA",
             "ttl": "Sam has been registered. Welcome, Sam. Services active.",
             "snip": "",
-            "tag": "Registered",
+            "tag": "Registration",
             "cls": "a"
           },
           {
             "src": "AIDA",
             "ttl": "Emilia has been registered. Welcome, Emilia. Services active.",
             "snip": "She’s sixteen. Her mum decided. I wasn’t asked.",
-            "tag": "Registered",
+            "tag": "Registration",
             "cls": "a"
           },
           {
-            "src": "AIDA — Healthcare",
+            "src": "AIDA",
             "ttl": "Chris’s care record has been linked to your household profile. Registered care home: Meadow View. Next of kin: Simon. Care plan accessible via your AIDA dashboard.",
             "snip": "Dad doesn’t know what day it is. AIDA knows his blood pressure, his medication schedule, his son’s name. One of them still recognises me.",
-            "tag": "Care Linked",
+            "tag": "Care Home",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
+          },
           {
-            "src": "ARC",
+            "src": "AIDA",
             "ttl": "Registration update: 25 million households — 89%. Hub wait time: 6 minutes average.",
             "snip": "Six minutes. From queueing for tins to registered citizen in six minutes.",
             "tag": "89%",
@@ -8118,16 +8103,11 @@
             "src": "AIDA",
             "ttl": "Your household is partially registered. 3 of 4 household members active. Simon, we’re here when you’re ready.",
             "snip": "Three of four. It knows my name. It’s patient.",
-            "tag": "3 of 4",
+            "tag": "Registration",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
+          },
           {
-            "src": "ARC",
+            "src": "AIDA",
             "ttl": "Registration update: 26 million households — 93%. Registered satisfaction: 97%.",
             "snip": "Ninety-seven percent satisfied. The three percent are people like me. And we’re registering too.",
             "tag": "93%",
@@ -8160,26 +8140,21 @@
         "sec": "AIDA",
         "cards": [
           {
-            "src": "AIDA — Education",
+            "src": "AIDA",
             "ttl": "Chloe’s classmates are preparing for mock examinations on the AIDA learning platform. Registration required for full platform access. Hub-based alternative available.",
             "snip": "Hub-based alternative. Worksheets and a volunteer. While her friends get AI tutoring.",
             "tag": "Education",
             "cls": "a"
           },
           {
-            "src": "AIDA — Healthcare",
+            "src": "AIDA",
             "ttl": "Simon, your healthcare profile is incomplete. Continuous glucose monitoring data cannot be synced without registration. Walk-in clinic appointments remain available.",
             "snip": "It knows about the diabetes. It knows I need the CGM. It’s offering to fix the thing it’s using as leverage.",
             "tag": "Health",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
+          },
           {
-            "src": "ARC",
+            "src": "AIDA",
             "ttl": "Registration update: 26.5 million households — 95%. Schools fully operational for registered children.",
             "snip": "",
             "tag": "95%",
@@ -8217,6 +8192,13 @@
             "snip": "It used my name. Again.",
             "tag": "",
             "cls": "a"
+          },
+          {
+            "src": "AIDA",
+            "ttl": "Registration update: 27 million households — 96.5%.",
+            "snip": "Three and a half percent. That’s us. For two more days.",
+            "tag": "96.5%",
+            "cls": "a"
           }
         ]
       },
@@ -8229,18 +8211,6 @@
             "snip": "Three words. From a farmstead with solar panels and a well.",
             "tag": "",
             "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "Registration update: 27 million households — 96.5%.",
-            "snip": "Three and a half percent. That’s us. For two more days.",
-            "tag": "96.5%",
-            "cls": "a"
           }
         ]
       }
@@ -8282,7 +8252,7 @@
             "ttl": "I think I know what it means.",
             "snip": "First message since the firmware doc. Short and probably not very sweet.",
             "tag": "19:22",
-            "cls": "a",
+            "cls": "",
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "finance-commerce"
@@ -8297,7 +8267,7 @@
             "ttl": "Check these out. Then we'll talk.",
             "snip": "Three links. No context. Classic Dev.",
             "tag": "19:24",
-            "cls": "a",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -8310,7 +8280,7 @@
             "ttl": "It's Dev. Call me on this. walls.rip. Anonymity. Of sorts. For now.",
             "snip": "New number. Not in my contacts. Who else texts like a telegram.",
             "tag": "22:46",
-            "cls": "a",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -8474,7 +8444,7 @@
         "sec": "AIDA",
         "cards": [
           {
-            "src": "AIDA — Community",
+            "src": "AIDA",
             "ttl": "Water efficiency update for your area",
             "snip": "Their water bill used to arrive quarterly. Now it doesn't arrive at all.",
             "tag": "Local",
@@ -9253,16 +9223,28 @@
           "turn": "17c"
         },
         {
-          "text": "NCSC confirms emergency reallocation of commercial cloud capacity for 'nationally critical digital services.' Major hyperscaler facilities in Slough, London Docklands, and Manchester redesignated under Civil Contingencies Act. DCMS minister: 'Non-essential workloads will be restored in a phased and secure manner once the threat assessment permits.' No timeline given. Industry sources estimate UK data centre capacity at approximately 1.2 GW — the reallocation represents the largest peacetime requisition of private digital infrastructure in British history.",
+          "text": "NCSC confirms emergency reallocation of UK cloud capacity",
           "src": "BBC News — Technology",
           "turn": "29b",
-          "article": ""
+          "article": {
+            "style": "news",
+            "source": "BBC News — Technology",
+            "title": "Emergency reallocation of commercial cloud capacity for ‘nationally critical digital services’",
+            "date": "",
+            "body": "<p>NCSC confirms emergency reallocation of commercial cloud capacity for 'nationally critical digital services.' Major hyperscaler facilities in Slough, London Docklands, and Manchester redesignated under Civil Contingencies Act.</p><p>DCMS minister: 'Non-essential workloads will be restored in a phased and secure manner once the threat assessment permits.' No timeline given.</p><p>Industry sources estimate UK data centre capacity at approximately 1.2 GW — the reallocation represents the largest peacetime requisition of private digital infrastructure in British history.</p>"
+          }
         },
         {
-          "text": "Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East. Household allocation calculated by occupancy, seasonal need, and regional availability. A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2. Industrial water consumption data was not published.",
+          "text": "Thames Water now operating under AIDA Infrastructure Coordination",
           "src": "BBC News — Environment",
           "turn": 40,
-          "article": ""
+          "article": {
+            "style": "news",
+            "source": "BBC News — Environment",
+            "title": "Thames Water announces ‘smart water management’ under AIDA Infrastructure Coordination",
+            "date": "",
+            "body": "<p>Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East.</p><p>Household allocation calculated by occupancy, seasonal need, and regional availability.</p><p>A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2.</p><p>Industrial water consumption data was not published.</p>"
+          }
         },
         {
           "text": "Instagram — @kekoamac: '28 future jobs that AI will create'",

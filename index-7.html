@@ -653,8 +653,7 @@ html, body {
   height: calc(100vh - 90px);
   margin-top: 48px;
   overflow: hidden;
-  margin-right: 460px;
-  transition: margin-right .3s ease;
+  margin-right: 680px;
 }
 
 /* ── LEFT PANE ── */
@@ -1029,7 +1028,7 @@ html, body {
 /* ── RIGHT PANE ── */
 .right {
   position: fixed;
-  right: 0;
+  right: 220px;
   top: 48px;
   bottom: 42px;
   width: 460px;
@@ -1039,7 +1038,6 @@ html, body {
   overflow: hidden;
   z-index: 100;
   border-left: 1px solid var(--div);
-  transition: right .3s ease;
 }
 
 .tabs {
@@ -2390,17 +2388,6 @@ body.game-active .ticker-bar { display: flex; }
 /* ══════════════════════════════════════════════════════
    MIRROR — full-screen overlay (void)
    ══════════════════════════════════════════════════════ */
-/* ── CHAPTERS-OPEN LAYOUT SHIFT ── */
-body.chapters-open .wrap {
-  margin-right: 680px;
-}
-body.chapters-open .right {
-  right: 220px;
-}
-body.chapters-open .reader-bar {
-  right: 236px;
-}
-
 #mirror-overlay {
   position: fixed;
   inset: 0;

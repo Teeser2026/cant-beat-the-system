@@ -2294,6 +2294,8 @@ body.game-active .ticker-bar { display: flex; }
 }
 .cn-item.current .cn-title { opacity: 1; color: var(--warm); }
 .cn-item.current .cn-num { opacity: .7; }
+.cn-item.stub .cn-title { opacity: .3; font-style: italic; }
+.cn-num.q { color: var(--cold); }
 
 /* Reader bar — replaces dev bar */
 .reader-bar {
@@ -4382,13 +4384,8 @@ function renderDevTurnList() {
 
 // ── NAV LIST HELPER (gates dev vs reader) ──
 function updateNavList() {
-  if (DEV) {
-    const list = document.getElementById('devTurnList');
-    if (list && list.classList.contains('open')) renderDevTurnList();
-  } else {
-    const nav = document.getElementById('chapterNav');
-    if (nav && nav.classList.contains('open')) renderChapterNav();
-  }
+  const nav = document.getElementById('chapterNav');
+  if (nav && nav.classList.contains('open')) renderChapterNav();
 }
 
 // ── CHAPTER NAV (reader mode) ──
@@ -4397,18 +4394,22 @@ function renderChapterNav() {
   let html = '<div class="cn-heading">Chapters</div>';
   let chapterNum = 0;
   playData.turns.forEach((turn, idx) => {
-    // Skip questions and anything beyond maxReached
-    if (turn.isQuestion) return;
-    if (idx > state.maxReached) return;
-    chapterNum++;
+    // Reader mode: skip questions, respect maxReached
+    if (!DEV && turn.isQuestion) return;
+    if (!DEV && idx > state.maxReached) return;
+    const isQ = turn.isQuestion;
+    const isStub = !isQ && turn.paras && turn.paras.length <= 1;
+    if (!isQ) chapterNum++;
     const isCurrent = idx === state.turnIndex;
-    const cls = 'cn-item' + (isCurrent ? ' current' : '');
-    const title = turn.title || 'Untitled';
+    const cls = 'cn-item' + (isCurrent ? ' current' : '') + (isStub ? ' stub' : '');
+    const title = isQ ? (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question') : (turn.title || 'Untitled');
     const date = turn.date || '';
+    const numText = isQ ? (turn.num || turn.id) : chapterNum;
+    const numCls = 'cn-num' + (isQ ? ' q' : '');
     html += '<div class="' + cls + '" data-idx="' + idx + '">' +
       (date ? '<span class="cn-date">' + date + '</span>' : '') +
       '<div class="cn-main">' +
-        '<span class="cn-num">' + chapterNum + '</span>' +
+        '<span class="' + numCls + '">' + numText + '</span>' +
         '<span class="cn-title">' + title + '</span>' +
       '</div>' +
     '</div>';
@@ -6060,7 +6061,7 @@ function goTo(idx) {
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';
-  if (DEV) document.getElementById('devTurnList').style.display = '';
+  // devTurnList retired — chapterNav handles both modes
   document.querySelector('.left').scrollTop = 0;
 
   // Check for new thread items at this turn — show dot on Threads tab
@@ -6139,9 +6140,9 @@ if (DEV) {
   document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
   document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));
   document.getElementById('devListToggle').addEventListener('click', () => {
-    const list = document.getElementById('devTurnList');
-    list.classList.toggle('open');
-    if (list.classList.contains('open')) renderDevTurnList();
+    const nav = document.getElementById('chapterNav');
+    nav.classList.toggle('open');
+    if (nav.classList.contains('open')) renderChapterNav();
   });
 } else {
   document.getElementById('devBar').style.display = 'none';

@@ -1027,7 +1027,7 @@ html, body {
 
 /* ── RIGHT PANE ── */
 .right {
-  width: 420px;
+  width: 460px;
   min-width: 360px;
   flex-shrink: 0;
   background: var(--bg-r);
@@ -1038,6 +1038,7 @@ html, body {
 
 .tabs {
   display: flex;
+  justify-content: center;
   padding: 14px 14px 0;
   margin-top: 6px;
   border-bottom: 1px solid var(--div);
@@ -1570,7 +1571,7 @@ a.ti.research:hover::after { opacity: .5; }
 .song-context { font-family: 'Crimson Pro', serif; font-size: 14px; color: var(--dim); opacity: .55; margin-top: 5px; line-height: 1.5; font-style: italic; }
 .song-turn { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; margin-top: 4px; }
 .song.player .song-title { color: var(--player); }
-.song-link { font-size: 28px; color: var(--warm); opacity: .6; flex-shrink: 0; padding-top: 4px; text-decoration: none; transition: opacity .3s; }
+.song-link { font-size: 0; color: transparent; width: 28px; height: 28px; flex-shrink: 0; text-decoration: none; transition: opacity .3s; opacity: .5; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 168 168'%3E%3Ccircle cx='84' cy='84' r='84' fill=%27%231DB954%27/%3E%3Cpath d=%27M115.3 121c-1.4 0-2.4-.5-3.6-1.2-16.8-10.2-37.8-12.4-62.6-6.8-2.4.6-4.4-.6-4.8-2.8-.6-2.4.6-4.4 2.8-4.8 27.6-6.4 51.2-3.6 70.2 8 2.2 1.2 3 4 1.6 6.2-.8 1-2 1.4-3.6 1.4zm7.4-18.4c-1.2 0-2.4-.4-3.4-1.2-19.2-11.6-46.4-15.2-68-8.2-2.8.8-5.6-.6-6.4-3.4-.8-2.8.6-5.6 3.4-6.4 24.6-8 55 4 76 9.4 2.4 1.4 3.2 4.2 1.8 6.6-.8 1.6-2 2.6-3.4 3.2zm2.6-19.2c-21.6-12.8-57.6-14-78.4-7.8-3.2 1-6.6-1-7.4-4-.8-3.2 1-6.4 4-7.4 24-7.2 63.4-5.8 88.4 9 3 1.6 3.8 5.4 2.2 8.2-1.6 2.4-4.6 3.4-7 2.2z' fill='%23191414'/%3E%3C/svg%3E"); background-size: 28px 28px; background-repeat: no-repeat; background-position: center; display: block; }
 .song-link:hover { opacity: .8; }
 .add-song { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; margin-top: 8px; }
 .add-song:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
@@ -4117,7 +4118,7 @@ function renderSongs() {
 
   let html = '';
   if (visible.length > 0) {
-    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--warm);opacity:.4;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(196,149,106,.1)"><a href="https://open.spotify.com" target="_blank" rel="noopener" style="color:var(--warm);text-decoration:none">&#9835; Open in Spotify</a></div>';
+    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);opacity:.35;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(196,149,106,.1)">\u266b\u2002Open in Spotify</div>';
   }
   visible.forEach(song => {
     const linkHtml = song.url

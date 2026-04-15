@@ -2235,17 +2235,20 @@ body.game-active .ticker-bar { display: flex; }
   position: fixed;
   right: 0;
   top: 48px;
-  bottom: 42px;
+  height: calc(100vh - 90px);
   width: 220px;
-  z-index: 200;
+  z-index: 1000;
   overflow-y: auto;
-  background: rgba(6,6,9,.97);
+  background-color: rgba(6,6,9,1);
   border-left: 1px solid var(--div);
-  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
   scrollbar-width: thin;
   scrollbar-color: var(--faint) transparent;
 }
-.chapter-nav.open { display: block; }
+.chapter-nav.open { visibility: visible; pointer-events: auto; opacity: 1; }
+body.cn-open .wrap { width: calc(100% - 220px); }
 .chapter-nav::-webkit-scrollbar { width: 3px; }
 .chapter-nav::-webkit-scrollbar-thumb { background: var(--faint); }
 .chapter-nav .cn-heading {
@@ -2376,7 +2379,7 @@ body.game-active .ticker-bar { display: flex; }
   .left { border-right: none; }
   .prose-wrap { padding: 64px 24px 120px; }
   .dev-turn-list { display: none !important; }
-  .chapter-nav { display: none !important; }
+  .chapter-nav { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
   .reader-bar { display: none !important; }
 }
 
@@ -6147,6 +6150,7 @@ if (DEV) {
   document.getElementById('devListToggle').addEventListener('click', () => {
     const nav = document.getElementById('chapterNav');
     nav.classList.toggle('open');
+    document.body.classList.toggle('cn-open');
     if (nav.classList.contains('open')) renderChapterNav();
   });
 } else {
@@ -6157,6 +6161,7 @@ if (DEV) {
   document.getElementById('readerChapters').addEventListener('click', () => {
     const nav = document.getElementById('chapterNav');
     nav.classList.toggle('open');
+    document.body.classList.toggle('cn-open');
     if (nav.classList.contains('open')) renderChapterNav();
   });
 }

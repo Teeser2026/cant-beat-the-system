@@ -1027,7 +1027,7 @@ html, body {
 
 /* ── RIGHT PANE ── */
 .right {
-  width: 50%;
+  width: 420px;
   min-width: 360px;
   flex-shrink: 0;
   background: var(--bg-r);
@@ -1130,13 +1130,13 @@ html, body {
 .card.song-card { border-left: 2px solid rgba(138,126,106,.3); }
 
 /* ── SIGNAL CARD MEDIA (header images) ── */
-.card.has-img { overflow: hidden; }
+.card.has-img { overflow: hidden; padding: 0; }
+.card.has-img .card-body { padding: 10px 14px 12px; }
 .card.has-img .card-img {
-  max-width: 260px;
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 8px;
-  border-radius: 3px;
+  margin: 0;
   opacity: .55;
   transition: opacity .4s;
 }

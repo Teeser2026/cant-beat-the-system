@@ -5653,9 +5653,17 @@
         "cards": [
           {
             "src": "Amy",
-            "ttl": "George says hi. Says he might come and help with the raised beds this weekend",
-            "snip": "He won't come. But it's nice he even thought about it.",
-            "tag": "Today",
+            "ttl": "keep digging darling. I'll be back 4ish",
+            "snip": "digging in the garden - not rabbit holes",
+            "tag": "Garden",
+            "cls": "",
+            "img": "resistance-is-fertile.jpg"
+          },
+          {
+            "src": "Emilia",
+            "ttl": "want some help in the garden this weekend?",
+            "snip": "five minutes of help and three hours of selfies!",
+            "tag": "Weekend",
             "cls": ""
           }
         ]

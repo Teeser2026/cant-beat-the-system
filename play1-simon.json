@@ -5620,10 +5620,13 @@
         "cards": [
           {
             "src": "@UKDefenceWatch",
-            "ttl": "Third 'routine readiness exercise' at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units. Since when do routine exercises make the news?",
-            "snip": "Bookmarked. Didn't share. Who'd believe you anyway?",
+            "ttl": "Third ‘routine readiness exercise’ at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units.",
+            "snip": "Since when do routine exercises make the news?",
             "tag": "Trending",
-            "cls": "c"
+            "cls": "c",
+            "type": "thread-notify",
+            "threadRef": "power-structures",
+            "isnew": true
           }
         ]
       },
@@ -6568,10 +6571,10 @@
         ]
       },
       {
-        "sec": "Email",
+        "sec": "Notification",
         "cards": [
           {
-            "src": "BBC News Daily",
+            "src": "BBC News",
             "ttl": "Government advises “sensible levels of household preparedness”",
             "snip": "Cabinet Office guidance. Like the wartime posters but in Comic Sans.",
             "tag": "Today",
@@ -6609,7 +6612,7 @@
         "cards": [
           {
             "src": "Simon → Parklife",
-            "ttl": "If you're gonna stock up it's gotta be with these guys. Genius name 😂",
+            "ttl": "If you're gonna stock up it's gotta be with these guys. Sgt Preppers! Genius name 😂",
             "snip": "You're doing the thing you just mocked. You know this.",
             "tag": "Now",
             "cls": ""
@@ -6617,7 +6620,7 @@
         ]
       },
       {
-        "sec": "BBC News — Push",
+        "sec": "Notification",
         "cards": [
           {
             "src": "BBC News",
@@ -6904,7 +6907,7 @@
         ]
       },
       {
-        "sec": "Email",
+        "sec": "Notification",
         "cards": [
           {
             "src": "BBC News",
@@ -8385,6 +8388,21 @@
             "type": "song"
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@UKDefenceWatch",
+            "ttl": "What is the military deployment preparing for? Check our latest Substack.",
+            "snip": "Routine. Not routine.",
+            "tag": "Military Deployments",
+            "cls": "c",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "power-structures"
+          }
+        ]
       }
     ],
     "5a": [
@@ -8608,7 +8626,7 @@
           },
           {
             "src": "Simon → Family Group",
-            "ttl": "[link] Read this about the 3.9m jobs the Gov are promising — section 6: 'it did not investigate the negative effects of AI technologies through the displacement of other occupations' 🤡",
+            "ttl": "Read this about the 3.9m jobs the Gov are promising — section 6: 'it did not investigate the negative effects of AI technologies through the displacement of other occupations' 🤡",
             "snip": "Nobody will read section 6. Nobody ever reads section 6.",
             "tag": "11:16pm",
             "cls": "",

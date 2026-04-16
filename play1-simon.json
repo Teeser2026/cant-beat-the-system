@@ -6007,7 +6007,7 @@
             "snip": "You want him to be right more than you think he's right.",
             "tag": "Suggested",
             "cls": "",
-            "img": "images/mr-t-relax.gif"
+            "img": "mr-t-relax.gif"
           }
         ]
       }
@@ -6354,7 +6354,7 @@
             "snip": "He's probably right. He's usually right.",
             "tag": "12.1K likes",
             "cls": "",
-            "img": "images/kirk-nothing-happens.gif"
+            "img": "kirk-nothing-happens.gif"
           }
         ]
       },
@@ -6577,7 +6577,7 @@
             "snip": "Three thousand likes. No source. Just a GIF and a feeling.",
             "tag": "Suggested",
             "cls": "c",
-            "img": "images/matrix-digital-id.gif"
+            "img": "matrix-digital-id.gif"
           }
         ]
       }
@@ -6909,7 +6909,7 @@
             "snip": "The account that makes you feel smart for agreeing with it.",
             "tag": "Viral",
             "cls": "c",
-            "img": "images/they-live-red-pill.png"
+            "img": "they-live-red-pill.png"
           }
         ]
       }
@@ -9039,7 +9039,7 @@
           "src": "simon",
           "turn": 8,
           "article": {
-            "style": "article",
+            "style": "news",
             "source": "Digital Rights UK — Analysis",
             "title": "Optional Until It Isn't",
             "date": "18 November 2026",

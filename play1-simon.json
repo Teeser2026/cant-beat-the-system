@@ -8239,7 +8239,8 @@
             "tag": "14:22",
             "cls": "",
             "isnew": true,
-            "type": "flavour"
+            "type": "thread-notify",
+            "threadRef": "science-technology"
           }
         ]
       }

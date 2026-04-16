@@ -3543,7 +3543,7 @@ body.game-active .ticker-bar { display: flex; }
   <!-- RIGHT PANE — HUB -->
   <div class="right">
     <div class="tabs">
-      <button class="tab on" data-p="signal">Signal</button>
+      <button class="tab on" data-p="signal">Feed</button>
       <button class="tab" data-p="threads">Threads</button>
       <button class="tab" data-p="songs">Songs</button>
     </div>
@@ -3799,7 +3799,7 @@ function renderSignal(turnId) {
   const panel = document.getElementById('signal-panel');
   const data = signalData[turnId];
   if (!data) {
-    panel.innerHTML = '<div class="sec-label">\u2014 No signal this turn \u2014</div>';
+    panel.innerHTML = '';
     return;
   }
   let html = '';

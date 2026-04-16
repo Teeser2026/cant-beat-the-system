@@ -6515,6 +6515,14 @@
             "snip": "She won't. You both know this. But the kiss is real.",
             "tag": "Read",
             "cls": ""
+          },
+          {
+            "src": "Simon → Parklife",
+            "ttl": "you should read this guys",
+            "snip": "Knowledge is power, and we need to live in truth",
+            "tag": "Essential Reading",
+            "cls": "",
+            "img": "180-degrees-book.jpg"
           }
         ]
       }
@@ -8140,6 +8148,14 @@
             "snip": "Jamie’s prescription. Rupert’s stubbornness. Amy’s mum trying to hold it together.",
             "tag": "",
             "cls": "e"
+          },
+          {
+            "src": "Dev — Signal",
+            "ttl": "WANTING TO BE LEFT ALONE WON'T SAVE YOUR LIFE",
+            "snip": "A meme. From Dev. Unusual.",
+            "tag": "3:47am",
+            "cls": "",
+            "img": "left-alone-cabin.jpg"
           }
         ]
       }

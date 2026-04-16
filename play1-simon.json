@@ -5997,6 +5997,19 @@
             "cls": ""
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@CyberSkeptic_",
+            "ttl": "NCSC raises threat level and everyone panics. Same play, different year. Elevated threat = bigger surveillance budget. Nothing will happen. Relax.",
+            "snip": "You want him to be right more than you think he's right.",
+            "tag": "Suggested",
+            "cls": "",
+            "img": "images/mr-t-relax.gif"
+          }
+        ]
       }
     ],
     "7": [
@@ -6050,6 +6063,20 @@
             "snip": "The algorithm knows. It always knows. Day 3 is when you're weakest.",
             "tag": "Offer",
             "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@DigitalRightsUK",
+            "ttl": "Every \"voluntary\" digital scheme in the last decade became mandatory within five years. One Login. DIATF. Biometric boarding. We looked at the pattern.",
+            "snip": "He put it in writing. You just had the tabs open.",
+            "tag": "Long Read",
+            "cls": "c",
+            "type": "thread-notify",
+            "threadRef": "surveillance-architecture"
           }
         ]
       },
@@ -6119,6 +6146,18 @@
             "cls": "c",
             "threadRef": "science-technology",
             "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@prepperUK_",
+            "ttl": "If the grid goes down over Christmas nobody's coming to save you. Stock water. Stock cash. Stock fuel.",
+            "snip": "You didn't stock anything. You bought a Terry's Chocolate Orange.",
+            "tag": "847 likes",
+            "cls": "c"
           }
         ]
       }
@@ -6303,6 +6342,19 @@
             "snip": "Another quarter, another kick in the teeth.",
             "tag": "Today",
             "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@NothingEverHappens",
+            "ttl": "Every January: \"cyber threat level raised.\" Every February: absolutely nothing happens. Every single year. 🍿",
+            "snip": "He's probably right. He's usually right.",
+            "tag": "12.1K likes",
+            "cls": "",
+            "img": "images/kirk-nothing-happens.gif"
           }
         ]
       },
@@ -6515,6 +6567,19 @@
             "type": "thread-notify"
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@WakeUpBritain_",
+            "ttl": "When they tell you digital identity is optional 😂",
+            "snip": "Three thousand likes. No source. Just a GIF and a feeling.",
+            "tag": "Suggested",
+            "cls": "c",
+            "img": "images/matrix-digital-id.gif"
+          }
+        ]
       }
     ],
     "37": [
@@ -6604,6 +6669,20 @@
             "tag": "Ad",
             "cls": "",
             "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@DistributedDenial",
+            "ttl": "\"The rebuilder is the room.\" We wrote that four weeks ago. Today the room started shaking.",
+            "snip": "He's back. And he's not wrong.",
+            "tag": "Quoted · 3.1K",
+            "cls": "c",
+            "type": "thread-notify",
+            "threadRef": "finance-commerce"
           }
         ]
       },
@@ -6820,6 +6899,19 @@
             "threadRef": "power-structures"
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@RedPillReality",
+            "ttl": "\"This wasn't a fight scene. It was a metaphor for how hard it is to red pill some people.\"",
+            "snip": "The account that makes you feel smart for agreeing with it.",
+            "tag": "Viral",
+            "cls": "c",
+            "img": "images/they-live-red-pill.png"
+          }
+        ]
       }
     ],
     "15": [
@@ -6867,7 +6959,7 @@
         ]
       },
       {
-        "sec": "Email",
+        "sec": "Notification",
         "cards": [
           {
             "src": "BBC News Daily",
@@ -6915,6 +7007,18 @@
             "snip": "Note to self — no midnight banking.",
             "tag": "Scheduled",
             "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@jennywilson89",
+            "ttl": "Conspiracy Twitter really thinks the economy is going to collapse on Valentine's Day 💀 some of you genuinely need to log off and go outside",
+            "snip": "She has 430 followers and a private account. She's probably at brunch right now.",
+            "tag": "For You",
+            "cls": ""
           }
         ]
       },
@@ -8929,6 +9033,19 @@
             "body": "<p>When smart meters were first rolled out across the UK, the pitch was simple: no more estimated bills, no more meter readers, no more surprises. Ten years and forty million installations later, the devices sitting quietly under your stairs have become something rather more interesting than a billing tool.</p><p>Today's smart meters record your energy consumption in half-hourly intervals and transmit the data to your supplier via the national Data Communications Company (DCC) network. That's the bit most people know. What fewer people realise is how much that half-hourly data reveals about the household behind it.</p><p><strong>Your meter knows when you're home</strong></p><p>Energy researchers at the University of Bath published a study earlier this year demonstrating that smart meter data alone — without any additional sensors — could determine household occupancy with 94% accuracy. The consumption signature of an empty house is distinct from an occupied one. A kettle at 6:45am. A shower at 7:15. The television at 9pm. The pattern is as individual as a fingerprint.</p><p>\"People think of their meter as measuring electricity,\" said Prof. Marcelle McManus, who led the Bath study. \"It's actually measuring behaviour. The energy is just the medium.\"</p><p>For energy suppliers, this data is valuable for demand forecasting and grid balancing. For insurance companies, it could verify occupancy claims. For local authorities, it could identify vulnerable residents living alone. The applications multiply once you stop thinking of the data as a number and start thinking of it as a signal.</p><p><strong>Next-generation meters and the 6G question</strong></p><p>The current generation of smart meters communicates via the DCC's dedicated wireless network — a relatively simple, low-bandwidth system designed for billing data. But BEIS confirmed in September that the next specification, SMETS3, will be designed for integration with emerging 6G infrastructure.</p><p>The implications are significant. Where current meters send a reading every thirty minutes, SMETS3 devices will be capable of continuous, real-time telemetry. Where current meters measure whole-house consumption, the next generation will disaggregate individual appliances — your washing machine, your EV charger, your heat pump — using electrical signature analysis.</p><p>Industry sources suggest the specification will also include ambient environmental sensing: temperature, humidity, air quality, and occupancy detection via low-power radar. The meter becomes less a measuring device and more a building-management node — one component in what the telecoms industry calls the \"ambient IoT\" layer of 6G networks.</p><p>\"The smart home was always a slightly awkward concept because it required people to buy lots of separate devices,\" said Dr Elena Marchetti of the Digital Catapult. \"The insight behind SMETS3 is that the infrastructure already exists. Forty million installed endpoints, already networked. You don't need to build the smart home. You just need to update the firmware.\"</p><p><strong>The digital twin of your home</strong></p><p>The long-term vision, outlined in a BEIS consultation document published quietly in August, is what planners call a \"domestic digital twin\" — a real-time computational model of every home on the grid, updated continuously, capable of predicting energy demand, identifying maintenance needs, and optimising consumption patterns automatically.</p><p>The consultation acknowledges that this raises \"legitimate questions about data governance and household privacy\" but argues that the benefits — reduced carbon emissions, lower bills, better grid resilience — justify the approach. It notes that participation would be \"opt-out rather than opt-in\" and that data would be \"anonymised at the point of aggregation.\"</p><p>Privacy campaigners have been less enthusiastic. \"Anonymised at the point of aggregation means identifiable before that point,\" said Silkie Carlo of Big Brother Watch. \"They're describing a real-time surveillance network installed in forty million homes and calling it an energy efficiency programme.\"</p><p>BEIS declined to comment on the timeline for SMETS3 deployment but confirmed that the specification is expected to be finalised by mid-2027.</p>",
             "footer": "BBC Technology"
           }
+        },
+        {
+          "text": "Digital Rights UK — Optional Until It Isn't",
+          "src": "simon",
+          "turn": 8,
+          "article": {
+            "style": "article",
+            "source": "Digital Rights UK — Analysis",
+            "title": "Optional Until It Isn't",
+            "date": "18 November 2026",
+            "body": "<p>Every voluntary digital programme introduced by a UK government in the last decade has become effectively mandatory within five years. This is not a conspiracy theory. It is a pattern with publicly available evidence, and it is accelerating.</p><p>In 2014, the Cabinet Office launched GOV.UK Verify as a voluntary identity verification service. Users could choose it or continue using existing methods to access government services. By 2018, DWP and HMRC had quietly removed the alternative pathways for an expanding list of services. By 2020, Verify was shut down entirely — not because it failed, but because its successor, One Login, had absorbed its function and its user base. One Login currently has 4.2 million accounts. It has never been described as mandatory. It does not need to be. If you want to access your tax account, your driving licence, your student loan, or your state pension forecast, you use One Login. The alternative is a phone call that averages forty-seven minutes.</p><p>Smart meters follow the same trajectory. The 2012 rollout was explicitly voluntary — the government emphasised that no household would be forced to accept one. By 2024, thirty million were installed. Energy suppliers now design their tariffs, billing platforms, and customer service around the assumption that you have one. The cheapest rates require half-hourly usage data. The most responsive support channels require app access, which requires a meter that talks to the network. You are not required to have a smart meter. You are simply penalised, gradually and diffusely, for not having one.</p><p>Contactless payments crossed the same threshold invisibly. When the limit was raised to £100, then £150, each increase was reported as consumer convenience. What went unreported was the corresponding contraction of cash infrastructure — one in seven ATMs has closed since 2021, bank branches continue to disappear, and the quiet removal of \"cash accepted\" signage has accelerated. The choice is technically preserved. The infrastructure that supports the choice is being disassembled.</p><p>Three current programmes are following this curve at compressed timescales. The Digital Identity and Attributes Trust Framework, now in its third version, establishes the technical standards for digital identity across the private sector. One Login continues to expand its service footprint across government. And biometric boarding — facial recognition at airport security gates — went from a pilot at fourteen airports last year to a mandatory requirement on all domestic and EU routes, with no parliamentary debate and almost no press coverage. Each is voluntary, or was. Each is interoperable with the others by design. That interoperability is the mechanism that makes individual choice irrelevant.</p><p>And then there are the programmes that skip the voluntary phase entirely. In June, the Financial Conduct Authority mandated a unified device-level authentication layer — ARC — across every regulated payment terminal, banking application, and financial services platform in the country, with a compliance deadline of September. No consultation with the public. No consumer opt-in. No opt-out. No coverage outside the financial trade press. Most people reading this will not have heard of it. It is already installed.</p><p>A resident who opts out of digital identity verification in 2026 can still function — with friction. They can queue at a post office, write a cheque, present physical documents. If the current trajectory holds, a resident who attempts the same in 2028 will find that the friction has quietly become a wall. Not because a law was passed, but because the systems that accepted the alternatives will have been decommissioned, defunded, or redesigned around the assumption of digital participation.</p><p>This is not about whether digital identity is good or bad. Framing it that way is how the pattern survives scrutiny. The question is whether a service that cannot practically be refused should still be called voluntary — and whether a country in which every transaction, journey, and government interaction is authenticated through a single interoperable framework has made a democratic choice, or simply arrived at an outcome that was never voted on.</p>",
+            "footer": ""
+          }
         }
       ]
     },
@@ -9571,6 +9688,19 @@
           "src": "dev",
           "turn": "6c",
           "snip": "Every country enters the system through a different door — crisis, development, trade, voluntary adoption. Every door leads to the same system."
+        },
+        {
+          "text": "@DistributedDenial — the room is shaking",
+          "src": "simon",
+          "turn": 18,
+          "article": {
+            "style": "x-thread",
+            "source": "@DistributedDenial",
+            "title": "the room is shaking",
+            "date": "6 February 2027",
+            "body": "<div class=\"x-header\"><div class=\"x-avatar\">DD</div><div class=\"x-name\">DistributedDenial <span class=\"x-verified\"></span></div><div class=\"x-handle\">@DistributedDenial</div></div><div class=\"x-body\"><p>1/ Four weeks ago we said the rebuilder is already in the room. Today the FTSE 250 circuit breaker fired for the first time since COVID.</p><p>2/ Cash withdrawals up 340% in a week. Six ATM regions reporting \"technical issues.\" The FCA says consumers should not be alarmed. The FCA always says consumers should not be alarmed.</p><p>3/ Meanwhile someone with fifteen years in payment infrastructure published what's sitting inside every terminal in the country. A dormant biometric authentication layer. No release note. No vendor acknowledgement. Pushed on the night of January 18th.</p><p>4/ A system nobody asked for, installed on hardware nobody owns, waiting for an event nobody is predicting.</p><p>5/ When it breaks — and it is breaking — the thing that replaces it will require your face, your fingerprint, or both. Not because of a law. Because of a firmware update pushed in January while you were arguing about the transfer window.</p><p>6/ You'll thank them for it. Again.</p></div><div class=\"x-timestamp\">2:14 AM · Feb 6, 2027</div><div class=\"x-metrics\">↩ 1.9K  🔁 24.7K  ♡ 52.1K  📊 6.3M</div>",
+            "footer": "X · 2:14 AM · Feb 6, 2027"
+          }
         }
       ]
     },

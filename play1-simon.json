@@ -5919,10 +5919,22 @@
     ],
     "16": [
       {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "moving to Signal mate. make sure you have it. setting up a group too",
+            "snip": "He doesn't switch channels for nothing.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "Signal",
         "cards": [
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "Read this.",
             "snip": "Two words. No context. Dev doesn't waste them.",
             "tag": "Unread",
@@ -6348,10 +6360,10 @@
     ],
     "16a": [
       {
-        "sec": "Signal",
+        "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Alan (The Dude) — Signal",
+            "src": "Alan (The Dude)",
             "ttl": "Mate. Have a read of this. Don’t laugh. Well, do. But then actually read it.",
             "snip": "https://moketchups.github.io/psychohistory/",
             "tag": "New",
@@ -6529,10 +6541,10 @@
     ],
     "18": [
       {
-        "sec": "Signal",
+        "sec": "Signal group",
         "cards": [
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "\"Someone's cracked the time-lock. Valentine's Day. 00:00 GMT. Take it or leave it.\"",
             "snip": "Hackers confirm what the gematria hinted at.",
             "tag": "Urgent",
@@ -6904,7 +6916,7 @@
         ]
       },
       {
-        "sec": "Signal",
+        "sec": "Signal group",
         "cards": [
           {
             "src": "Dev",
@@ -7692,7 +7704,7 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
             "snip": "Signal came back yesterday. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
             "tag": "",
@@ -7703,17 +7715,17 @@
     ],
     "28": [
       {
-        "sec": "Signal Group",
+        "sec": "Text Message",
         "cards": [
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "you there?",
             "snip": "Two words. Three days of silence on the group and then two words at 1am.",
             "tag": "1:00am",
             "cls": ""
           },
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
             "snip": "Dev's frenzy. The Signal group lit up at 1am and didn't stop until 4. Seven people reading. Nobody sleeping. Dev expecting you to absorb in an hour what took him weeks to map.",
             "tag": "Thread",
@@ -7895,7 +7907,7 @@
             "cls": ""
           },
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "speech metadata. file created 9 february. six days before the attack.",
             "snip": "Six days.",
             "tag": "",
@@ -8016,7 +8028,7 @@
             "cls": "e"
           },
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "they’re taking iris + palm at the hubs. paragraph 94 of the digital citizen agreement. nobody reads it.",
             "snip": "Nobody reads it. Including me.",
             "tag": "",
@@ -8150,7 +8162,7 @@
             "cls": "e"
           },
           {
-            "src": "Dev — Signal",
+            "src": "Dev",
             "ttl": "WANTING TO BE LEFT ALONE WON'T SAVE YOUR LIFE",
             "snip": "A meme. From Dev. Unusual.",
             "tag": "3:47am",
@@ -8231,7 +8243,7 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Dev — mesh",
+            "src": "Dev",
             "ttl": "Don’t do it.",
             "snip": "Three words. From a farmstead with solar panels and a well.",
             "tag": "",
@@ -8272,7 +8284,7 @@
     ],
     "17c": [
       {
-        "sec": "WhatsApp",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev",
@@ -8287,7 +8299,7 @@
         ]
       },
       {
-        "sec": "WhatsApp",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev",

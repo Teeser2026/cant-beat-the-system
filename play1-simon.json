@@ -5985,6 +5985,18 @@
             "threadRef": "power-structures"
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "ONS",
+            "ttl": "UK real wages fall for third consecutive quarter",
+            "snip": "You scan it. You don't click.",
+            "tag": "Today",
+            "cls": ""
+          }
+        ]
       }
     ],
     "7": [
@@ -7005,6 +7017,18 @@
             "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
             "tag": "Evening",
             "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Barclays",
+            "ttl": "Your ISA allowance resets 6 April. Top up before the deadline.",
+            "snip": "The system assumes there will be an April.",
+            "tag": "Today",
+            "cls": ""
           }
         ]
       }
@@ -9837,6 +9861,14 @@
         {
           "text": "UEFA vote on semi-automated VAR delayed until January — \"consultation ongoing\"",
           "cls": ""
+        },
+        {
+          "text": "S&P 500  5,412  ▲ 0.2%",
+          "cls": ""
+        },
+        {
+          "text": "UK avg petrol 162.2p/litre — RAC",
+          "cls": ""
         }
       ],
       "4-5": [
@@ -9957,6 +9989,14 @@
         {
           "text": "John Lewis Christmas ad viewed 42m times in first week",
           "cls": ""
+        },
+        {
+          "text": "UK inflation 3.2% — ONS",
+          "cls": ""
+        },
+        {
+          "text": "Average 2yr fixed mortgage 5.89% — Moneyfacts",
+          "cls": "cold"
         }
       ],
       "9-10": [
@@ -10145,8 +10185,8 @@
           "cls": "buried"
         },
         {
-          "text": "EU Council convenes emergency cyber coordination meeting — \"routine preparedness review\"",
-          "cls": ""
+          "text": "UK avg rent hits £1,332/month — record — ONS",
+          "cls": "cold"
         }
       ],
       "15-16": [
@@ -10223,16 +10263,12 @@
           "cls": "buried"
         },
         {
-          "text": "US Treasury: \"monitoring developments in international payment infrastructure\"",
-          "cls": ""
+          "text": "UK inflation rises to 3.5% — ONS",
+          "cls": "cold"
         },
         {
-          "text": "Canadian banking system experiences nationwide 4-hour outage — \"software update issue\"",
-          "cls": "buried"
-        },
-        {
-          "text": "German BaFin issues advisory on financial sector cyber preparedness",
-          "cls": "buried"
+          "text": "UK food inflation 4.8% — Kantar",
+          "cls": "cold"
         }
       ],
       "17-18": [
@@ -10317,16 +10353,12 @@
           "cls": "buried"
         },
         {
-          "text": "ECB announces \"precautionary stress test\" of eurozone payment systems",
-          "cls": ""
-        },
-        {
-          "text": "Bank of Japan convenes emergency session with financial institutions",
+          "text": "S&P 500  5,187  ▼ 1.8%",
           "cls": "cold"
         },
         {
-          "text": "Singapore MAS restricts certain cross-border digital transactions — \"precautionary measure\"",
-          "cls": "buried"
+          "text": "UK avg petrol 169.1p/litre — RAC",
+          "cls": ""
         }
       ],
       "19-20": [
@@ -10397,14 +10429,6 @@
         {
           "text": "Five Eyes joint statement: \"coordinated approach to critical infrastructure resilience\"",
           "cls": "buried"
-        },
-        {
-          "text": "Swiss National Bank confirms \"enhanced monitoring\" of SIX settlement infrastructure",
-          "cls": "buried"
-        },
-        {
-          "text": "Five Eyes joint statement: \"coordinated approach to critical infrastructure resilience\"",
-          "cls": ""
         }
       ],
       "21": [

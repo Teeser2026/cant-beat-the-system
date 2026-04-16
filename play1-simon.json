@@ -8592,6 +8592,19 @@
     ],
     "1b": [
       {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Sam",
+            "ttl": "Took a cool pic from cookie stall for you Pa",
+            "snip": "cash or card?",
+            "tag": "Market",
+            "cls": "",
+            "img": "sam-cookies-market.jpg"
+          }
+        ]
+      },
+      {
         "sec": "Text Message",
         "cards": [
           {

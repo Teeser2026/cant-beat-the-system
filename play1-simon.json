@@ -6735,6 +6735,43 @@
             "threadRef": "power-structures"
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Parklife (Giles)",
+            "ttl": "Lads — Year 7 school WhatsApp group has gone mental! Six weeks ago they were talking about parking at sports day. Now there's competitive stockpile pics 😂 Clare's husband (GP) says fill the freezer. People buying chest freezers from Currys with 50% markup. The cashpoints are all out of money. Lou wants me to go to bloody Costco tomorrow. Yawn. Much ado about nothing.",
+            "snip": "Waitrose Essential larder one-upmanship.",
+            "tag": "Group",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "App Alert",
+        "cards": [
+          {
+            "src": "Sky News",
+            "ttl": "Queues at service stations across SE England — 'managed demand'",
+            "snip": "Drone footage of the M25 backed up at Cobham. The chyron says managed demand but the aerial says four miles of stationary cars. Nobody asks who's managing it.",
+            "tag": "Live",
+            "cls": "c"
+          }
+        ]
+      },
+      {
+        "sec": "Instagram",
+        "cards": [
+          {
+            "src": "@cabinetoffice",
+            "ttl": "Stay calm. Stay informed. Be prepared 🇬🇧 https://prepare.campaign.gov.uk/",
+            "snip": "Calm beach scene, soft piano. 4,200 likes, most of them bots. The Behavioural Insights Team working both ends of the rope — the panic and the calm.",
+            "tag": "Sponsored",
+            "cls": "",
+            "img": "images/cabinet-office-cliffs.png"
+          }
+        ]
       }
     ],
     "4": [
@@ -7133,6 +7170,31 @@
             "snip": "The system assumes there will be an April.",
             "tag": "Today",
             "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Ben",
+            "ttl": "Two people on my street have generators on their drives. I checked out the local Facebook group - it's hilarious. One Karen asking if this even ALLOWED?? This is a QUIET residential street. What's next, chicken coops? Solar panels? Where does it END?",
+            "snip": "Almost tempted to venture into the murky world of Facebook for shits and giggles.",
+            "tag": "Brighton Facebook groups 🤢",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Instagram",
+        "cards": [
+          {
+            "src": "@sgtpreppershop",
+            "ttl": "VALENTINE'S READY 💕 Couples' Bug-Out Bundle — because love means being prepared! Two tactical rucksacks, matching torches, emergency blankets. £20 off til Sunday! #LoveIsPreparedness #ValentinesReady",
+            "snip": "Same warehouse, same stock, Valentine's wrapper. Someone in the comments bought the his-and-hers set. The grift has found its second gear.",
+            "tag": "Sponsored",
+            "cls": "",
+            "img": "images/sgt-preppers-logo.png"
           }
         ]
       }

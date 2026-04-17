@@ -7462,9 +7462,9 @@
         "sec": "Notification",
         "cards": [
           {
-            "src": "SMS — Chloe's school",
-            "ttl": "School closed until further notice. Do not attend. Updates will follow via ParentMail and ARC Emergency.",
-            "snip": "ParentMail still works. Text gateway, not cloud. The school doesn't know when it's reopening but it knows how to send a text.",
+            "src": "SMS — BHASVIC",
+            "ttl": "BHASVIC will remain closed until further notice. Updates regarding online lessons and student portal to follow.",
+            "snip": "Chloe and Emilia's college doesn't know when it's reopening but it knows how to send a text.",
             "tag": "SMS",
             "cls": ""
           },

@@ -5686,6 +5686,19 @@
     ],
     "3": [
       {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@UKDefenceWatch",
+            "ttl": "Fourth large-scale PLA exercise east of Taiwan this month. MOD 'monitoring closely.' Fourth time this year they've been 'monitoring closely.'",
+            "snip": "Aerial shot of a PLA naval formation in line astern — carrier, destroyers, a submarine surfaced at stern. Commenters arguing about hull counts.",
+            "tag": "",
+            "cls": "c",
+            "img": "pla-taiwan-drill.jpg"
+          }
+        ]
+      },
+      {
         "sec": "Notification",
         "cards": [
           {
@@ -6037,6 +6050,13 @@
             "cls": "",
             "threadRef": "science-technology",
             "type": "thread-notify"
+          },
+          {
+            "src": "The Times",
+            "ttl": "Spy chief: AI will break old encryption 'in years, not decades'",
+            "snip": "NCSC CEO warned vulnerability-discovery timelines are compressing 'from months to hours' under frontier AI, urging boards to treat post-quantum readiness as immediate. Letter to the FT reprinted in full.",
+            "tag": "",
+            "cls": ""
           }
         ]
       }
@@ -6158,6 +6178,14 @@
             "snip": "You didn't stock anything. You bought a Terry's Chocolate Orange.",
             "tag": "847 likes",
             "cls": "c"
+          },
+          {
+            "src": "@WakeUpBritain_",
+            "ttl": "prepare.campaign.gov.uk reads like a prep manual now. Grab bag, wind-up radio, 'community meeting point.' Six months ago this was flood advice.",
+            "snip": "Screenshot of the gov.uk prepare page. Orange hero image — woman on a sofa, phone in hand, torch and bottled water on the coffee table. 2.1k reposts.",
+            "tag": "",
+            "cls": "c",
+            "img": "prepare-campaign-grab-bag.jpg"
           }
         ]
       }
@@ -6617,6 +6645,18 @@
             "img": "180-degrees-book.jpg"
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Sky News",
+            "ttl": "UKHSA monitoring 'Disease X' preparedness scenarios across NHS trusts",
+            "snip": "Routine planning exercise, say officials. 'No current threat.' Exercise involves simulated novel respiratory pathogen with 14-day incubation.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
       }
     ],
     "18": [
@@ -6769,7 +6809,7 @@
             "snip": "Calm beach scene, soft piano. 4,200 likes, most of them bots. The Behavioural Insights Team working both ends of the rope — the panic and the calm.",
             "tag": "Sponsored",
             "cls": "",
-            "img": "images/cabinet-office-cliffs.png"
+            "img": "cabinet-office-cliffs.png"
           }
         ]
       }
@@ -6791,6 +6831,19 @@
             "snip": "tea",
             "tag": "Read",
             "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Instagram",
+        "cards": [
+          {
+            "src": "@cyberhq",
+            "ttl": "TOUGHEN UP your online security. Turn on 2-step verification now. 🛡️ Link in bio. #CyberAware #SecureOurWorld",
+            "snip": "Split image: woman at laptop on the left, same woman in full medieval chainmail and plate armour on the right, same laptop, same NCSC-branded mug. Stop! Think Fraud co-branding at the bottom. 847 likes.",
+            "tag": "Sponsored",
+            "cls": "c",
+            "img": "ncsc-toughen-up-knight.jpg"
           }
         ]
       },
@@ -7194,7 +7247,7 @@
             "snip": "Same warehouse, same stock, Valentine's wrapper. Someone in the comments bought the his-and-hers set. The grift has found its second gear.",
             "tag": "Sponsored",
             "cls": "",
-            "img": "images/sgt-preppers-logo.png"
+            "img": "sgt-preppers-logo.png"
           }
         ]
       }
@@ -10272,6 +10325,10 @@
         },
         {
           "text": "UK economy grew 0.1% in Q3 — revised down from 0.2%",
+          "cls": "cold"
+        },
+        {
+          "text": "NAO: one in three UK government cyber security roles vacant",
           "cls": "cold"
         },
         {

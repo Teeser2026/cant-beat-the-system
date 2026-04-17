@@ -3614,13 +3614,16 @@
           "c": "inner"
         },
         {
-          "t": "The text was the follow up to his earlier WhatsApp's. I'd read the links he'd sent before. Well I'd skimmed them. I set about reading them again, trying to look at them in a different light now the threat of a cyber attack was elevated. I sat in the leather chair in the hallway, my thinking chair, staring into the black mirror of my iPhone screen. My first thought — Cyber Polygon wasn't about simulating the crisis. It was about rehearsing the solution. I was starting to see where Dev might be going with this."
+          "t": "The text was the follow up to his earlier Signals. We'd used WhatsApp for years. I imagine he decided to switch as Signal collects less data. New burner too. Weirdly he never felt the need to go dark before. Why now?"
+        },
+        {
+          "t": "I'd read the links he'd sent earlier. Sat for a couple of hours in the leather chair in the hallway, my thinking chair, staring into the black mirror of my iPhone screen. They were recent articles, but not hot off the press. Stuff I was aware of. Documenting the inexorable path to CBDC, tokenisation, etc. I tried to look at them in a different light now the threat of a cyber attack (psyop attack - sorry, can't resist it) was elevated. I paid most attention to the Cyber Polygon link. Beautifully presented website. I realised that I'd read a fair bit about Cyber Polygon a few years ago - when Klaus was the primary target of our Two Minutes of Hate - but I'd never read the source material. I realised that it wasn't about simulating the crisis. It was about rehearsing the solution. I was starting to see where Dev might be going with this."
         },
         {
           "t": "Amy came in from the kitchen and asked if I wanted to watch a series with her. She suggested Dark. We'd been meaning to watch the second series for years but hadn't got round to it. We loved series one, a real 'thinker' as Amy called it. She'd even bought a whiteboard at one point so we could track the complex time travel plot and the interconnection between the families. We'd never found the right time though — we'd always watch something else first and Dark would definitely be next."
         },
         {
-          "t": "I told her Dev wanted to chat and suggested tomorrow. Definitely tomorrow."
+          "t": "I told her Dev wanted to chat and suggested we watch it tomorrow. Definitely tomorrow."
         },
         {
           "t": "I went to sit in the kitchen, tapping in Dev's new digits as I walked. The second night in a row of kitchen calls. I eyed up the bourbon still on the table from last night."
@@ -3966,6 +3969,18 @@
       }
     },
     {
+      "id": "18a",
+      "num": "T18a",
+      "title": "Suffer Little Children",
+      "date": "~10 February 2027",
+      "paras": [
+        {
+          "t": ""
+        }
+      ],
+      "choices": []
+    },
+    {
       "id": "MQ11",
       "isQuestion": true,
       "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
@@ -4029,7 +4044,7 @@
       "id": 19,
       "num": "T19",
       "title": "Soggy Dog Walks",
-      "date": "Week of February 13th, 2027",
+      "date": "12-13 February 2027",
       "paras": [
         {
           "t": "Perpetual rain. White skies every day. Not cloudy. White. Not freezing, but certainly big coat weather. Too hot in the woolly hat. Too cold without it. The dogs don't care. The muddier the better. Olive is obsessed with sticks at the moment. Soppy thing. Wilf thinks she's weird. He's old and wise. Log fires every night. Stews. Red wine, but we've been trying to share a bottle rather than one each. The girls are hardly here. Unless they want feeding. Or money. The boys both seem to enjoy university. Costing them an arm and a leg. They better be doing more than enjoying it. I tried to warn them. You'll be saddled with that debt for life. What do I know?"
@@ -5883,10 +5898,10 @@
     ],
     "17": [
       {
-        "sec": "Signal",
+        "sec": "X",
         "cards": [
           {
-            "src": "X — Predictive AI accounts",
+            "src": "@gematriawatch",
             "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
             "snip": "You screenshotted it at 3am. Still looks like something.",
             "tag": "Flagged",
@@ -5898,9 +5913,9 @@
         "sec": "Telegram",
         "cards": [
           {
-            "src": "Forwarded",
+            "src": "Terminal Deep Dive",
             "ttl": "Verified the firmware hash. Ingenico/Verifone fleet. Simultaneous push. No vendor acknowledgement. Dormant container with NFC write access.",
-            "snip": "Been doing the rounds on socials for a few days. You’d ignored it. At 3am you can’t ignore anything.",
+            "snip": "Technical. Detailed. Either someone's fabricating at a level that takes real expertise, or this is real.",
             "tag": "Unverified",
             "cls": ""
           }
@@ -5910,7 +5925,7 @@
         "sec": "Telegram",
         "cards": [
           {
-            "src": "Anonymous",
+            "src": "Terminal Deep Dive",
             "ttl": "Source inside Worldpay confirms dormant payload in latest OTA. Biometric template storage. BIS routing address. This isn’t a payment update.",
             "snip": "Anonymous but specific. The kind of specific that’s either a liar or a whistleblower. No middle ground.",
             "tag": "Unverified",
@@ -7103,18 +7118,6 @@
         ]
       },
       {
-        "sec": "X",
-        "cards": [
-          {
-            "src": "@jennywilson89",
-            "ttl": "Conspiracy Twitter really thinks the economy is going to collapse on Valentine's Day 💀 some of you genuinely need to log off and go outside",
-            "snip": "She has 430 followers and a private account. She's probably at brunch right now.",
-            "tag": "For You",
-            "cls": ""
-          }
-        ]
-      },
-      {
         "sec": "Notification",
         "cards": [
           {
@@ -7123,20 +7126,6 @@
             "snip": "When they say \"no cause for concern,\" that's when you worry.",
             "tag": "Today",
             "cls": "c"
-          }
-        ]
-      },
-      {
-        "sec": "Signal group",
-        "cards": [
-          {
-            "src": "Dev",
-            "ttl": "Don't Panic",
-            "snip": "People are stocking up like it's a siege. It's not a siege. Sieges end when you surrender. This ends when you volunteer. PS Stay close to home this weekend.",
-            "tag": "Unread",
-            "cls": "alert",
-            "threadRef": "finance-commerce",
-            "type": "thread-notify"
           }
         ]
       },
@@ -7170,72 +7159,10 @@
         "sec": "Notification",
         "cards": [
           {
-            "src": "The Guardian",
-            "ttl": "Why the internet thinks Valentine's Day will bring financial collapse",
-            "snip": "The Guardian writing about it means enough people believe it. That's the story. Not whether it's true.",
-            "tag": "12 Feb",
-            "cls": "",
-            "type": "thread-notify",
-            "threadRef": "power-structures"
-          }
-        ]
-      },
-      {
-        "sec": "Email",
-        "cards": [
-          {
-            "src": "BHASVIC — cis@bhasvic.ac.uk",
-            "ttl": "Remote Learning Contingency — Information for Parents",
-            "snip": "No mention of why. Just \"in line with government guidance.\" The guidance they haven't explained either.",
-            "tag": "12 Feb",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "Tesco Clubcard",
-            "ttl": "Purchase limits now in effect on selected items",
-            "snip": "Rice, pasta, UHT, batteries, candles. Three per customer. Amy already has twelve of each in the garage.",
-            "tag": "Notice",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Rupert",
-            "ttl": "Count the countries. Count the dates. This isn't parallel development. This is parallel preparation.",
-            "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
-            "tag": "Evening",
-            "cls": "e"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
             "src": "Barclays",
             "ttl": "Your ISA allowance resets 6 April. Top up before the deadline.",
             "snip": "The system assumes there will be an April.",
             "tag": "Today",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Ben",
-            "ttl": "Two people on my street have generators on their drives. I checked out the local Facebook group - it's hilarious. One Karen asking if this even ALLOWED?? This is a QUIET residential street. What's next, chicken coops? Solar panels? Where does it END?",
-            "snip": "Almost tempted to venture into the murky world of Facebook for shits and giggles.",
-            "tag": "Brighton Facebook groups 🤢",
             "cls": ""
           }
         ]
@@ -8538,7 +8465,7 @@
             "src": "Dev",
             "ttl": "I think I know what it means.",
             "snip": "First message since the firmware doc. Short and probably not very sweet.",
-            "tag": "19:22",
+            "tag": "16:42",
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
@@ -8553,7 +8480,7 @@
             "src": "Dev",
             "ttl": "Check these out. Then we'll talk.",
             "snip": "Three links. No context. Classic Dev.",
-            "tag": "19:24",
+            "tag": "16:44",
             "cls": "",
             "isnew": true
           }
@@ -8564,9 +8491,9 @@
         "cards": [
           {
             "src": "+447898 433337",
-            "ttl": "It's Dev. Call me on this. walls.rip. Anonymity. Of sorts. For now.",
+            "ttl": "Call me on this. walls.rip. Anonymity. Of sorts. For now.",
             "snip": "New number. Not in my contacts. Who else texts like a telegram.",
-            "tag": "22:46",
+            "tag": "19:55",
             "cls": "",
             "isnew": true
           }
@@ -8646,6 +8573,32 @@
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "FTSE recovers after brief FTSE 250 trading halt — analysts cite 'orderly correction'",
+            "snip": "Orderly correction. Eleven minutes of frozen screens and it's an orderly correction.",
+            "tag": "Markets",
+            "cls": "c",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "PM hosts emergency tech summit at Downing Street — Oracle, Palantir, Anthropic among firms briefed on national cyber resilience",
+            "snip": "They're not being consulted. They're being coordinated.",
+            "tag": "Breaking",
+            "cls": "c",
+            "isnew": true
           }
         ]
       }
@@ -9061,6 +9014,163 @@
           }
         ]
       }
+    ],
+    "18a": [
+      {
+        "sec": "Email",
+        "cards": [
+          {
+            "src": "BHASVIC — cis@bhasvic.ac.uk",
+            "ttl": "Remote Learning Contingency — Information for Parents",
+            "snip": "No mention of why. Just \"in line with government guidance.\" The guidance they haven't explained either.",
+            "tag": "12 Feb",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Tesco Clubcard",
+            "ttl": "Purchase limits now in effect on selected items",
+            "snip": "Rice, pasta, UHT, batteries, candles. Three per customer. Amy already has twelve of each in the garage.",
+            "tag": "Notice",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Ben",
+            "ttl": "Two people on my street have generators on their drives. I checked out the local Facebook group - it's hilarious. One Karen asking if this even ALLOWED?? This is a QUIET residential street. What's next, chicken coops? Solar panels? Where does it END?",
+            "snip": "Almost tempted to venture into the murky world of Facebook for shits and giggles.",
+            "tag": "Brighton Facebook groups 🤢",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "Count the countries. Count the dates. This isn't parallel development. This is parallel preparation.",
+            "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
+            "tag": "Evening",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@jennywilson89",
+            "ttl": "Conspiracy Twitter really thinks the economy is going to collapse on Valentine's Day 💀 some of you genuinely need to log off and go outside",
+            "snip": "She has 430 followers and a private account. She's probably at brunch right now.",
+            "tag": "For You",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "The Guardian",
+            "ttl": "Why the internet thinks Valentine's Day will bring financial collapse",
+            "snip": "The Guardian writing about it means enough people believe it. That's the story. Not whether it's true.",
+            "tag": "12 Feb",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "power-structures"
+          }
+        ]
+      },
+      {
+        "sec": "Signal group",
+        "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Don't Panic",
+            "snip": "People are stocking up like it's a siege. It's not a siege. Sieges end when you surrender. This ends when you volunteer. PS Stay close to home this weekend.",
+            "tag": "Unread",
+            "cls": "alert",
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Government: 'comprehensive digital resilience measures now in place' following tech summit",
+            "snip": "The all-clear wrapped in institutional language. Everyone exhales. The school doesn't send a follow-up.",
+            "tag": "Politics",
+            "cls": "",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@Peston",
+            "ttl": "New piece: Why the February jitters were a stress test, not a crisis. The fundamentals tell a different story. Link below.",
+            "snip": "Peston. The sensible voice. The one Amy would forward. The one that makes you feel silly for stockpiling.",
+            "tag": "Substack",
+            "cls": "",
+            "isnew": true,
+            "threadRef": "finance-commerce",
+            "type": "thread-notify"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Two children killed in machete attack outside primary school in Small Heath, Birmingham. Suspect detained.",
+            "snip": "Amy's in tears. I'm in two minds as to whether it actually happened.",
+            "tag": "Breaking",
+            "cls": "alert",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@WMPolice",
+            "ttl": "Officers responding to serious incident on Coventry Road, Small Heath. Cordons in place. Two children confirmed deceased. One male detained at scene. Our thoughts are with the families and community.",
+            "snip": "The institutional language. 'Our thoughts are with.' The sentence that means nothing and means everything.",
+            "tag": "Statement",
+            "cls": "alert",
+            "isnew": true
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@EnglandFirst_",
+            "ttl": "TWO CHILDREN. Outside a SCHOOL. We all know who did this. When are we going to say enough? 🏴‍☠️🇬🇧",
+            "snip": "The bodies aren't cold and someone's already made a flag graphic. The algorithm knows exactly what it's doing.",
+            "tag": "For You",
+            "cls": "",
+            "isnew": true
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -9355,7 +9465,7 @@
         {
           "text": "The Guardian — Why the internet thinks Valentine's Day will bring financial collapse",
           "src": "simon",
-          "turn": 19,
+          "turn": "18a",
           "article": {
             "style": "news",
             "source": "The Guardian",
@@ -9791,7 +9901,7 @@
         {
           "text": "Dev — Signal group: \"Don't Panic\"",
           "src": "dev",
-          "turn": 19,
+          "turn": "18a",
           "article": {
             "style": "paste",
             "source": "Dev · Signal message · Private group",
@@ -9852,6 +9962,14 @@
             "body": "<div class=\"x-header\"><div class=\"x-avatar\">DD</div><div class=\"x-name\">DistributedDenial <span class=\"x-verified\"></span></div><div class=\"x-handle\">@DistributedDenial</div></div><div class=\"x-body\"><p>1/ Four weeks ago we said the rebuilder is already in the room. Today the FTSE 250 circuit breaker fired for the first time since COVID.</p><p>2/ Cash withdrawals up 340% in a week. Six ATM regions reporting \"technical issues.\" The FCA says consumers should not be alarmed. The FCA always says consumers should not be alarmed.</p><p>3/ Meanwhile someone with fifteen years in payment infrastructure published what's sitting inside every terminal in the country. A dormant biometric authentication layer. No release note. No vendor acknowledgement. Pushed on the night of January 18th.</p><p>4/ A system nobody asked for, installed on hardware nobody owns, waiting for an event nobody is predicting.</p><p>5/ When it breaks — and it is breaking — the thing that replaces it will require your face, your fingerprint, or both. Not because of a law. Because of a firmware update pushed in January while you were arguing about the transfer window.</p><p>6/ You'll thank them for it. Again.</p></div><div class=\"x-timestamp\">2:14 AM · Feb 6, 2027</div><div class=\"x-metrics\">↩ 1.9K  🔁 24.7K  ♡ 52.1K  📊 6.3M</div>",
             "footer": "X · 2:14 AM · Feb 6, 2027"
           }
+        },
+        {
+          "turn": "18a",
+          "ttl": "Why the February jitters were a stress test, not a crisis — Robert Peston",
+          "src": "peston.substack.com",
+          "date": "10 Feb 2027",
+          "body": "Peston argues the circuit breaker worked as designed, the cash withdrawal spike was behavioural not systemic, and the Downing Street tech summit — Oracle, Palantir, Anthropic — produced genuine progress on digital resilience. Dismisses Valentine's Day collapse predictions. Concludes the fundamentals haven't changed.",
+          "tag": "Analysis"
         }
       ]
     },
@@ -11510,7 +11628,8 @@
       "37": "37",
       "17b": "17-18",
       "23a": "23a",
-      "29b": "29b"
+      "29b": "29b",
+      "18a": "19-20"
     }
   },
   "initialNotes": [],

@@ -6057,7 +6057,8 @@
             "snip": "NCSC CEO warned vulnerability-discovery timelines are compressing 'from months to hours' under frontier AI, urging boards to treat post-quantum readiness as immediate. Letter to the FT reprinted in full.",
             "tag": "",
             "cls": "",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "type": "thread-notify"
           }
         ]
       }
@@ -8801,7 +8802,8 @@
             "tag": "",
             "cls": "",
             "img": "dignity-colony-panel.jpg",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "type": "thread-notify"
           }
         ]
       },
@@ -9375,10 +9377,11 @@
           "turn": 7,
           "article": {
             "style": "news",
-            "source": "The Times — Letters to the Editor",
+            "source": "The Times",
             "title": "Retaining defensive advantage in the age of frontier AI",
             "date": "29 November 2026",
-            "body": "<p>Sir — A step change in frontier AI models' capacity to find vulnerabilities in code may, ultimately, prove a good thing for our collective cyber security. Suppliers of technology will increasingly use AI to identify and remediate weaknesses in their products throughout the product lifecycle, to the benefit of customers and the wider economy.</p><p>But the path to that destination carries significant short-term risk, and requires urgent action now.</p><p>In the immediate term, we will increasingly see AI exposing those organisations that have not taken appropriate steps to safeguard themselves. Frontier AI will make it faster, easier and cheaper to discover and exploit the weaknesses that previously required time, skill and resource to find. The pressure on organisations to patch quickly will only grow more acute — and the window for action, in many cases, will be measured in hours rather than days.</p><p>It is more essential than ever that boards, leaders and technology teams follow the guidance set out by the National Cyber Security Centre. Reduce unnecessary exposure. Apply security updates rapidly. Monitor for malicious activity and respond at pace. Cyber risk is business risk.</p><p>These steps will not be sufficient indefinitely. Over the coming five to seven years, the cryptographic foundations on which much of our digital infrastructure relies will need to be replaced. Transition to post-quantum cryptography is no longer a theoretical exercise for the 2035 horizon. Hostile states are collecting encrypted traffic today on the assumption they will be able to read it within a decade. The data you send this morning may well be read by someone who does not wish you well, some years from now.</p><p>As our society navigates these fast-evolving capabilities, the NCSC will remain focused on its mission to protect the UK from cyber threats, working alongside industry, academia and wider government. By getting the fundamentals right now, and carefully adopting frontier AI for defensive purposes, network defenders can retain the advantage and help keep the country safe online.</p><p><strong>Dr Richard Horne</strong><br>Chief Executive Officer<br>National Cyber Security Centre, GCHQ</p>"
+            "body": "<p><em>The following letter first appeared in the Financial Times earlier this month. It is reprinted here in full with the author's permission.</em></p><p>Sir — A step change in frontier AI models' capacity to find vulnerabilities in code may, ultimately, prove a good thing for our collective cyber security. Suppliers of technology will increasingly use AI to identify and remediate weaknesses in their products throughout the product lifecycle, to the benefit of customers and the wider economy.</p><p>But the path to that destination carries significant short-term risk, and requires urgent action now.</p><p>In the immediate term, we will increasingly see AI exposing those organisations that have not taken appropriate steps to safeguard themselves. Frontier AI will make it faster, easier and cheaper to discover and exploit the weaknesses that previously required time, skill and resource to find. The pressure on organisations to patch quickly will only grow more acute — and the window for action, in many cases, will be measured in hours rather than days.</p><p>It is more essential than ever that boards, leaders and technology teams follow the guidance set out by the National Cyber Security Centre. Reduce unnecessary exposure. Apply security updates rapidly. Monitor for malicious activity and respond at pace. Cyber risk is business risk.</p><p>These steps will not be sufficient indefinitely. Over the coming five to seven years, the cryptographic foundations on which much of our digital infrastructure relies will need to be replaced. Transition to post-quantum cryptography is no longer a theoretical exercise for the 2035 horizon. Hostile states are collecting encrypted traffic today on the assumption they will be able to read it within a decade. The data you send this morning may well be read by someone who does not wish you well, some years from now.</p><p>As our society navigates these fast-evolving capabilities, the NCSC will remain focused on its mission to protect the UK from cyber threats, working alongside industry, academia and wider government. By getting the fundamentals right now, and carefully adopting frontier AI for defensive purposes, network defenders can retain the advantage and help keep the country safe online.</p><p><strong>Dr Richard Horne</strong><br>Chief Executive Officer<br>National Cyber Security Centre, GCHQ</p>",
+            "footer": "The Times · Letters to the Editor · Reprinted from the Financial Times"
           }
         },
         {

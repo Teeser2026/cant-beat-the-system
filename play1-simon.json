@@ -3977,8 +3977,7 @@
         {
           "t": ""
         }
-      ],
-      "choices": []
+      ]
     },
     {
       "id": "MQ11",
@@ -6771,18 +6770,6 @@
         "sec": "Notification",
         "cards": [
           {
-            "src": "BBC News",
-            "ttl": "Asian markets fall sharply overnight — Nikkei down 4.2%",
-            "snip": "It’s not just us. That’s what they’re not saying.",
-            "tag": "Breaking",
-            "cls": "cold"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
             "src": "BBC Verify",
             "ttl": "UK cyber threat: what we know and what we don't",
             "snip": "The BBC telling you not to worry in the same tone they use for everything. That tone IS the information.",
@@ -7350,6 +7337,18 @@
             "cls": "",
             "type": "thread-notify",
             "threadRef": "pattern-recognition"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Asian markets fall sharply overnight — Nikkei down 4.2%",
+            "snip": "It’s not just us. That’s what they’re not saying.",
+            "tag": "Breaking",
+            "cls": "cold"
           }
         ]
       }
@@ -11581,6 +11580,76 @@
           "text": "Recovery Hubs: new equipment observed — \"routine upgrade\" — DLUHC",
           "cls": "buried"
         }
+      ],
+      "18-18a": [
+        {
+          "t": "FTSE 100  7,521.04  ▲ 0.2%",
+          "cls": ""
+        },
+        {
+          "t": "GBP/USD  1.2164",
+          "cls": ""
+        },
+        {
+          "t": "Brent crude  $88.17  ▼ 0.6%",
+          "cls": ""
+        },
+        {
+          "t": "Cash withdrawals remain elevated — LINK reports queues subsiding",
+          "cls": "cold"
+        },
+        {
+          "t": "ATM daily limits temporarily reduced to £150 at major banks",
+          "cls": "cold"
+        },
+        {
+          "t": "Government: 'sensible household preparedness' — not stockpiling",
+          "cls": ""
+        },
+        {
+          "t": "Tesco, Sainsbury's: purchase limits on selected items — 'temporary measure'",
+          "cls": "cold"
+        },
+        {
+          "t": "Two children killed in machete attack outside Small Heath primary school",
+          "cls": "alert"
+        },
+        {
+          "t": "PM: 'This was an act of unspeakable evil' — Commons statement",
+          "cls": "alert"
+        },
+        {
+          "t": "West Midlands Police: suspect named — no terror link established",
+          "cls": "alert"
+        },
+        {
+          "t": "Home Secretary calls emergency COBRA session on school safety",
+          "cls": "cold"
+        },
+        {
+          "t": "Man Utd 1–1 Arsenal — Premier League",
+          "cls": ""
+        },
+        {
+          "t": "Met Office: rain clearing Friday — dry weekend ahead",
+          "cls": "warm"
+        },
+        {
+          "t": "Valentine's Day: UK spending forecast at £1.9bn — Barclaycard",
+          "cls": "warm"
+        },
+        {
+          "t": "Downing Street tech summit produces 'comprehensive resilience framework'",
+          "cls": "buried"
+        },
+        {
+          "t": "FCA: 'no systemic risk to UK banking infrastructure'",
+          "cls": "buried"
+        },
+        {
+          "t": "NHS England: 'no disruption to digital health services anticipated'",
+          "cls": "buried"
+        }
       ]
     },
     "poolMap": {
@@ -11601,7 +11670,7 @@
       "15": "15-16",
       "16": "15-16",
       "17": "17-18",
-      "18": "17-18",
+      "18": "18-18a",
       "19": "19-20",
       "20": "19-20",
       "21": "21",
@@ -11629,7 +11698,8 @@
       "17b": "17-18",
       "23a": "23a",
       "29b": "29b",
-      "18a": "19-20"
+      "18a": "18-18a",
+      "17c": "17-18"
     }
   },
   "initialNotes": [],

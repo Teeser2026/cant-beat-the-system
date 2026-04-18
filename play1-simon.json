@@ -8174,14 +8174,19 @@
     ],
     "31": [
       {
-        "src": "AIDA",
-        "ttl": "Welcome. Shall we begin?",
-        "snip": "Registration is open. Ninety seconds — from this phone. Your first allocation lands at midnight.",
-        "tag": "",
-        "cls": "a",
-        "threadRef": "official",
-        "type": "thread-notify",
-        "isnew": true
+        "sec": "AIDA",
+        "cards": [
+          {
+            "src": "AIDA",
+            "ttl": "Welcome. Shall we begin?",
+            "snip": "Registration is open. Ninety seconds — from this phone. Your first allocation lands at midnight.",
+            "tag": "",
+            "cls": "",
+            "threadRef": "official",
+            "type": "thread-notify",
+            "isnew": true
+          }
+        ]
       },
       {
         "sec": "Text Message",

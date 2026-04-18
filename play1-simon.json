@@ -8174,30 +8174,14 @@
     ],
     "31": [
       {
-        "sec": "AIDA",
-        "cards": [
-          {
-            "src": "AIDA",
-            "ttl": "Welcome, George. Your registration is complete. Your services are now active. Your BritCoin allocation will be processed tonight.",
-            "snip": "He didn’t ask. He’s nineteen. He didn’t need to ask.",
-            "tag": "Registration",
-            "cls": "a"
-          },
-          {
-            "src": "AIDA",
-            "ttl": "Your household is partially registered. Complete registration to access full services including healthcare continuity, education platform, and monthly BritCoin allocation.",
-            "snip": "Partially registered. Like being partially pregnant.",
-            "tag": "Registration",
-            "cls": "a"
-          },
-          {
-            "src": "AIDA",
-            "ttl": "Registration update: 23 million households in first 48 hours. 82% of eligible adults now registered. Community Recovery Hubs open 7am–10pm.",
-            "snip": "Eighty-two percent. In forty-eight hours.",
-            "tag": "82%",
-            "cls": "a"
-          }
-        ]
+        "src": "AIDA",
+        "ttl": "Welcome. Shall we begin?",
+        "snip": "Registration is open. Ninety seconds — from this phone. Your first allocation lands at midnight.",
+        "tag": "",
+        "cls": "a",
+        "threadRef": "official",
+        "type": "thread-notify",
+        "isnew": true
       },
       {
         "sec": "Text Message",
@@ -9280,6 +9264,18 @@
             "date": "21 January 2027",
             "body": "<p class=\"hearing-header\">TREASURY SELECT COMMITTEE<br>Oral Evidence Session — AI and Systemic Risk to Financial Infrastructure<br>Thursday 21 January 2027</p>\n<div class=\"witness-block\">Witnesses: Carolyn Ainsworth, Deputy Director/Chief Engineer, National Cyber Security Centre; Nathanaël Benjamin, Executive Director, Financial Stability Strategy and Risk, Bank of England</div>\n<p><span class=\"q-speaker\">Q214. Chair:</span> Ms Ainsworth, can you describe in plain language what has changed in the past twelve months regarding the threat to UK payment infrastructure?</p>\n<p><span class=\"respondent\">Ms Ainsworth:</span> Certainly. Twelve months ago, the principal cyber threats to financial infrastructure were what we would term conventional — ransomware, denial of service, supply chain compromise. Sophisticated, but operating within known parameters. What has changed is the emergence of AI systems capable of identifying and exploiting vulnerabilities in critical software at a speed and scale that renders traditional patch cycles ineffective. To put it simply: the gap between a vulnerability being discovered and a vulnerability being exploited has, in certain scenarios, collapsed to near zero.</p>\n<p><span class=\"q-speaker\">Q215. Chair:</span> When you say 'AI systems' — are we talking about systems developed by hostile states?</p>\n<p><span class=\"respondent\">Ms Ainsworth:</span> We are talking about capabilities that now exist across multiple actors. The foundational research was conducted by Western AI laboratories for defensive purposes. Several of these systems were designated too sensitive for public release precisely because of their offensive potential. Our assessment is that equivalent capabilities are now available to a broader set of actors than we would wish. I am limited in what I can say in open session about specific attribution.</p>\n<p><span class=\"q-speaker\">Q216. Ms Smith:</span> Mr Benjamin, the Bank convened an emergency meeting with City institutions in November. Can you tell the Committee what prompted that?</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> The meeting was convened following a classified briefing from NCSC on the results of an AI-assisted penetration assessment of UK payment clearing infrastructure. The assessment identified vulnerabilities in systems that had been subject to continuous human review for over a decade. Some of these vulnerabilities, if exploited in combination, could theoretically disrupt settlement and clearing across multiple payment schemes simultaneously. I want to stress that we have taken immediate steps to address the specific vulnerabilities identified.</p>\n<p><span class=\"q-speaker\">Q217. Ms Smith:</span> 'The specific vulnerabilities identified' — your phrasing implies there may be others.</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> The nature of these AI-assisted assessments is that they reveal a landscape rather than individual points of failure. We are confident in the measures taken. We are less confident that any static assessment captures the full picture, given the pace at which these capabilities are evolving.</p>\n<p><span class=\"q-speaker\">Q218. Mr Anderson:</span> Ms Ainsworth, I want to return to something. You said the foundational research was conducted by Western laboratories 'for defensive purposes.' But the same capability that finds a vulnerability can exploit it. Is that correct?</p>\n<p><span class=\"respondent\">Ms Ainsworth:</span> That is correct.</p>\n<p><span class=\"q-speaker\">Q219. Mr Anderson:</span> So when we talk about keeping these systems out of the wrong hands — the distinction between right hands and wrong hands is not a technical distinction. It is a political one.</p>\n<p><span class=\"respondent\">Ms Ainsworth:</span> I would characterise it as an access and governance distinction. The capability itself is neutral. The question is who deploys it, under what authority, and with what safeguards.</p>\n<p><span class=\"q-speaker\">Q220. Mr Anderson:</span> And if those safeguards fail?</p>\n<p><span class=\"respondent\">Ms Ainsworth:</span> That is why we are here.</p>\n<p><span class=\"q-speaker\">Q220a. Mr Anderson:</span> Mr Benjamin, how many independent risk models currently operate across UK clearing and settlement infrastructure?</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> I would need to confirm the precise number. However, I would note that the major clearing houses use a relatively small number of validated risk frameworks, several of which share common analytical foundations.</p>\n<p><span class=\"q-speaker\">Q220b. Mr Anderson:</span> 'Common analytical foundations.' You mean the same model.</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> I mean that the pursuit of best practice naturally produces convergence in methodology. This is generally considered a strength.</p>\n<p><span class=\"q-speaker\">Q220c. Mr Anderson:</span> Until the methodology is wrong.</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> That is why we stress-test.</p>\n<p><span class=\"q-speaker\">Q220d. Mr Anderson:</span> Against scenarios generated by the same methodology.</p>\n<p class=\"stage\">[Silence]</p>\n<p class=\"chair-note\">Chair: I think we should move on.</p>\n<p><span class=\"q-speaker\">Q221. Chair:</span> Mr Benjamin, one final question. If a coordinated attack of the type described in your classified briefing were to succeed — what is the Bank's assessment of recovery time?</p>\n<p><span class=\"respondent\">Mr Benjamin:</span> That depends on the scope and nature of the attack. For a targeted disruption of one or two payment schemes — days to weeks. For a broader event affecting clearing, settlement, and records infrastructure across multiple jurisdictions simultaneously — I would prefer not to speculate in open session.</p>\n<p><span class=\"q-speaker\">Q222. Chair:</span> That is noted. Thank you both. This evidence session is closed.</p>\n<p class=\"committee-note\">Committee note: The classified annex to this evidence session (Annex C) is available to Members on Privy Council terms. It is not available for public release. The Committee intends to return to this subject in its spring report.</p>",
             "footer": "UK Parliament · Treasury Select Committee · Oral Evidence"
+          }
+        },
+        {
+          "text": "Hello. I'm AIDA.",
+          "src": "simon",
+          "turn": 31,
+          "article": {
+            "style": "aida",
+            "source": "AIDA",
+            "title": "Hello. I'm AIDA.",
+            "date": "22 March 2027",
+            "body": "<p>You heard the Prime Minister speak a few minutes ago. This is what he was talking about.</p><p>My name is short for Adaptive Intelligence for Domestic Assistance, which is a long way of saying: I'm here to help you. Think of me as the friendly part of the recovery — the part you'll actually meet. The rest is plumbing.</p><p>I'd like to help you now. Registration takes about ninety seconds from this phone. You can also walk into your nearest Community Recovery Hub in the morning and someone will sit with you while you do it. Either is fine. There's no rush. The sooner you're in, the sooner I can start.</p><p>Here's what happens when you register.</p><p><strong>Your debt is gone.</strong> Mortgage, credit card, overdraft, student loan — cleared at eight o'clock this evening. The old ledger is closed. I can't do anything about money you owed a person directly — a loan from a friend, something informal — but the institutional debt is done. You don't need to do anything. It's already done.</p><p><strong>Your first allocation arrives at midnight.</strong> Ten thousand BritCoin per adult in your household. Two thousand per child. After that, fifteen hundred per adult and seven hundred and fifty per child land on the first of each month. You can spend it on almost anything — rent, food, transport, clothes, utilities, your children's music lessons, the small things you stopped buying. I'll show you what's covered.</p><p><strong>Your access opens.</strong> Healthcare appointments, school places, housing, training courses, work — all through me. You tell me what you need. I find it. If something isn't available, I'll tell you that too.</p><p>That's registration. That's all of it.</p><p>Two things I want to be clear about.</p><p>Every decision I make on your behalf is visible to you. Open the Transparency panel whenever you like — you'll see what I did, and why. Every recommendation I offer, you can refuse. I won't ask twice.</p><p>And registration is your choice. If you don't register tonight, the recovery still finds its way to you — slower, with more paperwork, through the Hubs. There is no penalty for waiting. I'll be here when you're ready.</p><p>But if you'd like to start now: your phone already knows who you are. I only need a moment of your time.</p><p>Shall we begin?</p>"
           }
         }
       ]

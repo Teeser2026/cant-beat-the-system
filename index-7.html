@@ -589,9 +589,9 @@ body.phase-3 .add-song:hover {
 body .card.aida {
   background-color: #D5E1D7;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.13 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  border: 1px solid #1AAF6C;
+  border: 1px solid #1AAF6C !important;
   border-left: 2px solid #1AAF6C;
-  border-color: #1AAF6C;
+  border-color: #1AAF6C !important;
   color: #1a1a1e;
 }
 body .card.aida:hover {
@@ -1135,8 +1135,8 @@ html, body {
 .card:has(.tag.x) { --accent: #d43d3d; --accent-fade: rgba(212,61,61,.15); }
 .card.aida { --accent: #1AAF6C; --accent-fade: rgba(26,175,108,.15); }
 
-.card.new,
 .card.thread-notify-card { border-left: 2px solid var(--accent); animation: pulse 3s ease-in-out infinite; }
+/* .card.new (driven by isnew:true) is intentionally inert under the thread-notify pulse rule. Field retained in JSON as legacy; strip at leisure. */
 .card.fade { opacity: .28; }
 @keyframes pulse { 0%,100%{border-left-color:var(--accent)} 50%{border-left-color:var(--accent-fade)} }
 

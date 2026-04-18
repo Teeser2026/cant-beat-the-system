@@ -4063,8 +4063,17 @@ function renderThreads() {
       return turnIdx <= state.turnIndex;
     });
     if (visibleItems.length === 0) return;
-    // Reverse chronological — newest first
-    visibleItems.reverse();
+    // Sort: most recent story-turn first; items without a turn sink to bottom.
+    // Uses playData.turns position as canonical order — handles int ids, "6c", "17a" etc.
+    // ES2019+ stable sort preserves JSON order within the same turn (authorial intent).
+    visibleItems.sort((a, b) => {
+      const aIdx = a.turn == null ? -1 : playData.turns.findIndex(t => t.id == a.turn);
+      const bIdx = b.turn == null ? -1 : playData.turns.findIndex(t => t.id == b.turn);
+      if (aIdx === -1 && bIdx === -1) return 0;
+      if (aIdx === -1) return 1;
+      if (bIdx === -1) return -1;
+      return bIdx - aIdx;
+    });
     html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);

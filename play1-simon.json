@@ -6485,44 +6485,6 @@
             "threadRef": "pattern-recognition"
           }
         ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Simon → Family Chat",
-            "ttl": "Olive today",
-            "snip": "Such a little poseur.",
-            "tag": "Garden",
-            "cls": "",
-            "img": "olive-poseur.jpg"
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp",
-        "cards": [
-          {
-            "src": "Simon → Alan (The Dude)",
-            "ttl": "I have questions. 🤯",
-            "snip": "So many questions.",
-            "tag": "PREDICTION ENGINE",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "X",
-        "cards": [
-          {
-            "src": "@AI_Content",
-            "ttl": "Faceless YouTube channels. Anonymous X accounts. AI influencers going viral.",
-            "snip": "The grift is real.",
-            "tag": "Ad",
-            "cls": "",
-            "img": "ai-content-factory.png"
-          }
-        ]
       }
     ],
     "22": [
@@ -6852,6 +6814,20 @@
             "tag": "Sponsored",
             "cls": "",
             "img": "cabinet-office-cliffs.png"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "The Guardian",
+            "ttl": "Why the internet thinks Valentine's Day will bring financial collapse",
+            "snip": "The Guardian writing about it means enough people believe it. That's the story. Not whether it's true.",
+            "tag": "7 Feb",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "power-structures"
           }
         ]
       }
@@ -9114,20 +9090,6 @@
         ]
       },
       {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "The Guardian",
-            "ttl": "Why the internet thinks Valentine's Day will bring financial collapse",
-            "snip": "The Guardian writing about it means enough people believe it. That's the story. Not whether it's true.",
-            "tag": "12 Feb",
-            "cls": "",
-            "type": "thread-notify",
-            "threadRef": "power-structures"
-          }
-        ]
-      },
-      {
         "sec": "Signal group",
         "cards": [
           {
@@ -9502,13 +9464,13 @@
         {
           "text": "The Guardian — Why the internet thinks Valentine's Day will bring financial collapse",
           "src": "simon",
-          "turn": "18a",
+          "turn": "18",
           "article": {
             "style": "news",
             "source": "The Guardian",
             "title": "Why the internet thinks Valentine's Day will bring financial collapse",
-            "date": "12 February 2027",
-            "body": "<p>A viral conspiracy theory claiming that global financial infrastructure will collapse on Valentine's Day has gained enough traction online to prompt responses from both the Treasury and the Bank of England.</p><p>The theory, which has circulated across X, Telegram, and several cryptocurrency forums since early January, draws on a mixture of AI-generated prediction models, numerology, and — in its most elaborate versions — the ancient Roman festival of Lupercalia, a purification ritual traditionally observed between 13 and 15 February.</p><p>\"It's a textbook example of apophenia,\" says Professor Steven Bloch, Professor of Communication and Social Interaction at University College London. \"The human brain is extraordinarily good at finding patterns. Give it a date, some historical coincidences, and a prevailing mood of anxiety, and it will construct a narrative. The narrative feels compelling because our pattern-recognition systems don't distinguish between real and apparent connections.\"</p><p>The specific claims vary. Some posts reference \"predictive AI models\" that have independently flagged the Valentine's Day weekend as a convergence point for financial system vulnerabilities. Others focus on the Hebrew gematria value of 214, which corresponds to words meaning \"spirit\" or \"breath.\" A widely shared X thread connected the Lupercalia festival — in which Roman priests ritually sacrificed a goat and used strips of its hide to cleanse the city — to what the poster called \"the symbolic architecture of a system reset.\"</p><p>The theory has gained particular momentum in the UK, where the government's recent advice on household preparedness and the NCSC's raised threat advisory have created fertile ground for speculation. A Treasury spokesperson said: \"There is no intelligence to suggest any specific threat to financial infrastructure on or around 14 February. The government's preparedness advice reflects standard resilience planning.\"</p><p>The Bank of England declined to comment beyond its existing public statements on payment system resilience.</p><p>Online prediction markets have seen a modest increase in trading on scenarios involving financial disruption, though volumes remain well below levels associated with credible threat assessments.</p><p>Professor Bloch notes that the debunking process itself can inadvertently amplify such theories. \"The fact that the Treasury felt the need to respond tells people this is being taken seriously at some level. The denial becomes evidence. This is the paradox of addressing conspiracy theories in a high-anxiety environment.\"</p><p>Markets closed Friday within normal ranges. The FTSE 100 was up 0.3%.</p>",
+            "date": "7 February 2027",
+            "body": "<p>A viral conspiracy theory claiming that global financial infrastructure will collapse on Valentine's Day has gained enough traction online to prompt responses from both the Treasury and the Bank of England.</p><p>The theory, which has circulated across X, Telegram, and several cryptocurrency forums since early January, draws on a mixture of AI-generated prediction models, numerology, and — in its most elaborate versions — the ancient Roman festival of Lupercalia, a purification ritual traditionally observed between 13 and 15 February.</p><p>\"It's a textbook example of apophenia,\" says Professor Steven Bloch, Professor of Communication and Social Interaction at University College London. \"The human brain is extraordinarily good at finding patterns. Give it a date, some historical coincidences, and a prevailing mood of anxiety, and it will construct a narrative. The narrative feels compelling because our pattern-recognition systems don't distinguish between real and apparent connections.\"</p><p>The specific claims vary. Some posts reference \"predictive AI models\" that have independently flagged the Valentine's Day weekend as a convergence point for financial system vulnerabilities. Others focus on the Hebrew gematria value of 214, which corresponds to words meaning \"spirit\" or \"breath.\" A widely shared X thread connected the Lupercalia festival — in which Roman priests ritually sacrificed a goat and used strips of its hide to cleanse the city — to what the poster called \"the symbolic architecture of a system reset.\"</p><p>The theory has gained particular momentum in the UK, where the government's recent advice on household preparedness and the NCSC's raised threat advisory have created fertile ground for speculation. A Treasury spokesperson said: \"There is no intelligence to suggest any specific threat to financial infrastructure on or around 14 February. The government's preparedness advice reflects standard resilience planning.\"</p><p>The Bank of England declined to comment beyond its existing public statements on payment system resilience.</p><p>Online prediction markets have seen a modest increase in trading on scenarios involving financial disruption, though volumes remain well below levels associated with credible threat assessments.</p><p>Professor Bloch notes that the debunking process itself can inadvertently amplify such theories. \"The fact that the Treasury felt the need to respond tells people this is being taken seriously at some level. The denial becomes evidence. This is the paradox of addressing conspiracy theories in a high-anxiety environment.\"</p><p>Markets closed Friday within normal ranges. The FTSE 100 was up 0.2%.</p>",
             "footer": "The Guardian · Technology / Conspiracy theories"
           }
         }
@@ -10002,11 +9964,11 @@
         },
         {
           "turn": "18a",
-          "ttl": "Why the February jitters were a stress test, not a crisis — Robert Peston",
           "src": "peston.substack.com",
           "date": "10 Feb 2027",
           "body": "Peston argues the circuit breaker worked as designed, the cash withdrawal spike was behavioural not systemic, and the Downing Street tech summit — Oracle, Palantir, Anthropic — produced genuine progress on digital resilience. Dismisses Valentine's Day collapse predictions. Concludes the fundamentals haven't changed.",
-          "tag": "Analysis"
+          "tag": "Analysis",
+          "text": "Why the February jitters were a stress test, not a crisis — Robert Peston"
         }
       ]
     },
@@ -11621,72 +11583,72 @@
       ],
       "18-18a": [
         {
-          "t": "FTSE 100  7,521.04  ▲ 0.2%",
-          "cls": ""
+          "cls": "",
+          "text": "FTSE 100  7,521.04  ▲ 0.2%"
         },
         {
-          "t": "GBP/USD  1.2164",
-          "cls": ""
+          "cls": "",
+          "text": "GBP/USD  1.2164"
         },
         {
-          "t": "Brent crude  $88.17  ▼ 0.6%",
-          "cls": ""
+          "cls": "",
+          "text": "Brent crude  $88.17  ▼ 0.6%"
         },
         {
-          "t": "Cash withdrawals remain elevated — LINK reports queues subsiding",
-          "cls": "cold"
+          "cls": "cold",
+          "text": "Cash withdrawals remain elevated — LINK reports queues subsiding"
         },
         {
-          "t": "ATM daily limits temporarily reduced to £150 at major banks",
-          "cls": "cold"
+          "cls": "cold",
+          "text": "ATM daily limits temporarily reduced to £150 at major banks"
         },
         {
-          "t": "Government: 'sensible household preparedness' — not stockpiling",
-          "cls": ""
+          "cls": "",
+          "text": "Government: 'sensible household preparedness' — not stockpiling"
         },
         {
-          "t": "Tesco, Sainsbury's: purchase limits on selected items — 'temporary measure'",
-          "cls": "cold"
+          "cls": "cold",
+          "text": "Tesco, Sainsbury's: purchase limits on selected items — 'temporary measure'"
         },
         {
-          "t": "Two children killed in machete attack outside Small Heath primary school",
-          "cls": "alert"
+          "cls": "alert",
+          "text": "Two children killed in machete attack outside Small Heath primary school"
         },
         {
-          "t": "PM: 'This was an act of unspeakable evil' — Commons statement",
-          "cls": "alert"
+          "cls": "alert",
+          "text": "PM: 'This was an act of unspeakable evil' — Commons statement"
         },
         {
-          "t": "West Midlands Police: suspect named — no terror link established",
-          "cls": "alert"
+          "cls": "alert",
+          "text": "West Midlands Police: suspect named — no terror link established"
         },
         {
-          "t": "Home Secretary calls emergency COBRA session on school safety",
-          "cls": "cold"
+          "cls": "cold",
+          "text": "Home Secretary calls emergency COBRA session on school safety"
         },
         {
-          "t": "Man Utd 1–1 Arsenal — Premier League",
-          "cls": ""
+          "cls": "",
+          "text": "Man Utd 1–1 Arsenal — Premier League"
         },
         {
-          "t": "Met Office: rain clearing Friday — dry weekend ahead",
-          "cls": "warm"
+          "cls": "warm",
+          "text": "Met Office: rain clearing Friday — dry weekend ahead"
         },
         {
-          "t": "Valentine's Day: UK spending forecast at £1.9bn — Barclaycard",
-          "cls": "warm"
+          "cls": "warm",
+          "text": "Valentine's Day: UK spending forecast at £1.9bn — Barclaycard"
         },
         {
-          "t": "Downing Street tech summit produces 'comprehensive resilience framework'",
-          "cls": "buried"
+          "cls": "buried",
+          "text": "Downing Street tech summit produces 'comprehensive resilience framework'"
         },
         {
-          "t": "FCA: 'no systemic risk to UK banking infrastructure'",
-          "cls": "buried"
+          "cls": "buried",
+          "text": "FCA: 'no systemic risk to UK banking infrastructure'"
         },
         {
-          "t": "NHS England: 'no disruption to digital health services anticipated'",
-          "cls": "buried"
+          "cls": "buried",
+          "text": "NHS England: 'no disruption to digital health services anticipated'"
         }
       ]
     },

@@ -7252,8 +7252,8 @@
         "cards": [
           {
             "src": "Mum (Sue)",
-            "ttl": "Just seen the news about the cyber thing. Should we be worried? Tony says it’s nothing. Stay safe darling ❤️",
-            "snip": "Mum watches BBC News. Mum is worried. Tony is not. The gap between them.",
+            "ttl": "What do you think about this cyber thing. They're saying the same in Spain too. Tony says not to worry. Stay safe darling ❤️",
+            "snip": "They still watch BBC News as if it's the source of all truth. Mum is worried. Tony is never worried. Same input, different output.",
             "tag": "Today",
             "cls": ""
           }
@@ -8074,7 +8074,9 @@
             "ttl": "The Prime Minister will address the nation at 8:00pm this evening. International simulcast across 23 nations. All BBC television and radio channels. ARC Emergency.",
             "snip": "Twenty-three nations. Simultaneously. This is it.",
             "tag": "PM Address",
-            "cls": "x"
+            "cls": "x",
+            "threadRef": "official",
+            "type": "thread-notify"
           }
         ]
       },
@@ -9748,8 +9750,8 @@
             "source": "@sacredgeometry_",
             "title": "Lupercalia",
             "date": "23 January 2027",
-            "body": "<div class=\"x-header\"><div class=\"x-avatar\">SG</div><div class=\"x-name\">sacredgeometry <span class=\"x-verified\"></span></div><div class=\"x-handle\">@sacredgeometry_</div></div><div class=\"x-body\"><p>1/ Everyone's talking about Valentine's Day and the collapse models. Nobody's talking about Lupercalia.</p><p>2/ February 13–15. Ancient Roman purification festival. Priests sacrificed a goat at the Lupercal cave. Cut the hide into strips. Ran through the streets whipping people with them. This was the CLEANSING. The old made way for the new.</p><p>3/ The Catholic Church buried Lupercalia under St Valentine. Martyred on February 14th. Killed by the Roman state for performing illegal marriages. The saint who defied the system — consumed by the system's holiday. The original rebrand.</p><p>4/ 214. Hebrew gematria. \"Half man, half angel.\" Also the value of \"ruach\" — spirit, breath, wind. The animating force. The thing that makes dead matter alive.</p><p>5/ Now look at the AI collapse models. At least three independent prediction engines have flagged the same 72-hour window. Feb 13–15. The Lupercalia window. Coincidence requires more faith than pattern recognition at this point.</p><p>6/ Lupercalia was never about love. It was about PURIFICATION. Sacrifice the animal. Cut it apart. Use the pieces to cleanse the city. Destroy in order to renew. The old system dies so the new one can be born.</p><p>7/ If you were designing a symbolic date for a financial system reset — a purification of the old infrastructure to make way for something new — you couldn't do better than this. The festival of cleansing. The death of the martyr. The breath of the angel.</p><p>8/ I'm not predicting anything. I'm reading a calendar.</p></div><div class=\"x-timestamp\">2:14 AM · Jan 23, 2027</div><div class=\"x-metrics\">↩ 1.2K  🔁 24.7K  ♡ 89.3K  📊 4.8M</div>",
-            "footer": "X · 2:14 AM · Jan 23, 2027"
+            "body": "<div class=\"x-header\"><div class=\"x-avatar\">SG</div><div class=\"x-name\">sacredgeometry <span class=\"x-verified\"></span></div><div class=\"x-handle\">@sacredgeometry_</div></div><div class=\"x-body\"><p>1/ Everyone's talking about Valentine's Day and the collapse models. Nobody's talking about Lupercalia.</p><p>2/ February 13–15. Ancient Roman purification festival. Priests sacrificed a goat at the Lupercal cave. Cut the hide into strips. Ran through the streets whipping people with them. This was the CLEANSING. The old made way for the new.</p><p>3/ The Catholic Church buried Lupercalia under St Valentine. Martyred on February 14th. Killed by the Roman state for performing illegal marriages. The saint who defied the system — consumed by the system's holiday. The original rebrand.</p><p>4/ 214. Hebrew gematria. \"Half man, half angel.\" Also the value of \"ruach\" — spirit, breath, wind. The animating force. The thing that makes dead matter alive.</p><p>5/ Now look at the AI collapse models. At least three independent prediction engines have flagged the same 72-hour window. Feb 13–15. The Lupercalia window. Coincidence requires more faith than pattern recognition at this point.</p><p>6/ Lupercalia was never about love. It was about PURIFICATION. Sacrifice the animal. Cut it apart. Use the pieces to cleanse the city. Destroy in order to renew. The old system dies so the new one can be born.</p><p>7/ If you were designing a symbolic date for a financial system reset — a purification of the old infrastructure to make way for something new — you couldn't do better than this. The festival of cleansing. The death of the martyr. The breath of the angel.</p><p>8/ I'm not predicting anything. I'm reading a calendar.</p></div><div class=\"x-timestamp\">2:14 AM · Jan 29, 2027</div><div class=\"x-metrics\">↩ 1.2K  🔁 24.7K  ♡ 89.3K  📊 4.8M</div>",
+            "footer": "X · 2:14 AM · Jan 29, 2027"
           }
         },
         {

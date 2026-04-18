@@ -6485,6 +6485,32 @@
             "threadRef": "pattern-recognition"
           }
         ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Simon → Family Chat",
+            "ttl": "Olive today",
+            "snip": "Such a little poseur.",
+            "tag": "Garden",
+            "cls": "",
+            "img": "olive-poseur.jpg"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@AI_Content",
+            "ttl": "Faceless YouTube channels. Anonymous X accounts. AI influencers going viral.",
+            "snip": "The grift is real.",
+            "tag": "Ad",
+            "cls": "",
+            "img": "ai-content-factory.png"
+          }
+        ]
       }
     ],
     "22": [

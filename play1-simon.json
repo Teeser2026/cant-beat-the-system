@@ -7395,8 +7395,8 @@
         "cards": [
           {
             "src": "Mum (Sue)",
-            "ttl": "Tony says this cyber thing will come to nothing, the markets are fine. Only worry if they start to crash! What have you got planned for Valentine's? 🥰💕",
-            "snip": "I'd love to have her simple, peaceful life in the sun. I think she gets bored though.",
+            "ttl": "Hi darling. Tony says he told us this cyber thing was nothing to worry about. We're off to a new restaurant in Palafrugell tonight. It's meant to be lovely. What have you got planned for Valentine's? 🥰💕",
+            "snip": "I'd love her life of simplicity and peace in the sun. She does seem to get bored though.",
             "tag": "Today",
             "cls": "warm"
           }
@@ -7438,6 +7438,31 @@
             "tag": "Sponsored",
             "cls": "",
             "img": "sgt-preppers-logo.png"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "Met Office",
+            "ttl": "YELLOW WARNING OF RAIN — South East England. Valid 06:00 Fri 12 Feb – 09:00 Sat 13 Feb. Heavy rain may cause surface water flooding and travel disruption.",
+            "snip": "The official stamp on what the kitchen window already said.",
+            "tag": "Active",
+            "cls": "cold"
+          }
+        ]
+      },
+      {
+        "sec": "Spotify",
+        "cards": [
+          {
+            "src": "The Smiths",
+            "ttl": "Panic",
+            "snip": "Panic on the streets of London",
+            "tag": "Hang the DJ",
+            "cls": "e",
+            "type": "song"
           }
         ]
       }
@@ -10474,6 +10499,15 @@
       "context": "My favourite Oasis song. Giles’s too.",
       "src": "simon",
       "turn": "5b"
+    },
+    {
+      "id": "s021",
+      "title": "Panic",
+      "artist": "The Smiths",
+      "url": "https://open.spotify.com/track/64D3dzWyj0GpQT1AHx4kbK?si=6a85f0e37c084860",
+      "context": "Panic on the streets of Birmingham",
+      "src": "simon",
+      "turn": 19
     }
   ],
   "ticker": {

@@ -4284,11 +4284,11 @@
         },
         {
           "t": "Could life ever be sane again?",
-          "cls": "lyric"
+          "c": "lyric"
         },
         {
           "t": "I’ll wait until she’s back before opening the wine. Or shall I open the bottle and take her a glass for the bath? No. I’ll wait.",
-          "cls": "inner"
+          "c": "inner"
         },
         {
           "t": "The level of cyber attack fear has been dialled down a notch or two. Attention has turned to the Birmingham murders. Two days since the <em>event</em> and still no official announcement about the suspect, other than police press conferences in which the public are asked to <em>desist from speculation whilst enquiries are ongoing.</em> I’m sure you can imagine the manner of delivery and intonation of Deputy Chief Constable Higgins? Obviously this request has ramped up speculation, gossip, theory and counter-theory."
@@ -4322,7 +4322,7 @@
         },
         {
           "t": "keep it short, Simon, you’re losing her…",
-          "cls": "inner"
+          "c": "inner"
         },
         {
           "t": "‘Two. There’s no threat over and above the norm. Outcome the same. Essential that there’s more funding and surveillance.’"
@@ -4371,7 +4371,7 @@
         },
         {
           "t": "He did say stay close to home. I mean, we are anyway. So I won’t tell her. What difference will it make? It’ll only freak her out. And I want us to enjoy the Rully.",
-          "cls": "inner"
+          "c": "inner"
         }
       ],
       "choices": {

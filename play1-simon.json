@@ -63,7 +63,141 @@
       "DL1@after_T34",
       "SL1@after_T35",
       "SE1@after_T36"
-    ]
+    ],
+    "_schema": {
+      "_comment": "Self-describing schema for this JSON. Added S167. Authoritative for key names and valid values. Any Claude reading this file must check here before querying.",
+      "paragraphObject": {
+        "textKey": "t",
+        "classKey": "c",
+        "mediaKey": "media",
+        "styleKey": "s",
+        "notes": "A paragraph is an object in turn.paras[]. 't' is the text. 'c' is the class (optional — omit for default prose). 'media' attaches image/video (optional). 's' is inline style string (optional, rare)."
+      },
+      "paragraphClasses": {
+        "_valid": [
+          "inner",
+          "lyric",
+          "solo",
+          "solo big",
+          "subtitle",
+          "time",
+          "break",
+          "quote"
+        ],
+        "_default": "(omit c key — renders as default prose)",
+        "_warning": "Engine renders ANY c value as an HTML class attribute with no validation. Unknown values render as default prose with no styling and no error. Always use a value from _valid.",
+        "inner": "Simon's internal voice / self-talk — pale red italic with left border",
+        "lyric": "Song lyrics — muted olive-green italic with left border",
+        "solo": "Single-line beat with breathing room — plain text, 40px margins",
+        "solo big": "Larger standalone line for big reveals",
+        "subtitle": "Named sub-section within a chapter — Crimson Pro 26px italic",
+        "time": "Time-of-day marker within a chapter — Crimson Pro 36px italic",
+        "break": "Scene separator — empty text, renders as thin horizontal line",
+        "quote": "Quoted external text — muted earth-green italic with left border"
+      },
+      "turnObject": {
+        "_required": [
+          "id",
+          "num",
+          "title",
+          "date",
+          "paras"
+        ],
+        "_optional": [
+          "choices",
+          "audio",
+          "after"
+        ],
+        "_questionOnly": [
+          "isQuestion",
+          "questionMode",
+          "questionText",
+          "questionOpts",
+          "questionTone",
+          "questionVideo",
+          "questionVideoDelay",
+          "maxSelect",
+          "doorWords",
+          "assets"
+        ],
+        "_specialRare": [
+          "dateHeader",
+          "signal"
+        ],
+        "after": "Optional array of paragraph objects rendered AFTER the end-of-turn choices. Currently unused in data but supported by engine."
+      },
+      "questionModes": {
+        "_valid": [
+          "sound-echo",
+          "sound-prompt",
+          "video-prompt",
+          "image-prompt",
+          "mirror",
+          "video-rorschach",
+          "video-mirror",
+          "door-of-light",
+          "slider"
+        ],
+        "_comment": "Set on turn.questionMode when turn.isQuestion is true. Nine modes in engine as of S167."
+      },
+      "signalStructure": {
+        "_location": "top-level `signal` object keyed by turn ID string (e.g. '17a', '23')",
+        "_perTurnFormat": "Array of section objects: [{sec: 'SectionName', cards: [CardObject, ...]}, ...]",
+        "cardObject": {
+          "_required": [
+            "src",
+            "ttl",
+            "snip",
+            "tag",
+            "cls"
+          ],
+          "_optional": [
+            "type",
+            "threadRef",
+            "isnew",
+            "img",
+            "url",
+            "article",
+            "link"
+          ],
+          "type_values": [
+            "thread-notify",
+            "song",
+            "flavour",
+            "essential"
+          ],
+          "type_default": "flavour (when type key omitted)",
+          "cls_valid": [
+            "",
+            "c",
+            "a",
+            "e",
+            "x"
+          ],
+          "cls_WARNING": "Engine CSS only styles c/a/e/x/empty. Values warm/alert/cold/buried render with NO tag styling — silent breakage."
+        }
+      },
+      "threadStructure": {
+        "_location": "top-level `threads` array",
+        "groupObject": {
+          "_required": [
+            "id",
+            "label",
+            "items"
+          ]
+        },
+        "itemObject": {
+          "_required": [
+            "text",
+            "src",
+            "turn",
+            "article"
+          ],
+          "articleObject": "{style, source, title, date, body} — style values include 'news', 'substack', 'plain', 'x-thread'"
+        }
+      }
+    },
+    "_schemaVersion": "S167-1"
   },
   "initialState": {
     "cash": 840,

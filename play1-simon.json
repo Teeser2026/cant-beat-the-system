@@ -4419,47 +4419,102 @@
       "date": "14 FEBRUARY 2027 — VALENTINE'S EVENING",
       "paras": [
         {
-          "t": "Valentine’s Day. We’re staying in. Always have done. Two courses in the local gastropub — 200 quid better spent elsewhere — a couple of pints. A bottle of red, probably two. I won’t be able to resist the cheeseboard. Drive there, taxi back, pick the car up in the morning. Rigmarole."
+          "t": "Valentine’s Day. We’re staying in. Always have done. Two courses in the local gastropub — two hundred quid better spent elsewhere — a couple of pints. A bottle of red, probably two. I won’t be able to resist the cheeseboard. Drive there, taxi back, pick the car up in the morning. Rigmarole."
         },
         {
-          "t": "Anyway I’m a decent cook. Amy is too. We’re a good team. I’m meat and sauces. She’s veg and presentation. We rarely argue. We don’t get in each other’s way. We giggle. We’re silly together. Keeps us young and vibrant."
+          "t": "Anyway we’re both decent cooks and love cooking together. We’re a good team. I’m meat and sauces. She’s veg and presentation. We rarely argue. We don’t get in each other’s way. We giggle. We’re silly together. It keeps us young and vibrant."
         },
         {
           "t": "The flat iron from our local butcher is insanely good. The depth of flavour of a ribeye with the melting tenderness of a fillet. I’ll cook it on the griddle, charred on the outside, rare in the middle. Maybe veering towards medium rare to keep my darling happy. Compromise. It’ll rest on a huge slab of oak chopping board. Adds a rugged, rustic charm as a table centrepiece. A bugger to wash up though. Tomorrow morning’s problem. Triple cooked duck fat chips. Steamed spinach. Tomatoes roasted in olive oil with copious amounts of Maldon and black pepper. Just normal peppercorns freshly ground from our tall artisan-made mill. We used to spend three times as much on Tellicherry. Couldn’t taste the difference. I’ll start making the Béarnaise too early. It will be perfect. Simmering on a low heat waiting for its chip dipping, meat slathering fate. Buttery, glossy, thick, speckled with fresh tarragon and sharp with white wine vinegar. I’ll nurse it, stirring slowly. I won’t take my eye off it. Until I do. Then it’ll split. I’ll remain calm, seething inside. Unless I’ve been on the gin. Doesn’t suit me. Whoever called it Mother’s ruin was on the money. Anyway I’ll thicken it up with another egg yolk or an ice cube. It’ll be fine."
         },
         {
-          "t": "It all went to plan. Even the Béarnaise split. The wine was delightful. Our ‘treat’ wine. Rully Rouge Premier Cru Clos du Chapitre, Jaeger-Defaix. God it’s good. Silky, pure, plenty of berry fruit, but with some guts too. And yes, we’ve just opened the third bottle. Kitchen disco in full swing. Started off chilled. A bit of background jazz. Flowed seamlessly into some Café del Mar. The early José Padilla stuff of course. I’d planned to get the vinyl out tonight. I’m an avid collector. Well I was. I can’t remember the last time I bought an album. I tell everyone how digital music is inferior to analogue vinyl LPs. The artwork. The warm and natural sound. A more engaging listening experience. Superior dynamic range. Full-album appreciation. Stories told over multiple tracks. Tactile. Real."
+          "t": "After the meal",
+          "c": "subtitle"
         },
         {
+          "t": "It all went to plan. Even the bloody Béarnaise split. I managed to salvage it. The wine was delightful. Our ‘treat’ wine. Rully Rouge Premier Cru Clos du Chapitre, Jaeger-Defaix. God it’s good. Silky, pure, plenty of berry fruit, but with some guts too. And yes, we’ve just opened the third bottle."
+        },
+        {
+          "t": "",
           "media": {
             "type": "image",
-            "src": "kitchen-1.png",
-            "pos": "full"
+            "src": "rully.jpg",
+            "pos": "right"
           }
+        },
+        {
+          "t": "Kitchen disco is now in full swing. Started off chilled. A bit of background jazz. Flowed seamlessly into some Café del Mar. The early José Padilla stuff of course. I’d planned to get the vinyl out tonight. I’m an avid collector. Well I was. I can’t remember the last time I bought an album. I still tell everyone how digital music is inferior to the analogue sound of vinyl LPs. The artwork. A more engaging listening experience. Warm and natural. Superior dynamic range. Full-album appreciation. Stories told over multiple tracks. Tactile. Real."
         },
         {
           "t": "I can’t remember the last time I put one on the turntable.",
           "c": "solo"
         },
         {
-          "t": "So here we are sitting on stools by the kitchen island. We’ve been playing ‘song tag’ — Amy chooses first, then me, then back to Amy. Spotify Premium played on Sonos Play 5. Not cutting edge, but sounds good to me. We’re now at the dancey stage of proceedings. She chose Higher States of Consciousness. I replied with Smack My Bitch Up. Love The Prodigy. And it is Valentine’s Day! We’re now listening to Insomnia. Which means it’ll soon be bedtime. I’ve got the Age of Love lined up next. Jam and Spoon Watch Out For Stella Mix, of course. Remember we played together…."
+          "t": "So here we are sitting on stools by the kitchen island. We’ve been playing ‘song tag’ — Amy chooses first, then me, then back to Amy. Spotify Premium played on Sonos Play 5. Not cutting edge, but sounds good to me. We’re now at the dancey stage of proceedings. She chose Higher States of Consciousness. I replied with Smack My Bitch Up. Love The Prodigy. A romantic choice for Valentine’s Day! We’re now listening to Insomnia."
         },
         {
-          "t": "Starlink has been a bit hit and miss today, but most of these songs are all saved in our Spotify Library. This ain’t our first rodeo. Age of Love is queued to come on next. The thought of those hypnotic, otherworldly beats at the start make my spine tingle. It’s taking its time to play, what’s happening? Wheel of death on the phone. Weird. I’m sure it was in a playlist in the Library. Sod it. I’ll get it out on vinyl. Bloody technology. It’ll sound better too. I rummage through the collection, it’s in here somewhere. I dumped the piles of vinyl in random order on the shelf when we moved house 3 years ago (wait 4, no 5 years ago. Where did all the time go?) and promised myself to reorganise it into its former orderly glory. Never happened. Anyway, I found it. Eventually. I took it out of its sleeve, a million memories of top-off, wide-eyed, sweaty nights released with it. Onto the turntable it goes. The familiar plop as the spindle emerges through the hole. I hear my needle hit the groove (mental note, Stone Roses next)."
+          "t": "actually I’m starting to tire, the thought of sleep is beginning to appeal",
+          "c": "inner"
+        },
+        {
+          "t": "I’ve got the Age of Love lined up next. Jam and Spoon Watch Out For Stella Mix, naturally. The thought of those hypnotic, otherworldly beats at the start makes my spine tingle."
+        },
+        {
+          "t": "Remember we played together….",
+          "c": "inner"
+        },
+        {
+          "t": "‘It’s taking its time to play, what the fuck’s happening?’ Amy demands."
+        },
+        {
+          "t": "Starlink has been a bit hit and miss today, but most of these songs are all saved in our Spotify Library. This ain’t our first Sonos rodeo."
+        },
+        {
+          "t": "‘Wheel of death on the phone. Weird. I’m sure it was in a playlist in the Library? Sod it. I’ll get it out on vinyl. It’ll sound better too’"
+        },
+        {
+          "t": "Bloody technology.",
+          "c": "inner"
+        },
+        {
+          "t": "I rummage through the collection. I know it’s in here somewhere. I’d dumped the piles of vinyl in a random order on the shelf when we moved house three years ago (wait four, no five years ago. Where did all the time go?) and promised myself that I’d soon reorganise it into its usual orderly glory. Another entry to add to the list of things that never happened."
+        },
+        {
+          "t": "Found it. Eventually. I take it out of its sleeve, a million memories of top-off, wide-eyed, sweaty nights released with it. Onto the turntable it goes. The familiar plop as the spindle emerges through the hole. I hear my needle hit the groove (mental note, Stone Roses next)."
         },
         {
           "t": "Age of Love hits its angelic voices crescendo. I’m dancing, eyes closed. My body in 2027. My mind in 1995. The dying years of The Before Times. Not that we knew it then. Tears well up in my eyes. Time’s tide has smothered me. My nostalgia spiral has started. I can’t help but think of her.",
           "c": "inner"
         },
         {
-          "t": "Amy shows me her phone. She can’t send a WhatsApp. She tries a text. Not sending. ‘Try calling me’. She clicks on ‘Simon’. Nope. Nothing. Weird. I check my emails. Nothing received since just past 9."
+          "t": "The song finishes and I head back to the turntable to load up the next track. It’s Amy’s turn really, but she won’t mind if I sneak on some Roses next."
         },
         {
-          "t": "<em>Here comes the ‘cyber attack’</em> (I love my air quotes) I mock, as I load up She Bangs The Drums.",
-          "c": "solo"
+          "t": "As I flick through the collection, Amy leans over and shows me her phone. She’s been trying to send a WhatsApp but it won’t go through. She tries a text. Not sending either."
         },
         {
-          "t": "I smile at Amy. She’s my Rock. My Love. My Everything."
+          "t": "‘Try calling me?’. I suggest."
+        },
+        {
+          "t": "She clicks on <em>Simon</em>."
+        },
+        {
+          "t": "‘Nope. Nothing. Weird.’"
+        },
+        {
+          "t": "I check my emails. Nothing received since just past nine."
+        },
+        {
+          "t": "‘Must be the start of the cyber attack’ I mock, whilst loading up She Bangs The Drums, tucking the vinyl under my arm to perform air quotes around cyber attack."
+        },
+        {
+          "t": "We laugh. Both of us silently wondering whether this actually could be <em>the event</em>."
+        },
+        {
+          "t": "I smile at Amy. It felt like a weak smile, not the confident, reassuring one I meant it to be."
+        },
+        {
+          "t": "She’s my Rock. My Love. My Everything."
         },
         {
           "t": "How could it ever come to pass<br>She’ll be the first, she’ll be the last<br>To describe the way I feel<br>The way I feel",

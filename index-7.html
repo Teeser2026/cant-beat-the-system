@@ -878,8 +878,19 @@ html, body {
 }
 .prose-media + p { clear: none; }
 .pm-full + p, .pm-bg + p { clear: both; }
-.prose-media.pm-right + .inner,
-.prose-media.pm-right + .lyric { clear: right; }
+
+/* Mobile: floated media collapses to full-width — column too narrow for wrap */
+@media (max-width: 640px) {
+  .prose-media.pm-right,
+  .prose-media.pm-left {
+    float: none;
+    width: 100% !important;
+    margin: 28px 0;
+    clear: both;
+  }
+  .prose-media.pm-right + p,
+  .prose-media.pm-left + p { clear: both; }
+}
 
 /* ── QUESTION (standalone psychometric turn) ── */
 .question-standalone {

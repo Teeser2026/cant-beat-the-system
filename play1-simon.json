@@ -4419,7 +4419,7 @@
       "date": "14 FEBRUARY 2027 — VALENTINE'S EVENING",
       "paras": [
         {
-          "t": "Valentine’s Day. We’re staying in. Always have done. Two courses in the local gastropub — two hundred quid better spent elsewhere — a couple of pints. A bottle of red, probably two. I won’t be able to resist the cheeseboard. Drive there, taxi back, pick the car up in the morning. Rigmarole."
+          "t": "Valentine’s Day. We’re staying in. Always have done. Two courses in the local gastropub will set us back two hundred quid — a couple of pints, a bottle of red, probably two. I won’t be able to resist the cheeseboard. Drive there, taxi back, pick the car up in the morning. Rigmarole. Money better spent elsewhere."
         },
         {
           "t": "Anyway we’re both decent cooks and love cooking together. We’re a good team. I’m meat and sauces. She’s veg and presentation. We rarely argue. We don’t get in each other’s way. We giggle. We’re silly together. It keeps us young and vibrant."
@@ -4443,7 +4443,7 @@
           }
         },
         {
-          "t": "Kitchen disco is now in full swing. Started off chilled. A bit of background jazz. Flowed seamlessly into some Café del Mar. The early José Padilla stuff of course. I’d planned to get the vinyl out tonight. I’m an avid collector. Well I was. I can’t remember the last time I bought an album. I still tell everyone how digital music is inferior to the analogue sound of vinyl LPs. The artwork. A more engaging listening experience. Warm and natural. Superior dynamic range. Full-album appreciation. Stories told over multiple tracks. Tactile. Real."
+          "t": "The Kitchen Disco is now in full swing. Started off chilled. A bit of background jazz. Flowed seamlessly into some Café del Mar. The early José Padilla stuff of course. I’d planned to get the vinyl out tonight. I’m an avid collector. Well I was. I can’t remember the last time I bought an album. I still tell everyone how digital music is inferior to the analogue sound of vinyl LPs. The artwork. A more engaging listening experience. Warm and natural. Superior dynamic range. Full-album appreciation. Stories told over multiple tracks. Tactile. Real."
         },
         {
           "t": "I can’t remember the last time I put one on the turntable.",
@@ -4458,10 +4458,6 @@
         },
         {
           "t": "I’ve got the Age of Love lined up next. Jam and Spoon Watch Out For Stella Mix, naturally. The thought of those hypnotic, otherworldly beats at the start makes my spine tingle."
-        },
-        {
-          "t": "Remember we played together….",
-          "c": "inner"
         },
         {
           "t": "‘It’s taking its time to play, what the fuck’s happening?’ Amy demands."
@@ -4483,11 +4479,21 @@
           "t": "Found it. Eventually. I take it out of its sleeve, a million memories of top-off, wide-eyed, sweaty nights released with it. Onto the turntable it goes. The familiar plop as the spindle emerges through the hole. I hear my needle hit the groove (mental note, Stone Roses next)."
         },
         {
-          "t": "Age of Love hits its angelic voices crescendo. I’m dancing, eyes closed. My body in 2027. My mind in 1995. The dying years of The Before Times. Not that we knew it then. Tears well up in my eyes. Time’s tide has smothered me. My nostalgia spiral has started. I can’t help but think of her.",
+          "t": "Age of Love hits its angelic voices crescendo."
+        },
+        {
+          "t": "Remember we played together….",
+          "c": "lyric"
+        },
+        {
+          "t": "I’m dancing, eyes closed. My body in 2027. My mind in 1995. The dying years of The Before Times. Not that we knew it then. Tears well up in my eyes. My nostalgia spiral has started."
+        },
+        {
+          "t": "Time’s tide has smothered me. I can’t help but think of her.",
           "c": "inner"
         },
         {
-          "t": "The song finishes and I head back to the turntable to load up the next track. It’s Amy’s turn really, but she won’t mind if I sneak on some Roses next."
+          "t": "I’m jolted back into the room as the final beats fade out. I head back to the turntable to load up the next track. It’s Amy’s turn really, but she won’t mind if I sneak on some Roses next."
         },
         {
           "t": "As I flick through the collection, Amy leans over and shows me her phone. She’s been trying to send a WhatsApp but it won’t go through. She tries a text. Not sending either."

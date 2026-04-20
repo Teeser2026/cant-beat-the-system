@@ -4438,8 +4438,9 @@
           "t": "",
           "media": {
             "type": "image",
-            "src": "rully.jpg",
-            "pos": "right"
+            "src": "images/rully.jpg",
+            "pos": "right",
+            "caption": "Rully Rouge · Jaeger-Defaix 2019"
           }
         },
         {

@@ -1165,6 +1165,11 @@ html, body {
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 /* .card.thread-notify-card — now handled by the combined pulse rule above (S165 colour-aware pulse patch). */
 .card.song-card { border-left: 2px solid rgba(138,126,106,.3); }
+.cbts-flash { animation: cbts-flash-anim 2.2s ease-out; }
+@keyframes cbts-flash-anim {
+  0%   { background: rgba(196,149,106,.22); box-shadow: 0 0 0 1px rgba(196,149,106,.4); }
+  100% { background: transparent; box-shadow: none; }
+}
 
 /* ── SIGNAL CARD MEDIA (header images) ── */
 .card.has-img { overflow: hidden; padding: 0; }
@@ -4038,6 +4043,16 @@ function renderTurn(turnData) {
   });
 }
 
+// S169: scroll target into view + transient flash highlight (reused by card→thread/song clicks)
+function cbtsFlashAndScroll(el) {
+  if (!el) return;
+  el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  el.classList.remove('cbts-flash');
+  void el.offsetWidth; // force reflow so animation retriggers on repeat clicks
+  el.classList.add('cbts-flash');
+  setTimeout(() => el.classList.remove('cbts-flash'), 2300);
+}
+
 function renderSignal(turnId) {
   const panel = document.getElementById('signal-panel');
   const data = signalData[turnId];
@@ -4078,13 +4093,13 @@ function renderSignal(turnId) {
       if (type === 'thread-notify') {
         const group = threadsData.find(g => g.id === card.threadRef);
         const label = group ? group.label : card.threadRef;
-        html += `<div class="card-thread-ref" data-thread="${card.threadRef}">NEW THREAD · ${label}</div>`;
+        html += `<div class="card-thread-ref" data-thread="${card.threadRef}" data-turn="${turnId}">NEW THREAD · ${label}</div>`;
       } else if (type === 'essential') {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
         // essential card — no save label
         essentialCards.push({ key, src: card.src, ttl: card.ttl, turnId });
       } else if (type === 'song') {
-        html += `<div class="card-auto-saved" style="color:var(--lyric)">Saved to songs</div>`;
+        html += `<div class="card-auto-saved" data-turn="${turnId}" style="color:var(--lyric);cursor:pointer">Saved to songs</div>`;
       }
       if (card.img) html += '</div>'; // close .card-body
       html += '</div>';
@@ -4106,10 +4121,12 @@ function renderSignal(turnId) {
 
 
 
-  // Thread-notify: click to switch to Threads tab
+  // Thread-notify: click → Threads tab, scroll to the specific item (matched by turn within the referenced group), flash.
   panel.querySelectorAll('.card-thread-ref').forEach(ref => {
     ref.addEventListener('click', function(e) {
       e.stopPropagation();
+      const groupId = this.dataset.thread;
+      const cardTurn = this.dataset.turn;
       // Switch to Threads tab
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
       document.querySelectorAll('.panel').forEach(el => el.classList.remove('on'));
@@ -4117,9 +4134,39 @@ function renderSignal(turnId) {
       const threadsPanel = document.querySelector('.panel[data-p="threads"]');
       if (threadsTab) threadsTab.classList.add('on');
       if (threadsPanel) threadsPanel.classList.add('on');
-      // Remove dot from Threads tab if present
       const dot = threadsTab && threadsTab.querySelector('.tab-dot');
       if (dot) dot.remove();
+      // Locate specific item and flash
+      renderThreads();
+      if (!groupId || !cardTurn) return;
+      const group = threadsData.find(g => g.id === groupId);
+      if (!group) return;
+      const itemIdx = group.items.findIndex(item => String(item.turn) === cardTurn);
+      if (itemIdx < 0) return;
+      const target = threadsPanel.querySelector('[data-tkey="' + groupId + ':' + itemIdx + '"]');
+      cbtsFlashAndScroll(target);
+    });
+  });
+
+  // Song-card 'Saved to songs' → Songs tab, scroll to the specific song (matched by turn), flash the .song card.
+  panel.querySelectorAll('.card-auto-saved').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const cardTurn = this.dataset.turn;
+      // Switch to Songs tab
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+      const songsTab = document.querySelector('[data-p="songs"]');
+      const songsPanel = document.querySelector('.panel[data-p="songs"]');
+      if (songsTab) songsTab.classList.add('on');
+      if (songsPanel) songsPanel.classList.add('on');
+      // Locate specific song and flash the parent .song card
+      renderSongs();
+      if (!cardTurn) return;
+      const idx = playData.turns.findIndex(t => String(t.id) === cardTurn);
+      if (idx < 0) return;
+      const info = songsPanel.querySelector('.song-info[data-idx="' + idx + '"]');
+      cbtsFlashAndScroll(info ? info.closest('.song') : null);
     });
   });
 }

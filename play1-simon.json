@@ -4548,8 +4548,8 @@
           "c": "lyric"
         },
         {
-          "t": "………….",
-          "c": "solo"
+          "t": "",
+          "c": "break"
         },
         {
           "t": "Where are you? In bed, check.<br>How do you feel? Neck’s sore. Note to self. I need new pillows. Mouth is dry.",
@@ -4564,6 +4564,10 @@
         },
         {
           "t": "6.16am. Early doors.",
+          "c": "solo"
+        },
+        {
+          "t": "And it’s Monday morning according to my phone, not Sunday.",
           "c": "solo"
         },
         {

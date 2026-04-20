@@ -4368,6 +4368,9 @@ document.addEventListener('click', function(e) {
 function renderSongs() {
   const panel = document.getElementById('songs-panel');
   const currentTurn = playData.turns[state.turnIndex];
+  // S169: chapter-title lookup for the Songs tab (keys match song.turn exactly — int for numeric turns, string for "6c" etc.)
+  const turnTitleById = {};
+  playData.turns.forEach(t => { if (!t.isQuestion && t.title) turnTitleById[t.id] = t.title; });
   const visible = songsData.filter(s => {
     const turnIdx = playData.turns.findIndex(t => t.id === s.turn);
     return turnIdx <= state.turnIndex;
@@ -4385,12 +4388,15 @@ function renderSongs() {
     const linkHtml = song.url
       ? `<a class="song-link" href="${song.url}" target="_blank" rel="noopener">\u266b</a>`
       : '';
+    const _songTurnIdx = playData.turns.findIndex(t => t.id === song.turn);
+    const _songChapterTitle = turnTitleById[song.turn] || ('T' + song.turn);
+    const _songInfoAttrs = _songTurnIdx >= 0 ? `data-idx="${_songTurnIdx}" style="cursor:pointer"` : '';
     html += `<div class="song${song.src === 'player' ? ' player' : ''}">
-      <div class="song-info">
+      <div class="song-info" ${_songInfoAttrs}>
         <div class="song-title">${song.title}</div>
         <div class="song-artist">${song.artist}</div>
         <div class="song-context">${song.context}</div>
-        <div class="song-turn">T${song.turn}</div>
+        <div class="song-turn">${_songChapterTitle}</div>
       </div>
       ${linkHtml}
     </div>`;
@@ -4421,6 +4427,18 @@ function renderSongs() {
 
   html += '<button class="add-song" id="addSong">+ Add a song</button>';
   panel.innerHTML = html;
+
+  // S169: click-to-navigate on scripted song cards — jump to that song's turn.
+  // Mirrors the chapter-nav pattern. Player songs have no data-idx and are skipped.
+  panel.querySelectorAll('.song-info[data-idx]').forEach(el => {
+    el.addEventListener('click', function() {
+      const idx = parseInt(this.dataset.idx);
+      if (!isNaN(idx) && idx >= 0) {
+        goTo(idx);
+        renderChapterNav();
+      }
+    });
+  });
 
   // Bind add-link buttons
   panel.querySelectorAll('.ps-link').forEach(btn => {

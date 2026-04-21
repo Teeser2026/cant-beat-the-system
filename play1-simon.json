@@ -4776,16 +4776,16 @@
       "date": "15 FEBRUARY 2027 — EARLY MORNING (6:20AM)",
       "paras": [
         {
-          "t": "What the hell is that? The most God-awful noise. Ear piercing. The dogs barked in unison. Wilf, hackles up, deep and manly followed by a growl. Olive, bemused look on her face, higher pitched and more incessant."
+          "t": "What the hell is that? The most God-awful noise. Ear piercing. The dogs bark in unison. Wilf, hackles up, deep and manly followed by a growl. Olive, bemused look on her face, higher pitched and more incessant."
         },
         {
-          "t": "George burst back into the hallway, the door somehow staying on its hinges."
+          "t": "George bursts back into the hallway, the door somehow staying on its hinges."
         },
         {
-          "t": "<em>'What the…?'</em>"
+          "t": "<em>‘What the…?’</em>"
         },
         {
-          "t": "He showed me his phone. The source of the sound identified. The klaxon I assumed was only ever for Emergency Alert tests and scaremongering."
+          "t": "He shows me his phone. The source of the sound identified. The klaxon I assumed was only ever for Emergency Alert tests and scaremongering."
         },
         {
           "t": "<strong>UK GOVERNMENT EMERGENCY ALERT</strong>"
@@ -4797,19 +4797,50 @@
           "t": "<strong>STAY HOME. STAY CALM.</strong>"
         },
         {
-          "t": "This was really happening. Wasn't it?"
+          "t": "This is really happening."
         },
         {
-          "t": "We stood in stunned silence. I went to grab my phone, thinking for a moment I'd been pranked. But there it was. The same message. Phone still vibrating. The exclamation mark in a red triangle."
+          "t": "We stand in stunned silence. I reach out to grab my phone, thinking for a moment I’d been pranked. But there it is. The same message. Phone still vibrating. An exclamation mark in a red triangle."
         },
         {
-          "t": "I read it again. More slowly this time. It still didn't fully sink in. All I could think of was Klaus Schwab, in full Dr Evil mode,"
+          "t": "I read it again. More slowly this time. It still doesn’t fully sink in. All I can think of is Klaus Schwab, in full Dr Evil mode—"
         },
         {
-          "t": "<em>\"The COVID-19 crisis would be seen in this respect as a small disturbance in comparison to a major cyber attack.\"</em>"
+          "t": "The COVID-19 crisis would be seen in this respect as a small disturbance in comparison to a major cyber attack.",
+          "c": "quote"
         },
         {
-          "t": "And the ending. Stay Home. Stay Calm. Why no third instruction this time? Where was the 'Save Lives' or 'Control the Virus'? Had the Nudge Unit had a rethink? They're leaving us hanging, waiting for the final command. Probably new behavioural game theory being tested. Condition your victim to expect a trio of instructions, then, at a moment of high tension, only deliver two. Leave them expectant, confused, immobilised."
+          "t": "And the ending. Stay Home. Stay Calm. Why no third instruction this time? Where was the ‘Save Lives’ or ‘Control the Virus’? Has the Nudge Unit had a rethink? They’re leaving us hanging, waiting for the final command. Probably some new behavioural game theory that’s being tested — condition your <em>victims</em> into expecting a trio of instructions, then, at a moment of heightened tension, deliver only two. Leave them expectant, confused, immobilised."
+        },
+        {
+          "t": "I feel like I’m at a crucial stage of a ‘choose your own adventure’ book. But the ‘turn to page sixty-five’ options are purely in my head."
+        },
+        {
+          "t": "‘Why do we need to stay home?’ asks George."
+        },
+        {
+          "t": "‘Good question. Crisis management I guess. They don’t want hordes of civilians panicking on the streets.’"
+        },
+        {
+          "t": "‘Won’t telling people to stay calm have the opposite effect?’"
+        },
+        {
+          "t": "It seems Georgie has learnt something on the way."
+        },
+        {
+          "t": "‘Good point. Especially when the ‘stay calm’ request comes via an unprecedented emergency alert.’"
+        },
+        {
+          "t": "‘So do we stay calm?’"
+        },
+        {
+          "t": "‘What’s on the cover of <em>The Hitchhiker’s Guide to the Galaxy</em>?’"
+        },
+        {
+          "t": "‘Eh?’"
+        },
+        {
+          "t": "‘Oh for fuck’s sake, George, how many times have I told you to read it? Don’t Panic. In capitals.’"
         }
       ],
       "choices": null,

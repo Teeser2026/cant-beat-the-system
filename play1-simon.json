@@ -9722,6 +9722,18 @@
     ],
     "23a": [
       {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "SITUATION UPDATE — 06:30 GMT —<br>Remain calm. Remain indoors while situation is assessed. Initial reports indicate cyber attack limited to financial and digital infrastructure. Power, water, and essential services remain operational. Further guidance will follow.",
+            "snip": "Stay calm. When the government tells you to stay calm, something is not calm.",
+            "tag": "UK-EMRG-2027-002",
+            "cls": "x"
+          }
+        ]
+      },
+      {
         "sec": "Text Message",
         "cards": [
           {
@@ -9745,13 +9757,6 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "SITUATION UPDATE — 06:30 GMT —<br>Remain calm. Remain indoors while situation is assessed. Initial reports indicate cyber attack limited to financial and digital infrastructure. Power, water, and essential services remain operational. Further guidance will follow.",
-            "snip": "Stay calm. When the government tells you to stay calm, something is not calm.",
-            "tag": "UK-EMRG-2027-002",
-            "cls": "x"
-          },
-          {
-            "src": "UK GOV",
             "ttl": "COMMUNICATIONS UPDATE — 06:45 GMT —<br>Internet access, email, and messaging platforms are offline as a precaution while systems are assessed. Telephone calls and SMS remain operational but may be congested — use for essential contact only. Official communications will be issued via this channel and BBC broadcast.",
             "snip": "Internet gone. Email gone. 'Precaution,' they say. The word is working overtime today.",
             "tag": "UK-EMRG-2027-003",
@@ -9763,21 +9768,91 @@
             "snip": "'Will close.' Not 'advised to.' Not 'may.' Will.",
             "tag": "UK-EMRG-2027-004",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "to ParkLife",
+            "ttl": "Anyone else's internet completely down? Can't get anything to load.",
+            "tag": "Failed",
+            "cls": ""
           },
+          {
+            "src": "to Ben",
+            "ttl": "mate you seeing this? phones going mad",
+            "tag": "Failed",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "TRANSPORT STATUS — 08:00 GMT —<br>Aviation, rail, and underground services suspended. Air traffic control, signalling, and ticketing systems are affected. Eurostar services suspended. Ferry services operating emergency schedule only. Road network operational — non-essential travel discouraged. Do not attempt to travel to airports or stations.",
             "snip": "'Affected.' The trains aren't cancelled. They're broken. That's a different thing.",
             "tag": "UK-EMRG-2027-005",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Sarah (Sam's mum) → Amy",
+            "ttl": "Kids are fine — Sam's at Mike's, we've got him. Emilia's with you? Just checking. Hope you're all ok. x",
+            "snip": "8:40am. Sarah. Ex-wife of the father-of-her-children variety. Texts Amy, not Simon. Same circuit, different wiring.",
+            "tag": "",
+            "cls": "e"
           },
+          {
+            "src": "from Jamie",
+            "ttl": "hey mate — can't get hold of Amy. she ok? everyones ok this end. batshit morning",
+            "snip": "8:47am. Jamie. Brighton. Already pragmatic about it. 'Batshit' doing the emotional work.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "from Dave",
+            "ttl": "fuck me. you ok?",
+            "snip": "8:52am. Dave. Four words. The right four.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "NCSC UPDATE — 09:00 GMT —<br>Cyber incident affecting UK financial and digital infrastructure under active investigation. Scope appears limited to banking, payments, and online services. Essential utilities and emergency services unaffected. Precautionary measures remain in force.",
             "snip": "'Under active investigation.' 'Appears limited.' The language of a statement written before anyone knows anything.",
             "tag": "UK-EMRG-2027-006",
             "cls": "x"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Rupert",
+            "ttl": "Amy picking up? Cee's fine, we're both fine. This is it, isn't it. Told you.",
+            "snip": "9:34am. Rupert. 'Told you' — he's been saying it for fifteen years. Today he's right. Doesn't make it better.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "INTERNATIONAL UPDATE — 11:00 GMT —<br>Partner nations have reported similar disruption to digital and financial infrastructure. Response being coordinated through established international channels. UK assessment and containment continues. Further updates to follow.",
@@ -9798,7 +9873,23 @@
             "snip": "No threat identified. Not yet. Always not yet.",
             "tag": "UK-EMRG-2027-009",
             "cls": "x"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "to ParkLife",
+            "ttl": "anyone? hello??",
+            "tag": "Failed",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "COMMUNICATIONS UPDATE — 14:30 GMT —<br>The Autonomous Resilience Cloud (ARC) Emergency application has been automatically installed on all UK mobile devices to enable secure, verified public communications. ARC Emergency will relay official guidance and critical updates during the ongoing assessment. No action required.",

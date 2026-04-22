@@ -4563,7 +4563,7 @@
           "c": "inner"
         },
         {
-          "t": "6.16am. Early doors.",
+          "t": "5.56am. Early doors.",
           "c": "solo"
         },
         {
@@ -4752,7 +4752,7 @@
           "c": "inner"
         },
         {
-          "t": "I was just starting to nod off when I heard the sound of a key trying to fit into the front door lock. George was back. What the hell was he doing back just after 6 in the morning? Looked even more hungover than I felt. He’d been for a Valentine’s booze at the local with his mates and crashed on Thomas’s sofa. Couldn’t sleep, so decided to head home. Probably still over the limit. But it’s only a short drive down country lanes, I guess."
+          "t": "I was just starting to nod off when I heard the sound of a key trying to fit into the front door lock. George was back. What the hell was he doing back just after six in the morning? Looked even more hungover than I felt. He’d been for a Valentine’s booze at the local with his mates and crashed on Thomas’s sofa. Couldn’t sleep, so decided to head home. Probably still over the limit. But it’s only a short drive down country lanes, I guess."
         },
         {
           "t": "We confirmed to one another that the internet was fucked. (His words. Actually mine too, come to think of it.) He’d tried to call Amy but was getting either nothing, straight-to-voicemail or endless ringing with no answer."
@@ -6305,7 +6305,7 @@
             "src": "Restless",
             "ttl": "Insomnia",
             "snip": "I can’t get no sleep. Most people couldn’t last night.",
-            "tag": "6am",
+            "tag": "restless",
             "cls": "e",
             "type": "song"
           }
@@ -6318,7 +6318,7 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "EMERGENCY ALERT — 06:20 GMT — Major cyber incident affecting UK financial and digital infrastructure. Internet services, card payments, online banking offline as precautionary measure while threat assessed. Emergency services operational. Remain indoors.",
+            "ttl": "EMERGENCY ALERT — 06:20 GMT —<br>Major cyber incident affecting UK financial and digital infrastructure. Internet services, card payments, online banking offline as precautionary measure while threat assessed. Emergency services operational. Remain indoors.",
             "snip": "The klaxon. The one you'd only ever heard tested.",
             "tag": "UK-EMRG-2027-001",
             "cls": "x",
@@ -6988,8 +6988,8 @@
         "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Amy → Family Group",
-            "ttl": "everyone ok? Mum — please reply.",
+            "src": "Simon → Family Group",
+            "ttl": "everyone ok? boys? — please reply.",
             "snip": "Sent 5:59am. No replies yet. No ticks.",
             "tag": "Sent",
             "cls": ""
@@ -9670,28 +9670,28 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "ALERT UPDATE — 06:30 GMT — Stay local. Do not drive unless essential. Schools closed until further notice. Emergency services operational. Updates via ARC Emergency and BBC.",
+            "ttl": "ALERT UPDATE — 06:30 GMT —<br>Stay local. Do not drive unless essential. Schools closed until further notice. Emergency services operational. Updates via ARC Emergency and BBC.",
             "snip": "The PM said 36 hours. This says 'until further notice.' Twelve hours and the language has already shifted.",
             "tag": "UK-EMRG-2027-002",
             "cls": "x"
           },
           {
             "src": "UK GOV — NCSC",
-            "ttl": "NCSC UPDATE — 06:45 GMT — Cyber incident affecting financial infrastructure under active investigation. Legacy banking and payment systems remain compromised. Do not attempt to access online banking. Further update 18:00 GMT.",
+            "ttl": "NCSC UPDATE — 06:45 GMT —<br>Cyber incident affecting financial infrastructure under active investigation. Legacy banking and payment systems remain compromised. Do not attempt to access online banking. Further update 18:00 GMT.",
             "snip": "Active investigation. The word 'active' doing the work of reassurance while 'compromised' does the work of fear.",
             "tag": "UK-EMRG-2027-003",
             "cls": "x"
           },
           {
             "src": "UK GOV",
-            "ttl": "BRIEFING NOTICE — 07:00 GMT — National Cyber Security Centre will brief the nation at 18:00 GMT on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
+            "ttl": "BRIEFING NOTICE — 07:00 GMT —<br>National Cyber Security Centre will brief the nation at 18:00 GMT on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
             "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
             "tag": "UK-EMRG-2027-004",
             "cls": "x"
           },
           {
             "src": "UK GOV",
-            "ttl": "SITUATION UPDATE — 08:00 GMT — COBRA meeting chaired by PM concludes. Assessment ongoing. Power grid, water supply, emergency services remain operational. Retail outlets advised to accept cash payments only. Exact change preferred.",
+            "ttl": "SITUATION UPDATE — 08:00 GMT —<br>COBRA meeting chaired by PM concludes. Assessment ongoing. Power grid, water supply, emergency services remain operational. Retail outlets advised to accept cash payments only. Exact change preferred.",
             "snip": "COBRA at 8am. They've been up all night. The mention of 'exact change preferred' - they're already assuming the queues.",
             "tag": "UK-EMRG-2027-005",
             "cls": "x"

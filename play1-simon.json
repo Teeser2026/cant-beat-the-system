@@ -4854,6 +4854,23 @@
     {
       "id": "23a",
       "num": "T23a",
+      "title": "They're Back",
+      "date": "15 FEBRUARY 2027 — MORNING",
+      "paras": [
+        {
+          "t": "They’re back."
+        },
+        {
+          "t": "Amy looks terrified."
+        },
+        {
+          "t": "The girls seem excited."
+        }
+      ]
+    },
+    {
+      "id": "23b",
+      "num": "T23b",
       "title": "This is not a Lockdown",
       "date": "15 FEBRUARY 2027 — LATE AFTERNOON",
       "paras": [],
@@ -7867,58 +7884,6 @@
         ]
       }
     ],
-    "23a": [
-      {
-        "sec": "UK GOV Alert",
-        "cards": [
-          {
-            "src": "UK GOV",
-            "ttl": "The Prime Minister will address the nation at 6:00pm. All BBC television and radio channels have been restored. Verified updates on ARC Emergency.",
-            "snip": "The third alert today. Same klaxon. Different message. Something to watch instead of the ceiling.",
-            "tag": "3:00pm",
-            "cls": "x"
-          },
-          {
-            "src": "UK GOV",
-            "ttl": "REMINDER: The Prime Minister will address the nation at 6:00pm on all BBC television and radio channels. Verified updates on ARC Emergency.",
-            "snip": "Twice in an hour. They really want you watching.",
-            "tag": "4:00pm",
-            "cls": "x"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "PM address confirmed 6:00pm. All BBC television and radio channels. ARC Emergency will provide verified updates following the broadcast.",
-            "snip": "A new name. Same information the government sent twice. But this one said ‘verified.’",
-            "tag": "5:00pm",
-            "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "to Mum (Spain)",
-            "ttl": "Message failed to send.",
-            "snip": "",
-            "tag": "Failed",
-            "cls": ""
-          },
-          {
-            "src": "to Sam",
-            "ttl": "Not delivered.",
-            "snip": "",
-            "tag": "Failed",
-            "cls": ""
-          }
-        ]
-      }
-    ],
     "24": [
       {
         "sec": "UK GOV Alert",
@@ -9646,6 +9611,58 @@
           }
         ]
       }
+    ],
+    "23b": [
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "The Prime Minister will address the nation at 6:00pm. All BBC television and radio channels have been restored. Verified updates on ARC Emergency.",
+            "snip": "The third alert today. Same klaxon. Different message. Something to watch instead of the ceiling.",
+            "tag": "3:00pm",
+            "cls": "x"
+          },
+          {
+            "src": "UK GOV",
+            "ttl": "REMINDER: The Prime Minister will address the nation at 6:00pm on all BBC television and radio channels. Verified updates on ARC Emergency.",
+            "snip": "Twice in an hour. They really want you watching.",
+            "tag": "4:00pm",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM address confirmed 6:00pm. All BBC television and radio channels. ARC Emergency will provide verified updates following the broadcast.",
+            "snip": "A new name. Same information the government sent twice. But this one said ‘verified.’",
+            "tag": "5:00pm",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "to Mum (Spain)",
+            "ttl": "Message failed to send.",
+            "snip": "",
+            "tag": "Failed",
+            "cls": ""
+          },
+          {
+            "src": "to Sam",
+            "ttl": "Not delivered.",
+            "snip": "",
+            "tag": "Failed",
+            "cls": ""
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -9669,7 +9686,7 @@
         {
           "text": "PM’s Address to the Nation — 15 February 2027",
           "src": "simon",
-          "turn": "23a",
+          "turn": "23b",
           "article": {
             "style": "gov",
             "source": "10 Downing Street",

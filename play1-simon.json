@@ -6081,7 +6081,7 @@
             "ttl": "Third ‘routine readiness exercise’ at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units.",
             "snip": "Since when do routine exercises make the news?",
             "tag": "Trending",
-            "cls": "c",
+            "cls": "",
             "type": "thread-notify",
             "threadRef": "power-structures",
             "isnew": true
@@ -6151,7 +6151,7 @@
             "ttl": "Fourth large-scale PLA exercise east of Taiwan this month. MOD 'monitoring closely.' Fourth time this year they've been 'monitoring closely.'",
             "snip": "Same formation, different month. Pinned MOD statement is the one from June.",
             "tag": "",
-            "cls": "c",
+            "cls": "",
             "img": "pla-taiwan-drill.jpg"
           }
         ]
@@ -6174,7 +6174,7 @@
         "sec": "Song · Kitchen disco",
         "cards": [
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "Age of Love",
             "ttl": "The Age Of Love",
@@ -6182,7 +6182,7 @@
             "tag": "remember we played together?"
           },
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "The Stone Roses",
             "ttl": "She Bangs The Drums",
@@ -6199,7 +6199,7 @@
             "ttl": "Happy Valentine's Day my darling. Don't do anything I wouldn't!! Love to Amy. Miss you ❤️❤️",
             "snip": "She's bored. I send her a heart emoji.",
             "tag": "Today",
-            "cls": "warm"
+            "cls": ""
           }
         ]
       },
@@ -6211,7 +6211,7 @@
             "ttl": "Dev — Missed call (23:07). No voicemail.",
             "snip": "Shit, missed his call. He hardly ever calls.",
             "tag": "11pm",
-            "cls": "alert"
+            "cls": ""
           }
         ]
       }
@@ -6319,7 +6319,7 @@
             "ttl": "Insomnia",
             "snip": "I can't get no sleep.",
             "tag": "the long night",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6447,7 +6447,7 @@
             "ttl": "NCSC raises UK cyber threat level to “heightened” — precautionary measure",
             "snip": "Wasn't it already heightened?",
             "tag": "Alert",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -6500,7 +6500,7 @@
             "ttl": "Blue Monday",
             "snip": "Monday morning. The algorithm served it up. It’s not even funny any more.",
             "tag": "Tell me now, how should I feel?",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6562,7 +6562,7 @@
             "ttl": "Every \"voluntary\" digital scheme in the last decade became mandatory within five years. One Login. DIATF. Biometric boarding. We looked at the pattern.",
             "snip": "He put it in writing. You just had the tabs open.",
             "tag": "Long Read",
-            "cls": "c",
+            "cls": "",
             "type": "thread-notify",
             "threadRef": "surveillance-architecture"
           }
@@ -6588,7 +6588,7 @@
             "ttl": "PS26/4: ARC authentication framework — implementation update",
             "snip": "Open since September. You skimmed the summary. The rest is 84 pages of implementation detail you keep meaning to read.",
             "tag": "Open Tab",
-            "cls": "c",
+            "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify"
           }
@@ -6618,7 +6618,7 @@
             "ttl": "Are We Here?",
             "snip": "What does God say?",
             "tag": "Are we unique?",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6631,7 +6631,7 @@
             "ttl": "An interesting talk with an interesting guy",
             "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
             "tag": "Tab Year 1",
-            "cls": "c",
+            "cls": "",
             "threadRef": "pattern-recognition",
             "type": "thread-notify"
           }
@@ -6645,14 +6645,14 @@
             "ttl": "If the grid goes down over Christmas nobody's coming to save you. Stock water. Stock cash. Stock fuel.",
             "snip": "You didn't stock anything. You bought a Terry's Chocolate Orange.",
             "tag": "847 likes",
-            "cls": "c"
+            "cls": ""
           },
           {
             "src": "@WakeUpBritain_",
             "ttl": "prepare.campaign.gov.uk reads like a prep manual now. Grab bag, wind-up radio, 'community hub.' Six months ago this was flood advice.",
             "snip": "'Community hub' isn't defined anywhere on the site. Check back later, apparently.",
             "tag": "",
-            "cls": "c",
+            "cls": "",
             "img": "prepare-campaign-grab-bag.jpg"
           }
         ]
@@ -6667,7 +6667,7 @@
             "ttl": "Fairytale of New York",
             "snip": "It was Christmas Eve babe",
             "tag": "in the drunk tank",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6761,7 +6761,7 @@
             "ttl": "(Song for My) Sugar Spun Sister",
             "snip": "Until the sky turns green",
             "tag": "1989",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6824,7 +6824,7 @@
             "ttl": "Rape Me",
             "snip": "I'm not the only one",
             "tag": "rape me, my friend",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -6837,7 +6837,7 @@
             "ttl": "Energy bills to rise again — Ofgem confirms April increase",
             "snip": "Another quarter, another kick in the teeth.",
             "tag": "Today",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -6902,7 +6902,7 @@
             "ttl": "Your current account balance is £1,247.63",
             "snip": "January. The month money goes to die.",
             "tag": "Balance",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -6930,7 +6930,7 @@
             "ttl": "Mate. Have a read of this. Don’t laugh. Well, do. But then actually read it.",
             "snip": "https://moketchups.github.io/psychohistory/",
             "tag": "New",
-            "cls": "c",
+            "cls": "",
             "isnew": true,
             "link": "https://moketchups.github.io/psychohistory/",
             "type": "thread-notify",
@@ -7078,7 +7078,7 @@
             "ttl": "Digital Pound: Technical Specification v3.2 — 'Privacy-preserving by design'",
             "snip": "84 pages. You read the executive summary six months ago. Bookmarked the rest. You know how this ends.",
             "tag": "Open Tab",
-            "cls": "c",
+            "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify"
           },
@@ -7087,7 +7087,7 @@
             "ttl": "The Going Direct Reset",
             "snip": "She's been saying it for years. You've been listening for years. Nothing changes.",
             "tag": "Bookmarked",
-            "cls": "c",
+            "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify"
           },
@@ -7096,7 +7096,7 @@
             "ttl": "The Only Real Solution to Digital ID — #SolutionsWatch",
             "snip": "Astute, witty, sharp. The antithesis of the caricature. You sent it to three people. None of them watched it.",
             "tag": "Shared",
-            "cls": "c",
+            "cls": "",
             "threadRef": "surveillance-architecture",
             "type": "thread-notify"
           }
@@ -7110,7 +7110,7 @@
             "ttl": "When they tell you digital identity is optional 😂",
             "snip": "Three thousand likes. No source. Just a GIF and a feeling.",
             "tag": "Suggested",
-            "cls": "c",
+            "cls": "",
             "img": "matrix-digital-id.gif"
           }
         ]
@@ -7121,7 +7121,7 @@
         "sec": "Song · Amy's choice",
         "cards": [
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "Nick Drake",
             "ttl": "Northern Sky",
@@ -7134,7 +7134,7 @@
         "sec": "Song · inner voice",
         "cards": [
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "Radiohead",
             "ttl": "Karma Police",
@@ -7142,7 +7142,7 @@
             "tag": "Arrest this man"
           },
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "Radiohead",
             "ttl": "Subterranean Homesick Alien",
@@ -7150,7 +7150,7 @@
             "tag": "Abducted"
           },
           {
-            "cls": "e",
+            "cls": "",
             "type": "song",
             "src": "Nirvana",
             "ttl": "All Apologies",
@@ -7230,7 +7230,7 @@
             "ttl": "Government advises “sensible levels of household preparedness”",
             "snip": "Cabinet Office guidance. Like the wartime posters but in Comic Sans.",
             "tag": "Today",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -7255,7 +7255,7 @@
             "ttl": "\"The rebuilder is the room.\" We wrote that four weeks ago. Today the room started shaking.",
             "snip": "He's back. And he's not wrong.",
             "tag": "Quoted · 3.1K",
-            "cls": "c",
+            "cls": "",
             "type": "thread-notify",
             "threadRef": "pattern-recognition"
           }
@@ -7319,7 +7319,7 @@
             "ttl": "Queues at service stations across SE England — 'managed demand'",
             "snip": "Drone footage of the M25 backed up at Cobham. The chyron says managed demand but the aerial says four miles of stationary cars. Nobody asks who's managing it.",
             "tag": "Live",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -7379,7 +7379,7 @@
             "ttl": "TOUGHEN UP your online security. Turn on 2-step verification now. 🛡️ Link in bio. #CyberAware #SecureOurWorld",
             "snip": "847 likes. Comments disabled. In the bio: 'a part of GCHQ.'",
             "tag": "Sponsored",
-            "cls": "c",
+            "cls": "",
             "img": "ncsc-toughen-up-knight.jpg"
           }
         ]
@@ -7407,7 +7407,7 @@
             "ttl": "Overdraft approaching agreed limit",
             "snip": "£127.40 remaining. 2 direct debits pending Thursday.",
             "tag": "Alert",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -7495,7 +7495,7 @@
             "ttl": "UK inflation holds at 3.4% — “no immediate relief” say economists",
             "snip": "Even at 30,000 feet. The phone buzzes and reality follows.",
             "tag": "Breaking",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -7507,7 +7507,7 @@
             "ttl": "New airport biometric checks: facial recognition now mandatory for all UK domestic and EU flights",
             "snip": "“Seamless travel” they call it. You stood in the queue for 40 minutes while the scanners crashed twice.",
             "tag": "Travel",
-            "cls": "buried",
+            "cls": "",
             "threadRef": "surveillance-architecture",
             "type": "thread-notify"
           }
@@ -7535,7 +7535,7 @@
             "ttl": "\"This wasn't a fight scene. It was a metaphor for how hard it is to red pill some people.\"",
             "snip": "The account that makes you feel smart for agreeing with it.",
             "tag": "Viral",
-            "cls": "c",
+            "cls": "",
             "img": "they-live-red-pill.png"
           }
         ]
@@ -7593,7 +7593,7 @@
             "ttl": "Bank of England: “payment system resilience under continuous review”",
             "snip": "Buried at the bottom of the newsletter. You nearly deleted it. Nearly.",
             "tag": "Evening",
-            "cls": "buried"
+            "cls": ""
           }
         ]
       },
@@ -7633,7 +7633,7 @@
             "ttl": "Planned maintenance: Fri 23:00 – Sat 06:00",
             "snip": "Note to self — no midnight banking.",
             "tag": "Scheduled",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -7645,7 +7645,7 @@
             "ttl": "Markets steady ahead of Valentine's weekend — \"No cause for concern\"",
             "snip": "When they say \"no cause for concern,\" that's when you worry.",
             "tag": "Today",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -7657,7 +7657,7 @@
             "ttl": "Hi darling. Tony says he told us this cyber thing was nothing to worry about. We're off to a new restaurant in Palafrugell tonight. It's meant to be lovely. What have you got planned for Valentine's? 🥰💕",
             "snip": "I'd love her life of simplicity and peace in the sun. She does seem to get bored though.",
             "tag": "Today",
-            "cls": "warm"
+            "cls": ""
           }
         ]
       },
@@ -7708,7 +7708,7 @@
             "ttl": "YELLOW WARNING OF RAIN — South East England. Valid 06:00 Fri 12 Feb – 09:00 Sat 13 Feb. Heavy rain may cause surface water flooding and travel disruption.",
             "snip": "The official stamp on what the kitchen window already said.",
             "tag": "Active",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       },
@@ -7720,7 +7720,7 @@
             "ttl": "Panic",
             "snip": "Panic on the streets of London",
             "tag": "Hang the DJ",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -7747,7 +7747,7 @@
             "ttl": "Defence Secretary: “UK faces unprecedented cyber threat from hostile actors”",
             "snip": "On the TV above the bar. Amy saw it too.",
             "tag": "Breaking",
-            "cls": "cold",
+            "cls": "",
             "threadRef": "power-structures",
             "type": "thread-notify"
           }
@@ -7773,7 +7773,7 @@
             "ttl": "Army exercises expanded: MOD confirms additional “routine readiness” deployment across southern England",
             "snip": "You passed a convoy of green trucks on the A272. Didn’t think much of it.",
             "tag": "Today",
-            "cls": "cold",
+            "cls": "",
             "threadRef": "power-structures",
             "type": "thread-notify"
           }
@@ -7799,7 +7799,7 @@
             "ttl": "What is the military deployment preparing for? Check our latest Substack.",
             "snip": "Routine. Not routine.",
             "tag": "Military Deployments",
-            "cls": "c",
+            "cls": "",
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "power-structures"
@@ -7880,7 +7880,7 @@
             "ttl": "Defence Sec: ‘Threat level remains high but UK cyber defences robust’",
             "snip": "They’re really leaning into this one. Full confidence. Always full confidence.",
             "tag": "Breaking",
-            "cls": "c",
+            "cls": "",
             "threadRef": "power-structures",
             "type": "thread-notify"
           }
@@ -7894,7 +7894,7 @@
             "ttl": "Comfortably Numb",
             "snip": "There is no pain, you are receding",
             "tag": "after the call",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -7921,7 +7921,7 @@
             "ttl": "Asian markets fall sharply overnight — Nikkei down 4.2%",
             "snip": "It’s not just us. That’s what they’re not saying.",
             "tag": "Breaking",
-            "cls": "cold"
+            "cls": ""
           }
         ]
       }
@@ -8013,7 +8013,7 @@
             "ttl": "I'm fine love. Tony sorted everything. No heating though. Love mum x",
             "snip": "Eighteen hours to arrive. Two lines. She's fine. Tony sorted everything. Tony always sorts everything.",
             "tag": "Delivered",
-            "cls": "e"
+            "cls": ""
           }
         ]
       }
@@ -8072,7 +8072,7 @@
             "ttl": "Cards working! Got a lovely joint of beef. Back to normal soon love.",
             "snip": "Lovely joint of beef. The optimism of a woman who's already spent her emergency cash on a roasting joint.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dev",
@@ -8164,7 +8164,7 @@
             "ttl": "I'll see you later Pa x",
             "snip": "Pa. He still says Pa.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -8176,7 +8176,7 @@
             "ttl": "Call connected — 4 minutes 12 seconds.",
             "snip": "First call that's gone through since Sunday. She cried. He told her everything was fine. Tony's sorting the heating. Dash is fine. She asked about the kids three times. He said they're fine three times. Four minutes felt like an hour.",
             "tag": "Connected",
-            "cls": "e"
+            "cls": ""
           }
         ]
       }
@@ -8245,7 +8245,7 @@
             "ttl": "Cards stopped again. We've hardly got any food in. Your dad's upset.",
             "snip": "They spent their cash on a roasting joint two days ago because the cards were working.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dev",
@@ -8311,7 +8311,7 @@
             "ttl": "Your brothers aren't answering their phones. Your dad's worried sick.",
             "snip": "Rupert and Jamie. Off grid before off grid was mandatory. Amy's mum says it like they've joined a cult.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dave",
@@ -8377,7 +8377,7 @@
             "ttl": "Got the £200! Your dad worked out how to tap. Tesco had a queue but we got milk and bread and some proper food. Your brothers still aren't answering.",
             "snip": "Peter worked out how to tap. Seventy-three years old and he tapped his phone at Tesco and got milk. The revolution is a pensioner buying bread with a gesture he learned in forty seconds.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dave",
@@ -8469,7 +8469,7 @@
             "ttl": "Rupert won't go to the walk-in. He says he doesn't trust it. Your dad can't get his eye drops. Can Simon have a word?",
             "snip": "Have a word. Like he's a teenager refusing to tidy his room. Rupert's medication is running out and Jenny thinks a chat will fix it.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       }
@@ -8587,7 +8587,7 @@
             "ttl": "THE MORTGAGE. Simon! THE MORTGAGE! Oh my God. I can’t stop crying. Peter’s opening wine. Come for Sunday lunch, all of you. I love you both so much.",
             "snip": "She’s crying. Actually crying.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Rupert",
@@ -8620,7 +8620,7 @@
             "ttl": "Maneater",
             "snip": "Oh here she comes. Watch out boy, she'll chew you up.",
             "tag": "Siren song",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -8650,7 +8650,7 @@
             "ttl": "Mum’s sent photos of her hamper. Have you seen it? Fresh bread, eggs, actual fruit. She’s over the moon.",
             "snip": "Fresh bread. Five weeks of tinned spaghetti and then: fresh bread.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "George → family group",
@@ -8711,7 +8711,7 @@
             "ttl": "The mortgage shows zero! Peter keeps checking. Zero. Come for lunch Sunday, love. Bring everyone. We’ve got more food than we know what to do with.",
             "snip": "",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dev",
@@ -8742,7 +8742,7 @@
             "ttl": "What Two Million Payment Terminals Are Doing Now",
             "snip": "He registered to publish it. Same reasons as me. Same reasons as everyone.",
             "tag": "Unread",
-            "cls": "c",
+            "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify"
           }
@@ -8791,7 +8791,7 @@
             "ttl": "Your ex texted. Sam and Emilia are registered. She said it took two minutes for both of them.",
             "snip": "",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -8845,7 +8845,7 @@
             "ttl": "Talk to Rupert, love. He won’t listen to me or your dad. Jamie’s the same. His prescription’s run out and he still won’t go to the hub.",
             "snip": "Jamie’s prescription. Rupert’s stubbornness. Amy’s mum trying to hold it together.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Dev",
@@ -8893,14 +8893,14 @@
             "ttl": "Can you PLEASE talk to Simon. Everyone’s back at school. I’m missing my mock revision. This is my actual A-levels Mum.",
             "snip": "",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "Amy’s mum",
             "ttl": "Jamie won’t eat. Rupert’s eyes have gone funny without his drops. Talk to your brothers, love. I’m worried sick.",
             "snip": "The holdouts. Not a political movement. Just Amy’s brothers, hungry and going blind.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       }
@@ -9018,7 +9018,7 @@
             "ttl": "Sensor expires in 3 days. Order replacement from your pharmacy.",
             "snip": "A sensor on my arm talking to a phone talking to a cloud. Lifesaving tech. All it cost was becoming a data point.",
             "tag": "Reminder",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -9030,7 +9030,7 @@
             "ttl": "Christopher's quarterly review — scheduled 18 February. Please confirm attendance.",
             "snip": "Dad won't know I'm there. I'll go anyway.",
             "tag": "Upcoming",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -9042,7 +9042,7 @@
             "ttl": "We've updated our Terms & Conditions. Please review and accept to continue using the app.",
             "snip": "Scrolled to the bottom. Tapped accept. Took about four seconds. Didn't read a word.",
             "tag": "Action Required",
-            "cls": "c"
+            "cls": ""
           }
         ]
       },
@@ -9054,7 +9054,7 @@
             "ttl": "Missing (Todd Terry Remix)",
             "snip": "You always were two steps ahead of everyone. We'd walk behind while you would run.",
             "tag": "Earworm",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -9067,7 +9067,7 @@
             "ttl": "Fitter Happier",
             "snip": "A pig in a cage on antibiotics.",
             "tag": "more productive",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -9080,7 +9080,7 @@
             "ttl": "FTSE recovers after brief FTSE 250 trading halt — analysts cite 'orderly correction'",
             "snip": "Orderly correction. Eleven minutes of frozen screens and it's an orderly correction.",
             "tag": "Markets",
-            "cls": "c",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -9093,7 +9093,7 @@
             "ttl": "PM hosts emergency tech summit at Downing Street — Oracle, Palantir, Anthropic among firms briefed on national cyber resilience",
             "snip": "They're not being consulted. They're being coordinated.",
             "tag": "Breaking",
-            "cls": "c",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -9129,7 +9129,7 @@
             "ttl": "Oracle and Palantir team up on government cloud and AI services",
             "snip": "Oracle cloud + Palantir AI. Targeting governments globally. Air-gapped defence regions. \"Defending western interests.\"",
             "tag": "Apr 2024",
-            "cls": "c",
+            "cls": "",
             "threadRef": "surveillance-architecture",
             "type": "thread-notify"
           },
@@ -9138,7 +9138,7 @@
             "ttl": "The Foundry of Surveillance: Why Palantir’s Data Empire Threatens American Freedom",
             "snip": "\"We cease to be citizens and become subjects of an algorithmic regime.\" A law firm said that. Not a conspiracy blog. A law firm.",
             "tag": "Sep 2025",
-            "cls": "c",
+            "cls": "",
             "threadRef": "surveillance-architecture",
             "type": "thread-notify"
           }
@@ -9185,7 +9185,7 @@
             "ttl": "UK data centres reprioritised under emergency digital mandate",
             "snip": "Simon scrolled past. Hamper collection at Shoreham was more useful information right now.",
             "tag": "Live",
-            "cls": "buried"
+            "cls": ""
           }
         ]
       }
@@ -9213,7 +9213,7 @@
             "ttl": "That thing I was on about last night. Read this — it's not a conspiracy site, it's Aeon. They've literally built a religion and no one noticed 🍺",
             "snip": "From the spare room. He can't sleep either.",
             "tag": "3:35am",
-            "cls": "c",
+            "cls": "",
             "threadRef": "philosophy-theology",
             "type": "thread-notify"
           }
@@ -9375,7 +9375,7 @@
             "ttl": "what time u picking me up tmrw? mums being weird about something x",
             "snip": "The eternal logistics of kids with two homes.",
             "tag": "Tomorrow",
-            "cls": "warm"
+            "cls": ""
           }
         ]
       },
@@ -9427,7 +9427,7 @@
             "ttl": "You and I are gonna live forever 💪",
             "snip": "Morning after. Sent as a fact, not a question.",
             "tag": "10:14am",
-            "cls": "e",
+            "cls": "",
             "type": "flavour"
           }
         ]
@@ -9440,7 +9440,7 @@
             "ttl": "\"There was no virus...\"",
             "snip": "Part of last night’s arsenal. Sent at 1am. Read receipt: never.",
             "tag": "Exhibit A",
-            "cls": "c",
+            "cls": "",
             "url": "https://www.arkmedic.info/p/there-was-no-virus",
             "threadRef": "pattern-recognition",
             "type": "thread-notify"
@@ -9455,7 +9455,7 @@
             "ttl": "Live Forever",
             "snip": "The algorithm served it up the morning after. Of course it did.",
             "tag": "We see things they'll never see",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           },
           {
@@ -9463,7 +9463,7 @@
             "ttl": "Don’t Fight It. Feel It.",
             "snip": "Gonna live the life I love, I’m gonna love the life I live. 90’s optimism.",
             "tag": "Loaded",
-            "cls": "e",
+            "cls": "",
             "type": "song"
           }
         ]
@@ -9556,7 +9556,7 @@
             "ttl": "Count the countries. Count the dates. This isn't parallel development. This is parallel preparation.",
             "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
             "tag": "Evening",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -9580,7 +9580,7 @@
             "ttl": "Don't Panic",
             "snip": "People are stocking up like it's a siege. It's not a siege. Sieges end when you surrender. This ends when you volunteer. PS Stay close to home this weekend.",
             "tag": "Unread",
-            "cls": "alert",
+            "cls": "",
             "threadRef": "pattern-recognition",
             "type": "thread-notify"
           }
@@ -9622,7 +9622,7 @@
             "ttl": "Two children killed in machete attack outside primary school in Small Heath, Birmingham. Suspect detained.",
             "snip": "Amy's in tears. I'm in two minds as to whether it actually happened.",
             "tag": "Breaking",
-            "cls": "alert",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -9635,7 +9635,7 @@
             "ttl": "Officers responding to serious incident on Coventry Road, Small Heath. Cordons in place. Two children confirmed deceased. One male detained at scene. Our thoughts are with the families and community.",
             "snip": "The institutional language. 'Our thoughts are with.' The sentence that means nothing and means everything.",
             "tag": "Statement",
-            "cls": "alert",
+            "cls": "",
             "isnew": true
           }
         ]
@@ -9663,7 +9663,7 @@
             "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
             "snip": "15:30. Peter and Jenny. They don't text first, usually.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "to Jenny",
@@ -9701,7 +9701,7 @@
             "ttl": "you seeing this",
             "snip": "16:48. Dev. Three words. No question mark. He doesn't need one.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -9744,7 +9744,7 @@
             "ttl": "well that was a speech. you watch it with amy? how you all holding up mate",
             "snip": "19:42. Giles. Post-speech phone rings for everyone at once. Same question. Different houses.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "to Dev",
@@ -9765,14 +9765,14 @@
             "ttl": "you see that mate? didn't mention banks at all. what's going on with the banks. emma's panicking.",
             "snip": "20:14. Ben. Straight to the gap in the speech. What wasn't said doing the work.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "from Mum (Spain)",
             "ttl": "What's happening there? Is TV working? PM did a speech here? Says it will be days, not weeks until it's sorted. Tony been at allotment but couldn't go to the bar after as everything is shut. He's having a beer on terrace with Miguel",
             "snip": "20:28. Days, not weeks. Same timescale. Same words. Mum doesn't know what she's telling me.",
             "tag": "Delivered",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -9802,7 +9802,7 @@
             "ttl": "I've sent a few messages — hope one has got through? We're OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
             "snip": "21:54. An earlier message finally landing. Out of order. Every text its own private delay.",
             "tag": "Delivered",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },
@@ -9852,7 +9852,7 @@
             "ttl": "im ok at mikes. phone's been going mental. wtf is happening",
             "snip": "Sam's awake. Sam's safe. He'll probably try and play golf.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "to Mum (Spain)",
@@ -9919,14 +9919,14 @@
             "ttl": "Kids are fine — Sam's at Mike's, we've got him. Emilia's with you? Just checking. Hope you're all ok. x",
             "snip": "8:40am. Sarah. Ex-wife of the father-of-her-children variety. Texts Amy, not Simon. Same circuit, different wiring.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "from Jamie",
             "ttl": "hey mate — can't get hold of Amy. she ok? everyones ok this end. batshit morning",
             "snip": "8:47am. Jamie. Brighton. Already pragmatic about it. 'Batshit' doing the emotional work.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           },
           {
             "src": "from Dave",
@@ -9957,7 +9957,7 @@
             "ttl": "Amy picking up? Cee's fine, we're both fine. This is it, isn't it. Told you.",
             "snip": "9:34am. Rupert. 'Told you' — he's been saying it for fifteen years. Today he's right. Doesn't make it better.",
             "tag": "",
-            "cls": "e"
+            "cls": ""
           }
         ]
       },

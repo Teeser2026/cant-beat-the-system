@@ -13,13 +13,13 @@
   --text: #c8c4b8;
   --dim: #6b6760;
   --bright: #e8e4d8;
-  --lyric: #8B9968;
+  --lyric: #9a7c58;
   --warm: #c4956a;
   --earth: #7a8a5a;
   --cold: #5a7a8a;
   --sys: #6a8aaa;
   --alert: #a65a4a;
-  --inner: #C4A0D4;
+  --inner: #c49090;
   --faint: #3a3530;
   --div: #1a1816;
   --card: #111110;
@@ -43,13 +43,13 @@ body.phase-1 {
   --text: #3A3630;
   --dim: #7A756D;
   --bright: #2E2B27;
-  --lyric: #6B7A4A;
+  --lyric: #9a7c58;
   --warm: #B07860;
   --earth: #6A7A52;
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #B094C6;
+  --inner: #c49090;
   --faint: #D4D0C8;
   --div: #C8C4BC;
   --card: #EDE8E0;
@@ -113,7 +113,7 @@ body.phase-1 .prose {
 }
 body.phase-1 .inner {
   color: var(--inner);
-  border-left-color: rgba(176,148,198,.22);
+  border-left-color: rgba(154,124,88,.22);
 }
 body.phase-1 .subtitle {
   font-family: 'Cormorant Garamond', serif;
@@ -251,13 +251,13 @@ body.phase-2 {
   --text: #C8C4BC;
   --dim: #706C66;
   --bright: #E0DCD4;
-  --lyric: #8A8680;
+  --lyric: #9a7c58;
   --warm: #9A7468;
   --earth: #6A7A52;
   --cold: #5A6878;
   --sys: #5A6878;
   --alert: #A04040;
-  --inner: #9E8CB6;
+  --inner: #c49090;
   --faint: #2A2826;
   --div: #28262A;
   --card: #1E1E22;
@@ -307,7 +307,7 @@ body.phase-2 .prose {
 }
 body.phase-2 .inner {
   color: var(--inner);
-  border-left-color: rgba(176,148,198,.22);
+  border-left-color: rgba(154,124,88,.22);
 }
 body.phase-2 .tab {
   font-family: 'Outfit', sans-serif;
@@ -394,13 +394,13 @@ body.phase-3 {
   --text: #3A3630;
   --dim: #7A756D;
   --bright: #2E2B27;
-  --lyric: #6B7A4A;
+  --lyric: #9a7c58;
   --warm: #B07860;
   --earth: #6A7A52;
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #B094C6;
+  --inner: #c49090;
   --faint: #D3D7CF;
   --div: #C6CCC1;
   --card: #E8EBE5;
@@ -458,7 +458,7 @@ body.phase-3 .prose {
 }
 body.phase-3 .inner {
   color: var(--inner);
-  border-left-color: rgba(176,148,198,.22);
+  border-left-color: rgba(154,124,88,.22);
 }
 body.phase-3 .subtitle {
   font-family: 'Cormorant Garamond', serif;
@@ -786,7 +786,7 @@ html, body {
   color: var(--inner);
   margin: 32px 0;
   padding-left: 22px;
-  border-left: 1px solid rgba(176,148,198,.22);
+  border-left: 1px solid rgba(154,124,88,.22);
   font-size: 19px;
   line-height: 1.72;
 }
@@ -1159,21 +1159,21 @@ html, body {
 .card .src.src-handle { color: #6b9bc9; opacity: 1; }
 .card .src.src-substack { color: #FF6719; opacity: 1; text-transform: none; letter-spacing: 1px; font-size: 11px; }
 .card .ttl { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--text); line-height: 1.5; margin-bottom: 4px; }
-/* S174: .snip mirrors (inner) prose grammar — var(--inner) colour, italic serif, border-left bar. */
-/* Phase-1/2/3 selectors included at matched specificity (0,0,3,1) so the look survives phase transitions. */
+/* S174 hotfix: .snip uses signal-card font stack (Outfit), not prose serif. */
+/* Colour via var(--inner) now reverted to spec #c49090 rose. */
 .card .snip,
 body.phase-1 .card .snip,
 body.phase-2 .card .snip,
 body.phase-3 .card .snip {
-  font-family: 'Crimson Pro', serif;
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
   font-weight: 300;
   font-style: italic;
   color: var(--inner);
-  line-height: 1.65;
+  line-height: 1.6;
   opacity: 1;
-  padding-left: 14px;
-  border-left: 1px solid rgba(176,148,198,.25);
+  padding-left: 12px;
+  border-left: 1px solid rgba(154,124,88,.22);
   margin-top: 6px;
 }
 /* S174 hotfix: .tag neutral grey — NOT tied to channel. .tag.a/.tag.x retain GOV/ARC hues. */
@@ -1927,20 +1927,20 @@ body.phase-3 .song-artist {
   opacity: .85;
   line-height: 1;
 }
-/* S174 hotfix: .song-context mirrors (inner) grammar — same as .card .snip. */
+/* S174 hotfix: .song-context matches .card .snip — signal-card font stack, rose (inner) tone. */
 .song-context,
 body.phase-1 .song-context,
 body.phase-2 .song-context,
 body.phase-3 .song-context {
-  font-family: 'Crimson Pro', serif;
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
   font-weight: 300;
   font-style: italic;
   color: var(--inner);
-  line-height: 1.65;
+  line-height: 1.6;
   opacity: 1;
-  padding-left: 14px;
-  border-left: 1px solid rgba(176,148,198,.25);
+  padding-left: 12px;
+  border-left: 1px solid rgba(154,124,88,.22);
   margin-top: 6px;
 }
 .song-turn { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; margin-top: 4px; }

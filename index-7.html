@@ -624,11 +624,11 @@ body .card.aida .cursor-red {
   margin-left: 3px;
   vertical-align: middle;
   border-radius: 0;
-  animation: aida-blink 1.6s step-end infinite;
+  animation: aida-breathe 5s ease-in-out infinite;
 }
-@keyframes aida-blink {
+@keyframes aida-breathe {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50% { opacity: 0.35; }
 }
 body .card.card.aida .ttl {
   font-family: 'Crimson Pro', serif;
@@ -1127,7 +1127,8 @@ html, body {
   opacity: .35;
   padding: 14px 4px 8px;
 }
-.sec-label.arc { color: var(--text); opacity: .45; }
+.sec-label.arc { color: #4a8a8a; opacity: .55; }
+.sec-label.gov { color: #d43d3d; opacity: .55; }
 .card {
   background: var(--card);
   border: 1px solid var(--card-b);
@@ -1160,11 +1161,18 @@ html, body {
 .tag.e { background: rgba(122,138,90,.08); color: var(--earth); }
 .tag.x { background: rgba(180,30,30,.25); color: #d43d3d; opacity: 1; animation: emergencyPulse 2s ease-in-out infinite; }
 .card:has(.tag.x) { border-color: rgba(180,30,30,.35); }
-.card:has(.tag.x) .ttl { color: #d43d3d; }
+/* GOV — title in red, body reads as neutral prose */
+.card:has(.tag.x) .ttl { color: var(--text); }
+.card:has(.tag.x) .ttl-head { color: #d43d3d; }
 .card:has(.tag.x) .src { color: rgba(180,30,30,.7); opacity: .7; }
 .card:has(.tag.a) { border-color: rgba(74,138,138,.3); }
-.card:has(.tag.a) .ttl { color: #4a8a8a; }
+/* ARC — title in teal, body reads as neutral prose */
+.card:has(.tag.a) .ttl { color: var(--text); }
+.card:has(.tag.a) .ttl-head { color: #4a8a8a; }
 .card:has(.tag.a) .src { color: rgba(74,138,138,.65); opacity: .7; }
+/* Consecutive cards from the same source cluster tighter; src label dims */
+.card.card-continues { margin-top: -1px; }
+.card.card-continues .src { opacity: .25; }
 @keyframes emergencyPulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
 .save-signal { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; cursor: pointer; transition: all .3s; margin-top: 4px; padding: 2px 6px; display: inline-block; }
 .save-signal:hover { opacity: .7; color: var(--warm); }
@@ -4064,6 +4072,16 @@ function cbtsFlashAndScroll(el) {
   setTimeout(() => el.classList.remove('cbts-flash'), 2300);
 }
 
+// Wrap "HEADER — TIME —" prefix in <strong class="ttl-head"> so CSS can colour
+// the title separately from the body. Cards with existing <strong> markup or
+// plain prose (no HEADER pattern) are returned unchanged.
+function splitTtl(ttl) {
+  if (!ttl || ttl.indexOf('<strong') !== -1) return ttl;
+  const m = ttl.match(/^([A-Z][A-Z\s]{2,}?\s+—\s+[^—<]{1,40}?\s+—)\s+(.+)$/s);
+  if (!m) return ttl;
+  return '<strong class="ttl-head">' + m[1] + '</strong> ' + m[2];
+}
+
 function renderSignal(turnId) {
   const panel = document.getElementById('signal-panel');
   const data = signalData[turnId];
@@ -4075,8 +4093,11 @@ function renderSignal(turnId) {
   let essentialCards = []; // track for auto-save
 
   data.forEach(section => {
-    const arcCls = section.sec.includes('ARC') ? ' arc' : '';
-    html += `<div class="sec-label${arcCls}">\u2014 ${section.sec} \u2014</div>`;
+    const secCls = section.sec.includes('ARC') ? ' arc'
+                 : section.sec.includes('GOV') ? ' gov'
+                 : '';
+    html += `<div class="sec-label${secCls}">\u2014 ${section.sec} \u2014</div>`;
+    let prevSrc = null;
     section.cards.forEach(card => {
       const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';
@@ -4084,7 +4105,9 @@ function renderSignal(turnId) {
       const imgCls = card.img ? ' has-img' : '';
       const isAida = card.src && card.src.startsWith('AIDA');
       const aidaCls = isAida ? ' aida' : '';
-      html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}">`;
+      const continuesCls = (card.src && card.src === prevSrc) ? ' card-continues' : '';
+      prevSrc = card.src;
+      html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}${continuesCls}">`;
       if (card.img) {
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
         html += '<div class="card-body">';
@@ -4097,7 +4120,7 @@ function renderSignal(turnId) {
         html += `<div class="src">${card.src}</div>`;
       }
       html += `
-        <div class="ttl">${card.ttl}</div>
+        <div class="ttl">${splitTtl(card.ttl)}</div>
         ${card.snip ? `<div class="snip">${card.snip}</div>` : ``}
         <div class="tag ${card.cls}">${card.tag}</div>`;
 

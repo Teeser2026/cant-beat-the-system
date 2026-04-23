@@ -4098,7 +4098,7 @@ function renderSignal(turnId) {
       }
       html += `
         <div class="ttl">${card.ttl}</div>
-        <div class="snip">${card.snip}</div>
+        ${card.snip ? `<div class="snip">${card.snip}</div>` : ``}
         <div class="tag ${card.cls}">${card.tag}</div>`;
 
       if (type === 'thread-notify') {

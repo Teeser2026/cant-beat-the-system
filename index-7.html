@@ -1163,12 +1163,14 @@ html, body {
 .card:has(.tag.x) { border-color: rgba(180,30,30,.35); }
 /* GOV — title in red, body reads as neutral prose */
 .card:has(.tag.x) .ttl { color: var(--text); }
-.card:has(.tag.x) .ttl-head { color: #d43d3d; }
+.card:has(.tag.x) .ttl-head,
+.card:has(.tag.x) .ttl > strong:first-child { color: #d43d3d; }
 .card:has(.tag.x) .src { color: rgba(180,30,30,.7); opacity: .7; }
 .card:has(.tag.a) { border-color: rgba(74,138,138,.3); }
 /* ARC — title in teal, body reads as neutral prose */
 .card:has(.tag.a) .ttl { color: var(--text); }
-.card:has(.tag.a) .ttl-head { color: #4a8a8a; }
+.card:has(.tag.a) .ttl-head,
+.card:has(.tag.a) .ttl > strong:first-child { color: #4a8a8a; }
 .card:has(.tag.a) .src { color: rgba(74,138,138,.65); opacity: .7; }
 /* Consecutive cards from the same source cluster tighter; src label dims */
 .card.card-continues { margin-top: -1px; }

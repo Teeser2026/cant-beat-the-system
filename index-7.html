@@ -1215,6 +1215,23 @@ html, body {
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 /* .card.thread-notify-card — now handled by the combined pulse rule above (S165 colour-aware pulse patch). */
 .card.song-card { --accent: #1DB954; --accent-fade: rgba(29,185,84,.15); border-left: 2px solid var(--accent); animation: pulse 3s ease-in-out infinite; }
+
+/* ── Font swap experiment — bring feed .ttl into the threads panel's sans register ── */
+/* Includes phase-scoped rules to beat body.phase-1/2/3 .card .ttl overrides. */
+/* .snip stays Crimson Pro italic — narrator voice should read as authored, not UI chrome. */
+/* AIDA cards exempt: body .card.card.aida .ttl has higher specificity and keeps its wellness-app register. */
+.card .ttl,
+body.phase-1 .card .ttl,
+body.phase-2 .card .ttl,
+body.phase-3 .card .ttl {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ── News source auto-detection — BBC variants + major UK news outlets ── */
+.card .src.src-news { color: var(--cold); opacity: .9; }
 .cbts-flash { animation: cbts-flash-anim 2.2s ease-out; }
 @keyframes cbts-flash-anim {
   0%   { background: rgba(196,149,106,.22); box-shadow: 0 0 0 1px rgba(196,149,106,.4); }
@@ -4151,6 +4168,7 @@ function renderSignal(turnId) {
         let srcCls = '';
         if (card.src && card.src.startsWith('@')) srcCls = ' src-handle';
         else if (card.src && card.src.toLowerCase().indexOf('substack') !== -1) srcCls = ' src-substack';
+        else if (card.src && (card.src.indexOf('BBC') === 0 || ['Sky News','Financial Times','The Times','The Guardian'].indexOf(card.src) !== -1)) srcCls = ' src-news';
         html += `<div class="src${srcCls}">${card.src}</div>`;
       }
       html += `

@@ -4381,6 +4381,11 @@
           "Reply to Dev. You’ve been avoiding it. He sent two more messages today.",
           "Open the Rully Rouge early. Start the Béarnaise. It’s Valentine’s tomorrow. Enjoy something."
         ]
+      },
+      "audio": {
+        "src": "heavy-rain.mp3",
+        "fadeIn": 2,
+        "vol": 0.3
       }
     },
     {
@@ -9668,7 +9673,7 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
+            "ttl": "EMERGENCY UPDATE — 17:00 GMT —<br>PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
             "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
             "tag": "BE WELL",
             "cls": "a"
@@ -9687,7 +9692,7 @@
           },
           {
             "src": "ARC",
-            "ttl": "Three requests from the Prime Minister. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified guidance overnight.",
+            "ttl": "EMERGENCY UPDATE — 19:30 GMT —<br>Three requests from the Prime Minister. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified guidance overnight.",
             "snip": "ARC repeating the PM. The PM's words. ARC's voice.",
             "tag": "BE WELL",
             "cls": "a"
@@ -9781,7 +9786,7 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Good evening. You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
+            "ttl": "EVENING UPDATE — 22:30 GMT —<br>You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
             "snip": "The app wants permission. The app that installed itself without it.",
             "tag": "BE WELL",
             "cls": "a"

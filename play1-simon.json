@@ -9614,6 +9614,25 @@
     ],
     "23b": [
       {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Jenny (Amy's mum)",
+            "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
+            "snip": "15:30. Peter and Jenny. They don't text first, usually.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "to Jenny",
+            "ttl": "We're fine. Amy's back from her drive. All four kids accounted for. Will call when lines free up. Love to Peter xx",
+            "snip": "Sent 15:34. Two ticks. Green. Something landed today.",
+            "tag": "Sent",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "UK GOV Alert",
         "cards": [
           {
@@ -9622,14 +9641,132 @@
             "snip": "All afternoon for one broadcast. The waiting is the point.",
             "tag": "UK-EMRG-2027-011",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "to Mum (Spain)",
+            "ttl": "Mum please just let me know you're ok. We're all OK. Back to normal soon I'm sure x",
+            "snip": "Sent 16:15pm. Pending. Still one tick. Nine hours.",
+            "tag": "Pending",
+            "cls": ""
           },
+          {
+            "src": "from Dev",
+            "ttl": "you seeing this",
+            "snip": "16:48. Dev. Three words. No question mark. He doesn't need one.",
+            "tag": "",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
+            "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
+            "tag": "BE WELL",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "POST-ADDRESS UPDATE — 19:00 GMT —<br>Key points from the Prime Minister's address:<br>• Infrastructure damaged, not destroyed — restoration expected in days, not weeks<br>• Your savings and deposits are protected<br>• For the next 36 hours, retail, businesses and offices will be closed<br>• Public transport suspended for the remainder of the week<br>• Schools closed for the remainder of the week<br>• Three requests: stay local, do not fear, follow ARC guidance<br>The nation has responded. Thank you. Further guidance at 21:00 GMT.",
+            "snip": "AIDA already translating the PM. Five hours old and she's the comprehension layer.",
+            "tag": "BE WELL",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Three requests from the Prime Minister. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified guidance overnight.",
+            "snip": "ARC repeating the PM. The PM's words. ARC's voice.",
+            "tag": "BE WELL",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Giles",
+            "ttl": "well that was a speech. you watch it with amy? how you all holding up mate",
+            "snip": "19:42. Giles. Post-speech phone rings for everyone at once. Same question. Different houses.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "to Dev",
+            "ttl": "did you see — ARC app installed itself on my phone. no notification. just there.",
+            "snip": "Sent 19:51. The first time I've said it out loud. To anyone. Dev first.",
+            "tag": "Sent",
+            "cls": ""
+          },
+          {
+            "src": "to Rupert",
+            "ttl": "ARC app installed itself on our phones before we woke up. Funny how that worked OK. On yours too I take it?",
+            "snip": "Sent 19:53. Two minutes later. The only other person I'd tell. Fifteen years of arguments. Can't quite give him the full sentence.",
+            "tag": "Sent",
+            "cls": ""
+          },
+          {
+            "src": "from Ben",
+            "ttl": "you see that mate? didn't mention banks at all. what's going on with the banks. emma's panicking.",
+            "snip": "20:14. Ben. Straight to the gap in the speech. What wasn't said doing the work.",
+            "tag": "",
+            "cls": "e"
+          },
+          {
+            "src": "from Mum (Spain)",
+            "ttl": "What's happening there? Is TV working? PM did a speech here? Says it will be days, not weeks until it's sorted. Tony been at allotment but couldn't go to the bar after as everything is shut. He's having a beer on terrace with Miguel",
+            "snip": "20:28. Days, not weeks. Same timescale. Same words. Mum doesn't know what she's telling me.",
+            "tag": "Delivered",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "ESSENTIAL SERVICES UPDATE — 21:00 GMT —<br>Selected pharmacies and food retailers will open tomorrow, 16 February, under limited hours. Cash payments only. Further details via ARC Emergency and BBC broadcast overnight. Military and police presence visible from tonight to assist with co-ordination. Remain at home.",
             "snip": "'To assist with co-ordination.' Four words doing a lot of work.",
             "tag": "UK-EMRG-2027-012",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "to Sam",
+            "ttl": "u ok Sammy? back at mums or still with mike? love you",
+            "tag": "Failed",
+            "cls": ""
           },
+          {
+            "src": "from Mum (Spain)",
+            "ttl": "I've sent a few messages — hope one has got through? We're OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
+            "snip": "21:54. An earlier message finally landing. Out of order. Every text its own private delay.",
+            "tag": "Delivered",
+            "cls": "e"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "OVERNIGHT UPDATE — 22:00 GMT —<br>Emergency services remain operational. Power grid stable. No threats to domestic security identified. Do not attempt to access online banking or financial services. Sleep safely. The Prime Minister will address the nation again within 24 hours.",
@@ -9644,78 +9781,10 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
-            "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
-            "tag": "BE WELL",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "POST-ADDRESS UPDATE — 19:00 GMT —<br>Key points from the Prime Minister's address:<br>• Infrastructure damaged, not destroyed — restoration expected in days, not weeks<br>• Your savings and deposits are protected<br>• For the next 36 hours, retail, businesses and offices will be closed<br>• Public transport suspended for the remainder of the week<br>• Schools closed for the remainder of the week<br>• Three requests: stay local, do not fear, follow ARC guidance<br>The nation has responded. Thank you. Further guidance at 21:00 GMT.",
-            "snip": "AIDA already translating the PM. Five hours old and she's the comprehension layer.",
-            "tag": "BE WELL",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Three requests from the Prime Minister. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified guidance overnight.",
-            "snip": "ARC repeating the PM. The PM's words. ARC's voice.",
-            "tag": "BE WELL",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
             "ttl": "Good evening. You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
             "snip": "The app wants permission. The app that installed itself without it.",
             "tag": "BE WELL",
             "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "from Jenny (Amy's mum)",
-            "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
-            "snip": "11:47am. Peter and Jenny. They don't text first, usually.",
-            "tag": "",
-            "cls": "e"
-          },
-          {
-            "src": "to Jenny",
-            "ttl": "We're fine. Amy's back from her drive. All four kids accounted for. Will call when lines free up. Love to Peter xx",
-            "snip": "Sent 11:50am. Two ticks. Green. Something landed today.",
-            "tag": "Sent",
-            "cls": ""
-          },
-          {
-            "src": "from Dev",
-            "ttl": "you seeing this",
-            "snip": "13:22. Dev. Three words. No question mark. He doesn't need one.",
-            "tag": "",
-            "cls": "e"
-          },
-          {
-            "src": "to Mum (Spain)",
-            "ttl": "Mum please just let me know you're ok. We're all OK. Back to normal soon I'm sure x",
-            "snip": "Sent 16:15pm. Pending. Still one tick. Nine hours.",
-            "tag": "Pending",
-            "cls": ""
-          },
-          {
-            "src": "from Mum (Spain)",
-            "ttl": "I've sent a few messages — hope one has got through? We're OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
-            "snip": "20:41pm. Fourteen hours after her morning. She's fine. Tony's sorted everything. What does that even mean?",
-            "tag": "Delivered",
-            "cls": "e"
-          },
-          {
-            "src": "to Sam",
-            "ttl": "u ok Sammy? back at mums or still with mike? love you",
-            "snip": "Sent 21:18pm. Failed. Tried twice more. Same.",
-            "tag": "Failed",
-            "cls": ""
           }
         ]
       }

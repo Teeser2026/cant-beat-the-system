@@ -6286,7 +6286,7 @@
         ]
       },
       {
-        "sec": "WhatsApp Video",
+        "sec": "WhatsApp",
         "cards": [
           {
             "src": "→ Emilia",
@@ -6521,7 +6521,7 @@
             "src": "The Times",
             "ttl": "Spy chief: AI will break old encryption 'in years, not decades'",
             "snip": "NCSC CEO warned vulnerability-discovery timelines are compressing 'from months to hours' under frontier AI, urging boards to treat post-quantum readiness as immediate. Letter to the FT reprinted in full.",
-            "tag": "",
+            "tag": "encryption",
             "cls": "",
             "threadRef": "science-technology",
             "type": "thread-notify"
@@ -6595,7 +6595,7 @@
         ]
       },
       {
-        "sec": "Thread",
+        "sec": "Open Tabs",
         "cards": [
           {
             "src": "Wired UK",
@@ -6830,7 +6830,7 @@
         ]
       },
       {
-        "sec": "BBC News — Push",
+        "sec": "BBC News",
         "cards": [
           {
             "src": "BBC News",
@@ -6867,7 +6867,7 @@
         ]
       },
       {
-        "sec": "Notification — YouTube",
+        "sec": "YouTube",
         "cards": [
           {
             "src": "YouTube",
@@ -6877,12 +6877,7 @@
             "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify"
-          }
-        ]
-      },
-      {
-        "sec": "Notification — YouTube",
-        "cards": [
+          },
           {
             "src": "YouTube",
             "ttl": "Continue watching: David A. Hughes — The Deep State & Global Concentration Camp",
@@ -7034,12 +7029,7 @@
             "snip": "One tick. Grey.",
             "tag": "Sent",
             "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "WhatsApp Video",
-        "cards": [
+          },
           {
             "src": "→ Vince",
             "ttl": "Video call failed",
@@ -7188,7 +7178,7 @@
             "src": "Sky News",
             "ttl": "UKHSA monitoring 'Disease X' preparedness scenarios across NHS trusts",
             "snip": "Routine planning exercise, say officials. 'No current threat.' Exercise involves simulated novel respiratory pathogen with 14-day incubation.",
-            "tag": "",
+            "tag": "pandemic",
             "cls": ""
           }
         ]
@@ -7196,7 +7186,7 @@
     ],
     "18": [
       {
-        "sec": "Signal group",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev",
@@ -7231,19 +7221,6 @@
             "snip": "Cabinet Office guidance. Like the wartime posters but in Comic Sans.",
             "tag": "Today",
             "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "Sponsored",
-        "cards": [
-          {
-            "src": "Sgt Prepper Shop",
-            "ttl": "UK's #1 Prepper & Survival Store — Free Shipping Over £80",
-            "snip": "Fear is a market. Markets have sponsors.",
-            "tag": "Ad",
-            "cls": "",
-            "isnew": true
           }
         ]
       },
@@ -7326,6 +7303,14 @@
       {
         "sec": "Instagram",
         "cards": [
+          {
+            "src": "Sgt Prepper Shop",
+            "ttl": "UK's #1 Prepper & Survival Store — Free Shipping Over £80",
+            "snip": "Fear is a market. Markets have sponsors.",
+            "tag": "Sponsored",
+            "cls": "",
+            "isnew": true
+          },
           {
             "src": "@cabinetoffice",
             "ttl": "Stay calm. Stay informed. Be prepared 🇬🇧 https://prepare.campaign.gov.uk/",
@@ -7488,7 +7473,7 @@
         ]
       },
       {
-        "sec": "BBC News — Push",
+        "sec": "BBC News",
         "cards": [
           {
             "src": "BBC News",
@@ -7568,7 +7553,7 @@
             "src": "Financial Times",
             "ttl": "Bank of England summons City chiefs over AI cyber threat to payment systems",
             "snip": "You read it between loading the dishwasher and feeding the dogs. By the time you'd dried your hands you'd forgotten it.",
-            "tag": "",
+            "tag": "AI",
             "cls": ""
           }
         ]
@@ -7740,20 +7725,6 @@
         ]
       },
       {
-        "sec": "BBC News — Push",
-        "cards": [
-          {
-            "src": "BBC News",
-            "ttl": "Defence Secretary: “UK faces unprecedented cyber threat from hostile actors”",
-            "snip": "On the TV above the bar. Amy saw it too.",
-            "tag": "Breaking",
-            "cls": "",
-            "threadRef": "power-structures",
-            "type": "thread-notify"
-          }
-        ]
-      },
-      {
         "sec": "WhatsApp",
         "cards": [
           {
@@ -7768,6 +7739,15 @@
       {
         "sec": "BBC News",
         "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Defence Secretary: “UK faces unprecedented cyber threat from hostile actors”",
+            "snip": "On the TV above the bar. Amy saw it too.",
+            "tag": "Breaking",
+            "cls": "",
+            "threadRef": "power-structures",
+            "type": "thread-notify"
+          },
           {
             "src": "BBC News",
             "ttl": "Army exercises expanded: MOD confirms additional “routine readiness” deployment across southern England",
@@ -8729,7 +8709,7 @@
             "src": "BBC News",
             "ttl": "Debt jubilee: ‘Transformative moment in British economic history.’ Chancellor confirms personal debt cancellation permanent and irrevocable.",
             "snip": "",
-            "tag": "",
+            "tag": "FREE LUNCH",
             "cls": ""
           }
         ]
@@ -8796,7 +8776,7 @@
         ]
       },
       {
-        "sec": "Financial Times",
+        "sec": "Notification",
         "cards": [
           {
             "src": "Financial Times",
@@ -9376,6 +9356,13 @@
             "snip": "The eternal logistics of kids with two homes.",
             "tag": "Tomorrow",
             "cls": ""
+          },
+          {
+            "src": "NHSNoReply",
+            "ttl": "SCREENING SAVES SIGHT. Eye Screening Reminder at Uckfield Community Hospital on 14/10/2026 (14:30)",
+            "snip": "Annual retinopathy check. They photograph the back of your eyes. It takes four minutes and dilates your pupils like a Love Dove.",
+            "tag": "Health",
+            "cls": ""
           }
         ]
       },
@@ -9387,18 +9374,6 @@
             "ttl": "Sussex’s Top 5 Hidden Gems 🍝🔥 #3 will blow your mind",
             "snip": "Number 3 is the Punjabi place at the market. Not that hidden, mate.",
             "tag": "Suggested",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "SMS — NHSNoReply",
-        "cards": [
-          {
-            "src": "NHSNoReply",
-            "ttl": "SCREENING SAVES SIGHT. Eye Screening Reminder at Uckfield Community Hospital on 14/10/2026 (14:30)",
-            "snip": "Annual retinopathy check. They photograph the back of your eyes. It takes four minutes and dilates your pupils like a Love Dove.",
-            "tag": "Health",
             "cls": ""
           }
         ]
@@ -9573,7 +9548,7 @@
         ]
       },
       {
-        "sec": "Signal group",
+        "sec": "Signal",
         "cards": [
           {
             "src": "Dev",

@@ -1196,6 +1196,16 @@ body .sec-label .sec-name.ch-wa   { background: #25D366; color: #fff;         pa
 body .sec-label .sec-name.ch-x    { background: #000;    color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 body .sec-label .sec-name.ch-ss   { background: #FF6719; color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 body .sec-label .sec-name.ch-song { background: #1DB954; color: #000; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-ig   { background: #E4405F; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-yt   { background: #FF0000; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-sig  { background: #3A76F0; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-sms  { background: #34C759; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-tg   { background: #229ED9; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-gm   { background: #8E8E93; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-nt   { background: #8E8E93; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-fb   { background: #0084FF; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-rd   { background: #FF4500; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-li   { background: #0A66C2; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 /* S174: .tag.a (ARC) and .tag.x (GOV) retained — cls-based styling for system voice. */
 /* Stripped S174: .tag.c, .tag.e, .tag.warm, .tag.cold, .tag.buried, .tag.alert. */
 /* Palette now driven by section.sec (channel) via SEC_THEME map in render, not by cls. */
@@ -1954,9 +1964,9 @@ body.phase-3 .song-context {
 .song.player .song-title { color: var(--player); }
 .song-link { font-size: 0; color: transparent; width: 28px; height: 28px; flex-shrink: 0; text-decoration: none; transition: opacity .3s; opacity: 1; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 168 168'%3E%3Ccircle cx='84' cy='84' r='84' fill=%27%231DB954%27/%3E%3Cpath d=%27M115.3 121c-1.4 0-2.4-.5-3.6-1.2-16.8-10.2-37.8-12.4-62.6-6.8-2.4.6-4.4-.6-4.8-2.8-.6-2.4.6-4.4 2.8-4.8 27.6-6.4 51.2-3.6 70.2 8 2.2 1.2 3 4 1.6 6.2-.8 1-2 1.4-3.6 1.4zm7.4-18.4c-1.2 0-2.4-.4-3.4-1.2-19.2-11.6-46.4-15.2-68-8.2-2.8.8-5.6-.6-6.4-3.4-.8-2.8.6-5.6 3.4-6.4 24.6-8 55 4 76 9.4 2.4 1.4 3.2 4.2 1.8 6.6-.8 1.6-2 2.6-3.4 3.2zm2.6-19.2c-21.6-12.8-57.6-14-78.4-7.8-3.2 1-6.6-1-7.4-4-.8-3.2 1-6.4 4-7.4 24-7.2 63.4-5.8 88.4 9 3 1.6 3.8 5.4 2.2 8.2-1.6 2.4-4.6 3.4-7 2.2z' fill='%23191414'/%3E%3C/svg%3E"); background-size: 28px 28px; background-repeat: no-repeat; background-position: center; display: block; }
 .song-link:hover { filter: brightness(1.15); }
-.add-song { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; margin-top: 8px; }
+.add-song { font-family: 'Outfit', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: var(--dim); opacity: .28; background: none; border: 1px dashed var(--faint); border-radius: 3px; padding: 13px; cursor: pointer; transition: all .3s; text-align: center; width: 100%; display: block; margin-top: 8px; }
 .add-song:hover { opacity: .6; border-color: var(--warm); color: var(--warm); }
-.ps-act { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .35; cursor: pointer; transition: all .3s; margin-right: 12px; }
+.ps-act { font-family: 'Outfit', sans-serif; font-size: 9px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .35; cursor: pointer; transition: all .3s; margin-right: 12px; }
 .ps-act:hover { opacity: .7; color: var(--warm); }
 
 /* ── INTRO SCREEN ── */
@@ -2630,8 +2640,9 @@ body.game-active .ticker-bar { display: flex; }
 .chapter-nav::-webkit-scrollbar { width: 3px; }
 .chapter-nav::-webkit-scrollbar-thumb { background: var(--faint); }
 .chapter-nav .cn-heading {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Outfit', sans-serif;
   font-size: 9px;
+  font-weight: 300;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--dim);
@@ -2650,8 +2661,9 @@ body.game-active .ticker-bar { display: flex; }
 .cn-item:hover { background: rgba(196,149,106,.05); }
 .cn-item.current { background: rgba(196,149,106,.08); }
 .cn-item .cn-date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Outfit', sans-serif;
   font-size: 8px;
+  font-weight: 300;
   letter-spacing: 1px;
   color: var(--dim);
   opacity: .3;
@@ -2662,8 +2674,9 @@ body.game-active .ticker-bar { display: flex; }
   gap: 8px;
 }
 .cn-main .cn-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Outfit', sans-serif;
   font-size: 9px;
+  font-weight: 300;
   color: var(--dim);
   opacity: .4;
   flex-shrink: 0;
@@ -4211,10 +4224,26 @@ function renderSignal(turnId) {
   //    Song (olive via --earth). Extend in S176 polish.
   //    AIDA render pattern (src-driven) is the legitimate exception.
   const SEC_THEME = {
-    'WhatsApp': { className: 'ch-wa',   accentColour: '#25D366' },
-    'X':        { className: 'ch-x',    accentColour: '#ffffff' },
-    'Substack': { className: 'ch-ss',   accentColour: '#FF6719' },
-    'Song':     { className: 'ch-song', accentColour: 'var(--earth)' }
+    // Established (S174 baseline)
+    'WhatsApp':     { className: 'ch-wa',   accentColour: '#25D366' },
+    'X':            { className: 'ch-x',    accentColour: '#000000' },
+    'Substack':     { className: 'ch-ss',   accentColour: '#FF6719' },
+    'Song':         { className: 'ch-song', accentColour: '#1DB954' },
+    // Added S176b — live in play1-simon.json
+    'Instagram':    { className: 'ch-ig',   accentColour: '#E4405F' },
+    'YouTube':      { className: 'ch-yt',   accentColour: '#FF0000' },
+    'Signal':       { className: 'ch-sig',  accentColour: '#3A76F0' },
+    'Text Message': { className: 'ch-sms',  accentColour: '#34C759' },
+    'SMS':          { className: 'ch-sms',  accentColour: '#34C759' },
+    'Telegram':     { className: 'ch-tg',   accentColour: '#229ED9' },
+    'Email':        { className: 'ch-gm',   accentColour: '#8E8E93' },
+    'Notification': { className: 'ch-nt',   accentColour: '#8E8E93' },
+    // Added S176b — forward-looking, no cards yet
+    'Facebook':     { className: 'ch-fb',   accentColour: '#0084FF' },
+    'Messenger':    { className: 'ch-fb',   accentColour: '#0084FF' },
+    'Reddit':       { className: 'ch-rd',   accentColour: '#FF4500' },
+    'LinkedIn':     { className: 'ch-li',   accentColour: '#0A66C2' },
+    'Gmail':        { className: 'ch-gm',   accentColour: '#8E8E93' }
   };
 
   data.forEach(section => {

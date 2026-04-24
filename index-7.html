@@ -20,7 +20,7 @@
   --cold: #5a7a8a;
   --sys: #6a8aaa;
   --alert: #a65a4a;
-  --inner: #9a7c58;
+  --inner: #7A5D3A;
   --faint: #3a3530;
   --div: #1a1816;
   --card: #111110;
@@ -51,7 +51,7 @@ body.phase-1 {
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #9a7c58;
+  --inner: #7A5D3A;
   --faint: #D4D0C8;
   --div: #C8C4BC;
   --card: #EDE8E0;
@@ -115,7 +115,7 @@ body.phase-1 .prose {
 }
 body.phase-1 .inner {
   color: var(--inner);
-  border-left-color: rgba(154,124,88,.22);
+  border-left-color: rgba(122,93,58,.22);
 }
 body.phase-1 .subtitle {
   font-family: 'Cormorant Garamond', serif;
@@ -260,7 +260,7 @@ body.phase-2 {
   --cold: #5A6878;
   --sys: #5A6878;
   --alert: #A04040;
-  --inner: #9a7c58;
+  --inner: #7A5D3A;
   --faint: #2A2826;
   --div: #28262A;
   --card: #1E1E22;
@@ -310,7 +310,7 @@ body.phase-2 .prose {
 }
 body.phase-2 .inner {
   color: var(--inner);
-  border-left-color: rgba(154,124,88,.22);
+  border-left-color: rgba(122,93,58,.22);
 }
 body.phase-2 .tab {
   font-family: 'Outfit', sans-serif;
@@ -404,7 +404,7 @@ body.phase-3 {
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #9a7c58;
+  --inner: #7A5D3A;
   --faint: #D3D7CF;
   --div: #C6CCC1;
   --card: #E8EBE5;
@@ -462,7 +462,7 @@ body.phase-3 .prose {
 }
 body.phase-3 .inner {
   color: var(--inner);
-  border-left-color: rgba(154,124,88,.22);
+  border-left-color: rgba(122,93,58,.22);
 }
 body.phase-3 .subtitle {
   font-family: 'Cormorant Garamond', serif;
@@ -790,7 +790,7 @@ html, body {
   color: var(--inner);
   margin: 32px 0;
   padding-left: 22px;
-  border-left: 1px solid rgba(154,124,88,.22);
+  border-left: 1px solid rgba(122,93,58,.22);
   font-size: 19px;
   line-height: 1.72;
 }
@@ -1171,13 +1171,13 @@ body.phase-2 .card .snip,
 body.phase-3 .card .snip {
   font-family: 'Crimson Pro', serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   color: var(--inner);
   line-height: 1.6;
   opacity: 1;
   padding-left: 12px;
-  border-left: 1px solid rgba(154,124,88,.22);
+  border-left: 1px solid rgba(122,93,58,.22);
   margin-top: 6px;
 }
 /* S174 hotfix: .tag neutral grey — NOT tied to channel. .tag.a/.tag.x retain GOV/ARC hues. */
@@ -1195,7 +1195,7 @@ body .sec-label .sec-name { display: inline-block; }
 body .sec-label .sec-name.ch-wa   { background: #25D366; color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 body .sec-label .sec-name.ch-x    { background: #000;    color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 body .sec-label .sec-name.ch-ss   { background: #FF6719; color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-song { background: #1DB954; color: #000; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+body .sec-label .sec-name.ch-song { background: var(--earth); color: #1a1814; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
 /* S174: .tag.a (ARC) and .tag.x (GOV) retained — cls-based styling for system voice. */
 /* Stripped S174: .tag.c, .tag.e, .tag.warm, .tag.cold, .tag.buried, .tag.alert. */
 /* Palette now driven by section.sec (channel) via SEC_THEME map in render, not by cls. */
@@ -1279,7 +1279,7 @@ body.phase-3 .card .ttl {
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }
-.tg-label { font-family: 'Outfit', sans-serif; font-size: 10.5px; font-weight: 300; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dim); opacity: .55; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid rgba(90,122,138,.1); }
+.tg-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--cold); opacity: .45; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid rgba(90,122,138,.1); }
 a.ti, div.ti { font-family: 'Outfit', sans-serif; font-size: 13px; line-height: 1.35; color: var(--dim); padding: 4px 0 4px 11px; border-left: 1px solid rgba(90,122,138,.14); margin-bottom: 2px; cursor: pointer; transition: all .3s; display: block; text-decoration: none; }
 a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
 a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
@@ -1944,7 +1944,7 @@ body.phase-3 .song-context {
   line-height: 1.6;
   opacity: 1;
   padding-left: 12px;
-  border-left: 1px solid rgba(154,124,88,.22);
+  border-left: 1px solid rgba(122,93,58,.22);
   margin-top: 6px;
 }
 .song-turn { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); opacity: .25; margin-top: 4px; }
@@ -4256,7 +4256,7 @@ function renderSignal(turnId) {
       html += `
         <div class="ttl">${splitTtl(card.ttl)}</div>
         ${card.snip ? `<div class="snip">${card.snip}</div>` : ``}
-        <div class="tag ${card.cls}">${card.tag}</div>`;
+        ${card.tag ? `<div class="tag ${card.cls}">${card.tag}</div>` : ``}`;
 
       if (type === 'thread-notify') {
         const group = threadsData.find(g => g.id === card.threadRef);
@@ -4361,7 +4361,7 @@ function renderThreads() {
       if (bIdx === -1) return -1;
       return bIdx - aIdx;
     });
-    html += `<div class="tg"><div class="tg-label">${group.label}</div>`;
+    html += `<div class="tg"><div class="tg-label">\u2014 ${group.label} \u2014</div>`;
     visibleItems.forEach(item => {
       const origIdx = group.items.indexOf(item);
       const itemKey = group.id + ':' + origIdx;
@@ -4387,7 +4387,7 @@ function renderThreads() {
 
   // Player's own research — at the bottom, green
   if (state.playerThreads && state.playerThreads.length > 0) {
-    html += '<div class="tg"><div class="tg-label research-label">Your Research</div>';
+    html += '<div class="tg"><div class="tg-label research-label">\u2014 Your Research \u2014</div>';
     state.playerThreads.forEach(item => {
       html += `<a class="ti research" href="${item.url}" target="_blank" rel="noopener">${item.text}</a>`;
     });

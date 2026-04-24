@@ -1181,7 +1181,7 @@ body.phase-3 .card .snip {
   margin-top: 6px;
 }
 /* S174 hotfix: .tag neutral grey — NOT tied to channel. .tag.a/.tag.x retain GOV/ARC hues. */
-.tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--dim); opacity: .8; line-height: 1; }
+.tag { display: inline-block; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--dim); opacity: .8; line-height: 1; }
 
 /* ── S174: sec-theme channel classes — per-card styling driven by section.sec ── */
 /* Channel colour lives on the .sec-name badge (section header), NOT on the .src handle. */
@@ -1223,7 +1223,7 @@ body .sec-label .sec-name.ch-song { background: #1DB954; color: #000; padding: 1
 .save-signal:hover { opacity: .7; color: var(--warm); }
 .save-signal.saved { color: var(--cold); opacity: .5; pointer-events: none; }
 /* S174 hotfix: .card-thread-ref neutral grey, block-level for new row. */
-.card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--dim); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
+.card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--dim); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
 .card-thread-ref:hover { opacity: 1; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
 
@@ -1231,15 +1231,15 @@ body .sec-label .sec-name.ch-song { background: #1DB954; color: #000; padding: 1
 body.phase-1 .tag,
 body.phase-2 .tag,
 body.phase-3 .tag {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Outfit', sans-serif;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 2px;
   border-radius: 999px;
   padding: 3px 10px;
 }
 /* S174: pill-unified — block-level to force new row below .tag; width:fit-content keeps pill shape. */
-.card-auto-saved { display: block; width: fit-content; max-width: 100%; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: var(--accent-fade); color: var(--accent); opacity: .6; cursor: pointer; transition: opacity .3s; line-height: 1; }
+.card-auto-saved { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: var(--accent-fade); color: var(--accent); opacity: .6; cursor: pointer; transition: opacity .3s; line-height: 1; }
 .card-auto-saved:hover { opacity: 1; }
 .card.essential-card { border-left: 2px solid rgba(122,138,90,.3); }
 /* .card.thread-notify-card — now handled by the combined pulse rule above (S165 colour-aware pulse patch). */
@@ -1919,16 +1919,17 @@ body.phase-1 .song-artist,
 body.phase-2 .song-artist,
 body.phase-3 .song-artist {
   display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 1px 8px;
   margin-top: 5px;
   border-radius: 999px;
-  background: rgba(29,185,84,.15);
-  color: #1DB954;
-  opacity: .85;
+  background: #1DB954;
+  color: #000;
+  opacity: 1;
   line-height: 1;
 }
 /* S174 hotfix: .song-context matches .card .snip — Crimson Pro italic, inner voice. */

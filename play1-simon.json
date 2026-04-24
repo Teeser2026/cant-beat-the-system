@@ -6624,13 +6624,13 @@
         ]
       },
       {
-        "sec": "Open Tabs",
+        "sec": "Substack",
         "cards": [
           {
-            "src": "Cliff High — Substack",
+            "src": "Cliff High",
             "ttl": "An interesting talk with an interesting guy",
             "snip": "Found this months ago. Still open. One of those tabs you can't bring yourself to close or actually finish reading.",
-            "tag": "Tab Year 1",
+            "tag": "Open Tabs",
             "cls": "",
             "threadRef": "pattern-recognition",
             "type": "thread-notify"
@@ -7824,10 +7824,10 @@
         ]
       },
       {
-        "sec": "Notification",
+        "sec": "Substack",
         "cards": [
           {
-            "src": "Substack — We The Free",
+            "src": "We The Free",
             "ttl": "WEAPONS OF MASS DISTRACTION",
             "snip": "Cognitive warfare. Not bombs. Algorithms. And you're the target, not despite being a civilian — because of it.",
             "tag": "New Post",
@@ -9433,10 +9433,10 @@
         ]
       },
       {
-        "sec": "Open Tabs",
+        "sec": "Substack",
         "cards": [
           {
-            "src": "Arkmedic — Substack",
+            "src": "Arkmedic",
             "ttl": "\"There was no virus...\"",
             "snip": "Part of last night’s arsenal. Sent at 1am. Read receipt: never.",
             "tag": "Exhibit A",

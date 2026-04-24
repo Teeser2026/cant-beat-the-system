@@ -2971,7 +2971,7 @@ body.game-active .ticker-bar { display: flex; }
 /* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
-/* ═══ BROADCAST OVERLAY (S174c — GOV.UK Full Landing Page) ═══ */
+/* ═══ BROADCAST OVERLAY (S174d — GOV.UK Full Landing Page) ═══ */
 #broadcast-overlay {
   position: fixed; inset: 0; z-index: 9999;
   background: #0b0c0d;
@@ -2985,8 +2985,9 @@ body.game-active .ticker-bar { display: flex; }
 #broadcast-overlay .bc-section {
   width: 100%; max-width: 860px;
   padding: 0 28px;
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
 }
 #broadcast-overlay .bc-section.revealed { opacity: 1; transform: translateY(0); }
 #broadcast-overlay .bc-section.bc-full-width { max-width: 100%; padding: 0; }
@@ -2996,7 +2997,7 @@ body.game-active .ticker-bar { display: flex; }
   width: 100%; max-width: 860px;
   padding: 32px 28px 0;
   display: flex; align-items: center; gap: 10px;
-  opacity: 0; transition: opacity 1s ease 0.6s;
+  opacity: 0; transition: opacity 1s ease 0.8s;
 }
 #broadcast-overlay.visible .bc-gov-bar { opacity: 1; }
 #broadcast-overlay .bc-crown svg { display: block; }
@@ -3010,7 +3011,10 @@ body.game-active .ticker-bar { display: flex; }
 #broadcast-overlay .bc-hero {
   padding-top: 36px; padding-bottom: 32px;
   border-bottom: 1px solid rgba(212,61,61,.4);
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 1s ease, transform 1s ease;
 }
+#broadcast-overlay .bc-hero.revealed { opacity: 1; transform: translateY(0); }
 #broadcast-overlay .bc-hero-title {
   font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 32px;
   color: #fff; margin-bottom: 10px; letter-spacing: 0.3px;
@@ -3020,11 +3024,11 @@ body.game-active .ticker-bar { display: flex; }
   letter-spacing: 1.5px; color: rgba(200,196,184,.45); text-transform: uppercase;
 }
 #broadcast-overlay .bc-hero-arc-wrap {
-  display: flex; align-items: center; gap: 6px; margin-top: 12px;
+  display: flex; align-items: center; gap: 8px; margin-top: 12px;
 }
 #broadcast-overlay .bc-hero-arc-text {
   font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 11px;
-  letter-spacing: 2px; text-transform: uppercase; color: #4a8a8a; opacity: 0.8;
+  letter-spacing: 2px; text-transform: uppercase; color: rgba(74,138,138,.7);
 }
 
 /* ── Speech paragraphs ── */
@@ -3042,29 +3046,21 @@ body.game-active .ticker-bar { display: flex; }
   margin: 40px 0 20px; text-align: center;
 }
 
-/* ── World map ── */
-#broadcast-overlay .bc-map-wrap {
-  width: 100%; padding: 40px 28px;
+/* ── Globe ── */
+#broadcast-overlay .bc-globe-wrap {
+  width: 100%; padding: 48px 28px;
   display: flex; flex-direction: column; align-items: center;
 }
 #broadcast-overlay .bc-map-label {
   font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px;
   letter-spacing: 2.5px; text-transform: uppercase; color: #d43d3d;
-  margin-bottom: 20px; text-align: center;
+  margin-bottom: 24px; text-align: center;
 }
-#broadcast-overlay .bc-map-svg {
-  width: 100%; max-width: 800px; height: auto;
-}
-@keyframes bcDotPulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-@keyframes bcDotRing {
-  0% { r: 4; opacity: 0.5; }
-  100% { r: 14; opacity: 0; }
+#broadcast-overlay .bc-globe-canvas {
+  display: block; max-width: 520px; width: 100%; aspect-ratio: 1;
 }
 
-/* ── Panels (generic) ── */
+/* ── Panels ── */
 #broadcast-overlay .bc-panel {
   width: 100%; margin: 36px 0; padding: 28px;
   border: 1px solid rgba(200,196,184,.1);
@@ -3089,22 +3085,16 @@ body.game-active .ticker-bar { display: flex; }
 }
 
 /* ── Timeline ── */
-#broadcast-overlay .bc-timeline-wrap {
-  width: 100%; padding: 20px 0;
-}
+#broadcast-overlay .bc-timeline-wrap { width: 100%; padding: 20px 0; }
 #broadcast-overlay .bc-tl-svg { width: 100%; max-width: 760px; height: auto; margin: 0 auto; display: block; }
 
 /* ── Status grid ── */
-#broadcast-overlay .bc-status-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-}
+#broadcast-overlay .bc-status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 #broadcast-overlay .bc-status-item {
   display: flex; align-items: center; gap: 10px;
   padding: 12px 14px; border: 1px solid rgba(200,196,184,.06);
 }
-#broadcast-overlay .bc-status-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-}
+#broadcast-overlay .bc-status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 #broadcast-overlay .bc-status-dot.ok { background: #4a8a4a; box-shadow: 0 0 6px rgba(74,138,74,.4); }
 #broadcast-overlay .bc-status-dot.down { background: #d43d3d; box-shadow: 0 0 6px rgba(212,61,61,.4); }
 #broadcast-overlay .bc-status-name {
@@ -3119,9 +3109,7 @@ body.game-active .ticker-bar { display: flex; }
 #broadcast-overlay .bc-status-state.down { color: #d43d3d; }
 
 /* ── Measures ── */
-#broadcast-overlay .bc-measures-list {
-  list-style: none; padding: 0; margin: 0;
-}
+#broadcast-overlay .bc-measures-list { list-style: none; padding: 0; margin: 0; }
 #broadcast-overlay .bc-measures-list li {
   font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 14px;
   color: rgba(200,196,184,.6); padding: 9px 0;
@@ -3129,35 +3117,21 @@ body.game-active .ticker-bar { display: flex; }
   display: flex; align-items: baseline; gap: 10px;
 }
 #broadcast-overlay .bc-measures-list li:last-child { border-bottom: none; }
-#broadcast-overlay .bc-measures-list .bc-m-marker {
-  color: #d43d3d; font-weight: 500; font-size: 11px; flex-shrink: 0;
-}
+#broadcast-overlay .bc-measures-list .bc-m-marker { color: #d43d3d; font-weight: 500; font-size: 11px; flex-shrink: 0; }
 
 /* ── ARC panel ── */
 #broadcast-overlay .bc-panel.arc { border-left-color: #4a8a8a; }
 #broadcast-overlay .bc-panel.arc .bc-panel-label { color: #4a8a8a; }
-#broadcast-overlay .bc-arc-logo-wrap {
-  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
-}
-#broadcast-overlay .bc-arc-logo-text {
-  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 18px;
-  letter-spacing: 4px; color: #4a8a8a;
-}
+#broadcast-overlay .bc-arc-logo-wrap { display: flex; align-items: center; gap: 2px; margin-bottom: 14px; }
 
-/* ── Three asks cards ── */
-#broadcast-overlay .bc-asks-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
-  margin: 24px 0;
-}
+/* ── Three asks ── */
+#broadcast-overlay .bc-asks-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 24px 0; }
 #broadcast-overlay .bc-ask-card {
-  padding: 22px 18px;
-  border: 1px solid rgba(200,196,184,.08);
-  border-top: 2px solid #d43d3d;
+  padding: 22px 18px; border: 1px solid rgba(200,196,184,.08); border-top: 2px solid #d43d3d;
 }
 #broadcast-overlay .bc-ask-num {
   font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 11px;
-  letter-spacing: 2px; text-transform: uppercase; color: #d43d3d;
-  margin-bottom: 10px;
+  letter-spacing: 2px; text-transform: uppercase; color: #d43d3d; margin-bottom: 10px;
 }
 #broadcast-overlay .bc-ask-text {
   font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 13.5px;
@@ -3167,8 +3141,7 @@ body.game-active .ticker-bar { display: flex; }
 /* ── Continue ── */
 #broadcast-overlay .bc-continue-wrap {
   width: 100%; max-width: 860px; padding: 40px 28px 20px;
-  text-align: center;
-  opacity: 0; transition: opacity 0.8s ease;
+  text-align: center; opacity: 0; transition: opacity 0.8s ease;
 }
 #broadcast-overlay .bc-continue-wrap.visible { opacity: 1; }
 #broadcast-overlay .bc-continue-btn {
@@ -3190,7 +3163,6 @@ body.game-active .ticker-bar { display: flex; }
   letter-spacing: 1.5px; text-transform: uppercase; color: rgba(200,196,184,.18);
 }
 
-/* ── Responsive ── */
 @media (max-width: 640px) {
   #broadcast-overlay .bc-hero-title { font-size: 24px; }
   #broadcast-overlay .bc-para { font-size: 15.5px; }
@@ -6223,7 +6195,7 @@ function renderMirrorFullscreen(turnData) {
 }
 
 // ── SLIDER ──
-// ── BROADCAST RENDERER (S174c — GOV.UK Full Landing Page) ──
+// ── BROADCAST RENDERER (S174d — GOV.UK Full Landing Page) ──
 function renderBroadcast(turnData) {
   const old = document.getElementById('broadcast-overlay');
   if (old) old.remove();
@@ -6241,16 +6213,14 @@ function renderBroadcast(turnData) {
   const hasPanels = paras.length === 19;
 
   const crownSVG = `<svg viewBox="0 0 44 38" width="30" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>`;
-  const arcLogoSVG = `<svg viewBox="0 0 28 20" width="22" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16 Q14 1 25 16" stroke="#4a8a8a" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.7"/><circle cx="3" cy="16" r="2.2" fill="#4a8a8a"/></svg>`;
-  const worldMapSVG = `<svg class="bc-map-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">  <rect width="800" height="400" fill="rgba(0,0,0,0.3)" rx="4"/>  <line x1="67" y1="0" x2="67" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="133" y1="0" x2="133" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="200" y1="0" x2="200" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="267" y1="0" x2="267" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="333" y1="0" x2="333" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="400" y1="0" x2="400" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="467" y1="0" x2="467" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="533" y1="0" x2="533" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="600" y1="0" x2="600" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="667" y1="0" x2="667" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="733" y1="0" x2="733" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="800" y1="0" x2="800" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="314" x2="800" y2="314" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="229" x2="800" y2="229" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="143" x2="800" y2="143" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="57" x2="800" y2="57" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/>  <text x="10" y="16" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">60°N</text>  <text x="10" y="148" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">30°N</text>  <text x="10" y="234" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">0°</text>  <text x="10" y="320" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">30°S</text>  <circle cx="398" cy="74" r="4" fill="none" stroke="#ff4444" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="398" cy="74" r="5" fill="#ff4444" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="398" cy="74" r="8" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.3"/><circle cx="382" cy="77" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.15s" repeatCount="indefinite"/></circle><circle cx="382" cy="77" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.15s" repeatCount="indefinite"/></circle><circle cx="404" cy="94" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/></circle><circle cx="404" cy="94" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.3s" repeatCount="indefinite"/></circle><circle cx="422" cy="83" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.44999999999999996s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.44999999999999996s" repeatCount="indefinite"/></circle><circle cx="422" cy="83" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.44999999999999996s" repeatCount="indefinite"/></circle><circle cx="411" cy="80" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="411" cy="80" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="391" cy="114" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.75s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.75s" repeatCount="indefinite"/></circle><circle cx="391" cy="114" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.75s" repeatCount="indefinite"/></circle><circle cx="380" cy="117" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.8999999999999999s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.8999999999999999s" repeatCount="indefinite"/></circle><circle cx="380" cy="117" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.8999999999999999s" repeatCount="indefinite"/></circle><circle cx="427" cy="109" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.05s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.05s" repeatCount="indefinite"/></circle><circle cx="427" cy="109" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.05s" repeatCount="indefinite"/></circle><circle cx="433" cy="57" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.2s" repeatCount="indefinite"/></circle><circle cx="433" cy="57" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.2s" repeatCount="indefinite"/></circle><circle cx="422" cy="57" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.3499999999999999s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.3499999999999999s" repeatCount="indefinite"/></circle><circle cx="422" cy="57" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.3499999999999999s" repeatCount="indefinite"/></circle><circle cx="458" cy="54" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="458" cy="54" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="422" cy="69" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.65s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.65s" repeatCount="indefinite"/></circle><circle cx="422" cy="69" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.65s" repeatCount="indefinite"/></circle><circle cx="229" cy="117" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.7999999999999998s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.7999999999999998s" repeatCount="indefinite"/></circle><circle cx="229" cy="117" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.7999999999999998s" repeatCount="indefinite"/></circle><circle cx="231" cy="100" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.95s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.95s" repeatCount="indefinite"/></circle><circle cx="231" cy="100" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.95s" repeatCount="indefinite"/></circle><circle cx="707" cy="126" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="707" cy="126" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="682" cy="123" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.25s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.25s" repeatCount="indefinite"/></circle><circle cx="682" cy="123" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.25s" repeatCount="indefinite"/></circle><circle cx="631" cy="226" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.4s" repeatCount="indefinite"/></circle><circle cx="631" cy="226" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.4s" repeatCount="indefinite"/></circle><circle cx="698" cy="300" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.55s" repeatCount="indefinite"/></circle><circle cx="698" cy="300" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.55s" repeatCount="indefinite"/></circle><circle cx="787" cy="346" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.6999999999999997s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.6999999999999997s" repeatCount="indefinite"/></circle><circle cx="787" cy="346" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.6999999999999997s" repeatCount="indefinite"/></circle><circle cx="293" cy="269" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.85s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.85s" repeatCount="indefinite"/></circle><circle cx="293" cy="269" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.85s" repeatCount="indefinite"/></circle><circle cx="456" cy="311" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="456" cy="311" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="520" cy="160" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.15s" repeatCount="indefinite"/></circle><circle cx="520" cy="160" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.15s" repeatCount="indefinite"/></circle><circle cx="573" cy="169" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.3s" repeatCount="indefinite"/></circle><circle cx="573" cy="169" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.3s" repeatCount="indefinite"/></circle></svg>`;
-  const topoSVG = `<svg class="bc-topo-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg">  <!-- Connection lines -->  <line x1="360" y1="50" x2="160" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="360" y1="50" x2="360" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="360" y1="50" x2="560" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="160" y1="140" x2="160" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <line x1="360" y1="140" x2="360" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <line x1="560" y1="140" x2="560" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <!-- Top node: Core -->  <rect x="280" y="28" width="160" height="44" rx="3" fill="rgba(212,61,61,0.08)" stroke="#d43d3d" stroke-width="1.2"/>  <text x="360" y="48" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">CORE BANKING &amp;</text>  <text x="360" y="62" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">TRANSACTION LAYER</text>  <!-- Mid nodes -->  <rect x="80" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="160" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">RECORDS &amp;</text>  <text x="160" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">LEDGERS</text>  <rect x="280" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="360" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PAYMENT</text>  <text x="360" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">NETWORKS</text>  <rect x="480" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="560" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PUBLIC SECTOR</text>  <text x="560" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">SYSTEMS</text>  <!-- Bottom nodes — downstream impact -->  <rect x="80" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="160" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">ACCOUNT ACCESS</text>  <rect x="280" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="360" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">RETAIL &amp; POS</text>  <rect x="480" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="560" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">BENEFITS &amp; PENSIONS</text>  <!-- Status badge -->  <rect x="590" y="28" width="120" height="28" rx="3" fill="rgba(74,138,74,0.08)" stroke="rgba(74,138,74,0.3)" stroke-width="0.8"/>  <circle cx="606" cy="42" r="3" fill="#4a8a4a"/>  <text x="616" y="46" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(74,138,74,0.7)" letter-spacing="1">POWER · WATER · GAS</text></svg>`;
-  const timelineSVG = `<svg class="bc-tl-svg" viewBox="0 0 760 90" xmlns="http://www.w3.org/2000/svg">  <!-- Track -->  <line x1="40" y1="40" x2="720" y2="40" stroke="rgba(200,196,184,0.1)" stroke-width="1.5"/>  <!-- Progress fill -->  <line x1="40" y1="40" x2="720" y2="40" stroke="rgba(212,61,61,0.3)" stroke-width="1.5"/>  <!-- Events -->  <circle cx="40" cy="40" r="5" fill="#d43d3d" opacity="0.8"/>  <text x="40" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="0.5">23:47</text>  <text x="40" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ATTACK</text>  <text x="40" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DETECTED</text>  <circle cx="176" cy="40" r="5" fill="#d43d3d" opacity="0.7"/>  <text x="176" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(212,61,61,0.7)" letter-spacing="0.5">00:12</text>  <text x="176" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">SYSTEMS</text>  <text x="176" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">OFFLINE</text>  <circle cx="312" cy="40" r="5" fill="rgba(200,196,184,0.4)"/>  <text x="312" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">02:00</text>  <text x="312" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">COBRA</text>  <text x="312" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">CONVENED</text>  <circle cx="448" cy="40" r="5" fill="rgba(200,196,184,0.4)"/>  <text x="448" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">06:20</text>  <text x="448" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">EMERGENCY</text>  <text x="448" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ALERTS</text>  <circle cx="584" cy="40" r="5" fill="rgba(74,138,138,0.6)"/>  <text x="584" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(74,138,138,0.6)" letter-spacing="0.5">12:00</text>  <text x="584" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ARC</text>  <text x="584" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DEPLOYED</text>  <circle cx="720" cy="40" r="6" fill="#fff" opacity="0.9"/>  <text x="720" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="600" font-size="10" fill="#fff" letter-spacing="0.5">18:00</text>  <text x="720" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">PM</text>  <text x="720" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">ADDRESS</text></svg>`;
+  const arcLogoSVG = `<svg viewBox="0 0 56 24" width="56" height="24" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="17" r="3.5" fill="#4a8a8a"/><text x="16" y="20" font-family="Outfit,sans-serif" font-weight="600" font-size="16" fill="#fff" letter-spacing="3">ARC</text><path d="M14 6 Q32 -4 52 6" stroke="#4a8a8a" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.7"/></svg>`;
+  const arcLogoSm = `<svg viewBox="0 0 46 20" width="40" height="17" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="14" r="2.8" fill="#4a8a8a"/><text x="13" y="16.5" font-family="Outfit,sans-serif" font-weight="600" font-size="13" fill="#fff" letter-spacing="2.5">ARC</text><path d="M11 5 Q26 -3 43 5" stroke="#4a8a8a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/></svg>`;
+  const topoSVG = `<svg class="bc-topo-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg"><line x1="360" y1="50" x2="160" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="360" y1="50" x2="360" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="360" y1="50" x2="560" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/><line x1="160" y1="140" x2="160" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/><line x1="360" y1="140" x2="360" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/><line x1="560" y1="140" x2="560" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/><rect x="280" y="28" width="160" height="44" rx="3" fill="rgba(212,61,61,0.08)" stroke="#d43d3d" stroke-width="1.2"/><text x="360" y="48" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">CORE BANKING &amp;</text><text x="360" y="62" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">TRANSACTION LAYER</text><rect x="80" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/><text x="160" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">RECORDS &amp;</text><text x="160" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">LEDGERS</text><rect x="280" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/><text x="360" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PAYMENT</text><text x="360" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">NETWORKS</text><rect x="480" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/><text x="560" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PUBLIC SECTOR</text><text x="560" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">SYSTEMS</text><rect x="80" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/><text x="160" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">ACCOUNT ACCESS</text><rect x="280" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/><text x="360" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">RETAIL &amp; POS</text><rect x="480" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/><text x="560" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">BENEFITS &amp; PENSIONS</text><rect x="590" y="28" width="120" height="28" rx="3" fill="rgba(74,138,74,0.08)" stroke="rgba(74,138,74,0.3)" stroke-width="0.8"/><circle cx="606" cy="42" r="3" fill="#4a8a4a"/><text x="616" y="46" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(74,138,74,0.7)" letter-spacing="1">POWER · WATER · GAS</text></svg>`;
+  const timelineSVG = `<svg class="bc-tl-svg" viewBox="0 0 760 90" xmlns="http://www.w3.org/2000/svg"><line x1="40" y1="40" x2="720" y2="40" stroke="rgba(200,196,184,0.1)" stroke-width="1.5"/><line x1="40" y1="40" x2="720" y2="40" stroke="rgba(212,61,61,0.3)" stroke-width="1.5"/><circle cx="40" cy="40" r="5" fill="#d43d3d" opacity="0.8"/><text x="40" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="0.5">23:47</text><text x="40" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ATTACK</text><text x="40" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DETECTED</text><circle cx="176" cy="40" r="5" fill="#d43d3d" opacity="0.7"/><text x="176" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(212,61,61,0.7)" letter-spacing="0.5">00:12</text><text x="176" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">SYSTEMS</text><text x="176" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">OFFLINE</text><circle cx="312" cy="40" r="5" fill="rgba(200,196,184,0.4)"/><text x="312" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">02:00</text><text x="312" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">COBRA</text><text x="312" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">CONVENED</text><circle cx="448" cy="40" r="5" fill="rgba(200,196,184,0.4)"/><text x="448" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">06:20</text><text x="448" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">EMERGENCY</text><text x="448" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ALERTS</text><circle cx="584" cy="40" r="5" fill="rgba(74,138,138,0.6)"/><text x="584" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(74,138,138,0.6)" letter-spacing="0.5">12:00</text><text x="584" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ARC</text><text x="584" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DEPLOYED</text><circle cx="720" cy="40" r="6" fill="#fff" opacity="0.9"/><text x="720" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="600" font-size="10" fill="#fff" letter-spacing="0.5">18:00</text><text x="720" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">PM</text><text x="720" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">ADDRESS</text></svg>`;
 
-  // ── Helper: wrap para text ──
   function p(idx, cls) {
     if (idx >= paras.length) return '';
-    const c = cls ? ' ' + cls : '';
-    return '<div class="bc-para' + c + '">' + paras[idx].t + '</div>';
+    return '<div class="bc-para' + (cls ? ' ' + cls : '') + '">' + paras[idx].t + '</div>';
   }
   function pRange(from, to) {
     let h = '';
@@ -6260,26 +6230,15 @@ function renderBroadcast(turnData) {
 
   // ── Build sections ──
   let sectionsHTML = '';
-
   if (hasPanels) {
-    // SECTION: Opening
     sectionsHTML += '<div class="bc-section">' + p(0, 'bc-opening') + '</div>';
-
-    // SECTION: The attack + world map
     sectionsHTML += '<div class="bc-section">' + p(1) + '</div>';
-    sectionsHTML += '<div class="bc-section bc-full-width"><div class="bc-map-wrap"><div class="bc-map-label">Affected Nations — Coordinated Response Active</div>' + worldMapSVG + '</div></div>';
-
-    // SECTION: What we know + topology
+    // Globe placeholder — canvas inserted after DOM build
+    sectionsHTML += '<div class="bc-section bc-full-width"><div class="bc-globe-wrap"><div class="bc-map-label">Affected Nations — Coordinated Response Active</div><canvas class="bc-globe-canvas" width="1040" height="1040"></canvas></div></div>';
     sectionsHTML += '<div class="bc-section">' + p(2) + '</div>';
-    sectionsHTML += '<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Incident Topology</div><div class="bc-topo-wrap">' + topoSVG + '<div class="bc-topo-explain">The attack targeted the core transaction and record-keeping layer that connects banking, payment, and public service systems. Disrupting this layer affects all downstream services simultaneously while leaving physical infrastructure unaffected.</div></div></div></div>';
-
-    // SECTION: Timeline
+    sectionsHTML += '<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Incident Topology</div><div class="bc-topo-wrap">' + topoSVG + '<div class="bc-topo-explain">The attack targeted the core transaction and record-keeping layer connecting banking, payment, and public service systems. Disrupting this layer affects all downstream services simultaneously while leaving physical infrastructure unaffected.</div></div></div></div>';
     sectionsHTML += '<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Event Timeline — 14–15 February 2027</div><div class="bc-timeline-wrap">' + timelineSVG + '</div></div></div>';
-
-    // SECTION: Response + utilities
     sectionsHTML += '<div class="bc-section">' + pRange(3, 4) + '</div>';
-
-    // SECTION: Services status
     sectionsHTML += `<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Essential Services Status</div><div class="bc-status-grid">
       <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Power Grid</div><div class="bc-status-state ok">Stable</div></div>
       <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Water Supply</div><div class="bc-status-state ok">Unaffected</div></div>
@@ -6288,8 +6247,6 @@ function renderBroadcast(turnData) {
       <div class="bc-status-item"><div class="bc-status-dot down"></div><div class="bc-status-name">Banking</div><div class="bc-status-state down">Disrupted</div></div>
       <div class="bc-status-item"><div class="bc-status-dot down"></div><div class="bc-status-name">Card Payments</div><div class="bc-status-state down">Disrupted</div></div>
     </div></div></div>`;
-
-    // SECTION: Closures + measures
     sectionsHTML += '<div class="bc-section">' + pRange(5, 8) + '</div>';
     sectionsHTML += `<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Key Measures — Next 24 Hours</div><ul class="bc-measures-list">
       <li><span class="bc-m-marker">▸</span> Retail, businesses and offices closed</li>
@@ -6298,29 +6255,19 @@ function renderBroadcast(turnData) {
       <li><span class="bc-m-marker">▸</span> All public transport suspended</li>
       <li><span class="bc-m-marker">▸</span> Military and police deployed for public safety</li>
     </ul></div></div>`;
-
-    // SECTION: ARC
     sectionsHTML += '<div class="bc-section">' + pRange(9, 10) + '</div>';
-    sectionsHTML += '<div class="bc-section"><div class="bc-panel arc"><div class="bc-arc-logo-wrap">' + arcLogoSVG + '<div class="bc-arc-logo-text">ARC</div></div><div class="bc-panel-label" style="color:#4a8a8a">Emergency Communications Platform</div><div style="font-family:Outfit,sans-serif;font-weight:300;font-size:13.5px;color:rgba(200,196,184,.55);line-height:1.7">ARC has been automatically installed on your device as part of the national emergency communications framework. It provides a direct, verified channel between Government and citizens.</div><div style="margin-top:14px;font-family:Outfit,sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,138,138,.45)">Installed · Active · Verified</div></div></div>';
-
-    // SECTION: International
+    sectionsHTML += '<div class="bc-section"><div class="bc-panel arc"><div class="bc-arc-logo-wrap">' + arcLogoSVG + '</div><div class="bc-panel-label" style="color:#4a8a8a">Emergency Communications Platform</div><div style="font-family:Outfit,sans-serif;font-weight:300;font-size:13.5px;color:rgba(200,196,184,.55);line-height:1.7">ARC has been automatically installed on your device as part of the national emergency communications framework. It provides a direct, verified channel between Government and citizens.</div><div style="margin-top:14px;font-family:Outfit,sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,138,138,.45)">Installed · Active · Verified</div></div></div>';
     sectionsHTML += '<div class="bc-section">' + p(11) + '</div>';
-
-    // SECTION: Three asks as cards
     sectionsHTML += '<div class="bc-section">' + p(12) + '</div>';
     sectionsHTML += `<div class="bc-section"><div class="bc-asks-grid">
       <div class="bc-ask-card"><div class="bc-ask-num">First</div><div class="bc-ask-text">${paras[13] ? paras[13].t.replace('First: ','') : ''}</div></div>
       <div class="bc-ask-card"><div class="bc-ask-num">Second</div><div class="bc-ask-text">${paras[14] ? paras[14].t.replace('Second: ','') : ''}</div></div>
       <div class="bc-ask-card"><div class="bc-ask-num">Third</div><div class="bc-ask-text">${paras[15] ? paras[15].t.replace('Third: ','') : ''}</div></div>
     </div></div>`;
-
-    // SECTION: Closing
     sectionsHTML += '<div class="bc-section">' + pRange(16, 17) + '</div>';
     sectionsHTML += '<div class="bc-section">' + p(18, 'bc-closing') + '</div>';
-
   } else {
-    // Fallback: plain paragraphs
-    paras.forEach((pp, i) => {
+    paras.forEach((pp) => {
       sectionsHTML += '<div class="bc-section"><div class="bc-para">' + pp.t + '</div></div>';
     });
   }
@@ -6333,7 +6280,7 @@ function renderBroadcast(turnData) {
     <div class="bc-section bc-hero">
       <div class="bc-hero-title">PM Address to the Nation</div>
       <div class="bc-hero-meta">15 February 2027 · 18:00 GMT</div>
-      ${hasArc ? '<div class="bc-hero-arc-wrap">' + arcLogoSVG + '<div class="bc-hero-arc-text">In partnership with ARC</div></div>' : ''}
+      ${hasArc ? '<div class="bc-hero-arc-wrap">' + arcLogoSm + '<div class="bc-hero-arc-text">In partnership with ARC</div></div>' : ''}
     </div>
     ${sectionsHTML}
     <div class="bc-continue-wrap"><button class="bc-continue-btn">Continue</button></div>
@@ -6342,36 +6289,189 @@ function renderBroadcast(turnData) {
 
   document.body.appendChild(overlay);
 
+  // ══════════════════════════════════════
+  // 3D GLOBE — Canvas renderer
+  // ══════════════════════════════════════
+  let globeAnim = null;
+  const canvas = overlay.querySelector('.bc-globe-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const cx = W / 2, cy = H / 2, R = W * 0.42;
+    const DEG = Math.PI / 180;
+    let rotation = -10 * DEG; // start centred on Europe
+
+    // 23 affected nations [lat, lon]
+    const nations = [
+      [51.5, -0.12], [53.3, -6.26], [46.2, 2.21], [51.2, 10.45],
+      [52.1, 5.29], [40.5, -3.75], [39.4, -8.22], [41.9, 12.5],
+      [60.1, 18.6], [60.5, 10.75], [61.9, 25.75], [56.3, 9.5],
+      [39, -98], [56, -106],
+      [36.2, 139.7], [35.9, 127.8], [1.35, 103.8],
+      [-25.3, 133.8], [-40.9, 174.9],
+      [-14.2, -51.9], [-30.6, 22.9],
+      [23.4, 53.8], [20.6, 78.9]
+    ];
+
+    function project(lat, lon) {
+      const la = lat * DEG, lo = lon * DEG + rotation;
+      const x = R * Math.cos(la) * Math.sin(lo);
+      const y = -R * Math.sin(la);
+      const z = R * Math.cos(la) * Math.cos(lo);
+      return { x: cx + x, y: cy + y, z: z, visible: z > 0 };
+    }
+
+    function drawGlobe(t) {
+      ctx.clearRect(0, 0, W, H);
+
+      // Atmosphere glow
+      const grd = ctx.createRadialGradient(cx, cy, R * 0.85, cx, cy, R * 1.15);
+      grd.addColorStop(0, 'rgba(200,196,184,0.03)');
+      grd.addColorStop(1, 'rgba(200,196,184,0)');
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, W, H);
+
+      // Globe outline
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(200,196,184,0.08)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Fill globe
+      ctx.beginPath();
+      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(20,22,24,0.6)';
+      ctx.fill();
+
+      // Latitude lines
+      for (let lat = -60; lat <= 60; lat += 30) {
+        ctx.beginPath();
+        let started = false;
+        for (let lon = -180; lon <= 180; lon += 2) {
+          const p = project(lat, lon);
+          if (p.visible) {
+            if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+            else ctx.lineTo(p.x, p.y);
+          } else { started = false; }
+        }
+        ctx.strokeStyle = 'rgba(200,196,184,0.05)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Longitude lines
+      for (let lon = -180; lon < 180; lon += 30) {
+        ctx.beginPath();
+        let started = false;
+        for (let lat = -90; lat <= 90; lat += 2) {
+          const p = project(lat, lon);
+          if (p.visible) {
+            if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+            else ctx.lineTo(p.x, p.y);
+          } else { started = false; }
+        }
+        ctx.strokeStyle = 'rgba(200,196,184,0.04)';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      // Nation dots
+      const pulse = 0.5 + 0.5 * Math.sin(t * 0.003);
+      nations.forEach((n, i) => {
+        const p = project(n[0], n[1]);
+        if (!p.visible) return;
+
+        const isUK = i === 0;
+        const dotR = isUK ? 10 : 6;
+        const depth = p.z / R; // 0..1
+
+        // Pulse ring
+        const ringR = dotR + 6 + 10 * ((t * 0.001 + i * 0.4) % 1);
+        const ringA = 0.4 * (1 - ((t * 0.001 + i * 0.4) % 1)) * depth;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, ringR, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(212,61,61,${ringA})`;
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        // Glow
+        const glowGrd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, dotR * 3);
+        glowGrd.addColorStop(0, `rgba(212,61,61,${0.25 * depth})`);
+        glowGrd.addColorStop(1, 'rgba(212,61,61,0)');
+        ctx.fillStyle = glowGrd;
+        ctx.fillRect(p.x - dotR * 3, p.y - dotR * 3, dotR * 6, dotR * 6);
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, dotR * depth, 0, Math.PI * 2);
+        ctx.fillStyle = isUK
+          ? `rgba(255,68,68,${0.7 + 0.3 * pulse})`
+          : `rgba(212,61,61,${0.6 + 0.3 * pulse * depth})`;
+        ctx.fill();
+      });
+
+      rotation += 0.0008;
+      globeAnim = requestAnimationFrame(drawGlobe);
+    }
+    // Start after overlay fade-in
+    setTimeout(() => { globeAnim = requestAnimationFrame(drawGlobe); }, 1000);
+  }
+
+  // ══════════════════════════════════════
+  // SCROLL REVEAL — scroll listener (not IntersectionObserver)
+  // ══════════════════════════════════════
+  const allSections = overlay.querySelectorAll('.bc-section');
+  const heroEl = overlay.querySelector('.bc-hero');
+
+  function checkReveal() {
+    const viewH = overlay.clientHeight;
+    const trigger = viewH * 0.82;
+
+    if (heroEl && !heroEl.classList.contains('revealed')) {
+      const r = heroEl.getBoundingClientRect();
+      if (r.top < trigger) heroEl.classList.add('revealed');
+    }
+
+    allSections.forEach(s => {
+      if (s.classList.contains('revealed')) return;
+      const r = s.getBoundingClientRect();
+      if (r.top < trigger) s.classList.add('revealed');
+    });
+
+    // Show continue when last section is revealed
+    const last = allSections[allSections.length - 1];
+    if (last && last.classList.contains('revealed')) {
+      const cw = overlay.querySelector('.bc-continue-wrap');
+      if (cw && !cw.classList.contains('visible')) {
+        setTimeout(() => cw.classList.add('visible'), 600);
+      }
+    }
+  }
+
+  overlay.addEventListener('scroll', checkReveal, { passive: true });
+
   // ── Fade in overlay ──
-  requestAnimationFrame(() => { requestAnimationFrame(() => { overlay.classList.add('visible'); }); });
-
-  // ── Scroll-triggered reveal via IntersectionObserver ──
-  const sections = overlay.querySelectorAll('.bc-section');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        obs.unobserve(entry.target);
-      }
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
     });
-  }, { threshold: 0.12, root: overlay });
-  sections.forEach(el => obs.observe(el));
+  });
 
-  // ── Show continue when last section revealed ──
-  const lastSection = sections[sections.length - 1];
-  const contWrap = overlay.querySelector('.bc-continue-wrap');
-  const contObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => contWrap.classList.add('visible'), 600);
-        contObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5, root: overlay });
-  contObs.observe(lastSection);
+  // ── Initial stagger: reveal hero + first 2 sections after fade-in ──
+  setTimeout(() => {
+    if (heroEl) heroEl.classList.add('revealed');
+    setTimeout(() => {
+      if (allSections[0]) allSections[0].classList.add('revealed');
+    }, 500);
+    setTimeout(() => {
+      if (allSections[1]) allSections[1].classList.add('revealed');
+    }, 1000);
+  }, 1600);
 
   // ── Continue handler ──
   overlay.querySelector('.bc-continue-btn').addEventListener('click', () => {
+    if (globeAnim) cancelAnimationFrame(globeAnim);
     overlay.classList.remove('visible');
     setTimeout(() => {
       overlay.remove();

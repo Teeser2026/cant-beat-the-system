@@ -2971,253 +2971,233 @@ body.game-active .ticker-bar { display: flex; }
 /* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
-/* ═══ BROADCAST OVERLAY (S174b — GOV.UK Landing Page) ═══ */
+/* ═══ BROADCAST OVERLAY (S174c — GOV.UK Full Landing Page) ═══ */
 #broadcast-overlay {
-  position: fixed; inset: 0;
-  z-index: 9999;
+  position: fixed; inset: 0; z-index: 9999;
   background: #0b0c0d;
-  display: flex; flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 1.4s ease;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  display: flex; flex-direction: column; align-items: center;
+  opacity: 0; transition: opacity 1.6s ease;
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
 #broadcast-overlay.visible { opacity: 1; }
 
-/* ── GOV header bar ── */
-#broadcast-overlay .bc-gov-bar {
-  width: 100%; max-width: 700px;
-  padding: 28px 24px 0;
-  display: flex; align-items: center; gap: 10px;
+/* ── Sections & reveal ── */
+#broadcast-overlay .bc-section {
+  width: 100%; max-width: 860px;
+  padding: 0 28px;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
-#broadcast-overlay .bc-crown { flex-shrink: 0; }
+#broadcast-overlay .bc-section.revealed { opacity: 1; transform: translateY(0); }
+#broadcast-overlay .bc-section.bc-full-width { max-width: 100%; padding: 0; }
+
+/* ── GOV header ── */
+#broadcast-overlay .bc-gov-bar {
+  width: 100%; max-width: 860px;
+  padding: 32px 28px 0;
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0; transition: opacity 1s ease 0.6s;
+}
+#broadcast-overlay.visible .bc-gov-bar { opacity: 1; }
 #broadcast-overlay .bc-crown svg { display: block; }
 #broadcast-overlay .bc-gov-text {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600; font-size: 22px;
-  letter-spacing: 0.5px;
-  color: #fff;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px;
+  letter-spacing: 0.5px; color: #fff;
 }
-#broadcast-overlay .bc-gov-dot {
-  color: #4a8a8a;
-}
+#broadcast-overlay .bc-gov-dot { color: #4a8a8a; }
 
-/* ── Hero section ── */
+/* ── Hero ── */
 #broadcast-overlay .bc-hero {
-  width: 100%; max-width: 700px;
-  padding: 32px 24px 28px;
+  padding-top: 36px; padding-bottom: 32px;
   border-bottom: 1px solid rgba(212,61,61,.4);
 }
 #broadcast-overlay .bc-hero-title {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600; font-size: 26px;
-  letter-spacing: 0.5px;
-  color: #fff;
-  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 32px;
+  color: #fff; margin-bottom: 10px; letter-spacing: 0.3px;
 }
 #broadcast-overlay .bc-hero-meta {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 13px;
-  letter-spacing: 1.5px;
-  color: rgba(200,196,184,.5);
-  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 13px;
+  letter-spacing: 1.5px; color: rgba(200,196,184,.45); text-transform: uppercase;
 }
-#broadcast-overlay .bc-hero-arc {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 400; font-size: 11px;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: #4a8a8a;
-  margin-top: 10px;
-  opacity: 0.8;
+#broadcast-overlay .bc-hero-arc-wrap {
+  display: flex; align-items: center; gap: 6px; margin-top: 12px;
+}
+#broadcast-overlay .bc-hero-arc-text {
+  font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; color: #4a8a8a; opacity: 0.8;
 }
 
-/* ── Speech body ── */
-#broadcast-overlay .bc-body {
-  width: 100%; max-width: 700px;
-  padding: 0 24px 60px;
-}
+/* ── Speech paragraphs ── */
 #broadcast-overlay .bc-para {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 16.5px;
-  line-height: 1.8;
-  color: rgba(200,196,184,.85);
-  margin: 22px 0;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 17px;
+  line-height: 1.85; color: rgba(200,196,184,.82); margin: 24px 0;
 }
-#broadcast-overlay .bc-para.revealed { opacity: 1; transform: translateY(0); }
+#broadcast-overlay .bc-para:first-child { margin-top: 40px; }
+#broadcast-overlay .bc-para.bc-opening {
+  font-size: 20px; font-weight: 400; color: rgba(200,196,184,.95);
+  margin: 48px 0 40px;
+}
+#broadcast-overlay .bc-para.bc-closing {
+  font-size: 20px; font-weight: 400; color: rgba(200,196,184,.95);
+  margin: 40px 0 20px; text-align: center;
+}
 
-/* ── Infographic panels ── */
+/* ── World map ── */
+#broadcast-overlay .bc-map-wrap {
+  width: 100%; padding: 40px 28px;
+  display: flex; flex-direction: column; align-items: center;
+}
+#broadcast-overlay .bc-map-label {
+  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px;
+  letter-spacing: 2.5px; text-transform: uppercase; color: #d43d3d;
+  margin-bottom: 20px; text-align: center;
+}
+#broadcast-overlay .bc-map-svg {
+  width: 100%; max-width: 800px; height: auto;
+}
+@keyframes bcDotPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+@keyframes bcDotRing {
+  0% { r: 4; opacity: 0.5; }
+  100% { r: 14; opacity: 0; }
+}
+
+/* ── Panels (generic) ── */
 #broadcast-overlay .bc-panel {
-  width: 100%;
-  margin: 32px 0;
-  padding: 24px;
-  border: 1px solid rgba(200,196,184,.12);
+  width: 100%; margin: 36px 0; padding: 28px;
+  border: 1px solid rgba(200,196,184,.1);
   border-left: 3px solid #d43d3d;
-  background: rgba(255,255,255,.02);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  background: rgba(255,255,255,.015);
 }
-#broadcast-overlay .bc-panel.revealed { opacity: 1; transform: translateY(0); }
-
 #broadcast-overlay .bc-panel-label {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500; font-size: 10px;
-  letter-spacing: 2.5px; text-transform: uppercase;
-  color: #d43d3d;
-  margin-bottom: 16px;
+  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px;
+  letter-spacing: 2.5px; text-transform: uppercase; color: #d43d3d;
+  margin-bottom: 18px;
 }
 
-/* Stat counter */
-#broadcast-overlay .bc-stat-row {
-  display: flex; align-items: baseline; gap: 14px;
-  margin-bottom: 4px;
+/* ── Attack topology ── */
+#broadcast-overlay .bc-topo-wrap {
+  width: 100%; padding: 20px 0; display: flex; flex-direction: column; align-items: center;
 }
-#broadcast-overlay .bc-stat-num {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600; font-size: 48px;
-  color: #fff;
-  line-height: 1;
-}
-#broadcast-overlay .bc-stat-desc {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 14px;
-  color: rgba(200,196,184,.6);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+#broadcast-overlay .bc-topo-svg { width: 100%; max-width: 720px; height: auto; }
+#broadcast-overlay .bc-topo-explain {
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 14px;
+  line-height: 1.7; color: rgba(200,196,184,.5);
+  max-width: 620px; margin-top: 20px; text-align: center;
 }
 
-/* Status grid */
+/* ── Timeline ── */
+#broadcast-overlay .bc-timeline-wrap {
+  width: 100%; padding: 20px 0;
+}
+#broadcast-overlay .bc-tl-svg { width: 100%; max-width: 760px; height: auto; margin: 0 auto; display: block; }
+
+/* ── Status grid ── */
 #broadcast-overlay .bc-status-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
 }
 #broadcast-overlay .bc-status-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 12px;
-  border: 1px solid rgba(200,196,184,.06);
+  padding: 12px 14px; border: 1px solid rgba(200,196,184,.06);
 }
 #broadcast-overlay .bc-status-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
 }
 #broadcast-overlay .bc-status-dot.ok { background: #4a8a4a; box-shadow: 0 0 6px rgba(74,138,74,.4); }
 #broadcast-overlay .bc-status-dot.down { background: #d43d3d; box-shadow: 0 0 6px rgba(212,61,61,.4); }
 #broadcast-overlay .bc-status-name {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 400; font-size: 13px;
-  color: rgba(200,196,184,.7);
-  flex-grow: 1;
+  font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 13px;
+  color: rgba(200,196,184,.7); flex-grow: 1;
 }
 #broadcast-overlay .bc-status-state {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500; font-size: 10px;
+  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px;
   letter-spacing: 1px; text-transform: uppercase;
 }
 #broadcast-overlay .bc-status-state.ok { color: #4a8a4a; }
 #broadcast-overlay .bc-status-state.down { color: #d43d3d; }
 
-/* Timeline bar */
-#broadcast-overlay .bc-timeline {
-  margin-top: 12px;
-}
-#broadcast-overlay .bc-timeline-track {
-  width: 100%; height: 6px;
-  background: rgba(200,196,184,.08);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 8px;
-}
-#broadcast-overlay .bc-timeline-fill {
-  height: 100%; width: 15%;
-  background: linear-gradient(90deg, #d43d3d, #c4956a);
-  border-radius: 3px;
-}
-#broadcast-overlay .bc-timeline-labels {
-  display: flex; justify-content: space-between;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 10px;
-  letter-spacing: 1px; text-transform: uppercase;
-  color: rgba(200,196,184,.35);
-}
-#broadcast-overlay .bc-timeline-labels .active { color: #d43d3d; font-weight: 500; }
-
-/* Measures list */
+/* ── Measures ── */
 #broadcast-overlay .bc-measures-list {
   list-style: none; padding: 0; margin: 0;
 }
 #broadcast-overlay .bc-measures-list li {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 13.5px;
-  color: rgba(200,196,184,.65);
-  padding: 8px 0;
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 14px;
+  color: rgba(200,196,184,.6); padding: 9px 0;
   border-bottom: 1px solid rgba(200,196,184,.06);
   display: flex; align-items: baseline; gap: 10px;
 }
 #broadcast-overlay .bc-measures-list li:last-child { border-bottom: none; }
 #broadcast-overlay .bc-measures-list .bc-m-marker {
-  color: #d43d3d;
-  font-weight: 500; font-size: 11px;
-  flex-shrink: 0;
+  color: #d43d3d; font-weight: 500; font-size: 11px; flex-shrink: 0;
 }
 
-/* ARC panel — teal accent */
-#broadcast-overlay .bc-panel.arc {
-  border-left-color: #4a8a8a;
+/* ── ARC panel ── */
+#broadcast-overlay .bc-panel.arc { border-left-color: #4a8a8a; }
+#broadcast-overlay .bc-panel.arc .bc-panel-label { color: #4a8a8a; }
+#broadcast-overlay .bc-arc-logo-wrap {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
 }
-#broadcast-overlay .bc-panel.arc .bc-panel-label {
-  color: #4a8a8a;
+#broadcast-overlay .bc-arc-logo-text {
+  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 18px;
+  letter-spacing: 4px; color: #4a8a8a;
 }
 
-/* Continue button — GOV green */
+/* ── Three asks cards ── */
+#broadcast-overlay .bc-asks-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+  margin: 24px 0;
+}
+#broadcast-overlay .bc-ask-card {
+  padding: 22px 18px;
+  border: 1px solid rgba(200,196,184,.08);
+  border-top: 2px solid #d43d3d;
+}
+#broadcast-overlay .bc-ask-num {
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; color: #d43d3d;
+  margin-bottom: 10px;
+}
+#broadcast-overlay .bc-ask-text {
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 13.5px;
+  line-height: 1.65; color: rgba(200,196,184,.7);
+}
+
+/* ── Continue ── */
 #broadcast-overlay .bc-continue-wrap {
-  width: 100%; max-width: 700px;
-  padding: 20px 24px 40px;
+  width: 100%; max-width: 860px; padding: 40px 28px 20px;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  opacity: 0; transition: opacity 0.8s ease;
 }
 #broadcast-overlay .bc-continue-wrap.visible { opacity: 1; }
 #broadcast-overlay .bc-continue-btn {
-  display: inline-block;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500; font-size: 14px;
-  letter-spacing: 1px;
-  color: #fff;
-  background: #00703c;
-  padding: 12px 32px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 2px 0 #002d18;
+  display: inline-block; font-family: 'Outfit', sans-serif;
+  font-weight: 500; font-size: 14px; letter-spacing: 1px;
+  color: #fff; background: #00703c; padding: 12px 36px;
+  border: none; cursor: pointer; box-shadow: 0 2px 0 #002d18;
   transition: background 0.2s;
 }
 #broadcast-overlay .bc-continue-btn:hover { background: #005a30; }
 
-/* Footer */
+/* ── Footer ── */
 #broadcast-overlay .bc-footer {
-  width: 100%; max-width: 700px;
-  padding: 20px 24px 40px;
-  border-top: 1px solid rgba(200,196,184,.08);
-  text-align: center;
+  width: 100%; max-width: 860px; padding: 24px 28px 48px;
+  border-top: 1px solid rgba(200,196,184,.06); text-align: center;
 }
 #broadcast-overlay .bc-footer-text {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 10px;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: rgba(200,196,184,.2);
+  font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase; color: rgba(200,196,184,.18);
 }
 
-@media (max-width: 480px) {
-  #broadcast-overlay .bc-hero-title { font-size: 21px; }
-  #broadcast-overlay .bc-para { font-size: 15px; }
-  #broadcast-overlay .bc-stat-num { font-size: 36px; }
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  #broadcast-overlay .bc-hero-title { font-size: 24px; }
+  #broadcast-overlay .bc-para { font-size: 15.5px; }
   #broadcast-overlay .bc-status-grid { grid-template-columns: 1fr; }
+  #broadcast-overlay .bc-asks-grid { grid-template-columns: 1fr; }
   #broadcast-overlay .bc-gov-text { font-size: 18px; }
+  #broadcast-overlay .bc-section { padding: 0 18px; }
 }
 
 #sound-prompt-overlay {
@@ -6243,7 +6223,7 @@ function renderMirrorFullscreen(turnData) {
 }
 
 // ── SLIDER ──
-// ── BROADCAST RENDERER (S174b — GOV.UK Landing Page) ──
+// ── BROADCAST RENDERER (S174c — GOV.UK Full Landing Page) ──
 function renderBroadcast(turnData) {
   const old = document.getElementById('broadcast-overlay');
   if (old) old.remove();
@@ -6257,147 +6237,138 @@ function renderBroadcast(turnData) {
   overlay.id = 'broadcast-overlay';
 
   const paras = turnData.paras || [];
-  const src = turnData.broadcastSrc || 'BROADCAST';
   const hasArc = turnData.broadcastArc || false;
-
-  // ── Crown SVG ──
-  const crownSVG = `<svg viewBox="0 0 44 38" width="30" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff" rx="0.5"/><path d="M8 26h28v3.5H8z" fill="#fff" rx="0.5"/><path d="M10 31h24v3H10z" fill="#fff" rx="0.5"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>`;
-
-  // ── Build sections ──
-  // If we have exactly 19 paras (the PM speech), insert infographic panels.
-  // Otherwise fall back to plain paragraphs.
   const hasPanels = paras.length === 19;
 
-  // ── Infographic HTML ──
-  const nationsPanel = `
-    <div class="bc-panel" data-reveal>
-      <div class="bc-panel-label">Situation Overview</div>
-      <div class="bc-stat-row">
-        <div class="bc-stat-num">23</div>
-        <div class="bc-stat-desc">Nations<br>affected</div>
-      </div>
-      <div class="bc-timeline" style="margin-top:18px">
-        <div class="bc-panel-label" style="margin-bottom:10px">Projected Restoration</div>
-        <div class="bc-timeline-track"><div class="bc-timeline-fill"></div></div>
-        <div class="bc-timeline-labels">
-          <span class="active">Day 1</span>
-          <span>Day 3</span>
-          <span>Day 7</span>
-          <span>Day 14</span>
-        </div>
-      </div>
-    </div>`;
+  const crownSVG = `<svg viewBox="0 0 44 38" width="30" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>`;
+  const arcLogoSVG = `<svg viewBox="0 0 28 20" width="22" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16 Q14 1 25 16" stroke="#4a8a8a" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.7"/><circle cx="3" cy="16" r="2.2" fill="#4a8a8a"/></svg>`;
+  const worldMapSVG = `<svg class="bc-map-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">  <rect width="800" height="400" fill="rgba(0,0,0,0.3)" rx="4"/>  <line x1="67" y1="0" x2="67" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="133" y1="0" x2="133" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="200" y1="0" x2="200" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="267" y1="0" x2="267" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="333" y1="0" x2="333" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="400" y1="0" x2="400" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="467" y1="0" x2="467" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="533" y1="0" x2="533" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="600" y1="0" x2="600" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="667" y1="0" x2="667" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="733" y1="0" x2="733" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="800" y1="0" x2="800" y2="400" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="314" x2="800" y2="314" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="229" x2="800" y2="229" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="143" x2="800" y2="143" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/><line x1="0" y1="57" x2="800" y2="57" stroke="rgba(200,196,184,0.04)" stroke-width="0.5"/>  <text x="10" y="16" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">60°N</text>  <text x="10" y="148" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">30°N</text>  <text x="10" y="234" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">0°</text>  <text x="10" y="320" font-family="Outfit,sans-serif" font-size="9" fill="rgba(200,196,184,0.15)" letter-spacing="1">30°S</text>  <circle cx="398" cy="74" r="4" fill="none" stroke="#ff4444" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="398" cy="74" r="5" fill="#ff4444" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="398" cy="74" r="8" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.3"/><circle cx="382" cy="77" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.15s" repeatCount="indefinite"/></circle><circle cx="382" cy="77" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.15s" repeatCount="indefinite"/></circle><circle cx="404" cy="94" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.3s" repeatCount="indefinite"/></circle><circle cx="404" cy="94" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.3s" repeatCount="indefinite"/></circle><circle cx="422" cy="83" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.44999999999999996s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.44999999999999996s" repeatCount="indefinite"/></circle><circle cx="422" cy="83" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.44999999999999996s" repeatCount="indefinite"/></circle><circle cx="411" cy="80" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="411" cy="80" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="391" cy="114" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.75s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.75s" repeatCount="indefinite"/></circle><circle cx="391" cy="114" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.75s" repeatCount="indefinite"/></circle><circle cx="380" cy="117" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="0.8999999999999999s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="0.8999999999999999s" repeatCount="indefinite"/></circle><circle cx="380" cy="117" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.8999999999999999s" repeatCount="indefinite"/></circle><circle cx="427" cy="109" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.05s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.05s" repeatCount="indefinite"/></circle><circle cx="427" cy="109" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.05s" repeatCount="indefinite"/></circle><circle cx="433" cy="57" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.2s" repeatCount="indefinite"/></circle><circle cx="433" cy="57" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.2s" repeatCount="indefinite"/></circle><circle cx="422" cy="57" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.3499999999999999s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.3499999999999999s" repeatCount="indefinite"/></circle><circle cx="422" cy="57" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.3499999999999999s" repeatCount="indefinite"/></circle><circle cx="458" cy="54" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="458" cy="54" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="422" cy="69" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.65s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.65s" repeatCount="indefinite"/></circle><circle cx="422" cy="69" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.65s" repeatCount="indefinite"/></circle><circle cx="229" cy="117" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.7999999999999998s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.7999999999999998s" repeatCount="indefinite"/></circle><circle cx="229" cy="117" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.7999999999999998s" repeatCount="indefinite"/></circle><circle cx="231" cy="100" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="1.95s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="1.95s" repeatCount="indefinite"/></circle><circle cx="231" cy="100" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.95s" repeatCount="indefinite"/></circle><circle cx="707" cy="126" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="707" cy="126" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="682" cy="123" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.25s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.25s" repeatCount="indefinite"/></circle><circle cx="682" cy="123" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.25s" repeatCount="indefinite"/></circle><circle cx="631" cy="226" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.4s" repeatCount="indefinite"/></circle><circle cx="631" cy="226" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.4s" repeatCount="indefinite"/></circle><circle cx="698" cy="300" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.55s" repeatCount="indefinite"/></circle><circle cx="698" cy="300" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.55s" repeatCount="indefinite"/></circle><circle cx="787" cy="346" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.6999999999999997s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.6999999999999997s" repeatCount="indefinite"/></circle><circle cx="787" cy="346" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.6999999999999997s" repeatCount="indefinite"/></circle><circle cx="293" cy="269" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="2.85s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="2.85s" repeatCount="indefinite"/></circle><circle cx="293" cy="269" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.85s" repeatCount="indefinite"/></circle><circle cx="456" cy="311" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="456" cy="311" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="520" cy="160" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.15s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.15s" repeatCount="indefinite"/></circle><circle cx="520" cy="160" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.15s" repeatCount="indefinite"/></circle><circle cx="573" cy="169" r="4" fill="none" stroke="#d43d3d" stroke-width="0.8" opacity="0"><animate attributeName="r" values="4;16" dur="2.5s" begin="3.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="2.5s" begin="3.3s" repeatCount="indefinite"/></circle><circle cx="573" cy="169" r="3.5" fill="#d43d3d" opacity="0.85"><animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="3.3s" repeatCount="indefinite"/></circle></svg>`;
+  const topoSVG = `<svg class="bc-topo-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg">  <!-- Connection lines -->  <line x1="360" y1="50" x2="160" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="360" y1="50" x2="360" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="360" y1="50" x2="560" y2="140" stroke="rgba(212,61,61,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>  <line x1="160" y1="140" x2="160" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <line x1="360" y1="140" x2="360" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <line x1="560" y1="140" x2="560" y2="210" stroke="rgba(212,61,61,0.2)" stroke-width="1" stroke-dasharray="4,3"/>  <!-- Top node: Core -->  <rect x="280" y="28" width="160" height="44" rx="3" fill="rgba(212,61,61,0.08)" stroke="#d43d3d" stroke-width="1.2"/>  <text x="360" y="48" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">CORE BANKING &amp;</text>  <text x="360" y="62" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="2">TRANSACTION LAYER</text>  <!-- Mid nodes -->  <rect x="80" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="160" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">RECORDS &amp;</text>  <text x="160" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">LEDGERS</text>  <rect x="280" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="360" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PAYMENT</text>  <text x="360" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">NETWORKS</text>  <rect x="480" y="118" width="160" height="44" rx="3" fill="rgba(212,61,61,0.06)" stroke="rgba(212,61,61,0.5)" stroke-width="1"/>  <text x="560" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">PUBLIC SECTOR</text>  <text x="560" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(200,196,184,0.6)" letter-spacing="1.5">SYSTEMS</text>  <!-- Bottom nodes — downstream impact -->  <rect x="80" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="160" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">ACCOUNT ACCESS</text>  <rect x="280" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="360" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">RETAIL &amp; POS</text>  <rect x="480" y="192" width="160" height="36" rx="3" fill="none" stroke="rgba(200,196,184,0.12)" stroke-width="0.8"/>  <text x="560" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="9" fill="rgba(200,196,184,0.35)" letter-spacing="1.5">BENEFITS &amp; PENSIONS</text>  <!-- Status badge -->  <rect x="590" y="28" width="120" height="28" rx="3" fill="rgba(74,138,74,0.08)" stroke="rgba(74,138,74,0.3)" stroke-width="0.8"/>  <circle cx="606" cy="42" r="3" fill="#4a8a4a"/>  <text x="616" y="46" font-family="Outfit,sans-serif" font-weight="400" font-size="9" fill="rgba(74,138,74,0.7)" letter-spacing="1">POWER · WATER · GAS</text></svg>`;
+  const timelineSVG = `<svg class="bc-tl-svg" viewBox="0 0 760 90" xmlns="http://www.w3.org/2000/svg">  <!-- Track -->  <line x1="40" y1="40" x2="720" y2="40" stroke="rgba(200,196,184,0.1)" stroke-width="1.5"/>  <!-- Progress fill -->  <line x1="40" y1="40" x2="720" y2="40" stroke="rgba(212,61,61,0.3)" stroke-width="1.5"/>  <!-- Events -->  <circle cx="40" cy="40" r="5" fill="#d43d3d" opacity="0.8"/>  <text x="40" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="#d43d3d" letter-spacing="0.5">23:47</text>  <text x="40" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ATTACK</text>  <text x="40" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DETECTED</text>  <circle cx="176" cy="40" r="5" fill="#d43d3d" opacity="0.7"/>  <text x="176" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(212,61,61,0.7)" letter-spacing="0.5">00:12</text>  <text x="176" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">SYSTEMS</text>  <text x="176" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">OFFLINE</text>  <circle cx="312" cy="40" r="5" fill="rgba(200,196,184,0.4)"/>  <text x="312" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">02:00</text>  <text x="312" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">COBRA</text>  <text x="312" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">CONVENED</text>  <circle cx="448" cy="40" r="5" fill="rgba(200,196,184,0.4)"/>  <text x="448" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(200,196,184,0.5)" letter-spacing="0.5">06:20</text>  <text x="448" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">EMERGENCY</text>  <text x="448" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ALERTS</text>  <circle cx="584" cy="40" r="5" fill="rgba(74,138,138,0.6)"/>  <text x="584" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="500" font-size="9" fill="rgba(74,138,138,0.6)" letter-spacing="0.5">12:00</text>  <text x="584" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">ARC</text>  <text x="584" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="300" font-size="8" fill="rgba(200,196,184,0.4)" letter-spacing="1">DEPLOYED</text>  <circle cx="720" cy="40" r="6" fill="#fff" opacity="0.9"/>  <text x="720" y="22" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="600" font-size="10" fill="#fff" letter-spacing="0.5">18:00</text>  <text x="720" y="64" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">PM</text>  <text x="720" y="76" text-anchor="middle" font-family="Outfit,sans-serif" font-weight="400" font-size="8" fill="rgba(200,196,184,0.6)" letter-spacing="1">ADDRESS</text></svg>`;
 
-  const statusPanel = `
-    <div class="bc-panel" data-reveal>
-      <div class="bc-panel-label">Essential Services Status</div>
-      <div class="bc-status-grid">
-        <div class="bc-status-item">
-          <div class="bc-status-dot ok"></div>
-          <div class="bc-status-name">Power Grid</div>
-          <div class="bc-status-state ok">Stable</div>
-        </div>
-        <div class="bc-status-item">
-          <div class="bc-status-dot ok"></div>
-          <div class="bc-status-name">Water Supply</div>
-          <div class="bc-status-state ok">Unaffected</div>
-        </div>
-        <div class="bc-status-item">
-          <div class="bc-status-dot ok"></div>
-          <div class="bc-status-name">Gas Supply</div>
-          <div class="bc-status-state ok">Unaffected</div>
-        </div>
-        <div class="bc-status-item">
-          <div class="bc-status-dot ok"></div>
-          <div class="bc-status-name">Emergency Services</div>
-          <div class="bc-status-state ok">Operational</div>
-        </div>
-        <div class="bc-status-item">
-          <div class="bc-status-dot down"></div>
-          <div class="bc-status-name">Banking</div>
-          <div class="bc-status-state down">Disrupted</div>
-        </div>
-        <div class="bc-status-item">
-          <div class="bc-status-dot down"></div>
-          <div class="bc-status-name">Card Payments</div>
-          <div class="bc-status-state down">Disrupted</div>
-        </div>
-      </div>
-    </div>`;
+  // ── Helper: wrap para text ──
+  function p(idx, cls) {
+    if (idx >= paras.length) return '';
+    const c = cls ? ' ' + cls : '';
+    return '<div class="bc-para' + c + '">' + paras[idx].t + '</div>';
+  }
+  function pRange(from, to) {
+    let h = '';
+    for (let i = from; i <= to && i < paras.length; i++) h += p(i);
+    return h;
+  }
 
-  const measuresPanel = `
-    <div class="bc-panel" data-reveal>
-      <div class="bc-panel-label">Key Measures — Next 36 Hours</div>
-      <ul class="bc-measures-list">
-        <li><span class="bc-m-marker">▸</span> Retail, businesses and offices closed</li>
-        <li><span class="bc-m-marker">▸</span> Schools closed for remainder of week</li>
-        <li><span class="bc-m-marker">▸</span> Hospitals: emergencies only — routine care postponed</li>
-        <li><span class="bc-m-marker">▸</span> All public transport suspended</li>
-        <li><span class="bc-m-marker">▸</span> Military and police deployed for public safety</li>
-      </ul>
-    </div>`;
+  // ── Build sections ──
+  let sectionsHTML = '';
 
-  const arcPanel = `
-    <div class="bc-panel arc" data-reveal>
-      <div class="bc-panel-label">Emergency Communications</div>
-      <div style="font-family:Outfit,sans-serif;font-weight:300;font-size:13.5px;color:rgba(200,196,184,.65);line-height:1.7">
-        The <strong style="color:#4a8a8a;font-weight:500">ARC</strong> app has been automatically installed on your device as part of the national emergency communications framework. ARC provides a direct, verified channel between Government and citizens.
-      </div>
-      <div style="margin-top:14px;font-family:Outfit,sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,138,138,.5)">Installed · Active · Verified</div>
-    </div>`;
+  if (hasPanels) {
+    // SECTION: Opening
+    sectionsHTML += '<div class="bc-section">' + p(0, 'bc-opening') + '</div>';
 
-  // ── Build paragraph HTML with panels inserted ──
-  let bodyHTML = '';
-  paras.forEach((p, i) => {
-    bodyHTML += `<div class="bc-para" data-reveal>${p.t}</div>`;
-    if (hasPanels) {
-      if (i === 1) bodyHTML += nationsPanel;
-      if (i === 4) bodyHTML += statusPanel;
-      if (i === 8) bodyHTML += measuresPanel;
-      if (i === 10) bodyHTML += arcPanel;
-    }
-  });
+    // SECTION: The attack + world map
+    sectionsHTML += '<div class="bc-section">' + p(1) + '</div>';
+    sectionsHTML += '<div class="bc-section bc-full-width"><div class="bc-map-wrap"><div class="bc-map-label">Affected Nations — Coordinated Response Active</div>' + worldMapSVG + '</div></div>';
+
+    // SECTION: What we know + topology
+    sectionsHTML += '<div class="bc-section">' + p(2) + '</div>';
+    sectionsHTML += '<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Incident Topology</div><div class="bc-topo-wrap">' + topoSVG + '<div class="bc-topo-explain">The attack targeted the core transaction and record-keeping layer that connects banking, payment, and public service systems. Disrupting this layer affects all downstream services simultaneously while leaving physical infrastructure unaffected.</div></div></div></div>';
+
+    // SECTION: Timeline
+    sectionsHTML += '<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Event Timeline — 14–15 February 2027</div><div class="bc-timeline-wrap">' + timelineSVG + '</div></div></div>';
+
+    // SECTION: Response + utilities
+    sectionsHTML += '<div class="bc-section">' + pRange(3, 4) + '</div>';
+
+    // SECTION: Services status
+    sectionsHTML += `<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Essential Services Status</div><div class="bc-status-grid">
+      <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Power Grid</div><div class="bc-status-state ok">Stable</div></div>
+      <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Water Supply</div><div class="bc-status-state ok">Unaffected</div></div>
+      <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Gas Supply</div><div class="bc-status-state ok">Unaffected</div></div>
+      <div class="bc-status-item"><div class="bc-status-dot ok"></div><div class="bc-status-name">Emergency Services</div><div class="bc-status-state ok">Operational</div></div>
+      <div class="bc-status-item"><div class="bc-status-dot down"></div><div class="bc-status-name">Banking</div><div class="bc-status-state down">Disrupted</div></div>
+      <div class="bc-status-item"><div class="bc-status-dot down"></div><div class="bc-status-name">Card Payments</div><div class="bc-status-state down">Disrupted</div></div>
+    </div></div></div>`;
+
+    // SECTION: Closures + measures
+    sectionsHTML += '<div class="bc-section">' + pRange(5, 8) + '</div>';
+    sectionsHTML += `<div class="bc-section"><div class="bc-panel"><div class="bc-panel-label">Key Measures — Next 24 Hours</div><ul class="bc-measures-list">
+      <li><span class="bc-m-marker">▸</span> Retail, businesses and offices closed</li>
+      <li><span class="bc-m-marker">▸</span> Schools closed for remainder of week</li>
+      <li><span class="bc-m-marker">▸</span> Hospitals: emergencies only — routine care postponed</li>
+      <li><span class="bc-m-marker">▸</span> All public transport suspended</li>
+      <li><span class="bc-m-marker">▸</span> Military and police deployed for public safety</li>
+    </ul></div></div>`;
+
+    // SECTION: ARC
+    sectionsHTML += '<div class="bc-section">' + pRange(9, 10) + '</div>';
+    sectionsHTML += '<div class="bc-section"><div class="bc-panel arc"><div class="bc-arc-logo-wrap">' + arcLogoSVG + '<div class="bc-arc-logo-text">ARC</div></div><div class="bc-panel-label" style="color:#4a8a8a">Emergency Communications Platform</div><div style="font-family:Outfit,sans-serif;font-weight:300;font-size:13.5px;color:rgba(200,196,184,.55);line-height:1.7">ARC has been automatically installed on your device as part of the national emergency communications framework. It provides a direct, verified channel between Government and citizens.</div><div style="margin-top:14px;font-family:Outfit,sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,138,138,.45)">Installed · Active · Verified</div></div></div>';
+
+    // SECTION: International
+    sectionsHTML += '<div class="bc-section">' + p(11) + '</div>';
+
+    // SECTION: Three asks as cards
+    sectionsHTML += '<div class="bc-section">' + p(12) + '</div>';
+    sectionsHTML += `<div class="bc-section"><div class="bc-asks-grid">
+      <div class="bc-ask-card"><div class="bc-ask-num">First</div><div class="bc-ask-text">${paras[13] ? paras[13].t.replace('First: ','') : ''}</div></div>
+      <div class="bc-ask-card"><div class="bc-ask-num">Second</div><div class="bc-ask-text">${paras[14] ? paras[14].t.replace('Second: ','') : ''}</div></div>
+      <div class="bc-ask-card"><div class="bc-ask-num">Third</div><div class="bc-ask-text">${paras[15] ? paras[15].t.replace('Third: ','') : ''}</div></div>
+    </div></div>`;
+
+    // SECTION: Closing
+    sectionsHTML += '<div class="bc-section">' + pRange(16, 17) + '</div>';
+    sectionsHTML += '<div class="bc-section">' + p(18, 'bc-closing') + '</div>';
+
+  } else {
+    // Fallback: plain paragraphs
+    paras.forEach((pp, i) => {
+      sectionsHTML += '<div class="bc-section"><div class="bc-para">' + pp.t + '</div></div>';
+    });
+  }
 
   overlay.innerHTML = `
     <div class="bc-gov-bar">
       <div class="bc-crown">${crownSVG}</div>
       <div class="bc-gov-text">GOV<span class="bc-gov-dot">·</span>UK</div>
     </div>
-    <div class="bc-hero">
+    <div class="bc-section bc-hero">
       <div class="bc-hero-title">PM Address to the Nation</div>
       <div class="bc-hero-meta">15 February 2027 · 18:00 GMT</div>
-      ${hasArc ? '<div class="bc-hero-arc">In partnership with ARC</div>' : ''}
+      ${hasArc ? '<div class="bc-hero-arc-wrap">' + arcLogoSVG + '<div class="bc-hero-arc-text">In partnership with ARC</div></div>' : ''}
     </div>
-    <div class="bc-body">
-      ${bodyHTML}
-    </div>
-    <div class="bc-continue-wrap">
-      <button class="bc-continue-btn">Continue</button>
-    </div>
-    <div class="bc-footer">
-      <div class="bc-footer-text">© Crown copyright 2027 · All content available under the Open Government Licence v3.0</div>
-    </div>
+    ${sectionsHTML}
+    <div class="bc-continue-wrap"><button class="bc-continue-btn">Continue</button></div>
+    <div class="bc-footer"><div class="bc-footer-text">© Crown copyright 2027 · Open Government Licence v3.0</div></div>
   `;
 
   document.body.appendChild(overlay);
 
-  // ── Fade in ──
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      overlay.classList.add('visible');
+  // ── Fade in overlay ──
+  requestAnimationFrame(() => { requestAnimationFrame(() => { overlay.classList.add('visible'); }); });
+
+  // ── Scroll-triggered reveal via IntersectionObserver ──
+  const sections = overlay.querySelectorAll('.bc-section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
     });
-  });
+  }, { threshold: 0.12, root: overlay });
+  sections.forEach(el => obs.observe(el));
 
-  // ── Stagger-reveal all [data-reveal] elements ──
-  const revealEls = overlay.querySelectorAll('[data-reveal]');
-  revealEls.forEach((el, i) => {
-    setTimeout(() => el.classList.add('revealed'), 1400 + i * 350);
-  });
-
-  // ── Show continue after reveals ──
-  const continueWrap = overlay.querySelector('.bc-continue-wrap');
-  const totalTime = 1400 + revealEls.length * 350 + 600;
-  setTimeout(() => continueWrap.classList.add('visible'), totalTime);
+  // ── Show continue when last section revealed ──
+  const lastSection = sections[sections.length - 1];
+  const contWrap = overlay.querySelector('.bc-continue-wrap');
+  const contObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => contWrap.classList.add('visible'), 600);
+        contObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5, root: overlay });
+  contObs.observe(lastSection);
 
   // ── Continue handler ──
   overlay.querySelector('.bc-continue-btn').addEventListener('click', () => {
@@ -6407,7 +6378,7 @@ function renderBroadcast(turnData) {
       wrap.style.display = '';
       econBar.style.display = '';
       goTo(state.turnIndex + 1);
-    }, 1400);
+    }, 1600);
   });
 }
 

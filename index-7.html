@@ -13,13 +13,14 @@
   --text: #c8c4b8;
   --dim: #6b6760;
   --bright: #e8e4d8;
-  --lyric: #9a7c58;
+  --lyric: #8B9968;
+  --quote: #c49090;
   --warm: #c4956a;
   --earth: #7a8a5a;
   --cold: #5a7a8a;
   --sys: #6a8aaa;
   --alert: #a65a4a;
-  --inner: #c49090;
+  --inner: #9a7c58;
   --faint: #3a3530;
   --div: #1a1816;
   --card: #111110;
@@ -43,13 +44,14 @@ body.phase-1 {
   --text: #3A3630;
   --dim: #7A756D;
   --bright: #2E2B27;
-  --lyric: #9a7c58;
+  --lyric: #8B9968;
+  --quote: #c49090;
   --warm: #B07860;
   --earth: #6A7A52;
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #c49090;
+  --inner: #9a7c58;
   --faint: #D4D0C8;
   --div: #C8C4BC;
   --card: #EDE8E0;
@@ -251,13 +253,14 @@ body.phase-2 {
   --text: #C8C4BC;
   --dim: #706C66;
   --bright: #E0DCD4;
-  --lyric: #9a7c58;
+  --lyric: #8B9968;
+  --quote: #c49090;
   --warm: #9A7468;
   --earth: #6A7A52;
   --cold: #5A6878;
   --sys: #5A6878;
   --alert: #A04040;
-  --inner: #c49090;
+  --inner: #9a7c58;
   --faint: #2A2826;
   --div: #28262A;
   --card: #1E1E22;
@@ -394,13 +397,14 @@ body.phase-3 {
   --text: #3A3630;
   --dim: #7A756D;
   --bright: #2E2B27;
-  --lyric: #9a7c58;
+  --lyric: #8B9968;
+  --quote: #c49090;
   --warm: #B07860;
   --earth: #6A7A52;
   --cold: #5A7080;
   --sys: #5A7080;
   --alert: #A05040;
-  --inner: #c49090;
+  --inner: #9a7c58;
   --faint: #D3D7CF;
   --div: #C6CCC1;
   --card: #E8EBE5;
@@ -790,12 +794,13 @@ html, body {
   font-size: 19px;
   line-height: 1.72;
 }
+/* S174 hotfix: .quote now uses rose (swapped from inner's original hue) — external voice. */
 .quote {
   font-style: italic;
-  color: var(--earth);
+  color: var(--quote);
   margin: 32px 0;
   padding-left: 22px;
-  border-left: 1px solid rgba(122,138,90,.25);
+  border-left: 1px solid rgba(196,144,144,.25);
   font-size: 19px;
   line-height: 1.72;
 }
@@ -1159,15 +1164,14 @@ html, body {
 .card .src.src-handle { color: #6b9bc9; opacity: 1; }
 .card .src.src-substack { color: #FF6719; opacity: 1; text-transform: none; letter-spacing: 1px; font-size: 11px; }
 .card .ttl { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--text); line-height: 1.5; margin-bottom: 4px; }
-/* S174 hotfix: .snip uses signal-card font stack (Outfit), not prose serif. */
-/* Colour via var(--inner) now reverted to spec #c49090 rose. */
+/* S174 hotfix: .snip uses prose italic grammar — Simon's inner voice, matches .inner serif italic. */
 .card .snip,
 body.phase-1 .card .snip,
 body.phase-2 .card .snip,
 body.phase-3 .card .snip {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  font-weight: 300;
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  font-weight: 400;
   font-style: italic;
   color: var(--inner);
   line-height: 1.6;
@@ -1927,14 +1931,14 @@ body.phase-3 .song-artist {
   opacity: .85;
   line-height: 1;
 }
-/* S174 hotfix: .song-context matches .card .snip — signal-card font stack, rose (inner) tone. */
+/* S174 hotfix: .song-context matches .card .snip — Crimson Pro italic, inner voice. */
 .song-context,
 body.phase-1 .song-context,
 body.phase-2 .song-context,
 body.phase-3 .song-context {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  font-weight: 300;
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  font-weight: 400;
   font-style: italic;
   color: var(--inner);
   line-height: 1.6;

@@ -2971,6 +2971,85 @@ body.game-active .ticker-bar { display: flex; }
 /* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
+/* ═══ BROADCAST OVERLAY (S174) ═══ */
+#broadcast-overlay {
+  position: fixed; inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.96);
+  display: flex; flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#broadcast-overlay.visible { opacity: 1; }
+
+#broadcast-overlay .bc-header {
+  width: 100%; max-width: 640px;
+  padding: 32px 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(212,61,61,.35);
+  flex-shrink: 0;
+}
+#broadcast-overlay .bc-src {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: #d43d3d;
+}
+#broadcast-overlay .bc-arc-badge {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #4a8a8a;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+#broadcast-overlay .bc-body {
+  width: 100%; max-width: 640px;
+  padding: 40px 24px 120px;
+  flex-grow: 1;
+}
+#broadcast-overlay .bc-para {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 16px;
+  line-height: 1.75;
+  color: rgba(200,196,184,.88);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#broadcast-overlay .bc-para.revealed {
+  opacity: 1; transform: translateY(0);
+}
+#broadcast-overlay .bc-continue {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 13px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(200,196,184,.4);
+  text-align: center;
+  padding: 40px 0 60px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.8s ease 0.4s;
+}
+#broadcast-overlay .bc-continue.visible {
+  opacity: 1;
+}
+#broadcast-overlay .bc-continue:hover {
+  color: rgba(200,196,184,.7);
+}
+
+@media (max-width: 480px) {
+  #broadcast-overlay .bc-src { font-size: 10px; letter-spacing: 2px; }
+  #broadcast-overlay .bc-para { font-size: 15px; }
+  #broadcast-overlay .bc-body { padding: 28px 18px 100px; }
+}
+
 #sound-prompt-overlay {
   position: fixed;
   inset: 0;
@@ -5994,6 +6073,72 @@ function renderMirrorFullscreen(turnData) {
 }
 
 // ── SLIDER ──
+// ── BROADCAST RENDERER (S174) ──
+function renderBroadcast(turnData) {
+  const old = document.getElementById('broadcast-overlay');
+  if (old) old.remove();
+
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+
+  const overlay = document.createElement('div');
+  overlay.id = 'broadcast-overlay';
+
+  // Header
+  const headerHTML = `
+    <div class="bc-header">
+      <div class="bc-src">${turnData.broadcastSrc || 'BROADCAST'}</div>
+      ${turnData.broadcastArc ? '<div class="bc-arc-badge">in partnership with ARC</div>' : ''}
+    </div>
+  `;
+
+  // Body paragraphs
+  const parasHTML = (turnData.paras || [])
+    .map((p, i) => `<div class="bc-para" data-idx="${i}">${p.t}</div>`)
+    .join('');
+
+  overlay.innerHTML = `
+    ${headerHTML}
+    <div class="bc-body">
+      ${parasHTML}
+      <div class="bc-continue">continue</div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  // Fade in overlay
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+    });
+  });
+
+  // Stagger-reveal paragraphs
+  const paraEls = overlay.querySelectorAll('.bc-para');
+  paraEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('revealed'), 1200 + i * 400);
+  });
+
+  // Show continue after all paras revealed
+  const continueEl = overlay.querySelector('.bc-continue');
+  const totalRevealTime = 1200 + paraEls.length * 400 + 800;
+  setTimeout(() => continueEl.classList.add('visible'), totalRevealTime);
+
+  // Continue handler — fade out and advance
+  continueEl.addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    setTimeout(() => {
+      overlay.remove();
+      wrap.style.display = '';
+      econBar.style.display = '';
+      goTo(state.turnIndex + 1);
+    }, 1200);
+  });
+}
+
 function renderSlider(turnData) {
   const overlay = document.getElementById('slider-overlay');
   overlay.style.display = 'flex';
@@ -6544,6 +6689,16 @@ function goTo(idx) {
     return;
   }
 
+  // ── BROADCAST — full-screen takeover (S174) ──
+  if (turn.questionMode === 'broadcast') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderBroadcast(turn);
+    updateNavList();
+    return;
+  }
+
   // ── SLIDER — full-screen takeover ──
   if (turn.questionMode === 'slider') {
     titleEl.style.display = 'none';
@@ -6587,6 +6742,8 @@ function goTo(idx) {
   if (dlAudio) { dlAudio.pause(); dlAudio.remove(); }
   const slOv = document.getElementById('slider-overlay');
   if (slOv) { slOv.style.display = 'none'; slOv.innerHTML = ''; slOv.classList.remove('visible'); }
+  const bcOv = document.getElementById('broadcast-overlay');
+  if (bcOv) { bcOv.remove(); }
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';

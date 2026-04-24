@@ -1235,7 +1235,7 @@ body .sec-label .sec-name.ch-li   { background: #0A66C2; color: #fff; padding: 1
 .save-signal:hover { opacity: .7; color: var(--warm); }
 .save-signal.saved { color: var(--cold); opacity: .5; pointer-events: none; }
 /* S174 hotfix: .card-thread-ref neutral grey, block-level for new row. */
-.card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--dim); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
+.card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--text); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
 .card-thread-ref:hover { opacity: 1; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
 
@@ -1266,7 +1266,7 @@ body.phase-1 .card .ttl,
 body.phase-2 .card .ttl,
 body.phase-3 .card .ttl {
   font-family: 'Outfit', sans-serif;
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -1291,7 +1291,7 @@ body.phase-3 .card .ttl {
 
 /* ── THREADS ── */
 .tg { margin-bottom: 22px; }
-.tg-label { font-family: 'Outfit', sans-serif; font-size: 10.5px; font-weight: 300; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dim); opacity: .55; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid rgba(90,122,138,.1); }
+.tg-label { font-family: 'Outfit', sans-serif; font-size: 10.5px; font-weight: 300; letter-spacing: 3.5px; text-transform: uppercase; color: var(--text); opacity: 1; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid rgba(90,122,138,.1); }
 a.ti, div.ti { font-family: 'Outfit', sans-serif; font-size: 13px; line-height: 1.5; color: var(--dim); padding: 4px 0 4px 11px; border-left: 1px solid rgba(90,122,138,.14); margin-bottom: 6px; cursor: pointer; transition: all .3s; display: block; text-decoration: none; }
 a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
 a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
@@ -1924,7 +1924,7 @@ a.ti.research:hover::after { opacity: .5; }
 .song:hover { background: rgba(26,24,20,.6); border-color: var(--faint); }
 .song-info { flex: 1; min-width: 0; }
 /* S174: sans-bold — matches feed .ttl register (Outfit). Retires Crimson Pro serif on song titles. */
-.song-title { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 500; color: var(--text); line-height: 1.4; }
+.song-title { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 400; color: var(--text); line-height: 1.4; }
 /* S174: artist-as-pill — full pill, Spotify green. Phase selectors match phase-override specificity (0,0,2,1); source order wins. */
 body .song-artist,
 body.phase-1 .song-artist,

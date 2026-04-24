@@ -2971,83 +2971,253 @@ body.game-active .ticker-bar { display: flex; }
 /* ══════════════════════════════════════════════════════
    SOUND PROMPT — full-screen overlay
    ══════════════════════════════════════════════════════ */
-/* ═══ BROADCAST OVERLAY (S174) ═══ */
+/* ═══ BROADCAST OVERLAY (S174b — GOV.UK Landing Page) ═══ */
 #broadcast-overlay {
   position: fixed; inset: 0;
   z-index: 9999;
-  background: rgba(0,0,0,0.96);
+  background: #0b0c0d;
   display: flex; flex-direction: column;
   align-items: center;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.4s ease;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 #broadcast-overlay.visible { opacity: 1; }
 
-#broadcast-overlay .bc-header {
-  width: 100%; max-width: 640px;
-  padding: 32px 24px 20px;
-  text-align: center;
-  border-bottom: 1px solid rgba(212,61,61,.35);
-  flex-shrink: 0;
+/* ── GOV header bar ── */
+#broadcast-overlay .bc-gov-bar {
+  width: 100%; max-width: 700px;
+  padding: 28px 24px 0;
+  display: flex; align-items: center; gap: 10px;
 }
-#broadcast-overlay .bc-src {
+#broadcast-overlay .bc-crown { flex-shrink: 0; }
+#broadcast-overlay .bc-crown svg { display: block; }
+#broadcast-overlay .bc-gov-text {
   font-family: 'Outfit', sans-serif;
-  font-weight: 500; font-size: 11px;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: #d43d3d;
+  font-weight: 600; font-size: 22px;
+  letter-spacing: 0.5px;
+  color: #fff;
 }
-#broadcast-overlay .bc-arc-badge {
-  display: inline-block;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 400; font-size: 9px;
-  letter-spacing: 2px; text-transform: uppercase;
+#broadcast-overlay .bc-gov-dot {
   color: #4a8a8a;
-  margin-top: 8px;
-  opacity: 0.7;
 }
 
+/* ── Hero section ── */
+#broadcast-overlay .bc-hero {
+  width: 100%; max-width: 700px;
+  padding: 32px 24px 28px;
+  border-bottom: 1px solid rgba(212,61,61,.4);
+}
+#broadcast-overlay .bc-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 26px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+#broadcast-overlay .bc-hero-meta {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 13px;
+  letter-spacing: 1.5px;
+  color: rgba(200,196,184,.5);
+  text-transform: uppercase;
+}
+#broadcast-overlay .bc-hero-arc {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #4a8a8a;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* ── Speech body ── */
 #broadcast-overlay .bc-body {
-  width: 100%; max-width: 640px;
-  padding: 40px 24px 120px;
-  flex-grow: 1;
+  width: 100%; max-width: 700px;
+  padding: 0 24px 60px;
 }
 #broadcast-overlay .bc-para {
   font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 16px;
-  line-height: 1.75;
-  color: rgba(200,196,184,.88);
-  margin-bottom: 20px;
+  font-weight: 300; font-size: 16.5px;
+  line-height: 1.8;
+  color: rgba(200,196,184,.85);
+  margin: 22px 0;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-#broadcast-overlay .bc-para.revealed {
-  opacity: 1; transform: translateY(0);
+#broadcast-overlay .bc-para.revealed { opacity: 1; transform: translateY(0); }
+
+/* ── Infographic panels ── */
+#broadcast-overlay .bc-panel {
+  width: 100%;
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid rgba(200,196,184,.12);
+  border-left: 3px solid #d43d3d;
+  background: rgba(255,255,255,.02);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-#broadcast-overlay .bc-continue {
+#broadcast-overlay .bc-panel.revealed { opacity: 1; transform: translateY(0); }
+
+#broadcast-overlay .bc-panel-label {
   font-family: 'Outfit', sans-serif;
-  font-weight: 300; font-size: 13px;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(200,196,184,.4);
-  text-align: center;
-  padding: 40px 0 60px;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.8s ease 0.4s;
+  font-weight: 500; font-size: 10px;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: #d43d3d;
+  margin-bottom: 16px;
 }
-#broadcast-overlay .bc-continue.visible {
-  opacity: 1;
+
+/* Stat counter */
+#broadcast-overlay .bc-stat-row {
+  display: flex; align-items: baseline; gap: 14px;
+  margin-bottom: 4px;
 }
-#broadcast-overlay .bc-continue:hover {
+#broadcast-overlay .bc-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 48px;
+  color: #fff;
+  line-height: 1;
+}
+#broadcast-overlay .bc-stat-desc {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 14px;
+  color: rgba(200,196,184,.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Status grid */
+#broadcast-overlay .bc-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+#broadcast-overlay .bc-status-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(200,196,184,.06);
+}
+#broadcast-overlay .bc-status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+#broadcast-overlay .bc-status-dot.ok { background: #4a8a4a; box-shadow: 0 0 6px rgba(74,138,74,.4); }
+#broadcast-overlay .bc-status-dot.down { background: #d43d3d; box-shadow: 0 0 6px rgba(212,61,61,.4); }
+#broadcast-overlay .bc-status-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400; font-size: 13px;
   color: rgba(200,196,184,.7);
+  flex-grow: 1;
+}
+#broadcast-overlay .bc-status-state {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500; font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+#broadcast-overlay .bc-status-state.ok { color: #4a8a4a; }
+#broadcast-overlay .bc-status-state.down { color: #d43d3d; }
+
+/* Timeline bar */
+#broadcast-overlay .bc-timeline {
+  margin-top: 12px;
+}
+#broadcast-overlay .bc-timeline-track {
+  width: 100%; height: 6px;
+  background: rgba(200,196,184,.08);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+#broadcast-overlay .bc-timeline-fill {
+  height: 100%; width: 15%;
+  background: linear-gradient(90deg, #d43d3d, #c4956a);
+  border-radius: 3px;
+}
+#broadcast-overlay .bc-timeline-labels {
+  display: flex; justify-content: space-between;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(200,196,184,.35);
+}
+#broadcast-overlay .bc-timeline-labels .active { color: #d43d3d; font-weight: 500; }
+
+/* Measures list */
+#broadcast-overlay .bc-measures-list {
+  list-style: none; padding: 0; margin: 0;
+}
+#broadcast-overlay .bc-measures-list li {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 13.5px;
+  color: rgba(200,196,184,.65);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(200,196,184,.06);
+  display: flex; align-items: baseline; gap: 10px;
+}
+#broadcast-overlay .bc-measures-list li:last-child { border-bottom: none; }
+#broadcast-overlay .bc-measures-list .bc-m-marker {
+  color: #d43d3d;
+  font-weight: 500; font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* ARC panel — teal accent */
+#broadcast-overlay .bc-panel.arc {
+  border-left-color: #4a8a8a;
+}
+#broadcast-overlay .bc-panel.arc .bc-panel-label {
+  color: #4a8a8a;
+}
+
+/* Continue button — GOV green */
+#broadcast-overlay .bc-continue-wrap {
+  width: 100%; max-width: 700px;
+  padding: 20px 24px 40px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+#broadcast-overlay .bc-continue-wrap.visible { opacity: 1; }
+#broadcast-overlay .bc-continue-btn {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500; font-size: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #00703c;
+  padding: 12px 32px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #002d18;
+  transition: background 0.2s;
+}
+#broadcast-overlay .bc-continue-btn:hover { background: #005a30; }
+
+/* Footer */
+#broadcast-overlay .bc-footer {
+  width: 100%; max-width: 700px;
+  padding: 20px 24px 40px;
+  border-top: 1px solid rgba(200,196,184,.08);
+  text-align: center;
+}
+#broadcast-overlay .bc-footer-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(200,196,184,.2);
 }
 
 @media (max-width: 480px) {
-  #broadcast-overlay .bc-src { font-size: 10px; letter-spacing: 2px; }
+  #broadcast-overlay .bc-hero-title { font-size: 21px; }
   #broadcast-overlay .bc-para { font-size: 15px; }
-  #broadcast-overlay .bc-body { padding: 28px 18px 100px; }
+  #broadcast-overlay .bc-stat-num { font-size: 36px; }
+  #broadcast-overlay .bc-status-grid { grid-template-columns: 1fr; }
+  #broadcast-overlay .bc-gov-text { font-size: 18px; }
 }
 
 #sound-prompt-overlay {
@@ -6073,7 +6243,7 @@ function renderMirrorFullscreen(turnData) {
 }
 
 // ── SLIDER ──
-// ── BROADCAST RENDERER (S174) ──
+// ── BROADCAST RENDERER (S174b — GOV.UK Landing Page) ──
 function renderBroadcast(turnData) {
   const old = document.getElementById('broadcast-overlay');
   if (old) old.remove();
@@ -6086,56 +6256,158 @@ function renderBroadcast(turnData) {
   const overlay = document.createElement('div');
   overlay.id = 'broadcast-overlay';
 
-  // Header
-  const headerHTML = `
-    <div class="bc-header">
-      <div class="bc-src">${turnData.broadcastSrc || 'BROADCAST'}</div>
-      ${turnData.broadcastArc ? '<div class="bc-arc-badge">in partnership with ARC</div>' : ''}
-    </div>
-  `;
+  const paras = turnData.paras || [];
+  const src = turnData.broadcastSrc || 'BROADCAST';
+  const hasArc = turnData.broadcastArc || false;
 
-  // Body paragraphs
-  const parasHTML = (turnData.paras || [])
-    .map((p, i) => `<div class="bc-para" data-idx="${i}">${p.t}</div>`)
-    .join('');
+  // ── Crown SVG ──
+  const crownSVG = `<svg viewBox="0 0 44 38" width="30" height="26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff" rx="0.5"/><path d="M8 26h28v3.5H8z" fill="#fff" rx="0.5"/><path d="M10 31h24v3H10z" fill="#fff" rx="0.5"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>`;
+
+  // ── Build sections ──
+  // If we have exactly 19 paras (the PM speech), insert infographic panels.
+  // Otherwise fall back to plain paragraphs.
+  const hasPanels = paras.length === 19;
+
+  // ── Infographic HTML ──
+  const nationsPanel = `
+    <div class="bc-panel" data-reveal>
+      <div class="bc-panel-label">Situation Overview</div>
+      <div class="bc-stat-row">
+        <div class="bc-stat-num">23</div>
+        <div class="bc-stat-desc">Nations<br>affected</div>
+      </div>
+      <div class="bc-timeline" style="margin-top:18px">
+        <div class="bc-panel-label" style="margin-bottom:10px">Projected Restoration</div>
+        <div class="bc-timeline-track"><div class="bc-timeline-fill"></div></div>
+        <div class="bc-timeline-labels">
+          <span class="active">Day 1</span>
+          <span>Day 3</span>
+          <span>Day 7</span>
+          <span>Day 14</span>
+        </div>
+      </div>
+    </div>`;
+
+  const statusPanel = `
+    <div class="bc-panel" data-reveal>
+      <div class="bc-panel-label">Essential Services Status</div>
+      <div class="bc-status-grid">
+        <div class="bc-status-item">
+          <div class="bc-status-dot ok"></div>
+          <div class="bc-status-name">Power Grid</div>
+          <div class="bc-status-state ok">Stable</div>
+        </div>
+        <div class="bc-status-item">
+          <div class="bc-status-dot ok"></div>
+          <div class="bc-status-name">Water Supply</div>
+          <div class="bc-status-state ok">Unaffected</div>
+        </div>
+        <div class="bc-status-item">
+          <div class="bc-status-dot ok"></div>
+          <div class="bc-status-name">Gas Supply</div>
+          <div class="bc-status-state ok">Unaffected</div>
+        </div>
+        <div class="bc-status-item">
+          <div class="bc-status-dot ok"></div>
+          <div class="bc-status-name">Emergency Services</div>
+          <div class="bc-status-state ok">Operational</div>
+        </div>
+        <div class="bc-status-item">
+          <div class="bc-status-dot down"></div>
+          <div class="bc-status-name">Banking</div>
+          <div class="bc-status-state down">Disrupted</div>
+        </div>
+        <div class="bc-status-item">
+          <div class="bc-status-dot down"></div>
+          <div class="bc-status-name">Card Payments</div>
+          <div class="bc-status-state down">Disrupted</div>
+        </div>
+      </div>
+    </div>`;
+
+  const measuresPanel = `
+    <div class="bc-panel" data-reveal>
+      <div class="bc-panel-label">Key Measures — Next 36 Hours</div>
+      <ul class="bc-measures-list">
+        <li><span class="bc-m-marker">▸</span> Retail, businesses and offices closed</li>
+        <li><span class="bc-m-marker">▸</span> Schools closed for remainder of week</li>
+        <li><span class="bc-m-marker">▸</span> Hospitals: emergencies only — routine care postponed</li>
+        <li><span class="bc-m-marker">▸</span> All public transport suspended</li>
+        <li><span class="bc-m-marker">▸</span> Military and police deployed for public safety</li>
+      </ul>
+    </div>`;
+
+  const arcPanel = `
+    <div class="bc-panel arc" data-reveal>
+      <div class="bc-panel-label">Emergency Communications</div>
+      <div style="font-family:Outfit,sans-serif;font-weight:300;font-size:13.5px;color:rgba(200,196,184,.65);line-height:1.7">
+        The <strong style="color:#4a8a8a;font-weight:500">ARC</strong> app has been automatically installed on your device as part of the national emergency communications framework. ARC provides a direct, verified channel between Government and citizens.
+      </div>
+      <div style="margin-top:14px;font-family:Outfit,sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,138,138,.5)">Installed · Active · Verified</div>
+    </div>`;
+
+  // ── Build paragraph HTML with panels inserted ──
+  let bodyHTML = '';
+  paras.forEach((p, i) => {
+    bodyHTML += `<div class="bc-para" data-reveal>${p.t}</div>`;
+    if (hasPanels) {
+      if (i === 1) bodyHTML += nationsPanel;
+      if (i === 4) bodyHTML += statusPanel;
+      if (i === 8) bodyHTML += measuresPanel;
+      if (i === 10) bodyHTML += arcPanel;
+    }
+  });
 
   overlay.innerHTML = `
-    ${headerHTML}
+    <div class="bc-gov-bar">
+      <div class="bc-crown">${crownSVG}</div>
+      <div class="bc-gov-text">GOV<span class="bc-gov-dot">·</span>UK</div>
+    </div>
+    <div class="bc-hero">
+      <div class="bc-hero-title">PM Address to the Nation</div>
+      <div class="bc-hero-meta">15 February 2027 · 18:00 GMT</div>
+      ${hasArc ? '<div class="bc-hero-arc">In partnership with ARC</div>' : ''}
+    </div>
     <div class="bc-body">
-      ${parasHTML}
-      <div class="bc-continue">continue</div>
+      ${bodyHTML}
+    </div>
+    <div class="bc-continue-wrap">
+      <button class="bc-continue-btn">Continue</button>
+    </div>
+    <div class="bc-footer">
+      <div class="bc-footer-text">© Crown copyright 2027 · All content available under the Open Government Licence v3.0</div>
     </div>
   `;
 
   document.body.appendChild(overlay);
 
-  // Fade in overlay
+  // ── Fade in ──
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       overlay.classList.add('visible');
     });
   });
 
-  // Stagger-reveal paragraphs
-  const paraEls = overlay.querySelectorAll('.bc-para');
-  paraEls.forEach((el, i) => {
-    setTimeout(() => el.classList.add('revealed'), 1200 + i * 400);
+  // ── Stagger-reveal all [data-reveal] elements ──
+  const revealEls = overlay.querySelectorAll('[data-reveal]');
+  revealEls.forEach((el, i) => {
+    setTimeout(() => el.classList.add('revealed'), 1400 + i * 350);
   });
 
-  // Show continue after all paras revealed
-  const continueEl = overlay.querySelector('.bc-continue');
-  const totalRevealTime = 1200 + paraEls.length * 400 + 800;
-  setTimeout(() => continueEl.classList.add('visible'), totalRevealTime);
+  // ── Show continue after reveals ──
+  const continueWrap = overlay.querySelector('.bc-continue-wrap');
+  const totalTime = 1400 + revealEls.length * 350 + 600;
+  setTimeout(() => continueWrap.classList.add('visible'), totalTime);
 
-  // Continue handler — fade out and advance
-  continueEl.addEventListener('click', () => {
+  // ── Continue handler ──
+  overlay.querySelector('.bc-continue-btn').addEventListener('click', () => {
     overlay.classList.remove('visible');
     setTimeout(() => {
       overlay.remove();
       wrap.style.display = '';
       econBar.style.display = '';
       goTo(state.turnIndex + 1);
-    }, 1200);
+    }, 1400);
   });
 }
 

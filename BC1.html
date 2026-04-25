@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM Address to the Nation — GOV.UK</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+  // S177 — Signal parent iframe to close broadcast overlay.
+  const continueBtn = document.querySelector('.continue-btn');
+  if (continueBtn) {
+    continueBtn.addEventListener('click', function() {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'broadcast-continue', id: 'BC1' }, '*');
+      }
+    });
+  }
+</script>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #07080a;
+    --bg-el: #0c0e10;
+    --bg-panel: rgba(255,255,255,.012);
+    --txt: rgba(214,210,200,.94);
+    --txt2: rgba(200,196,184,.6);
+    --txt3: rgba(200,196,184,.32);
+    --txt4: rgba(200,196,184,.18);
+    --red: #c4352a;
+    --red-hi: #e04840;
+    --red-dim: rgba(196,53,42,.32);
+    --red-glow: rgba(196,53,42,.1);
+    --red-bg: rgba(196,53,42,.04);
+    --teal: #4a8a8a;
+    --teal-hi: #5aa0a0;
+    --teal-dim: rgba(74,138,138,.32);
+    --green: #3d7a3d;
+    --amber: #c68a2e;
+    --border: rgba(200,196,184,.08);
+    --border-hi: rgba(200,196,184,.16);
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Outfit', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 140px;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.55) 100%);
+  }
+
+  .section { opacity: 0; transform: translateY(36px); transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.revealed { opacity: 1; transform: translateY(0); }
+
+  /* Speech blocks fade up like everything else — dignity from stillness, not motion.
+     Each <p> inside reveals on its own stagger (see JS) for spoken-cadence feel. */
+  .section.speech p { opacity: 0; transform: translateY(16px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.speech p.revealed { opacity: 1; transform: translateY(0); }
+
+  /* Pull-quotes get a longer fade — words need time to assemble */
+  .section.pull-quote { transition: opacity 1.7s cubic-bezier(.16,1,.3,1), transform 1.7s cubic-bezier(.16,1,.3,1); }
+
+  /* Headline data segments — three beats, staggered after globe chrome reveals */
+  .globe-meta-line .seg { opacity: 0; transition: opacity 0.7s ease; }
+  .globe-meta-line .seg.revealed { opacity: 1; }
+
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .narrow { max-width: 780px; }
+
+  /* ============================================ */
+  /* BROADCAST STRIP                              */
+  /* ============================================ */
+  .bc-strip {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,7,9,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(196,53,42,.14);
+    padding: 9px 40px;
+    display: flex; align-items: center; gap: 22px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--txt3);
+  }
+  .bc-live { display: flex; align-items: center; gap: 7px; color: var(--red-hi); }
+  .bc-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); animation: livePulse 1.6s ease-in-out infinite; }
+  @keyframes livePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+  .bc-sep { width: 1px; height: 12px; background: var(--border-hi); }
+  .bc-id { color: var(--txt2); }
+  .bc-id .dim { color: var(--txt3); }
+  .bc-clock { color: var(--txt2); margin-left: auto; }
+
+  /* ============================================ */
+  /* GOV.UK HEADER                                */
+  /* ============================================ */
+  .gov-bar {
+    padding: 34px 0 0;
+    display: flex; align-items: center; gap: 10px;
+    opacity: 0; animation: fadeIn 1.2s ease 0.4s forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .gov-text { font-weight: 600; font-size: 20px; letter-spacing: 0.5px; color: #fff; }
+  .gov-dot { color: var(--teal); }
+
+  .emergency-bar {
+    margin-top: 16px;
+    padding: 11px 14px;
+    background: var(--red-bg);
+    border-left: 3px solid var(--red);
+    display: flex; align-items: center; gap: 14px;
+    opacity: 0; animation: fadeIn 1s ease 0.7s forwards;
+  }
+  .emergency-bar-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); }
+  .emergency-bar-text { font-weight: 300; font-size: 13px; color: var(--txt); letter-spacing: 0.2px; }
+  .emergency-bar-meta { margin-left: auto; font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 1px; }
+
+  /* ============================================ */
+  /* HERO                                         */
+  /* ============================================ */
+  .hero { padding: 56px 0 44px; border-bottom: 1px solid var(--border-hi); position: relative; }
+  .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--txt3); }
+  .hero-kicker { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--txt3); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .hero-kicker::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--border-hi); }
+  .hero h1 { font-weight: 700; font-size: clamp(34px, 5.8vw, 52px); letter-spacing: -0.8px; color: #fff; line-height: 1.05; margin-bottom: 22px; }
+  .hero-meta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
+  .hero-meta { font-family: var(--mono); font-weight: 400; font-size: 11.5px; letter-spacing: 1.8px; color: var(--txt2); text-transform: uppercase; }
+  .hero-meta .m-sep { color: var(--txt4); margin: 0 2px; }
+  .hero-arc { display: flex; align-items: center; gap: 6px; }
+  .hero-arc-label { font-family: var(--mono); font-weight: 400; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-dim); }
+
+  /* ============================================ */
+  /* SPEECH                                       */
+  /* ============================================ */
+  .speech { padding: 52px 0 44px; position: relative; }
+  .speech p { font-weight: 300; font-size: 18px; line-height: 1.9; color: var(--txt); margin-bottom: 28px; max-width: 720px; }
+  .speech p strong { font-weight: 500; color: rgba(232,228,218,.95); }
+  .speech-opening { font-size: 24px !important; font-weight: 400 !important; color: rgba(214,210,200,.98) !important; padding-bottom: 20px; }
+  /* Hansard-style speaker attribution at the top of the address */
+  .speech-attribution {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--txt3);
+    margin-bottom: 8px;
+    display: block;
+  }
+  /* Quote marks on each paragraph — signals "PM speaking" throughout */
+  .speech p::before,
+  .closing-text::before {
+    content: '\201C';
+    color: rgba(200,196,184,.42);
+    margin-right: 4px;
+    font-weight: 400;
+  }
+  .speech p::after,
+  .closing-text::after {
+    content: '\201D';
+    color: rgba(200,196,184,.42);
+    margin-left: 2px;
+    font-weight: 400;
+  }
+
+  .pull-quote { padding: 36px 0 28px; text-align: left; max-width: 720px; }
+  .pull-quote blockquote {
+    font-weight: 200; font-size: clamp(26px, 4.5vw, 40px); line-height: 1.4;
+    color: rgba(214,210,200,.72); letter-spacing: -0.3px;
+    max-width: 680px; margin: 0 auto;
+    position: relative;
+    padding: 0 0.4em;
+  }
+  .pull-quote blockquote::before {
+    content: '\201C';
+    position: absolute;
+    left: -0.15em; top: -0.05em;
+    color: rgba(214,210,200,.45);
+    font-weight: 300;
+  }
+  .pull-quote blockquote::after {
+    content: '\201D';
+    color: rgba(214,210,200,.45);
+    font-weight: 300;
+    margin-left: 0.04em;
+  }
+
+  /* ============================================ */
+  /* GLOBE — FULL WIDTH HERO                       */
+  /* ============================================ */
+  .globe-section {
+    width: 100%;
+    padding: 48px 0 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .globe-chrome {
+    max-width: 1200px;
+    margin: 0 auto 18px;
+    padding: 0 40px;
+  }
+  .globe-chrome-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .globe-label { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); margin-bottom: 6px; }
+  .globe-sublabel { font-weight: 300; font-size: 14px; letter-spacing: 0.3px; color: var(--txt2); }
+  .globe-meta-block { text-align: right; }
+  .globe-meta-line { font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; color: var(--txt3); line-height: 1.8; }
+  .globe-meta-line strong { color: var(--txt2); font-weight: 400; }
+
+  .globe-container {
+    width: min(90vw, 90vh);
+    max-width: 1200px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    cursor: grab;
+    user-select: none;
+  }
+  .globe-container.dragging { cursor: grabbing; }
+  .globe-container.hovering-dot { cursor: pointer; }
+  .globe-container canvas { width: 100% !important; height: 100% !important; display: block; }
+
+  .globe-ticks { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+  .globe-ticks .tk { position: absolute; font-family: var(--mono); font-size: 9px; letter-spacing: 2px; color: var(--txt4); }
+  .globe-ticks .tk-n { top: 6px; left: 50%; transform: translateX(-50%); }
+  .globe-ticks .tk-s { bottom: 6px; left: 50%; transform: translateX(-50%); }
+  .globe-ticks .tk-e { right: 6px; top: 50%; transform: translateY(-50%); }
+  .globe-ticks .tk-w { left: 6px; top: 50%; transform: translateY(-50%); }
+  .globe-ticks .corner { position: absolute; width: 14px; height: 14px; border: 1px solid var(--border); opacity: 0.5; }
+  .globe-ticks .corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+  .globe-ticks .corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+  .globe-ticks .corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+  .globe-ticks .corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+  .globe-stat { position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none; z-index: 3; }
+  .globe-stat-num { font-weight: 700; font-size: 100px; color: #fff; line-height: 1; text-shadow: 0 0 80px rgba(196,53,42,.35), 0 0 40px rgba(196,53,42,.25); letter-spacing: -3px; }
+  .globe-stat-label { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--txt2); margin-top: 8px; }
+  .globe-stat-sub { font-family: var(--mono); font-weight: 300; font-size: 10px; letter-spacing: 2px; color: var(--txt3); margin-top: 4px; }
+
+  .globe-nation-label {
+    position: absolute; pointer-events: none;
+    font-family: var(--mono); font-weight: 400;
+    font-size: 10.5px; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(220,216,206,.88);
+    white-space: nowrap;
+    transition: opacity 0.75s ease;
+    text-shadow: 0 0 4px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,.95), 0 1px 2px rgba(0,0,0,1);
+    z-index: 3;
+  }
+  .globe-nation-label.major {
+    font-weight: 500; font-size: 11px;
+    color: rgba(232,228,218,.95);
+    letter-spacing: 2.4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1), 0 0 14px rgba(0,0,0,.98), 0 1px 2px rgba(0,0,0,1);
+  }
+  .globe-nation-label.lead {
+    font-weight: 500; font-size: 11.5px;
+    color: rgba(245,242,232,.96);
+    letter-spacing: 2.5px;
+    text-shadow: 0 0 5px rgba(0,0,0,1), 0 0 16px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1);
+  }
+  .globe-nation-label.key {
+    font-weight: 600; font-size: 12px;
+    color: rgba(255,255,255,.98);
+    letter-spacing: 2.6px;
+    text-shadow: 0 0 6px rgba(0,0,0,1), 0 0 18px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1);
+  }
+  .globe-nation-label.hover-lock {
+    color: rgba(255,255,255,1);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 2.8px;
+    text-shadow: 0 0 6px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 1px 2px rgba(0,0,0,1);
+    transition: none;
+  }
+  .globe-nation-label .label-line {
+    display: inline-block;
+    width: 16px; height: 1px;
+    background: rgba(220,216,206,.45);
+    margin-right: 6px; vertical-align: middle;
+  }
+
+  .globe-bg-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 92%; height: 92%; background: radial-gradient(circle, rgba(74,138,138,.05) 0%, rgba(74,138,138,.015) 35%, transparent 70%); pointer-events: none; z-index: 0; }
+
+  .globe-legend {
+    max-width: 1200px; margin: 20px auto 0;
+    padding: 0 40px;
+  }
+  .globe-legend-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--txt3);
+  }
+  .globe-legend .lg-item { display: flex; align-items: center; gap: 8px; }
+  .globe-legend .lg-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .globe-legend .lg-dot.red { background: var(--red); box-shadow: 0 0 6px var(--red); }
+  .globe-legend .lg-dot.white { background: #fff; box-shadow: 0 0 6px #fff; }
+
+  /* ============================================ */
+  /* NATIONS TABLE — clinical appendix             */
+  /* ============================================ */
+  .nations-panel {
+    max-width: 1060px; margin: 0 auto;
+    padding: 0 40px;
+  }
+  .nations-inner {
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+    background: var(--bg-panel);
+  }
+  .nations-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .nations-title { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); }
+  .nations-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); text-transform: uppercase; }
+  .nations-list {
+    column-count: 3;
+    column-gap: 36px;
+    list-style: none;
+  }
+  .nations-list li {
+    padding: 7px 0;
+    font-weight: 300; font-size: 14px;
+    color: var(--txt);
+    display: flex; align-items: baseline; gap: 10px;
+    break-inside: avoid;
+    border-bottom: 1px dotted var(--border);
+  }
+  .nations-list li:last-child { border-bottom: none; }
+  .n-code { font-family: var(--mono); font-size: 9.5px; color: var(--txt3); letter-spacing: 1px; min-width: 28px; }
+  .n-name { flex-grow: 1; }
+  .n-mark { font-family: var(--mono); font-size: 9.5px; color: var(--red-hi); letter-spacing: 1.5px; }
+  .n-mark .lead-mark { color: rgba(232,228,218,.85); margin-left: 8px; }
+
+  /* ============================================ */
+  /* CLINICAL PANELS — government appendix look    */
+  /* ============================================ */
+  .panel {
+    margin: 48px 0;
+    padding: 32px 36px;
+    border: 1px solid var(--border);
+    background: var(--bg-panel);
+    position: relative;
+  }
+  .panel-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  .panel-label { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); }
+  .panel-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); text-align: right; line-height: 1.7; text-transform: uppercase; }
+  .panel-footer {
+    margin-top: 24px; padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); text-transform: uppercase;
+  }
+
+  /* Data table — service status / impact summary */
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table th, .data-table td {
+    text-align: left;
+    padding: 11px 14px 11px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .data-table th {
+    font-family: var(--mono); font-weight: 500;
+    font-size: 9.5px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--txt3);
+    padding-top: 0;
+  }
+  .data-table td { font-weight: 300; font-size: 14.5px; color: var(--txt); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table td.num { font-family: var(--mono); font-size: 11.5px; color: var(--txt3); letter-spacing: 1px; width: 40px; }
+  /* Status dots removed S175 — civil-service register prefers prose */
+  .dt-dot { display: none; }
+  .dt-status { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt2); }
+  .dt-status.ok { color: var(--txt2); font-weight: 400; }
+  .dt-status.down { color: var(--txt); font-weight: 500; }
+  .dt-status.degraded { color: var(--txt2); font-weight: 400; font-style: italic; }
+  .dt-note { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 0.8px; }
+
+  /* Measures list — civil-service numbering, no red markers */
+  .measures-list { list-style: none; }
+  .measures-list li {
+    font-weight: 300; font-size: 15.5px; color: var(--txt);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 22px;
+  }
+  .measures-list li:last-child { border-bottom: none; }
+  .m-marker { font-family: var(--mono); color: var(--txt3); font-weight: 400; font-size: 11px; letter-spacing: 0.5px; flex-shrink: 0; min-width: 28px; }
+
+  /* ============================================ */
+  /* ARC PANEL                                    */
+  /* ============================================ */
+  .panel.arc {
+    border-left: 3px solid var(--teal);
+    background: linear-gradient(135deg, rgba(74,138,138,.025) 0%, var(--bg-panel) 40%, transparent 100%);
+  }
+  .panel.arc .panel-label { color: var(--teal); }
+  .arc-logo-wrap { display: flex; align-items: center; gap: 4px; margin-bottom: 18px; }
+  .arc-body { font-weight: 300; font-size: 15px; line-height: 1.8; color: var(--txt); }
+  .arc-status-row { margin-top: 22px; display: flex; align-items: center; gap: 14px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .arc-status-item { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); display: flex; align-items: center; gap: 7px; }
+  .arc-status-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 6px var(--teal); }
+  .arc-status-sep { width: 1px; height: 10px; background: var(--border-hi); }
+
+  /* ============================================ */
+  /* ROADMAP PANEL                                */
+  /* ============================================ */
+  .roadmap-note { font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; color: var(--txt3); text-transform: uppercase; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .roadmap-table td { padding: 13px 14px 13px 0; }
+  .roadmap-table td.rm-phase { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 1px; width: 42px; }
+  .roadmap-table td.rm-date { font-family: var(--mono); font-size: 11.5px; color: var(--txt2); letter-spacing: 1px; width: 90px; }
+  .roadmap-table td.rm-status { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.4px; text-align: right; width: 110px; color: var(--txt2); }
+  .roadmap-table td.rm-status.active { color: var(--txt); font-weight: 500; }
+  .roadmap-table td.rm-status.planned { color: var(--txt3); font-style: italic; }
+
+  /* ============================================ */
+  /* TIMELINE                                     */
+  /* ============================================ */
+  .timeline-list { list-style: none; }
+  .timeline-list li {
+    display: grid;
+    grid-template-columns: 64px 64px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .timeline-list li:last-child { border-bottom: none; }
+  .tl-time { font-family: var(--mono); font-weight: 500; font-size: 13px; color: var(--txt); letter-spacing: 0.5px; }
+  .tl-date { font-family: var(--mono); font-weight: 300; font-size: 11px; color: var(--txt3); letter-spacing: 1px; text-transform: uppercase; }
+  .tl-event { font-weight: 300; font-size: 14.5px; color: var(--txt); line-height: 1.6; }
+  .timeline-list li.tl-current { background: rgba(196,53,42,.04); margin: 0 -18px; padding: 14px 18px; border-bottom: 1px solid var(--border); border-left: 2px solid var(--red); }
+  .timeline-list li.tl-current .tl-time { color: var(--red-hi); }
+  .timeline-list li.tl-future .tl-time,
+  .timeline-list li.tl-future .tl-date,
+  .timeline-list li.tl-future .tl-event { color: var(--txt3); font-style: italic; }
+  .timeline-list li.tl-future .tl-event { font-style: italic; }
+
+  /* ============================================ */
+  /* ASKS                                         */
+  /* ============================================ */
+  /* Asks — flat civil-service grid, no hover, no red */
+  .asks-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin: 36px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .ask-card {
+    padding: 28px 26px 28px;
+    border-right: 1px solid var(--border);
+    background: transparent;
+  }
+  .ask-card:last-child { border-right: none; }
+  .ask-num { font-family: var(--mono); font-weight: 400; font-size: 11px; color: var(--txt3); margin-bottom: 8px; letter-spacing: 0.5px; }
+  .ask-header { font-weight: 500; font-size: 16px; color: rgba(232,228,218,.95); margin-bottom: 12px; letter-spacing: -0.1px; }
+  .ask-text { font-weight: 300; font-size: 14px; line-height: 1.75; color: var(--txt2); }
+
+  /* ============================================ */
+  /* CLOSING                                      */
+  /* ============================================ */
+  .closing-text { padding: 56px 0; text-align: center; font-weight: 400; font-size: 22px; line-height: 1.7; color: rgba(214,210,200,.9); }
+  .section-divider { width: 48px; height: 1.5px; background: var(--red-dim); margin: 56px auto; }
+
+  .continue-wrap { text-align: center; padding: 48px 0 28px; opacity: 0; transition: opacity 0.8s ease; }
+  .continue-wrap.visible { opacity: 1; }
+  .continue-btn {
+    font-family: 'Outfit'; font-weight: 500; font-size: 14px; letter-spacing: 1.5px;
+    color: #fff; background: #00703c; padding: 14px 44px; border: none; cursor: pointer;
+    box-shadow: 0 2px 0 #002d18; transition: background 0.2s, transform 0.1s;
+  }
+  .continue-btn:hover { background: #005a30; }
+  .continue-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #002d18; }
+  .footer { padding: 28px 0 60px; border-top: 1px solid var(--border); text-align: center; }
+  .footer-text { font-family: var(--mono); font-weight: 400; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt3); }
+  .footer-ids { margin-top: 8px; font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; color: var(--txt4); }
+
+  @media (max-width: 860px) {
+    .nations-list { column-count: 2; }
+    .roadmap-table td.rm-date { width: 74px; font-size: 10.5px; }
+  }
+  @media (max-width: 640px) {
+    .container { padding: 0 20px; }
+    .globe-chrome, .globe-legend, .nations-panel { padding: 0 20px; }
+    .bc-strip { padding: 8px 16px; gap: 12px; font-size: 9.5px; }
+    .bc-clock { display: none; }
+    .asks-grid { grid-template-columns: 1fr; }
+    .globe-stat-num { font-size: 62px; }
+    .panel { padding: 22px 20px; }
+    .nations-list { column-count: 1; }
+    .globe-chrome-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .globe-meta-block { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BROADCAST STRIP -->
+<div class="bc-strip">
+  <div class="bc-live"><span class="bc-live-dot"></span>LIVE</div>
+  <div class="bc-sep"></div>
+  <div class="bc-id">PM STATEMENT <span class="dim">/</span> COBR-27-001 <span class="dim">/</span> PUBLIC RELEASE</div>
+  <div class="bc-clock" id="bcClock">15 FEB 2027 · 18:00:00 GMT</div>
+</div>
+
+<div class="container">
+  <div class="gov-bar">
+    <svg viewBox="0 0 44 38" width="28" height="24" fill="none"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>
+    <span class="gov-text">GOV<span class="gov-dot">·</span>UK</span>
+  </div>
+
+  <div class="emergency-bar">
+    <span class="emergency-bar-label">● Urgent Statement</span>
+    <span class="emergency-bar-text">Prime Minister's Address to the Nation · Issued under the Civil Contingencies Act 2004</span>
+    <span class="emergency-bar-meta">REF UK-EMRG-2027-011</span>
+  </div>
+
+  <div class="section hero">
+    <div class="hero-kicker">Prime Minister's Office · 10 Downing Street</div>
+    <h1>PM Address<br>to the Nation</h1>
+    <div class="hero-meta-row">
+      <div class="hero-meta">15 Feb 2027<span class="m-sep"> · </span>18:00 GMT<span class="m-sep"> · </span>Live Broadcast</div>
+      <div class="hero-arc">
+        <svg viewBox="0 0 46 20" width="38" height="16" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="14" r="2.8" fill="#4a8a8a"/>
+          <text x="13" y="16.5" font-family="Outfit,sans-serif" font-weight="600" font-size="13" fill="#fff" letter-spacing="2.5">ARC</text>
+          <path d="M11 5 Q26 -3 43 5" stroke="#4a8a8a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-attribution">The Prime Minister</span>
+    <p class="speech-opening">Good evening.</p>
+    <p>Yesterday, on Valentine's Day, a little before midnight, a coordinated cyber attack struck the financial and digital infrastructure of the United Kingdom and twenty-two other nations. This has caused significant disruption to civilian systems in our nation and around the globe.</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- GLOBE — FULL WIDTH HERO                      -->
+<!-- ============================================ -->
+<div class="section globe-section">
+  <div class="globe-chrome">
+    <div class="globe-chrome-head">
+      <div>
+        <div class="globe-label">Affected Nations · Real-time Status</div>
+        <div class="globe-sublabel">Coordinated response active across all territories</div>
+      </div>
+      <div class="globe-meta-block">
+        <div class="globe-meta-line"><span class="seg"><strong>23 nations affected</strong></span> &nbsp; <span class="seg">4.1bn people</span> &nbsp; <span class="seg">82% global GDP</span></div>
+        <div class="globe-meta-line">Status as at 17:58 GMT, 15 February 2027</div>
+        <div class="globe-meta-line">Source: NCSC, INTERPOL, Five Eyes liaison</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="globe-container" id="globeContainer">
+    <div class="globe-bg-glow"></div>
+    <div class="globe-ticks">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+      <div class="tk tk-n">N</div><div class="tk tk-s">S</div>
+      <div class="tk tk-e">E</div><div class="tk tk-w">W</div>
+    </div>
+    <!-- globe-stat overlay removed S175 — count moved to chrome bar -->
+  </div>
+
+  <div class="globe-legend">
+    <div class="globe-legend-row">
+      <div class="lg-item"><span class="lg-dot white"></span>Lead coordinating nation</div>
+      <div class="lg-item"><span class="lg-dot red"></span>Confirmed systems impact</div>
+      <div>Projection · WGS84 · 1:112M</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- NATIONS LIST — clinical appendix             -->
+<!-- ============================================ -->
+<div class="section nations-panel">
+  <div class="nations-inner">
+    <div class="nations-head">
+      <div class="nations-title">Affected Nations · Confirmed</div>
+      <div class="nations-meta">Alphabetical · 23 of 23 · Last verified 17:58 GMT</div>
+    </div>
+    <ul class="nations-list">
+      <li><span class="n-code">01</span><span class="n-name">Argentina</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">02</span><span class="n-name">Australia</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">03</span><span class="n-name">Brazil</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">04</span><span class="n-name">Canada</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+      <li><span class="n-code">05</span><span class="n-name">China</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">06</span><span class="n-name">France</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+      <li><span class="n-code">07</span><span class="n-name">Germany</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+      <li><span class="n-code">08</span><span class="n-name">India</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">09</span><span class="n-name">Indonesia</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">10</span><span class="n-name">Italy</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">11</span><span class="n-name">Japan</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+      <li><span class="n-code">12</span><span class="n-name">Mexico</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">13</span><span class="n-name">Russia</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">14</span><span class="n-name">Saudi Arabia</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">15</span><span class="n-name">Singapore</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">16</span><span class="n-name">South Africa</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">17</span><span class="n-name">South Korea</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">18</span><span class="n-name">Spain</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">19</span><span class="n-name">Switzerland</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">20</span><span class="n-name">Türkiye</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">21</span><span class="n-name">United Arab Emirates</span><span class="n-mark">●</span></li>
+      <li><span class="n-code">22</span><span class="n-name">United Kingdom</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+      <li><span class="n-code">23</span><span class="n-name">United States</span><span class="n-mark">●<span class="lead-mark">○</span></span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section pull-quote"><blockquote>The infrastructure is damaged,<br>not destroyed.</blockquote></div>
+  <div class="section speech">
+    <p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o'clock this morning and have been in continuous session since.</p>
+    <p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p>
+    <p>Let me be clear about what is not affected. Our electricity grid is operational. Our water supply is operational. Our gas network is operational. Our hospitals have power. Our emergency services are coordinating. No lives are in danger from the attack itself.</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SERVICE STATUS TABLE                         -->
+<!-- ============================================ -->
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <div class="panel-label">Service Status · National Overview</div>
+        </div>
+        <div class="panel-meta">
+          <div>Status as at 17:58 GMT, 15 Feb 2027</div>
+          <div>Issued by Cabinet Office</div>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Provider</th>
+            <th style="text-align:right;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Electricity grid</td><td class="dt-note">National Grid ESO</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Water supply</td><td class="dt-note">UK Water Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Gas network</td><td class="dt-note">National Gas Transmission</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Mobile voice and SMS</td><td class="dt-note">All network operators</td><td style="text-align:right;"><span class="dt-status degraded">Emergency use only</span></td></tr>
+          <tr><td>Internet access</td><td class="dt-note">Internet service providers</td><td style="text-align:right;"><span class="dt-status degraded">Restricted to essential services</span></td></tr>
+          <tr><td>Banking systems</td><td class="dt-note">All major UK banks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>ATM networks</td><td class="dt-note">LINK, Visa, Mastercard</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Card payments</td><td class="dt-note">In-store and online</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+        </tbody>
+      </table>
+      <div class="panel-footer">
+        <span>Next published update at 18:05 GMT</span>
+        <span>Table 1 of 3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>Currently we are unable to access our bank accounts. Shops and businesses are unable to process our card payments. For this reason, for the next 24 hours retail, businesses and offices will be closed. A detailed plan for the opening of essential retail, including supermarkets, will be issued shortly.</p>
+  </div>
+  <div class="section pull-quote"><blockquote>Your savings are safe.<br>Your deposits are protected.<br>Nothing has been lost —<br>only temporarily made inaccessible.</blockquote></div>
+  <div class="section speech">
+    <p>Schools were closed today and will remain closed for the remainder of the week. Hospitals remain open for emergencies only; all routine and non-urgent care has been postponed, also for the remainder of the week. All public transport services are suspended for the same period of time.</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- KEY MEASURES                                 -->
+<!-- ============================================ -->
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <div class="panel-label">Key Measures · Next 24 Hours</div>
+        </div>
+        <div class="panel-meta">
+          <div>In force from 18:00 GMT, 15 February 2027</div>
+          <div>To be reviewed 09:00 GMT, 16 February 2027</div>
+        </div>
+      </div>
+      <ul class="measures-list">
+        <li><span class="m-marker">1.</span>Retail, businesses and offices to remain closed.</li>
+        <li><span class="m-marker">2.</span>Schools to remain closed for the remainder of the week.</li>
+        <li><span class="m-marker">3.</span>Hospitals to admit emergency cases only; routine care postponed.</li>
+        <li><span class="m-marker">4.</span>All public transport services suspended.</li>
+        <li><span class="m-marker">5.</span>Military and police presence increased in support of public safety.</li>
+      </ul>
+      <div class="panel-footer">
+        <span>Issued · Prime Minister's Office</span>
+        <span>Table 2 of 3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>Our emergency services are operational. Our military and police forces will be visible, on the streets, to ensure the safety of every one of us.</p>
+    <p>The emergency communications platform on your phones — many of you will have already received alerts through it — is functioning as designed. It will continue to be your most reliable source of verified information in the coming days.</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ARC PANEL                                    -->
+<!-- ============================================ -->
+<div class="container">
+  <div class="section">
+    <div class="panel arc">
+      <div class="panel-head">
+        <div class="arc-logo-wrap">
+          <svg viewBox="0 0 58 24" width="58" height="24" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="17" r="3.5" fill="#4a8a8a"/><text x="17" y="20" font-family="Outfit,sans-serif" font-weight="600" font-size="16" fill="#fff" letter-spacing="3">ARC</text><path d="M15 6 Q34 -4 55 6" stroke="#4a8a8a" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.6"/></svg>
+        </div>
+        <div class="panel-meta">
+          <div>Deployed · 12:00 GMT 15 Feb</div>
+          <div>Devices · 58.4m UK</div>
+        </div>
+      </div>
+      <div class="panel-label" style="margin-bottom:18px;">Emergency Communications Platform</div>
+      <p class="arc-body">ARC has been automatically installed on your device as part of the national emergency communications framework. It provides a direct, verified channel between Government and citizens.</p>
+      <div class="arc-status-row">
+        <div class="arc-status-item"><span class="dot"></span>Installed</div>
+        <div class="arc-status-sep"></div>
+        <div class="arc-status-item"><span class="dot"></span>Active</div>
+        <div class="arc-status-sep"></div>
+        <div class="arc-status-item"><span class="dot"></span>Verified</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- INCIDENT TIMELINE — last 24 hours            -->
+<!-- ============================================ -->
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <div class="panel-label">Incident Timeline · Last 24 Hours</div>
+        </div>
+        <div class="panel-meta">
+          <div>Compiled by Cabinet Office</div>
+          <div>All times GMT</div>
+        </div>
+      </div>
+      <ul class="timeline-list">
+        <li>
+          <span class="tl-time">23:50</span>
+          <span class="tl-date">14 Feb</span>
+          <span class="tl-event">Coordinated cyber attack begins. Financial and digital infrastructure across 23 nations affected within minutes.</span>
+        </li>
+        <li>
+          <span class="tl-time">00:34</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">National Cyber Security Centre activates Tier 1 response. NCSC liaison with Five Eyes partners established.</span>
+        </li>
+        <li>
+          <span class="tl-time">02:15</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">COBRA convened. Civil Contingencies Act 2004 powers invoked.</span>
+        </li>
+        <li>
+          <span class="tl-time">04:50</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">ARC emergency communications platform deployed to all UK mobile networks under emergency provisioning powers.</span>
+        </li>
+        <li>
+          <span class="tl-time">06:20</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">Emergency Alert issued to all UK mobile devices via cell broadcast. Reference UK-EMRG-2027-001.</span>
+        </li>
+        <li>
+          <span class="tl-time">09:00</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">Schools, public transport and banking confirmed offline. Major retailers begin precautionary closures.</span>
+        </li>
+        <li>
+          <span class="tl-time">12:00</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">ARC platform activated on UK mobile devices (58.4m).</span>
+        </li>
+        <li>
+          <span class="tl-time">14:30</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">International coordination call between affected nations. Joint statement under preparation.</span>
+        </li>
+        <li class="tl-current">
+          <span class="tl-time">18:00</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">Prime Minister's Address to the Nation.</span>
+        </li>
+        <li class="tl-future">
+          <span class="tl-time">22:00</span>
+          <span class="tl-date">15 Feb</span>
+          <span class="tl-event">Overnight measures take effect. Military and police support to public safety begins.</span>
+        </li>
+        <li class="tl-future">
+          <span class="tl-time">09:00</span>
+          <span class="tl-date">16 Feb</span>
+          <span class="tl-event">Prime Minister's morning operational update. Review of overnight measures.</span>
+        </li>
+      </ul>
+      <div class="panel-footer">
+        <span>Compiled from departmental returns</span>
+        <span>Table 3 of 3</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ROADMAP TABLE BLOCK BELOW REPLACED — kept anchor for table close -->
+<div style="display:none;">
+      <table class="data-table roadmap-table">
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Quarter</th>
+            <th>Component</th>
+            <th style="text-align:right;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rm-phase">01</td>
+            <td class="rm-date">Q1 2027</td>
+            <td>Emergency Communications Framework</td>
+            <td class="rm-status active">In delivery</td>
+          </tr>
+          <tr>
+            <td class="rm-phase">02</td>
+            <td class="rm-date">Q2 2027</td>
+            <td>Identity Verification Services</td>
+            <td class="rm-status planned">Scheduled</td>
+          </tr>
+          <tr>
+            <td class="rm-phase">03</td>
+            <td class="rm-date">Q3 2027</td>
+            <td>Unified Benefits Channel</td>
+            <td class="rm-status planned">Scheduled</td>
+          </tr>
+          <tr>
+            <td class="rm-phase">04</td>
+            <td class="rm-date">Q4 2027</td>
+            <td>Consolidated Citizen Services Portal</td>
+            <td class="rm-status planned">Scheduled</td>
+          </tr>
+          <tr>
+            <td class="rm-phase">05</td>
+            <td class="rm-date">Q2 2028</td>
+            <td>National Agentic Assistance Pilot</td>
+            <td class="rm-status planned">Subject to review</td>
+          </tr>
+          <tr>
+            <td class="rm-phase">06</td>
+            <td class="rm-date">Q4 2028</td>
+            <td>Full Digital Continuity Framework</td>
+            <td class="rm-status planned">Indicative</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="roadmap-note">Detailed specifications available on request via the GOV.UK publications library. Reference CCP-DR-2024-07.</div>
+      <div class="panel-footer">
+        <span>Department · Cabinet Office</span>
+        <span>Table 3 of 3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p>
+    <p>I have spoken this afternoon with my counterparts across the affected nations. We are united — not only in our response, but in our resolve. This was an attack on all of us. It will be met by all of us.</p>
+    <p>In the meantime, I ask just three things of you.</p>
+  </div>
+</div>
+
+<!-- THREE ASKS — canonical prose (the cards grid was S175 drift) -->
+<div class="container narrow">
+  <div class="section speech">
+    <p><strong>First:</strong> for the next 24 hours, stay local, stay safe. Do not drive, unless it is a matter of life or death. This is not a lockdown, but a request. Look after each other. Check on your neighbours. Share what you have.</p>
+    <p><strong>Second:</strong> do not fear. We will restore these systems. We will provide answers. And we will ensure that every family in this country is supported through this period. This period of days, not weeks.</p>
+    <p><strong>Third:</strong> please continue to follow the guidance issued through ARC, the emergency alert system and on all BBC television and radio channels.</p>
+  </div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>I will address the nation again at nine o'clock tomorrow morning with a full operational update. There will be detailed updates from my colleagues in the Cabinet and experts from the National Cyber Security Centre during this period.</p>
+    <p>There are dark days, challenging days, ahead. We face them with our unique British spirit. We face them together.</p>
+  </div>
+  <div class="section"><div class="section-divider"></div></div>
+  <div class="section"><div class="closing-text">Good night. And be well.</div></div>
+</div>
+
+<div class="container">
+  <div class="continue-wrap" id="continueWrap"><button class="continue-btn">Continue</button></div>
+  <div class="footer">
+    <div class="footer-text">© Crown copyright 2027 · Open Government Licence v3.0</div>
+    <div class="footer-ids">DOC · PMO-ADDR-20270215-A &nbsp;·&nbsp; PUBLISHED 18:00 GMT &nbsp;·&nbsp; TRANSCRIPT AVAILABLE</div>
+  </div>
+</div>
+
+<script>
+/* BROADCAST CLOCK */
+(function() {
+  const el = document.getElementById('bcClock');
+  if (!el) return;
+  let sec = 0;
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    el.textContent = '15 FEB 2027 · 18:' + pad(m) + ':' + pad(s) + ' GMT';
+    sec++;
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* GLOBE — day/night earth, clouds, animated arcs */
+(function() {
+  const container = document.getElementById('globeContainer');
+  if (!container || typeof THREE === 'undefined') return;
+  const w = container.clientWidth || 900;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
+  camera.position.z = 3.7;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(w, w);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setClearColor(0x000000, 0);
+  container.insertBefore(renderer.domElement, container.firstChild);
+
+  const earthGroup = new THREE.Group();
+  earthGroup.rotation.z = 0.41;
+  scene.add(earthGroup);
+
+  const globeGroup = new THREE.Group();
+  earthGroup.add(globeGroup);
+
+  const cloudGroup = new THREE.Group();
+  earthGroup.add(cloudGroup);
+
+  // Starfield
+  (function addStars() {
+    const starGeo = new THREE.BufferGeometry();
+    const count = 480;
+    const pos = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      const r = 9 + Math.random() * 8;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      pos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
+      pos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+      pos[i*3+2] = r * Math.cos(phi);
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const starMat = new THREE.PointsMaterial({
+      color: 0x8a8a9a, size: 0.018, sizeAttenuation: true,
+      transparent: true, opacity: 0.55, depthWrite: false
+    });
+    scene.add(new THREE.Points(starGeo, starMat));
+  })();
+
+  const texLoader = new THREE.TextureLoader();
+  function loadTex(url) {
+    return new Promise(resolve => {
+      texLoader.load(url, t => resolve(t), undefined, () => resolve(null));
+    });
+  }
+  const dayUrls = [
+    'https://unpkg.com/three-globe@2.31.1/example/img/earth-blue-marble.jpg',
+    'https://unpkg.com/three-globe@2.31.1/example/img/earth-dark.jpg'
+  ];
+  const nightUrls = [ 'https://unpkg.com/three-globe@2.31.1/example/img/earth-night.jpg' ];
+  const cloudUrls = [ 'https://unpkg.com/three-globe@2.31.1/example/img/earth-clouds.png' ];
+
+  async function firstTex(urls) {
+    for (const u of urls) { const t = await loadTex(u); if (t) return t; }
+    return null;
+  }
+
+  Promise.all([firstTex(dayUrls), firstTex(nightUrls), firstTex(cloudUrls)])
+    .then(([dayTex, nightTex, cloudTex]) => buildScene(dayTex, nightTex, cloudTex));
+
+  function buildScene(dayTex, nightTex, cloudTex) {
+    // Custom shader: soft terminator with atmospheric scatter band
+    // Replaces Phong's hard cosine falloff with a smoothstep-blended day/night
+    const sunDirNorm = new THREE.Vector3(5, 2.5, 4).normalize();
+    const earthMat = new THREE.ShaderMaterial({
+      uniforms: {
+        dayMap:    { value: dayTex },
+        nightMap:  { value: nightTex },
+        sunDir:    { value: sunDirNorm },
+        hasDay:    { value: dayTex ? 1.0 : 0.0 },
+        hasNight:  { value: nightTex ? 1.0 : 0.0 }
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        varying vec3 vWorldNormal;
+        varying vec3 vViewDir;
+        void main() {
+          vUv = uv;
+          vec4 worldPos = modelMatrix * vec4(position, 1.0);
+          vWorldNormal = normalize(mat3(modelMatrix) * normal);
+          vViewDir = normalize(cameraPosition - worldPos.xyz);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D dayMap;
+        uniform sampler2D nightMap;
+        uniform vec3 sunDir;
+        uniform float hasDay;
+        uniform float hasNight;
+        varying vec2 vUv;
+        varying vec3 vWorldNormal;
+        varying vec3 vViewDir;
+        void main() {
+          vec3 N = normalize(vWorldNormal);
+          float sunDot = dot(N, sunDir);
+          // Wide smoothstep across the terminator (-0.18 to +0.28)
+          float dayMix = smoothstep(-0.18, 0.28, sunDot);
+          vec3 day   = (hasDay > 0.5) ? texture2D(dayMap, vUv).rgb * 0.78 : vec3(0.05, 0.06, 0.08);
+          vec3 night = (hasNight > 0.5) ? texture2D(nightMap, vUv).rgb * 1.55 : vec3(0.0);
+          // Night side gets faint blue ambient so it doesn't go pure black
+          vec3 nightAmbient = vec3(0.012, 0.020, 0.030);
+          vec3 col = mix(night + nightAmbient, day, dayMix);
+          // Atmospheric scatter band at the terminator — warm orange-red
+          float terminator = 1.0 - smoothstep(0.0, 0.55, abs(sunDot));
+          float fres = pow(1.0 - max(0.0, dot(N, vViewDir)), 2.0);
+          vec3 scatter = vec3(0.95, 0.55, 0.32) * terminator * fres * 0.45;
+          col += scatter;
+          // Subtle blue limb haze on day side
+          col += vec3(0.20, 0.40, 0.48) * fres * dayMix * 0.18;
+          gl_FragColor = vec4(col, 1.0);
+        }
+      `
+    });
+    globeGroup.add(new THREE.Mesh(
+      new THREE.SphereGeometry(1, 96, 96),
+      earthMat
+    ));
+    globeGroup.add(new THREE.Mesh(
+      new THREE.SphereGeometry(1.003, 48, 24),
+      new THREE.MeshBasicMaterial({
+        color: 0xc8c4b8, wireframe: true,
+        transparent: true, opacity: 0.018, depthWrite: false
+      })
+    ));
+    if (cloudTex) {
+      cloudGroup.add(new THREE.Mesh(
+        new THREE.SphereGeometry(1.013, 64, 64),
+        new THREE.MeshPhongMaterial({
+          map: cloudTex, transparent: true, opacity: 0.32,
+          depthWrite: false, blending: THREE.NormalBlending
+        })
+      ));
+    }
+  }
+
+  // Atmosphere
+  const atmoVert = `varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
+  earthGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.18, 48, 48), new THREE.ShaderMaterial({
+    vertexShader: atmoVert,
+    fragmentShader: `varying vec3 vNormal; void main() { float i = pow(0.62 - dot(vNormal, vec3(0,0,1)), 3.0); gl_FragColor = vec4(0.30, 0.56, 0.58, 1.0) * i * 1.8; }`,
+    blending: THREE.AdditiveBlending, side: THREE.BackSide, transparent: true, depthWrite: false
+  })));
+  earthGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.008, 48, 48), new THREE.ShaderMaterial({
+    vertexShader: atmoVert,
+    fragmentShader: `varying vec3 vNormal; void main() { float i = pow(0.55 - dot(vNormal, vec3(0,0,1)), 2.0); gl_FragColor = vec4(0.30, 0.56, 0.58, i * 0.35); }`,
+    blending: THREE.AdditiveBlending, side: THREE.FrontSide, transparent: true, depthWrite: false
+  })));
+
+  // Lighting
+  scene.add(new THREE.AmbientLight(0x222230, 1.0));
+  const sun = new THREE.DirectionalLight(0xfff4e0, 1.6);
+  sun.position.set(5, 2.5, 4);
+  scene.add(sun);
+  const rim = new THREE.DirectionalLight(0x4a8a8a, 0.35);
+  rim.position.set(-4, -1.5, -3);
+  scene.add(rim);
+
+  function ll(lat, lon, r) {
+    const phi = (90 - lat) * Math.PI / 180;
+    const theta = (lon + 180) * Math.PI / 180;
+    return new THREE.Vector3(
+      -r * Math.sin(phi) * Math.cos(theta),
+       r * Math.cos(phi),
+       r * Math.sin(phi) * Math.sin(theta)
+    );
+  }
+
+  // ========================================================
+  // 23 NATIONS (proposed canon lock — G20-19 + Spain + Switzerland + UAE + Singapore)
+  // UK = origin/coordinating nation (white marker)
+  // ========================================================
+  const nations = [
+    [51.5,  -0.12,  'London',        'United Kingdom', true,  'lead'],
+    [39,    -98,    'Washington',    'United States', false, 'lead'],
+    [35.9,  104,    'Beijing',       'China',         false, 'major'],
+    [55.75, 37.6,   'Moscow',        'Russia',        false, 'major'],
+    [46.2,  2.21,   'Paris',         'France',        false, 'lead'],
+    [51.2,  10.45,  'Berlin',        'Germany',       false, 'lead'],
+    [41.9,  12.5,   'Rome',          'Italy'],
+    [40.5,  -3.75,  'Madrid',        'Spain'],
+    [46.9,  8.23,   'Bern',          'Switzerland'],
+    [39.9,  32.85,  'Ankara',        'Türkiye'],
+    [36.2,  139.7,  'Tokyo',         'Japan',         false, 'lead'],
+    [37.55, 126.99, 'Seoul',         'South Korea'],
+    [20.6,  78.9,   'New Delhi',     'India',         false, 'major'],
+    [-6.2,  106.85, 'Jakarta',       'Indonesia'],
+    [1.35,  103.8,  'Singapore',     'Singapore'],
+    [24.47, 54.37,  'Abu Dhabi',     'UAE'],
+    [24.71, 46.68,  'Riyadh',        'Saudi Arabia'],
+    [-25.3, 133.8,  'Canberra',      'Australia'],
+    [-30.6, 22.9,   'Pretoria',      'South Africa'],
+    [-14.2, -51.9,  'Brasília',      'Brazil',        false, 'major'],
+    [-34.6, -58.4,  'Buenos Aires',  'Argentina'],
+    [19.43, -99.13, 'Mexico City',   'Mexico'],
+    [56,    -106,   'Ottawa',        'Canada',        false, 'lead']
+  ];
+
+  // Glow sprite textures
+  function makeGlowTex(stops) {
+    const c = document.createElement('canvas');
+    c.width = 128; c.height = 128;
+    const x = c.getContext('2d');
+    const g = x.createRadialGradient(64, 64, 0, 64, 64, 64);
+    stops.forEach(([s, col]) => g.addColorStop(s, col));
+    x.fillStyle = g; x.fillRect(0, 0, 128, 128);
+    return new THREE.CanvasTexture(c);
+  }
+  const redGlow = makeGlowTex([
+    [0, 'rgba(255,90,70,1)'],
+    [0.15, 'rgba(235,70,55,0.85)'],
+    [0.4, 'rgba(220,60,50,0.2)'],
+    [1, 'rgba(220,60,50,0)']
+  ]);
+  const whiteGlow = makeGlowTex([
+    [0, 'rgba(255,255,255,1)'],
+    [0.2, 'rgba(255,250,240,0.8)'],
+    [0.5, 'rgba(255,220,180,0.15)'],
+    [1, 'rgba(255,220,180,0)']
+  ]);
+
+  const dotSprites = [];
+  const labelEls = [];
+  const impactRings = [];
+
+  nations.forEach((n, idx) => {
+    const isKey = n[4] || false;
+    const tierStr = n[5] || (isKey ? 'origin' : 'minor');
+    const isLead = tierStr === 'lead';
+    const pos = ll(n[0], n[1], 1.015);
+    // Tiered sizing: UK primary 0.11, other leads 0.085, all others 0.06
+    const sc = isKey ? 0.11 : (isLead ? 0.085 : 0.06);
+    const useWhite = isKey || isLead;
+
+    const mat = new THREE.SpriteMaterial({
+      map: useWhite ? whiteGlow : redGlow,
+      transparent: true, opacity: 0.9,
+      depthWrite: false, blending: THREE.AdditiveBlending
+    });
+    const sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(sc, sc, 1);
+    sprite.userData = { base: sc, isKey, idx };
+    globeGroup.add(sprite);
+    dotSprites.push(sprite);
+
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: useWhite ? 0xffffff : 0xff5040,
+      transparent: true, opacity: 0.55,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const ringGeo = new THREE.RingGeometry(0.018, 0.022, 48);
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.copy(pos);
+    ring.lookAt(pos.clone().multiplyScalar(2));
+    ring.userData = { phase: (idx * 0.27) % 1 };
+    globeGroup.add(ring);
+    impactRings.push(ring);
+
+    const tier = tierStr;
+    const label = document.createElement('div');
+    label.className = 'globe-nation-label' + (isKey ? ' key' : (tier === 'lead' ? ' lead' : (tier === 'major' ? ' major' : '')));
+    label.innerHTML = '<span class="label-line"></span>' + n[3];
+    label.style.opacity = '0';
+    container.appendChild(label);
+    labelEls.push({ el: label, pos3d: pos, isKey, tier, idx });
+  });
+
+  // Connection arcs from London
+  const londonPos = ll(51.5, -0.12, 1.015);
+  const arcCurves = [];
+
+  nations.forEach((n, i) => {
+    if (i === 0) return;
+    const target = ll(n[0], n[1], 1.015);
+    const dist = londonPos.distanceTo(target);
+    const mid = londonPos.clone().add(target).multiplyScalar(0.5);
+    mid.normalize().multiplyScalar(1 + dist * 0.28);
+    const curve = new THREE.QuadraticBezierCurve3(londonPos, mid, target);
+
+    const pts = curve.getPoints(64);
+    const arcGeo = new THREE.BufferGeometry().setFromPoints(pts);
+    globeGroup.add(new THREE.Line(arcGeo, new THREE.LineBasicMaterial({
+      color: 0xc4352a, transparent: true, opacity: 0.11,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    })));
+
+    const pulseMat = new THREE.SpriteMaterial({
+      map: redGlow, transparent: true, opacity: 0,
+      depthWrite: false, blending: THREE.AdditiveBlending
+    });
+    const pulse = new THREE.Sprite(pulseMat);
+    pulse.scale.set(0.055, 0.055, 1);
+    globeGroup.add(pulse);
+
+    arcCurves.push({
+      curve: curve, pulse: pulse,
+      phase: (i * 0.13) % 1,
+      duration: 3.8 + (i % 4) * 0.2
+    });
+  });
+
+  globeGroup.rotation.y = -0.15;
+  earthGroup.rotation.x = 0.1;
+
+  let t = 0;
+  let mouseScreenX = 0, mouseScreenY = 0;
+  let isHovering = false;
+  // Drag-to-rotate state
+  let isDragging = false;
+  let dragLastX = 0, dragLastY = 0;
+  let lastInteractionTime = 0;
+  // Raycast hover state
+  const raycaster = new THREE.Raycaster();
+  const mouseNDC = new THREE.Vector2();
+  let hoveredIdx = -1;
+
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    dragLastX = e.clientX;
+    dragLastY = e.clientY;
+    container.classList.add('dragging');
+    e.preventDefault();
+  });
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      container.classList.remove('dragging');
+      lastInteractionTime = performance.now();
+    }
+  });
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    mouseScreenX = e.clientX - rect.left;
+    mouseScreenY = e.clientY - rect.top;
+    isHovering = true;
+    mouseNDC.x = (mouseScreenX / rect.width) * 2 - 1;
+    mouseNDC.y = -(mouseScreenY / rect.height) * 2 + 1;
+
+    if (isDragging) {
+      const dx = e.clientX - dragLastX;
+      const dy = e.clientY - dragLastY;
+      earthGroup.rotation.y += dx * 0.005;
+      earthGroup.rotation.x = Math.max(-0.7, Math.min(0.7, earthGroup.rotation.x + dy * 0.005));
+      dragLastX = e.clientX;
+      dragLastY = e.clientY;
+      lastInteractionTime = performance.now();
+    }
+
+    // Raycast against dot sprites for hover detection
+    raycaster.setFromCamera(mouseNDC, camera);
+    const intersects = raycaster.intersectObjects(dotSprites, false);
+    const newHovered = intersects.length > 0 ? intersects[0].object.userData.idx : -1;
+    if (newHovered !== hoveredIdx) {
+      hoveredIdx = newHovered;
+      if (hoveredIdx >= 0) container.classList.add('hovering-dot');
+      else container.classList.remove('hovering-dot');
+    }
+  });
+  container.addEventListener('mouseleave', () => {
+    isHovering = false;
+    hoveredIdx = -1;
+    container.classList.remove('hovering-dot');
+  });
+
+  // Time-based animation — framerate-independent, smooth on slow frames
+  let lastTime = performance.now();
+  function animate() {
+    requestAnimationFrame(animate);
+    const now = performance.now();
+    const dt = Math.min(0.05, (now - lastTime) / 1000);
+    lastTime = now;
+    t += dt * 0.27;
+    // Auto-rotate pauses while dragging and for ~1.5s after release
+    const sinceInteraction = (now - lastInteractionTime) / 1000;
+    const autoRotate = !isDragging && sinceInteraction > 1.5;
+    if (autoRotate) {
+      // Slows on hover for label legibility (rad/sec)
+      const rotSpeed = (isHovering || hoveredIdx >= 0) ? 0.028 : 0.10;
+      globeGroup.rotation.y += rotSpeed * dt;
+      if (cloudGroup.children.length) cloudGroup.rotation.y += rotSpeed * 0.65 * dt;
+    }
+
+    dotSprites.forEach(s => {
+      const wp = new THREE.Vector3();
+      s.getWorldPosition(wp);
+      const facing = wp.clone().normalize().dot(camera.position.clone().normalize());
+      const vis = Math.max(0, Math.pow(Math.max(0, facing), 0.5));
+      const flash = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * 3.5 + s.position.x * 12 + s.position.z * 8));
+      const isHov = (s.userData.idx === hoveredIdx);
+      s.material.opacity = isHov ? Math.max(0.95, vis) : vis * flash;
+      const baseSc = s.userData.base * (isHov ? 1.6 : (0.85 + 0.35 * flash));
+      s.scale.set(baseSc, baseSc, 1);
+    });
+
+    impactRings.forEach(r => {
+      const wp = new THREE.Vector3();
+      r.getWorldPosition(wp);
+      const facing = wp.clone().normalize().dot(camera.position.clone().normalize());
+      const vis = Math.max(0, facing);
+      const tt = ((t * 0.45) + r.userData.phase) % 1;
+      const scale = 1 + tt * 9;
+      r.scale.set(scale, scale, scale);
+      r.material.opacity = (1 - tt) * 0.55 * vis;
+    });
+
+    arcCurves.forEach(a => {
+      const tt = ((t / a.duration) + a.phase) % 1;
+      const p = a.curve.getPoint(tt);
+      a.pulse.position.copy(p);
+      const wp = new THREE.Vector3();
+      a.pulse.getWorldPosition(wp);
+      const facing = wp.clone().normalize().dot(camera.position.clone().normalize());
+      const vis = Math.max(0, facing);
+      const edge = Math.min(tt * 5, (1 - tt) * 5, 1);
+      a.pulse.material.opacity = 0.85 * edge * vis;
+    });
+
+    const rw = renderer.domElement.clientWidth;
+    const rh = renderer.domElement.clientHeight;
+    labelEls.forEach(lab => {
+      const worldPos = lab.pos3d.clone();
+      worldPos.applyMatrix4(globeGroup.matrixWorld);
+      // (earthGroup.matrix removed — was being applied twice)
+
+      const camDir = camera.position.clone().normalize();
+      const dotDir = worldPos.clone().normalize();
+      const facing = dotDir.dot(camDir);
+
+      const isHovLock = (hoveredIdx === lab.idx);
+      // Hide entirely once well past the visible hemisphere
+      if (facing < 0.25 && !isHovLock) { lab.el.style.opacity = '0'; return; }
+
+      const screenPos = worldPos.clone().project(camera);
+      const x = (screenPos.x * 0.5 + 0.5) * rw;
+      const y = (-(screenPos.y * 0.5) + 0.5) * rh;
+
+      lab.el.style.left = (x + 12) + 'px';
+      lab.el.style.top = (y - 8) + 'px';
+
+      // Smoothstep fade-in across 0.25 → 0.55 facing — fully visible only
+      // when well in the front-facing area; gone before the limb.
+      const facingAlpha = Math.max(0, Math.min(1, (facing - 0.25) / 0.30));
+      let baseAlpha = 0;
+      if (isHovLock) {
+        baseAlpha = 1.0;
+        lab.el.classList.add('hover-lock');
+      } else {
+        if (lab.el.classList.contains('hover-lock')) lab.el.classList.remove('hover-lock');
+        if (lab.isKey) baseAlpha = facingAlpha;
+        else if (lab.tier === 'lead') baseAlpha = facingAlpha * 0.85;
+        // major + minor tiers: hover only — handled by raycast hover-lock above
+      }
+      const finalAlpha = Math.min(1, baseAlpha);
+      // Guard: skip DOM write if essentially unchanged from last frame
+      if (lab._lastAlpha === undefined || Math.abs(lab._lastAlpha - finalAlpha) > 0.01) {
+        lab.el.style.opacity = finalAlpha.toFixed(2);
+        lab._lastAlpha = finalAlpha;
+      }
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    const nw = container.clientWidth;
+    renderer.setSize(nw, nw);
+  });
+})();
+
+/* SCROLL REVEAL */
+(function() {
+  const sections = document.querySelectorAll('.section');
+  const cw = document.getElementById('continueWrap');
+
+  // Reveal a section AND any nested rhythm elements (paras, segs) with their own staggers.
+  function revealSection(s) {
+    if (s.classList.contains('revealed')) return;
+    s.classList.add('revealed');
+
+    // Speech paragraphs — 400ms apart, mimics PM pausing between thoughts.
+    if (s.classList.contains('speech')) {
+      const paras = s.querySelectorAll('p');
+      paras.forEach((p, i) => setTimeout(() => p.classList.add('revealed'), 200 + i * 400));
+    }
+
+    // Globe section headline data — three beats, ~280ms apart, after chrome settles.
+    if (s.classList.contains('globe-section')) {
+      const segs = s.querySelectorAll('.globe-meta-line .seg');
+      segs.forEach((seg, i) => setTimeout(() => seg.classList.add('revealed'), 600 + i * 280));
+    }
+  }
+
+  function reveal() {
+    const trigger = window.innerHeight * 0.85;
+    sections.forEach(s => {
+      if (!s.classList.contains('revealed') && s.getBoundingClientRect().top < trigger) {
+        revealSection(s);
+      }
+    });
+    const last = sections[sections.length - 1];
+    if (last && last.classList.contains('revealed') && cw) {
+      setTimeout(() => cw.classList.add('visible'), 800);
+    }
+  }
+
+  // Initial cascade — 600ms stagger feels deliberate, not a checklist.
+  setTimeout(() => {
+    [...sections].filter(s => s.getBoundingClientRect().top < window.innerHeight)
+      .forEach((s, i) => setTimeout(() => revealSection(s), i * 600));
+  }, 800);
+  window.addEventListener('scroll', reveal, { passive: true });
+
+  // ---------- LIVE CLOCK ----------
+  // In-universe clock. Starts at 18:00:00 on page load and ticks every second.
+  // Keeps the "LIVE BROADCAST" promise honest — open the page for two minutes,
+  // the clock advances by two minutes.
+  const clockEl = document.getElementById('bcClock');
+  if (clockEl) {
+    const startMs = Date.now();
+    const baseHour = 18, baseMin = 0, baseSec = 0;
+    const pad = n => (n < 10 ? '0' : '') + n;
+    function tick() {
+      const elapsed = Math.floor((Date.now() - startMs) / 1000);
+      const total = baseHour * 3600 + baseMin * 60 + baseSec + elapsed;
+      const h = Math.floor(total / 3600) % 24;
+      const m = Math.floor((total % 3600) / 60);
+      const s = total % 60;
+      clockEl.textContent = '15 FEB 2027 · ' + pad(h) + ':' + pad(m) + ':' + pad(s) + ' GMT';
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+
+  // S177 — Signal parent iframe to close broadcast overlay.
+  const continueBtn = document.querySelector('.continue-btn');
+  if (continueBtn) {
+    continueBtn.addEventListener('click', function() {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'broadcast-continue', id: 'BC1' }, '*');
+      }
+    });
+  }
+</script>
+</body>
+</html>

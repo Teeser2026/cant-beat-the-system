@@ -9705,68 +9705,6 @@
     ],
     "23b": [
       {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "from Jenny (Amy's mum)",
-            "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
-            "snip": "15:30. Peter and Jenny. They don't text first, usually.",
-            "tag": "",
-            "cls": ""
-          },
-          {
-            "src": "to Jenny",
-            "ttl": "We're fine. Amy's back from her drive. All four kids accounted for. Will call when lines free up. Love to Peter xx",
-            "snip": "Sent 15:34. Two ticks. Green. Something landed today.",
-            "tag": "Sent",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "UK GOV Alert",
-        "cards": [
-          {
-            "src": "UK GOV",
-            "ttl": "<strong>REMINDER — 16:00 GMT —</strong><br>The Prime Minister will address the nation at 18:00 GMT on all BBC television and radio channels. Verified updates via ARC Emergency.",
-            "snip": "All afternoon for one broadcast. The waiting is the point.",
-            "tag": "UK-EMRG-2027-011",
-            "cls": "x"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "to Mum (Spain)",
-            "ttl": "Mum please just let me know you're ok. We're all OK. Back to normal soon I'm sure x",
-            "snip": "Sent 16:15pm. Pending. Still one tick. Nine hours.",
-            "tag": "Pending",
-            "cls": ""
-          },
-          {
-            "src": "from Dev",
-            "ttl": "you seeing this",
-            "snip": "16:48. Dev. Three words. No question mark. He doesn't need one.",
-            "tag": "",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "<strong>EMERGENCY UPDATE — 17:00 GMT —</strong><br>PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
-            "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
-            "tag": "BE WELL",
-            "cls": "a"
-          }
-        ]
-      },
-      {
         "sec": "ARC Emergency",
         "cards": [
           {
@@ -9774,7 +9712,9 @@
             "ttl": "<strong>POST-ADDRESS UPDATE — 19:00 GMT —</strong><br>Key points from the Prime Minister's address:<br>• Infrastructure damaged, not destroyed — restoration expected in days, not weeks<br>• Your savings and deposits are protected<br>• For the next 36 hours, retail, businesses and offices will be closed<br>• Public transport suspended for the remainder of the week<br>• Schools closed for the remainder of the week<br>• Three requests: stay local, do not fear, follow ARC guidance<br>The nation has responded. Thank you. Further guidance at 21:00 GMT.",
             "snip": "AIDA already translating the PM. Five hours old and she's the comprehension layer.",
             "tag": "BE WELL",
-            "cls": "a"
+            "cls": "a",
+            "type": "thread-notify",
+            "threadRef": "official"
           },
           {
             "src": "ARC",
@@ -9899,7 +9839,7 @@
           {
             "src": "Sam",
             "ttl": "im ok at mikes. phone's been going mental. wtf is happening",
-            "snip": "Sam's awake. Sam's safe. He'll probably try and play golf.",
+            "snip": "06:45. Sam's awake. Sam's safe. He'll probably try and play golf.",
             "tag": "",
             "cls": ""
           },
@@ -9964,9 +9904,9 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Sarah (Sam's mum) → Amy",
-            "ttl": "Kids are fine — Sam's at Mike's, we've got him. Emilia's with you? Just checking. Hope you're all ok. x",
-            "snip": "8:40am. Sarah. Ex-wife of the father-of-her-children variety. Texts Amy, not Simon. Same circuit, different wiring.",
+            "src": "Sarah (Sam and Emilia's mum)",
+            "ttl": "Sam's at Mike's. Emilia said Amy picked her up earlier. Is she with you yet? Haven't heard from her since. Just checking. Hope you're all ok. x",
+            "snip": "8:10am. The ex. No comment.",
             "tag": "",
             "cls": ""
           },
@@ -10058,6 +9998,68 @@
             "cls": "x"
           }
         ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Jenny (Amy's mum)",
+            "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
+            "snip": "15:30. Peter and Jenny. They don't text first, usually.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "to Jenny",
+            "ttl": "We're fine. Amy's back from her drive. All four kids accounted for. Will call when lines free up. Love to Peter xx",
+            "snip": "Sent 15:34. Two ticks. Green. Something landed today.",
+            "tag": "Sent",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "<strong>REMINDER — 16:00 GMT —</strong><br>The Prime Minister will address the nation at 18:00 GMT on all BBC television and radio channels. Verified updates via ARC Emergency.",
+            "snip": "All afternoon for one broadcast. The waiting is the point.",
+            "tag": "UK-EMRG-2027-011",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "to Mum (Spain)",
+            "ttl": "Mum please just let me know you're ok. We're all OK. Back to normal soon I'm sure x",
+            "snip": "Sent 16:15pm. Pending. Still one tick. Nine hours.",
+            "tag": "Pending",
+            "cls": ""
+          },
+          {
+            "src": "from Dev",
+            "ttl": "you seeing this",
+            "snip": "16:48. Dev. Three words. No question mark. He doesn't need one.",
+            "tag": "",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "<strong>EMERGENCY UPDATE — 17:00 GMT —</strong><br>PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
+            "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
+            "tag": "BE WELL",
+            "cls": "a"
+          }
+        ]
       }
     ]
   },
@@ -10080,15 +10082,15 @@
           }
         },
         {
-          "text": "PM’s Address to the Nation — 15 February 2027",
-          "src": "simon",
+          "text": "ARC — Transcript: PM Address to the Nation",
+          "src": "arc",
           "turn": "23b",
           "article": {
-            "style": "gov",
-            "source": "10 Downing Street",
-            "title": "PM’s Address to the Nation — 15 February 2027",
-            "date": "15 February 2027 — 6:00pm GMT — BBC Television, Radio and ARC Emergency",
-            "body": "<p>Good evening.</p><p>Yesterday, on Valentine’s Day, a little before midnight, a coordinated cyber attack struck the financial and digital infrastructure of the United Kingdom and twenty-two other nations. This has caused significant disruption to civilian systems in our nation and around the globe.</p><p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o’clock this morning and have been in continuous session since.</p><p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p><p>The power grid is stable and being actively managed. Water and gas supplies are unaffected.</p><p>Currently we are unable to access our bank accounts. Shops and businesses are unable to process our card payments. For this reason, for the next 36 hours retail, businesses and offices will be closed. A detailed plan for the opening of essential retail, including supermarkets, will be issued shortly.</p><p>Your savings are safe. Your deposits are protected. Nothing has been lost — only temporarily made inaccessible.</p><p>Schools were closed today and will remain closed for the remainder of the week. Hospitals remain open for emergencies only; all routine and non-urgent care has been postponed, also for the remainder of the week. All public transport services are suspended for the same period of time.</p><p>Our emergency services are operational. Our military and police forces will be visible, on the streets, to ensure the safety of every one of us.</p><p>The emergency communications platform on your phones — many of you will have already received alerts through it — is functioning as designed. It will continue to be your most reliable source of verified information in the coming days.</p><p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p><p>I have spoken this afternoon with my counterparts across the affected nations. We are united — not only in our response, but in our resolve. This was an attack on all of us. It will be met by all of us.</p><p>In the meantime, I ask just three things of you.</p><p>First: for the next 36 hours, stay local, stay safe. Do not drive, unless it is a matter of life or death. This is not a lockdown, but a request. Look after each other. Check on your neighbours. Share what you have.</p><p>Second: do not fear. We will restore these systems. We will provide answers. And we will ensure that every family in this country is supported through this period. This period of days, not weeks.</p><p>Third: please continue to follow the guidance issued through ARC, the emergency alert system and on all BBC television and radio channels.</p><p>I will address you again within 24 hours and there will be detailed updates from my colleagues in the Cabinet and experts from the National Cyber Security Centre during this period.</p><p>There are dark days, challenging days, ahead. We face them with our unique British spirit. We face them together.</p><p>Good night. And be well.</p>",
+            "style": "arc",
+            "source": "ARC",
+            "title": "PM’s Address to the Nation<br>15 February 2027",
+            "date": "15 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
+            "body": "<p>Good evening.</p><p>Yesterday, on Valentine’s Day, a little before midnight, a coordinated cyber attack struck the financial and digital infrastructure of the United Kingdom and twenty-two other nations. This has caused significant disruption to civilian systems in our nation and around the globe.</p><p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o’clock this morning and have been in continuous session since.</p><p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p><p>Let me be clear about what is not affected. Our electricity grid is operational. Our water supply is operational. Our gas network is operational. Our hospitals have power. Our emergency services are coordinating. No lives are in danger from the attack itself.</p><p>Currently we are unable to access our bank accounts. Shops and businesses are unable to process our card payments. For this reason, for the next 24 hours retail, businesses and offices will be closed. A detailed plan for the opening of essential retail, including supermarkets, will be issued shortly.</p><p>Your savings are safe. Your deposits are protected. Nothing has been lost — only temporarily made inaccessible.</p><p>Schools were closed today and will remain closed for the remainder of the week. Hospitals remain open for emergencies only; all routine and non-urgent care has been postponed, also for the remainder of the week. All public transport services are suspended for the same period of time.</p><p>Our emergency services are operational. Our military and police forces will be visible, on the streets, to ensure the safety of every one of us.</p><p>The emergency communications platform on your phones — many of you will have already received alerts through it — is functioning as designed. It will continue to be your most reliable source of verified information in the coming days.</p><p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p><p>I have spoken this afternoon with my counterparts across the affected nations. We are united — not only in our response, but in our resolve. This was an attack on all of us. It will be met by all of us.</p><p>In the meantime, I ask just three things of you.</p><p><strong>First:</strong> for the next 24 hours, stay local, stay safe. Do not drive, unless it is a matter of life or death. This is not a lockdown, but a request. Look after each other. Check on your neighbours. Share what you have.</p><p><strong>Second:</strong> do not fear. We will restore these systems. We will provide answers. And we will ensure that every family in this country is supported through this period. This period of days, not weeks.</p><p><strong>Third:</strong> please continue to follow the guidance issued through ARC, the emergency alert system and on all BBC television and radio channels.</p><p>I will address the nation again at nine o’clock tomorrow morning with a full operational update. There will be detailed updates from my colleagues in the Cabinet and experts from the National Cyber Security Centre during this period.</p><p>There are dark days, challenging days, ahead. We face them with our unique British spirit. We face them together.</p><p>Good night. And be well.</p>\n",
             "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },

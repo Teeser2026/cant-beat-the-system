@@ -422,17 +422,6 @@
   .arc-status-sep { width: 1px; height: 10px; background: var(--border-hi); }
 
   /* ============================================ */
-  /* ROADMAP PANEL                                */
-  /* ============================================ */
-  .roadmap-note { font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; color: var(--txt3); text-transform: uppercase; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-  .roadmap-table td { padding: 13px 14px 13px 0; }
-  .roadmap-table td.rm-phase { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 1px; width: 42px; }
-  .roadmap-table td.rm-date { font-family: var(--mono); font-size: 11.5px; color: var(--txt2); letter-spacing: 1px; width: 90px; }
-  .roadmap-table td.rm-status { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.4px; text-align: right; width: 110px; color: var(--txt2); }
-  .roadmap-table td.rm-status.active { color: var(--txt); font-weight: 500; }
-  .roadmap-table td.rm-status.planned { color: var(--txt3); font-style: italic; }
-
-  /* ============================================ */
   /* TIMELINE                                     */
   /* ============================================ */
   .timeline-list { list-style: none; }
@@ -491,7 +480,6 @@
 
   @media (max-width: 860px) {
     .nations-list { column-count: 2; }
-    .roadmap-table td.rm-date { width: 74px; font-size: 10.5px; }
   }
   @media (max-width: 640px) {
     .container { padding: 0 20px; }
@@ -634,6 +622,8 @@
     <p>Here is what we know. I will not minimise it. The attack targeted the core transaction and record-keeping systems that underpin our banking, our public services, and much of our daily communication. Our security and intelligence services, working in close coordination with international partners, are engaged in a comprehensive response. I chaired COBRA at six o'clock this morning and have been in continuous session since.</p>
     <p>Here is what I want you to understand. The damage is being assessed. The infrastructure is damaged, not destroyed. We are working — with every resource available to us — to restore normal service. Our current assessment is that this will take days, not weeks.</p>
     <p>Let me be clear about what is not affected. Our electricity grid is operational. Our water supply is operational. Our gas network is operational. Our hospitals have power. Our emergency services are coordinating. No lives are in danger from the attack itself.</p>
+    <p>Many of you will have spent today unable to reach members of your family — unable to send emails, unable to use messaging apps, unable to refresh social media or stream the news the way you would on any other day. I know how difficult this is. I know how isolating it feels not to be able to reach a son or a daughter, a parent, a friend abroad.</p>
+    <p>These services have been restricted as a precaution while our cloud infrastructure is verified. They have not been damaged. We cannot leave them running while we are not yet certain they are safe. We expect to begin restoring them in stages from tomorrow morning, as verification work completes. Telephone calls and text messages remain operational throughout. If you need to reach someone urgently tonight, please use those.</p>
   </div>
 </div>
 
@@ -666,7 +656,7 @@
           <tr><td>Gas network</td><td class="dt-note">National Gas Transmission</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
           <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
           <tr><td>Mobile voice and SMS</td><td class="dt-note">All network operators</td><td style="text-align:right;"><span class="dt-status degraded">Emergency use only</span></td></tr>
-          <tr><td>Internet access</td><td class="dt-note">Internet service providers</td><td style="text-align:right;"><span class="dt-status degraded">Restricted to essential services</span></td></tr>
+          <tr><td>Cloud-hosted services</td><td class="dt-note">AWS UK · Azure UK · Google Cloud UK</td><td style="text-align:right;"><span class="dt-status degraded">Consumer services restricted</span></td></tr>
           <tr><td>Banking systems</td><td class="dt-note">All major UK banks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
           <tr><td>ATM networks</td><td class="dt-note">LINK, Visa, Mastercard</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
           <tr><td>Card payments</td><td class="dt-note">In-store and online</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
@@ -743,7 +733,7 @@
         </div>
       </div>
       <div class="panel-label" style="margin-bottom:18px;">Emergency Communications Platform</div>
-      <p class="arc-body">ARC has been automatically installed on your device as part of the national emergency communications framework. It provides a direct, verified channel between Government and citizens.</p>
+      <p class="arc-body">The ARC Emergency Communications app has been automatically installed on your device. It provides a direct, verified channel between Government and citizens.</p>
       <div class="arc-status-row">
         <div class="arc-status-item"><span class="dot"></span>Installed</div>
         <div class="arc-status-sep"></div>
@@ -789,7 +779,7 @@
         <li>
           <span class="tl-time">04:50</span>
           <span class="tl-date">15 Feb</span>
-          <span class="tl-event">ARC emergency communications platform deployed to all UK mobile networks under emergency provisioning powers.</span>
+          <span class="tl-event">ARC Emergency communications app pushed to all UK mobile devices via the Authenticated Residential Computing framework, under emergency provisioning powers.</span>
         </li>
         <li>
           <span class="tl-time">06:20</span>
@@ -804,7 +794,7 @@
         <li>
           <span class="tl-time">12:00</span>
           <span class="tl-date">15 Feb</span>
-          <span class="tl-event">ARC platform activated on UK mobile devices (58.4m).</span>
+          <span class="tl-event">ARC Emergency platform activated. UK device coverage: 58.4m.</span>
         </li>
         <li>
           <span class="tl-time">14:30</span>
@@ -834,65 +824,6 @@
     </div>
   </div>
 </div>
-<!-- ROADMAP TABLE BLOCK BELOW REPLACED — kept anchor for table close -->
-<div style="display:none;">
-      <table class="data-table roadmap-table">
-        <thead>
-          <tr>
-            <th>Phase</th>
-            <th>Quarter</th>
-            <th>Component</th>
-            <th style="text-align:right;">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="rm-phase">01</td>
-            <td class="rm-date">Q1 2027</td>
-            <td>Emergency Communications Framework</td>
-            <td class="rm-status active">In delivery</td>
-          </tr>
-          <tr>
-            <td class="rm-phase">02</td>
-            <td class="rm-date">Q2 2027</td>
-            <td>Identity Verification Services</td>
-            <td class="rm-status planned">Scheduled</td>
-          </tr>
-          <tr>
-            <td class="rm-phase">03</td>
-            <td class="rm-date">Q3 2027</td>
-            <td>Unified Benefits Channel</td>
-            <td class="rm-status planned">Scheduled</td>
-          </tr>
-          <tr>
-            <td class="rm-phase">04</td>
-            <td class="rm-date">Q4 2027</td>
-            <td>Consolidated Citizen Services Portal</td>
-            <td class="rm-status planned">Scheduled</td>
-          </tr>
-          <tr>
-            <td class="rm-phase">05</td>
-            <td class="rm-date">Q2 2028</td>
-            <td>National Agentic Assistance Pilot</td>
-            <td class="rm-status planned">Subject to review</td>
-          </tr>
-          <tr>
-            <td class="rm-phase">06</td>
-            <td class="rm-date">Q4 2028</td>
-            <td>Full Digital Continuity Framework</td>
-            <td class="rm-status planned">Indicative</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="roadmap-note">Detailed specifications available on request via the GOV.UK publications library. Reference CCP-DR-2024-07.</div>
-      <div class="panel-footer">
-        <span>Department · Cabinet Office</span>
-        <span>Table 3 of 3</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="container narrow">
   <div class="section speech">
     <p>Part of this emergency communication system is ARC. You may have seen the app automatically installed on your devices throughout the course of the day. The ARC app adds an even more robust communication channel between Government and citizens.</p>

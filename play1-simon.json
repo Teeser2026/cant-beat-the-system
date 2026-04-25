@@ -4871,7 +4871,13 @@
         {
           "t": "The girls seem excited."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Six o'clock",
+        "opts": [
+          "Kettle on. Telly on. The nation awaits."
+        ]
+      }
     },
     {
       "id": "BC1",

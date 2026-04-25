@@ -4098,7 +4098,7 @@ body.game-active .ticker-bar { display: flex; }
 </div>
 
 <!-- ══ BROADCAST OVERLAY (S175) ══ -->
-<div class="broadcast-overlay" id="broadcast-overlay">
+<div class="broadcast-overlay" id="bc-iframe-overlay">
   <div class="broadcast-close" id="broadcast-close">✕ CLOSE</div>
   <iframe class="broadcast-frame" id="broadcast-frame" src="about:blank" title="Broadcast"></iframe>
 </div>
@@ -4572,7 +4572,7 @@ function renderSignal(turnId) {
       e.stopPropagation();
       const file = this.dataset.broadcast;
       if (!file) return;
-      const overlay = document.getElementById('broadcast-overlay');
+      const overlay = document.getElementById('bc-iframe-overlay');
       const frame = document.getElementById('broadcast-frame');
       if (!overlay || !frame) return;
       frame.src = file;
@@ -7503,7 +7503,7 @@ document.getElementById('article-overlay').addEventListener('click', function(e)
 // a postMessage receiver so BC1 (and future broadcasts) can self-dismiss
 // from their own CONTINUE button.
 (function() {
-  const overlay = document.getElementById('broadcast-overlay');
+  const overlay = document.getElementById('bc-iframe-overlay');
   const closeBtn = document.getElementById('broadcast-close');
   const frame = document.getElementById('broadcast-frame');
   if (!overlay || !closeBtn || !frame) return;

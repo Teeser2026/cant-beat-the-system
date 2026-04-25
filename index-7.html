@@ -1240,6 +1240,14 @@ body .sec-label .sec-name.ch-li   { background: #0A66C2; color: #fff; padding: 1
 .card-thread-ref:hover { opacity: 1; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
 
+/* S175 broadcast-trigger chip — analogous to .card-thread-ref but signals
+   a live-broadcast hand-off. Inherits chip vocabulary; differs only in the
+   pulsing red dot (matches prototype's LIVE pill register). */
+.card-broadcast-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px 3px 8px; margin-top: 7px; border-radius: 999px; background: rgba(196,53,42,.08); color: var(--text); opacity: .85; cursor: pointer; transition: opacity .3s; line-height: 1; display: inline-flex; align-items: center; gap: 7px; }
+.card-broadcast-ref:hover { opacity: 1; }
+.card-broadcast-ref::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #c4352a; box-shadow: 0 0 6px #c4352a; animation: cardBroadcastPulse 1.6s ease-in-out infinite; }
+@keyframes cardBroadcastPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+
 /* S174 hotfix: force .tag to IBM Plex Mono 10px across phases (beats phase .tag rules at 178/349/523). */
 body.phase-1 .tag,
 body.phase-2 .tag,
@@ -1324,6 +1332,26 @@ div.ti.article:hover::after { opacity: .4; }
   font-size: 12px; color: #999; cursor: pointer; letter-spacing: 1px; z-index: 2;
 }
 .article-overlay .article-close:hover { color: #ccc; }
+
+/* S175 broadcast-overlay — full-viewport iframe wrapper for BC1+ broadcasts.
+   Sibling to .article-overlay; identical close affordance, higher z-index. */
+.broadcast-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1100;
+  background: #000;
+}
+.broadcast-overlay.open { display: block; }
+.broadcast-overlay .broadcast-frame {
+  width: 100%; height: 100%; border: 0; display: block;
+}
+.broadcast-overlay .broadcast-close {
+  position: absolute; top: 18px; right: 22px; z-index: 2;
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  letter-spacing: 2px; color: rgba(255,255,255,.55);
+  cursor: pointer; transition: color .3s;
+  padding: 6px 10px; background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.12); border-radius: 2px;
+}
+.broadcast-overlay .broadcast-close:hover { color: #fff; border-color: rgba(255,255,255,.3); }
 
 /* GOV style */
 .article-panel.gov {
@@ -4069,6 +4097,12 @@ body.game-active .ticker-bar { display: flex; }
   </div>
 </div>
 
+<!-- ══ BROADCAST OVERLAY (S175) ══ -->
+<div class="broadcast-overlay" id="broadcast-overlay">
+  <div class="broadcast-close" id="broadcast-close">✕ CLOSE</div>
+  <iframe class="broadcast-frame" id="broadcast-frame" src="" title="Broadcast"></iframe>
+</div>
+
 <!-- ══ SOUND PROMPT OVERLAY ══ -->
 <div id="sound-echo-overlay"></div>
 <div id="sound-prompt-overlay" style="display:none"></div>
@@ -4503,6 +4537,14 @@ function renderSignal(turnId) {
       } else if (type === 'song') {
         html += `<div class="card-auto-saved" data-turn="${turnId}">Saved to songs</div>`;
       }
+
+      // S175 — broadcast action chip. Renders on any card with card.action of type 'broadcast'.
+      // Independent of card.type so it can attach to GOV/ARC/news cards alike.
+      if (card.action && card.action.type === 'broadcast' && card.action.file) {
+        const label = card.action.label || 'WATCH BROADCAST';
+        html += `<div class="card-broadcast-ref" data-broadcast="${card.action.file}" data-turn="${turnId}">${label}</div>`;
+      }
+
       if (card.img) html += '</div>'; // close .card-body
       html += '</div>';
     });
@@ -4515,7 +4557,7 @@ function renderSignal(turnId) {
   // Card interactions
   panel.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function(e) {
-      if (e.target.classList.contains('save-signal') || e.target.classList.contains('card-thread-ref') || e.target.classList.contains('card-auto-saved')) return;
+      if (e.target.classList.contains('save-signal') || e.target.classList.contains('card-thread-ref') || e.target.classList.contains('card-auto-saved') || e.target.classList.contains('card-broadcast-ref')) return;
       if (this.classList.contains('new')) this.classList.remove('new');
       else this.classList.toggle('fade');
     });
@@ -4524,6 +4566,21 @@ function renderSignal(turnId) {
 
 
   // Thread-notify: click → Threads tab, scroll to the specific item (matched by turn within the referenced group), flash.
+  // S175 — broadcast-ref tap handler. Opens full-viewport iframe overlay.
+  panel.querySelectorAll('.card-broadcast-ref').forEach(ref => {
+    ref.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const file = this.dataset.broadcast;
+      if (!file) return;
+      const overlay = document.getElementById('broadcast-overlay');
+      const frame = document.getElementById('broadcast-frame');
+      if (!overlay || !frame) return;
+      frame.src = file;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
   panel.querySelectorAll('.card-thread-ref').forEach(ref => {
     ref.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -7440,6 +7497,37 @@ document.getElementById('article-close').addEventListener('click', function() {
 document.getElementById('article-overlay').addEventListener('click', function(e) {
   if (e.target === this) this.classList.remove('open');
 });
+
+// S175 — BROADCAST OVERLAY close handlers + postMessage receiver.
+// Mirrors the article-overlay UX exactly: ✕, click-outside, plus ESC and
+// a postMessage receiver so BC1 (and future broadcasts) can self-dismiss
+// from their own CONTINUE button.
+(function() {
+  const overlay = document.getElementById('broadcast-overlay');
+  const closeBtn = document.getElementById('broadcast-close');
+  const frame = document.getElementById('broadcast-frame');
+  if (!overlay || !closeBtn || !frame) return;
+
+  function closeBroadcast() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    // Blank the iframe so audio/animations stop and a re-open starts fresh.
+    setTimeout(() => { if (!overlay.classList.contains('open')) frame.src = ''; }, 300);
+  }
+
+  closeBtn.addEventListener('click', closeBroadcast);
+  overlay.addEventListener('click', function(e) { if (e.target === this) closeBroadcast(); });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeBroadcast();
+  });
+
+  // Receive CONTINUE from inside the broadcast iframe.
+  // Broadcast HTML must post: window.parent.postMessage({type:'broadcast-continue', id:'BC1'}, '*');
+  window.addEventListener('message', function(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (e.data.type === 'broadcast-continue') closeBroadcast();
+  });
+})();
 
 // ── DEV SKIP ──
 document.getElementById('dev-skip-intro').addEventListener('click', function(e) {

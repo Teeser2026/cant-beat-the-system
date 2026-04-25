@@ -4100,7 +4100,7 @@ body.game-active .ticker-bar { display: flex; }
 <!-- ══ BROADCAST OVERLAY (S175) ══ -->
 <div class="broadcast-overlay" id="broadcast-overlay">
   <div class="broadcast-close" id="broadcast-close">✕ CLOSE</div>
-  <iframe class="broadcast-frame" id="broadcast-frame" src="" title="Broadcast"></iframe>
+  <iframe class="broadcast-frame" id="broadcast-frame" src="about:blank" title="Broadcast"></iframe>
 </div>
 
 <!-- ══ SOUND PROMPT OVERLAY ══ -->
@@ -7512,7 +7512,7 @@ document.getElementById('article-overlay').addEventListener('click', function(e)
     overlay.classList.remove('open');
     document.body.style.overflow = '';
     // Blank the iframe so audio/animations stop and a re-open starts fresh.
-    setTimeout(() => { if (!overlay.classList.contains('open')) frame.src = ''; }, 300);
+    setTimeout(() => { if (!overlay.classList.contains('open')) frame.src = 'about:blank'; }, 300);
   }
 
   closeBtn.addEventListener('click', closeBroadcast);

@@ -2981,15 +2981,7 @@ body.game-active .ticker-bar { display: flex; }
 .broadcast-overlay iframe {
   width: 100%; height: 100%; border: 0; display: block;
 }
-.broadcast-overlay .broadcast-close {
-  position: absolute; top: 18px; right: 22px; z-index: 2;
-  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
-  letter-spacing: 2px; color: rgba(255,255,255,.55);
-  cursor: pointer; transition: color .3s;
-  padding: 6px 10px; background: rgba(0,0,0,.4);
-  border: 1px solid rgba(255,255,255,.12); border-radius: 2px;
-}
-.broadcast-overlay .broadcast-close:hover { color: #fff; border-color: rgba(255,255,255,.3); }
+
 
 #sound-prompt-overlay {
   position: fixed;
@@ -6028,10 +6020,6 @@ function renderBroadcast(turnData) {
   const overlay = document.createElement('div');
   overlay.className = 'broadcast-overlay open';
 
-  const closeBtn = document.createElement('div');
-  closeBtn.className = 'broadcast-close';
-  closeBtn.textContent = '✕ CLOSE';
-  overlay.appendChild(closeBtn);
 
   const iframe = document.createElement('iframe');
   iframe.src = file;
@@ -6050,7 +6038,6 @@ function renderBroadcast(turnData) {
     }, 400);
   }
 
-  closeBtn.addEventListener('click', closeBroadcast);
   document.addEventListener('keydown', function escHandler(e) {
     if (e.key === 'Escape') {
       document.removeEventListener('keydown', escHandler);

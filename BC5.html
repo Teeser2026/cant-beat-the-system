@@ -102,10 +102,10 @@
   .data-table td { padding: 14px 0; border-bottom: 1px solid var(--border); font-weight: 300; font-size: 14px; color: var(--txt); }
   .data-table td.dt-note { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 0.5px; }
   .dt-status { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
-  .dt-status.ok { color: var(--green); background: rgba(61,122,61,.08); }
-  .dt-status.degraded { color: var(--amber); background: rgba(198,138,46,.08); }
-  .dt-status.down { color: var(--red); background: rgba(196,53,42,.08); }
-  .dt-status.restoring { color: var(--teal); background: rgba(0,255,225,.06); }
+    .dt-status.ok { color: var(--green); background: rgba(61,122,61,.08); }
+    .dt-status.degraded { color: var(--amber); background: rgba(198,138,46,.08); }
+    .dt-status.down { color: var(--red); background: rgba(196,53,42,.08); }
+    .dt-status.restoring { color: var(--teal); background: rgba(0,255,225,.06); }
 
   /* NATIONAL RECOVERY TRACKER */
   .tracker-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -250,26 +250,29 @@
       <table class="data-table">
         <thead><tr><th>Service</th><th>Provider</th><th style="text-align:right;">Status</th></tr></thead>
         <tbody>
-          <tr><td>Electricity · Gas · Water</td><td class="dt-note">National Grid / Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Electricity &middot; Gas &middot; Water</td><td class="dt-note">National Grid / Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
           <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>Community Recovery Hubs</td><td class="dt-note">Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Open · Nationwide</span></td></tr>
           <tr><td>ARC Emergency</td><td class="dt-note">ARC / NCSC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>BBC broadcast</td><td class="dt-note">BBC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Community Recovery Hubs</td><td class="dt-note">Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Open &middot; Nationwide</span></td></tr>
           <tr><td>ARC Education</td><td class="dt-note">DfE / Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Live</span></td></tr>
-          <tr><td>Payment terminals</td><td class="dt-note">Acquirers · Card networks</td><td style="text-align:right;"><span class="dt-status ok">61% operational</span></td></tr>
-          <tr><td>Essential retail</td><td class="dt-note">Full designated network</td><td style="text-align:right;"><span class="dt-status ok">Full network</span></td></tr>
-          <tr><td>Markets (LSE)</td><td class="dt-note">London Stock Exchange</td><td style="text-align:right;"><span class="dt-status ok">Trading</span></td></tr>
-          <tr><td>Schools</td><td class="dt-note">DfE</td><td style="text-align:right;"><span class="dt-status ok">Reopening Mon 22 Feb</span></td></tr>
-          <tr><td>Bank branches (cash)</td><td class="dt-note">Major UK banks</td><td style="text-align:right;"><span class="dt-status ok">Open 10:00–14:00</span></td></tr>
-          <tr><td>Transport — TfL</td><td class="dt-note">Transport for London</td><td style="text-align:right;"><span class="dt-status ok">Partial service</span></td></tr>
-          <tr><td>Transport — rail</td><td class="dt-note">Network Rail</td><td style="text-align:right;"><span class="dt-status restoring">Expanding · Additional routes</span></td></tr>
-          <tr><td>Email</td><td class="dt-note">ISPs</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>International messaging</td><td class="dt-note">WhatsApp etc.</td><td style="text-align:right;"><span class="dt-status ok">Restored</span></td></tr>
-          <tr><td>Business cloud services</td><td class="dt-note">NCSC verification</td><td style="text-align:right;"><span class="dt-status restoring">Clearing · Phased</span></td></tr>
-          <tr><td>Transport — road</td><td class="dt-note">Highways England</td><td style="text-align:right;"><span class="dt-status degraded">Fuel rationed</span></td></tr>
+          <tr><td>BBC broadcast</td><td class="dt-note">BBC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Telephone calls &amp; SMS</td><td class="dt-note">UK mobile networks</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Email services</td><td class="dt-note">ISPs</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
           <tr><td>Domestic messaging</td><td class="dt-note">NCSC verification</td><td style="text-align:right;"><span class="dt-status down">Pending verification</span></td></tr>
+          <tr><td>International messaging</td><td class="dt-note">WhatsApp etc.</td><td style="text-align:right;"><span class="dt-status ok">Restored</span></td></tr>
           <tr><td>Social media</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Restricted</span></td></tr>
           <tr><td>Streaming / entertainment</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Cloud services</td><td class="dt-note">NCSC verification</td><td style="text-align:right;"><span class="dt-status restoring">Clearing &middot; Phased</span></td></tr>
+          <tr><td>Payment terminals</td><td class="dt-note">Acquirers &middot; Card networks</td><td style="text-align:right;"><span class="dt-status ok">61% operational</span></td></tr>
+          <tr><td>Banking applications</td><td class="dt-note">UK retail banks</td><td style="text-align:right;"><span class="dt-status restoring">Restoring</span></td></tr>
+          <tr><td>Online banking</td><td class="dt-note">UK retail banks</td><td style="text-align:right;"><span class="dt-status restoring">Restoring</span></td></tr>
+          <tr><td>ATMs</td><td class="dt-note">LINK</td><td style="text-align:right;"><span class="dt-status degraded">Limited</span></td></tr>
+          <tr><td>Markets (LSE)</td><td class="dt-note">London Stock Exchange</td><td style="text-align:right;"><span class="dt-status ok">Trading</span></td></tr>
+          <tr><td>Bank branches (cash)</td><td class="dt-note">Major UK banks</td><td style="text-align:right;"><span class="dt-status ok">Open 10:00&ndash;14:00</span></td></tr>
+          <tr><td>Essential retail</td><td class="dt-note">Full designated network</td><td style="text-align:right;"><span class="dt-status ok">Full network</span></td></tr>
+          <tr><td>Transport &mdash; road</td><td class="dt-note">Highways England</td><td style="text-align:right;"><span class="dt-status degraded">Fuel rationed</span></td></tr>
+          <tr><td>Transport &mdash; rail</td><td class="dt-note">Network Rail</td><td style="text-align:right;"><span class="dt-status restoring">Expanding</span></td></tr>
+          <tr><td>Schools</td><td class="dt-note">DfE</td><td style="text-align:right;"><span class="dt-status restoring">Reopening Mon 22 Feb</span></td></tr>
         </tbody>
       </table>
       <div class="panel-footer">

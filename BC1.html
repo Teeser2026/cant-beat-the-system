@@ -389,10 +389,11 @@
   .data-table td.num { font-family: var(--mono); font-size: 11.5px; color: var(--txt3); letter-spacing: 1px; width: 40px; }
   /* Status dots removed S175 — civil-service register prefers prose */
   .dt-dot { display: none; }
-  .dt-status { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt2); }
-  .dt-status.ok { color: var(--txt2); font-weight: 400; }
-  .dt-status.down { color: var(--txt); font-weight: 500; }
-  .dt-status.degraded { color: var(--txt2); font-weight: 400; font-style: italic; }
+  .dt-status { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+    .dt-status.ok { color: var(--green); background: rgba(61,122,61,.08); }
+    .dt-status.degraded { color: var(--amber); background: rgba(198,138,46,.08); }
+    .dt-status.down { color: var(--red); background: rgba(196,53,42,.08); }
+    .dt-status.restoring { color: var(--teal); background: rgba(0,255,225,.06); }
   .dt-note { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 0.8px; }
 
   /* Measures list — civil-service numbering, no red markers */
@@ -651,15 +652,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Electricity grid</td><td class="dt-note">National Grid ESO</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>Water supply</td><td class="dt-note">UK Water Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>Gas network</td><td class="dt-note">National Gas Transmission</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Electricity &middot; Gas &middot; Water</td><td class="dt-note">National Grid / Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
           <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
-          <tr><td>Mobile voice and SMS</td><td class="dt-note">All network operators</td><td style="text-align:right;"><span class="dt-status degraded">Emergency use only</span></td></tr>
-          <tr><td>Cloud-hosted services</td><td class="dt-note">AWS UK · Azure UK · Google Cloud UK</td><td style="text-align:right;"><span class="dt-status degraded">Consumer services restricted</span></td></tr>
-          <tr><td>Banking systems</td><td class="dt-note">All major UK banks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
-          <tr><td>ATM networks</td><td class="dt-note">LINK, Visa, Mastercard</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
-          <tr><td>Card payments</td><td class="dt-note">In-store and online</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>ARC Emergency</td><td class="dt-note">ARC / NCSC</td><td style="text-align:right;"><span class="dt-status restoring">Deployed</span></td></tr>
+          <tr><td>Community Recovery Hubs</td><td class="dt-note">Local authorities</td><td style="text-align:right;"><span class="dt-status restoring">Mobilising</span></td></tr>
+          <tr><td>ARC Education</td><td class="dt-note">DfE / Local authorities</td><td style="text-align:right;"><span class="dt-status restoring">In development</span></td></tr>
+          <tr><td>BBC broadcast</td><td class="dt-note">BBC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Telephone calls &amp; SMS</td><td class="dt-note">UK mobile networks</td><td style="text-align:right;"><span class="dt-status degraded">Emergency use only</span></td></tr>
+          <tr><td>Email services</td><td class="dt-note">ISPs / NCSC</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Domestic messaging</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>International messaging</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Social media</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Streaming / entertainment</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Cloud services</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status degraded">Restricted</span></td></tr>
+          <tr><td>Payment terminals</td><td class="dt-note">Acquirers &middot; Card networks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Banking applications</td><td class="dt-note">UK retail banks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Online banking</td><td class="dt-note">UK retail banks</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>ATMs</td><td class="dt-note">LINK</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Markets (LSE)</td><td class="dt-note">London Stock Exchange</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Bank branches (cash)</td><td class="dt-note">Major UK banks</td><td style="text-align:right;"><span class="dt-status down">Closed</span></td></tr>
+          <tr><td>Essential retail</td><td class="dt-note">Designated network</td><td style="text-align:right;"><span class="dt-status down">Closed</span></td></tr>
+          <tr><td>Transport &mdash; road</td><td class="dt-note">Highways England</td><td style="text-align:right;"><span class="dt-status degraded">Essential travel only</span></td></tr>
+          <tr><td>Transport &mdash; rail</td><td class="dt-note">Network Rail</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Schools</td><td class="dt-note">DfE</td><td style="text-align:right;"><span class="dt-status down">Closed</span></td></tr>
         </tbody>
       </table>
       <div class="panel-footer">

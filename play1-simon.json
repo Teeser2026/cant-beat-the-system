@@ -8137,7 +8137,8 @@
             "tag": "BE WELL",
             "cls": "a",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "txt": "PM morning address — transcript via ARC"
           },
           {
             "src": "ARC",
@@ -8232,7 +8233,8 @@
             "tag": "BE WELL",
             "cls": "a",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "txt": "Joint address — transcript via ARC"
           },
           {
             "src": "ARC",
@@ -8322,9 +8324,11 @@
             "src": "ARC",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "",
+            "txt": "PM address 17 Feb — transcript via ARC",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "ttl": "<strong>PM ADDRESS  17/2— 18:00 GMT — Transcript</strong>",
+            "snip": "Progress. Recovery. Thirty-eight per cent and climbing."
           },
           {
             "src": "ARC",
@@ -8408,16 +8412,27 @@
             "src": "ARC",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "",
+            "txt": "PM address 18 Feb — transcript via ARC",
+            "ttl": "<strong>PM ADDRESS  18/2— 18:00 GMT — Transcript</strong>",
+            "snip": "The shortest broadcast. The most hopeful. Sixty-one per cent.",
             "type": "thread-notify",
             "threadRef": "official"
           },
           {
             "src": "ARC",
-            "ttl": "A second phase of disruption has affected financial and data systems across all 23 nations. Emergency services are unaffected. Remain calm. Further updates to follow.",
-            "snip": "6:33pm. Teatime. The phone buzzed while the kettle boiled. Two minutes before the government alert. ARC knew first.",
-            "tag": "6:33pm",
-            "cls": "a"
+            "tag": "5:44pm",
+            "cls": "a",
+            "txt": "A second phase of disruption has affected financial and payment systems. This is affecting all 23 nations identified in the original incident. Remain calm. Do not attempt further card transactions. Updates to follow.",
+            "ttl": "ARC EMERGENCY",
+            "snip": "Eleven minutes. Eleven minutes of silence before anyone said anything."
+          },
+          {
+            "src": "ARC",
+            "tag": "5:48pm",
+            "cls": "a",
+            "txt": "The PM’s 6pm address to the nation has been delayed. The PM is chairing an emergency COBRA session. A revised time will be confirmed shortly.",
+            "ttl": "ARC EMERGENCY",
+            "snip": "She was twenty-seven minutes from telling us everything was fine."
           }
         ]
       },
@@ -8426,10 +8441,11 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "A second cyber incident has affected financial and data systems. The PM will address the nation at 9pm. Do not attempt to use payment cards or banking apps. Stay local. Stay calm.",
-            "snip": "9pm. Not 6pm. Nine o'clock. The slot they save for wars and dead monarchs.",
-            "tag": "6:35pm",
-            "cls": "x"
+            "tag": "5:59pm",
+            "cls": "x",
+            "txt": "A second cyber incident has affected financial systems across multiple nations. The PM will address the nation this evening. Time to be confirmed. Do not attempt to access banking applications.",
+            "ttl": "UK GOVERNMENT ALERT",
+            "snip": "Twenty-six minutes after ARC. The gap is widening."
           }
         ]
       },
@@ -8438,10 +8454,27 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "PM 9pm address — key points: Second phase has corrupted financial records across 23 nations. Transaction histories, balances, mortgage records overwritten. 'The timeline for restoration has changed.' NCSC assessment to follow.",
-            "snip": "ARC provided an update before the PM started his address. Corrupted. Not encrypted. Not locked. Overwritten. The records aren’t coming back.",
+            "tag": "7:15pm",
+            "cls": "a",
+            "txt": "The PM will address the nation at 9:00pm this evening on BBC Television, BBC Radio and ARC Emergency. COBRA remains in session. All emergency measures remain in place.",
+            "ttl": "ARC EMERGENCY",
+            "snip": "Ninety minutes of nothing. Then this."
+          },
+          {
+            "src": "ARC",
+            "tag": "8:55pm",
+            "cls": "a",
+            "txt": "The PM’s address to the nation will begin at 9:00pm. Live on BBC One, BBC Radio 4 and ARC Emergency.",
+            "ttl": "ARC EMERGENCY",
+            "snip": "Five minutes."
+          },
+          {
+            "src": "ARC",
             "tag": "9:00pm",
-            "cls": "a"
+            "cls": "a",
+            "txt": "PM Address — key points: second phase of attack triggered by reconnection. Cloud services taken offline as precaution. Schools will not reopen Monday. ‘I cannot confirm that timetable tonight.’ Stay safe, stay local.",
+            "ttl": "ARC EMERGENCY — PM ADDRESS",
+            "snip": "No ‘be well.’ She didn’t say it."
           }
         ]
       },
@@ -8450,17 +8483,19 @@
         "cards": [
           {
             "src": "BBC News",
-            "ttl": "PM: 'The timeline for restoration has changed.' Second phase of cyber attack corrupts financial records across 23 nations.",
-            "snip": "Yesterday the Chancellor said the worst was over. That was twenty-seven hours ago.",
             "tag": "Breaking",
-            "cls": "x"
+            "cls": "",
+            "txt": "PM: ‘We are back to where we were at the start of this week.’ Second disruption hits financial systems across 23 nations. Cloud services pulled offline.",
+            "ttl": "BBC News — Breaking",
+            "snip": "The Breaking chime. Again."
           },
           {
-            "src": "SMS — Chloe's school",
-            "ttl": "Monday reopening postponed. Further updates to follow. We are sorry for the continued disruption.",
-            "snip": "She'd already told her friends she'd see them Monday. She'd already packed her bag.",
+            "src": "SMS — Chloe’s school",
             "tag": "SMS",
-            "cls": ""
+            "cls": "",
+            "txt": "Monday reopening postponed. ARC Education continues. Further updates to follow.",
+            "ttl": "BHASVIC",
+            "snip": "Chloe read it before Amy did."
           }
         ]
       },
@@ -8468,18 +8503,20 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Amy's mum",
-            "ttl": "Cards stopped again. We've hardly got any food in. Your dad's upset.",
-            "snip": "They spent their cash on a roasting joint two days ago because the cards were working.",
+            "src": "Amy’s mum",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "txt": "Cards stopped again. We’ve hardly got any food in. Your dad’s upset.",
+            "ttl": "",
+            "snip": ""
           },
           {
             "src": "Dev",
-            "ttl": "Stage 2. Told you. This one corrupts — doesn't encrypt. The records aren't locked. They're gone.",
-            "snip": "He told you. You went back to sleep.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "txt": "Stage 2. Told you. This one corrupts — doesn’t encrypt. The records aren’t locked. They’re gone.",
+            "ttl": "",
+            "snip": ""
           }
         ]
       }
@@ -9887,14 +9924,16 @@
             "tag": "BE WELL",
             "cls": "a",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "txt": "Key points from PM address"
           },
           {
             "src": "ARC",
             "ttl": "<strong>EMERGENCY UPDATE — 19:30 GMT —</strong><br>Three requests from the Prime Minister. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified guidance overnight.",
             "snip": "ARC repeating the PM. The PM's words. ARC's voice.",
             "tag": "BE WELL",
-            "cls": "a"
+            "cls": "a",
+            "txt": "Three requests from the PM"
           }
         ]
       },
@@ -9988,7 +10027,8 @@
             "ttl": "<strong>EVENING UPDATE — 22:30 GMT —</strong><br>You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
             "snip": "The app wants permission. The app that installed itself without it.",
             "tag": "BE WELL",
-            "cls": "a"
+            "cls": "a",
+            "txt": "Enable ARC Emergency notifications"
           }
         ]
       }
@@ -10230,7 +10270,8 @@
             "ttl": "<strong>EMERGENCY UPDATE — 17:00 GMT —</strong><br>PM address confirmed for 18:00 GMT. ARC Emergency will provide verified updates following the broadcast.",
             "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
             "tag": "BE WELL",
-            "cls": "a"
+            "cls": "a",
+            "txt": "PM address confirmed for 18:00"
           }
         ]
       }
@@ -10333,16 +10374,17 @@
           }
         },
         {
-          "text": "PM Address to the Nation — 19 February 2027",
-          "src": "uk-gov",
+          "text": "ARC — Transcript: PM Address to the Nation — 19 February 2027",
+          "src": "arc",
           "turn": 26,
           "article": {
-            "style": "gov",
-            "source": "10 Downing Street",
-            "title": "PM's Address to the Nation — 19 February 2027",
-            "date": "19 February 2027 — 9:00pm GMT — BBC Television, Radio and ARC Emergency",
-            "body": "Good evening.\n\nI will be brief, because you deserve clarity, not length.\n\nAt just after half-past six this evening, the process of restoring our financial systems suffered a setback. Early indications suggest that the act of bringing the systems back online triggered a second wave of damage.\n\nI must be honest with you about what this means.\n\nThe payment systems that were in the process of being restored have once again been compromised.\n\nI will not stand here and tell you that this will be resolved quickly. I told you on Monday that we were looking at days, not weeks.\n\nI was wrong.\n\nAnd I am sorry.\n\nThe timeline for restoration has changed. We do not yet know what the new timeline is.\n\nI will not give you a number I cannot stand behind.\n\nI know many of you have seen messages on your banking applications using the word “permanently.” I want to address that directly. Those messages were generated automatically by banking systems detecting that their data no longer matches any verified record. They are a description of a technical condition — a condition that we are working to understand and rectify.\n\nWhat I can tell you is this.\n\nOur essential services remain unaffected. Hospitals are open. Emergency services are responding.\n\nPower, water, and gas supplies are being maintained and will continue to be maintained.\n\nHowever, all non-essential work and travel should cease for the next seven days. We must stay local.\n\nSchools will remain closed until further notice. A programme of online education and virtual classrooms will be rolled out in the coming days. Schools will reopen as soon as the situation stabilises.\n\nWe must all follow these instructions.\n\nWe have systems in place designed for these exact circumstances.\n\nSystems that protect us, and our money. Not just our savings or pensions, but the money we need for our daily purchases.\n\nAt this moment in time, retailers are unable to accept payment by card. Online banking is not currently operational. Retailers are asked to take cash payments for all essential purchases.\n\nThe Chancellor is chairing an emergency session as we speak. We will announce measures within the next twenty-four hours. Measures that will ensure no family in this country goes without essentials. We are looking at every option available to us, and we will act quickly. We will act decisively.\n\nI am able to reassure you. There will be food. We have activated our emergency distribution framework. No man, woman or child will go hungry. I give you my word on that. Details will be pushed to your phones and devices through the emergency information services.\n\nThere will be fuel. It must be used with care and caution. Rationing protocols are being formalised today. Details will follow tomorrow.\n\nThere will be answers. COBRA is in continuous session. Our international partners are coordinating.\n\nThere will be justice. The people responsible for this attack will be identified and held to account.\n\nThere is a way forward. Normality will return.\n\nMy colleagues and I will ensure you are updated regularly in the hours and days to come.\n\nGood evening. And stay safe, stay local.",
-            "footer": "Source: 10 Downing Street · Official Transcript"
+            "style": "arc",
+            "source": "ARC",
+            "title": "PM’s Address to the Nation<br>19 February 2027",
+            "date": "19 February 2027 — 21:00 GMT — Transcript via ARC Emergency",
+            "body": "<p>Good evening.</p><p>I was due to address you at six o’clock this evening. Shortly before that broadcast, at approximately half past five, financial systems across twenty-three nations experienced a further phase of disruption. The United Kingdom is one of those nations. I took the decision to delay this address so that I could instead chair an emergency COBRA session and speak to my counterparts in the affected nations. I wanted to come to you with information, not speculation.</p><p><strong>Here is what we know.</strong></p><p>The restoration of payment and banking services that had been progressing well over the past forty-eight hours has suffered a significant and unexpected setback. Our current assessment is that a second phase of the original attack was embedded within the systems themselves, and was triggered by the process of reconnection. The National Cyber Security Centre is working through the night to establish the full technical picture.</p><p>As a precaution, cloud services that were in the process of being restored have been taken back offline. This includes platforms and services that were cleared and returned to operation earlier today. I understand the frustration of that. But until we understand the nature of what we are dealing with, we cannot leave those systems running. The NCSC has made this recommendation and I have accepted it.</p><p>I know many of you experienced this directly this evening. In shops. At terminals. On your phones. I know many of you have seen messages on your banking applications using the word “permanently.” I want to address that. Those messages were generated automatically by systems detecting that their connection to verified records has been interrupted. They describe a technical condition at this moment in time. They are not a statement of fact about your money and they are not a prediction.</p><p><strong>I must be straightforward with you.</strong></p><p>I told you on Monday that we were looking at days, not weeks. Last night I told you we were on track. That schools would reopen on Monday. That businesses would follow.</p><p>I cannot confirm that timetable tonight. We are, in many respects, back to where we were at the start of this week. The progress we made was real. The systems that were restored were functioning. What happened this evening does not undo the work that was done — but it does change the picture, and I need my security and technical advisers to complete their assessment before I can set out a new timetable. I will not give you a timeline I cannot stand behind.</p><p><strong>Here is what has not changed.</strong></p><p>Our essential services are unaffected. Hospitals are open. Emergency services are responding. Power, water and gas supplies are secure. The emergency measures already in place remain in place.</p><p>Schools will not reopen on Monday as planned. ARC Education will continue and we will update parents as the position becomes clearer.</p><p>For the time being, all non-essential travel should stop. Stay local. Stay close to your families. Check on your neighbours, particularly those living alone. If you need help, your local Community Recovery Hub remains open.</p><p>ARC Emergency and ARC Local will continue to provide live updates through the night and into tomorrow. My colleagues and I will address you again at nine o’clock tomorrow morning with a full assessment of where we stand.</p><p>This is a setback. It is a serious one. But we have the infrastructure, the people and the resolve to deal with it. We dealt with the first shock. We will deal with this one.</p><p>Stay safe. Stay local.</p>",
+            "footer": "Source: 10 Downing Street · Official Transcript",
+            "broadcastFile": "BC6.html"
           }
         },
         {

@@ -10255,7 +10255,7 @@
           }
         },
         {
-          "text": "ARC — Transcript: PM Address to the Nation",
+          "text": "ARC — Transcript: PM Address to the Nation — 15 February 2027",
           "src": "arc",
           "turn": "23b",
           "article": {
@@ -10268,7 +10268,7 @@
           }
         },
         {
-          "text": "ARC — Transcript: PM Morning Address to the Nation",
+          "text": "ARC — Transcript: PM Morning Address to the Nation — 16 February 2027",
           "src": "arc",
           "turn": 24,
           "article": {
@@ -10281,7 +10281,7 @@
           }
         },
         {
-          "text": "ARC — Transcript: Joint Address to the Nation",
+          "text": "ARC — Transcript: Joint Address to the Nation — 16 February 2027",
           "src": "arc",
           "turn": 25,
           "article": {
@@ -10294,7 +10294,7 @@
           }
         },
         {
-          "text": "ARC — Transcript: PM Address to the Nation",
+          "text": "ARC — Transcript: PM Address to the Nation — 17 February 2027",
           "src": "arc",
           "turn": "25a",
           "article": {
@@ -10303,11 +10303,11 @@
             "title": "PM’s Address to the Nation<br>17 February 2027",
             "date": "17 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
             "body": "<p>Good evening.</p><p>I said I would return at six with a progress report, and I am here with an encouraging update.</p><p>Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not all terminals. Not all cards. Not yet. But the trajectory is clear, and it is accelerating.</p><p>On your screen is a tracker that shows a regional breakdown of terminal restoration. Thirty-eight per cent of payment terminals are now operational, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed.</p><p>The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified.</p><p>The network of essential retail outlets that opened yesterday has expanded today, as we said it would. Longer hours. More stores. More locations. From tomorrow morning, designated high street bank branches will open between ten and two for cash withdrawals — the list has been published through ARC and is available at your nearest Community Recovery Hub.</p><p>Our transport network is recovering. Limited rail services are running on key routes using manual signalling while our digital systems are verified. Transport for London has restored partial Tube and bus services. Fuel distribution continues at designated stations. The stay-local guidance remains in place, but we have broadened the definition of essential travel to include travel to work for those in critical roles, and travel to care for vulnerable relatives.</p><p>I want to say a word about the international picture. This attack struck twenty-three nations. I have spoken with fourteen heads of government in the last forty-eight hours. We are coordinating closely with our allies — sharing intelligence, sharing technical expertise, and learning from each other’s responses in real time. I have to be direct with you: not every country is recovering at the same pace. You will have seen reports of disorder in some cities overseas. That has not happened here, and I want to thank you for that. The calm and discipline shown by the British public over these three days has been, frankly, extraordinary. I spoke with the Japanese Prime Minister this morning, and he echoed that sentiment — our two nations, he said, have responded with a composure that others have not. We are sharing our technical recovery framework with partner nations who have requested it. The United Kingdom is among the first to begin restoring payment services. That is not luck. That is preparation, and it is resilience.</p><p>On communications. I know this has been one of the hardest parts of this week — not being able to message your family, to email, to connect in the ways we rely on. We said on Monday that we had restricted these services ourselves, as a precaution, while our cloud infrastructure was verified. That verification is progressing, and I can now set out the next steps. Email services are being restored this evening. For those of you with family overseas — and I know there are millions of you who have not been able to reach loved ones — international messaging services, including WhatsApp, will be restored from tomorrow morning. Domestic messaging services will follow as each platform completes verification with the National Cyber Security Centre. I know that is not fast enough. But the sequence matters, and we are moving as quickly as we safely can.</p><p>Schools will reopen on Monday. I confirm that without reservation. In the meantime, ARC Education went live this morning. Over two million households accessed educational content today. Your children’s schools are uploading lesson materials, reading lists, and video lessons through their local authority ARC channels. The streaming is fast, the materials are good, and your children’s teachers are working hard to keep them learning. I have been told by more than one parent that it is, and I quote, “better than lockdown.” ARC Education will continue until schools reopen.</p><p>The practical guidance on support during this period was published this afternoon through ARC, as the Chancellor committed to last evening. If you are in difficulty — if you cannot access food, medication, or essential supplies — your local Community Recovery Hub is there for you.</p><p>I want to say one more thing about the infrastructure that has made this recovery possible. The ARC authentication framework — the layer that sits beneath our payment systems, that has been powering your emergency alerts, that kept this channel open when everything else went dark — performed exactly as it was designed to. It is this framework that is enabling the restoration you are seeing on your screens tonight. It worked. And it will continue to work.</p><p>We expect the great majority of services to be restored by the weekend, with a return to normal schooling and work patterns from Monday and Tuesday of next week.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
-            "footer": ""
+            "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
         {
-          "text": "ARC — Transcript: PM Address to the Nation",
+          "text": "ARC — Transcript: PM Address to the Nation — 18 February 2027",
           "src": "arc",
           "turn": 26,
           "article": {
@@ -10316,7 +10316,7 @@
             "title": "PM’s Address to the Nation<br>18 February 2027",
             "date": "18 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
             "body": "<p>Good evening. A short update tonight, because the picture is a good one.</p><p>Sixty-one per cent of payment terminals are now operational. Some regions are above seventy per cent. The numbers speak for themselves.</p><p>The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well.</p><p>International messaging was restored this morning. I know that many of you have been able to reach family overseas today for the first time this week. The phased restoration of internet services, email, and domestic messaging is continuing, and the National Cyber Security Centre is clearing platforms as quickly and safely as it can.</p><p>Schools reopen on Monday. ARC Education continues until then.</p><p>We are now working with business and industry on a phased return to normal operations from Monday. Many businesses depend on cloud-hosted platforms and cannot fully reopen until those services are restored. The NCSC is prioritising the verification and restoration of business-critical cloud services over the weekend to support that reopening. A detailed sector-by-sector timetable will be published through ARC tomorrow.</p><p>We remain on track. The great majority of services will be restored by the weekend, with normal schooling and work patterns resuming from Monday.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
-            "footer": ""
+            "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
         {

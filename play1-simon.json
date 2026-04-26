@@ -5006,6 +5006,61 @@
       "audio": null
     },
     {
+      "id": "BC4",
+      "isQuestion": true,
+      "questionMode": "broadcast",
+      "cls": "x",
+      "broadcastSrc": "HM GOVERNMENT — PM ADDRESS — 18:00 GMT — 17 FEBRUARY 2027",
+      "broadcastArc": true,
+      "paras": [
+        {
+          "t": "Good evening."
+        },
+        {
+          "t": "I said I would return at six with a progress report, and I am here with an encouraging update."
+        },
+        {
+          "t": "Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not all terminals. Not all cards. Not yet. But the trajectory is clear, and it is accelerating."
+        },
+        {
+          "t": "On your screen is a tracker that shows a regional breakdown of terminal restoration. Thirty-eight per cent of payment terminals are now operational, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed."
+        },
+        {
+          "t": "The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified."
+        },
+        {
+          "t": "The network of essential retail outlets that opened yesterday has expanded today, as we said it would. Longer hours. More stores. More locations. From tomorrow morning, designated high street bank branches will open between ten and two for cash withdrawals — the list has been published through ARC and is available at your nearest Community Recovery Hub."
+        },
+        {
+          "t": "Our transport network is recovering. Limited rail services are running on key routes using manual signalling while our digital systems are verified. Transport for London has restored partial Tube and bus services. Fuel distribution continues at designated stations. The stay-local guidance remains in place, but we have broadened the definition of essential travel to include travel to work for those in critical roles, and travel to care for vulnerable relatives."
+        },
+        {
+          "t": "I want to say a word about the international picture. This attack struck twenty-three nations. I have spoken with fourteen heads of government in the last forty-eight hours. We are coordinating closely with our allies — sharing intelligence, sharing technical expertise, and learning from each other’s responses in real time. I have to be direct with you: not every country is recovering at the same pace. You will have seen reports of disorder in some cities overseas. That has not happened here, and I want to thank you for that. The calm and discipline shown by the British public over these three days has been, frankly, extraordinary. I spoke with the Japanese Prime Minister this morning, and he echoed that sentiment — our two nations, he said, have responded with a composure that others have not. We are sharing our technical recovery framework with partner nations who have requested it. The United Kingdom is among the first to begin restoring payment services. That is not luck. That is preparation, and it is resilience."
+        },
+        {
+          "t": "On communications. I know this has been one of the hardest parts of this week — not being able to message your family, to email, to connect in the ways we rely on. We said on Monday that we had restricted these services ourselves, as a precaution, while our cloud infrastructure was verified. That verification is progressing, and I can now set out the next steps. Email services are being restored this evening. For those of you with family overseas — and I know there are millions of you who have not been able to reach loved ones — international messaging services, including WhatsApp, will be restored from tomorrow morning. Domestic messaging services will follow as each platform completes verification with the National Cyber Security Centre. I know that is not fast enough. But the sequence matters, and we are moving as quickly as we safely can."
+        },
+        {
+          "t": "Schools will reopen on Monday. I confirm that without reservation. In the meantime, ARC Education went live this morning. Over two million households accessed educational content today. Your children’s schools are uploading lesson materials, reading lists, and video lessons through their local authority ARC channels. The streaming is fast, the materials are good, and your children’s teachers are working hard to keep them learning. I have been told by more than one parent that it is, and I quote, “better than lockdown.” ARC Education will continue until schools reopen."
+        },
+        {
+          "t": "The practical guidance on support during this period was published this afternoon through ARC, as the Chancellor committed to last evening. If you are in difficulty — if you cannot access food, medication, or essential supplies — your local Community Recovery Hub is there for you."
+        },
+        {
+          "t": "I want to say one more thing about the infrastructure that has made this recovery possible. The ARC authentication framework — the layer that sits beneath our payment systems, that has been powering your emergency alerts, that kept this channel open when everything else went dark — performed exactly as it was designed to. It is this framework that is enabling the restoration you are seeing on your screens tonight. It worked. And it will continue to work."
+        },
+        {
+          "t": "We expect the great majority of services to be restored by the weekend, with a return to normal schooling and work patterns from Monday and Tuesday of next week."
+        },
+        {
+          "t": "I will address you again tomorrow evening at six."
+        },
+        {
+          "t": "Be well."
+        }
+      ]
+    },
+    {
       "id": "25a",
       "num": "T25a",
       "title": "Normality Returning",
@@ -5017,6 +5072,43 @@
       ],
       "audio": null,
       "dateHeader": "18 FEBRUARY 2027"
+    },
+    {
+      "id": "BC5",
+      "isQuestion": true,
+      "questionMode": "broadcast",
+      "cls": "x",
+      "broadcastSrc": "HM GOVERNMENT — PM ADDRESS — 18:00 GMT — 18 FEBRUARY 2027",
+      "broadcastArc": true,
+      "paras": [
+        {
+          "t": "Good evening. A short update tonight, because the picture is a good one."
+        },
+        {
+          "t": "Sixty-one per cent of payment terminals are now operational. Some regions are above seventy per cent. The numbers speak for themselves."
+        },
+        {
+          "t": "The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well."
+        },
+        {
+          "t": "International messaging was restored this morning. I know that many of you have been able to reach family overseas today for the first time this week. The phased restoration of internet services, email, and domestic messaging is continuing, and the National Cyber Security Centre is clearing platforms as quickly and safely as it can."
+        },
+        {
+          "t": "Schools reopen on Monday. ARC Education continues until then."
+        },
+        {
+          "t": "We are now working with business and industry on a phased return to normal operations from Monday. Many businesses depend on cloud-hosted platforms and cannot fully reopen until those services are restored. The NCSC is prioritising the verification and restoration of business-critical cloud services over the weekend to support that reopening. A detailed sector-by-sector timetable will be published through ARC tomorrow."
+        },
+        {
+          "t": "We remain on track. The great majority of services will be restored by the weekend, with normal schooling and work patterns resuming from Monday."
+        },
+        {
+          "t": "I will address you again tomorrow evening at six."
+        },
+        {
+          "t": "Be well."
+        }
+      ]
     },
     {
       "id": 26,
@@ -8076,7 +8168,8 @@
             "ttl": "BHASVIC will remain closed until further notice. Updates regarding online lessons and student portal to follow.",
             "snip": "Chloe and Emilia's college doesn't know when it's reopening but it knows how to send a text.",
             "tag": "SMS",
-            "cls": ""
+            "cls": "",
+            "txt": "BHASVIC: School closed until further notice. The DfE is launching educational content through ARC tomorrow (Wed). Your teachers are preparing materials. Further details to follow. BHASVIC Sixth Form College."
           },
           {
             "src": "SMS — NHS",
@@ -8152,6 +8245,24 @@
             "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
             "tag": "6:00pm",
             "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "tag": "ARC Education",
+            "cls": "a",
+            "txt": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council."
+          },
+          {
+            "src": "ARC",
+            "tag": "12:15pm",
+            "cls": "a",
+            "txt": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region."
+          },
+          {
+            "src": "ARC",
+            "tag": "3:30pm",
+            "cls": "a",
+            "txt": "Support during the restoration period — guidance now available. Access via ARC → Support → Your Region. Includes: employer obligations, emergency hub services, prescription access, utility protections."
           }
         ]
       },
@@ -8205,6 +8316,14 @@
       {
         "sec": "ARC Emergency",
         "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "",
+            "type": "thread-notify",
+            "threadRef": "official"
+          },
           {
             "src": "ARC",
             "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
@@ -8283,6 +8402,14 @@
       {
         "sec": "ARC Emergency",
         "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "",
+            "type": "thread-notify",
+            "threadRef": "official"
+          },
           {
             "src": "ARC",
             "ttl": "A second phase of disruption has affected financial and data systems across all 23 nations. Emergency services are unaffected. Remain calm. Further updates to follow.",
@@ -10160,8 +10287,34 @@
             "source": "ARC",
             "title": "Joint Address to the Nation<br>PM, Chancellor, NCSC<br>16 February 2027",
             "date": "16 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
-            "body": "<p><strong>THE PRIME MINISTER:</strong> Good evening.</p><p>I want to begin by saying that the country has had a calm and patient day. Two days into this disruption, the streets are orderly, hospitals are open, emergency services are responding normally, and the early signs from our restoration work are good. I am grateful for that patience, and I will not over-thank you for it. We have a job to do, and we are getting on with it.</p><p>I am joined this evening, as I said I would be, by the Chancellor of the Exchequer and by Lindy Cameron, the Chief Executive of the National Cyber Security Centre. The Chancellor will set out the practical measures and the restoration timeline. Lindy will explain, in plain terms, what has happened and what is being done. I will close.</p><p>Chancellor.</p><p><strong>THE CHANCELLOR:</strong> Thank you, Prime Minister.</p><p>I am going to focus on three things this evening. The restoration plan and what to expect tomorrow. The practical arrangements for the days in between. And the support measures that are now in place.</p><p>On restoration. The 24-hour assessment window the Prime Minister announced last night has now concluded. The picture from that assessment is broadly positive. The disruption is at the authentication layer — the cryptographic system that verifies who is who when a card is presented at a terminal, or when you log in to your bank. The legacy cryptography that has underpinned that layer for thirty years has been compromised. The newer authentication framework — already deployed across UK payment infrastructure under regulation from last year — has not been. Our work since yesterday morning has been to verify each banking application, each card network, and each payment acquirer’s systems, and to bring them back online on the new framework, in sequence, as each is confirmed safe.</p><p>That work is moving on schedule. The largest UK card networks expect to begin processing transactions through tomorrow morning, with the major UK banks following through the day as their core systems complete verification. We expect to see meaningful progress through Wednesday and Thursday, and the great majority of the retail payment estate to be operational by the weekend. The Prime Minister will give a detailed restoration update tomorrow evening at six o’clock.</p><p>To be clear about what this means in practice tomorrow: some terminals at some retailers will accept some cards from some banks. Coverage will broaden through the day. If your card does not work at a particular terminal in the morning, please do not assume the system is broken — it may simply not yet have been restored. Cash will continue to be the most reliable payment method until coverage is widespread.</p><p>On the practical arrangements. From seven o’clock tomorrow morning, the network of designated retail outlets that opened this morning will expand significantly. More stores in more locations. Longer opening hours. Major supermarket chains, additional pharmacies, post offices, and selected hardware and home essentials stores will join the designated network. The full updated list is being distributed tonight through ARC Emergency, the BBC, and printed notices at every Community Recovery Hub. Cash payments only, until card coverage is restored. A household member may visit once per day.</p><p>The designated fuel network will continue, expanding to additional stations from tomorrow. Cash only, with rationing per vehicle. The list is being distributed alongside the retail list. Please use the designated stations, and please travel only if you need to.</p><p>From ten o’clock tomorrow morning, a designated network of high street bank branches will open between ten and two for cash withdrawals. Daily withdrawal limits will apply, and these will be communicated through ARC Emergency overnight. Please do not attempt to access online banking or mobile banking — these services are paused while restoration completes, and attempting to use them will not bring them back any sooner.</p><p>On support. Community Recovery Hubs are now open across every local authority area. They are warm, welcoming places — hot meals, hot drinks, a place to sit, somebody to talk to. They are particularly intended for those who are alone, those who are elderly, those without smartphones, those finding this period anxious. They are open today, they will be open tomorrow, and they will continue to be open for as long as is needed.</p><p>On wages, pensions, and benefits — I know this is a question on many minds. I will be straightforward with you. Your entitlements are protected. They are commitments of the Government and they will be honoured in full as our payment infrastructure is restored. I cannot promise that your usual payment will arrive in your account this week through the usual channels — that depends on the speed of restoration. What I can promise is that anyone in genuine difficulty in the meantime — anyone short of food, anyone short of essentials, anyone whose elderly parent or vulnerable neighbour is struggling — will be supported through the Community Recovery Hubs. Every hub has hot meals, hot drinks, volunteers and local authority staff trained to help, and information about what to do next. Detailed guidance for individual entitlements during this restoration period will be issued tomorrow afternoon, through ARC Emergency, the BBC, and at every hub. No one in this country needs to be hungry, cold, or alone tonight.</p><p>A business continuity package will be announced tomorrow at midday. The detailed guidance for employers, sole traders, and small businesses on how to handle this period will follow with it.</p><p>Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor. Lindy.</p><p><strong>NCSC CHIEF EXECUTIVE:</strong> Thank you, Prime Minister. I will be brief.</p><p>I want to explain, plainly, what happened and what we are doing about it.</p><p>The attack targeted the legacy public-key cryptography that has underpinned online banking and card payments for thirty years — the algorithms RSA, ECDSA, Diffie-Hellman. These standards have now been comprehensively compromised across the twenty-three affected nations. This was not a conventional ransomware attack. The malware was designed to undermine trust in the cryptography, not to encrypt or to steal.</p><p>That is why systems have been taken offline. What has been compromised is the <em>authentication layer</em> — the mathematical proof that, when a card is tapped at a terminal, the parties to the transaction are who they say they are.</p><p>I want to be precise about a question some of you will be asking. There is a newer authentication framework — known as ARC, mandated by the Financial Conduct Authority under Policy Statement twenty-six, four, and integrated across all UK payment infrastructure since 30 September last year. ARC operates at the device level, beneath the application layer, and uses post-quantum cryptographic standards. It has not been compromised by this attack. It is the framework on which this broadcast is reaching you — the ARC Emergency app runs on top of it. It is also the framework on which the wider banking and card payment systems sit. What we are now in the process of bringing back online is the application layer above the framework: each bank’s systems, each card network, each payment acquirer’s infrastructure — every one of which must be verified and restored on the new framework before transactions can flow.</p><p>In the hours following Sunday night’s attack, the National Cyber Security Centre issued an emergency directive, under Civil Contingencies Act authority, to UK cloud service providers and major communications platforms. The directive throttles non-essential consumer services to prevent any lateral spread of the attack into other infrastructure. This is standard cyber-incident procedure — the same approach taken by United States agencies after the SolarWinds incident in 2020. As verification work completes, those services will be progressively restored.</p><p>In practical terms tonight: telephone calls and text messages remain operational but congested. Email, messaging applications, and social media are running with delays and intermittent availability. ARC Emergency and BBC broadcast remain reliable.</p><p>I will provide a further technical update tomorrow afternoon. Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Lindy. Thank you, Chancellor.</p><p>I will close briefly.</p><p>Two days ago, before any of us had heard of any of this, a coordinated attack was made on the financial infrastructure of twenty-three countries, including ours. Two days on, the lights are still on, the hospitals are still open, the streets are calm, and the work to restore our systems is moving on schedule. That is the picture. It is, broadly, a good one.</p><p>Tomorrow I expect the first systems to begin coming back. Coverage will be patchy in the morning and stronger by the evening. The Chancellor and I will speak to you again at six o’clock with a full update. I do not expect to need to keep you informed at this rhythm beyond this week, and I do not intend to keep you on the news any longer than necessary.</p><p>Until tomorrow evening, please continue with the three things I asked of you yesterday. Stay local. Stay safe. Look after each other.</p><p>Good night. And be well.</p>",
+            "body": "<p><strong>THE PRIME MINISTER:</strong> Good evening.</p><p>I want to begin by saying that the country has had a calm and patient day. Two days into this disruption, the streets are orderly, hospitals are open, emergency services are responding normally, and the early signs from our restoration work are good. I am grateful for that patience, and I will not over-thank you for it. We have a job to do, and we are getting on with it.</p><p>I am joined this evening, as I said I would be, by the Chancellor of the Exchequer and by Lindy Cameron, the Chief Executive of the National Cyber Security Centre. The Chancellor will set out the practical measures and the restoration timeline. Lindy will explain, in plain terms, what has happened and what is being done. I will close.</p><p>Chancellor.</p><p><strong>THE CHANCELLOR:</strong> Thank you, Prime Minister.</p><p>I am going to focus on three things this evening. The restoration plan and what to expect tomorrow. The practical arrangements for the days in between. And the support measures that are now in place.</p><p>On restoration. The 24-hour assessment window the Prime Minister announced last night has now concluded. The picture from that assessment is broadly positive. The disruption is at the authentication layer — the cryptographic system that verifies who is who when a card is presented at a terminal, or when you log in to your bank. The legacy cryptography that has underpinned that layer for thirty years has been compromised. The newer authentication framework — already deployed across UK payment infrastructure under regulation from last year — has not been. Our work since yesterday morning has been to verify each banking application, each card network, and each payment acquirer’s systems, and to bring them back online on the new framework, in sequence, as each is confirmed safe.</p><p>That work is moving on schedule. The largest UK card networks expect to begin processing transactions through tomorrow morning, with the major UK banks following through the day as their core systems complete verification. We expect to see meaningful progress through Wednesday and Thursday, and the great majority of the retail payment estate to be operational by the weekend. The Prime Minister will give a detailed restoration update tomorrow evening at six o’clock.</p><p>To be clear about what this means in practice tomorrow: some terminals at some retailers will accept some cards from some banks. Coverage will broaden through the day. If your card does not work at a particular terminal in the morning, please do not assume the system is broken — it may simply not yet have been restored. Cash will continue to be the most reliable payment method until coverage is widespread.</p><p>On the practical arrangements. From seven o’clock tomorrow morning, the network of designated retail outlets that opened this morning will expand significantly. More stores in more locations. Longer opening hours. Major supermarket chains, additional pharmacies, post offices, and selected hardware and home essentials stores will join the designated network. The full updated list is being distributed tonight through ARC Emergency, the BBC, and printed notices at every Community Recovery Hub. Cash payments only, until card coverage is restored. A household member may visit once per day.</p><p>The designated fuel network will continue, expanding to additional stations from tomorrow. Cash only, with rationing per vehicle. The list is being distributed alongside the retail list. Please use the designated stations, and please travel only if you need to.</p><p>From ten o’clock tomorrow morning, a designated network of high street bank branches will open between ten and two for cash withdrawals. Daily withdrawal limits will apply, and these will be communicated through ARC Emergency overnight. Please do not attempt to access online banking or mobile banking — these services are paused while restoration completes, and attempting to use them will not bring them back any sooner.</p><p>On support. Community Recovery Hubs are now open across every local authority area. They are warm, welcoming places — hot meals, hot drinks, a place to sit, somebody to talk to. They are particularly intended for those who are alone, those who are elderly, those without smartphones, those finding this period anxious. They are open today, they will be open tomorrow, and they will continue to be open for as long as is needed.</p><p>On wages, pensions, and benefits — I know this is a question on many minds. I will be straightforward with you. Your entitlements are protected. They are commitments of the Government and they will be honoured in full as our payment infrastructure is restored. I cannot promise that your usual payment will arrive in your account this week through the usual channels — that depends on the speed of restoration. What I can promise is that anyone in genuine difficulty in the meantime — anyone short of food, anyone short of essentials, anyone whose elderly parent or vulnerable neighbour is struggling — will be supported through the Community Recovery Hubs. Every hub has hot meals, hot drinks, volunteers and local authority staff trained to help, and information about what to do next. Detailed guidance for individual entitlements during this restoration period will be issued tomorrow afternoon, through ARC Emergency, the BBC, and at every hub. No one in this country needs to be hungry, cold, or alone tonight.</p><p>A business continuity package will be announced tomorrow at midday. The detailed guidance for employers, sole traders, and small businesses on how to handle this period will follow with it.</p><p>On schools. Schools are on schedule to reopen early next week. In the meantime, the Department for Education is working with local authorities to make educational content available through ARC from tomorrow morning. Your school will contact you directly with details.</p><p>Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor. Lindy.</p><p><strong>NCSC CHIEF EXECUTIVE:</strong> Thank you, Prime Minister. I will be brief.</p><p>I want to explain, plainly, what happened and what we are doing about it.</p><p>The attack targeted the legacy public-key cryptography that has underpinned online banking and card payments for thirty years — the algorithms RSA, ECDSA, Diffie-Hellman. These standards have now been comprehensively compromised across the twenty-three affected nations. This was not a conventional ransomware attack. The malware was designed to undermine trust in the cryptography, not to encrypt or to steal.</p><p>That is why systems have been taken offline. What has been compromised is the <em>authentication layer</em> — the mathematical proof that, when a card is tapped at a terminal, the parties to the transaction are who they say they are.</p><p>I want to be precise about a question some of you will be asking. There is a newer authentication framework — known as ARC, mandated by the Financial Conduct Authority under Policy Statement twenty-six, four, and integrated across all UK payment infrastructure since 30 September last year. ARC operates at the device level, beneath the application layer, and uses post-quantum cryptographic standards. It has not been compromised by this attack. It is the framework on which this broadcast is reaching you — the ARC Emergency app runs on top of it. It is also the framework on which the wider banking and card payment systems sit. What we are now in the process of bringing back online is the application layer above the framework: each bank’s systems, each card network, each payment acquirer’s infrastructure — every one of which must be verified and restored on the new framework before transactions can flow.</p><p>In the hours following Sunday night’s attack, the National Cyber Security Centre issued an emergency directive, under Civil Contingencies Act authority, to UK cloud service providers and major communications platforms. The directive throttles non-essential consumer services to prevent any lateral spread of the attack into other infrastructure. This is standard cyber-incident procedure — the same approach taken by United States agencies after the SolarWinds incident in 2020. As verification work completes, those services will be progressively restored.</p><p>In practical terms tonight: telephone calls and text messages remain operational but congested. Email, messaging applications, and social media are running with delays and intermittent availability. ARC Emergency and BBC broadcast remain reliable.</p><p>I will provide a further technical update tomorrow afternoon. Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Lindy. Thank you, Chancellor.</p><p>I will close briefly.</p><p>Two days ago, before any of us had heard of any of this, a coordinated attack was made on the financial infrastructure of twenty-three countries, including ours. Two days on, the lights are still on, the hospitals are still open, the streets are calm, and the work to restore our systems is moving on schedule. That is the picture. It is, broadly, a good one.</p><p>Tomorrow I expect the first systems to begin coming back. Coverage will be patchy in the morning and stronger by the evening. The Chancellor and I will speak to you again at six o’clock with a full update. I do not expect to need to keep you informed at this rhythm beyond this week, and I do not intend to keep you on the news any longer than necessary.</p><p>Until tomorrow evening, please continue with the three things I asked of you yesterday. Stay local. Stay safe. Look after each other.</p><p>Good night. And be well.</p>",
             "footer": "Source: 10 Downing Street · Official Transcript"
+          }
+        },
+        {
+          "text": "ARC — Transcript: PM Address to the Nation",
+          "src": "arc",
+          "turn": "25a",
+          "article": {
+            "style": "arc",
+            "source": "ARC",
+            "title": "PM’s Address to the Nation<br>17 February 2027",
+            "date": "17 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
+            "body": "<p>Good evening.</p><p>I said I would return at six with a progress report, and I am here with an encouraging update.</p><p>Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not all terminals. Not all cards. Not yet. But the trajectory is clear, and it is accelerating.</p><p>On your screen is a tracker that shows a regional breakdown of terminal restoration. Thirty-eight per cent of payment terminals are now operational, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed.</p><p>The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified.</p><p>The network of essential retail outlets that opened yesterday has expanded today, as we said it would. Longer hours. More stores. More locations. From tomorrow morning, designated high street bank branches will open between ten and two for cash withdrawals — the list has been published through ARC and is available at your nearest Community Recovery Hub.</p><p>Our transport network is recovering. Limited rail services are running on key routes using manual signalling while our digital systems are verified. Transport for London has restored partial Tube and bus services. Fuel distribution continues at designated stations. The stay-local guidance remains in place, but we have broadened the definition of essential travel to include travel to work for those in critical roles, and travel to care for vulnerable relatives.</p><p>I want to say a word about the international picture. This attack struck twenty-three nations. I have spoken with fourteen heads of government in the last forty-eight hours. We are coordinating closely with our allies — sharing intelligence, sharing technical expertise, and learning from each other’s responses in real time. I have to be direct with you: not every country is recovering at the same pace. You will have seen reports of disorder in some cities overseas. That has not happened here, and I want to thank you for that. The calm and discipline shown by the British public over these three days has been, frankly, extraordinary. I spoke with the Japanese Prime Minister this morning, and he echoed that sentiment — our two nations, he said, have responded with a composure that others have not. We are sharing our technical recovery framework with partner nations who have requested it. The United Kingdom is among the first to begin restoring payment services. That is not luck. That is preparation, and it is resilience.</p><p>On communications. I know this has been one of the hardest parts of this week — not being able to message your family, to email, to connect in the ways we rely on. We said on Monday that we had restricted these services ourselves, as a precaution, while our cloud infrastructure was verified. That verification is progressing, and I can now set out the next steps. Email services are being restored this evening. For those of you with family overseas — and I know there are millions of you who have not been able to reach loved ones — international messaging services, including WhatsApp, will be restored from tomorrow morning. Domestic messaging services will follow as each platform completes verification with the National Cyber Security Centre. I know that is not fast enough. But the sequence matters, and we are moving as quickly as we safely can.</p><p>Schools will reopen on Monday. I confirm that without reservation. In the meantime, ARC Education went live this morning. Over two million households accessed educational content today. Your children’s schools are uploading lesson materials, reading lists, and video lessons through their local authority ARC channels. The streaming is fast, the materials are good, and your children’s teachers are working hard to keep them learning. I have been told by more than one parent that it is, and I quote, “better than lockdown.” ARC Education will continue until schools reopen.</p><p>The practical guidance on support during this period was published this afternoon through ARC, as the Chancellor committed to last evening. If you are in difficulty — if you cannot access food, medication, or essential supplies — your local Community Recovery Hub is there for you.</p><p>I want to say one more thing about the infrastructure that has made this recovery possible. The ARC authentication framework — the layer that sits beneath our payment systems, that has been powering your emergency alerts, that kept this channel open when everything else went dark — performed exactly as it was designed to. It is this framework that is enabling the restoration you are seeing on your screens tonight. It worked. And it will continue to work.</p><p>We expect the great majority of services to be restored by the weekend, with a return to normal schooling and work patterns from Monday and Tuesday of next week.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
+            "footer": ""
+          }
+        },
+        {
+          "text": "ARC — Transcript: PM Address to the Nation",
+          "src": "arc",
+          "turn": 26,
+          "article": {
+            "style": "arc",
+            "source": "ARC",
+            "title": "PM’s Address to the Nation<br>18 February 2027",
+            "date": "18 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
+            "body": "<p>Good evening. A short update tonight, because the picture is a good one.</p><p>Sixty-one per cent of payment terminals are now operational. Some regions are above seventy per cent. The numbers speak for themselves.</p><p>The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well.</p><p>International messaging was restored this morning. I know that many of you have been able to reach family overseas today for the first time this week. The phased restoration of internet services, email, and domestic messaging is continuing, and the National Cyber Security Centre is clearing platforms as quickly and safely as it can.</p><p>Schools reopen on Monday. ARC Education continues until then.</p><p>We are now working with business and industry on a phased return to normal operations from Monday. Many businesses depend on cloud-hosted platforms and cannot fully reopen until those services are restored. The NCSC is prioritising the verification and restoration of business-critical cloud services over the weekend to support that reopening. A detailed sector-by-sector timetable will be published through ARC tomorrow.</p><p>We remain on track. The great majority of services will be restored by the weekend, with normal schooling and work patterns resuming from Monday.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
+            "footer": ""
           }
         },
         {

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Address to the Nation &mdash; GOV.UK</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #07080a;
+    --bg-el: #0c0e10;
+    --bg-panel: rgba(255,255,255,.012);
+    --txt: rgba(214,210,200,.94);
+    --txt2: rgba(200,196,184,.6);
+    --txt3: rgba(200,196,184,.32);
+    --txt4: rgba(200,196,184,.18);
+    --red: #c4352a;
+    --red-hi: #e04840;
+    --red-dim: rgba(196,53,42,.32);
+    --red-glow: rgba(196,53,42,.1);
+    --red-bg: rgba(196,53,42,.04);
+    --teal: #00ffe1;
+    --teal-hi: #33ffea;
+    --teal-dim: rgba(0,255,225,.28);
+    --green: #3d7a3d;
+    --amber: #c68a2e;
+    --border: rgba(200,196,184,.08);
+    --border-hi: rgba(200,196,184,.16);
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Outfit', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body::after { content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 140px; }
+  body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.55) 100%); }
+
+  .section { opacity: 0; transform: translateY(36px); transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.revealed { opacity: 1; transform: translateY(0); }
+  .section.speech p { opacity: 0; transform: translateY(16px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.speech p.revealed { opacity: 1; transform: translateY(0); }
+  .section.pull-quote { transition: opacity 1.7s cubic-bezier(.16,1,.3,1), transform 1.7s cubic-bezier(.16,1,.3,1); }
+
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .narrow { max-width: 780px; }
+
+  .bc-strip { position: sticky; top: 0; z-index: 100; background: rgba(6,7,9,.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(196,53,42,.14); padding: 9px 40px; display: flex; align-items: center; gap: 22px; font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.5px; color: var(--txt3); }
+  .bc-live { display: flex; align-items: center; gap: 7px; color: var(--red-hi); }
+  .bc-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); animation: livePulse 1.6s ease-in-out infinite; }
+  @keyframes livePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+  .bc-sep { width: 1px; height: 12px; background: var(--border-hi); }
+  .bc-id { color: var(--txt2); }
+  .bc-id .dim { color: var(--txt3); }
+  .bc-clock { color: var(--txt2); margin-left: auto; }
+
+  .gov-bar { padding: 34px 0 0; display: flex; align-items: center; gap: 10px; opacity: 0; animation: fadeIn 1.2s ease 0.4s forwards; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .gov-text { font-weight: 600; font-size: 20px; letter-spacing: 0.5px; color: #fff; }
+  .gov-dot { color: var(--teal); }
+
+  .emergency-bar { margin-top: 16px; padding: 11px 14px; background: var(--red-bg); border-left: 3px solid var(--red); display: flex; align-items: center; gap: 14px; opacity: 0; animation: fadeIn 1s ease 0.7s forwards; }
+  .emergency-bar-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); }
+  .emergency-bar-text { font-weight: 300; font-size: 13px; color: var(--txt); letter-spacing: 0.2px; }
+  .emergency-bar-meta { margin-left: auto; font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 1px; }
+
+  .hero { padding: 56px 0 44px; border-bottom: 1px solid var(--border-hi); position: relative; }
+  .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--txt3); }
+  .hero-kicker { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--txt3); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .hero-kicker::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--border-hi); }
+  .hero h1 { font-weight: 700; font-size: clamp(34px, 5.8vw, 52px); letter-spacing: -0.8px; color: #fff; line-height: 1.05; margin-bottom: 22px; }
+  .hero-meta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
+  .hero-meta { font-family: var(--mono); font-weight: 400; font-size: 11.5px; letter-spacing: 1.8px; color: var(--txt2); text-transform: uppercase; }
+  .hero-meta .m-sep { color: var(--txt4); margin: 0 2px; }
+  .hero-speakers { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .hero-speaker { font-family: var(--mono); font-weight: 400; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt3); }
+
+  .speech { padding: 52px 0 44px; position: relative; }
+  .speech p { font-weight: 300; font-size: 18px; line-height: 1.9; color: var(--txt); margin-bottom: 28px; max-width: 720px; }
+  .speech p strong { font-weight: 500; color: rgba(232,228,218,.95); }
+  .speech-opening { font-size: 24px !important; font-weight: 400 !important; color: rgba(214,210,200,.98) !important; padding-bottom: 20px; }
+  .speech-attribution { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--txt3); margin-bottom: 8px; display: block; }
+  .speech p::before, .closing-text::before { content: '\201C'; color: rgba(200,196,184,.42); margin-right: 4px; font-weight: 400; }
+  .speech p::after, .closing-text::after { content: '\201D'; color: rgba(200,196,184,.42); margin-left: 2px; font-weight: 400; }
+
+  .pull-quote { padding: 36px 0 28px; text-align: left; max-width: 720px; }
+  .pull-quote blockquote { font-weight: 200; font-size: clamp(26px, 4.5vw, 40px); line-height: 1.4; color: rgba(214,210,200,.72); letter-spacing: -0.3px; max-width: 680px; margin: 0; position: relative; padding: 0 0.4em; }
+  .pull-quote blockquote::before { content: '\201C'; position: absolute; left: -0.15em; top: -0.05em; color: rgba(214,210,200,.45); font-weight: 300; }
+  .pull-quote blockquote::after { content: '\201D'; color: rgba(214,210,200,.45); font-weight: 300; margin-left: 0.04em; }
+
+  .panel { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 2px; padding: 28px 32px 24px; position: relative; }
+  .panel::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, var(--border-hi), transparent 70%); }
+  .panel-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .panel-label { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); }
+  .panel-meta { text-align: right; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); line-height: 1.8; }
+  .panel-footer { display: flex; justify-content: space-between; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--txt4); }
+
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table th { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt3); padding: 0 0 12px; text-align: left; border-bottom: 1px solid var(--border-hi); }
+  .data-table td { padding: 14px 0; border-bottom: 1px solid var(--border); font-weight: 300; font-size: 14px; color: var(--txt); }
+  .data-table td.dt-note { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 0.5px; }
+  .dt-status { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+    .dt-status.ok { color: var(--green); background: rgba(61,122,61,.08); }
+    .dt-status.degraded { color: var(--amber); background: rgba(198,138,46,.08); }
+    .dt-status.down { color: var(--red); background: rgba(196,53,42,.08); }
+    .dt-status.restoring { color: var(--teal); background: rgba(0,255,225,.06); }
+
+  .closing-text { padding: 56px 0; text-align: center; font-weight: 400; font-size: 22px; line-height: 1.7; color: rgba(214,210,200,.9); }
+  .section-divider { width: 48px; height: 1.5px; background: var(--red-dim); margin: 56px auto; }
+  .continue-wrap { text-align: center; padding: 48px 0 28px; opacity: 0; transition: opacity 0.8s ease; }
+  .continue-wrap.visible { opacity: 1; }
+  .continue-btn { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: #00703c; border: none; padding: 14px 36px; border-radius: 0; cursor: pointer; box-shadow: 0 2px 0 #002d18; transition: background 0.2s; }
+  .continue-btn:hover { background: #005a30; }
+  .continue-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #002d18; }
+  .footer { text-align: center; padding: 36px 0 56px; }
+  .footer-text { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--txt4); margin-bottom: 6px; }
+  .footer-ids { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: var(--txt4); opacity: 0.6; }
+
+  @media (max-width: 700px) {
+    .container { padding: 0 20px; }
+    .bc-strip { padding: 9px 16px; gap: 12px; font-size: 9px; }
+    .panel { padding: 20px 18px 18px; }
+    .panel-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .panel-meta { text-align: left; }
+    .emergency-bar { flex-wrap: wrap; }
+    .emergency-bar-meta { margin-left: 0; margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bc-strip">
+  <div class="bc-live"><span class="bc-live-dot"></span>LIVE</div>
+  <div class="bc-sep"></div>
+  <div class="bc-id">PM ADDRESS <span class="dim">/</span> DAY 6 <span class="dim">/</span> PUBLIC RELEASE</div>
+  <div class="bc-clock" id="bcClock">20 FEB 2027 &middot; 18:00:00 GMT</div>
+</div>
+
+<div class="container">
+  <div class="gov-bar">
+    <svg viewBox="0 0 44 38" width="28" height="24" fill="none"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>
+    <span class="gov-text">GOV<span class="gov-dot">&middot;</span>UK</span>
+  </div>
+  <div class="emergency-bar">
+    <span class="emergency-bar-label">&bull; PM Address</span>
+    <span class="emergency-bar-text">Prime Minister &middot; Issued under the Civil Contingencies Act 2004</span>
+    <span class="emergency-bar-meta">REF UK-EMRG-2027-034</span>
+  </div>
+  <div class="hero">
+    <div class="hero-kicker">Official Transcript</div>
+    <h1>Address<br>to the Nation</h1>
+    <div class="hero-meta-row">
+      <div class="hero-meta">20 Feb 2027<span class="m-sep"> &middot; </span>18:00 GMT<span class="m-sep"> &middot; </span>Live Broadcast</div>
+      <div class="hero-arc">
+        <svg viewBox="0 0 46 20" width="38" height="16" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="14" r="2.8" fill="#00ffe1"/>
+          <text x="13" y="16.5" font-family="Outfit,sans-serif" font-weight="600" font-size="13" fill="#fff" letter-spacing="2.5">ARC</text>
+          <path d="M11 5 Q26 -3 43 5" stroke="#00ffe1" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-speakers">
+      <span class="hero-speaker">The Prime Minister</span>
+    </div>
+  </div>
+</div>
+
+<!-- PM ADDRESS -->
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-attribution">The Prime Minister</span>
+    <p class="speech-opening">Good evening.</p>
+    <p>This morning I sat in this room with the Chancellor and Paul Chichester and told you the truth about where we stand. I asked them to hold nothing back, and they didn&rsquo;t. I know it was hard to hear. I know that for many of you today has been the worst day of this crisis &mdash; not because something new has happened, but because the hope you carried through the week is gone, and what&rsquo;s left feels uncertain and frightening.</p>
+    <p>I&rsquo;m not going to pretend otherwise. But I am going to tell you what has happened since this morning and what is coming.</p>
+    <p>The Chancellor&rsquo;s emergency direction &mdash; the freeze on all mortgage payments, rent, bills, credit, and financial obligations &mdash; is now in force. It is law. No lender, no landlord, no utility company can pursue you for anything. That protection holds for as long as this emergency lasts, and I will not revoke it until I am certain you are ready.</p>
+    <p>On essential retail. I know that many of you are concerned about food and basic supplies. Local shops in some areas have remained open and I am grateful to every shopkeeper who has kept their doors open this week. Tomorrow afternoon, designated essential retailers &mdash; supermarkets, pharmacies, and fuel stations &mdash; will reopen. The Chancellor will set out the arrangements at midday.</p>
+    <p>Since this morning, Community Recovery Hubs have expanded across the country. I want to show you something.</p>
+  </div>
+</div>
+
+<!-- HUB MAP PLACEHOLDER — to be replaced with full visual -->
+<!-- [HUB MAP — national view + regional zoom panels go here] -->
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>Behind me is the current map of Community Recovery Hubs operating across the United Kingdom as of five o&rsquo;clock this evening. There are more than three thousand open right now. By tomorrow morning that number will exceed five thousand. Every one of those points of light is a place you can walk to &mdash; a library, a community centre, a church hall, a school &mdash; where there are people ready to help. Hot food. Medical advice. Information. Somewhere warm.</p>
+    <p>Your regional hub map is being sent to your ARC Local right now. If you have someone nearby who is elderly, alone, or struggling &mdash; please check on them tonight and help them find their nearest hub tomorrow.</p>
+  </div>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="container narrow">
+  <div class="section pull-quote"><blockquote>That is not the Government. That is you. And it is the thing that no crisis can break.</blockquote></div>
+</div>
+
+<div class="container narrow">
+  <div class="section speech">
+    <p>I want to say something about what I have seen today. I have seen volunteers who left their own homes &mdash; their own worries, their own kitchen drawers with the notes counted and recounted &mdash; to open a church hall at six in the morning for people they&rsquo;ve never met. I have seen retired nurses walking into hubs and asking where to start. I have seen neighbours who didn&rsquo;t know each other&rsquo;s names on Monday cooking together on Saturday. That is not the Government. That is you. And it is the thing that no crisis can break.</p>
+    <p>On the wider picture. Several of our partner nations have today begun deploying their own emergency payment measures. We are not alone in this, and we are not behind. There are plans well advanced that will ensure no one in this country goes without.</p>
+    <p>I will address you again tomorrow with the Chancellor at midday with the full detail of the measures I have described tonight. The announcement will be broadcast live on BBC television and radio channels, and on ARC Emergency and ARC Local.</p>
+    <p>The same three things. Stay local. Stay safe. Look after each other.</p>
+  </div>
+</div>
+
+<!-- SERVICE STATUS TABLE -->
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">Service Status &middot; National Overview</div></div>
+        <div class="panel-meta">
+          <div>Status as at 17:30 GMT, 20 Feb 2027</div>
+          <div>Issued by Cabinet Office &amp; HM Treasury</div>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Service</th><th>Provider</th><th style="text-align:right;">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Electricity &middot; Gas &middot; Water</td><td class="dt-note">National Grid / Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>ARC Emergency</td><td class="dt-note">ARC / NCSC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Community Recovery Hubs</td><td class="dt-note">Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Open &middot; 3,000+</span></td></tr>
+          <tr><td>ARC Education</td><td class="dt-note">DfE / Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Live</span></td></tr>
+          <tr><td>BBC broadcast</td><td class="dt-note">BBC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Telephone calls &amp; SMS</td><td class="dt-note">UK mobile networks</td><td style="text-align:right;"><span class="dt-status degraded">Congested</span></td></tr>
+          <tr><td>Essential retail</td><td class="dt-note">Designated network</td><td style="text-align:right;"><span class="dt-status restoring">Reopening tomorrow</span></td></tr>
+          <tr><td>Email services</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Domestic messaging</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>International messaging</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Social media</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Streaming / entertainment</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Payment terminals</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Offline &middot; Data integrity</span></td></tr>
+          <tr><td>Banking applications</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Offline &middot; Data integrity</span></td></tr>
+          <tr><td>Online banking</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Offline</span></td></tr>
+          <tr><td>ATMs</td><td class="dt-note">LINK</td><td style="text-align:right;"><span class="dt-status down">Offline</span></td></tr>
+          <tr><td>Markets (LSE)</td><td class="dt-note">London Stock Exchange</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Bank branches (cash)</td><td class="dt-note">Major UK banks</td><td style="text-align:right;"><span class="dt-status down">Closed</span></td></tr>
+          <tr><td>Transport &mdash; road</td><td class="dt-note">Highways England</td><td style="text-align:right;"><span class="dt-status degraded">Fuel rationed</span></td></tr>
+          <tr><td>Transport &mdash; rail</td><td class="dt-note">Network Rail</td><td style="text-align:right;"><span class="dt-status degraded">Limited &middot; Key routes</span></td></tr>
+          <tr><td>Schools</td><td class="dt-note">DfE</td><td style="text-align:right;"><span class="dt-status down">Closed &middot; Under review</span></td></tr>
+        </tbody>
+      </table>
+      <div class="panel-footer">
+        <span>Next update: 21 Feb &middot; 12:00 GMT &middot; Chancellor&rsquo;s address</span>
+        <span>Table 1 of 1</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSE -->
+<div class="container narrow">
+  <div class="section"><div class="section-divider"></div></div>
+  <div class="section"><div class="closing-text">Be well.</div></div>
+</div>
+
+<div class="container">
+  <div class="continue-wrap" id="continueWrap"><button class="continue-btn">Turn off TV</button></div>
+  <div class="footer">
+    <div class="footer-text">&copy; Crown copyright 2027 &middot; Open Government Licence v3.0</div>
+    <div class="footer-ids">DOC &middot; PMO-ADDR-20270220-B &nbsp;&middot;&nbsp; PUBLISHED 18:00 GMT &nbsp;&middot;&nbsp; TRANSCRIPT AVAILABLE</div>
+  </div>
+</div>
+
+<script>
+(function(){var e=document.getElementById('bcClock');if(!e)return;var s=Date.now(),p=function(n){return(n<10?'0':'')+n};function t(){var d=Math.floor((Date.now()-s)/1000),a=18*3600+d,h=Math.floor(a/3600)%24,m=Math.floor(a%3600/60),c=a%60;e.textContent='20 FEB 2027 \xb7 '+p(h)+':'+p(m)+':'+p(c)+' GMT'}t();setInterval(t,1e3)})();
+(function(){var ss=document.querySelectorAll('.section'),cw=document.getElementById('continueWrap');function r(s){if(s.classList.contains('revealed'))return;s.classList.add('revealed');if(s.classList.contains('speech')){s.querySelectorAll('p').forEach(function(p,i){setTimeout(function(){p.classList.add('revealed')},200+i*400)})}}function v(){var t=window.innerHeight*.85;ss.forEach(function(s){if(!s.classList.contains('revealed')&&s.getBoundingClientRect().top<t)r(s)});var l=ss[ss.length-1];if(l&&l.classList.contains('revealed')&&cw)setTimeout(function(){cw.classList.add('visible')},800)}setTimeout(function(){Array.from(ss).filter(function(s){return s.getBoundingClientRect().top<window.innerHeight}).forEach(function(s,i){setTimeout(function(){r(s)},i*600)})},800);window.addEventListener('scroll',v,{passive:true})})();
+(function(){var b=document.querySelector('.continue-btn');if(b)b.addEventListener('click',function(){if(window.parent&&window.parent!==window)window.parent.postMessage({type:'broadcast-continue',id:'BC8'},'*')})})();
+</script>
+</body>
+</html>

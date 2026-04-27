@@ -5231,6 +5231,16 @@
       "audio": null
     },
     {
+      "id": "BC8",
+      "isQuestion": true,
+      "questionMode": "broadcast",
+      "cls": "x",
+      "broadcastSrc": "HM GOVERNMENT — PM ADDRESS — 18:00 GMT — 20 FEBRUARY 2027",
+      "broadcastArc": true,
+      "broadcastFile": "BC8.html",
+      "paras": []
+    },
+    {
       "id": 28,
       "num": "T28",
       "title": "Dev",
@@ -8553,7 +8563,24 @@
         ]
       }
     ],
-    "28": [],
+    "28": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "PM address 20 Feb evening — transcript via ARC",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "ttl": "<strong>PM ADDRESS  20/2— 18:00 GMT — Transcript</strong>",
+            "snip": "Every one of those points of light is a place you can walk to.",
+            "isnew": true
+          }
+        ]
+      }
+    ],
     "29": [
       {
         "sec": "ARC Emergency",
@@ -10156,6 +10183,19 @@
             "broadcastFile": "BC7.html"
           },
           "src": "arc"
+        },
+        {
+          "text": "ARC — Transcript: PM Address to the Nation — 20 February 2027 (Evening)",
+          "src": "arc",
+          "turn": "28",
+          "article": {
+            "style": "arc",
+            "source": "ARC",
+            "title": "PM’s Address to the Nation<br>20 February 2027",
+            "date": "20 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
+            "body": "<p>Good evening.</p>\n<p>This morning I sat in this room with the Chancellor and Paul Chichester and told you the truth about where we stand. I asked them to hold nothing back, and they didn’t. I know it was hard to hear. I know that for many of you today has been the worst day of this crisis — not because something new has happened, but because the hope you carried through the week is gone, and what’s left feels uncertain and frightening.</p>\n<p>I’m not going to pretend otherwise. But I am going to tell you what has happened since this morning and what is coming.</p>\n<p>The Chancellor’s emergency direction — the freeze on all mortgage payments, rent, bills, credit, and financial obligations — is now in force. It is law. No lender, no landlord, no utility company can pursue you for anything. That protection holds for as long as this emergency lasts, and I will not revoke it until I am certain you are ready.</p>\n<p>On essential retail. I know that many of you are concerned about food and basic supplies. Local shops in some areas have remained open and I am grateful to every shopkeeper who has kept their doors open this week. Tomorrow afternoon, designated essential retailers — supermarkets, pharmacies, and fuel stations — will reopen under emergency operating procedures. The Chancellor will set out the detail of how this will work at midday tomorrow.</p>\n<p>Since this morning, Community Recovery Hubs have expanded across the country. I want to show you something.</p>\n<p>Behind me is the current map of Community Recovery Hubs operating across the United Kingdom as of five o’clock this evening. There are more than three thousand open right now. By tomorrow morning that number will exceed five thousand. Every one of those points of light is a place you can walk to — a library, a community centre, a church hall, a school — where there are people ready to help. Hot food. Medical advice. Information. Somewhere warm.</p>\n<p>Your regional hub map is being sent to your ARC Local right now. If you have someone nearby who is elderly, alone, or struggling — please check on them tonight and help them find their nearest hub tomorrow.</p>\n<p>I want to say something about what I have seen today. I have seen volunteers who left their own homes — their own worries, their own kitchen drawers with the notes counted and recounted — to open a church hall at six in the morning for people they’ve never met. I have seen retired nurses walking into hubs and asking where to start. I have seen neighbours who didn’t know each other’s names on Monday cooking together on Saturday. That is not the Government. That is you. And it is the thing that no crisis can break.</p>\n<p>On the wider picture. Several of our partner nations have today begun deploying their own emergency payment measures. We are not alone in this, and we are not behind. There are plans well advanced that will ensure no one in this country goes without.</p>\n<p>I will address you again tomorrow with the Chancellor at midday with the full detail of the measures I have described tonight. The announcement will be broadcast live on BBC television and radio channels, and on ARC Emergency and ARC Local.</p>\n<p>The same three things. Stay local. Stay safe. Look after each other.</p>\n<p>Be well.</p>",
+            "footer": "Source: 10 Downing Street · Official Transcript"
+          }
         },
         {
           "text": "PM’s Address to the Nation — Full Transcript",

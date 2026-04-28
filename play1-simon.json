@@ -5275,8 +5275,8 @@
           "media": {
             "type": "html",
             "src": "arc-local-east-sussex.html",
-            "pos": "full",
-            "ar": 1.0,
+            "pos": "wide",
+            "ar": 0.55,
             "caption": "ARC Local · East Sussex · 19:00 GMT"
           }
         },

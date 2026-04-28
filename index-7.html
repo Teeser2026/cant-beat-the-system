@@ -866,6 +866,15 @@ html, body {
   z-index: -1;
   pointer-events: none;
 }
+.prose-media.pm-wide {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--left-w, 100%) - 64px);
+  max-width: 1400px;
+  margin: 28px 0;
+  clear: both;
+}
 .prose-media img,
 .prose-media video {
   width: 100%;
@@ -886,7 +895,7 @@ html, body {
   text-transform: uppercase;
 }
 .prose-media + p { clear: none; }
-.pm-full + p, .pm-bg + p { clear: both; }
+.pm-full + p, .pm-bg + p, .pm-wide + p { clear: both; }
 
 /* Mobile: floated media collapses to full-width — column too narrow for wrap */
 @media (max-width: 640px) {
@@ -2816,6 +2825,12 @@ body.game-active .ticker-bar { display: flex; }
   .wrap { margin-right: 0; }
   .left { border-right: none; }
   .prose-wrap { padding: 64px 24px 120px; }
+  .prose-media.pm-wide {
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+  }
   .dev-turn-list { display: none !important; }
   .chapter-nav { display: none !important; }
   .reader-bar { display: none !important; }
@@ -4028,6 +4043,22 @@ body.game-active .ticker-bar { display: flex; }
 // All render logic identical to index-6 Phase A.
 // ══════════════════════════════════════════════════════════
 
+// ── LEFT-PANE WIDTH CSS VAR (for pm-wide breakout) ──
+(function() {
+  function setLeftW() {
+    const el = document.querySelector('.left');
+    if (el) el.style.setProperty('--left-w', el.clientWidth + 'px');
+  }
+  window.addEventListener('resize', setLeftW);
+  // Run once DOM is ready and again after fonts/layout settle
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setLeftW);
+  } else {
+    setLeftW();
+  }
+  setTimeout(setLeftW, 500);
+})();
+
 // ── STATE (initialised from JSON) ──
 let state = {};
 let playData = {};
@@ -4134,19 +4165,16 @@ function renderTurn(turnData) {
       const m = p.media;
       const mType = m.type || 'image';
       const mPos = m.pos || 'right';
-      const mW = m.w || (mPos === 'full' || mPos === 'bg' ? '100%' : '45%');
+      const mW = m.w || (mPos === 'full' || mPos === 'bg' || mPos === 'wide' ? '100%' : '45%');
       const mOp = m.opacity != null ? m.opacity : 1;
       const posCls = 'pm-' + mPos;
-      const wStyle = mPos === 'full' || mPos === 'bg' ? '' : `width:${mW};`;
+      const wStyle = mPos === 'full' || mPos === 'bg' || mPos === 'wide' ? '' : `width:${mW};`;
       const opStyle = mOp < 1 ? `opacity:${mOp};` : '';
       html += `<div class="prose-media ${posCls}" style="${wStyle}${opStyle}">\n`;
       if (mType === 'video') {
         const loop = m.loop !== false ? ' loop' : '';
         const muted = m.audio ? '' : ' muted';
         html += `  <video src="${m.src}" autoplay${muted}${loop} playsinline disablepictureinpicture></video>\n`;
-      } else if (mType === 'html') {
-        const ar = m.ar || 0.75;
-        html += `  <iframe src="${m.src}" frameborder="0" scrolling="no" style="width:100%;aspect-ratio:1/${ar};border:none;display:block;border-radius:2px;" loading="lazy"></iframe>\n`;
       } else {
         html += `  <img src="${m.src}" alt="" draggable="false" loading="lazy">\n`;
       }

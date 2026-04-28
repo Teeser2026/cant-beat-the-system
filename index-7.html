@@ -4144,6 +4144,9 @@ function renderTurn(turnData) {
         const loop = m.loop !== false ? ' loop' : '';
         const muted = m.audio ? '' : ' muted';
         html += `  <video src="${m.src}" autoplay${muted}${loop} playsinline disablepictureinpicture></video>\n`;
+      } else if (mType === 'html') {
+        const ar = m.ar || 0.75;
+        html += `  <iframe src="${m.src}" frameborder="0" scrolling="no" style="width:100%;aspect-ratio:1/${ar};border:none;display:block;border-radius:2px;" loading="lazy"></iframe>\n`;
       } else {
         html += `  <img src="${m.src}" alt="" draggable="false" loading="lazy">\n`;
       }

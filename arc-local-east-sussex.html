@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Recovery Hubs — East Sussex</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:#0b1012;color:#8a9498;font-family:'IBM Plex Mono',monospace;
+    min-height:100vh;display:flex;justify-content:center;align-items:flex-start;
+    padding:24px;
+  }
+  .frame{
+    width:100%;max-width:1340px;background:#0d1315;
+    border:1px solid #1a2226;
+  }
+  .top{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    padding:24px 28px 18px;
+  }
+  .top h1{
+    font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;
+    letter-spacing:4px;text-transform:uppercase;color:#c0c8cc;margin-bottom:2px;
+  }
+  .top .sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4a5a5e;}
+  .top .src{text-align:right;font-size:11px;letter-spacing:1.5px;color:#4a5a5e;line-height:1.7;}
+  .map-wrap{position:relative;width:100%;line-height:0;}
+  .map-wrap img{width:100%;height:auto;display:block;pointer-events:none;}
+  .dot{position:absolute;border-radius:50%;z-index:10;transform:translate(-50%,-50%);pointer-events:none;}
+  .dot.cyan{width:11px;height:11px;background:#3dffc4;box-shadow:0 0 5px rgba(61,255,196,0.45);}
+  .dot.orange{width:8px;height:8px;background:#e8a840;box-shadow:0 0 4px rgba(232,168,64,0.35);}
+  .label{
+    position:absolute;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:400;
+    letter-spacing:1.5px;color:#c0c8cc;
+    text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 8px rgba(0,0,0,0.7);
+    z-index:15;white-space:nowrap;padding:2px 4px;pointer-events:none;
+  }
+  .info{
+    display:grid;
+    grid-template-columns:1fr 1px 1fr 1px auto;
+    border-top:1px solid #1a2226;
+  }
+  .divider{background:#1a2226;}
+  .districts{padding:20px 28px;}
+  .section-head{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:#4a5a5e;padding-bottom:12px;border-bottom:1px solid #1a2226;margin-bottom:0;
+  }
+  .region-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:8px 0;border-bottom:1px solid #111a1d;
+  }
+  .region-row .name{
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:400;color:#c0c8cc;
+  }
+  .region-row .count{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:400;color:#c0c8cc;
+  }
+  .stats{padding:20px 28px;display:flex;flex-direction:column;justify-content:flex-start;}
+  .stat-block{padding:0 0 20px;margin-bottom:20px;border-bottom:1px solid #1a2226;}
+  .stat-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .stat-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4a5a5e;margin-bottom:2px;}
+  .stat-sublabel{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#3a4a4e;}
+  .stat-num{
+    font-family:'IBM Plex Sans',sans-serif;font-size:42px;font-weight:300;
+    color:#c0c8cc;text-align:right;margin-top:-24px;
+  }
+  .legend-col{padding:20px 28px;display:flex;flex-direction:column;justify-content:flex-end;}
+  .legend-item{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .legend-item:last-child{margin-bottom:0;}
+  .ldot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+  .ldot.c{background:#3dffc4;box-shadow:0 0 4px rgba(61,255,196,0.5);}
+  .ldot.o{background:#e8a840;box-shadow:0 0 4px rgba(232,168,64,0.4);}
+  .legend-text{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#5a6a6e;}
+  .footer{
+    display:flex;justify-content:space-between;padding:14px 28px;
+    border-top:1px solid #1a2226;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#3a4a4e;
+  }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <div>
+      <h1>Community Recovery Hubs</h1>
+      <div class="sub">East Sussex &middot; Local Overview</div>
+    </div>
+    <div class="src">Source: ARC Local / East Sussex CC<br>19:00 GMT &middot; 20 February 2027</div>
+  </div>
+  <div class="map-wrap" id="map">
+    <img src="sat_map.png" draggable="false">
+  </div>
+  <div class="info">
+    <div class="districts">
+      <div class="section-head">By District</div>
+      <div class="region-row"><span class="name">Brighton and Hove</span><span class="count">22</span></div>
+      <div class="region-row"><span class="name">Lewes</span><span class="count">12</span></div>
+      <div class="region-row"><span class="name">Wealden</span><span class="count">19</span></div>
+      <div class="region-row"><span class="name">Eastbourne</span><span class="count">14</span></div>
+      <div class="region-row"><span class="name">Hastings</span><span class="count">16</span></div>
+      <div class="region-row"><span class="name">Rother</span><span class="count">8</span></div>
+      <div class="region-row"><span class="name">Mid Sussex</span><span class="count">10</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="stats">
+      <div class="stat-block">
+        <div class="stat-label">Open Now</div>
+        <div class="stat-sublabel">19:00 GMT</div>
+        <div class="stat-num">101</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Target by 0800</div>
+        <div class="stat-sublabel">Tomorrow Morning</div>
+        <div class="stat-num">143</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="legend-col">
+      <div class="legend-item"><div class="ldot c"></div><span class="legend-text">Community Recovery Hub &mdash; Open</span></div>
+      <div class="legend-item"><div class="ldot o"></div><span class="legend-text">Opening Within 24 Hours</span></div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Updates every 30 min via ARC Local</span>
+    <span>Cabinet Office &middot; 20 Feb 2027</span>
+  </div>
+</div>
+<script>
+const map=document.getElementById('map');
+const labels=[{"id": "crowborough", "x": 45.36, "y": 11.79, "text": "Crowborough"}, {"id": "haywards_heath", "x": 18.32, "y": 28.15, "text": "Haywards Heath"}, {"id": "uckfield", "x": 36.9, "y": 32.87, "text": "Uckfield"}, {"id": "heathfield", "x": 50.52, "y": 28.27, "text": "Heathfield"}, {"id": "burgess_hill", "x": 21.86, "y": 39.09, "text": "Burgess Hill"}, {"id": "lewes", "x": 31.29, "y": 57.42, "text": "Lewes"}, {"id": "worthing", "x": 1.66, "y": 77.18, "text": "Worthing"}, {"id": "brighton_hove", "x": 11.75, "y": 75.38, "text": "Brighton and Hove"}, {"id": "newhaven", "x": 34.03, "y": 85.21, "text": "Newhaven"}, {"id": "eastbourne", "x": 59.94, "y": 85.06, "text": "Eastbourne"}, {"id": "bexhill", "x": 70.93, "y": 68.76, "text": "Bexhill"}, {"id": "battle", "x": 72.94, "y": 47.29, "text": "Battle"}, {"id": "hastings", "x": 80.3, "y": 63.91, "text": "Hastings"}, {"id": "rye", "x": 95.55, "y": 45.16, "text": "Rye"}];
+const cyans=[{"id": "c1", "x": 62.16, "y": 5.76}, {"id": "c2", "x": 29.44, "y": 19}, {"id": "c3", "x": 71.16, "y": 66.01}, {"id": "c4", "x": 85.1, "y": 9.9}, {"id": "c5", "x": 46.74, "y": 57.32}, {"id": "c6", "x": 24.03, "y": 42.15}, {"id": "c7", "x": 8.83, "y": 4.36}, {"id": "c8", "x": 62.8, "y": 46.1}, {"id": "c9", "x": 23.79, "y": 32.62}, {"id": "c10", "x": 77.5, "y": 3.5}, {"id": "c11", "x": 77.1, "y": 58.2}, {"id": "c12", "x": 34.3, "y": 15.3}, {"id": "c13", "x": 91.1, "y": 29.6}, {"id": "c14", "x": 11.25, "y": 9.63}, {"id": "c15", "x": 80.79, "y": 56.59}, {"id": "c16", "x": 79.88, "y": 61.66}, {"id": "c17", "x": 52.3, "y": 74.62}, {"id": "c18", "x": 37.8, "y": 46.6}, {"id": "c19", "x": 82.73, "y": 56.13}, {"id": "c20", "x": 82.16, "y": 49.81}, {"id": "c21", "x": 72.88, "y": 62}, {"id": "c22", "x": 24, "y": 25.9}, {"id": "c23", "x": 7.8, "y": 15.51}, {"id": "c24", "x": 12.3, "y": 25}, {"id": "c25", "x": 56.79, "y": 32.57}, {"id": "c26", "x": 37.1, "y": 19.6}, {"id": "c27", "x": 24.24, "y": 60.7}, {"id": "c28", "x": 54.59, "y": 34.35}, {"id": "c29", "x": 18.7, "y": 60.6}, {"id": "c30", "x": 20.22, "y": 33}, {"id": "c31", "x": 53.35, "y": 53.17}, {"id": "c32", "x": 48.43, "y": 8.14}, {"id": "c33", "x": 32, "y": 24.2}, {"id": "c34", "x": 19.32, "y": 68.14}, {"id": "c35", "x": 96.9, "y": 37.11}, {"id": "c36", "x": 59.63, "y": 40.69}, {"id": "c37", "x": 87.1, "y": 39.2}, {"id": "c38", "x": 54.6, "y": 23.8}, {"id": "c39", "x": 56.8, "y": 73.9}, {"id": "c40", "x": 39.7, "y": 20.3}, {"id": "c41", "x": 97.31, "y": 40.81}, {"id": "c42", "x": 11.11, "y": 4.44}, {"id": "c43", "x": 13.1, "y": 52.6}, {"id": "c44", "x": 77.04, "y": 38.82}, {"id": "c45", "x": 8.8, "y": 33.1}, {"id": "c46", "x": 3.46, "y": 58.54}, {"id": "c47", "x": 65.7, "y": 45.4}, {"id": "c48", "x": 36.41, "y": 55.66}, {"id": "c49", "x": 17.73, "y": 40.92}, {"id": "c50", "x": 44.91, "y": 82.17}, {"id": "c51", "x": 83.6, "y": 23.8}, {"id": "c52", "x": 49.1, "y": 17.1}, {"id": "c53", "x": 35.29, "y": 53.61}, {"id": "c54", "x": 61.22, "y": 78.5}, {"id": "c55", "x": 73.2, "y": 45.6}, {"id": "c56", "x": 3.82, "y": 73.73}, {"id": "c57", "x": 31.3, "y": 7.6}, {"id": "c58", "x": 10.9, "y": 41.4}, {"id": "c59", "x": 4.32, "y": 69.44}, {"id": "c60", "x": 72.14, "y": 14.61}, {"id": "c61", "x": 47.92, "y": 46.55}, {"id": "c62", "x": 27.4, "y": 71.9}, {"id": "c63", "x": 43.55, "y": 29.02}, {"id": "c64", "x": 57.46, "y": 82.59}, {"id": "c65", "x": 27.01, "y": 15.22}, {"id": "c66", "x": 41.94, "y": 50.69}, {"id": "c67", "x": 26.55, "y": 23.82}, {"id": "c68", "x": 34.1, "y": 49.5}, {"id": "c69", "x": 24.2, "y": 20.4}, {"id": "c70", "x": 12.29, "y": 66.33}, {"id": "c71", "x": 21.52, "y": 68.76}, {"id": "c72", "x": 50.48, "y": 9.66}, {"id": "c73", "x": 24.9, "y": 55.8}, {"id": "c74", "x": 5.89, "y": 5.95}, {"id": "c75", "x": 88.74, "y": 26.36}, {"id": "c76", "x": 33.76, "y": 76.16}, {"id": "c77", "x": 77.93, "y": 18}, {"id": "c78", "x": 42, "y": 39.9}, {"id": "c79", "x": 93.5, "y": 10.8}, {"id": "c80", "x": 38.6, "y": 30.07}, {"id": "c81", "x": 26.37, "y": 35.23}, {"id": "c82", "x": 41.8, "y": 25}, {"id": "c83", "x": 25.57, "y": 70.32}, {"id": "c84", "x": 43.8, "y": 71}, {"id": "c85", "x": 54.39, "y": 8.21}, {"id": "c86", "x": 81.1, "y": 16.1}, {"id": "c87", "x": 47.7, "y": 19.9}, {"id": "c88", "x": 37.74, "y": 58.36}, {"id": "c89", "x": 39.04, "y": 80.95}, {"id": "c90", "x": 27.4, "y": 64.9}, {"id": "c91", "x": 44.9, "y": 36.67}, {"id": "c92", "x": 57.61, "y": 61.76}, {"id": "c93", "x": 17.2, "y": 26.4}, {"id": "c94", "x": 92.1, "y": 48.8}, {"id": "c95", "x": 6.01, "y": 42.56}, {"id": "c96", "x": 49.3, "y": 70.4}, {"id": "c97", "x": 10.4, "y": 17.7}, {"id": "c98", "x": 56.41, "y": 56.9}, {"id": "c99", "x": 24.6, "y": 12.5}, {"id": "c100", "x": 7.2, "y": 71.52}];
+const oranges=[{"id": "o1", "x": 46.54, "y": 61.33}, {"id": "o2", "x": 57.61, "y": 87.52}, {"id": "o3", "x": 21.8, "y": 59.6}, {"id": "o4", "x": 25, "y": 34.3}, {"id": "o5", "x": 76.82, "y": 50.85}, {"id": "o6", "x": 32.1, "y": 62.4}, {"id": "o7", "x": 9.7, "y": 39.2}, {"id": "o8", "x": 9.45, "y": 20.33}, {"id": "o9", "x": 37, "y": 15.5}, {"id": "o10", "x": 79.7, "y": 58.6}, {"id": "o11", "x": 53.54, "y": 18.99}, {"id": "o12", "x": 78.2, "y": 26.7}, {"id": "o13", "x": 10.14, "y": 7.09}, {"id": "o14", "x": 9.08, "y": 67.38}, {"id": "o15", "x": 35.39, "y": 62}, {"id": "o16", "x": 69, "y": 19.1}, {"id": "o17", "x": 61.3, "y": 23.9}, {"id": "o18", "x": 47.9, "y": 74.5}, {"id": "o19", "x": 80.8, "y": 10.3}, {"id": "o20", "x": 3.3, "y": 63.9}, {"id": "o21", "x": 70.99, "y": 46.45}, {"id": "o22", "x": 25.2, "y": 37.46}, {"id": "o23", "x": 86.2, "y": 46.1}, {"id": "o24", "x": 73.43, "y": 64.55}, {"id": "o25", "x": 16.6, "y": 13.1}, {"id": "o26", "x": 31.4, "y": 74}, {"id": "o27", "x": 85.7, "y": 19.6}, {"id": "o28", "x": 26, "y": 11.1}, {"id": "o29", "x": 38.03, "y": 54.87}, {"id": "o30", "x": 15.67, "y": 66.94}, {"id": "o31", "x": 37.03, "y": 78.76}, {"id": "o32", "x": 84.82, "y": 57.46}, {"id": "o33", "x": 47.93, "y": 5.92}, {"id": "o34", "x": 23.5, "y": 67.5}, {"id": "o35", "x": 45.3, "y": 27.1}, {"id": "o36", "x": 83.93, "y": 59.34}, {"id": "o37", "x": 34.92, "y": 67.83}, {"id": "o38", "x": 92, "y": 25.1}, {"id": "o39", "x": 62, "y": 34.6}, {"id": "o40", "x": 95.21, "y": 37.28}, {"id": "o41", "x": 89.4, "y": 12.1}, {"id": "o42", "x": 60.4, "y": 73.25}, {"id": "o43", "x": 70, "y": 27.8}, {"id": "o44", "x": 55.44, "y": 40.68}, {"id": "o45", "x": 38.53, "y": 49.4}, {"id": "o46", "x": 26.4, "y": 59}, {"id": "o47", "x": 36.5, "y": 8.5}, {"id": "o48", "x": 56.09, "y": 62.46}, {"id": "o49", "x": 28.25, "y": 23.21}, {"id": "o50", "x": 31.5, "y": 35.3}, {"id": "o51", "x": 40, "y": 26.4}, {"id": "o52", "x": 14.7, "y": 36.2}, {"id": "o53", "x": 92.59, "y": 39.82}, {"id": "o54", "x": 86.1, "y": 51.6}, {"id": "o55", "x": 30.7, "y": 46.3}, {"id": "o56", "x": 2.35, "y": 70.68}, {"id": "o57", "x": 65.48, "y": 19.19}, {"id": "o58", "x": 43.7, "y": 19.9}, {"id": "o59", "x": 57.52, "y": 77.22}, {"id": "o60", "x": 76.2, "y": 16.4}];
+function mk(d,type){
+  const el=document.createElement('div');
+  el.className=type==='labels'?'label':'dot '+type;
+  if(type==='labels')el.textContent=d.text;
+  el.style.left=d.x+'%';el.style.top=d.y+'%';
+  map.appendChild(el);
+}
+cyans.forEach(d=>mk(d,'cyan'));
+oranges.forEach(d=>mk(d,'orange'));
+labels.forEach(d=>mk(d,'labels'));
+</script>
+</body>
+</html>

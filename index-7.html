@@ -867,12 +867,9 @@ html, body {
   pointer-events: none;
 }
 .prose-media.pm-wide {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   width: calc(var(--left-w, 100%) - 64px);
   max-width: 1400px;
-  margin: 28px 0;
+  margin: 28px calc((100% - var(--left-w, 100%) + 64px) / 2);
   clear: both;
 }
 .prose-media img,
@@ -2826,9 +2823,8 @@ body.game-active .ticker-bar { display: flex; }
   .left { border-right: none; }
   .prose-wrap { padding: 64px 24px 120px; }
   .prose-media.pm-wide {
-    left: auto;
-    transform: none;
-    width: 100%;
+    width: calc(100% - 16px);
+    margin: 28px 8px;
     max-width: none;
   }
   .dev-turn-list { display: none !important; }

@@ -51,12 +51,12 @@
   }
 
   @keyframes pulse-cyan {
-    0%,100% { box-shadow:0 0 4px rgba(61,255,196,0.4); }
-    50% { box-shadow:0 0 12px rgba(61,255,196,0.7); }
+    0%,100% { box-shadow:0 0 4px 1px rgba(61,255,196,0.4); transform:translate(-50%,-50%) scale(1); }
+    50% { box-shadow:0 0 14px 4px rgba(61,255,196,0.8); transform:translate(-50%,-50%) scale(1.3); }
   }
   @keyframes pulse-orange {
-    0%,100% { box-shadow:0 0 3px rgba(232,168,64,0.3); }
-    50% { box-shadow:0 0 9px rgba(232,168,64,0.6); }
+    0%,100% { box-shadow:0 0 3px 1px rgba(232,168,64,0.3); transform:translate(-50%,-50%) scale(1); }
+    50% { box-shadow:0 0 10px 3px rgba(232,168,64,0.7); transform:translate(-50%,-50%) scale(1.2); }
   }
 
   /* Stagger animations */

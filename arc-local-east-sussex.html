@@ -8,11 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{
-    background:#0b1012;color:#8a9498;font-family:'IBM Plex Mono',monospace;
+    background:#1c1c20;color:#8a9498;font-family:'IBM Plex Mono',monospace;
     overflow:hidden;
   }
   .frame{
-    width:100%;background:#0d1315;
+    width:100%;background:#1c1c20;
     border:1px solid #1a2226;
   }
 
@@ -41,22 +41,22 @@
     width:clamp(6px,1.8vw,11px);height:clamp(6px,1.8vw,11px);
     background:#3dffc4;
     box-shadow:0 0 5px rgba(61,255,196,0.45);
-    animation:pulse-cyan 3s ease-in-out infinite;
+    animation:pulse-cyan 3s ease-in-out infinite !important;
   }
   .dot.orange{
     width:clamp(5px,1.4vw,8px);height:clamp(5px,1.4vw,8px);
     background:#e8a840;
     box-shadow:0 0 4px rgba(232,168,64,0.35);
-    animation:pulse-orange 4s ease-in-out infinite;
+    animation:pulse-orange 4s ease-in-out infinite !important;
   }
 
   @keyframes pulse-cyan {
-    0%,100% { box-shadow:0 0 4px 1px rgba(61,255,196,0.4); transform:translate(-50%,-50%) scale(1); }
-    50% { box-shadow:0 0 14px 4px rgba(61,255,196,0.8); transform:translate(-50%,-50%) scale(1.3); }
+    0%,100% { box-shadow:0 0 3px 1px rgba(61,255,196,0.35); transform:translate(-50%,-50%) scale(1); }
+    50% { box-shadow:0 0 8px 2px rgba(61,255,196,0.6); transform:translate(-50%,-50%) scale(1.08); }
   }
   @keyframes pulse-orange {
     0%,100% { box-shadow:0 0 3px 1px rgba(232,168,64,0.3); transform:translate(-50%,-50%) scale(1); }
-    50% { box-shadow:0 0 10px 3px rgba(232,168,64,0.7); transform:translate(-50%,-50%) scale(1.2); }
+    50% { box-shadow:0 0 8px 2px rgba(232,168,64,0.6); transform:translate(-50%,-50%) scale(1.1); }
   }
 
   /* Stagger animations */

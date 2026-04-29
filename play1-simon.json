@@ -12148,88 +12148,88 @@
       ],
       "27": [
         {
-          "text": "DAY 7",
+          "text": "DAY 6",
           "cls": "alert"
         },
         {
-          "text": "PM WEEKLY ADDRESS: \"A solution is being built\"",
+          "text": "PM: \"This is no longer a matter of days\"",
           "cls": ""
         },
         {
-          "text": "ARC Emergency Payment Module activated — £200/device credited",
-          "cls": "warm"
-        },
-        {
-          "text": "Participating retailers: major supermarkets, pharmacies, forecourts",
+          "text": "Chancellor: \"Emergency payment infrastructure operational within 48 hours\"",
           "cls": ""
         },
         {
-          "text": "Hamper distribution: 2.4m parcels this week — Cabinet Office",
-          "cls": ""
-        },
-        {
-          "text": "Fuel: emergency and key workers priority — civilian allocation TBC",
+          "text": "NCSC: \"Corrupted data has been replaced with meaningless information\"",
           "cls": "cold"
         },
         {
-          "text": "Cash: \"handle with care — limited supply\" — BoE",
+          "text": "Fuel rationing: civilian allocation reduced — emergency priority",
           "cls": "cold"
         },
         {
-          "text": "Community kitchens: 3,400 operational — DLUHC",
+          "text": "Supermarkets: remaining stock cash-only — limited hours",
+          "cls": "cold"
+        },
+        {
+          "text": "Community kitchens: 3,000+ operational — DLUHC",
           "cls": "warm"
         },
         {
-          "text": "\"Blitz spirit\" — Telegraph",
-          "cls": "warm"
+          "text": "Cash: \"accelerating scarcity\" — BoE",
+          "cls": "cold"
         },
         {
-          "text": "Mobile networks: 80% coverage restored — priority traffic only",
+          "text": "BBC: \"The banking system as we knew it may not return\"",
+          "cls": ""
+        },
+        {
+          "text": "23 nations confirm coordinated emergency response",
           "cls": ""
         }
       ],
       "28": [
         {
-          "text": "DAY 14",
+          "text": "DAY 7",
           "cls": "alert"
         },
         {
-          "text": "PM WEEKLY ADDRESS: \"New secure infrastructure in advanced development\"",
+          "text": "Chancellor addresses the nation at midday — ARC Emergency",
           "cls": ""
         },
         {
-          "text": "23 nations: \"comprehensive recovery framework\" — joint statement",
+          "text": "Denmark, Netherlands activate emergency payment systems overnight",
           "cls": ""
         },
         {
-          "text": "Hamper distribution: stable — every 48 hours",
+          "text": "Hamper distribution: 2.8m parcels this week — Cabinet Office",
           "cls": ""
         },
         {
-          "text": "ARC Emergency payments: expanding to smaller retailers",
+          "text": "Community kitchens: 3,400 operational — hot meals 12–2",
           "cls": ""
         },
         {
-          "text": "Domestic food supply partially recovering — limited fresh produce",
-          "cls": ""
-        },
-        {
-          "text": "Community kitchens: 4,100 operational",
-          "cls": "warm"
-        },
-        {
-          "text": "Cash running low in urban areas — barter reported",
+          "text": "Cash: notes increasingly difficult to obtain — BoE",
           "cls": "cold"
         },
         {
-          "text": "\"We are assessing the full scope\" — NCSC",
+          "text": "Schools: no reopening date — \"awaiting further guidance\" — DfE",
+          "cls": "cold"
+        },
+        {
+          "text": "Mobile networks: stable — SMS delivery times normalising",
+          "cls": ""
+        },
+        {
+          "text": "BBC: \"All eyes on the Chancellor’s midday address\"",
           "cls": ""
         }
       ],
       "29": [
         {
-          "text": "DAY 21",
-          "cls": "alert"
+          "text": "DAY 18",
+          "cls": ""
         },
         {
           "text": "Cash economy: \"under increasing strain\" — BoE",
@@ -12244,15 +12244,23 @@
           "cls": ""
         },
         {
-          "text": "Travel: essential journeys only — local authority enforcement",
-          "cls": "cold"
+          "text": "EPM Week 3: balance refreshed — allocation review Friday",
+          "cls": ""
         },
         {
           "text": "Three weeks since ATMs dispensed cash",
           "cls": "cold"
         },
         {
-          "text": "Economists: \"digital currency transition makes increasing sense\"",
+          "text": "Streaming: Disney+ restored — catalogue limited",
+          "cls": ""
+        },
+        {
+          "text": "Travel: essential journeys only — local authority enforcement",
+          "cls": "cold"
+        },
+        {
+          "text": "\"We are assessing the full scope\" — NCSC",
           "cls": ""
         }
       ],
@@ -12762,10 +12770,170 @@
           "cls": "warm"
         }
       ],
-      "28a": [],
-      "28b": [],
-      "28c": [],
-      "29a": []
+      "28a": [
+        {
+          "text": "EMERGENCY PAYMENT MODULE — LIVE",
+          "cls": "warm"
+        },
+        {
+          "text": "£200 credited to all ARC-enabled devices — HM Treasury",
+          "cls": "warm"
+        },
+        {
+          "text": "Tesco, Sainsbury’s, Asda, Morrisons, Waitrose: open 14:00–20:00",
+          "cls": "warm"
+        },
+        {
+          "text": "Boots, Superdrug: pharmacy services and essential items",
+          "cls": "warm"
+        },
+        {
+          "text": "\"Check your phone now\" — Chancellor",
+          "cls": "warm"
+        },
+        {
+          "text": "Price controls in effect — Civil Contingencies Act",
+          "cls": ""
+        },
+        {
+          "text": "Queues: orderly — military logistics support at major retailers",
+          "cls": ""
+        },
+        {
+          "text": "Fuel stations: ARC EPM accepted — allocation unchanged",
+          "cls": "cold"
+        },
+        {
+          "text": "Pharmacists: emergency 30-day supply — no prescription required",
+          "cls": "warm"
+        }
+      ],
+      "28b": [
+        {
+          "text": "DAY 8",
+          "cls": ""
+        },
+        {
+          "text": "Instagram: service restored — NCSC clearance",
+          "cls": "warm"
+        },
+        {
+          "text": "Facebook: restored — \"operating under NCSC emergency guidance\"",
+          "cls": ""
+        },
+        {
+          "text": "Hub hamper distribution begins — no ID required",
+          "cls": "warm"
+        },
+        {
+          "text": "EPM: first 24 hours — 14.2m transactions processed — HM Treasury",
+          "cls": "warm"
+        },
+        {
+          "text": "Community Recovery Hubs: 5,000+ operational nationwide",
+          "cls": "warm"
+        },
+        {
+          "text": "WhatsApp: message backlog clearing — delayed texts arriving",
+          "cls": ""
+        },
+        {
+          "text": "Queued messages from 14 February still arriving for some users",
+          "cls": ""
+        },
+        {
+          "text": "BBC: \"The nation’s first shopping trip in a week\"",
+          "cls": ""
+        }
+      ],
+      "28c": [
+        {
+          "text": "DAY 14",
+          "cls": "alert"
+        },
+        {
+          "text": "EPM Week 2: balance refreshed — £200 credited",
+          "cls": "warm"
+        },
+        {
+          "text": "PM WEEKLY ADDRESS: \"New secure infrastructure in advanced development\"",
+          "cls": ""
+        },
+        {
+          "text": "23 nations: \"comprehensive recovery framework\" — joint statement",
+          "cls": ""
+        },
+        {
+          "text": "Netflix, Spotify: limited restoration — bandwidth caps apply",
+          "cls": ""
+        },
+        {
+          "text": "X/Twitter: restored — feeds throttled",
+          "cls": "warm"
+        },
+        {
+          "text": "Corner shops: EPM terminals operational at 85% of independents",
+          "cls": "warm"
+        },
+        {
+          "text": "Cash: \"increasingly difficult to use in practice\" — BoE",
+          "cls": "cold"
+        },
+        {
+          "text": "Community kitchens: 4,100 operational",
+          "cls": "warm"
+        },
+        {
+          "text": "Fresh produce: \"situation improving daily\" — DEFRA",
+          "cls": ""
+        },
+        {
+          "text": "Domestic food supply partially recovering — limited variety",
+          "cls": ""
+        }
+      ],
+      "29a": [
+        {
+          "text": "DAY 23",
+          "cls": ""
+        },
+        {
+          "text": "Economists: \"digital currency transition makes increasing sense\"",
+          "cls": ""
+        },
+        {
+          "text": "BBC: \"What might the new financial system look like?\" — Analysis",
+          "cls": ""
+        },
+        {
+          "text": "EPM Week 4: allocation stable — \"indefinite continuation\" — HM Treasury",
+          "cls": ""
+        },
+        {
+          "text": "Cash: accepted at fewer than 30% of retailers — UK Finance",
+          "cls": "cold"
+        },
+        {
+          "text": "Schools: \"hub learning\" expanding — worksheets and supervised sessions",
+          "cls": ""
+        },
+        {
+          "text": "Community Recovery Hubs: evolving role — advice services, mental health",
+          "cls": "warm"
+        },
+        {
+          "text": "PM: \"We are not rebuilding the old system — we are building something better\"",
+          "cls": ""
+        },
+        {
+          "text": "Four weeks since ATMs dispensed cash",
+          "cls": "cold"
+        },
+        {
+          "text": "Social media: \"#WhatComesNext\" trending",
+          "cls": ""
+        }
+      ]
     },
     "poolMap": {
       "1": "1-3",

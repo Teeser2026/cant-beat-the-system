@@ -4924,10 +4924,117 @@
       "title": "PM Address · Day 6"
     },
     {
+      "id": "27b",
+      "num": "27b",
+      "title": "101 Dots",
+      "date": "20 FEBRUARY 2027 — EVENING",
+      "paras": [
+        {
+          "t": "The screen holds for a moment after he finishes. The seal. The flag. Then black."
+        },
+        {
+          "t": "Amy doesn't say anything. She picks up her tea. It'll be cold by now. She drinks it anyway."
+        },
+        {
+          "t": "I don't know what I expected. Something. An admission, maybe. A flicker of honesty behind the rehearsed concern and the carefully modulated pauses. What we got was a man in a good suit reading someone else's words in front of someone else's flag, telling us that everything was under control in a way that made it abundantly clear that nothing was under control and that this was, in fact, the point."
+        },
+        {
+          "t": "The map was a nice touch. The national recovery hub map. Clean. Colour-coded. Teal dots for open hubs, gold for opening soon. It looked like a weather forecast. Friendly and reassuring and designed to make you feel that someone, somewhere, was across it. Three thousand and something. More by morning. The Prime Minister had gestured at it with the practised ease of a man who had never set foot in a community centre in his life."
+        },
+        {
+          "t": "I pick up my phone."
+        },
+        {
+          "t": "ARC Local. The app that didn't exist eight days ago and now runs half the country. Auto-detected location. It knows where I am. Of course it does."
+        },
+        {
+          "t": "The national map was abstract. A screensaver for the anxious. This is not abstract."
+        },
+        {
+          "t": "<em>Mid & East Sussex Recovery Hubs.</em>"
+        },
+        {
+          "t": "",
+          "media": {
+            "type": "html",
+            "src": "arc-local-east-sussex.html",
+            "pos": "wide",
+            "ar": 0.8
+          }
+        },
+        {
+          "t": "There they are. My towns. Lewes. Uckfield. Crowborough. Haywards Heath. The dots scattered across the Weald like a rash. I zoom in. Burgess Hill. Heathfield. Battle. The familiar geography rendered in satellite green and ARC teal."
+        },
+        {
+          "t": "One hundred and one hubs open. One hundred and one church halls, leisure centres, school gyms and community rooms pressed into service as distribution points for a system that materialised fully formed, as if from nowhere, in less than a week. Target by 0800 tomorrow: one hundred and forty-three."
+        },
+        {
+          "t": "Brighton and Hove has twenty-two. Wealden has nineteen. Hastings sixteen. Even Rother, which struggles to keep a post office open, has eight."
+        },
+        {
+          "t": "I scroll east. Bexhill. Eastbourne. The coast peppered with dots. Each one a place I've driven past or walked through or cursed at for its one-way system. Each one now a node in something. A network."
+        },
+        {
+          "t": "Sixty more gold dots. <em>Opening within 24 hours.</em> Not being built. Being opened. Because they were already built. Or at least the infrastructure was. The registration points. The distribution routes. The capacity allocations. Kate said the clinic hub she's been volunteering at had cabling in the walls that wasn't connected to anything she recognised. Pre-installed. Waiting."
+        },
+        {
+          "t": "Amy leans over. She looks at the screen. She doesn't say anything for a while."
+        },
+        {
+          "t": "'That's a lot of dots.'"
+        },
+        {
+          "t": "'One hundred and sixty-one by tomorrow morning. Just for our bit of Sussex.'"
+        },
+        {
+          "t": "She processes this. Amy processes things differently to me. I catastrophise and connect. She absorbs and waits. When she's ready, she speaks. And when she speaks, she's usually right."
+        },
+        {
+          "t": "'How do they know where to put them?'"
+        },
+        {
+          "t": "'The PM said local authorities and emergency—'"
+        },
+        {
+          "t": "'No. How do they <em>know</em>. How do they know that Heathfield needs a hub and where to put it. How do they know the capacity for Wealden versus Rother. This isn't improvised, Simon. You don't colour-code an app in six days.'"
+        },
+        {
+          "t": "I look at her."
+        },
+        {
+          "t": "She looks at the screen."
+        },
+        {
+          "t": "The dogs stir. Wilf does that thing where he repositions his entire body by moving one leg. Olive doesn't move at all but somehow ends up closer to the radiator."
+        },
+        {
+          "t": "'Dev would love this,' I say."
+        },
+        {
+          "t": "'Dev would already have it archived and annotated.'"
+        },
+        {
+          "t": "She's not wrong."
+        },
+        {
+          "t": "I take a screenshot of the map. Lewes to Rye. One hundred and one dots of teal. Sixty dots of gold. A network that appeared like infrastructure always appears when it's been planned for years — suddenly, and all at once, and with a colour scheme."
+        },
+        {
+          "t": "I send it to Dev."
+        },
+        {
+          "t": "No message. Just the screenshot."
+        },
+        {
+          "t": "He'll know."
+        }
+      ]
+    },
+    {
       "id": 28,
       "num": "T28",
       "title": "Soup",
-      "date": "20–21 FEBRUARY 2027",
+      "date": "21 FEBRUARY 2027",
       "paras": [
         {
           "t": "The night before money arrives. Tinned tomato soup, toast from frozen bread, tea. The fridge has insulin, butter, and half a lemon. Amy’s been at the hub all day. Simon watches BBC — the same three experts saying ‘unprecedented’ in slightly different configurations. He turns it off. Checks ARC Emergency instead. Reads the same information in a third of the time. Doesn’t notice the preference forming."
@@ -10155,7 +10262,8 @@
     ],
     "28b": [],
     "28c": [],
-    "29a": []
+    "29a": [],
+    "27b": []
   },
   "threads": [
     {
@@ -12933,7 +13041,8 @@
           "text": "Social media: \"#WhatComesNext\" trending",
           "cls": ""
         }
-      ]
+      ],
+      "27b": []
     },
     "poolMap": {
       "1": "1-3",
@@ -12986,7 +13095,8 @@
       "28a": "28a",
       "28b": "28b",
       "28c": "28c",
-      "29a": "29a"
+      "29a": "29a",
+      "27b": "27b"
     }
   },
   "initialNotes": [],

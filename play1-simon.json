@@ -217,23 +217,6 @@
   },
   "turns": [
     {
-      "id": "MQ1",
-      "isQuestion": true,
-      "questionText": "Right now, in your actual life — do you feel free?",
-      "questionOpts": [
-        {
-          "text": "Yes. I can do what I want, go where I want, say what I want."
-        },
-        {
-          "text": "No. And I'm not sure I ever have."
-        },
-        {
-          "text": "I feel free enough."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 1,
       "num": "T1",
       "title": "Digging, Bright and Breezy",
@@ -624,26 +607,6 @@
       ]
     },
     {
-      "id": "MQ2",
-      "isQuestion": true,
-      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
-      "questionOpts": [
-        {
-          "text": "Rarely. If it needs doing, I do it."
-        },
-        {
-          "text": "Sometimes. Depends how tired I am."
-        },
-        {
-          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
-        },
-        {
-          "text": "I'm doing it right now."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 2,
       "num": "T2",
       "title": "Potatoes and Rabbit Holes",
@@ -771,63 +734,6 @@
       }
     },
     {
-      "id": "MQ3",
-      "isQuestion": true,
-      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
-      "questionOpts": [
-        {
-          "text": "Every morning. Before I even say good morning."
-        },
-        {
-          "text": "Sometimes. Depends who I wake up next to."
-        },
-        {
-          "text": "No. People first. Always."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ4",
-      "isQuestion": true,
-      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
-      "questionOpts": [
-        {
-          "text": "Mostly my choices. I'm deliberate about how I spend my time."
-        },
-        {
-          "text": "About half and half. More than I'd like to admit."
-        },
-        {
-          "text": "Mostly algorithms. They know what I want before I do."
-        },
-        {
-          "text": "I can't tell the difference anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ5",
-      "isQuestion": true,
-      "questionText": "Do you dream differently than you used to?",
-      "questionOpts": [
-        {
-          "text": "Yes. They've changed. I don't know when."
-        },
-        {
-          "text": "No. Same dreams, same nonsense."
-        },
-        {
-          "text": "I don't remember my dreams."
-        },
-        {
-          "text": "I don't think I dream anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 4,
       "num": "T4",
       "title": "Bonfire",
@@ -896,17 +802,6 @@
         "fadeOut": 2,
         "vol": 0.35
       }
-    },
-    {
-      "id": "IP1",
-      "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "what do you feel?",
-      "questionOpts": [
-        {
-          "img": "inkblot-1.png"
-        }
-      ]
     },
     {
       "id": 5,
@@ -979,23 +874,6 @@
           "Leave it. You already know enough. Knowing more changes nothing."
         ]
       }
-    },
-    {
-      "id": "MQ6",
-      "isQuestion": true,
-      "questionText": "When someone you trust sends you something important to read, do you read it?",
-      "questionOpts": [
-        {
-          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
-        },
-        {
-          "text": "If someone I trust says it matters, I read it. All of it."
-        },
-        {
-          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
-        }
-      ],
-      "questionMode": "mirror"
     },
     {
       "id": "5a",
@@ -2139,23 +2017,6 @@
       }
     },
     {
-      "id": "MQ7",
-      "isQuestion": true,
-      "questionText": "Do you say what you actually think, or what the room wants to hear?",
-      "questionOpts": [
-        {
-          "text": "What I actually think. Even when it costs me."
-        },
-        {
-          "text": "Depends on the room. I pick my battles."
-        },
-        {
-          "text": "What the room wants to hear. Life's easier that way."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 8,
       "num": "T8",
       "title": "The Cleanse",
@@ -2326,26 +2187,6 @@
       ]
     },
     {
-      "id": "MQ8",
-      "isQuestion": true,
-      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
-      "questionOpts": [
-        {
-          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
-        },
-        {
-          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
-        },
-        {
-          "text": "No. I've restructured my life to avoid it. It costs me."
-        },
-        {
-          "text": "I don't think about it. Life's too short."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 9,
       "num": "T9",
       "title": "Tuesday Morning",
@@ -2409,17 +2250,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "SP1",
-      "isQuestion": true,
-      "questionMode": "sound-prompt",
-      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
-      "questionOpts": [
-        {
-          "text": "[placeholder]"
-        }
-      ]
     },
     {
       "id": 10,
@@ -2500,23 +2330,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "MQ9",
-      "isQuestion": true,
-      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
-      "questionOpts": [
-        {
-          "text": "Knowing. If you really understood what was happening, you couldn't look away."
-        },
-        {
-          "text": "Doing. I know plenty. I do almost nothing about any of it."
-        },
-        {
-          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
-        }
-      ],
-      "questionMode": "mirror"
     },
     {
       "id": 11,
@@ -2739,26 +2552,6 @@
           "Hair of the dog. You’re on holiday. January can start Monday."
         ]
       }
-    },
-    {
-      "id": "MQ10",
-      "isQuestion": true,
-      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
-      "questionOpts": [
-        {
-          "text": "Care. That's literally what a good partner does. What a good doctor does."
-        },
-        {
-          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
-        },
-        {
-          "text": "Both. And the fact that it's both is what makes it dangerous."
-        },
-        {
-          "text": "It depends on whether I asked for it."
-        }
-      ],
-      "questionMode": "mirror"
     },
     {
       "id": 13,
@@ -3707,23 +3500,6 @@
       ]
     },
     {
-      "id": "IP2",
-      "isQuestion": true,
-      "questionMode": "video-prompt",
-      "questionText": "what soundtrack does your soul put to this scene?",
-      "questionOpts": [
-        {
-          "text": "sacral chant"
-        },
-        {
-          "text": "852 Hz frequency"
-        },
-        {
-          "text": "tibetan bowl"
-        }
-      ]
-    },
-    {
       "id": "17c",
       "num": "T17c",
       "title": "The Exchange",
@@ -4202,66 +3978,6 @@
       ]
     },
     {
-      "id": "MQ11",
-      "isQuestion": true,
-      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
-      "questionOpts": [
-        {
-          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
-        },
-        {
-          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
-        },
-        {
-          "text": "I'd need to read the terms. All of them. Before I signed anything."
-        },
-        {
-          "text": "What choice would I have?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ12",
-      "isQuestion": true,
-      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
-      "questionOpts": [
-        {
-          "text": "Relief."
-        },
-        {
-          "text": "Panic."
-        },
-        {
-          "text": "Loss. Like something important just disappeared."
-        },
-        {
-          "text": "Curiosity. What happens next?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ13",
-      "isQuestion": true,
-      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
-      "questionOpts": [
-        {
-          "text": "Yes. I know what it is. I'm just not ready."
-        },
-        {
-          "text": "Probably. That's how blind spots work, isn't it?"
-        },
-        {
-          "text": "No. I'm fairly self-aware."
-        },
-        {
-          "text": "How would I know?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": 19,
       "num": "T19",
       "title": "Soggy Dog Walks",
@@ -4387,35 +4103,6 @@
         "fadeIn": 2,
         "vol": 0.3
       }
-    },
-    {
-      "id": "IP3",
-      "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "what do you feel?",
-      "questionOpts": [
-        {
-          "img": "kitchen-1.png",
-          "wordPairs": [
-            {
-              "chosen": "solitude",
-              "revealed": "stoic"
-            },
-            {
-              "chosen": "stillness",
-              "revealed": "respite"
-            },
-            {
-              "chosen": "love",
-              "revealed": "devotion"
-            },
-            {
-              "chosen": "surrender",
-              "revealed": "acceptance"
-            }
-          ]
-        }
-      ]
     },
     {
       "id": 20,
@@ -4950,13 +4637,14 @@
         {
           "t": "Good night. And be well."
         }
-      ]
+      ],
+      "title": "PM Address · Day 1"
     },
     {
       "id": "23b",
       "num": "T23b",
       "title": "This is not a Lockdown",
-      "date": "15 FEBRUARY 2027 — LATE AFTERNOON",
+      "date": "15–16 FEBRUARY 2027",
       "paras": [],
       "choices": null,
       "audio": null
@@ -4969,7 +4657,8 @@
       "broadcastSrc": "HM GOVERNMENT — PM ADDRESS — 09:00 GMT — 16 FEBRUARY 2027",
       "broadcastArc": true,
       "broadcastFile": "BC2.html",
-      "paras": []
+      "paras": [],
+      "title": "PM Address · Day 1 Night"
     },
     {
       "id": 24,
@@ -4991,13 +4680,14 @@
       "broadcastSrc": "HM GOVERNMENT — JOINT ADDRESS — 18:00 GMT — 16 FEBRUARY 2027",
       "broadcastArc": true,
       "broadcastFile": "BC3.html",
-      "paras": []
+      "paras": [],
+      "title": "PM Morning Address · Day 2"
     },
     {
       "id": 25,
       "num": "T25",
       "title": "The Beep",
-      "date": "17 FEBRUARY 2027",
+      "date": "16–17 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 3–4. Cards 'returning.' Cautious optimism. Tesco self-checkout beep gets applause. George helps at corner shop. Chloe ecstatic — school Monday. Dev's 2am mesh warning: 'Stage 2 is in the walls.' Simon reads it and goes back to sleep.]"
@@ -5059,13 +4749,14 @@
           "t": "Be well."
         }
       ],
-      "broadcastFile": "BC4.html"
+      "broadcastFile": "BC4.html",
+      "title": "Joint Address · Day 2"
     },
     {
       "id": "25a",
       "num": "T25a",
       "title": "Normality Returning",
-      "date": "18 FEBRUARY 2027",
+      "date": "17–18 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 4. Peak hope. Almost normal. 60% cards working. Schools confirm Monday. Amy’s mum: cards work, lovely joint of beef. George helps at corner shop. Simon reads Dev’s 2am mesh warning about Stage 2 and goes back to sleep. The gap between knowing and doing.]"
@@ -5110,13 +4801,14 @@
           "t": "Be well."
         }
       ],
-      "broadcastFile": "BC5.html"
+      "broadcastFile": "BC5.html",
+      "title": "PM Address · Day 3"
     },
     {
       "id": 26,
       "num": "T26",
       "title": "False Dawn",
-      "date": "19 FEBRUARY 2027",
+      "date": "18–19 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 5. HEAVY. THE SECOND DETONATION. 17:33. Stage 2 corrupts transaction histories, balances, mortgage records across 23 nations. 'AUTHENTICATION PERMANENTLY REVOKED.' PM ashen-faced. Schools reverse. George's calm cracks. Amy's parents spent two days using cards — now have less cash than they started with. Dev: 'I told you. Stage 2.']"
@@ -5181,25 +4873,14 @@
         {
           "t": "Stay safe. Stay local."
         }
-      ]
-    },
-    {
-      "id": "VR1",
-      "isQuestion": true,
-      "questionMode": "video-rorschach",
-      "questionText": "what might this be?",
-      "questionOpts": [
-        {
-          "text": "[freeform]"
-        }
       ],
-      "questionVideo": "rorschach.mp4"
+      "title": "PM Address · Day 4"
     },
     {
       "id": "26a",
       "num": "T26a",
       "title": "Tomorrow",
-      "date": "20 FEBRUARY 2027",
+      "date": "19–20 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 6. First full day of confirmed collapse. Nobody saying ‘it’ll blow over’ any more. Chloe was told school Monday — now she won’t go. Amy’s parents used cards during false dawn, now have less cash than before. First fuel queue. Mood shift from crisis to siege.]"
@@ -5216,16 +4897,17 @@
       "broadcastSrc": "HM GOVERNMENT — JOINT ADDRESS — 09:00 GMT — 20 FEBRUARY 2027",
       "broadcastArc": true,
       "broadcastFile": "BC7.html",
-      "paras": []
+      "paras": [],
+      "title": "Joint Address · Day 6"
     },
     {
       "id": 27,
       "num": "T27",
       "title": "Free Lunch",
-      "date": "21 FEBRUARY 2027",
+      "date": "20 FEBRUARY 2027",
       "paras": [
         {
-          "t": "[STUB — Day 7–10. Hampers beginning. Fuel rationed. New routine: queue, walk dogs, try to keep sane. Kate volunteers at hub clinic. Amy's parents 45 mins away, Amy worrying. Amy's brothers off-grid. Dev: 'Not restoration. Replacement.']"
+          "t": "[STUB — Day 6. Hampers beginning. Fuel rationed. New routine: queue, walk dogs, try to keep sane. Kate volunteers at hub clinic. Amy's parents 45 mins away, Amy worrying. Amy's brothers off-grid. Dev: 'Not restoration. Replacement.']"
         }
       ],
       "audio": null
@@ -5238,132 +4920,20 @@
       "broadcastSrc": "HM GOVERNMENT — PM ADDRESS — 18:00 GMT — 20 FEBRUARY 2027",
       "broadcastArc": true,
       "broadcastFile": "BC8.html",
-      "paras": []
+      "paras": [],
+      "title": "PM Address · Day 6"
     },
     {
       "id": 28,
       "num": "T28",
-      "title": "101 Dots",
-      "date": "20 FEBRUARY 2027",
+      "title": "Soup",
+      "date": "20–21 FEBRUARY 2027",
       "paras": [
         {
-          "t": "The screen holds for a moment after he finishes. The seal. The flag. Then black."
-        },
-        {
-          "t": "Amy doesn't say anything. She picks up her tea. It'll be cold by now. She drinks it anyway."
-        },
-        {
-          "t": "I don't know what I expected. Something. An admission, maybe. A flicker of honesty behind the rehearsed concern and the carefully modulated pauses. What we got was a man in a good suit reading someone else's words in front of someone else's flag, telling us that everything was under control in a way that made it abundantly clear that nothing was under control and that this was, in fact, the point."
-        },
-        {
-          "t": "The map was a nice touch. The national recovery hub map. Clean. Colour-coded. Teal dots for open hubs, gold for opening soon. It looked like a weather forecast. Friendly and reassuring and designed to make you feel that someone, somewhere, was across it. Three thousand and something. More by morning. The Prime Minister had gestured at it with the practised ease of a man who had never set foot in a community centre in his life."
-        },
-        {
-          "t": "I pick up my phone."
-        },
-        {
-          "t": "ARC Local. The app that didn't exist eight days ago and now runs half the country. Auto-detected location. It knows where I am. Of course it does."
-        },
-        {
-          "t": "The national map was abstract. A screensaver for the anxious. This is not abstract."
-        },
-        {
-          "t": "<em>Mid & East Sussex Recovery Hubs.</em>"
-        },
-        {
-          "t": "",
-          "media": {
-            "type": "html",
-            "src": "arc-local-east-sussex.html",
-            "pos": "wide",
-            "ar": 0.8
-          }
-        },
-        {
-          "t": "There they are. My towns. Lewes. Uckfield. Crowborough. Haywards Heath. The dots scattered across the Weald like a rash. I zoom in. Burgess Hill. Heathfield. Battle. The familiar geography rendered in satellite green and ARC teal."
-        },
-        {
-          "t": "One hundred and one hubs open. One hundred and one church halls, leisure centres, school gyms and community rooms pressed into service as distribution points for a system that materialised fully formed, as if from nowhere, in less than a week. Target by 0800 tomorrow: one hundred and forty-three."
-        },
-        {
-          "t": "Brighton and Hove has twenty-two. Wealden has nineteen. Hastings sixteen. Even Rother, which struggles to keep a post office open, has eight."
-        },
-        {
-          "t": "I scroll east. Bexhill. Eastbourne. The coast peppered with dots. Each one a place I've driven past or walked through or cursed at for its one-way system. Each one now a node in something. A network."
-        },
-        {
-          "t": "Sixty more gold dots. <em>Opening within 24 hours.</em> Not being built. Being opened. Because they were already built. Or at least the infrastructure was. The registration points. The distribution routes. The capacity allocations. Kate said the clinic hub she's been volunteering at had cabling in the walls that wasn't connected to anything she recognised. Pre-installed. Waiting."
-        },
-        {
-          "t": "Amy leans over. She looks at the screen. She doesn't say anything for a while."
-        },
-        {
-          "t": "'That's a lot of dots.'"
-        },
-        {
-          "t": "'One hundred and sixty-one by tomorrow morning. Just for our bit of Sussex.'"
-        },
-        {
-          "t": "She processes this. Amy processes things differently to me. I catastrophise and connect. She absorbs and waits. When she's ready, she speaks. And when she speaks, she's usually right."
-        },
-        {
-          "t": "'How do they know where to put them?'"
-        },
-        {
-          "t": "'The PM said local authorities and emergency—'"
-        },
-        {
-          "t": "'No. How do they <em>know</em>. How do they know that Heathfield needs a hub and where to put it. How do they know the capacity for Wealden versus Rother. This isn't improvised, Simon. You don't colour-code an app in six days.'"
-        },
-        {
-          "t": "I look at her."
-        },
-        {
-          "t": "She looks at the screen."
-        },
-        {
-          "t": "The dogs stir. Wilf does that thing where he repositions his entire body by moving one leg. Olive doesn't move at all but somehow ends up closer to the radiator."
-        },
-        {
-          "t": "'Dev would love this,' I say."
-        },
-        {
-          "t": "'Dev would already have it archived and annotated.'"
-        },
-        {
-          "t": "She's not wrong."
-        },
-        {
-          "t": "I take a screenshot of the map. Lewes to Rye. One hundred and one dots of teal. Sixty dots of gold. A network that appeared like infrastructure always appears when it's been planned for years — suddenly, and all at once, and with a colour scheme."
-        },
-        {
-          "t": "I send it to Dev."
-        },
-        {
-          "t": "No message. Just the screenshot."
-        },
-        {
-          "t": "He'll know."
+          "t": "The night before money arrives. Tinned tomato soup, toast from frozen bread, tea. The fridge has insulin, butter, and half a lemon. Amy’s been at the hub all day. Simon watches BBC — the same three experts saying ‘unprecedented’ in slightly different configurations. He turns it off. Checks ARC Emergency instead. Reads the same information in a third of the time. Doesn’t notice the preference forming."
         }
       ],
       "audio": null
-    },
-    {
-      "id": "MF1",
-      "isQuestion": true,
-      "questionMode": "mirror",
-      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
-      "questionOpts": [
-        {
-          "text": "Yes, of course I would."
-        },
-        {
-          "text": "I’d notice. I wouldn’t do anything."
-        },
-        {
-          "text": "Probably not."
-        }
-      ]
     },
     {
       "id": "BC9",
@@ -5373,22 +4943,64 @@
       "broadcastSrc": "HM GOVERNMENT — JOINT ADDRESS — 12:00 GMT — 21 FEBRUARY 2027",
       "broadcastArc": true,
       "broadcastFile": "BC9.html",
-      "paras": []
+      "paras": [],
+      "title": "PM & Chancellor · Day 7"
+    },
+    {
+      "id": "28a",
+      "num": "28a",
+      "title": "An Orderly Queue",
+      "date": "21 FEBRUARY 2027 — AFTERNOON",
+      "paras": [
+        {
+          "t": "Two o’clock. Simon goes to Tesco. The queue starts in the car park. Not panicked — orderly, British, resigned. Soldiers in the car park directing traffic, high-vis over camo. Inside: shelves patchy but bread and milk and tins in decent supply. The beep. Simon holds his phone to the terminal. ARC EMERGENCY — PAYMENT CONFIRMED — BALANCE: £131.40. He’s bought bread, milk, eggs, pasta, tinned tomatoes, teabags, dog food, paracetamol, and a bottle of wine."
+        }
+      ]
+    },
+    {
+      "id": "28b",
+      "num": "28b",
+      "title": "Dopamine Hits",
+      "date": "22 FEBRUARY 2027",
+      "paras": [
+        {
+          "t": "Amy leaves at 7am for the hub. Hamper distribution starts at 8. George is on Instagram — it came back yesterday afternoon. The crisis is the content. Everyone posting their Dark Month experience. Empty shelf photos. Hamper queue selfies. The algorithm doing what it always does. WhatsApp is alive. A text from Simon’s mum sent at 11pm on Valentine’s Day: ‘Hope you had a lovely evening darling xxx.’ Sent before the Event. Arriving now."
+        }
+      ]
+    },
+    {
+      "id": "28c",
+      "num": "28c",
+      "title": "The Old Normal",
+      "date": "23–28 FEBRUARY 2027",
+      "paras": [
+        {
+          "t": "The first chapter that compresses time. EPM Week 2 refresh: another £200 drops into the phone. A push notification. Simon sees it, swipes it away, tells Amy over dinner. Already normalised. Six days from ‘the Chancellor has put money in your hands’ to swiping away the notification like a Deliveroo promo. The PM does a midweek address. Simon doesn’t watch it. He sees the ARC push summary while making coffee. Doesn’t turn the telly on."
+        }
+      ]
     },
     {
       "id": 29,
       "num": "T29",
       "title": "Dev",
-      "date": "1–11 March 2027",
+      "date": "1–6 MARCH 2027",
       "paras": [
         {
-          "t": "[STUB — HEAVY. Dev resurfaces on mesh. The forensic analysis. ARC compiled Jan 29th. AIDA architecture matching DARPA proposal. BIS quarterly review p.178. Amy not asleep — she's downstairs. She makes tea. She sits. 'Show me what he's saying.' Amy reads Dev's analysis at 2am. She's not dismissing it. AND she knows what's coming.]"
-        },
-        {
-          "t": "[PREVIOUS T29 'Waiting' STUB RELOCATED — Day 14–28. LIGHT. Two weeks compressed. Managed equilibrium. Hamper system smooth. Routine: ARC check, hamper queue, walk dogs. PM Week 3: 'The old system failed us.' Kate: 'The hubs are being fitted out for something.' Chloe increasingly restless. George doing odd jobs.]"
+          "t": "Dev’s forensic dump arrives at 2am. The Signal channel goes from short probes to a wall of text. ARC timeline analysis. AIDA architecture matching a DARPA proposal from 2019. The FCA interoperability mandate. The procurement contracts. Amy comes downstairs. Reads it over Simon’s shoulder. Neither of them speaks for a while. Then Amy says something practical — ‘What are we supposed to do with this?’ Simon doesn’t have an answer."
         }
       ],
       "audio": null
+    },
+    {
+      "id": "29a",
+      "num": "29a",
+      "title": "The Thing",
+      "date": "7–11 MARCH 2027",
+      "paras": [
+        {
+          "t": "The dead zone. Dev’s forensic dump is a week old. Simon has read it three times. He can’t verify it, can’t dismiss it, can’t act on it. Social media is fully operational. The conversation has moved from ‘what happened’ to ‘what’s next.’ Half of it matches what Dev sent him. The other half is conspiracy noise he can’t distinguish from the signal. Amy comes home from the hub: ‘You’re doing the thing again.’ ‘What thing?’"
+        }
+      ]
     },
     {
       "id": "29b",
@@ -5402,13 +5014,13 @@
       ]
     },
     {
-      "id": "29a",
-      "num": "T29a",
+      "id": "29c",
+      "num": "29c",
       "title": "Something Better",
       "date": "17–21 March 2027",
       "paras": [
         {
-          "t": "[STUB — Day 26–34. The anticipation week. BBC speculation on new system. Hubs being fitted with registration equipment — Kate notices. Cash virtually gone. PM expected to address nation ‘within days.’ 23 nations confirm coordinated announcement. Schools ready to reopen within 48 hours. The build-up.]"
+          "t": "[STUB — Day 31–35. The anticipation week. BBC speculation on new system. Hubs being fitted with registration equipment — Kate notices. Cash virtually gone. PM expected to address nation ‘within days.’ 23 nations confirm coordinated announcement. Schools ready to reopen within 48 hours. The build-up.]"
         }
       ],
       "audio": null
@@ -5424,29 +5036,6 @@
         }
       ],
       "audio": null
-    },
-    {
-      "id": "CW1",
-      "isQuestion": true,
-      "questionMode": "video-mirror",
-      "questionText": "What do you see?",
-      "questionVideo": "mirror-figure.mp4",
-      "questionVideoDelay": 8,
-      "questionTone": "cw1-tone.mp3",
-      "questionOpts": [
-        {
-          "text": "A mirror",
-          "fx": {}
-        },
-        {
-          "text": "A gateway",
-          "fx": {}
-        },
-        {
-          "text": "A ghost",
-          "fx": {}
-        }
-      ]
     },
     {
       "id": 31,
@@ -5497,49 +5086,6 @@
       "audio": null
     },
     {
-      "id": "DL1",
-      "isQuestion": true,
-      "questionMode": "door-of-light",
-      "questionText": "choose the five words you'll take through",
-      "doorWords": [
-        "safety",
-        "comfort",
-        "health",
-        "efficiency",
-        "connection",
-        "reputation",
-        "rage",
-        "convenience",
-        "certainty",
-        "income",
-        "approval",
-        "routine",
-        "progress",
-        "doubt",
-        "wonder",
-        "silence",
-        "disobedience",
-        "prayer",
-        "grief",
-        "wildness",
-        "forgiveness",
-        "awe",
-        "solitude",
-        "defiance",
-        "mercy"
-      ],
-      "maxSelect": 5,
-      "assets": {
-        "video": "door-loop.mp4",
-        "audio": "door-audio.mp3"
-      },
-      "questionOpts": [
-        {
-          "text": "[reader selects 5 of 25 floating words — logged to questionsLog]"
-        }
-      ]
-    },
-    {
       "id": 35,
       "num": "T35",
       "title": "Chloe",
@@ -5552,17 +5098,6 @@
       "audio": null
     },
     {
-      "id": "SL1",
-      "isQuestion": true,
-      "questionMode": "slider",
-      "questionText": "To what extent do you live by the moral code you claim to possess?",
-      "questionOpts": [
-        {
-          "text": "[slider 0–10, no labels, no default]"
-        }
-      ]
-    },
-    {
       "id": 36,
       "num": "T36",
       "title": "The Kitchen",
@@ -5573,17 +5108,6 @@
         }
       ],
       "audio": null
-    },
-    {
-      "id": "SE1",
-      "isQuestion": true,
-      "questionMode": "sound-echo",
-      "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
-      "questionOpts": [
-        {
-          "text": "[placeholder]"
-        }
-      ]
     },
     {
       "id": 37,
@@ -6414,6 +5938,436 @@
         }
       ],
       "audio": ""
+    },
+    {
+      "id": "MQ1",
+      "isQuestion": true,
+      "questionText": "Right now, in your actual life — do you feel free?",
+      "questionOpts": [
+        {
+          "text": "Yes. I can do what I want, go where I want, say what I want."
+        },
+        {
+          "text": "No. And I'm not sure I ever have."
+        },
+        {
+          "text": "I feel free enough."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ2",
+      "isQuestion": true,
+      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
+      "questionOpts": [
+        {
+          "text": "Rarely. If it needs doing, I do it."
+        },
+        {
+          "text": "Sometimes. Depends how tired I am."
+        },
+        {
+          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
+        },
+        {
+          "text": "I'm doing it right now."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ3",
+      "isQuestion": true,
+      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
+      "questionOpts": [
+        {
+          "text": "Every morning. Before I even say good morning."
+        },
+        {
+          "text": "Sometimes. Depends who I wake up next to."
+        },
+        {
+          "text": "No. People first. Always."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ4",
+      "isQuestion": true,
+      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
+      "questionOpts": [
+        {
+          "text": "Mostly my choices. I'm deliberate about how I spend my time."
+        },
+        {
+          "text": "About half and half. More than I'd like to admit."
+        },
+        {
+          "text": "Mostly algorithms. They know what I want before I do."
+        },
+        {
+          "text": "I can't tell the difference anymore."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ5",
+      "isQuestion": true,
+      "questionText": "Do you dream differently than you used to?",
+      "questionOpts": [
+        {
+          "text": "Yes. They've changed. I don't know when."
+        },
+        {
+          "text": "No. Same dreams, same nonsense."
+        },
+        {
+          "text": "I don't remember my dreams."
+        },
+        {
+          "text": "I don't think I dream anymore."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP1",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "inkblot-1.png"
+        }
+      ]
+    },
+    {
+      "id": "MQ6",
+      "isQuestion": true,
+      "questionText": "When someone you trust sends you something important to read, do you read it?",
+      "questionOpts": [
+        {
+          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
+        },
+        {
+          "text": "If someone I trust says it matters, I read it. All of it."
+        },
+        {
+          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ7",
+      "isQuestion": true,
+      "questionText": "Do you say what you actually think, or what the room wants to hear?",
+      "questionOpts": [
+        {
+          "text": "What I actually think. Even when it costs me."
+        },
+        {
+          "text": "Depends on the room. I pick my battles."
+        },
+        {
+          "text": "What the room wants to hear. Life's easier that way."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ8",
+      "isQuestion": true,
+      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
+      "questionOpts": [
+        {
+          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
+        },
+        {
+          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
+        },
+        {
+          "text": "No. I've restructured my life to avoid it. It costs me."
+        },
+        {
+          "text": "I don't think about it. Life's too short."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "SP1",
+      "isQuestion": true,
+      "questionMode": "sound-prompt",
+      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": "MQ9",
+      "isQuestion": true,
+      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
+      "questionOpts": [
+        {
+          "text": "Knowing. If you really understood what was happening, you couldn't look away."
+        },
+        {
+          "text": "Doing. I know plenty. I do almost nothing about any of it."
+        },
+        {
+          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ10",
+      "isQuestion": true,
+      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
+      "questionOpts": [
+        {
+          "text": "Care. That's literally what a good partner does. What a good doctor does."
+        },
+        {
+          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
+        },
+        {
+          "text": "Both. And the fact that it's both is what makes it dangerous."
+        },
+        {
+          "text": "It depends on whether I asked for it."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP2",
+      "isQuestion": true,
+      "questionMode": "video-prompt",
+      "questionText": "what soundtrack does your soul put to this scene?",
+      "questionOpts": [
+        {
+          "text": "sacral chant"
+        },
+        {
+          "text": "852 Hz frequency"
+        },
+        {
+          "text": "tibetan bowl"
+        }
+      ]
+    },
+    {
+      "id": "MQ11",
+      "isQuestion": true,
+      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
+      "questionOpts": [
+        {
+          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
+        },
+        {
+          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
+        },
+        {
+          "text": "I'd need to read the terms. All of them. Before I signed anything."
+        },
+        {
+          "text": "What choice would I have?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ12",
+      "isQuestion": true,
+      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
+      "questionOpts": [
+        {
+          "text": "Relief."
+        },
+        {
+          "text": "Panic."
+        },
+        {
+          "text": "Loss. Like something important just disappeared."
+        },
+        {
+          "text": "Curiosity. What happens next?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ13",
+      "isQuestion": true,
+      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
+      "questionOpts": [
+        {
+          "text": "Yes. I know what it is. I'm just not ready."
+        },
+        {
+          "text": "Probably. That's how blind spots work, isn't it?"
+        },
+        {
+          "text": "No. I'm fairly self-aware."
+        },
+        {
+          "text": "How would I know?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP3",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "kitchen-1.png",
+          "wordPairs": [
+            {
+              "chosen": "solitude",
+              "revealed": "stoic"
+            },
+            {
+              "chosen": "stillness",
+              "revealed": "respite"
+            },
+            {
+              "chosen": "love",
+              "revealed": "devotion"
+            },
+            {
+              "chosen": "surrender",
+              "revealed": "acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VR1",
+      "isQuestion": true,
+      "questionMode": "video-rorschach",
+      "questionText": "what might this be?",
+      "questionOpts": [
+        {
+          "text": "[freeform]"
+        }
+      ],
+      "questionVideo": "rorschach.mp4"
+    },
+    {
+      "id": "MF1",
+      "isQuestion": true,
+      "questionMode": "mirror",
+      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
+      "questionOpts": [
+        {
+          "text": "Yes, of course I would."
+        },
+        {
+          "text": "I’d notice. I wouldn’t do anything."
+        },
+        {
+          "text": "Probably not."
+        }
+      ]
+    },
+    {
+      "id": "CW1",
+      "isQuestion": true,
+      "questionMode": "video-mirror",
+      "questionText": "What do you see?",
+      "questionVideo": "mirror-figure.mp4",
+      "questionVideoDelay": 8,
+      "questionTone": "cw1-tone.mp3",
+      "questionOpts": [
+        {
+          "text": "A mirror",
+          "fx": {}
+        },
+        {
+          "text": "A gateway",
+          "fx": {}
+        },
+        {
+          "text": "A ghost",
+          "fx": {}
+        }
+      ]
+    },
+    {
+      "id": "DL1",
+      "isQuestion": true,
+      "questionMode": "door-of-light",
+      "questionText": "choose the five words you'll take through",
+      "doorWords": [
+        "safety",
+        "comfort",
+        "health",
+        "efficiency",
+        "connection",
+        "reputation",
+        "rage",
+        "convenience",
+        "certainty",
+        "income",
+        "approval",
+        "routine",
+        "progress",
+        "doubt",
+        "wonder",
+        "silence",
+        "disobedience",
+        "prayer",
+        "grief",
+        "wildness",
+        "forgiveness",
+        "awe",
+        "solitude",
+        "defiance",
+        "mercy"
+      ],
+      "maxSelect": 5,
+      "assets": {
+        "video": "door-loop.mp4",
+        "audio": "door-audio.mp3"
+      },
+      "questionOpts": [
+        {
+          "text": "[reader selects 5 of 25 floating words — logged to questionsLog]"
+        }
+      ]
+    },
+    {
+      "id": "SL1",
+      "isQuestion": true,
+      "questionMode": "slider",
+      "questionText": "To what extent do you live by the moral code you claim to possess?",
+      "questionOpts": [
+        {
+          "text": "[slider 0–10, no labels, no default]"
+        }
+      ]
+    },
+    {
+      "id": "SE1",
+      "isQuestion": true,
+      "questionMode": "sound-echo",
+      "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
     }
   ],
   "signal": {
@@ -8692,29 +8646,6 @@
     ],
     "29": [
       {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "tag": "BE WELL",
-            "cls": "a",
-            "txt": "Joint address 21 Feb — transcript via ARC",
-            "type": "thread-notify",
-            "threadRef": "official",
-            "ttl": "<strong>JOINT ADDRESS  21/2— 12:00 GMT — Transcript</strong>",
-            "snip": "The Emergency Payment Module is live. Check your phone now.",
-            "isnew": true
-          },
-          {
-            "src": "ARC",
-            "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
-            "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
-            "tag": "Day 21",
-            "cls": "a"
-          }
-        ]
-      },
-      {
         "sec": "Text Message",
         "cards": [
           {
@@ -8723,126 +8654,6 @@
             "snip": "Have a word. Like he's a teenager refusing to tidy his room. Rupert's medication is running out and Jenny thinks a chat will fix it.",
             "tag": "",
             "cls": ""
-          }
-        ]
-      }
-    ],
-    "29a": [
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "Community Recovery Centres are expanding services in your area. Visit your nearest centre for healthcare, food collection, and support.",
-            "snip": "Recovery Centres. New name. Same community centres Kate's been volunteering at for three weeks. New desks. New equipment. New name.",
-            "tag": "Update",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. ARC Emergency payments now accepted at over 85% of UK retail locations.",
-            "snip": "Eighty-five percent. The corner shop got a new terminal last week. The bloke at the market still takes cash. He's one of the fifteen percent and shrinking.",
-            "tag": "£200.00",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Emergency Payment Module activated. Your device has been credited £200.00. Tap to pay at participating retailers. Weekly refresh every Sunday.",
-            "snip": "Two hundred quid appeared on his phone. No form. No application. No questions. Just: here's money, go shopping.",
-            "tag": "£200.00",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Purchase limits in effect. Additional retailers joining daily.",
-            "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays. Three items per category. Nobody complained.",
-            "tag": "EPM",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payments are now active across the UK. We will not let this nation go hungry. We will not let this nation go dark.'",
-            "snip": "We will not let this nation go dark. He said it like a promise. Dev would hear it like a threat.",
-            "tag": "6:00pm",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. Tap to pay at participating retailers.",
-            "snip": "Second week. Same amount. Same beep. He bought dog food yesterday without thinking about it. The gesture was identical to every tap he'd made for years.",
-            "tag": "£200.00",
-            "cls": "a"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Additional retailers now accepting ARC Emergency payments. Check the retailer map in ARC Emergency for updated locations.",
-            "snip": "The map is expanding. More pins every day. The corner shop isn't on it yet. The corner shop takes cash. The corner shop is starting to look old.",
-            "tag": "Update",
-            "cls": "a"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "BBC News",
-            "ttl": "Sources suggest major economic announcement imminent. PM expected to address the nation 'within days.'",
-            "snip": "Everyone knows something's coming. The community centres have biometric readers nobody's using yet. The BBC is asking questions shaped like answers.",
-            "tag": "Breaking",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "George",
-            "ttl": "Have you seen the BBC thing about AIDA? Some kind of AI assistant. Looks pretty sick actually.",
-            "snip": "Pretty sick actually. George's generation hears 'AI assistant' and thinks 'useful.' Simon's generation hears it and thinks 'Skynet.' Neither is right.",
-            "tag": "",
-            "cls": ""
-          },
-          {
-            "src": "Amy's mum",
-            "ttl": "Got the £200! Your dad worked out how to tap. Tesco had a queue but we got milk and bread and some proper food. Your brothers still aren't answering.",
-            "snip": "Peter worked out how to tap. Seventy-three years old and he tapped his phone at Tesco and got milk. The revolution is a pensioner buying bread with a gesture he learned in forty seconds.",
-            "tag": "",
-            "cls": ""
-          },
-          {
-            "src": "Dave",
-            "ttl": "Just tapped for dog food at Morrisons. Soldiers in the car park but they're just helping with the queues. Felt exactly the same as tapping before. Mental isn't it. Free money 😂",
-            "snip": "Soldiers in the car park but they're just helping. Dave said it like it was normal. Four days ago there were no soldiers in the Morrisons car park. Now they're helping with the queues and Dave's buying dog food and it's normal.",
-            "tag": "",
-            "cls": ""
-          },
-          {
-            "src": "Dev",
-            "ttl": "you there?",
-            "snip": "Two words. Three days of silence on the group and then two words at 1am.",
-            "tag": "1:00am",
-            "cls": ""
-          },
-          {
-            "src": "Dev",
-            "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
-            "snip": "Dev's frenzy. The Signal group lit up at 1am and didn't stop until 4. Seven people reading. Nobody sleeping. Dev expecting you to absorb in an hour what took him weeks to map.",
-            "tag": "Thread",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "UK GOV Alert",
-        "cards": [
-          {
-            "src": "UK GOV",
-            "ttl": "Emergency measures now active. An emergency payment of £200 has been credited to all ARC-enabled devices. Major retailers are accepting ARC payments with purchase limits. Military personnel are providing logistics support at major distribution points. Food collection available at supermarkets and community centres for those without smartphones.",
-            "snip": "Military personnel are providing logistics support. Not security. Not enforcement. Logistics support. The soldiers are carrying boxes and the sentence is carrying the weight.",
-            "tag": "7:00am",
-            "cls": "x"
           }
         ]
       }
@@ -9484,6 +9295,18 @@
             "snip": "Simon scrolled past. Hamper collection at Shoreham was more useful information right now.",
             "tag": "Live",
             "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
+            "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
+            "tag": "Day 21",
+            "cls": "a"
           }
         ]
       }
@@ -10191,7 +10014,148 @@
           }
         ]
       }
-    ]
+    ],
+    "29c": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Community Recovery Centres are expanding services in your area. Visit your nearest centre for healthcare, food collection, and support.",
+            "snip": "Recovery Centres. New name. Same community centres Kate's been volunteering at for three weeks. New desks. New equipment. New name.",
+            "tag": "Update",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. ARC Emergency payments now accepted at over 85% of UK retail locations.",
+            "snip": "Eighty-five percent. The corner shop got a new terminal last week. The bloke at the market still takes cash. He's one of the fifteen percent and shrinking.",
+            "tag": "£200.00",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Emergency Payment Module activated. Your device has been credited £200.00. Tap to pay at participating retailers. Weekly refresh every Sunday.",
+            "snip": "Two hundred quid appeared on his phone. No form. No application. No questions. Just: here's money, go shopping.",
+            "tag": "£200.00",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Purchase limits in effect. Additional retailers joining daily.",
+            "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays. Three items per category. Nobody complained.",
+            "tag": "EPM",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payments are now active across the UK. We will not let this nation go hungry. We will not let this nation go dark.'",
+            "snip": "We will not let this nation go dark. He said it like a promise. Dev would hear it like a threat.",
+            "tag": "6:00pm",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. Tap to pay at participating retailers.",
+            "snip": "Second week. Same amount. Same beep. He bought dog food yesterday without thinking about it. The gesture was identical to every tap he'd made for years.",
+            "tag": "£200.00",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Additional retailers now accepting ARC Emergency payments. Check the retailer map in ARC Emergency for updated locations.",
+            "snip": "The map is expanding. More pins every day. The corner shop isn't on it yet. The corner shop takes cash. The corner shop is starting to look old.",
+            "tag": "Update",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Sources suggest major economic announcement imminent. PM expected to address the nation 'within days.'",
+            "snip": "Everyone knows something's coming. The community centres have biometric readers nobody's using yet. The BBC is asking questions shaped like answers.",
+            "tag": "Breaking",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "George",
+            "ttl": "Have you seen the BBC thing about AIDA? Some kind of AI assistant. Looks pretty sick actually.",
+            "snip": "Pretty sick actually. George's generation hears 'AI assistant' and thinks 'useful.' Simon's generation hears it and thinks 'Skynet.' Neither is right.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Amy's mum",
+            "ttl": "Got the £200! Your dad worked out how to tap. Tesco had a queue but we got milk and bread and some proper food. Your brothers still aren't answering.",
+            "snip": "Peter worked out how to tap. Seventy-three years old and he tapped his phone at Tesco and got milk. The revolution is a pensioner buying bread with a gesture he learned in forty seconds.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Dave",
+            "ttl": "Just tapped for dog food at Morrisons. Soldiers in the car park but they're just helping with the queues. Felt exactly the same as tapping before. Mental isn't it. Free money 😂",
+            "snip": "Soldiers in the car park but they're just helping. Dave said it like it was normal. Four days ago there were no soldiers in the Morrisons car park. Now they're helping with the queues and Dave's buying dog food and it's normal.",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Dev",
+            "ttl": "you there?",
+            "snip": "Two words. Three days of silence on the group and then two words at 1am.",
+            "tag": "1:00am",
+            "cls": ""
+          },
+          {
+            "src": "Dev",
+            "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
+            "snip": "Dev's frenzy. The Signal group lit up at 1am and didn't stop until 4. Seven people reading. Nobody sleeping. Dev expecting you to absorb in an hour what took him weeks to map.",
+            "tag": "Thread",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Emergency measures now active. An emergency payment of £200 has been credited to all ARC-enabled devices. Major retailers are accepting ARC payments with purchase limits. Military personnel are providing logistics support at major distribution points. Food collection available at supermarkets and community centres for those without smartphones.",
+            "snip": "Military personnel are providing logistics support. Not security. Not enforcement. Logistics support. The soldiers are carrying boxes and the sentence is carrying the weight.",
+            "tag": "7:00am",
+            "cls": "x"
+          }
+        ]
+      }
+    ],
+    "28a": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "Joint address 21 Feb — transcript via ARC",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "ttl": "<strong>JOINT ADDRESS  21/2— 12:00 GMT — Transcript</strong>",
+            "snip": "The Emergency Payment Module is live. Check your phone now.",
+            "isnew": true
+          }
+        ]
+      }
+    ],
+    "28b": [],
+    "28c": [],
+    "29a": []
   },
   "threads": [
     {
@@ -10320,7 +10284,7 @@
         {
           "text": "ARC — Transcript: Joint Address to the Nation — 21 February 2027",
           "src": "arc",
-          "turn": "29",
+          "turn": "28a",
           "article": {
             "style": "arc",
             "source": "ARC",
@@ -12292,48 +12256,6 @@
           "cls": ""
         }
       ],
-      "29a": [
-        {
-          "text": "DAY 30",
-          "cls": ""
-        },
-        {
-          "text": "BBC: \"Sources suggest major economic announcement imminent\"",
-          "cls": ""
-        },
-        {
-          "text": "Recovery Hubs: registration equipment observed — \"routine upgrade\" — DLUHC",
-          "cls": "buried"
-        },
-        {
-          "text": "Cash: virtually exhausted in most regions",
-          "cls": "cold"
-        },
-        {
-          "text": "PM expected to address nation \"within days\" — Downing Street",
-          "cls": ""
-        },
-        {
-          "text": "23 nations: coordinated announcement confirmed — Reuters",
-          "cls": ""
-        },
-        {
-          "text": "BBC: \"What is AIDA? The AI assistant at the heart of recovery plans\"",
-          "cls": ""
-        },
-        {
-          "text": "Community groups: \"We just need to know what's coming\" — BBC vox pop",
-          "cls": "warm"
-        },
-        {
-          "text": "Schools: \"ready to reopen within 48 hours of announcement\" — DfE",
-          "cls": ""
-        },
-        {
-          "text": "Weather: first crocuses — 13°C — spring arriving",
-          "cls": "warm"
-        }
-      ],
       "30": [
         {
           "text": "DAY 35",
@@ -12797,7 +12719,53 @@
           "cls": "buried",
           "text": "NHS England: 'no disruption to digital health services anticipated'"
         }
-      ]
+      ],
+      "29c": [
+        {
+          "text": "DAY 30",
+          "cls": ""
+        },
+        {
+          "text": "BBC: \"Sources suggest major economic announcement imminent\"",
+          "cls": ""
+        },
+        {
+          "text": "Recovery Hubs: registration equipment observed — \"routine upgrade\" — DLUHC",
+          "cls": "buried"
+        },
+        {
+          "text": "Cash: virtually exhausted in most regions",
+          "cls": "cold"
+        },
+        {
+          "text": "PM expected to address nation \"within days\" — Downing Street",
+          "cls": ""
+        },
+        {
+          "text": "23 nations: coordinated announcement confirmed — Reuters",
+          "cls": ""
+        },
+        {
+          "text": "BBC: \"What is AIDA? The AI assistant at the heart of recovery plans\"",
+          "cls": ""
+        },
+        {
+          "text": "Community groups: \"We just need to know what's coming\" — BBC vox pop",
+          "cls": "warm"
+        },
+        {
+          "text": "Schools: \"ready to reopen within 48 hours of announcement\" — DfE",
+          "cls": ""
+        },
+        {
+          "text": "Weather: first crocuses — 13°C — spring arriving",
+          "cls": "warm"
+        }
+      ],
+      "28a": [],
+      "28b": [],
+      "28c": [],
+      "29a": []
     },
     "poolMap": {
       "1": "1-3",
@@ -12833,7 +12801,6 @@
       "27": "27",
       "28": "28",
       "29": "29",
-      "29a": "29a",
       "30": "30",
       "31": "31",
       "32": "32",
@@ -12846,7 +12813,12 @@
       "23a": "23a",
       "29b": "29b",
       "18a": "18-18a",
-      "17c": "17-18"
+      "17c": "17-18",
+      "29c": "29c",
+      "28a": "28a",
+      "28b": "28b",
+      "28c": "28c",
+      "29a": "29a"
     }
   },
   "initialNotes": [],

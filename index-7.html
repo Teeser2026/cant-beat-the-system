@@ -4969,7 +4969,7 @@ function renderDevTurnList() {
     const isStub = !isQ && turn.paras && turn.paras.length <= 1 && turn.title && turn.title.startsWith('TBD');
     if (!isQ) chapterCount++;
     const num = isQ ? turn.num || turn.id : chapterCount + ' · ' + turn.num;
-    const title = isQ ? (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question') : (turn.title || 'Untitled');
+    const title = isQ ? (turn.title || (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question')) : (turn.title || 'Untitled');
     const cls = `dtl-item${isCurrent ? ' current' : ''}${isStub ? ' stub' : ''}`;
     const numCls = isQ ? 'dtl-num q' : 'dtl-num';
     html += `<div class="${cls}" data-idx="${idx}">
@@ -5008,7 +5008,7 @@ function renderChapterNav() {
     if (!isQ) chapterNum++;
     const isCurrent = idx === state.turnIndex;
     const cls = 'cn-item' + (isCurrent ? ' current' : '') + (isStub ? ' stub' : '');
-    const title = isQ ? (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question') : (turn.title || 'Untitled');
+    const title = isQ ? (turn.title || (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question')) : (turn.title || 'Untitled');
     const date = turn.date || '';
     const numText = isQ ? (turn.num || turn.id) : (DEV && turn.num ? chapterNum + ' · ' + turn.num : chapterNum);
     const numCls = 'cn-num' + (isQ ? ' q' : '');

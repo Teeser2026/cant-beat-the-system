@@ -10064,14 +10064,6 @@
             "tag": "BE WELL",
             "cls": "a",
             "txt": "Three requests from the PM"
-          },
-          {
-            "src": "ARC",
-            "ttl": "<strong>EVENING UPDATE — 22:30 GMT —</strong><br>You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
-            "snip": "The app wants permission. The app that installed itself without it.",
-            "tag": "BE WELL",
-            "cls": "a",
-            "txt": "Enable ARC Emergency notifications"
           }
         ]
       },
@@ -10098,7 +10090,12 @@
             "snip": "Sent 19:53. Two minutes later. The only other person I'd tell. Fifteen years of arguments. Can't quite give him the full sentence.",
             "tag": "Sent",
             "cls": ""
-          },
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
           {
             "src": "from Ben",
             "ttl": "you see that mate? didn't mention banks at all. what's going on with the banks. emma's panicking.",
@@ -10116,14 +10113,7 @@
           {
             "src": "to Sam",
             "ttl": "u ok Sammy? back at mums or still with mike? love you",
-            "tag": "Failed",
-            "cls": ""
-          },
-          {
-            "src": "from Mum (Spain)",
-            "ttl": "I've sent a few messages — hope one has got through? We're OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
-            "snip": "21:54. An earlier message finally landing. Out of order. Every text its own private delay.",
-            "tag": "Delivered",
+            "tag": "Failed · 20:44",
             "cls": ""
           }
         ]
@@ -10137,20 +10127,109 @@
             "snip": "'To assist with co-ordination.' Four words doing a lot of work.",
             "tag": "UK-EMRG-2027-012",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Sarah",
+            "ttl": "Hi Simon — Sam’s back here now, he got home about an hour ago. All fine. Send my love to Emilia x",
+            "snip": "21:50. He’s back at his mum’s. Good to know.",
+            "tag": "Delivered",
+            "cls": ""
           },
           {
-            "src": "UK GOV",
-            "ttl": "Stay local. Do not drive unless essential. Schools closed until further notice. Emergency services operational. Updates via ARC and BBC.",
-            "snip": "The PM said 36 hours. This says 'until further notice.' Twelve hours and the language has already shifted.",
-            "tag": "6:00am",
-            "cls": "x"
-          },
+            "src": "from Mum (Spain)",
+            "ttl": "I’ve sent a few messages — hope one has got through? We’re OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
+            "snip": "21:54. An earlier message finally landing. Out of order. Every text its own private delay.",
+            "tag": "Delivered",
+            "cls": ""
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
             "src": "UK GOV",
             "ttl": "<strong>OVERNIGHT UPDATE — 22:00 GMT —</strong><br>Emergency services remain operational. Power grid stable. No threats to domestic security identified. Do not attempt to access online banking or financial services. Sleep safely. The Prime Minister will address the nation again within 24 hours.",
             "snip": "'Sleep safely.' They're tucking us in.",
             "tag": "UK-EMRG-2027-013",
             "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "<strong>EVENING UPDATE — 22:30 GMT —</strong><br>You may now receive verified local updates and essential service guidance through ARC Emergency. Enable notifications to stay informed.",
+            "snip": "The app wants permission. The app that installed itself without it.",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "Enable ARC Emergency notifications"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Stay local. Do not drive unless essential. Schools closed until further notice. Emergency services operational. Updates via ARC and BBC.",
+            "snip": "The PM said 36 hours. This says 'until further notice.' Twelve hours and the language has already shifted.",
+            "tag": "6:00am",
+            "cls": "x"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "<strong>MORNING UPDATE — 07:00 GMT —</strong><br>Selected pharmacies open from 10:00. Cash payments only. See nearest locations below.<br><br>The Prime Minister will address the nation at 09:00 GMT. Watch live on BBC One, BBC Radio, or follow here on ARC Emergency.",
+            "snip": "You don't even need the telly. ARC has it covered.",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "Morning operational update — pharmacies + PM at 9am"
+          },
+          {
+            "src": "ARC",
+            "ttl": "<strong>ARC UPDATE — 08:00 GMT —</strong><br>List of pharmacies and food retailers open in your area. Cash payments only.",
+            "snip": "ARC knows where you are. No warmth. Just competence. Competence is the warmth.",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "Local pharmacy and food — personalised"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "from Mum (Spain)",
+            "ttl": "You all ok? Did you sleep well? Still no internet here. They say days, not weeks. It’s market day today in the village, no idea if it will be open. Love mum x",
+            "snip": "08:30. Days, not weeks. Same words, different language.",
+            "tag": "Delivered",
+            "cls": ""
+          },
+          {
+            "src": "to Giles",
+            "ttl": "morning mate — yeah we’re all good. Valentine’s Day, eh. Who knew?",
+            "snip": "08:41. Another win for the conspiracy theorists.",
+            "tag": "Not Delivered",
+            "cls": ""
+          },
+          {
+            "src": "to Dave",
+            "ttl": "Pain in the arse this. I’m guessing Palace game will be off?",
+            "snip": "08:44. Dave’s biggest concern will be football. I’ll play along.",
+            "tag": "Not Delivered",
+            "cls": ""
           }
         ]
       }

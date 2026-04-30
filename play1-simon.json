@@ -5146,7 +5146,7 @@
     },
     {
       "id": "27b",
-      "num": "27b",
+      "num": "T27b",
       "title": "101 Dots",
       "date": "20 FEBRUARY 2027 — EVENING",
       "paras": [
@@ -5276,7 +5276,7 @@
     },
     {
       "id": "28a",
-      "num": "28a",
+      "num": "T28a",
       "title": "An Orderly Queue",
       "date": "21 FEBRUARY 2027 — AFTERNOON",
       "paras": [
@@ -5287,7 +5287,7 @@
     },
     {
       "id": "28b",
-      "num": "28b",
+      "num": "T28b",
       "title": "Dopamine Hits",
       "date": "22 FEBRUARY 2027",
       "paras": [
@@ -5298,7 +5298,7 @@
     },
     {
       "id": "28c",
-      "num": "28c",
+      "num": "T28c",
       "title": "The Old Normal",
       "date": "23–28 FEBRUARY 2027",
       "paras": [
@@ -5321,7 +5321,7 @@
     },
     {
       "id": "29a",
-      "num": "29a",
+      "num": "T29a",
       "title": "The Thing",
       "date": "7–11 MARCH 2027",
       "paras": [
@@ -5343,7 +5343,7 @@
     },
     {
       "id": "29c",
-      "num": "29c",
+      "num": "T29c",
       "title": "Something Better",
       "date": "17–21 March 2027",
       "paras": [
@@ -8485,7 +8485,8 @@
             "src": "ARC",
             "tag": "Repatriation",
             "cls": "a",
-            "txt": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency."
+            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
+            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’"
           }
         ]
       },
@@ -8587,25 +8588,29 @@
             "src": "ARC",
             "tag": "ARC Education",
             "cls": "a",
-            "txt": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council."
+            "ttl": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council.",
+            "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time."
           },
           {
             "src": "ARC",
             "tag": "12:15pm",
             "cls": "a",
-            "txt": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region."
+            "ttl": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region.",
+            "snip": "ARC → Business → Your Region. Will this be helpful advice or furlough?"
           },
           {
             "src": "ARC",
             "tag": "3:30pm",
             "cls": "a",
-            "txt": "Support during the restoration period — guidance now available. Access via ARC → Support → Your Region. Includes: employer obligations, emergency hub services, prescription access, utility protections."
+            "ttl": "Support during the restoration period — guidance now available. Access via ARC → Support → Your Region. Includes: employer obligations, emergency hub services, prescription access, utility protections.",
+            "snip": "Everything on one app. How helpful."
           },
           {
             "src": "ARC",
             "tag": "Repatriation",
             "cls": "a",
-            "txt": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub."
+            "ttl": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub.",
+            "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go."
           }
         ]
       },

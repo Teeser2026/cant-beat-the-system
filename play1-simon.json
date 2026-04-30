@@ -10198,9 +10198,17 @@
             "txt": "Morning operational update — pharmacies + PM at 9am"
           },
           {
+            "src": "ARC Local",
+            "ttl": "<strong>GOOD MORNING — 07:30 GMT —</strong><br>Your area: East Sussex.<br>Nearest open pharmacy: Boots, Uckfield (10:00–14:00).<br>Nearest food retailers: Waitrose, Uckfield (09:00–13:00). Tesco, Uckfield.<br>Cash payments only.",
+            "snip": "There it is. I gave it permission six hours ago. It knows my postcode. Probably get some ‘selected for you’ offers next time.",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "First ARC Local card — personalised"
+          },
+          {
             "src": "ARC",
-            "ttl": "<strong>ARC UPDATE — 08:00 GMT —</strong><br>List of pharmacies and food retailers open in your area. Cash payments only.",
-            "snip": "ARC knows where you are. No warmth. Just competence. Competence is the warmth.",
+            "ttl": "<strong>ARC UPDATE — 08:00 GMT —</strong><br>List of pharmacies and food retailers open in your area. Cash payments only.<br><br>For personalised local updates, enable notifications in ARC Emergency.",
+            "snip": "The version for everyone else. The nudge to opt in. ARC Local for those who haven’t tapped yet.",
             "tag": "BE WELL",
             "cls": "a",
             "txt": "Local pharmacy and food — personalised"

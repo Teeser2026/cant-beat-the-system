@@ -10299,6 +10299,19 @@
         ]
       },
       {
+        "sec": "Song · Vinyl",
+        "cards": [
+          {
+            "type": "song",
+            "src": "Marvin Gaye",
+            "ttl": "What’s Going On",
+            "snip": "Mercy Mercy Me",
+            "tag": "180 gram vinyl",
+            "cls": ""
+          }
+        ]
+      },
+      {
         "sec": "Text Message",
         "cards": [
           {

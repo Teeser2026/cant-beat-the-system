@@ -7556,6 +7556,39 @@
             "snip": "Not wrong about the conclusion. Completely wrong about the timeline. And the caps lock. The caps lock is doing more damage to the legitimate analysis than the Killuminati diagram.",
             "tag": "Viral",
             "cls": ""
+          },
+          {
+            "src": "@WakeUpBrother",
+            "ttl": "The system is being built in plain sight. Digital ID. Central Bank Digital Currency. UBI. Social Credit Score. The mark isn’t coming. It’s here. You just can’t see it yet because it doesn’t look like a mark. It looks like an app.",
+            "snip": "Twelve thousand retweets. An all-seeing eye and a QR code on a palm. This is three scrolls from a fifteen-year payment systems analyst who verified a firmware hash. The algorithm doesn’t know the difference. Neither does anyone watching Simon’s screen.",
+            "tag": "Viral",
+            "cls": "",
+            "img": "mark-of-the-beast.jpg"
+          },
+          {
+            "src": "@EndTimesFinance",
+            "ttl": "From ledger to beast system. Biometric identity. DNA monitoring. Neural interface. ‘And that no man might buy or sell, save he that had the mark.’ Revelation 13:17. The blockchain isn’t money. It’s a cage.",
+            "snip": "Revelation. Always Revelation. The eschatological packaging that ensures no newsroom will ever run the underlying technical story. The PSA article doesn’t mention God once. It doesn’t need to. The algorithm will do the association for free.",
+            "tag": "Conspiracy",
+            "cls": "",
+            "img": "beast-system.jpg"
+          },
+          {
+            "src": "@Killuminati_AI",
+            "ttl": "WHERE THEIR AGENDAS INTERSECT. NATO. WEF. Vatican. CCP. House of Saud. Depopulation at the centre. The firmware push is just the financial layer. The real architecture is total.",
+            "snip": "Four hours ago he was reading a verified firmware hash. Now his feed thinks he wants to know about the Khazarian Mafia. The algorithm doesn’t distinguish between a credentialed analyst and a Venn diagram made by someone called Killuminati underscore AI. To the platform, they’re the same interest.",
+            "tag": "Conspiracy",
+            "cls": "",
+            "img": "killuminati-venn.jpg"
+          },
+          {
+            "src": "@BBCNews",
+            "ttl": "Payment terminal conspiracy theories: what the claims say and what we know. BBC Verify examines viral posts alleging ‘hidden biometric payloads’ in UK card machines. bbc.co.uk/news/technolog…",
+            "snip": "BBC Verify. The headline says ‘conspiracy theories.’ Not ‘claims.’ Not ‘concerns.’ Conspiracy theories. The framing is the dismissal. You don’t even need to read the article.",
+            "tag": "Fact Check",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "finance-commerce"
           }
         ]
       },
@@ -7592,51 +7625,12 @@
           },
           {
             "src": "Finanzaufsicht Intern",
-            "ttl": "German Payment Infrastructure Under Silent Upgrade. I spent eleven years in supervisory compliance at a Frankfurt-based institution I am not at liberty to name. On 20–21 January, approximately 800,000 Ingenico terminals across the German retail banking network received an unscheduled firmware update. I can confirm the payload structure matches the UK document now circulating on Signal. The dormant container. The BIS callback. The biometric storage. This is not confined to one country.",
+            "ttl": "German Payment Infrastructure Under Silent Upgrade",
             "snip": "Germany too. Same structure, same timeline, same callback address. If this is real — and it reads real, same measured tone as the UK article, same ‘I am not a conspiracy theorist’ cadence — then this isn’t a UK story. It’s everywhere.",
             "tag": "Research",
-            "cls": ""
-          }
-        ]
-      },
-      {
-        "sec": "Doom Scroll",
-        "cards": [
-          {
-            "src": "@WakeUpBrother",
-            "ttl": "The system is being built in plain sight. Digital ID. Central Bank Digital Currency. UBI. Social Credit Score. The mark isn’t coming. It’s here. You just can’t see it yet because it doesn’t look like a mark. It looks like an app.",
-            "snip": "Twelve thousand retweets. An all-seeing eye and a QR code on a palm. This is three scrolls from a fifteen-year payment systems analyst who verified a firmware hash. The algorithm doesn’t know the difference. Neither does anyone watching Simon’s screen.",
-            "tag": "Viral",
             "cls": "",
-            "img": "mark-of-the-beast.jpg"
-          },
-          {
-            "src": "@EndTimesFinance",
-            "ttl": "From ledger to beast system. Biometric identity. DNA monitoring. Neural interface. ‘And that no man might buy or sell, save he that had the mark.’ Revelation 13:17. The blockchain isn’t money. It’s a cage.",
-            "snip": "Revelation. Always Revelation. The eschatological packaging that ensures no newsroom will ever run the underlying technical story. The PSA article doesn’t mention God once. It doesn’t need to. The algorithm will do the association for free.",
-            "tag": "Conspiracy",
-            "cls": "",
-            "img": "beast-system.jpg"
-          },
-          {
-            "src": "@Killuminati_AI",
-            "ttl": "WHERE THEIR AGENDAS INTERSECT. NATO. WEF. Vatican. CCP. House of Saud. Depopulation at the centre. The firmware push is just the financial layer. The real architecture is total.",
-            "snip": "Four hours ago he was reading a verified firmware hash. Now his feed thinks he wants to know about the Khazarian Mafia. The algorithm doesn’t distinguish between a credentialed analyst and a Venn diagram made by someone called Killuminati underscore AI. To the platform, they’re the same interest.",
-            "tag": "Conspiracy",
-            "cls": "",
-            "img": "killuminati-venn.jpg"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "BBC Verify",
-            "ttl": "Claims of ‘hidden biometric payloads’ in UK payment terminals. Posts circulating on Telegram and Substack allege a covert firmware update installed surveillance capabilities in millions of card machines. Industry sources say overnight firmware updates are routine. The BIS routing address cited in the posts is consistent with standard interoperability testing. Rating: Misleading.",
-            "snip": "BBC Verify. Twelve hours from verified firmware hash to ‘industry sources say routine.’ They don’t address the biometric storage. Don’t address the NFC write access. Don’t address the encrypted time-lock. They address the one thing they can explain away — the BIS callback — and park the rest under ‘misleading.’ Blue logo. Job done.",
-            "tag": "Fact Check",
-            "cls": ""
+            "type": "thread-notify",
+            "threadRef": "finance-commerce"
           }
         ]
       }
@@ -8423,7 +8417,7 @@
           },
           {
             "src": "@OpenSourceVerify",
-            "ttl": "THREAD: The ‘Finanzaufsicht Intern’ claiming German terminal firmware push? LinkedIn profile created 72 hours before publication. No record at BaFin or any Frankfurt compliance department matching the described role. Substack account opened same week. Profile now deleted. The question isn’t who wrote it. The question is who it was written for.",
+            "ttl": "The ‘Finanzaufsicht Intern’ claiming German terminal firmware push? LinkedIn profile created 72 hours before publication. No record at BaFin or any Frankfurt compliance department matching the described role. Substack account opened same week. Profile now deleted. The question isn’t who wrote it. The question is who it was written for.",
             "snip": "And there it goes. The UK article — the real one, the verified one — is now guilty by association. Every account that shared the German piece shared the British one first. One fabrication, perfectly timed, and the entire firmware story becomes ‘that thing that turned out to be fake.’ Whether the fraud was amateur or designed doesn’t matter. The result is the same.",
             "tag": "Debunked",
             "cls": ""
@@ -8737,10 +8731,10 @@
         "sec": "X",
         "cards": [
           {
-            "src": "Anonymous",
+            "src": "@JohnnyVedmore",
             "ttl": "Firmware pushes I can verify independently. UK (18–19 Jan, Ingenico/Verifone, 2.1M terminals). USA (19–20 Jan, Verifone/Square POS fleet, scope unknown — the NESARA noise is hiding real data). Japan (22 Jan, JCB-affiliated NFC terminals, unknown quantity). Brazil (19 Jan, Cielo POS network, simultaneous with UK). Australia (21 Jan, CBA merchant terminals, limited deployment). Same encrypted callback structure. Same dormant service container. Same BIS routing address. I am not making a claim about what this means. I am telling you what is there.",
-            "snip": "Five countries. No Germany — even though he’d bet his house the German push was real too. The fake whistleblower killed that data point for good. And the US data is half-buried under Q mythology. This thread will get four hundred likes and disappear into the algorithm. The most important post on the internet, seen by nobody.",
-            "tag": "Unverified",
+            "snip": "Five countries. No Germany — even though he’d bet his house the German push was real too. The fake whistleblower killed that data point for good. And the US data is half-buried under Q mythology. Vedmore’s done the work. Four hundred likes. Gone by morning.",
+            "tag": "Thread",
             "cls": "",
             "img": "biometric-hand.jpg"
           }
@@ -12074,6 +12068,30 @@
             "date": "25 January 2027",
             "body": "<div class=\"sb-top-strip\"><span class=\"sb-mark\"></span><span class=\"sb-publication-small\">Payment Systems Analysis</span></div><div class=\"sb-author-row\"><div class=\"sb-avatar\">PS</div><div class=\"sb-name-block\"><div class=\"sb-name\">Payment Systems Analysis <span class=\"sb-verified\"></span></div><div class=\"sb-sub\">Payment Systems Analysis · 25 Jan 2027</div></div></div><h1 class=\"sb-title\">What’s Sitting Inside Two Million Payment Terminals</h1><div class=\"sb-divider\"></div><div class=\"sb-body\"><p>I’ve spent the last 5 days examining the firmware push that a document circulating on Signal and Telegram describes in detail. I’m not going to link to that document. If you’ve seen it, you know what I’m referring to. If you haven’t, this post will make the case independently.</p><p>On the night of 18–19 January, approximately 2.1 million Ingenico and Verifone payment terminals across the UK received an over-the-air firmware update. This is not disputed. What the vendors have declined to confirm is who authorised it, and what the payload contains.</p><p>I’ve analysed the firmware hash. It matches the document. Here is what’s inside.</p><p><strong>The container</strong></p><p>The payload installs a dormant service container. It does not activate. It does not interfere with existing payment processing. It sits alongside the terminal’s standard operating software and waits.</p><p>The container has three capabilities that no UK payment terminal has ever required:</p><p>First: local biometric template storage. The terminal can now store and match fingerprint and vein-pattern data. No current UK payment workflow involves biometrics at the point of sale. Contactless, chip-and-PIN, mobile wallet — none of these require your fingerprint. So why does the terminal now have space for it?</p><p>Second: NFC write access. Current terminals read NFC — they receive data from your phone or card. The updated terminals can also write to NFC devices. They can push data to your phone. Think about what that means. The payment terminal becomes a two-way channel.</p><p>Third: an encrypted callback to a routing address that resolves not to Worldpay, not to Barclaycard, not to Global Payments — but to infrastructure operated by the Bank for International Settlements in Basel.</p><p><strong>The ARC connection</strong></p><p>The container hooks directly into ARC — the Authentication and Registration Core that was rolled out across UK payment infrastructure last autumn. ARC was described as a device-level identity verification framework. It is now clear that ARC is the authentication layer for whatever this new capability is.</p><p>The same ARC framework is now running in UK airports under the Seamless Border Programme. The same biometric template format. The same data architecture. A fingerprint scanned at Gatwick and a fingerprint scanned at a card terminal in Tesco would be verified by the same system.</p><p><strong>The time-lock</strong></p><p>The activation window is encrypted. The date is not disclosed in the firmware. But the deployment was simultaneous — every terminal updated on the same night — and the activation mechanism is designed to trigger every terminal at the same moment. Whatever this is designed to do, it is designed to do it everywhere at once, on a date the deployers have chosen not to reveal.</p><p><strong>What this means</strong></p><p>I want to be careful here. I am not a conspiracy theorist. I am a payment systems analyst with fifteen years in the industry. I have worked for two of the three acquirer networks involved in this deployment.</p><p>What I am looking at is infrastructure for a new payment system — biometric, two-way, centrally controlled, routed through the BIS — that has been pre-positioned inside two million existing terminals without merchant knowledge, without vendor acknowledgement, and without regulatory disclosure.</p><p>It is not active. It is waiting.</p><p>I don’t know what it’s waiting for.</p></div><div class=\"sb-engagement\"><span class=\"sb-eng-item heart\">620</span><span class=\"sb-eng-item comment\">78</span><span class=\"sb-eng-item restack\">215</span><span class=\"sb-eng-item share\"></span><span class=\"sb-subscribe\">Subscribe</span></div>",
             "footer": "Payment Systems Analysis — Substack"
+          }
+        },
+        {
+          "text": "German Payment Infrastructure Under Silent Upgrade — Finanzaufsicht Intern",
+          "src": "simon",
+          "turn": 17,
+          "article": {
+            "style": "substack",
+            "source": "Finanzaufsicht Intern — Substack",
+            "title": "German Payment Infrastructure Under Silent Upgrade",
+            "date": "22 January 2027",
+            "body": "<div class=\"sb-top-strip\"><span class=\"sb-mark\"></span><span class=\"sb-publication-small\">Finanzaufsicht Intern</span></div><div class=\"sb-author-row\"><div class=\"sb-avatar\">FI</div><div class=\"sb-name-block\"><div class=\"sb-name\">Finanzaufsicht Intern</div><div class=\"sb-sub\">Finanzaufsicht Intern · 22 Jan 2027</div></div></div><h1 class=\"sb-title\">German Payment Infrastructure Under Silent Upgrade</h1><div class=\"sb-divider\"></div><div class=\"sb-body\"><p>I spent eleven years in supervisory compliance at a Frankfurt-based institution I am not at liberty to name. I left in 2024. What I am about to describe is based on access I retained through professional contacts who remain inside the German payments ecosystem.</p><p>On the night of 20–21 January, approximately 800,000 Ingenico terminals across the German retail banking network received an unscheduled firmware update. The update was pushed through standard acquirer channels. No corresponding release note was issued by Ingenico GmbH. No merchant notification was sent.</p><p>I have reviewed the firmware image supplied by a contact at one of the three German acquirer networks. The payload structure is identical to the UK document now circulating on Signal and Telegram.</p><p><strong>The payload</strong></p><p>A dormant service container. Local biometric template storage. NFC write access. An encrypted callback to infrastructure that resolves to BIS systems in Basel — the same routing address described in the UK analysis published by Payment Systems Analysis this week.</p><p>The container hooks into the same authentication framework. In the UK, this framework is called ARC. In Germany, the equivalent layer was deployed under the Bundesbank’s Digital Resilience Programme last October. Different name. Same architecture. Same biometric template format.</p><p><strong>The timing</strong></p><p>The UK push was 18–19 January. The German push was 20–21 January. A 48-hour gap. This is not independent maintenance. Independent firmware updates do not coordinate across national payment fleets to within two days of each other.</p><p>The activation window is encrypted, as in the UK payload. I cannot determine the trigger date. But the deployment architecture is designed for simultaneous activation across every terminal that received the update.</p><p><strong>What I am saying</strong></p><p>I am saying that the infrastructure described in the UK document is not confined to the UK. Germany has received the same payload, through the same channels, on the same timeline. The biometric capability, the NFC write access, the BIS routing — all present.</p><p>I am not a conspiracy theorist. I spent over a decade ensuring German financial institutions met their regulatory obligations. I understand how firmware deployments work. This is not how they work.</p><p>I am publishing this under a pseudonym because I have obligations to former colleagues who provided access. I have no social media presence. I have no newsletter archive. Judge this on the technical content or discard it. I have no interest in building an audience.</p><p>If similar pushes have occurred in other jurisdictions — and I believe they have — I would encourage anyone with access to terminal firmware images to verify independently and publish. This should not rest on one UK analyst and one German pseudonym.</p></div>"
+          }
+        },
+        {
+          "text": "BBC Verify — Payment terminal conspiracy theories: what the claims say and what we know",
+          "src": "simon",
+          "turn": 17,
+          "article": {
+            "style": "news",
+            "source": "BBC News — BBC Verify",
+            "title": "Payment terminal conspiracy theories: what the claims say and what we know",
+            "date": "26 January 2027",
+            "body": "<p>Posts circulating on Telegram, X and Substack this week claim that millions of UK payment terminals have been secretly fitted with surveillance technology, including biometric scanners and connections to an international banking authority in Switzerland.</p><p>The claims, which have been shared tens of thousands of times, centre on a firmware update that was pushed to Ingenico and Verifone card machines on the night of 18–19 January.</p><p>BBC Verify has examined the key claims.</p><p><strong>The claim: A ‘dormant biometric payload’ was installed in 2.1 million terminals</strong></p><p>One widely shared Substack post, written by an anonymous author identifying themselves as a payment systems analyst, claims the firmware update contains a ‘dormant service container’ with biometric storage capability, NFC write access, and a connection to the Bank for International Settlements in Basel.</p><p>Industry sources told BBC Verify that overnight firmware updates are standard practice in the payment terminal industry. “Terminals receive updates regularly,” said a spokesperson for UK Finance, the trade body representing payment service providers. “These updates include security patches, compliance adjustments and performance improvements. They are pushed through authorised acquirer channels as a matter of routine.”</p><p><strong>The claim: The update connects to the Bank for International Settlements</strong></p><p>The BIS routing address cited in the viral posts is consistent with infrastructure used in the BIS Innovation Hub’s interoperability testing programme, which has been running since 2023. Payment terminals used in pilot schemes for cross-border settlement are known to route test data through BIS systems. Security researchers say this does not indicate covert activity.</p><p>“Seeing a BIS address in payment infrastructure is like seeing a .gov.uk address in a government website,” said Dr Marcus Webb, a cybersecurity researcher at Imperial College London. “It tells you who built the plumbing. It doesn’t tell you what’s flowing through it.”</p><p><strong>The claim: The firmware is ‘waiting for an activation signal’</strong></p><p>Several posts describe an encrypted ‘time-lock’ within the firmware that will activate all terminals simultaneously on a date chosen by the deployers. BBC Verify has not been able to independently verify this claim. Ingenico and Verifone declined to comment on the specifics of their firmware architecture, citing commercial confidentiality.</p><p><strong>The wider context</strong></p><p>The firmware claims have been amplified by accounts associated with conspiracy theories about central bank digital currencies, depopulation, and global financial control. Images referencing the ‘Mark of the Beast’ and the ‘Great Taking’ have been shared alongside the original technical analysis, making it difficult to separate technical claims from ideological framing.</p><p>The Bank of England confirmed that its digital pound consultation remains ongoing and that “no decisions have been made about implementation.”</p><p>UK Finance said it was “aware of the social media activity” and described the claims as “unfounded.”</p><p><em>BBC Verify rates the central claim — that payment terminals have been covertly fitted with biometric surveillance technology — as Misleading.</em></p><p><em>Have you seen claims online that you would like BBC Verify to investigate? Contact us at verify@bbc.co.uk</em></p>"
           }
         },
         {

@@ -4874,7 +4874,7 @@ function updateTicker(turnId) {
   ticker.classList.remove('dead');
 
   // If no pool found for this turn, leave ticker unchanged
-  if (!pool || !Array.isArray(pool)) return;
+  if (!pool || !Array.isArray(pool) || pool.length === 0) return;
 
   // Repeat pool enough times to fill the scroll track (min 12 items for seamless loop)
   const reps = Math.max(2, Math.ceil(12 / pool.length));

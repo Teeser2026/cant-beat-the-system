@@ -10744,6 +10744,14 @@
             "tag": "BE WELL",
             "cls": "a",
             "txt": "Local pharmacy and food — personalised"
+          },
+          {
+            "src": "ARC Local",
+            "tag": "BE WELL",
+            "cls": "a",
+            "ttl": "<strong>COMMUNITY UPDATE — 08:30 GMT —</strong><br>Your area: East Sussex.<br>Community Recovery Hubs will open from midday today at community centres, libraries, leisure centres and places of worship. Warm spaces, charging points, printed information, support for anyone who needs it.<br>Volunteers welcome. No registration needed. Just turn up.",
+            "snip": "They're opening community hubs. Before the PM has even announced them.",
+            "type": "flavour"
           }
         ]
       },

@@ -1133,6 +1133,7 @@ html, body {
 .panel.on { display: block; }
 
 /* ── SIGNAL CARDS ── */
+/* ── RETIRED: sec-label standalone headers replaced by card-chrome (S185) ──
 .sec-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
@@ -1144,6 +1145,35 @@ html, body {
 }
 .sec-label.arc { color: #00FFE1; opacity: .55; }
 .sec-label.gov { color: #d43d3d; opacity: .55; }
+*/
+
+/* ── S185: card-chrome — channel pill + time on every card ── */
+.card-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.card-chrome .sec-name {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(107,103,96,.2);
+  color: var(--dim);
+  opacity: .8;
+}
+.card-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--dim);
+  opacity: .35;
+}
 .card {
   background: var(--card);
   border: 1px solid var(--card-b);
@@ -1198,22 +1228,25 @@ body.phase-3 .card .snip {
 /* S174 hotfix: channel --accent overrides removed — they coupled pill colour to trim colour. */
 /* Channel identity now lives SOLELY on .sec-name badges in the section header. */
 
-/* .sec-name badges — small pill on channel name in section header, brand-coloured */
-body .sec-label .sec-name { display: inline-block; }
-body .sec-label .sec-name.ch-wa   { background: #25D366; color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-x    { background: #000;    color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-ss   { background: #FF6719; color: #fff;         padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-song { background: #1DB954; color: #000; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-ig   { background: #E4405F; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-yt   { background: #FF0000; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-sig  { background: #3A76F0; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-sms  { background: #34C759; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-tg   { background: #229ED9; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-gm   { background: #8E8E93; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-nt   { background: #8E8E93; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-fb   { background: #0084FF; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-rd   { background: #FF4500; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
-body .sec-label .sec-name.ch-li   { background: #0A66C2; color: #fff; padding: 1px 8px; border-radius: 999px; letter-spacing: 1.5px; font-weight: 500; opacity: 1; }
+/* S185: .sec-name pills — re-scoped from .sec-label to .card-chrome */
+.sec-name.ch-wa   { background: #25D366; color: #fff; opacity: 1; }
+.sec-name.ch-x    { background: #000;    color: #fff; opacity: 1; }
+.sec-name.ch-ss   { background: #FF6719; color: #fff; opacity: 1; }
+.sec-name.ch-song { background: #1DB954; color: #000; opacity: 1; }
+.sec-name.ch-ig   { background: #E4405F; color: #fff; opacity: 1; }
+.sec-name.ch-yt   { background: #FF0000; color: #fff; opacity: 1; }
+.sec-name.ch-sig  { background: #3A76F0; color: #fff; opacity: 1; }
+.sec-name.ch-sms  { background: #34C759; color: #fff; opacity: 1; }
+.sec-name.ch-tg   { background: #229ED9; color: #fff; opacity: 1; }
+.sec-name.ch-gm   { background: #8E8E93; color: #fff; opacity: 1; }
+.sec-name.ch-nt   { background: #8E8E93; color: #fff; opacity: 1; }
+.sec-name.ch-fb   { background: #0084FF; color: #fff; opacity: 1; }
+.sec-name.ch-rd   { background: #FF4500; color: #fff; opacity: 1; }
+.sec-name.ch-li   { background: #0A66C2; color: #fff; opacity: 1; }
+/* ARC/GOV channel pills (S185) */
+.sec-name.ch-arc  { background: rgba(0,255,225,.15); color: #00FFE1; opacity: 1; }
+.sec-name.ch-gov  { background: rgba(212,61,61,.15); color: #d43d3d; opacity: 1; }
+.sec-name.ch-aida { background: rgba(26,175,108,.15); color: #1AAF6C; opacity: 1; }
 /* S174: .tag.a (ARC) and .tag.x (GOV) retained — cls-based styling for system voice. */
 /* Stripped S174: .tag.c, .tag.e, .tag.warm, .tag.cold, .tag.buried, .tag.alert. */
 /* Palette now driven by section.sec (channel) via SEC_THEME map in render, not by cls. */
@@ -4323,7 +4356,14 @@ function renderSignal(turnId) {
     'Messenger':    { className: 'ch-fb',   accentColour: '#0084FF' },
     'Reddit':       { className: 'ch-rd',   accentColour: '#FF4500' },
     'LinkedIn':     { className: 'ch-li',   accentColour: '#0A66C2' },
-    'Gmail':        { className: 'ch-gm',   accentColour: '#8E8E93' }
+    'Gmail':        { className: 'ch-gm',   accentColour: '#8E8E93' },
+    // S185: ARC/GOV/AIDA channel pills
+    'ARC Emergency':{ className: 'ch-arc',  accentColour: '#00FFE1' },
+    'ARC':          { className: 'ch-arc',  accentColour: '#00FFE1' },
+    'ARC Local':    { className: 'ch-arc',  accentColour: '#00FFE1' },
+    'UK GOV Alert': { className: 'ch-gov',  accentColour: '#d43d3d' },
+    'UK GOV':       { className: 'ch-gov',  accentColour: '#d43d3d' },
+    'AIDA':         { className: 'ch-aida', accentColour: '#1AAF6C' }
   };
 
   data.forEach(section => {
@@ -4336,7 +4376,7 @@ function renderSignal(turnId) {
     const secBaseKey  = (section.sec || '').split('·')[0].trim();
     const secTheme    = SEC_THEME[secBaseKey] || null;
     const secCardCls  = secTheme ? ' ' + secTheme.className : '';
-    html += `<div class="sec-label${secCls}">\u2014 <span class="sec-name${secCardCls}">${section.sec}</span> \u2014</div>`;
+    // S185: sec-label standalone header killed — channel now in card-chrome
     let prevSrc = null;
     section.cards.forEach(card => {
       const type = card.type || 'flavour';
@@ -4348,6 +4388,9 @@ function renderSignal(turnId) {
       const continuesCls = (card.src && card.src === prevSrc) ? ' card-continues' : '';
       prevSrc = card.src;
       html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}${continuesCls}${secCardCls}">`;
+      // S185: card-chrome — channel pill + time on every card
+      const cardTime = card.time || '';
+      html += `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
       if (card.img) {
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
         html += '<div class="card-body">';

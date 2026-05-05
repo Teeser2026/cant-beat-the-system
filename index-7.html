@@ -1172,7 +1172,7 @@ html, body {
   font-size: 9px;
   letter-spacing: 1px;
   color: var(--dim);
-  opacity: .35;
+  opacity: .55;
 }
 .card {
   background: var(--card);
@@ -1321,6 +1321,7 @@ body.phase-3 .card .ttl {
 
 /* ── SIGNAL CARD MEDIA (header images) ── */
 .card.has-img { overflow: hidden; padding: 0; }
+.card.has-img .card-chrome { padding: 10px 14px 6px; }
 .card.has-img .card-body { padding: 10px 14px 12px; }
 .card.has-img .card-img {
   width: 100%;
@@ -4390,15 +4391,20 @@ function renderSignal(turnId) {
       html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}${continuesCls}${secCardCls}">`;
       // S185: card-chrome — channel pill + time on every card
       const cardTime = card.time || '';
-      html += `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
+      const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
       if (card.img) {
+        html += chromeHtml;
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
         html += '<div class="card-body">';
+      } else {
+        html += chromeHtml;
       }
+      // S185: suppress .src when channel pill already contains the source text
+      const srcRedundant = card.src && section.sec.toLowerCase().includes(card.src.toLowerCase());
       if (isAida) {
-        const aidaParts = card.src.match(/^(AIDA)(.*)/);
-        const aidaSuffix = aidaParts[2] ? `<span class="aida-suffix">${aidaParts[2]}</span>` : '';
-        html += `<div class="src"><span class="aida-brand">AIDA</span>${aidaSuffix}<span class="cursor-red"></span></div>`;
+        // AIDA src suppressed — pill handles identity
+      } else if (srcRedundant) {
+        // ARC/GOV src suppressed — pill handles identity
       } else {
         let srcCls = '';
         if (card.src && card.src.startsWith('@')) srcCls = ' src-handle';

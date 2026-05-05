@@ -7222,7 +7222,9 @@
             "ttl": "Can you grab dog food on the way back? Wilf's nearly out",
             "snip": "Read 7:14am. Not replied yet.",
             "tag": "Read",
-            "cls": ""
+            "cls": "",
+            "time": "07:12",
+            "date": "5 Oct 2026"
           }
         ]
       },
@@ -7231,10 +7233,12 @@
         "cards": [
           {
             "src": "Waitrose",
-            "ttl": "Your delivery slot tomorrow 7–8am is confirmed",
+            "ttl": "Your delivery slot on 6 October 7–8am is confirmed",
             "snip": "Ginger, turmeric, spinach, apple juice. The good stuff.",
             "tag": "Confirmed",
-            "cls": ""
+            "cls": "",
+            "time": "07:25",
+            "date": "5 Oct 2026"
           }
         ]
       },
@@ -7246,7 +7250,9 @@
             "ttl": "Dry and bright this morning. Cloud building from the west by mid-afternoon.",
             "snip": "Perfect allotment weather. Two hours, maybe three.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "08:00",
+            "date": "5 Oct 2026"
           }
         ]
       },
@@ -7261,7 +7267,9 @@
             "cls": "",
             "type": "thread-notify",
             "threadRef": "power-structures",
-            "isnew": true
+            "isnew": true,
+            "time": "12:09",
+            "date": "5 Oct 2026"
           }
         ]
       },
@@ -7273,14 +7281,18 @@
             "ttl": "Hey guys check this out 👀",
             "snip": "deepundergroundmilitarybases.com. The link you send at 1pm — surely one of them will be interested in this?",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "13:00",
+            "date": "5 Oct 2026"
           },
           {
             "src": "Sam",
             "ttl": "Thanks Pa, I'll look at it tonight 👍",
             "snip": "He won't look at it tonight.",
             "tag": "Read",
-            "cls": ""
+            "cls": "",
+            "time": "13:12",
+            "date": "5 Oct 2026"
           }
         ]
       }
@@ -7295,14 +7307,18 @@
             "snip": "digging in the garden - not rabbit holes",
             "tag": "Garden",
             "cls": "",
-            "img": "resistance-is-fertile.jpg"
+            "img": "resistance-is-fertile.jpg",
+            "time": "09:11",
+            "date": "17 Oct 2026"
           },
           {
             "src": "Emilia",
             "ttl": "want some help in the garden this weekend?",
             "snip": "five minutes of help and three hours of selfies!",
             "tag": "Weekend",
-            "cls": ""
+            "cls": "",
+            "time": "15:22",
+            "date": "17 Oct 2026"
           }
         ]
       },
@@ -7314,7 +7330,9 @@
             "ttl": "Moved to Junk: Invoice from Ridgeworth Associates — URGENT ACTION REQUIRED",
             "snip": "The AI bot strikes again. Third time this month. Actually quite useful, except when it isn't.",
             "tag": "Auto-filed",
-            "cls": ""
+            "cls": "",
+            "time": "16:41",
+            "date": "17 Oct 2026"
           }
         ]
       }
@@ -7329,7 +7347,9 @@
             "snip": "Same formation, different month. Pinned MOD statement is the one from June.",
             "tag": "",
             "cls": "",
-            "img": "pla-taiwan-drill.jpg"
+            "img": "pla-taiwan-drill.jpg",
+            "time": "08:19",
+            "date": "28 Oct 2026"
           }
         ]
       },
@@ -7341,7 +7361,9 @@
             "ttl": "Your order is ready to collect — 4mm masonry drill bits, No More Nails, dust sheets",
             "snip": "Click & Collect. The one useful app on your phone right now.",
             "tag": "Ready",
-            "cls": ""
+            "cls": "",
+            "time": "08:26",
+            "date": "28 Oct 2026"
           }
         ]
       }
@@ -7356,7 +7378,9 @@
             "snip": "Five bullet points. No aliens. No Revelation. No laser-eyed chess pieces. Just procurement documents and the word ‘objectives.’ This is the post that should go viral. It won’t.",
             "tag": "Thread",
             "cls": "",
-            "img": "7th-gen-warfare.jpg"
+            "img": "7th-gen-warfare.jpg",
+            "time": "10:11",
+            "date": "14 Feb 2027"
           }
         ]
       },
@@ -7369,7 +7393,9 @@
             "src": "Age of Love",
             "ttl": "The Age Of Love",
             "snip": "Song tag, my choice",
-            "tag": "remember we played together?"
+            "tag": "remember we played together?",
+            "time": "22:34",
+            "date": "14 Feb 2027"
           },
           {
             "cls": "",
@@ -7377,7 +7403,9 @@
             "src": "The Stone Roses",
             "ttl": "She Bangs The Drums",
             "snip": "Song tag, two in a row, naughty",
-            "tag": "needle hits the groove"
+            "tag": "needle hits the groove",
+            "time": "22:40",
+            "date": "14 Feb 2027"
           }
         ]
       },
@@ -7390,14 +7418,18 @@
             "snip": "I hope she spots the blackbird tattoo.",
             "tag": "Valentine’s Day",
             "cls": "",
-            "img": "amy-valentine.jpg"
+            "img": "amy-valentine.jpg",
+            "time": "08:11",
+            "date": "14 Feb 2027"
           },
           {
             "src": "Mum (Sue)",
             "ttl": "Happy Valentine's Day my darling. Don't do anything I wouldn't!! Love to Amy. Miss you ❤️❤️",
             "snip": "She's bored. I send her a heart emoji.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "14:22",
+            "date": "14 Feb 2027"
           }
         ]
       },
@@ -7409,7 +7441,9 @@
             "ttl": "Dev — Missed call (23:07). No voicemail.",
             "snip": "Shit, missed his call. He hardly ever calls.",
             "tag": "11pm",
-            "cls": ""
+            "cls": "",
+            "time": "23:07",
+            "date": "14 Feb 2027"
           }
         ]
       }
@@ -7425,7 +7459,9 @@
             "tag": "Offline",
             "cls": "",
             "isnew": true,
-            "type": "flavour"
+            "type": "flavour",
+            "time": "05:57",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Barclays App",
@@ -7433,7 +7469,9 @@
             "snip": "The maintenance window. The one that was announced quietly.",
             "tag": "Down",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -7446,7 +7484,9 @@
             "snip": "An app called ARC. Small logo. Under the battery bar. I didn’t install this.",
             "tag": "New",
             "cls": "a",
-            "type": "essential"
+            "type": "essential",
+            "time": "05:59",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -7458,28 +7498,36 @@
             "ttl": "Something went wrong",
             "snip": "Pull to refresh. Nothing. Again. Nothing.",
             "tag": "—",
-            "cls": ""
+            "cls": "",
+            "time": "05:57",
+            "date": "15 Feb 2027"
           },
           {
             "src": "X",
             "ttl": "Something went wrong. Try reloading.",
             "snip": "Reloaded. Same message. And again.",
             "tag": "—",
-            "cls": ""
+            "cls": "",
+            "time": "05:57",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Instagram",
             "ttl": "Couldn't refresh feed",
             "snip": "The spinning circle that never stops.",
             "tag": "—",
-            "cls": ""
+            "cls": "",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Crystal Palace FC — CPFC BBS",
             "ttl": "",
             "snip": "Server not found. Even the Palace blog is dead.",
             "tag": "—",
-            "cls": ""
+            "cls": "",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -7491,21 +7539,27 @@
             "ttl": "Video call failed",
             "snip": "Connecting... connecting... nothing.",
             "tag": "Failed",
-            "cls": ""
+            "cls": "",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           },
           {
             "src": "→ Sam",
             "ttl": "Video call failed",
             "snip": "Same. Just the spinning circle and then silence.",
             "tag": "Failed",
-            "cls": ""
+            "cls": "",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           },
           {
             "src": "→ Amy",
             "ttl": "Video call failed",
             "snip": "She’s in the next room. Still won’t connect.",
             "tag": "Failed",
-            "cls": ""
+            "cls": "",
+            "time": "05:58",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -7518,7 +7572,9 @@
             "snip": "I can't get no sleep.",
             "tag": "the long night",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "05:00",
+            "date": "15 Feb 2027"
           }
         ]
       }
@@ -7540,7 +7596,9 @@
               "date": "15 February 2027 · 06:20 GMT · Emergency Broadcast",
               "body": "<p>A major cyber incident has affected UK financial and digital infrastructure. Emergency services are responding. Systems are contained but not yet restored.</p><p><strong>IMMEDIATE ACTIONS:</strong></p><p>- Remain in your current location unless it is unsafe to do so. Do not attempt to travel unless it is a medical emergency.</p><p><strong>ESSENTIAL SERVICES:</strong></p><p>Hospitals are operational for EMERGENCY ONLY - all routine appointments are postponed</p><p>Police, fire, and ambulance services remain operational. Call 999 for life-threatening emergencies ONLY.</p><p>Mobile telephone and text services will be intermittent.</p><p><strong>REPEAT:</strong> Telephone or text message communication is EMERGENCY ONLY</p><p>Water, gas, and electricity supplies are being maintained. Intermittent outages may occur.</p><p>All card and electronic banking payments have been suspended whilst the network is being repaired.</p><p>Internet access will be slow or inaccessible today. It is anticipated that it will be restored within the next 24 hours.</p><p>Official updates will be issued via emergency message and through BBC television and radio channels</p><p><strong>WHAT WE KNOW:</strong></p><p>Financial infrastructure across the UK has been subject to a coordinated cyber attack. Initial assessment indicates systems are contained but not yet restored.</p><p><strong>WHAT WE ARE DOING:</strong></p><p>The full resources of the state are being deployed. The Prime Minister will soon address the nation with further information.</p><p>Do not attempt to contact government agencies unless your life is in danger. All available personnel are responding to this incident.</p><p><strong>STAY HOME. STAY CALM.</strong></p><p><strong>UPDATES TO FOLLOW.</strong></p>",
               "footer": "Source: UK Cabinet Office Emergency Services"
-            }
+            },
+            "time": "06:20 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       }
@@ -7554,14 +7612,18 @@
             "ttl": "Valentine's Day appearing in multiple financial collapse models. 214. Hebrew Gematria: Half Man, Half Angel.",
             "snip": "You screenshotted it at 3am. Still looks like something.",
             "tag": "Flagged",
-            "cls": ""
+            "cls": "",
+            "time": "01:55",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@SovereignExit",
             "ttl": "The OTA push is Stage 1. Webb’s Great Taking is the legal scaffold — they’ve already changed the securities law. Deagel had UK at 15 million by 2025. They missed by two years. The firmware is the payment infrastructure for whoever’s left. CBDC. Biometric access. No cash. No exit. This is the final squeeze.",
             "snip": "Three logical leaps from the PSA article and you’re here. Two of those leaps might be real. The third gets you fifteen million survivors and a beast system. That’s enough for any newsroom to kill the whole story.",
             "tag": "Conspiracy",
-            "cls": ""
+            "cls": "",
+            "time": "02:11",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@PatriotQwake",
@@ -7569,14 +7631,18 @@
             "snip": "The US terminals got the same push. He’s almost certain of it. But the only people talking about it are laser-eyed chess enthusiasts waiting for a military tribunal that’s been three weeks away for six years. The American firmware story is real and it’s already dead. Absorbed. Digested. Turned into content.",
             "tag": "Conspiracy",
             "cls": "",
-            "img": "trust-the-plan-q.jpg"
+            "img": "trust-the-plan-q.jpg",
+            "time": "02:35",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@CashIsKing_UK",
             "ttl": "If you haven’t withdrawn cash yet you’re already too late. The firmware is the kill switch for physical money. When they flip it, your card stops working and your phone becomes your wallet. YOUR PHONE BECOMES YOUR IDENTITY. Get cash NOW. Get food NOW. This is not a drill.",
             "snip": "Not wrong about the conclusion. Completely wrong about the timeline. And the caps lock. The caps lock is doing more damage to the legitimate analysis than the Killuminati diagram.",
             "tag": "Viral",
-            "cls": ""
+            "cls": "",
+            "time": "02:47",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@WakeUpBrother",
@@ -7584,7 +7650,9 @@
             "snip": "Twelve thousand retweets. An all-seeing eye and a QR code on a palm. This is three scrolls from a fifteen-year payment systems analyst who verified a firmware hash. The algorithm doesn’t know the difference. Neither does anyone watching Simon’s screen.",
             "tag": "Viral",
             "cls": "",
-            "img": "mark-of-the-beast.jpg"
+            "img": "mark-of-the-beast.jpg",
+            "time": "02:55",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@EndTimesFinance",
@@ -7592,7 +7660,9 @@
             "snip": "Revelation. Always Revelation. The eschatological packaging that ensures no newsroom will ever run the underlying technical story. The PSA article doesn’t mention God once. It doesn’t need to. The algorithm will do the association for free.",
             "tag": "Conspiracy",
             "cls": "",
-            "img": "beast-system.jpg"
+            "img": "beast-system.jpg",
+            "time": "02:58",
+            "date": "26 Jan 2026"
           },
           {
             "src": "@Killuminati_AI",
@@ -7600,7 +7670,9 @@
             "snip": "Four hours ago he was reading a verified firmware hash. Now his feed thinks he wants to know about the Khazarian Mafia. The algorithm doesn’t distinguish between a credentialed analyst and a Venn diagram made by someone called Killuminati underscore AI. To the platform, they’re the same interest.",
             "tag": "Conspiracy",
             "cls": "",
-            "img": "killuminati-venn.jpg"
+            "img": "killuminati-venn.jpg",
+            "time": "23:36",
+            "date": "25 Jan 2026"
           }
         ]
       },
@@ -7612,14 +7684,18 @@
             "ttl": "Verified the firmware hash. Ingenico/Verifone fleet. Simultaneous push. No vendor acknowledgement. Dormant container with NFC write access.",
             "snip": "Technical. Detailed. Either someone's fabricating at a level that takes real expertise, or this is real.",
             "tag": "Unverified",
-            "cls": ""
+            "cls": "",
+            "time": "16:31",
+            "date": "25 Jan 2026"
           },
           {
             "src": "Terminal Deep Dive",
             "ttl": "Source inside Worldpay confirms dormant payload in latest OTA. Biometric template storage. BIS routing address. This isn’t a payment update.",
             "snip": "Anonymous but specific. The kind of specific that’s either a liar or a whistleblower. No middle ground.",
             "tag": "Unverified",
-            "cls": ""
+            "cls": "",
+            "time": "17:11",
+            "date": "25 Jan 2026"
           }
         ]
       },
@@ -7633,7 +7709,9 @@
             "tag": "Research",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "11:50",
+            "date": "25 Jan 2026"
           },
           {
             "src": "Finanzaufsicht Intern",
@@ -7642,7 +7720,9 @@
             "tag": "Research",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "time": "10:11",
+            "date": "26 Jan 2027"
           }
         ]
       }
@@ -7656,14 +7736,18 @@
             "ttl": "moving to Signal mate. make sure you have it. setting up a group too",
             "snip": "He doesn't switch channels for nothing.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "06:11",
+            "date": "21 Jan 2027"
           },
           {
             "src": "Amy",
             "ttl": "What do you want for dinner? I was thinking that pesto thing x",
             "snip": "Normal life. The pesto thing. Wednesday evening.",
             "tag": "Evening",
-            "cls": ""
+            "cls": "",
+            "time": "10:28",
+            "date": "21 Jan 2027"
           }
         ]
       },
@@ -7678,7 +7762,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "time": "06:16",
+            "date": "21 Jan 2027"
           }
         ]
       },
@@ -7690,7 +7776,9 @@
             "ttl": "NCSC raises UK cyber threat level to “heightened” — precautionary measure",
             "snip": "Wasn't it already heightened?",
             "tag": "Alert",
-            "cls": ""
+            "cls": "",
+            "time": "11:30",
+            "date": "21 Jan 2027"
           },
           {
             "src": "BBC News",
@@ -7699,14 +7787,18 @@
             "tag": "21 Jan",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "time": "12:35",
+            "date": "21 Jan 2027"
           },
           {
             "src": "ONS",
             "ttl": "UK real wages fall for third consecutive quarter",
             "snip": "You scan it. You don't click.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "15:34",
+            "date": "21 Jan 2027"
           }
         ]
       },
@@ -7719,7 +7811,9 @@
             "snip": "You want him to be right more than you think he's right.",
             "tag": "Suggested",
             "cls": "",
-            "img": "mr-t-relax.gif"
+            "img": "mr-t-relax.gif",
+            "time": "20:38",
+            "date": "21 Jan 2027"
           }
         ]
       }
@@ -7734,7 +7828,9 @@
             "snip": "Monday morning. The algorithm served it up. It’s not even funny any more.",
             "tag": "Tell me now, how should I feel?",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "09:11",
+            "date": "30 Nov 2026"
           }
         ]
       },
@@ -7748,7 +7844,9 @@
             "tag": "Black Friday",
             "cls": "",
             "threadRef": "science-technology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "10:22",
+            "date": "30 Nov 2026"
           },
           {
             "src": "The Times",
@@ -7757,7 +7855,9 @@
             "tag": "encryption",
             "cls": "",
             "threadRef": "science-technology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "13:29",
+            "date": "30 Nov 2026"
           }
         ]
       }
@@ -7771,7 +7871,9 @@
             "ttl": "Day 3. Still going. 💪",
             "snip": "She's winning. You're browsing Majestic.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "08:30",
+            "date": "5 Dec 2026"
           }
         ]
       },
@@ -7783,7 +7885,9 @@
             "ttl": "Your favourites are on offer this week — Burgundy, Côtes du Rhône, Picpoul",
             "snip": "The algorithm knows. It always knows. Day 3 is when you're weakest.",
             "tag": "Offer",
-            "cls": ""
+            "cls": "",
+            "time": "08:22",
+            "date": "5 Dec 2026"
           }
         ]
       },
@@ -7797,7 +7901,9 @@
             "tag": "Long Read",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "surveillance-architecture"
+            "threadRef": "surveillance-architecture",
+            "time": "09:03",
+            "date": "5 Dec 2026"
           }
         ]
       },
@@ -7809,7 +7915,9 @@
             "ttl": "Your screen time was up 47% last week. Daily average: 4h 12m.",
             "snip": "The phone detox lasted six days. The browser cleanse lasted four hours.",
             "tag": "Weekly Report",
-            "cls": ""
+            "cls": "",
+            "time": "10:00",
+            "date": "5 Dec 2026"
           },
           {
             "src": "FCA — Financial Conduct Authority",
@@ -7818,7 +7926,9 @@
             "tag": "Open Tab",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "22:23",
+            "date": "5 Dec 2026"
           }
         ]
       },
@@ -7829,10 +7939,12 @@
             "src": "Wired UK",
             "ttl": "The AI arms race nobody's winning",
             "snip": "Bookmarked during The Cleanse. Never mentioned to Amy. Twelve people shouted fire. Everyone discussed the shouting.",
-            "tag": "28 Nov",
+            "tag": "AI",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "reader-own"
+            "threadRef": "reader-own",
+            "time": "23:41",
+            "date": "5 Dec 2026"
           }
         ]
       }
@@ -7847,7 +7959,9 @@
             "snip": "What does God say?",
             "tag": "Are we unique?",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "20:30",
+            "date": "17 Dec 2026"
           }
         ]
       },
@@ -7861,7 +7975,9 @@
             "tag": "Open Tabs",
             "cls": "",
             "threadRef": "pattern-recognition",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "20:05",
+            "date": "17 Dec 2026"
           }
         ]
       },
@@ -7873,7 +7989,9 @@
             "ttl": "If the grid goes down over Christmas nobody's coming to save you. Stock water. Stock cash. Stock fuel.",
             "snip": "You didn't stock anything. You bought a Terry's Chocolate Orange.",
             "tag": "847 likes",
-            "cls": ""
+            "cls": "",
+            "time": "16:44",
+            "date": "17 Dec 2026"
           },
           {
             "src": "@WakeUpBritain_",
@@ -7881,7 +7999,9 @@
             "snip": "'Community hub' isn't defined anywhere on the site. Check back later, apparently.",
             "tag": "",
             "cls": "",
-            "img": "prepare-campaign-grab-bag.jpg"
+            "img": "prepare-campaign-grab-bag.jpg",
+            "time": "16:51",
+            "date": "17 Dec 2026"
           },
           {
             "src": "@PhiBoostGlow",
@@ -7889,7 +8009,9 @@
             "snip": "Nine likes. A nautilus shell avatar. And a sentence that might be the most important thing anyone’s posted this year. Or complete bollocks. The problem is you can’t tell which without a physics degree and three years of spare time.",
             "tag": "Thread",
             "cls": "",
-            "img": "phiboostglow-microtubules.jpg"
+            "img": "phiboostglow-microtubules.jpg",
+            "time": "23:54",
+            "date": "17 Dec 2026"
           }
         ]
       }
@@ -7904,7 +8026,9 @@
             "snip": "It was Christmas Eve babe",
             "tag": "in the drunk tank",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "18:53",
+            "date": "24 Dec 2026"
           }
         ]
       },
@@ -7916,49 +8040,63 @@
             "ttl": "Happy Christmas love! Tony sends love too 🎄❤️",
             "snip": "Spain looks sunny. Of course it does.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "09:10",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Family Chat",
             "ttl": "🎄 Merry Christmas everyone!!",
             "snip": "47 messages. Photos of food, crackers, the dog in antlers.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "09:22",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Vince",
             "ttl": "Merry Xmas buddy. You on the port yet 😂",
             "snip": "Vince, the only friend that never forgets to send birthday and Christmas love.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "09:33",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Kate (next door)",
             "ttl": "Merry Christmas Simon & Amy! Prosecco later? 🥂",
             "snip": "Psychologist. Knows everything. Complies anyway. The mirror.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "10:11",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Dev",
             "ttl": "I'm in England soon. Will message.",
             "snip": "I had no idea he wasn't in England.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "20:17",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Ben",
             "ttl": "Merry Christmas you old Bastard",
             "snip": "Ben. No emoji. No frills. Perfect.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "21:08",
+            "date": "25 Dec 2026"
           },
           {
             "src": "Parklife",
             "ttl": "Have a good one lads — drinks in NY 🍺",
             "snip": "The group chat. The pub crew. New Year plans already forming.",
             "tag": "Christmas Day",
-            "cls": ""
+            "cls": "",
+            "time": "12:22",
+            "date": "25 Dec 2026"
           }
         ]
       }
@@ -7973,7 +8111,9 @@
             "snip": "Until the sky turns green",
             "tag": "1989",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "07:02",
+            "date": "1 Jan 2027"
           }
         ]
       },
@@ -7985,21 +8125,27 @@
             "ttl": "Happy new year ya reprobate 🥂",
             "snip": "First message in weeks. Classic Dev.",
             "tag": "New Year",
-            "cls": ""
+            "cls": "",
+            "time": "23:55",
+            "date": "31 Dec 2026"
           },
           {
             "src": "Mum (Sue)",
             "ttl": "Happy New Year darling! 🥳 2027 — can you believe it? Tony fell asleep at 11. Love you xxx",
             "snip": "Mum. Spain. Tony asleep before midnight. Classic.",
             "tag": "New Year",
-            "cls": ""
+            "cls": "",
+            "time": "23:58",
+            "date": "31 Dec 2026"
           },
           {
             "src": "Family Chat",
             "ttl": "🎆🎆🎆 HAPPY NEW YEAR!!! 🎆🎆🎆",
             "snip": "23 messages. Firework photos. Someone’s posted a video of Wilf barking at the bangs.",
             "tag": "New Year",
-            "cls": ""
+            "cls": "",
+            "time": "00:02",
+            "date": "1 Jan 2027"
           }
         ]
       },
@@ -8011,7 +8157,9 @@
             "ttl": "Your daily average over Christmas: 5h 47m. Up 38%",
             "snip": "Dry January for the phone too. Starting tomorrow.",
             "tag": "Weekly",
-            "cls": ""
+            "cls": "",
+            "time": "08:33",
+            "date": "1 Jan 2027"
           }
         ]
       }
@@ -8026,7 +8174,9 @@
             "snip": "I'm not the only one",
             "tag": "rape me, my friend",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "10:36",
+            "date": "9 Jan 2027"
           }
         ]
       },
@@ -8038,7 +8188,9 @@
             "ttl": "Energy bills to rise again — Ofgem confirms April increase",
             "snip": "Another quarter, another kick in the teeth.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "08:20",
+            "date": "9 Jan 2027"
           }
         ]
       },
@@ -8051,7 +8203,9 @@
             "snip": "He's probably right. He's usually right.",
             "tag": "12.1K likes",
             "cls": "",
-            "img": "kirk-nothing-happens.gif"
+            "img": "kirk-nothing-happens.gif",
+            "time": "09:33",
+            "date": "9 Jan 2027"
           }
         ]
       },
@@ -8063,7 +8217,9 @@
             "ttl": "Boiler man can come Thursday. £180 call-out. Happy new year to us 🙄",
             "snip": "Thursday. Four days of jumpers and arguments about the thermostat.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "08:22",
+            "date": "9 Jan 2027"
           }
         ]
       },
@@ -8077,7 +8233,9 @@
             "tag": "Reminder",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "18:55",
+            "date": "9 Jan 2027"
           },
           {
             "src": "YouTube",
@@ -8086,7 +8244,9 @@
             "tag": "Reminder",
             "cls": "",
             "threadRef": "power-structures",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "19:54",
+            "date": "9 Jan 2027"
           }
         ]
       },
@@ -8098,7 +8258,9 @@
             "ttl": "Your current account balance is £1,247.63",
             "snip": "January. The month money goes to die.",
             "tag": "Balance",
-            "cls": ""
+            "cls": "",
+            "time": "08:00",
+            "date": "9 Jan 2027"
           },
           {
             "src": "BBC Tech",
@@ -8107,7 +8269,9 @@
             "tag": "Trending",
             "cls": "",
             "threadRef": "science-technology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "17:36",
+            "date": "9 Jan 2027"
           }
         ]
       }
@@ -8125,7 +8289,9 @@
             "isnew": true,
             "link": "https://moketchups.github.io/psychohistory/",
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "11:22",
+            "date": "23 Jan 2027"
           },
           {
             "src": "Simon → Family Chat",
@@ -8133,14 +8299,18 @@
             "snip": "Such a little poseur.",
             "tag": "Garden",
             "cls": "",
-            "img": "olive-poseur.jpg"
+            "img": "olive-poseur.jpg",
+            "time": "15:38",
+            "date": "23 Jan 2027"
           },
           {
             "src": "Simon → Alan (The Dude)",
             "ttl": "I have questions. 🤯",
             "snip": "So many questions.",
             "tag": "PREDICTION ENGINE",
-            "cls": ""
+            "cls": "",
+            "time": "23:54",
+            "date": "23 Jan 2027"
           }
         ]
       },
@@ -8153,7 +8323,9 @@
             "snip": "The grift is real.",
             "tag": "Ad",
             "cls": "",
-            "img": "ai-content-factory.png"
+            "img": "ai-content-factory.png",
+            "time": "23:59",
+            "date": "23 Jan 2027"
           }
         ]
       }
@@ -8167,14 +8339,18 @@
             "ttl": "Call failed",
             "snip": "Three attempts. Engaged, dropped, engaged. She's probably asleep. It's an hour ahead.",
             "tag": "Failed (3)",
-            "cls": ""
+            "cls": "",
+            "time": "06:08",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Dev",
             "ttl": "Call failed",
             "snip": "Straight to voicemail. Twice.",
             "tag": "Failed (2)",
-            "cls": ""
+            "cls": "",
+            "time": "06:08",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -8186,49 +8362,63 @@
             "ttl": "everyone ok? boys? — please reply.",
             "snip": "Sent 5:59am. No replies yet. No ticks.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "06:01",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Vince",
             "ttl": "you ok mate? everything went dark for a while here",
             "snip": "Delivered. At least someone's getting through.",
             "tag": "Received",
-            "cls": ""
+            "cls": "",
+            "time": "01:01",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Simon → Parklife",
             "ttl": "Anyone else's internet completely down?",
             "snip": "One tick. Grey.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "06:11",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Simon → Palace – FA Cup Winners",
             "ttl": "Lads?",
             "snip": "One tick. Grey.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "06:12",
+            "date": "15 Feb 2027"
           },
           {
             "src": "Simon → Megatripolis",
             "ttl": "You seeing this?",
             "snip": "One tick. Grey.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "06:12",
+            "date": "15 Feb 2027"
           },
           {
             "src": "→ Vince",
             "ttl": "Video call failed",
             "snip": "He got a text through earlier. But video? No chance.",
             "tag": "Failed",
-            "cls": ""
+            "cls": "",
+            "time": "06:13",
+            "date": "15 Feb 2027"
           },
           {
             "src": "→ Sam",
             "ttl": "Video call failed",
             "snip": "Same. Just the spinning circle and then silence.",
             "tag": "Failed",
-            "cls": ""
+            "cls": "",
+            "time": "12:00",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -8240,7 +8430,9 @@
             "ttl": "Service Unavailable",
             "snip": "Not 'routine maintenance' any more.",
             "tag": "Down",
-            "cls": ""
+            "cls": "",
+            "time": "06:18",
+            "date": "15 Feb 2027"
           }
         ]
       }
@@ -8256,7 +8448,9 @@
             "tag": "Open Tab",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "15:15",
+            "date": "14 Nov 2026"
           },
           {
             "src": "Solari Report — Catherine Austin Fitts",
@@ -8265,7 +8459,9 @@
             "tag": "Bookmarked",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "15:58",
+            "date": "14 Nov 2026"
           },
           {
             "src": "Corbett Report — James Corbett",
@@ -8274,7 +8470,9 @@
             "tag": "Shared",
             "cls": "",
             "threadRef": "surveillance-architecture",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "16:44",
+            "date": "14 Nov 2026"
           }
         ]
       },
@@ -8287,7 +8485,9 @@
             "snip": "Three thousand likes. No source. Just a GIF and a feeling.",
             "tag": "Suggested",
             "cls": "",
-            "img": "matrix-digital-id.gif"
+            "img": "matrix-digital-id.gif",
+            "time": "17:59",
+            "date": "14 Nov 2026"
           }
         ]
       }
@@ -8302,7 +8502,8 @@
             "src": "Nick Drake",
             "ttl": "Northern Sky",
             "snip": "I never felt magic crazy as this",
-            "tag": "she said nothing"
+            "tag": "she said nothing",
+            "date": "1 Apr 2027"
           }
         ]
       },
@@ -8315,7 +8516,8 @@
             "src": "Radiohead",
             "ttl": "Karma Police",
             "snip": "For a minute there I lost myself",
-            "tag": "Arrest this man"
+            "tag": "Arrest this man",
+            "date": "1 Apr 2027"
           },
           {
             "cls": "",
@@ -8323,7 +8525,8 @@
             "src": "Radiohead",
             "ttl": "Subterranean Homesick Alien",
             "snip": "I wish that they'd swoop down in a country lane",
-            "tag": "Abducted"
+            "tag": "Abducted",
+            "date": "1 Apr 2027"
           },
           {
             "cls": "",
@@ -8331,7 +8534,8 @@
             "src": "Nirvana",
             "ttl": "All Apologies",
             "snip": "In the sun I feel as one",
-            "tag": "All in all is all we all are"
+            "tag": "All in all is all we all are",
+            "date": "1 Apr 2027"
           }
         ]
       }
@@ -8345,7 +8549,9 @@
             "ttl": "Thx 4 digital ID stuff — I'll read tonight. Promise x",
             "snip": "She won't. You both know this. But the kiss is real.",
             "tag": "Read",
-            "cls": ""
+            "cls": "",
+            "time": "10:41",
+            "date": "8 Dec 2026"
           },
           {
             "src": "Simon → Parklife",
@@ -8353,7 +8559,9 @@
             "snip": "Knowledge is power, and we need to live in truth",
             "tag": "Essential Reading",
             "cls": "",
-            "img": "180-degrees-book.jpg"
+            "img": "180-degrees-book.jpg",
+            "time": "18:18",
+            "date": "8 Dec 2026"
           }
         ]
       },
@@ -8365,7 +8573,9 @@
             "ttl": "UKHSA monitoring 'Disease X' preparedness scenarios across NHS trusts",
             "snip": "Routine planning exercise, say officials. 'No current threat.' Exercise involves simulated novel respiratory pathogen with 14-day incubation.",
             "tag": "pandemic",
-            "cls": ""
+            "cls": "",
+            "time": "20:00",
+            "date": "8 Dec 2026"
           }
         ]
       }
@@ -8382,7 +8592,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "reader-own"
+            "threadRef": "reader-own",
+            "time": "05:41",
+            "date": "7 Feb 2026"
           }
         ]
       },
@@ -8394,14 +8606,18 @@
             "ttl": "Cash withdrawal: £150.00. Daily ATM limit: £150. Remaining: £0.",
             "snip": "The machine gave it to you. This time.",
             "tag": "Withdrawal",
-            "cls": ""
+            "cls": "",
+            "time": "08:00",
+            "date": "7 Feb 2026"
           },
           {
             "src": "BBC News",
             "ttl": "Government advises “sensible levels of household preparedness”",
             "snip": "Cabinet Office guidance. Like the wartime posters but in Comic Sans.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "08:30",
+            "date": "7 Feb 2026"
           },
           {
             "src": "BBC Verify",
@@ -8410,7 +8626,9 @@
             "tag": "7 Feb",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "time": "09:30",
+            "date": "7 Feb 2026"
           },
           {
             "src": "The Guardian",
@@ -8419,7 +8637,9 @@
             "tag": "7 Feb",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "11:25",
+            "date": "7 Feb 2026"
           }
         ]
       },
@@ -8433,14 +8653,18 @@
             "tag": "Quoted · 3.1K",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "06:33",
+            "date": "7 Feb 2026"
           },
           {
             "src": "@OpenSourceVerify",
             "ttl": "The ‘Finanzaufsicht Intern’ claiming German terminal firmware push? LinkedIn profile created 72 hours before publication. No record at BaFin or any Frankfurt compliance department matching the described role. Substack account opened same week. Profile now deleted. The question isn’t who wrote it. The question is who it was written for.",
             "snip": "And there it goes. The UK article — the real one, the verified one — is now guilty by association. Every account that shared the German piece shared the British one first. One fabrication, perfectly timed, and the entire firmware story becomes ‘that thing that turned out to be fake.’ Whether the fraud was amateur or designed doesn’t matter. The result is the same.",
             "tag": "Debunked",
-            "cls": ""
+            "cls": "",
+            "time": "15:22",
+            "date": "7 Feb 2026"
           }
         ]
       },
@@ -8452,21 +8676,27 @@
             "ttl": "Why is there a bag of rice in the boot of the car? 😂",
             "snip": "She thinks you’re losing it. Maybe you are.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "15:44",
+            "date": "7 Feb 2026"
           },
           {
             "src": "Simon → Parklife",
             "ttl": "If you're gonna stock up it's gotta be with these guys. Sgt Preppers! Genius name 😂",
             "snip": "You're doing the thing you just mocked. You know this.",
             "tag": "Now",
-            "cls": ""
+            "cls": "",
+            "time": "15:59",
+            "date": "7 Feb 2026"
           },
           {
             "src": "Parklife (Giles)",
             "ttl": "Lads — Year 7 school WhatsApp group has gone mental! Six weeks ago they were talking about parking at sports day. Now there's competitive stockpile pics 😂 Clare's husband (GP) says fill the freezer. People buying chest freezers from Currys with 50% markup. The cashpoints are all out of money. Lou wants me to go to bloody Costco tomorrow. Yawn. Much ado about nothing.",
             "snip": "Waitrose Essential larder one-upmanship.",
             "tag": "Group",
-            "cls": ""
+            "cls": "",
+            "time": "17:11",
+            "date": "7 Feb 2026"
           }
         ]
       },
@@ -8478,7 +8708,9 @@
             "ttl": "Queues at service stations across SE England — 'managed demand'",
             "snip": "Drone footage of the M25 backed up at Cobham. The chyron says managed demand but the aerial says four miles of stationary cars. Nobody asks who's managing it.",
             "tag": "Live",
-            "cls": ""
+            "cls": "",
+            "time": "19:05",
+            "date": "7 Feb 2026"
           }
         ]
       },
@@ -8492,7 +8724,9 @@
             "tag": "Sponsored",
             "cls": "",
             "img": "sgt-prepper-ad.png",
-            "isnew": true
+            "isnew": true,
+            "time": "20:43",
+            "date": "7 Feb 2026"
           },
           {
             "src": "@cabinetoffice",
@@ -8500,7 +8734,9 @@
             "snip": "Calm beach scene, soft piano. 4,200 likes, most of them bots. The Behavioural Insights Team working both ends of the rope — the panic and the calm.",
             "tag": "Sponsored",
             "cls": "",
-            "img": "cabinet-office-cliffs.png"
+            "img": "cabinet-office-cliffs.png",
+            "time": "21:11",
+            "date": "7 Feb 2026"
           }
         ]
       }
@@ -8514,14 +8750,18 @@
             "ttl": "🎆 We're by the War Memorial. George is with Clara somewhere. Where we meeting?",
             "snip": "Sam: \"lost dad at the Harveys pop up 😂\"",
             "tag": "Tonight",
-            "cls": ""
+            "cls": "",
+            "time": "20:17",
+            "date": "7 Nov 2026"
           },
           {
             "src": "Amy",
             "ttl": "Where u? lets go eat chilli I'm starving x",
             "snip": "tea",
             "tag": "Read",
-            "cls": ""
+            "cls": "",
+            "time": "21:44",
+            "date": "7 Nov 2026"
           }
         ]
       },
@@ -8534,7 +8774,9 @@
             "snip": "847 likes. Comments disabled. In the bio: 'a part of GCHQ.'",
             "tag": "Sponsored",
             "cls": "",
-            "img": "ncsc-toughen-up-knight.jpg"
+            "img": "ncsc-toughen-up-knight.jpg",
+            "time": "10:11",
+            "date": "7 Nov 2026"
           }
         ]
       },
@@ -8547,7 +8789,9 @@
             "snip": "One decent one. The rest are smoke and blur.",
             "tag": "Today",
             "cls": "",
-            "img": "bonfire-lion.jpg"
+            "img": "bonfire-lion.jpg",
+            "time": "23:30",
+            "date": "7 Nov 2026"
           }
         ]
       }
@@ -8561,7 +8805,9 @@
             "ttl": "Overdraft approaching agreed limit",
             "snip": "£127.40 remaining. 2 direct debits pending Thursday.",
             "tag": "Alert",
-            "cls": ""
+            "cls": "",
+            "time": "07:00",
+            "date": "23 Nov 2026"
           },
           {
             "src": "Wired UK",
@@ -8570,7 +8816,9 @@
             "tag": "Tech",
             "cls": "",
             "threadRef": "science-technology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "11:54",
+            "date": "23 Nov 2026"
           }
         ]
       },
@@ -8582,7 +8830,9 @@
             "ttl": "Your monthly statement is ready",
             "snip": "£397.51. Up from £200 this time last year. Worth the extra to avoid a ‘smart meter’. I think.",
             "tag": "This Month",
-            "cls": ""
+            "cls": "",
+            "time": "14:00",
+            "date": "23 Nov 2026"
           }
         ]
       },
@@ -8594,7 +8844,9 @@
             "ttl": "You've earned 342 points this month!",
             "snip": "The gamification of grocery shopping. Well done, you.",
             "tag": "Reward",
-            "cls": ""
+            "cls": "",
+            "time": "16:00",
+            "date": "23 Nov 2026"
           }
         ]
       }
@@ -8608,7 +8860,9 @@
             "ttl": "Your boarding passes are ready 🛫",
             "snip": "Gatwick → Barcelona. Biometrics at the ready!",
             "tag": "Tomorrow",
-            "cls": ""
+            "cls": "",
+            "time": "09:12",
+            "date": "12 Jan 2027"
           }
         ]
       },
@@ -8620,7 +8874,9 @@
             "ttl": "Boarding pass added automatically",
             "snip": "One tap. Frictionless.",
             "tag": "Added",
-            "cls": ""
+            "cls": "",
+            "time": "09:13",
+            "date": "12 Jan 2027"
           },
           {
             "src": "BBC Travel",
@@ -8628,6 +8884,24 @@
             "snip": "“Seamless travel” they call it. You stood in the queue for 40 minutes while the scanners crashed twice.",
             "tag": "Travel",
             "cls": "",
+            "threadRef": "surveillance-architecture",
+            "type": "thread-notify",
+            "time": "10:20",
+            "date": "12 Jan 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Substack",
+        "cards": [
+          {
+            "src": "The Interoperability Problem",
+            "ttl": "The Interoperability Problem",
+            "snip": "Nobody is being forced through the gate",
+            "tag": "Algorithm Ghetto",
+            "cls": "",
+            "time": "10:11",
+            "date": "12 Jan 2027",
             "threadRef": "surveillance-architecture",
             "type": "thread-notify"
           }
@@ -8641,7 +8915,9 @@
             "ttl": "Dash can't WAIT to see you! She's been running around all morning 🐾❤️",
             "snip": "10 photos of Dash attached. She looks adorable.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "11:12",
+            "date": "12 Jan 2027"
           }
         ]
       },
@@ -8653,7 +8929,9 @@
             "ttl": "UK inflation holds at 3.4% — “no immediate relief” say economists",
             "snip": "Even at 30,000 feet. The phone buzzes and reality follows.",
             "tag": "Breaking",
-            "cls": ""
+            "cls": "",
+            "time": "14:05",
+            "date": "12 Jan 2027"
           }
         ]
       },
@@ -8667,7 +8945,9 @@
             "tag": "Spain",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "20:01",
+            "date": "12 Jan 2027"
           }
         ]
       },
@@ -8680,7 +8960,9 @@
             "snip": "The account that makes you feel smart for agreeing with it.",
             "tag": "Viral",
             "cls": "",
-            "img": "they-live-red-pill.png"
+            "img": "they-live-red-pill.png",
+            "time": "20:44",
+            "date": "12 Jan 2027"
           }
         ]
       }
@@ -8694,7 +8976,9 @@
             "ttl": "Chap called Alan is coming too. He's cool.",
             "snip": "I'm sure he is Dev, I'm sure he is.",
             "tag": "Excited",
-            "cls": ""
+            "cls": "",
+            "time": "16:22",
+            "date": "17 Jan 2027"
           }
         ]
       },
@@ -8706,30 +8990,38 @@
             "ttl": "Service Disruptions on Thameslink may affect your journey",
             "snip": "Surprise, surprise.",
             "tag": "Delay",
-            "cls": ""
+            "cls": "",
+            "time": "16:32",
+            "date": "17 Jan 2027"
           },
           {
             "src": "Financial Times",
             "ttl": "Bank of England summons City chiefs over AI cyber threat to payment systems",
             "snip": "You read it between loading the dishwasher and feeding the dogs. By the time you'd dried your hands you'd forgotten it.",
             "tag": "AI",
-            "cls": ""
+            "cls": "",
+            "time": "09:21",
+            "date": "17 Jan 2027"
           },
           {
             "src": "BBC News Daily",
             "ttl": "Bank of England: “payment system resilience under continuous review”",
             "snip": "Buried at the bottom of the newsletter. You nearly deleted it. Nearly.",
             "tag": "Evening",
-            "cls": ""
+            "cls": "",
+            "time": "16:45",
+            "date": "17 Jan 2027"
           },
           {
             "src": "BBC News",
             "ttl": "Allied nations conduct parallel cyber resilience exercises",
             "snip": "Fourteen countries. Six weeks. Same infrastructure. All routine. Every single one of them routine.",
-            "tag": "14 Jan",
+            "tag": "17 Jan",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "time": "16:58",
+            "date": "17 Jan 2027"
           }
         ]
       },
@@ -8741,7 +9033,9 @@
             "ttl": "Your weekly average is 4h 12m. Down 8%",
             "snip": "This counts as progress. Apparently.",
             "tag": "Weekly",
-            "cls": ""
+            "cls": "",
+            "time": "23:05",
+            "date": "17 Jan 2027"
           }
         ]
       }
@@ -8756,7 +9050,9 @@
             "snip": "Five countries. No Germany — even though he’d bet his house the German push was real too. The fake whistleblower killed that data point for good. And the US data is half-buried under Q mythology. Vedmore’s done the work. Four hundred likes. Gone by morning.",
             "tag": "Thread",
             "cls": "",
-            "img": "biometric-hand.jpg"
+            "img": "biometric-hand.jpg",
+            "time": "20:21",
+            "date": "12 Feb 2027"
           }
         ]
       },
@@ -8768,14 +9064,18 @@
             "ttl": "Rully Rouge for Valentines treat? ❤️",
             "snip": "She doesn't know I've already ordered a case of 6.",
             "tag": "Romance",
-            "cls": ""
+            "cls": "",
+            "time": "09:44",
+            "date": "12 Feb 2027"
           },
           {
             "src": "Mum (Sue)",
             "ttl": "Hi darling. Tony says he told us this cyber thing was nothing to worry about. We're off to a new restaurant in Palafrugell tonight. It's meant to be lovely. What have you got planned for Valentine's? 🥰💕",
             "snip": "I'd love her life of simplicity and peace in the sun. She does seem to get bored though.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "10:54",
+            "date": "12 Feb 2027"
           }
         ]
       },
@@ -8787,14 +9087,18 @@
             "ttl": "Planned maintenance: Fri 23:00 – Sat 06:00",
             "snip": "Note to self — no midnight banking.",
             "tag": "Scheduled",
-            "cls": ""
+            "cls": "",
+            "time": "08:15",
+            "date": "12 Feb 2027"
           },
           {
             "src": "BBC News",
             "ttl": "Markets steady ahead of Valentine's weekend — \"No cause for concern\"",
             "snip": "When they say \"no cause for concern,\" that's when you worry.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "16:00",
+            "date": "12 Feb 2027"
           },
           {
             "src": "Diabetes UK",
@@ -8803,21 +9107,27 @@
             "tag": "Health",
             "cls": "",
             "threadRef": "science-technology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "11:33",
+            "date": "12 Feb 2027"
           },
           {
             "src": "Barclays",
             "ttl": "Your ISA allowance resets 6 April. Top up before the deadline.",
             "snip": "The system assumes there will be an April.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "10:00",
+            "date": "12 Feb 2026"
           },
           {
             "src": "Met Office",
             "ttl": "YELLOW WARNING OF RAIN — South East England. Valid 06:00 Fri 12 Feb – 09:00 Sat 13 Feb. Heavy rain may cause surface water flooding and travel disruption.",
             "snip": "The official stamp on what the kitchen window already said.",
             "tag": "Active",
-            "cls": ""
+            "cls": "",
+            "time": "06:00",
+            "date": "12 Feb 2027"
           }
         ]
       },
@@ -8830,7 +9140,9 @@
             "snip": "Same warehouse, same stock, Valentine's wrapper. Someone in the comments bought the his-and-hers set. The grift has found its second gear.",
             "tag": "Sponsored",
             "cls": "",
-            "img": "sgt-preppers-logo.png"
+            "img": "sgt-preppers-logo.png",
+            "time": "17:30",
+            "date": "12 Feb 2026"
           }
         ]
       },
@@ -8843,7 +9155,9 @@
             "snip": "Panic on the streets of London",
             "tag": "Hang the DJ",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "18:22",
+            "date": "12 Feb 2026"
           }
         ]
       }
@@ -8857,14 +9171,18 @@
             "ttl": "Beautiful walk! Pic of dead rabbit Olive found! 🐰💀",
             "snip": "Amy’s voice. The dogs. January countryside.",
             "tag": "Photo",
-            "cls": ""
+            "cls": "",
+            "time": "18:01",
+            "date": "27 Jan 2026"
           },
           {
             "src": "Mum (Sue)",
             "ttl": "What do you think about this cyber thing. They're saying the same in Spain too. Tony says not to worry. Stay safe darling ❤️",
             "snip": "They still watch BBC News as if it's the source of all truth. Mum is worried. Tony is never worried. Same input, different output.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "15:38",
+            "date": "28 Jan 2026"
           }
         ]
       },
@@ -8878,7 +9196,9 @@
             "tag": "Breaking",
             "cls": "",
             "threadRef": "power-structures",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "16:05",
+            "date": "27 Jan 2026"
           },
           {
             "src": "BBC News",
@@ -8887,7 +9207,9 @@
             "tag": "Today",
             "cls": "",
             "threadRef": "power-structures",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "08:00",
+            "date": "28 Jan 2027"
           }
         ]
       },
@@ -8899,7 +9221,9 @@
             "ttl": "Contactless payment: The Bell Inn — £12.40",
             "snip": "“Cash Preferred” said the sign. You tapped anyway.",
             "tag": "Payment",
-            "cls": ""
+            "cls": "",
+            "time": "15:11",
+            "date": "27 Jan 2026"
           }
         ]
       },
@@ -8914,16 +9238,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "power-structures"
-          },
-          {
-            "src": "@BBCNews",
-            "ttl": "Payment terminal conspiracy theories: what the claims say and what we know. BBC Verify examines viral posts alleging ‘hidden biometric payloads’ in UK card machines. bbc.co.uk/news/technolog…",
-            "snip": "BBC Verify. The headline says ‘conspiracy theories.’ Not ‘claims.’ Not ‘concerns.’ Conspiracy theories. The framing is the dismissal. You don’t even need to read the article.",
-            "tag": "Fact Check",
-            "cls": "",
-            "type": "thread-notify",
-            "threadRef": "finance-commerce"
+            "threadRef": "power-structures",
+            "time": "09:32",
+            "date": "28 Jan 2026"
           }
         ]
       }
@@ -8940,7 +9257,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "power-structures"
+            "threadRef": "power-structures",
+            "time": "13:05",
+            "date": "24 Nov 2026"
           }
         ]
       },
@@ -8955,7 +9274,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "16:44",
+            "date": "24 Nov 2026"
           }
         ]
       },
@@ -8968,7 +9289,9 @@
             "snip": "Normal life. Thank god for normal life.",
             "tag": "Today",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "21:53",
+            "date": "24 Nov 2026"
           }
         ]
       }
@@ -8982,14 +9305,18 @@
             "ttl": "Hey man, you free 10pm GMT?",
             "snip": "He texts like he’s scheduling a satellite pass. I’ve been waiting days for this.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "12:54",
+            "date": "30 Jan 2026"
           },
           {
             "src": "Emilia",
             "ttl": "dad can u pick me up from Lilly’s tomorrow at 11.30 pls? ❤️",
             "snip": "The Dude is explaining how three companies own the world and my daughter needs a lift from a sleepover.",
             "tag": "Today",
-            "cls": ""
+            "cls": "",
+            "time": "10:29",
+            "date": "30 Jan 2026"
           }
         ]
       },
@@ -9003,7 +9330,9 @@
             "tag": "Breaking",
             "cls": "",
             "threadRef": "power-structures",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "18:26",
+            "date": "30 Jan 2026"
           }
         ]
       },
@@ -9016,7 +9345,9 @@
             "snip": "There is no pain, you are receding",
             "tag": "after the call",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "00:22",
+            "date": "31 Jan 2026"
           }
         ]
       },
@@ -9030,7 +9361,9 @@
             "tag": "Viral",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "pattern-recognition"
+            "threadRef": "pattern-recognition",
+            "time": "01:22",
+            "date": "30 Jan 2026"
           }
         ]
       },
@@ -9042,7 +9375,9 @@
             "ttl": "Asian markets fall sharply overnight — Nikkei down 4.2%",
             "snip": "It’s not just us. That’s what they’re not saying.",
             "tag": "Breaking",
-            "cls": ""
+            "cls": "",
+            "time": "12:00",
+            "date": "30 Jan 2026"
           }
         ]
       }
@@ -9056,21 +9391,27 @@
             "ttl": "NCSC Update: The cyber incident affecting financial infrastructure is under active investigation. Legacy banking and payment systems remain compromised. Do not attempt to access online banking. A further update will be issued at 6pm.",
             "snip": "Active investigation. The word 'active' doing the work of reassurance while 'compromised' does the work of fear.",
             "tag": "10:00am",
-            "cls": "x"
+            "cls": "x",
+            "time": "10:00",
+            "date": "16 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "The National Cyber Security Centre will brief the nation at 6pm on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
             "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
             "tag": "4:30pm",
-            "cls": "x"
+            "cls": "x",
+            "time": "16:30",
+            "date": "16 Feb 2027"
           },
           {
             "src": "UK GOV — FCDO",
             "ttl": "TO ALL BRITISH NATIONALS OVERSEAS: Contact your nearest British embassy or consulate for guidance. Do not travel to airports unless directed by embassy staff. Emergency repatriation flights are being organised. Check ARC Emergency for schedules and assembly points.",
             "snip": "Not everyone is watching the PM at 10am. Some people are watching the ceiling of a hotel room in Tenerife wondering when they can come home.",
             "tag": "TRAVEL ADVISORY",
-            "cls": "x"
+            "cls": "x",
+            "time": "10:30",
+            "date": "16 Feb 2027"
           }
         ]
       },
@@ -9085,35 +9426,45 @@
             "cls": "a",
             "type": "thread-notify",
             "threadRef": "official",
-            "txt": "PM morning address — transcript via ARC"
+            "txt": "PM morning address — transcript via ARC",
+            "time": "09:30",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "The PM's three requests remain in effect. Stay local. Check on neighbours. Share what you have. ARC Emergency will provide verified NCSC updates throughout the day.",
             "snip": "ARC is quoting the PM back to you. Same words, different voice. The PM spoke to the nation. ARC speaks to your phone.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "time": "10:00",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "NCSC confirms: legacy digital systems compromised by embedded malware. Do not access banking or financial applications. ARC Emergency is your verified source for updates.",
             "snip": "The government said 'compromised.' ARC said 'compromised by embedded malware.' Three extra words. ARC knows more than the government is saying. Or it's saying what the government won't.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "time": "10:30",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
             "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
             "tag": "6:00pm",
-            "cls": "a"
+            "cls": "a",
+            "time": "18:45",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC",
             "tag": "Repatriation",
             "cls": "a",
             "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
-            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’"
+            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
+            "time": "19:30",
+            "date": "16 Feb 2027"
           }
         ]
       },
@@ -9126,14 +9477,18 @@
             "snip": "Chloe and Emilia's college doesn't know when it's reopening but it knows how to send a text.",
             "tag": "SMS",
             "cls": "",
-            "txt": "BHASVIC: School closed until further notice. The DfE is launching educational content through ARC tomorrow (Wed). Your teachers are preparing materials. Further details to follow. BHASVIC Sixth Form College."
+            "txt": "BHASVIC: School closed until further notice. The DfE is launching educational content through ARC tomorrow (Wed). Your teachers are preparing materials. Further details to follow. BHASVIC Sixth Form College.",
+            "time": "07:33",
+            "date": "16 Feb 2027"
           },
           {
             "src": "SMS — NHS",
             "ttl": "All routine GP appointments suspended. Emergency departments open. If you need urgent medication, attend A&E with photo ID and medication details.",
             "snip": "Photo ID. They want photo ID at A&E now. The NHS App is dead but the SMS gateway isn't.",
             "tag": "SMS",
-            "cls": ""
+            "cls": "",
+            "time": "07:55",
+            "date": "16 Feb 2027"
           }
         ]
       },
@@ -9145,21 +9500,27 @@
             "ttl": "this is chaos mate. u getting any of this? tried calling u earlier. networks jammed. mental. stay safe bud",
             "snip": "Vince. Reliable as gravity. If Vince is texting instead of calling, the networks really are jammed.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "09:11",
+            "date": "16 Feb 2027"
           },
           {
             "src": "Mum (Spain)",
             "ttl": "I'm fine love. Tony sorted everything. No heating though. Love mum x",
             "snip": "Eighteen hours to arrive. Two lines. She's fine. Tony sorted everything. Tony always sorts everything.",
             "tag": "Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "10:33",
+            "date": "16 Feb 2027"
           },
           {
             "src": "Dave",
             "ttl": "Mate were stuck in Tenerife. Nickys going mental. They’re saying flights tomorrow but nobody actually knows anything. How much cash have you got? We’ve got about 200 euros between us. Hotel’s being sound for now",
             "snip": "Dave and Nicky. Tenerife. Two hundred euros and a hotel that’s being sound. For now.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "12:01",
+            "date": "16 Feb 2027"
           }
         ]
       }
@@ -9173,14 +9534,16 @@
             "ttl": "Payment systems are restoring across affected regions. Schools confirm reopening Monday 22 February. Continue to follow guidance via ARC and BBC.",
             "snip": "Schools Monday. Cards working. The government sounds like it believes its own good news.",
             "tag": "Update",
-            "cls": "x"
+            "cls": "x",
+            "date": "17 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "The PM will address the nation at 6pm. NCSC will provide a further assessment of the recovery. All BBC channels and ARC Emergency.",
             "snip": "Another 6pm. But this one feels different. This one feels like good news coming.",
             "tag": "4:00pm",
-            "cls": "x"
+            "cls": "x",
+            "date": "17 Feb 2027"
           }
         ]
       },
@@ -9195,49 +9558,57 @@
             "cls": "a",
             "type": "thread-notify",
             "threadRef": "official",
-            "txt": "Joint address — transcript via ARC"
+            "txt": "Joint address — transcript via ARC",
+            "time": "18:00 GMT",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "Payment systems are restoring. ARC Emergency remains your verified source for updates during the recovery period. Continue to check for updates.",
             "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "PM 6pm address — key points: 60% of payment terminals operational. Schools to reopen Monday. NCSC assessment: 'The correction appears contained.' Full recovery expected within days.",
             "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
             "tag": "6:00pm",
-            "cls": "a"
+            "cls": "a",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "tag": "ARC Education",
             "cls": "a",
             "ttl": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council.",
-            "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time."
+            "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time.",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "tag": "12:15pm",
             "cls": "a",
             "ttl": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region.",
-            "snip": "ARC → Business → Your Region. Will this be helpful advice or furlough?"
+            "snip": "ARC → Business → Your Region. Will this be helpful advice or furlough?",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "tag": "3:30pm",
             "cls": "a",
             "ttl": "Support during the restoration period — guidance now available. Access via ARC → Support → Your Region. Includes: employer obligations, emergency hub services, prescription access, utility protections.",
-            "snip": "Everything on one app. How helpful."
+            "snip": "Everything on one app. How helpful.",
+            "date": "17 Feb 2027"
           },
           {
             "src": "ARC",
             "tag": "Repatriation",
             "cls": "a",
             "ttl": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub.",
-            "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go."
+            "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go.",
+            "date": "17 Feb 2027"
           }
         ]
       },
@@ -9249,21 +9620,24 @@
             "ttl": "Cards work at Tesco! Getting a big shop in. Anything you need? xx",
             "snip": "She's spending the cash reserves she doesn't know she'll need in four days.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "17 Feb 2027"
           },
           {
             "src": "Amy's mum",
             "ttl": "Cards working! Got a lovely joint of beef. Back to normal soon love.",
             "snip": "Lovely joint of beef. The optimism of a woman who's already spent her emergency cash on a roasting joint.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "17 Feb 2027"
           },
           {
             "src": "Dev",
             "ttl": "The firmware payload. Two stages. Stage 1 encrypted. Stage 2 is in the walls. When they reconnect the old systems, it triggers. Don't celebrate yet. Setting up a Signal group — I'll add you when it's back up. Few days.",
             "snip": "2am. He read it. He went back to sleep. The bit about Signal didn't register. The bit about Stage 2 didn't either.",
             "tag": "2:00am",
-            "cls": ""
+            "cls": "",
+            "date": "17 Feb 2027"
           }
         ]
       }
@@ -9277,14 +9651,16 @@
             "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Essential travel permitted.",
             "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
             "tag": "Update",
-            "cls": "x"
+            "cls": "x",
+            "date": "18 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "The Chancellor will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
             "snip": "The Chancellor, not the PM. They're sending the money person. That feels like good news.",
             "tag": "3:30pm",
-            "cls": "x"
+            "cls": "x",
+            "date": "18 Feb 2027"
           }
         ]
       },
@@ -9299,21 +9675,25 @@
             "type": "thread-notify",
             "threadRef": "official",
             "ttl": "<strong>PM ADDRESS  17/2— 18:00 GMT — Transcript</strong>",
-            "snip": "Progress. Recovery. Thirty-eight per cent and climbing."
+            "snip": "Progress. Recovery. Thirty-eight per cent and climbing.",
+            "time": "18:00 GMT",
+            "date": "18 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
             "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "date": "18 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "Chancellor 6pm address — key points: Markets to resume trading Thursday. Contactless restored at most major retailers. NCSC: 'Worst appears to be over.' Full recovery expected within days.",
             "snip": "Full recovery expected within days. The Chancellor said it at 6pm. ARC had the summary up by 6:04. Nobody noticed the speed anymore.",
             "tag": "6:04pm",
-            "cls": "a"
+            "cls": "a",
+            "date": "18 Feb 2027"
           }
         ]
       },
@@ -9325,7 +9705,8 @@
             "ttl": "Payment systems restoring across affected regions. Chancellor: 'Worst appears to be over.'",
             "snip": "The worst appears to be over. The Chancellor said it. Must be true.",
             "tag": "Breaking",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           }
         ]
       },
@@ -9337,28 +9718,32 @@
             "ttl": "Got fuel! Half a tank. Queues not too bad. Your mum says come for lunch Sunday if you can.",
             "snip": "Half a tank feels like a fortune. Sunday lunch feels like the old world coming back.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           },
           {
             "src": "Dave",
             "ttl": "You ok mate? Beers tomorrow? 😂",
             "snip": "Dave. Three days of national emergency and his first text is about the pub.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           },
           {
             "src": "Vince",
             "ttl": "Hopefully game will be on next week. You planning on going? ❤️💙",
             "snip": "Vince is already thinking about the football. The world is ending and Vince wants to know about Saturday.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           },
           {
             "src": "Sam",
             "ttl": "I'll see you later Pa x",
             "snip": "Pa. He still says Pa.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           }
         ]
       },
@@ -9370,7 +9755,8 @@
             "ttl": "Call connected — 4 minutes 12 seconds.",
             "snip": "First call that's gone through since Sunday. She cried. He told her everything was fine. Tony's sorting the heating. Dash is fine. She asked about the kids three times. He said they're fine three times. Four minutes felt like an hour.",
             "tag": "Connected",
-            "cls": ""
+            "cls": "",
+            "date": "18 Feb 2027"
           }
         ]
       }
@@ -9387,7 +9773,9 @@
             "ttl": "<strong>PM ADDRESS  18/2— 18:00 GMT — Transcript</strong>",
             "snip": "The shortest broadcast. The most hopeful. Sixty-one per cent.",
             "type": "thread-notify",
-            "threadRef": "official"
+            "threadRef": "official",
+            "time": "18:00 GMT",
+            "date": "19 Feb 2027"
           },
           {
             "src": "ARC",
@@ -9395,7 +9783,8 @@
             "cls": "a",
             "txt": "A second phase of disruption has affected financial and payment systems. This is affecting all 23 nations identified in the original incident. Remain calm. Do not attempt further card transactions. Updates to follow.",
             "ttl": "ARC EMERGENCY",
-            "snip": "Eleven minutes. Eleven minutes of silence before anyone said anything."
+            "snip": "Eleven minutes. Eleven minutes of silence before anyone said anything.",
+            "date": "19 Feb 2027"
           },
           {
             "src": "ARC",
@@ -9403,7 +9792,8 @@
             "cls": "a",
             "txt": "The PM’s 6pm address to the nation has been delayed. The PM is chairing an emergency COBRA session. A revised time will be confirmed shortly.",
             "ttl": "ARC EMERGENCY",
-            "snip": "She was twenty-seven minutes from telling us everything was fine."
+            "snip": "She was twenty-seven minutes from telling us everything was fine.",
+            "date": "19 Feb 2027"
           },
           {
             "src": "ARC",
@@ -9411,7 +9801,8 @@
             "cls": "a",
             "txt": "The PM will address the nation at 9:00pm this evening on BBC Television, BBC Radio and ARC Emergency. COBRA remains in session. All emergency measures remain in place.",
             "ttl": "ARC EMERGENCY",
-            "snip": "Ninety minutes of nothing. Then this."
+            "snip": "Ninety minutes of nothing. Then this.",
+            "date": "19 Feb 2027"
           },
           {
             "src": "ARC",
@@ -9419,7 +9810,8 @@
             "cls": "a",
             "txt": "The PM’s address to the nation will begin at 9:00pm. Live on BBC One, BBC Radio 4 and ARC Emergency.",
             "ttl": "ARC EMERGENCY",
-            "snip": "Five minutes."
+            "snip": "Five minutes.",
+            "date": "19 Feb 2027"
           },
           {
             "src": "ARC",
@@ -9427,7 +9819,8 @@
             "cls": "a",
             "txt": "PM Address — key points: second phase of attack triggered by reconnection. Cloud services taken offline as precaution. Schools will not reopen Monday. ‘I cannot confirm that timetable tonight.’ Stay safe, stay local.",
             "ttl": "ARC EMERGENCY — PM ADDRESS",
-            "snip": "No ‘be well.’ She didn’t say it."
+            "snip": "No ‘be well.’ She didn’t say it.",
+            "date": "19 Feb 2027"
           }
         ]
       },
@@ -9440,7 +9833,8 @@
             "cls": "x",
             "txt": "A second cyber incident has affected financial systems across multiple nations. The PM will address the nation this evening. Time to be confirmed. Do not attempt to access banking applications.",
             "ttl": "UK GOVERNMENT ALERT",
-            "snip": "Twenty-six minutes after ARC. The gap is widening."
+            "snip": "Twenty-six minutes after ARC. The gap is widening.",
+            "date": "19 Feb 2027"
           }
         ]
       },
@@ -9453,7 +9847,8 @@
             "cls": "",
             "txt": "PM: ‘We are back to where we were at the start of this week.’ Second disruption hits financial systems across 23 nations. Cloud services pulled offline.",
             "ttl": "BBC News — Breaking",
-            "snip": "The Breaking chime. Again."
+            "snip": "The Breaking chime. Again.",
+            "date": "19 Feb 2027"
           },
           {
             "src": "SMS — Chloe’s school",
@@ -9461,7 +9856,8 @@
             "cls": "",
             "txt": "Monday reopening postponed. ARC Education continues. Further updates to follow.",
             "ttl": "BHASVIC",
-            "snip": "Chloe read it before Amy did."
+            "snip": "Chloe read it before Amy did.",
+            "date": "19 Feb 2027"
           }
         ]
       },
@@ -9474,7 +9870,8 @@
             "cls": "",
             "txt": "Cards stopped again. We’ve hardly got any food in. Your dad’s upset.",
             "ttl": "",
-            "snip": ""
+            "snip": "",
+            "date": "19 Feb 2027"
           },
           {
             "src": "Dev",
@@ -9482,7 +9879,8 @@
             "cls": "",
             "txt": "Stage 2. Told you. This one corrupts — doesn’t encrypt. The records aren’t locked. They’re gone.",
             "ttl": "",
-            "snip": ""
+            "snip": "",
+            "date": "19 Feb 2027"
           }
         ]
       }
@@ -9496,7 +9894,8 @@
             "ttl": "Remain at home. Essential travel only. The threat of further disruption remains active. NCSC is assessing the full scope of damage to financial data. Updates via ARC and BBC.",
             "snip": "Further disruption remains active. Not 'is over.' Not 'is contained.' Remains active. They don't know if there's a Stage 3.",
             "tag": "8:00am",
-            "cls": "x"
+            "cls": "x",
+            "date": "20 Feb 2027"
           }
         ]
       },
@@ -9508,21 +9907,24 @@
             "ttl": "The community centre's talking about opening as a walk-in clinic. They need volunteers. Might go in tomorrow. You two okay? x",
             "snip": "Even Kate is saying tomorrow. Nobody's doing anything today. Today is just the sound of phones buzzing with bad news.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Amy's mum",
             "ttl": "Your brothers aren't answering their phones. Your dad's worried sick.",
             "snip": "Rupert and Jamie. Off grid before off grid was mandatory. Amy's mum says it like they've joined a cult.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Dave",
             "ttl": "Mate what the fuck has happened here. We landed three hours ago and there’s army at Tesco. What have we come back to. Ring me when you can",
             "snip": "Three hours ago Dave was in the air, watching films, thinking the worst was over. He landed in a different country.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           }
         ]
       }
@@ -9536,7 +9938,8 @@
             "ttl": "The PM will chair COBRA at 10am. A further statement will be made this afternoon. Citizens are advised to conserve food supplies and check on vulnerable neighbours.",
             "snip": "Conserve food supplies. Four words that land differently when the shops don't take cards and you spent your cash two days ago.",
             "tag": "9:00am",
-            "cls": "x"
+            "cls": "x",
+            "date": "20 Feb 2027"
           }
         ]
       },
@@ -9548,14 +9951,16 @@
             "ttl": "NCSC assessment: the second phase of disruption targeted financial record infrastructure. The full extent of data loss is under investigation. ARC Emergency remains operational and unaffected.",
             "snip": "ARC Emergency remains operational and unaffected. Everything else is broken. ARC isn't. That sentence is doing more work than it looks like.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "date": "20 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "PM statement — key points: 'The threat remains active. We are taking every precaution. Emergency food and fuel distribution plans are being finalised and will be announced tomorrow.'",
             "snip": "Tomorrow. Everything is tomorrow. The food plan is tomorrow. The fuel plan is tomorrow. Today is just waiting.",
             "tag": "3:00pm",
-            "cls": "a"
+            "cls": "a",
+            "date": "20 Feb 2027"
           }
         ]
       },
@@ -9567,21 +9972,24 @@
             "ttl": "Volunteering at the community centre. They've set up a food collection for people without phones. It's actually really well organised. Wine later? x",
             "snip": "People without phones. Kate's helping the fifteen percent. The eighty-five percent are tapping at Tesco and barely thinking about it.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Vince",
             "ttl": "Army blokes outside Tesco. Proper friendly though. One of them helped mum with her bags. Police everywhere too but keeping back. Feels safe tbh",
             "snip": "Feels safe. That's the sentence. Not 'feels scary' or 'feels wrong.' Feels safe. The soldiers made Vince feel safe. That's the Soma working at street level.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Dev",
             "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
             "snip": "Signal came back yesterday. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "20 Feb 2027"
           }
         ]
       }
@@ -9599,7 +10007,9 @@
             "threadRef": "official",
             "ttl": "<strong>PM ADDRESS  20/2— 18:00 GMT — Transcript</strong>",
             "snip": "Every one of those points of light is a place you can walk to.",
-            "isnew": true
+            "isnew": true,
+            "time": "18:00 GMT",
+            "date": "21 Feb 2027"
           }
         ]
       }
@@ -9613,7 +10023,8 @@
             "ttl": "Rupert won't go to the walk-in. He says he doesn't trust it. Your dad can't get his eye drops. Can Simon have a word?",
             "snip": "Have a word. Like he's a teenager refusing to tidy his room. Rupert's medication is running out and Jenny thinks a chat will fix it.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "27 Feb 2027"
           }
         ]
       }
@@ -9629,7 +10040,9 @@
             "tag": "PM Address",
             "cls": "x",
             "threadRef": "official",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "20:00",
+            "date": "21 Mar 2027"
           }
         ]
       },
@@ -9641,28 +10054,33 @@
             "ttl": "PM address confirmed 8:00pm tonight. Simultaneous broadcast across 23 nations. ARC will carry the full address and provide a summary immediately after.",
             "snip": "",
             "tag": "8pm Tonight",
-            "cls": "a"
+            "cls": "a",
+            "time": "20:00",
+            "date": "21 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "PM now addressing the nation. Full transcript available: PM’s Address to the Nation — Full Transcript.",
             "snip": "",
             "tag": "LIVE",
-            "cls": "a"
+            "cls": "a",
+            "date": "21 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "DEBT JUBILEE — All personal debt cancelled with immediate effect. Mortgages, credit cards, student loans, overdrafts: zero. HM Treasury confirmation.",
             "snip": "Amy’s hand on my arm.",
             "tag": "Jubilee",
-            "cls": "a"
+            "cls": "a",
+            "date": "21 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Registration now available. 90 seconds. Face scan, verbal confirmation, thumbprint. Welcome to the National Recovery Programme.",
             "snip": "Ninety seconds. That’s all it takes.",
             "tag": "Register Now",
-            "cls": "a"
+            "cls": "a",
+            "date": "21 Mar 2027"
           }
         ]
       },
@@ -9674,7 +10092,8 @@
             "ttl": "PM expected to announce ‘comprehensive national recovery programme’ tonight. Sources describe speech as ‘the most significant peacetime address in British history.’",
             "snip": "Peacetime. An interesting word for it.",
             "tag": "Breaking",
-            "cls": ""
+            "cls": "",
+            "date": "21 Mar 2027"
           }
         ]
       },
@@ -9686,28 +10105,32 @@
             "ttl": "THE MORTGAGE. Simon! THE MORTGAGE! Oh my God. I can’t stop crying. Peter’s opening wine. Come for Sunday lunch, all of you. I love you both so much.",
             "snip": "She’s crying. Actually crying.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "21 Mar 2027"
           },
           {
             "src": "Rupert",
             "ttl": "Don’t register. Don’t do it. This is the buy. Everything before this was the setup. Think about what just happened. Please.",
             "snip": "He’s not wrong. That’s the problem.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "21 Mar 2027"
           },
           {
             "src": "Amy’s dad (Peter)",
             "ttl": "Your brother’s lost the plot. We’re going to the hub first thing. Best news we’ve had in five weeks. Don’t let Rupert get to you.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "21 Mar 2027"
           },
           {
             "src": "Dev",
             "ttl": "speech metadata. file created 9 february. six days before the attack.",
             "snip": "Six days.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "21 Mar 2027"
           }
         ]
       },
@@ -9720,7 +10143,8 @@
             "snip": "Oh here she comes. Watch out boy, she'll chew you up.",
             "tag": "Siren song",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "date": "21 Mar 2027"
           }
         ]
       }
@@ -9737,7 +10161,8 @@
             "cls": "",
             "threadRef": "official",
             "type": "thread-notify",
-            "isnew": true
+            "isnew": true,
+            "date": "22 Mar 2027"
           }
         ]
       },
@@ -9749,28 +10174,32 @@
             "ttl": "Mum’s sent photos of her hamper. Have you seen it? Fresh bread, eggs, actual fruit. She’s over the moon.",
             "snip": "Fresh bread. Five weeks of tinned spaghetti and then: fresh bread.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "22 Mar 2027"
           },
           {
             "src": "George → family group",
             "ttl": "I’ve registered. It took literally 90 seconds. Don’t be cross. It’s just an app.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "22 Mar 2027"
           },
           {
             "src": "Rupert",
             "ttl": "Has George registered? For God’s sake. Don’t let the others do it. This is how they get the whole family.",
             "snip": "Too late.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "22 Mar 2027"
           },
           {
             "src": "Kate",
             "ttl": "Did you see the hampers? The registered ones are different. Fresh food, proper portions, named. The unregistered ones are still tins. Same queue, different basket.",
             "snip": "Same queue. Different basket. That’s the whole thing.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "22 Mar 2027"
           }
         ]
       }
@@ -9784,14 +10213,16 @@
             "ttl": "Your household is partially registered. 1 of 4 household members active. Complete registration to access full healthcare, education, and allocation services.",
             "snip": "One of four. It’s counting us.",
             "tag": "Registration",
-            "cls": "a"
+            "cls": "a",
+            "date": "24 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Registration update: 23 million households — 82%. BritCoin first full retail week begins. Schools reopen Monday for registered children.",
             "snip": "",
             "tag": "82%",
-            "cls": "a"
+            "cls": "a",
+            "date": "24 Mar 2027"
           }
         ]
       },
@@ -9803,21 +10234,24 @@
             "ttl": "Hey dad. Mum sorted the registration thing. It’s actually pretty good. My student finance is already in BC. Hope you’re ok x",
             "snip": "Sorted. Like it was an admin task.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "24 Mar 2027"
           },
           {
             "src": "Amy’s mum",
             "ttl": "The mortgage shows zero! Peter keeps checking. Zero. Come for lunch Sunday, love. Bring everyone. We’ve got more food than we know what to do with.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "24 Mar 2027"
           },
           {
             "src": "Dev",
             "ttl": "they’re taking iris + palm at the hubs. paragraph 94 of the digital citizen agreement. nobody reads it.",
             "snip": "Nobody reads it. Including me.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "24 Mar 2027"
           }
         ]
       },
@@ -9829,7 +10263,8 @@
             "ttl": "Debt jubilee: ‘Transformative moment in British economic history.’ Chancellor confirms personal debt cancellation permanent and irrevocable.",
             "snip": "",
             "tag": "FREE LUNCH",
-            "cls": ""
+            "cls": "",
+            "date": "24 Mar 2027"
           }
         ]
       },
@@ -9843,7 +10278,8 @@
             "tag": "Unread",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "date": "24 Mar 2027"
           }
         ]
       }
@@ -9857,28 +10293,32 @@
             "ttl": "Sam has been registered. Welcome, Sam. Services active.",
             "snip": "",
             "tag": "Registration",
-            "cls": "a"
+            "cls": "a",
+            "date": "25 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Emilia has been registered. Welcome, Emilia. Services active.",
             "snip": "She’s sixteen. Her mum decided. I wasn’t asked.",
             "tag": "Registration",
-            "cls": "a"
+            "cls": "a",
+            "date": "25 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Chris’s care record has been linked to your household profile. Registered care home: Meadow View. Next of kin: Simon. Care plan accessible via your AIDA dashboard.",
             "snip": "Dad doesn’t know what day it is. AIDA knows his blood pressure, his medication schedule, his son’s name. One of them still recognises me.",
             "tag": "Care Home",
-            "cls": "a"
+            "cls": "a",
+            "date": "25 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Registration update: 25 million households — 89%. Hub wait time: 6 minutes average.",
             "snip": "Six minutes. From queueing for tins to registered citizen in six minutes.",
             "tag": "89%",
-            "cls": "a"
+            "cls": "a",
+            "date": "25 Mar 2027"
           }
         ]
       },
@@ -9890,7 +10330,8 @@
             "ttl": "Your ex texted. Sam and Emilia are registered. She said it took two minutes for both of them.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "25 Mar 2027"
           }
         ]
       },
@@ -9904,7 +10345,8 @@
             "tag": "Unread",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "date": "25 Mar 2027"
           }
         ]
       }
@@ -9918,14 +10360,16 @@
             "ttl": "Your household is partially registered. 3 of 4 household members active. Simon, we’re here when you’re ready.",
             "snip": "Three of four. It knows my name. It’s patient.",
             "tag": "Registration",
-            "cls": "a"
+            "cls": "a",
+            "date": "26 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Registration update: 26 million households — 93%. Registered satisfaction: 97%.",
             "snip": "Ninety-seven percent satisfied. The three percent are people like me. And we’re registering too.",
             "tag": "93%",
-            "cls": "a"
+            "cls": "a",
+            "date": "26 Mar 2027"
           }
         ]
       },
@@ -9937,14 +10381,16 @@
             "ttl": "Glass of wine? Come round. I need to tell you something.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "26 Mar 2027"
           },
           {
             "src": "Amy’s mum",
             "ttl": "Talk to Rupert, love. He won’t listen to me or your dad. Jamie’s the same. His prescription’s run out and he still won’t go to the hub.",
             "snip": "Jamie’s prescription. Rupert’s stubbornness. Amy’s mum trying to hold it together.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "26 Mar 2027"
           },
           {
             "src": "Dev",
@@ -9952,7 +10398,8 @@
             "snip": "A meme. From Dev. Unusual.",
             "tag": "3:47am",
             "cls": "",
-            "img": "left-alone-cabin.jpg"
+            "img": "left-alone-cabin.jpg",
+            "date": "26 Mar 2027"
           }
         ]
       }
@@ -9966,21 +10413,24 @@
             "ttl": "Chloe’s classmates are preparing for mock examinations on the AIDA learning platform. Registration required for full platform access. Hub-based alternative available.",
             "snip": "Hub-based alternative. Worksheets and a volunteer. While her friends get AI tutoring.",
             "tag": "Education",
-            "cls": "a"
+            "cls": "a",
+            "date": "28 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Simon, your healthcare profile is incomplete. Continuous glucose monitoring data cannot be synced without registration. Walk-in clinic appointments remain available.",
             "snip": "It knows about the diabetes. It knows I need the CGM. It’s offering to fix the thing it’s using as leverage.",
             "tag": "Health",
-            "cls": "a"
+            "cls": "a",
+            "date": "28 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Registration update: 26.5 million households — 95%. Schools fully operational for registered children.",
             "snip": "",
             "tag": "95%",
-            "cls": "a"
+            "cls": "a",
+            "date": "28 Mar 2027"
           }
         ]
       },
@@ -9992,14 +10442,16 @@
             "ttl": "Can you PLEASE talk to Simon. Everyone’s back at school. I’m missing my mock revision. This is my actual A-levels Mum.",
             "snip": "",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "28 Mar 2027"
           },
           {
             "src": "Amy’s mum",
             "ttl": "Jamie won’t eat. Rupert’s eyes have gone funny without his drops. Talk to your brothers, love. I’m worried sick.",
             "snip": "The holdouts. Not a political movement. Just Amy’s brothers, hungry and going blind.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "28 Mar 2027"
           }
         ]
       }
@@ -10013,14 +10465,16 @@
             "ttl": "We’re here when you’re ready, Simon.",
             "snip": "It used my name. Again.",
             "tag": "",
-            "cls": "a"
+            "cls": "a",
+            "date": "30 Mar 2027"
           },
           {
             "src": "AIDA",
             "ttl": "Registration update: 27 million households — 96.5%.",
             "snip": "Three and a half percent. That’s us. For two more days.",
             "tag": "96.5%",
-            "cls": "a"
+            "cls": "a",
+            "date": "30 Mar 2027"
           }
         ]
       },
@@ -10032,7 +10486,8 @@
             "ttl": "Don’t do it.",
             "snip": "Three words. From a farmstead with solar panels and a well.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "30 Mar 2027"
           }
         ]
       }
@@ -10047,7 +10502,9 @@
             "snip": "Still the most beautiful thing I’ve ever seen from the garden. Thirteen million people posted theirs. She stared in awe and just took one photo.",
             "tag": "2024",
             "cls": "",
-            "img": "aurora-2024.jpg"
+            "img": "aurora-2024.jpg",
+            "time": "13:00",
+            "date": "7 Oct 2026"
           }
         ]
       },
@@ -10062,7 +10519,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "time": "14:22",
+            "date": "7 Oct 2026"
           }
         ]
       }
@@ -10079,7 +10538,9 @@
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
-            "threadRef": "finance-commerce"
+            "threadRef": "finance-commerce",
+            "time": "16:42",
+            "date": "31 Jan 2026"
           },
           {
             "src": "Dev",
@@ -10087,7 +10548,9 @@
             "snip": "Three links. No context. Classic Dev.",
             "tag": "16:44",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "16:44",
+            "date": "31 Jan 2026"
           }
         ]
       },
@@ -10100,7 +10563,9 @@
             "snip": "New number. Not in my contacts. Who else texts like a telegram.",
             "tag": "19:55",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "19:55",
+            "date": "31 Jan 2026"
           }
         ]
       },
@@ -10112,21 +10577,27 @@
             "ttl": "Sensor expires in 3 days. Order replacement from your pharmacy.",
             "snip": "A sensor on my arm talking to a phone talking to a cloud. Lifesaving tech. All it cost was becoming a data point.",
             "tag": "Reminder",
-            "cls": ""
+            "cls": "",
+            "time": "09:21",
+            "date": "31 Jan 2026"
           },
           {
             "src": "Meadowbank Care",
             "ttl": "Christopher's quarterly review — scheduled 18 February. Please confirm attendance.",
             "snip": "Dad won't know I'm there. I'll go anyway.",
             "tag": "Upcoming",
-            "cls": ""
+            "cls": "",
+            "time": "10:27",
+            "date": "31 Jan 2026"
           },
           {
             "src": "Revolut",
             "ttl": "We've updated our Terms & Conditions. Please review and accept to continue using the app.",
             "snip": "Scrolled to the bottom. Tapped accept. Took about four seconds. Didn't read a word.",
             "tag": "Action Required",
-            "cls": ""
+            "cls": "",
+            "time": "17:30",
+            "date": "31 Jan 2026"
           },
           {
             "src": "BBC News",
@@ -10134,7 +10605,9 @@
             "snip": "Orderly correction. Eleven minutes of frozen screens and it's an orderly correction.",
             "tag": "Markets",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "10:40",
+            "date": "31 Jan 2026"
           },
           {
             "src": "BBC News",
@@ -10142,7 +10615,9 @@
             "snip": "They're not being consulted. They're being coordinated.",
             "tag": "Breaking",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "09:10",
+            "date": "31 Jan 2026"
           }
         ]
       },
@@ -10155,7 +10630,9 @@
             "snip": "You always were two steps ahead of everyone. We'd walk behind while you would run.",
             "tag": "Earworm",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "20:20",
+            "date": "31 Jan 2026"
           },
           {
             "src": "Radiohead",
@@ -10163,7 +10640,25 @@
             "snip": "A pig in a cage on antibiotics.",
             "tag": "more productive",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "23:58",
+            "date": "31 Jan 2026"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@BBCNews",
+            "ttl": "Payment terminal conspiracy theories: what the claims say and what we know. BBC Verify examines viral posts alleging ‘hidden biometric payloads’ in UK card machines. bbc.co.uk/news/technolog…",
+            "snip": "BBC Verify. The headline says ‘conspiracy theories.’ Not ‘claims.’ Not ‘concerns.’ Conspiracy theories. The framing is the dismissal. You don’t even need to read the article.",
+            "tag": "Fact Check",
+            "cls": "",
+            "type": "thread-notify",
+            "threadRef": "finance-commerce",
+            "time": "11:00",
+            "date": "10 Feb 2027"
           }
         ]
       }
@@ -10178,7 +10673,9 @@
             "snip": "The father/son moments on the golf course mean more than words can describe.",
             "tag": "Tomorrow",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "11:15",
+            "date": "21 Nov 2026"
           },
           {
             "src": "Emilia",
@@ -10186,7 +10683,9 @@
             "snip": "The 'love you btw' is doing a lot of heavy lifting on that twenty quid.",
             "tag": "Today",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "12:24",
+            "date": "21 Nov 2026"
           }
         ]
       },
@@ -10200,7 +10699,9 @@
             "tag": "Apr 2024",
             "cls": "",
             "threadRef": "surveillance-architecture",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "20:20",
+            "date": "21 Nov 2026"
           },
           {
             "src": "Clarkson Law Firm",
@@ -10209,7 +10710,9 @@
             "tag": "Sep 2025",
             "cls": "",
             "threadRef": "surveillance-architecture",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "21:12",
+            "date": "21 Nov 2026"
           }
         ]
       }
@@ -10223,7 +10726,8 @@
             "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
             "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
             "tag": "Day 21",
-            "cls": "a"
+            "cls": "a",
+            "date": "7 Mar 2027"
           }
         ]
       },
@@ -10235,14 +10739,16 @@
             "ttl": "The community centres are being fitted out for something. Registration desks. Biometric readers. Nobody's said anything official yet. Wine tonight? x",
             "snip": "Kate sees the equipment arriving and files it under 'interesting.' She'll register when they ask. She knows this about herself already.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "7 Mar 2027"
           },
           {
             "src": "Chloe",
             "ttl": "How long, Dad. Seriously. How long.",
             "snip": "No question mark. Not a question. A statement dressed as one.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "7 Mar 2027"
           }
         ]
       },
@@ -10254,7 +10760,8 @@
             "ttl": "UK data centres reprioritised under emergency digital mandate",
             "snip": "Simon scrolled past. Hamper collection at Shoreham was more useful information right now.",
             "tag": "Live",
-            "cls": ""
+            "cls": "",
+            "date": "7 Mar 2027"
           }
         ]
       },
@@ -10266,7 +10773,8 @@
             "ttl": "PM Weekly Address: 'The old system failed us. It was fragile, unequal, and vulnerable. We are building something better — something that belongs to everyone.'",
             "snip": "Belongs to everyone. He's stopped saying 'restoration.' He's stopped pretending the old system is coming back.",
             "tag": "Day 21",
-            "cls": "a"
+            "cls": "a",
+            "date": "7 Mar 2027"
           }
         ]
       }
@@ -10280,7 +10788,8 @@
             "ttl": "Water efficiency update for your area",
             "snip": "Their water bill used to arrive quarterly. Now it doesn't arrive at all.",
             "tag": "Local",
-            "cls": "a"
+            "cls": "a",
+            "date": "Apr 2027"
           }
         ]
       }
@@ -10296,7 +10805,9 @@
             "tag": "3:35am",
             "cls": "",
             "threadRef": "philosophy-theology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "03:35",
+            "date": "28 Nov 2026"
           },
           {
             "src": "Simon → Ben",
@@ -10306,7 +10817,9 @@
             "cls": "",
             "img": "dignity-colony-panel.jpg",
             "threadRef": "pattern-recognition",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "09:20",
+            "date": "28 Nov 2026"
           },
           {
             "src": "Dev",
@@ -10315,7 +10828,9 @@
             "tag": "1:14am",
             "cls": "",
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "01:14",
+            "date": "28 Nov 2026"
           },
           {
             "src": "Dev",
@@ -10323,7 +10838,9 @@
             "snip": "He does this. Sends the links, then sends the punchline. The frenzy.",
             "tag": "1:15am",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "01:15",
+            "date": "28 Nov 2026"
           }
         ]
       },
@@ -10337,7 +10854,9 @@
             "tag": "12:40am",
             "cls": "",
             "threadRef": "philosophy-theology",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "00:40",
+            "date": "28 Nov 2026"
           },
           {
             "src": "debtclock.io",
@@ -10345,7 +10864,9 @@
             "snip": "Googled mid-conversation. The number refreshes every second. None of them mean anything.",
             "tag": "~1:28am",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "01:28",
+            "date": "28 Nov 2026"
           }
         ]
       }
@@ -10360,7 +10881,9 @@
             "snip": "We keep saying we'll get the families together — we keep not doing it.",
             "tag": "Birthday",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "08:15",
+            "date": "27 Nov 2026"
           },
           {
             "src": "Mum (Sue)",
@@ -10368,7 +10891,9 @@
             "snip": "Five kisses. She probably still thinks of me as five years old half the time. Where does the time go?",
             "tag": "Birthday",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "09:12",
+            "date": "27 Nov 2026"
           },
           {
             "src": "Ben → Parklife",
@@ -10376,7 +10901,9 @@
             "snip": "Love you too bro!",
             "tag": "Birthday",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "09:23",
+            "date": "27 Nov 2026"
           },
           {
             "src": "Giles → Parklife",
@@ -10384,7 +10911,9 @@
             "snip": "Perhaps I should organise a party with this lot — I'm 52 not 92.",
             "tag": "Birthday",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "09:29",
+            "date": "27 Nov 2026"
           },
           {
             "src": "George → Family Group",
@@ -10392,7 +10921,9 @@
             "snip": "Twenty-eight ways of saying 'we don't know either' in a carousel format.",
             "tag": "11:14pm",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "23:14",
+            "date": "27 Nov 2026"
           },
           {
             "src": "Simon → Family Group",
@@ -10401,7 +10932,9 @@
             "tag": "11:16pm",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "science-technology"
+            "threadRef": "science-technology",
+            "time": "23:16",
+            "date": "27 Nov 2026"
           },
           {
             "src": "Amy → Family Group",
@@ -10409,7 +10942,9 @@
             "snip": "Fair.",
             "tag": "11:18pm",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "23:18",
+            "date": "27 Nov 2026"
           }
         ]
       }
@@ -10424,7 +10959,9 @@
             "snip": "cash or card?",
             "tag": "Market",
             "cls": "",
-            "img": "sam-cookies-market.jpg"
+            "img": "sam-cookies-market.jpg",
+            "time": "11:22",
+            "date": "10 Oct 2026"
           }
         ]
       },
@@ -10436,14 +10973,18 @@
             "ttl": "what time u picking me up tmrw? mums being weird about something x",
             "snip": "The eternal logistics of kids with two homes.",
             "tag": "Tomorrow",
-            "cls": ""
+            "cls": "",
+            "time": "11:55",
+            "date": "10 Oct 2026"
           },
           {
             "src": "NHSNoReply",
             "ttl": "SCREENING SAVES SIGHT. Eye Screening Reminder at Uckfield Community Hospital on 14/10/2026 (14:30)",
             "snip": "Annual retinopathy check. They photograph the back of your eyes. It takes four minutes and dilates your pupils like a Love Dove.",
             "tag": "Health",
-            "cls": ""
+            "cls": "",
+            "time": "14:30",
+            "date": "10 Oct 2026"
           }
         ]
       },
@@ -10455,7 +10996,9 @@
             "ttl": "Sussex’s Top 5 Hidden Gems 🍝🔥 #3 will blow your mind",
             "snip": "Number 3 is the Punjabi place at the market. Not that hidden, mate.",
             "tag": "Suggested",
-            "cls": ""
+            "cls": "",
+            "time": "15:01",
+            "date": "10 Oct 2026"
           }
         ]
       },
@@ -10469,7 +11012,9 @@
             "tag": "Trending",
             "cls": "",
             "threadRef": "surveillance-architecture",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "17:33",
+            "date": "10 Oct 2026"
           }
         ]
       }
@@ -10484,7 +11029,9 @@
             "snip": "Morning after. Sent as a fact, not a question.",
             "tag": "10:14am",
             "cls": "",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "10:14",
+            "date": "22 Nov 2026"
           }
         ]
       },
@@ -10499,7 +11046,9 @@
             "cls": "",
             "url": "https://www.arkmedic.info/p/there-was-no-virus",
             "threadRef": "pattern-recognition",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "01:00",
+            "date": "22 Nov 2026"
           }
         ]
       },
@@ -10512,7 +11061,9 @@
             "snip": "The algorithm served it up the morning after. Of course it did.",
             "tag": "We see things they'll never see",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "11:19",
+            "date": "22 Nov 2026"
           },
           {
             "src": "Primal Scream",
@@ -10520,7 +11071,9 @@
             "snip": "Gonna live the life I love, I’m gonna love the life I live. 90’s optimism.",
             "tag": "Loaded",
             "cls": "",
-            "type": "song"
+            "type": "song",
+            "time": "11:28",
+            "date": "22 Nov 2026"
           }
         ]
       }
@@ -10534,7 +11087,9 @@
             "ttl": "How’s the head? Did you read that Aeon piece yet",
             "snip": "He never stops. Even hungover.",
             "tag": "11:22am",
-            "cls": ""
+            "cls": "",
+            "time": "11:22",
+            "date": "29 Nov 2026"
           },
           {
             "src": "Kate",
@@ -10544,7 +11099,9 @@
             "cls": "",
             "threadRef": "philosophy-theology",
             "type": "thread-notify",
-            "url": "https://www.themarginalian.org/2013/03/26/viktor-frankl-mans-search-for-meaning/"
+            "url": "https://www.themarginalian.org/2013/03/26/viktor-frankl-mans-search-for-meaning/",
+            "time": "22:47",
+            "date": "29 Nov 2026"
           }
         ]
       },
@@ -10557,7 +11114,9 @@
             "snip": "Pulled it up to show Kate. I'll show her the fight scene next time.",
             "tag": "OBEY",
             "cls": "",
-            "img": "obey_roddy_piper_GIF.gif"
+            "img": "obey_roddy_piper_GIF.gif",
+            "time": "22:01",
+            "date": "29 Nov 2026"
           }
         ]
       }
@@ -10570,8 +11129,10 @@
             "src": "BHASVIC — cis@bhasvic.ac.uk",
             "ttl": "Remote Learning Contingency — Information for Parents",
             "snip": "No mention of why. Just \"in line with government guidance.\" The guidance they haven't explained either.",
-            "tag": "12 Feb",
-            "cls": ""
+            "tag": "10 Feb",
+            "cls": "",
+            "time": "08:11",
+            "date": "10 Feb 2027"
           }
         ]
       },
@@ -10583,7 +11144,9 @@
             "ttl": "Purchase limits now in effect on selected items",
             "snip": "Rice, pasta, UHT, batteries, candles. Three per customer. Amy already has twelve of each in the garage.",
             "tag": "Notice",
-            "cls": ""
+            "cls": "",
+            "time": "08:39",
+            "date": "10 Feb 2027"
           },
           {
             "src": "BBC News",
@@ -10591,7 +11154,9 @@
             "snip": "The all-clear wrapped in institutional language. Everyone exhales. The school doesn't send a follow-up.",
             "tag": "Politics",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "09:30",
+            "date": "10 Feb 2027"
           },
           {
             "src": "BBC News",
@@ -10599,7 +11164,8 @@
             "snip": "Amy's in tears. I'm in two minds as to whether it actually happened.",
             "tag": "Breaking",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "date": "10 Feb 2027"
           }
         ]
       },
@@ -10611,14 +11177,18 @@
             "ttl": "Two people on my street have generators on their drives. I checked out the local Facebook group - it's hilarious. One Karen asking if this even ALLOWED?? This is a QUIET residential street. What's next, chicken coops? Solar panels? Where does it END?",
             "snip": "Almost tempted to venture into the murky world of Facebook for shits and giggles.",
             "tag": "Brighton Facebook groups 🤢",
-            "cls": ""
+            "cls": "",
+            "time": "10:39",
+            "date": "10 Feb 2027"
           },
           {
             "src": "Rupert",
             "ttl": "Count the countries. Count the dates. This isn't parallel development. This is parallel preparation.",
             "snip": "Amy's brother. Six months ago this would have been tinfoil. Now it's arithmetic.",
             "tag": "Evening",
-            "cls": ""
+            "cls": "",
+            "time": "11:39",
+            "date": "10 Feb 2027"
           }
         ]
       },
@@ -10630,7 +11200,9 @@
             "ttl": "Conspiracy Twitter really thinks the economy is going to collapse on Valentine's Day 💀 some of you genuinely need to log off and go outside",
             "snip": "She has 430 followers and a private account. She's probably at brunch right now.",
             "tag": "For You",
-            "cls": ""
+            "cls": "",
+            "time": "14:27",
+            "date": "10 Feb 2027"
           },
           {
             "src": "@Peston",
@@ -10640,7 +11212,9 @@
             "cls": "",
             "isnew": true,
             "threadRef": "finance-commerce",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "14:55",
+            "date": "10 Feb 2027"
           },
           {
             "src": "@WMPolice",
@@ -10648,7 +11222,9 @@
             "snip": "The institutional language. 'Our thoughts are with.' The sentence that means nothing and means everything.",
             "tag": "Statement",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "16:11",
+            "date": "10 Feb 2027"
           },
           {
             "src": "@EnglandFirst_",
@@ -10656,7 +11232,9 @@
             "snip": "The bodies aren't cold and someone's already made a flag graphic. The algorithm knows exactly what it's doing.",
             "tag": "For You",
             "cls": "",
-            "isnew": true
+            "isnew": true,
+            "time": "17:01",
+            "date": "10 Feb 2027"
           }
         ]
       },
@@ -10670,7 +11248,9 @@
             "tag": "Unread",
             "cls": "",
             "threadRef": "pattern-recognition",
-            "type": "thread-notify"
+            "type": "thread-notify",
+            "time": "23:23",
+            "date": "10 Feb 2027"
           }
         ]
       }
@@ -10687,7 +11267,9 @@
             "cls": "a",
             "type": "thread-notify",
             "threadRef": "official",
-            "txt": "Key points from PM address"
+            "txt": "Key points from PM address",
+            "time": "19:00 GMT",
+            "date": "15 Feb 2027"
           },
           {
             "src": "ARC",
@@ -10695,7 +11277,9 @@
             "snip": "ARC repeating the PM. The PM's words. ARC's voice.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "Three requests from the PM"
+            "txt": "Three requests from the PM",
+            "time": "19:30 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10707,21 +11291,27 @@
             "ttl": "well that was a speech. you watch it with amy? how you all holding up mate",
             "snip": "19:42. Giles. Post-speech phone rings for everyone at once. Same question. Different houses.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "19:42",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Dev",
             "ttl": "Be Well",
             "snip": "19:51. Two words. A million inferences.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "19:51",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Rupert",
             "ttl": "ARC app installed itself on our phones before we woke up. Funny how that worked OK. On yours too I take it?",
             "snip": "Sent 19:53. Two minutes later. The only other person I'd tell. Fifteen years of arguments. Can't quite give him the full sentence.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "19:53",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10733,20 +11323,26 @@
             "ttl": "you see that mate? didn't mention banks at all. what's going on with the banks. emma's panicking.",
             "snip": "20:14. Ben. Straight to the gap in the speech. What wasn't said doing the work.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "20:14",
+            "date": "15 Feb 2027"
           },
           {
             "src": "from Mum (Spain)",
             "ttl": "What's happening there? Is TV working? PM did a speech here? Says it will be days, not weeks until it's sorted. Tony been at allotment but couldn't go to the bar after as everything is shut. He's having a beer on terrace with Miguel",
             "snip": "20:28. Days, not weeks. Same timescale. Same words. Mum doesn't know what she's telling me.",
             "tag": "Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "20:28",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Sam",
             "ttl": "u ok Sammy? back at mums or still with mike? love you",
             "tag": "Failed · 20:44",
-            "cls": ""
+            "cls": "",
+            "time": "20:44",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10758,7 +11354,9 @@
             "ttl": "<strong>ESSENTIAL SERVICES UPDATE — 21:00 GMT —</strong><br>Selected pharmacies and food retailers will open tomorrow, 16 February, under limited hours. Cash payments only. Further details via ARC Emergency and BBC broadcast overnight. Military and police presence visible from tonight to assist with co-ordination. Remain at home.",
             "snip": "'To assist with co-ordination.' Four words doing a lot of work.",
             "tag": "UK-EMRG-2027-012",
-            "cls": "x"
+            "cls": "x",
+            "time": "21:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10771,7 +11369,9 @@
             "ttl": "What’s Going On",
             "snip": "Mercy Mercy Me",
             "tag": "180 gram vinyl",
-            "cls": ""
+            "cls": "",
+            "time": "20:21",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10783,14 +11383,18 @@
             "ttl": "Hi Simon — Sam’s back here now, he got home about an hour ago. All fine. Send my love to Emilia x",
             "snip": "21:50. He’s back at his mum’s. Good to know.",
             "tag": "Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "21:50",
+            "date": "15 Feb 2027"
           },
           {
             "src": "from Mum (Spain)",
             "ttl": "I’ve sent a few messages — hope one has got through? We’re OK here too. Tony has sorted everything. No internet though. Call when you can. Love mum x",
             "snip": "21:54. An earlier message finally landing. Out of order. Every text its own private delay.",
             "tag": "Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "21:54",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10802,7 +11406,9 @@
             "ttl": "<strong>OVERNIGHT UPDATE — 22:00 GMT —</strong><br>Emergency services remain operational. Power grid stable. No threats to domestic security identified. Do not attempt to access online banking or financial services. Sleep safely. The Prime Minister will address the nation again within 24 hours.",
             "snip": "'Sleep safely.' They're tucking us in.",
             "tag": "UK-EMRG-2027-013",
-            "cls": "x"
+            "cls": "x",
+            "time": "22:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10815,7 +11421,9 @@
             "snip": "The app wants permission. The app that installed itself without it.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "Enable ARC Emergency notifications"
+            "txt": "Enable ARC Emergency notifications",
+            "time": "22:30 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10827,7 +11435,9 @@
             "ttl": "Stay local. Do not drive unless essential. Schools closed until further notice. Emergency services operational. Updates via ARC and BBC.",
             "snip": "The PM said 36 hours. This says 'until further notice.' Twelve hours and the language has already shifted.",
             "tag": "6:00am",
-            "cls": "x"
+            "cls": "x",
+            "time": "06:00",
+            "date": "16 Feb 2027"
           }
         ]
       },
@@ -10840,7 +11450,9 @@
             "snip": "You don't even need the telly. ARC has it covered.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "Morning operational update — pharmacies + PM at 9am"
+            "txt": "Morning operational update — pharmacies + PM at 9am",
+            "time": "07:00 GMT",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC Local",
@@ -10848,7 +11460,9 @@
             "snip": "There it is. I gave it permission six hours ago. It knows my postcode. Probably get some ‘selected for you’ offers next time.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "First ARC Local card — personalised"
+            "txt": "First ARC Local card — personalised",
+            "time": "07:30 GMT",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC",
@@ -10856,7 +11470,9 @@
             "snip": "The version for everyone else. The nudge to opt in. ARC Local for those who haven’t tapped yet.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "Local pharmacy and food — personalised"
+            "txt": "Local pharmacy and food — personalised",
+            "time": "08:00 GMT",
+            "date": "16 Feb 2027"
           },
           {
             "src": "ARC Local",
@@ -10864,7 +11480,9 @@
             "cls": "a",
             "ttl": "<strong>COMMUNITY UPDATE — 08:30 GMT —</strong><br>Your area: East Sussex.<br>Community Recovery Hubs will open from midday today at community centres, libraries, leisure centres and places of worship. Warm spaces, charging points, printed information, support for anyone who needs it.<br>Volunteers welcome. No registration needed. Just turn up.",
             "snip": "They're opening community hubs. Before the PM has even announced them.",
-            "type": "flavour"
+            "type": "flavour",
+            "time": "08:30 GMT",
+            "date": "16 Feb 2027"
           }
         ]
       },
@@ -10876,21 +11494,27 @@
             "ttl": "You all ok? Did you sleep well? Still no internet here. They say days, not weeks. It’s market day today in the village, no idea if it will be open. Love mum x",
             "snip": "08:30. Days, not weeks. Same words, different language.",
             "tag": "Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "08:30",
+            "date": "16 Feb 2027"
           },
           {
             "src": "to Giles",
             "ttl": "morning mate — yeah we’re all good. Valentine’s Day, eh. Who knew?",
             "snip": "08:41. Another win for the conspiracy theorists.",
             "tag": "Not Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "08:41",
+            "date": "16 Feb 2027"
           },
           {
             "src": "to Dave",
             "ttl": "Pain in the arse this. I’m guessing Palace game will be off?",
             "snip": "08:44. Dave’s biggest concern will be football. I’ll play along.",
             "tag": "Not Delivered",
-            "cls": ""
+            "cls": "",
+            "time": "08:44",
+            "date": "16 Feb 2027"
           }
         ]
       }
@@ -10904,14 +11528,18 @@
             "ttl": "<strong>SITUATION UPDATE — 06:30 GMT —</strong><br>Remain calm. Remain indoors while situation is assessed. Initial reports indicate cyber attack limited to financial and digital infrastructure. Power, water, and essential services remain operational. Further guidance will follow.",
             "snip": "Stay calm. When the government tells you to stay calm, something is not calm.",
             "tag": "UK-EMRG-2027-002",
-            "cls": "x"
+            "cls": "x",
+            "time": "06:30 GMT",
+            "date": "15 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "<strong>COMMUNICATIONS UPDATE — 06:45 GMT —</strong><br>Internet access, email, and messaging platforms are offline as a precaution while systems are assessed. Telephone calls and SMS remain operational but may be congested — use for essential contact only. Official communications will be issued via this channel and BBC broadcast.",
             "snip": "Internet gone. Email gone. 'Precaution,' they say. The word is working overtime today.",
             "tag": "UK-EMRG-2027-003",
-            "cls": "x"
+            "cls": "x",
+            "time": "06:45 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10923,14 +11551,18 @@
             "ttl": "im ok at mikes. phone's been going mental. wtf is happening",
             "snip": "06:45. Sam's awake. Sam's safe. He'll probably try and play golf.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "06:45",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Mum (Spain)",
             "ttl": "Mum — are you ok? Message when you can. x",
             "snip": "Sent 6:55am. Single tick. Pending.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "06:55",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10942,7 +11574,9 @@
             "ttl": "<strong>GUIDANCE UPDATE — 07:00 GMT —</strong><br>Those preparing for work or travel should remain at home. All non-essential businesses will close today. Schools will remain closed. Accident and Emergency departments, pharmacies, and essential medical services remain operational. Stay local.",
             "snip": "'Will close.' Not 'advised to.' Not 'may.' Will.",
             "tag": "UK-EMRG-2027-004",
-            "cls": "x"
+            "cls": "x",
+            "time": "07:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10954,7 +11588,9 @@
             "ttl": "Anyone else's internet completely down? Can't get anything to load.",
             "tag": "Failed · 07:32",
             "cls": "",
-            "snip": "07:32. WhatsApp down. Obviously. But you try anyway."
+            "snip": "07:32. WhatsApp down. Obviously. But you try anyway.",
+            "time": "07:32",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10966,7 +11602,9 @@
             "ttl": "<strong>TRANSPORT STATUS — 08:00 GMT —</strong><br>Aviation, rail, and underground services suspended. Air traffic control, signalling, and ticketing systems are affected. Eurostar services suspended. Ferry services operating emergency schedule only. Road network operational — non-essential travel discouraged. Do not attempt to travel to airports or stations.",
             "snip": "'Affected.' What does that mean? Cancelled? Or broken? Two different things.",
             "tag": "UK-EMRG-2027-005",
-            "cls": "x"
+            "cls": "x",
+            "time": "08:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10978,7 +11616,9 @@
             "ttl": "Sam's at Mike's. Emilia said Amy picked her up earlier. Is she with you yet? Haven't heard from her since. Just checking. Hope you're all ok. x",
             "snip": "8:10am. The ex. No comment.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "08:10",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -10990,7 +11630,9 @@
             "ttl": "mate you seeing this? phones going mad",
             "tag": "Failed · 08:31",
             "cls": "",
-            "snip": "08:31. Still trying."
+            "snip": "08:31. Still trying.",
+            "time": "08:31",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11002,14 +11644,18 @@
             "ttl": "hey mate — can't get hold of Amy. she ok? everyones ok this end. batshit morning",
             "snip": "8:47am. Jamie. Brighton. Already pragmatic about it. 'Batshit' doing the emotional work.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "08:47",
+            "date": "15 Feb 2027"
           },
           {
             "src": "from Dave",
             "ttl": "fuck me. you ok?",
             "snip": "8:52am. Dave. Four words. The right four.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "08:52",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11021,7 +11667,9 @@
             "ttl": "<strong>NCSC UPDATE — 09:00 GMT —</strong><br>Cyber incident affecting UK financial and digital infrastructure under active investigation. Scope appears limited to banking, payments, and online services. Essential utilities and emergency services unaffected. Precautionary measures remain in force.",
             "snip": "'Under active investigation.' 'Appears limited.' The language of a statement written before anyone knows anything.",
             "tag": "UK-EMRG-2027-006",
-            "cls": "x"
+            "cls": "x",
+            "time": "09:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11033,7 +11681,9 @@
             "ttl": "Amy picking up? Cee's fine, we're both fine. This is it, isn't it. Told you.",
             "snip": "9:34am. Rupert. 'Told you' — he's been saying it for fifteen years. Today he's right. Doesn't make it better.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "09:34",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11045,14 +11695,18 @@
             "ttl": "<strong>INTERNATIONAL UPDATE — 11:00 GMT —</strong><br>Partner nations have reported similar disruption to digital and financial infrastructure. Response being coordinated through established international channels. UK assessment and containment continues. Further updates to follow.",
             "snip": "Not just us, then. They're saying 'partner nations' without saying who. How many is 'partner'?",
             "tag": "UK-EMRG-2027-007",
-            "cls": "x"
+            "cls": "x",
+            "time": "11:00 GMT",
+            "date": "15 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "<strong>TREASURY STATEMENT — 13:00 GMT —</strong><br>All customer deposits are protected. Banking systems are offline as a precaution, not because of loss. Do not attempt to withdraw funds or access online banking. Physical currency in circulation remains legal tender. Further financial guidance to follow.",
             "snip": "They're reassuring us about money we can't get to. 'Precaution' doing heavy lifting again.",
             "tag": "UK-EMRG-2027-008",
-            "cls": "x"
+            "cls": "x",
+            "time": "13:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11064,7 +11718,9 @@
             "ttl": "anyone? hello??",
             "tag": "Failed · 13:22",
             "cls": "",
-            "snip": "13:22. Five hours later. Still nothing."
+            "snip": "13:22. Five hours later. Still nothing.",
+            "time": "13:22",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11076,14 +11732,18 @@
             "ttl": "<strong>SITUATION UPDATE — 14:00 GMT —</strong><br>Assessment continues. No threat to power, water, or healthcare systems identified. Stay local. Avoid non-essential travel. The Prime Minister will address the nation later today. Further updates will follow via this channel and BBC broadcast.",
             "snip": "No threat identified. Not yet. Always not yet.",
             "tag": "UK-EMRG-2027-009",
-            "cls": "x"
+            "cls": "x",
+            "time": "14:00 GMT",
+            "date": "15 Feb 2027"
           },
           {
             "src": "UK GOV",
             "ttl": "<strong>COMMUNICATIONS UPDATE — 14:30 GMT —</strong><br>The Autonomous Resilience Cloud (ARC) Emergency application has been automatically installed on all UK mobile devices to enable secure, verified public communications. ARC Emergency will relay official guidance and critical updates during the ongoing assessment. No action required.",
             "snip": "Something has installed itself on my phone. That is the message. The rest is decoration.",
             "tag": "UK-EMRG-2027-010",
-            "cls": "x"
+            "cls": "x",
+            "time": "14:30 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11095,14 +11755,18 @@
             "ttl": "Love, are you all ok? We've just heard. Peter's trying to get the news on. xx",
             "snip": "15:30. Peter and Jenny. They don't text first, usually.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "15:30",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Jenny",
             "ttl": "We're fine. Amy's back from her drive. All four kids accounted for. Will call when lines free up. Love to Peter xx",
             "snip": "Sent 15:34. Two ticks. Green. Something landed today.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "15:34",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11114,7 +11778,9 @@
             "ttl": "<strong>REMINDER — 16:00 GMT —</strong><br>The Prime Minister will address the nation at 18:00 GMT on all BBC television and radio channels. Verified updates via ARC Emergency.",
             "snip": "All afternoon for one broadcast. The waiting is the point.",
             "tag": "UK-EMRG-2027-011",
-            "cls": "x"
+            "cls": "x",
+            "time": "16:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11126,21 +11792,27 @@
             "ttl": "Mum please just let me know you're ok. We're all OK. Back to normal soon I'm sure x",
             "snip": "Sent 16:15pm. Pending. Still one tick. Nine hours.",
             "tag": "Pending",
-            "cls": ""
+            "cls": "",
+            "time": "16:15",
+            "date": "15 Feb 2027"
           },
           {
             "src": "from Dev",
             "ttl": "you seeing this",
             "snip": "16:48. Dev. Three words. No question mark. He doesn't need one.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "16:48",
+            "date": "15 Feb 2027"
           },
           {
             "src": "to Dev",
             "ttl": "Emergency messages? On the dot?",
             "snip": "Sent 16:52. That ARC acronym still hasn't come to me.",
             "tag": "Sent",
-            "cls": ""
+            "cls": "",
+            "time": "16:52",
+            "date": "15 Feb 2027"
           }
         ]
       },
@@ -11153,7 +11825,9 @@
             "snip": "A new voice. Calm. Certain. Already speaking as though we know it.",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "PM address confirmed for 18:00"
+            "txt": "PM address confirmed for 18:00",
+            "time": "17:00 GMT",
+            "date": "15 Feb 2027"
           }
         ]
       }
@@ -11167,49 +11841,56 @@
             "ttl": "Community Recovery Centres are expanding services in your area. Visit your nearest centre for healthcare, food collection, and support.",
             "snip": "Recovery Centres. New name. Same community centres Kate's been volunteering at for three weeks. New desks. New equipment. New name.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. ARC Emergency payments now accepted at over 85% of UK retail locations.",
             "snip": "Eighty-five percent. The corner shop got a new terminal last week. The bloke at the market still takes cash. He's one of the fifteen percent and shrinking.",
             "tag": "£200.00",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Emergency Payment Module activated. Your device has been credited £200.00. Tap to pay at participating retailers. Weekly refresh every Sunday.",
             "snip": "Two hundred quid appeared on his phone. No form. No application. No questions. Just: here's money, go shopping.",
             "tag": "£200.00",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Participating retailers: Tesco, Sainsbury's, Asda, Morrisons, Boots, Superdrug, BP, Shell, Esso. Purchase limits in effect. Additional retailers joining daily.",
             "snip": "The same shops. The same terminals. The beep would sound the same. The receipt would say ARC instead of Barclays. Three items per category. Nobody complained.",
             "tag": "EPM",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "PM Weekly Address — key points: 'A solution is being built. Emergency payments are now active across the UK. We will not let this nation go hungry. We will not let this nation go dark.'",
             "snip": "We will not let this nation go dark. He said it like a promise. Dev would hear it like a threat.",
             "tag": "6:00pm",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Your Emergency Payment balance has been refreshed. Current balance: £200.00. Tap to pay at participating retailers.",
             "snip": "Second week. Same amount. Same beep. He bought dog food yesterday without thinking about it. The gesture was identical to every tap he'd made for years.",
             "tag": "£200.00",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           },
           {
             "src": "ARC",
             "ttl": "Additional retailers now accepting ARC Emergency payments. Check the retailer map in ARC Emergency for updated locations.",
             "snip": "The map is expanding. More pins every day. The corner shop isn't on it yet. The corner shop takes cash. The corner shop is starting to look old.",
             "tag": "Update",
-            "cls": "a"
+            "cls": "a",
+            "date": "14 Mar 2027"
           }
         ]
       },
@@ -11221,7 +11902,8 @@
             "ttl": "Sources suggest major economic announcement imminent. PM expected to address the nation 'within days.'",
             "snip": "Everyone knows something's coming. The community centres have biometric readers nobody's using yet. The BBC is asking questions shaped like answers.",
             "tag": "Breaking",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           }
         ]
       },
@@ -11233,35 +11915,40 @@
             "ttl": "Have you seen the BBC thing about AIDA? Some kind of AI assistant. Looks pretty sick actually.",
             "snip": "Pretty sick actually. George's generation hears 'AI assistant' and thinks 'useful.' Simon's generation hears it and thinks 'Skynet.' Neither is right.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           },
           {
             "src": "Amy's mum",
             "ttl": "Got the £200! Your dad worked out how to tap. Tesco had a queue but we got milk and bread and some proper food. Your brothers still aren't answering.",
             "snip": "Peter worked out how to tap. Seventy-three years old and he tapped his phone at Tesco and got milk. The revolution is a pensioner buying bread with a gesture he learned in forty seconds.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           },
           {
             "src": "Dave",
             "ttl": "Just tapped for dog food at Morrisons. Soldiers in the car park but they're just helping with the queues. Felt exactly the same as tapping before. Mental isn't it. Free money 😂",
             "snip": "Soldiers in the car park but they're just helping. Dave said it like it was normal. Four days ago there were no soldiers in the Morrisons car park. Now they're helping with the queues and Dave's buying dog food and it's normal.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           },
           {
             "src": "Dev",
             "ttl": "you there?",
             "snip": "Two words. Three days of silence on the group and then two words at 1am.",
             "tag": "1:00am",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           },
           {
             "src": "Dev",
             "ttl": "The timeline doesn't work. ARC Emergency compiled January 29th. AIDA architecture matches a DARPA proposal from 2024. BIS quarterly review page 178. The debt jubilee was designed before the attack. I've got names, dates, receipts. Read the thread.",
             "snip": "Dev's frenzy. The Signal group lit up at 1am and didn't stop until 4. Seven people reading. Nobody sleeping. Dev expecting you to absorb in an hour what took him weeks to map.",
             "tag": "Thread",
-            "cls": ""
+            "cls": "",
+            "date": "14 Mar 2027"
           }
         ]
       },
@@ -11273,7 +11960,8 @@
             "ttl": "Emergency measures now active. An emergency payment of £200 has been credited to all ARC-enabled devices. Major retailers are accepting ARC payments with purchase limits. Military personnel are providing logistics support at major distribution points. Food collection available at supermarkets and community centres for those without smartphones.",
             "snip": "Military personnel are providing logistics support. Not security. Not enforcement. Logistics support. The soldiers are carrying boxes and the sentence is carrying the weight.",
             "tag": "7:00am",
-            "cls": "x"
+            "cls": "x",
+            "date": "14 Mar 2027"
           }
         ]
       }
@@ -11291,7 +11979,9 @@
             "threadRef": "official",
             "ttl": "<strong>JOINT ADDRESS  21/2— 12:00 GMT — Transcript</strong>",
             "snip": "The Emergency Payment Module is live. Check your phone now.",
-            "isnew": true
+            "isnew": true,
+            "time": "12:00 GMT",
+            "date": "22 Feb 2027"
           }
         ]
       }
@@ -11490,7 +12180,7 @@
             "style": "news",
             "source": "BBC Travel",
             "title": "New airport biometric checks: what travellers need to know",
-            "date": "9 January 2027",
+            "date": "18 January 2027",
             "body": "<p>Facial recognition technology is now mandatory for all passengers departing from UK airports on domestic and EU routes, following the rollout of the Home Office’s Seamless Border Programme.</p><p>The system, which replaces traditional boarding pass checks at security gates, uses live facial matching against passport photographs stored in the Home Office’s biometric database. Passengers no longer need to present physical or digital boarding passes at any checkpoint — the camera does it for you.</p><p>The expansion follows a successful pilot at 14 airports last year. All 32 UK commercial airports are now equipped.</p><p>“This is about making travel faster and more secure,” said a Home Office spokesperson. “The technology eliminates document fraud and reduces queue times by up to 40%.”</p><p>Civil liberties groups have raised concerns about the scope of data retention. The Home Office confirmed that facial scans are stored for “up to 5 years for security purposes” but declined to specify which agencies have access.</p><p>Some passengers have reported delays when scanners fail to match — particularly in low lighting conditions or when passengers have changed appearance significantly since their passport photograph was taken. Gatwick reported 340 “secondary screening” referrals in the first week, up from an average of 12 under the old system.</p><p>Airlines have been told to remove all manual boarding pass checks by March.</p>",
             "footer": "BBC Travel"
           }
@@ -11593,7 +12283,7 @@
             "style": "news",
             "source": "BBC News — Cambridgeshire",
             "title": "Military activity at RAF Wyton part of 'routine readiness exercise', MoD confirms",
-            "date": "17 October 2026",
+            "date": "4 October 2026",
             "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
             "footer": "BBC News · Cambridgeshire · Filed under: Defence"
           }
@@ -11689,7 +12379,7 @@
             "style": "news",
             "source": "BBC News",
             "title": "Allied nations conduct parallel cyber resilience exercises",
-            "date": "14 January 2027",
+            "date": "17 January 2027",
             "body": "<p>NATO and Five Eyes member states have conducted a series of parallel cyber resilience exercises over the past six weeks, with military and civilian agencies in at least fourteen countries testing their response to simulated disruptions of critical infrastructure.</p><p>The exercises, described by officials in each country as routine, have included simulated attacks on financial settlement systems, energy distribution networks, and telecommunications infrastructure. Several have involved the deployment of military logistics units to civilian distribution points — a rehearsal, officials say, for scenarios in which digital infrastructure failures disrupt supply chains.</p><p>The UK's contribution has included expanded readiness exercises at RAF Wyton in Cambridgeshire, confirmed by the Ministry of Defence in October, and a series of unannounced military logistics deployments across southern England. Germany's Bundeswehr conducted a week-long exercise in December simulating the coordination of emergency food and fuel distribution. France's Secrétariat Général de la Défense et de la Sécurité Nationale ran a parallel exercise focused on payment system continuity. Australia, Canada, Japan, and Singapore have all confirmed similar programmes since November.</p><p>\"These are standard preparedness activities,\" said a NATO spokesperson. \"Alliance members routinely test their resilience across multiple domains. The timing reflects updated planning cycles, not a specific threat assessment.\"</p><p>However, the concentration of exercises within such a narrow window has drawn comment. Marcus Willett, Senior Adviser for Cyber at the International Institute for Strategic Studies and former director of cyber at GCHQ, noted that the overlap was unusual. \"Individual exercises are routine. Fourteen countries conducting them simultaneously, across the same infrastructure categories, within six weeks — that is coordination, not coincidence. The question is what they are coordinating for.\"</p><p>The exercises share several common features. Each has tested the military's ability to support civilian logistics in the event of widespread digital infrastructure failure — a scenario in which electronic payments, automated supply chains, and internet-dependent communications cease to function for an extended period. In at least three countries, military units have rehearsed the physical distribution of emergency supplies at pre-designated community sites.</p><p>This represents a shift in military planning doctrine. Traditionally, cyber defence has been treated as a digital problem requiring digital solutions — patching vulnerabilities, hardening networks, building redundancy. The introduction of physical military logistics into cyber resilience exercises suggests that defence planners are now considering scenarios in which digital defences fail entirely and the consequences spill into the physical world.</p><p>\"If the payment system goes down for a day, that's an IT problem,\" said one senior NATO official, speaking on background. \"If it goes down for a week, that's a logistics problem. If it goes down for a month, that's a public order problem. You plan for all three.\"</p><p>The UK government has declined to comment on whether the exercises are connected to the NCSC's decision to raise its cyber threat advisory to \"heightened\" earlier this month. A Ministry of Defence spokesperson said: \"The UK armed forces maintain a continuous programme of readiness exercises. We do not comment on the specific scenarios being tested.\"</p>",
             "footer": "BBC News · World · Filed under: Defence / Cyber Security"
           }
@@ -12107,19 +12797,19 @@
             "style": "substack",
             "source": "Finanzaufsicht Intern — Substack",
             "title": "German Payment Infrastructure Under Silent Upgrade",
-            "date": "22 January 2027",
-            "body": "<div class=\"sb-top-strip\"><span class=\"sb-mark\"></span><span class=\"sb-publication-small\">Finanzaufsicht Intern</span></div><div class=\"sb-author-row\"><div class=\"sb-avatar\">FI</div><div class=\"sb-name-block\"><div class=\"sb-name\">Finanzaufsicht Intern</div><div class=\"sb-sub\">Finanzaufsicht Intern · 22 Jan 2027</div></div></div><h1 class=\"sb-title\">German Payment Infrastructure Under Silent Upgrade</h1><div class=\"sb-divider\"></div><div class=\"sb-body\"><p>I spent eleven years in supervisory compliance at a Frankfurt-based institution I am not at liberty to name. I left in 2024. What I am about to describe is based on access I retained through professional contacts who remain inside the German payments ecosystem.</p><p>On the night of 20–21 January, approximately 800,000 Ingenico terminals across the German retail banking network received an unscheduled firmware update. The update was pushed through standard acquirer channels. No corresponding release note was issued by Ingenico GmbH. No merchant notification was sent.</p><p>I have reviewed the firmware image supplied by a contact at one of the three German acquirer networks. The payload structure is identical to the UK document now circulating on Signal and Telegram.</p><p><strong>The payload</strong></p><p>A dormant service container. Local biometric template storage. NFC write access. An encrypted callback to infrastructure that resolves to BIS systems in Basel — the same routing address described in the UK analysis published by Payment Systems Analysis this week.</p><p>The container hooks into the same authentication framework. In the UK, this framework is called ARC. In Germany, the equivalent layer was deployed under the Bundesbank’s Digital Resilience Programme last October. Different name. Same architecture. Same biometric template format.</p><p><strong>The timing</strong></p><p>The UK push was 18–19 January. The German push was 20–21 January. A 48-hour gap. This is not independent maintenance. Independent firmware updates do not coordinate across national payment fleets to within two days of each other.</p><p>The activation window is encrypted, as in the UK payload. I cannot determine the trigger date. But the deployment architecture is designed for simultaneous activation across every terminal that received the update.</p><p><strong>What I am saying</strong></p><p>I am saying that the infrastructure described in the UK document is not confined to the UK. Germany has received the same payload, through the same channels, on the same timeline. The biometric capability, the NFC write access, the BIS routing — all present.</p><p>I am not a conspiracy theorist. I spent over a decade ensuring German financial institutions met their regulatory obligations. I understand how firmware deployments work. This is not how they work.</p><p>I am publishing this under a pseudonym because I have obligations to former colleagues who provided access. I have no social media presence. I have no newsletter archive. Judge this on the technical content or discard it. I have no interest in building an audience.</p><p>If similar pushes have occurred in other jurisdictions — and I believe they have — I would encourage anyone with access to terminal firmware images to verify independently and publish. This should not rest on one UK analyst and one German pseudonym.</p></div><div class=\"sb-engagement\"><span class=\"sb-eng-item heart\">89</span><span class=\"sb-eng-item comment\">34</span><span class=\"sb-eng-item restack\">112</span><span class=\"sb-eng-item share\"></span><span class=\"sb-subscribe\">Subscribe</span></div>"
+            "date": "26 January 2027",
+            "body": "<div class=\"sb-top-strip\"><span class=\"sb-mark\"></span><span class=\"sb-publication-small\">Finanzaufsicht Intern</span></div><div class=\"sb-author-row\"><div class=\"sb-avatar\">FI</div><div class=\"sb-name-block\"><div class=\"sb-name\">Finanzaufsicht Intern</div><div class=\"sb-sub\">Finanzaufsicht Intern · 26 Jan 2027</div></div></div><h1 class=\"sb-title\">German Payment Infrastructure Under Silent Upgrade</h1><div class=\"sb-divider\"></div><div class=\"sb-body\"><p>I spent eleven years in supervisory compliance at a Frankfurt-based institution I am not at liberty to name. I left in 2024. What I am about to describe is based on access I retained through professional contacts who remain inside the German payments ecosystem.</p><p>On the night of 20–21 January, approximately 800,000 Ingenico terminals across the German retail banking network received an unscheduled firmware update. The update was pushed through standard acquirer channels. No corresponding release note was issued by Ingenico GmbH. No merchant notification was sent.</p><p>I have reviewed the firmware image supplied by a contact at one of the three German acquirer networks. The payload structure is identical to the UK document now circulating on Signal and Telegram.</p><p><strong>The payload</strong></p><p>A dormant service container. Local biometric template storage. NFC write access. An encrypted callback to infrastructure that resolves to BIS systems in Basel — the same routing address described in the UK analysis published by Payment Systems Analysis this week.</p><p>The container hooks into the same authentication framework. In the UK, this framework is called ARC. In Germany, the equivalent layer was deployed under the Bundesbank’s Digital Resilience Programme last October. Different name. Same architecture. Same biometric template format.</p><p><strong>The timing</strong></p><p>The UK push was 18–19 January. The German push was 20–21 January. A 48-hour gap. This is not independent maintenance. Independent firmware updates do not coordinate across national payment fleets to within two days of each other.</p><p>The activation window is encrypted, as in the UK payload. I cannot determine the trigger date. But the deployment architecture is designed for simultaneous activation across every terminal that received the update.</p><p><strong>What I am saying</strong></p><p>I am saying that the infrastructure described in the UK document is not confined to the UK. Germany has received the same payload, through the same channels, on the same timeline. The biometric capability, the NFC write access, the BIS routing — all present.</p><p>I am not a conspiracy theorist. I spent over a decade ensuring German financial institutions met their regulatory obligations. I understand how firmware deployments work. This is not how they work.</p><p>I am publishing this under a pseudonym because I have obligations to former colleagues who provided access. I have no social media presence. I have no newsletter archive. Judge this on the technical content or discard it. I have no interest in building an audience.</p><p>If similar pushes have occurred in other jurisdictions — and I believe they have — I would encourage anyone with access to terminal firmware images to verify independently and publish. This should not rest on one UK analyst and one German pseudonym.</p></div><div class=\"sb-engagement\"><span class=\"sb-eng-item heart\">89</span><span class=\"sb-eng-item comment\">34</span><span class=\"sb-eng-item restack\">112</span><span class=\"sb-eng-item share\"></span><span class=\"sb-subscribe\">Subscribe</span></div>"
           }
         },
         {
           "text": "BBC Verify — Payment terminal conspiracy theories: what the claims say and what we know",
           "src": "simon",
-          "turn": "17a",
+          "turn": "17c",
           "article": {
             "style": "news",
             "source": "BBC Verify",
             "title": "Payment terminal conspiracy theories: what the claims say and what we know",
-            "date": "26 January 2027",
+            "date": "10 February 2027",
             "body": "<p><strong>Payment terminal conspiracy theories: what the claims say and what we know</strong></p><p><em>BBC Verify has examined claims circulating on social media that millions of UK payment terminals have been secretly fitted with biometric surveillance technology.</em></p><p>Posts circulating on Telegram, X and Substack this week claim that millions of UK payment terminals have been secretly fitted with surveillance technology, including biometric scanners and connections to an international banking authority in Switzerland.</p><p>The claims, which have been shared tens of thousands of times, centre on a firmware update that was pushed to Ingenico and Verifone card machines on the night of 18–19 January.</p><p>BBC Verify has examined the key claims.</p><p><strong>The claim: A ‘dormant biometric payload’ was installed in 2.1 million terminals</strong></p><p>One widely shared Substack post, written by an anonymous author identifying themselves as a payment systems analyst, claims the firmware update contains a ‘dormant service container’ with biometric storage capability, NFC write access, and a connection to the Bank for International Settlements in Basel.</p><p>Industry sources told BBC Verify that overnight firmware updates are standard practice in the payment terminal industry. “Terminals receive updates regularly,” said a spokesperson for UK Finance, the trade body representing payment service providers. “These updates include security patches, compliance adjustments and performance improvements. They are pushed through authorised acquirer channels as a matter of routine.”</p><p><strong>The claim: The update connects to the Bank for International Settlements</strong></p><p>The BIS routing address cited in the viral posts is consistent with infrastructure used in the BIS Innovation Hub’s interoperability testing programme, which has been running since 2023. Payment terminals used in pilot schemes for cross-border settlement are known to route test data through BIS systems. Security researchers say this does not indicate covert activity.</p><p>“Seeing a BIS address in payment infrastructure is like seeing a .gov.uk address in a government website,” said Dr Marcus Webb, a cybersecurity researcher at Imperial College London. “It tells you who built the plumbing. It doesn’t tell you what’s flowing through it.”</p><p><strong>The claim: The firmware is ‘waiting for an activation signal’</strong></p><p>Several posts describe an encrypted ‘time-lock’ within the firmware that will activate all terminals simultaneously on a date chosen by the deployers. BBC Verify has not been able to independently verify this claim. Ingenico and Verifone declined to comment on the specifics of their firmware architecture, citing commercial confidentiality.</p><p><strong>The wider context</strong></p><p>The firmware claims have been amplified by accounts associated with conspiracy theories about central bank digital currencies, depopulation, and global financial control. Images referencing the ‘Mark of the Beast’ and the ‘Great Taking’ have been shared alongside the original technical analysis, making it difficult to separate technical claims from ideological framing.</p><p>The Bank of England confirmed that its digital pound consultation remains ongoing and that “no decisions have been made about implementation.”</p><p>UK Finance said it was “aware of the social media activity” and described the claims as “unfounded.”</p><p><em>BBC Verify rates the central claim — that payment terminals have been covertly fitted with biometric surveillance technology — as Misleading.</em></p><p><strong>What would you like BBC Verify to investigate?</strong></p><p>Please include a contact number if you are willing to speak to a BBC journalist.</p><p>You can also get in touch in the following ways:</p><p>Email: <strong>haveyoursay@bbc.co.uk</strong></p><p>WhatsApp: <strong>+44 7756 165803</strong></p><p>Tweet: <strong>@BBC_HaveYourSay</strong></p>",
             "footer": "BBC Verify"
           }
@@ -12273,7 +12963,7 @@
     },
     {
       "id": "reader-own",
-      "label": "Oddities & Loose Ends",
+      "label": "Convergences & Loose Ends",
       "items": [
         {
           "text": "The Ethical Skeptic — Master Exothermic Core-Mantle Decoupling",

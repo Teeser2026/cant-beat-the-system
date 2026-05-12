@@ -6183,7 +6183,7 @@ function renderBroadcast(turnData) {
 }
 
 function renderDream(turnData) {
-  // S191 — Dream iframe overlay. Mirrors renderBroadcast but with soft fade.
+  // S191 — Dream iframe overlay. Two-stage exit: fade to inky void, then click to advance.
   const file = turnData.dreamFile || 'dream-1.html';
 
   const wrap = document.querySelector('.wrap');
@@ -6209,29 +6209,85 @@ function renderDream(turnData) {
     });
   });
 
-  function closeDream() {
-    overlay.classList.remove('visible');
+  // Stage 2: inky void with video hint + kettle prompt
+  function showDreamExit() {
+    // Fade iframe content to black
+    iframe.style.transition = 'opacity 2s ease';
+    iframe.style.opacity = '0';
+
     setTimeout(() => {
-      overlay.remove();
-      wrap.style.display = '';
-      econBar.style.display = '';
-      goTo(state.turnIndex + 1);
-    }, 1500); // match the CSS transition duration
+      iframe.remove();
+
+      // Faint video pulse — the entity still there beneath the duvet
+      const video = document.createElement('video');
+      video.src = 'dream-entity.mp4';
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 3s ease;';
+      overlay.appendChild(video);
+      // Fade video in to barely-there
+      requestAnimationFrame(() => { video.style.opacity = '0.06'; });
+
+      // Click prompt — delayed entrance
+      const prompt = document.createElement('div');
+      prompt.innerHTML = 'Go and put the kettle on';
+      prompt.style.cssText = [
+        'position:absolute', 'bottom:15%', 'left:0', 'right:0',
+        'text-align:center', 'font-family:"Crimson Pro",serif',
+        'font-size:1.2rem', 'color:rgba(255,255,255,0)',
+        'cursor:pointer', 'transition:color 1s ease',
+        'letter-spacing:0.05em', 'user-select:none'
+      ].join(';') + ';';
+      overlay.appendChild(prompt);
+
+      // Fade prompt text in after a beat
+      setTimeout(() => {
+        prompt.style.color = 'rgba(255,255,255,0.3)';
+      }, 1500);
+
+      // Hover warmth
+      prompt.addEventListener('mouseenter', () => {
+        prompt.style.color = 'rgba(255,255,255,0.55)';
+      });
+      prompt.addEventListener('mouseleave', () => {
+        prompt.style.color = 'rgba(255,255,255,0.3)';
+      });
+
+      // Click to advance — fade everything out
+      prompt.addEventListener('click', () => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+          overlay.remove();
+          wrap.style.display = '';
+          econBar.style.display = '';
+          goTo(state.turnIndex + 1);
+        }, 1500);
+      });
+    }, 2000); // after iframe fade completes
   }
 
+  // Escape — immediate close (dev/testing bypass)
   document.addEventListener('keydown', function escHandler(e) {
     if (e.key === 'Escape') {
       document.removeEventListener('keydown', escHandler);
-      closeDream();
+      overlay.classList.remove('visible');
+      setTimeout(() => {
+        overlay.remove();
+        wrap.style.display = '';
+        econBar.style.display = '';
+        goTo(state.turnIndex + 1);
+      }, 1500);
     }
   });
 
-  // Receive CONTINUE from inside the dream iframe.
+  // Receive CONTINUE from inside the dream iframe → stage 2
   window.addEventListener('message', function msgHandler(e) {
     if (!e.data || typeof e.data !== 'object') return;
     if (e.data.type === 'dream-continue') {
       window.removeEventListener('message', msgHandler);
-      closeDream();
+      showDreamExit();
     }
   });
 }

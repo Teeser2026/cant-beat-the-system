@@ -45,6 +45,12 @@ b { font-weight: 600; }
 .a-blur.revealed { filter:blur(0); transform:translateY(0); }
 .a-slow { transform:translateY(80px); transition:opacity 4s cubic-bezier(.16,1,.3,1),transform 4s cubic-bezier(.16,1,.3,1); }
 .a-slow.revealed { transform:translateY(0); }
+.a-faith { transform:translateY(120px) scale(0.7); filter:blur(4px); transition:opacity 6s cubic-bezier(.16,1,.3,1), transform 6s cubic-bezier(.16,1,.3,1), filter 5s ease; }
+.a-faith.revealed { transform:translateY(0) scale(1); filter:blur(0); animation:faithGlow 5s ease-in-out infinite 6s; }
+@keyframes faithGlow {
+  0%, 100% { text-shadow:0 0 25px rgba(220,190,255,.15), 0 0 60px rgba(180,140,240,.08); }
+  50% { text-shadow:0 0 40px rgba(240,210,255,.30), 0 0 80px rgba(200,160,250,.18), 0 0 120px rgba(160,120,220,.08); }
+}
 .a-grow { transform:scale(0.2); filter:blur(3px); transition:opacity 2.5s cubic-bezier(.16,1,.3,1),transform 2.5s cubic-bezier(.16,1,.3,1),filter 1.8s ease; }
 .a-grow.revealed { transform:scale(1); filter:blur(0); }
 .a-shrink { transform:scale(2.8); filter:blur(5px); transition:opacity 2.5s cubic-bezier(.16,1,.3,1),transform 3s cubic-bezier(.16,1,.3,1),filter 2s ease; }
@@ -148,7 +154,14 @@ b { font-weight: 600; }
   transform-origin:center center;
 }
 #darkness-exit.expanding {
-  animation:darkness-expand 8s ease-in-out forwards;
+  animation:darkness-expand 8s ease-in-out 2;
+}
+@keyframes darkness-breathe {
+  0%, 100% { opacity:0.5; }
+  50% { opacity:0.06; }
+}
+.darkness-breathing {
+  animation:darkness-breathe 4s ease-in-out infinite;
 }
 .darkness-clickable {
   cursor:pointer;
@@ -311,8 +324,8 @@ b { font-weight: 600; }
 <div class="d a-up t-large c g-close"><b>Because I know</b></div>
 <div class="d a-up t-large c g-med" style="transition-delay:.3s"><b>The way I know Amy's face in the dark</b></div>
 
-<div class="d a-slow t-hero c glow g-close">Not by seeing</div>
-<div class="d a-slow t-monument c glow-strong g-large" style="font-weight:200">By Faith</div>
+<div class="d a-slow t-hero c glow g-abyss">Not by seeing</div>
+<div class="d a-faith t-monument c g-large" style="font-weight:200; letter-spacing:0.08em">By Faith</div>
 
 <div class="d a-up t-body c g-med">The body's spine, its brain, its hands, its skeleton, its nerves — none of them extend past a certain point. There is a place the body cannot go. It was there before the body began and will be there when the body <b>ceases to be</b>.</div>
 <div class="d a-up t-large c g-breath">I reach for it</div>
@@ -501,7 +514,8 @@ b { font-weight: 600; }
           setTimeout(()=>{
             darknessEl.classList.remove('expanding');
             darknessEl.classList.add('darkness-clickable');
-          },8000);
+            darknessEl.classList.add('darkness-breathing');
+          },16000);
         },2000);
         lastObs.unobserve(e.target);
       }

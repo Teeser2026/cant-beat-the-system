@@ -141,8 +141,19 @@ b { font-weight: 600; }
 .continue-btn { font-family:'Crimson Pro',serif; font-size:15px; font-weight:300; font-style:italic; color:var(--text-ghost); background:none; border:none; cursor:pointer; letter-spacing:6px; padding:20px 40px; transition:color 1s ease,letter-spacing 1s ease,text-shadow 1s ease; }
 .continue-btn:hover { color:var(--text-dim); letter-spacing:12px; text-shadow:0 0 30px var(--glow); }
 
-.breath-gated { opacity:0 !important; transform:translateY(30px); }
-.breath-gated.revealed { opacity:1 !important; transform:translateY(0); }
+.breath-gated {
+  opacity:0 !important; max-height:0; overflow:hidden;
+  margin-top:0 !important; margin-bottom:0 !important;
+  padding-top:0 !important; padding-bottom:0 !important;
+  transform:translateY(20px);
+  transition:opacity 2s ease, max-height 1.5s ease, margin 1s ease, padding 1s ease, transform 2s ease;
+}
+.breath-gated.revealed {
+  opacity:1 !important; max-height:200px; overflow:visible;
+  transform:translateY(0);
+}
+.breath-gated.revealed.g-close { margin-bottom:2.5vh !important; }
+.breath-gated.revealed.g-large { margin-bottom:12vh !important; }
 #breath-blocker { min-height:60vh; transition:min-height 2s ease; }
 #breath-blocker.collapsed { min-height:0; }
 
@@ -363,8 +374,10 @@ b { font-weight: 600; }
     heartbeat:  document.getElementById('audio-heartbeat'),
     scanner:    document.getElementById('audio-scanner')
   };
+  const ambientAudio = document.getElementById('audio-ambient');
 
   Object.values(audioMap).forEach(a => { a.volume = 0; });
+  if (ambientAudio) ambientAudio.volume = 0;
 
   let activeAudio = null;
 
@@ -444,6 +457,17 @@ b { font-weight: 600; }
         const audio = audioMap[key];
         const cfg = triggers[key];
         if (audio && cfg) {
+          // Start ambient drone on first audio trigger
+          if (ambientAudio && ambientAudio.paused) {
+            ambientAudio.volume = 0;
+            ambientAudio.play().catch(() => {});
+            let aVol = 0;
+            const aFade = setInterval(() => {
+              aVol = Math.min(0.08, aVol + 0.002);
+              ambientAudio.volume = aVol;
+              if (aVol >= 0.08) clearInterval(aFade);
+            }, 100);
+          }
           if (key === 'gongs') gongsPlayCount = 0;
           if (key === 'strings') stringsPlayCount = 0;
           fadeIn(audio, cfg.vol, cfg.fade);
@@ -506,25 +530,7 @@ b { font-weight: 600; }
     breathObs.observe(breathHeader);
   }
 
-  // ── Background ambient: starts on first scroll ──
-  const ambient=document.getElementById('audio-ambient');
-  if(ambient){
-    let ambientStarted=false;
-    window.addEventListener('scroll',function startAmbient(){
-      if(ambientStarted)return;
-      ambientStarted=true;
-      ambient.volume=0;
-      ambient.play().catch(()=>{});
-      // Fade in to 8%
-      let vol=0;
-      const fadeInt=setInterval(()=>{
-        vol=Math.min(0.08,vol+0.002);
-        ambient.volume=vol;
-        if(vol>=0.08)clearInterval(fadeInt);
-      },100);
-      window.removeEventListener('scroll',startAmbient);
-    });
-  }
+  // ── Background ambient: started by audio system (see audioMap) ──
 
   // ── "From the darkness" — auto-exit, no click ──
   const darknessEl=document.getElementById('darkness-exit');

@@ -5419,6 +5419,25 @@
       "title": "Joint Address · Day 2 Evening"
     },
     {
+      "id": "24b",
+      "num": "T24b",
+      "title": "Restoration",
+      "date": "16 FEBRUARY 2027",
+      "paras": [
+        {
+          "t": "[STUB — Post-BC3. Evening. Power's back, or partly. The house exhales. Amy makes tea. Kids settle. The PM's words hang. Simon watches the kettle boil. Everything almost normal. Almost.]"
+        }
+      ]
+    },
+    {
+      "id": "D1",
+      "isQuestion": true,
+      "questionMode": "dream",
+      "dreamFile": "dream-1.html",
+      "paras": [],
+      "title": "Dream 1"
+    },
+    {
       "id": 25,
       "num": "T25",
       "title": "The Beep",

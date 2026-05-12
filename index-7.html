@@ -3070,6 +3070,19 @@ body.game-active .ticker-bar { display: flex; }
   width: 100%; height: 100%; border: 0; display: block;
 }
 
+.dream-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #000;
+  display: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+.dream-overlay.open { display: block; }
+.dream-overlay.visible { opacity: 1; }
+.dream-overlay iframe {
+  width: 100%; height: 100%; border: 0; display: block;
+}
+
 
 #sound-prompt-overlay {
   position: fixed;
@@ -6169,6 +6182,60 @@ function renderBroadcast(turnData) {
   });
 }
 
+function renderDream(turnData) {
+  // S191 — Dream iframe overlay. Mirrors renderBroadcast but with soft fade.
+  const file = turnData.dreamFile || 'dream-1.html';
+
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+
+  // Build overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'dream-overlay open';
+
+  const iframe = document.createElement('iframe');
+  iframe.src = file;
+  iframe.title = turnData.title || 'Dream';
+  overlay.appendChild(iframe);
+
+  document.body.appendChild(overlay);
+
+  // Soft fade in — rAF so the browser registers opacity:0 first
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+    });
+  });
+
+  function closeDream() {
+    overlay.classList.remove('visible');
+    setTimeout(() => {
+      overlay.remove();
+      wrap.style.display = '';
+      econBar.style.display = '';
+      goTo(state.turnIndex + 1);
+    }, 1500); // match the CSS transition duration
+  }
+
+  document.addEventListener('keydown', function escHandler(e) {
+    if (e.key === 'Escape') {
+      document.removeEventListener('keydown', escHandler);
+      closeDream();
+    }
+  });
+
+  // Receive CONTINUE from inside the dream iframe.
+  window.addEventListener('message', function msgHandler(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (e.data.type === 'dream-continue') {
+      window.removeEventListener('message', msgHandler);
+      closeDream();
+    }
+  });
+}
+
 function renderSlider(turnData) {
   const overlay = document.getElementById('slider-overlay');
   overlay.style.display = 'flex';
@@ -6729,6 +6796,16 @@ function goTo(idx) {
     return;
   }
 
+  // ── DREAM — soft-fade overlay (S191) ──
+  if (turn.questionMode === 'dream') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderDream(turn);
+    updateNavList();
+    return;
+  }
+
   // ── SLIDER — full-screen takeover ──
   if (turn.questionMode === 'slider') {
     titleEl.style.display = 'none';
@@ -6774,6 +6851,8 @@ function goTo(idx) {
   if (slOv) { slOv.style.display = 'none'; slOv.innerHTML = ''; slOv.classList.remove('visible'); }
   const bcOv = document.getElementById('broadcast-overlay');
   if (bcOv) { bcOv.remove(); }
+  const drOv = document.querySelector('.dream-overlay');
+  if (drOv) { drOv.remove(); }
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';

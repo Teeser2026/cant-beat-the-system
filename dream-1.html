@@ -141,36 +141,10 @@ b { font-weight: 600; }
 .continue-btn { font-family:'Crimson Pro',serif; font-size:15px; font-weight:300; font-style:italic; color:var(--text-ghost); background:none; border:none; cursor:pointer; letter-spacing:6px; padding:20px 40px; transition:color 1s ease,letter-spacing 1s ease,text-shadow 1s ease; }
 .continue-btn:hover { color:var(--text-dim); letter-spacing:12px; text-shadow:0 0 30px var(--glow); }
 
-@keyframes darkness-expand {
-  0%   { transform:scale(1); opacity:0.6; }
-  8%   { transform:scale(1); opacity:0.6; }
-  40%  { transform:scale(5); opacity:0.85; letter-spacing:0.15em; }
-  60%  { transform:scale(5); opacity:0.85; letter-spacing:0.15em; }
-  95%  { transform:scale(1); opacity:0.5; letter-spacing:inherit; }
-  100% { transform:scale(1); opacity:0.5; letter-spacing:inherit; }
-}
-#darkness-exit {
-  will-change:transform,opacity;
-  transform-origin:center center;
-}
-#darkness-exit.expanding {
-  animation:darkness-expand 8s ease-in-out 2;
-}
-@keyframes darkness-breathe {
-  0%, 100% { opacity:0.5; }
-  50% { opacity:0.06; }
-}
-.darkness-breathing {
-  animation:darkness-breathe 4s ease-in-out infinite;
-}
-.darkness-clickable {
-  cursor:pointer;
-  transition:text-shadow 1s ease, color 1s ease;
-}
-.darkness-clickable:hover {
-  text-shadow:0 0 30px rgba(180,160,200,0.25);
-  color:var(--text-ghost);
-}
+.breath-gated { opacity:0 !important; transform:translateY(30px); }
+.breath-gated.revealed { opacity:1 !important; transform:translateY(0); }
+#breath-blocker { min-height:60vh; transition:min-height 2s ease; }
+#breath-blocker.collapsed { min-height:0; }
 
 @media (max-width:600px) {
   .t-monument { font-size:52px; } .t-hero { font-size:40px; } .t-breath { font-size:28px; }
@@ -197,12 +171,13 @@ b { font-weight: 600; }
 <div class="d a-slow t-hero c glow g-abyss">Oblivion</div>
 <div class="d a-breathe-pulse t-monument c glow" style="font-size:144px; margin-bottom:120vh">Breathe</div>
 <div class="d a-blur t-breath c g-huge">4-7-8 Breathing</div>
-<div class="d a-up t-large c g-close">Inhale…</div>
-<div class="d a-blur t-body c g-large">Four seconds, through the nose</div>
-<div class="d a-up t-large c g-close">Hold…</div>
-<div class="d a-blur t-body c g-large">Seven seconds</div>
-<div class="d a-up t-large c g-close">Exhale…</div>
-<div class="d a-blur t-body c g-large">Eight seconds, through the nose</div>
+<div class="d breath-gated a-up t-large c g-close" data-breath="0">Inhale…</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="2000">Four seconds, through the nose</div>
+<div class="d breath-gated a-up t-large c g-close" data-breath="6000">Hold…</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="8000">Seven seconds</div>
+<div class="d breath-gated a-up t-large c g-close" data-breath="15000">Exhale…</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="17000">Eight seconds, through the nose</div>
+<div id="breath-blocker"></div>
 <div class="d a-up t-large c g-large">A mantra</div>
 <div class="d a-blur t-body c g-close">Breathing in…</div>
 <div class="d a-blur t-body c g-large">'I know I am breathing in'</div>
@@ -360,7 +335,7 @@ b { font-weight: 600; }
 <div class="d a-up t-body c g-med">The feeling is already fading. The feeling of <b>something vast</b>, alive, relentless. Something I've <b>been inside</b>, something I've been a part of for my <b>whole life</b>.</div>
 <div class="d a-up t-body c g-close">I pull the duvet up to cover my eyes</div>
 <div class="d a-up t-body c g-close">Not from the light</div>
-<div class="d a-up t-small c g-large" id="darkness-exit">From the darkness</div>
+<div class="d a-up t-small c g-void" id="darkness-exit">From the darkness</div>
 
 <div style="min-height:30vh;"></div>
 </div>
@@ -372,6 +347,7 @@ b { font-weight: 600; }
 <audio id="audio-nightmares" src="dream-nightmares.mp3" preload="auto"></audio>
 <audio id="audio-heartbeat" src="dream-heartbeat.mp3" preload="auto"></audio>
 <audio id="audio-scanner" src="dream-scanner.mp3" preload="auto"></audio>
+<audio id="audio-ambient" src="dream-ambient.mp3" preload="auto" loop></audio>
 
 <script>
 /* ═══════════════════════════════════════════════
@@ -498,35 +474,77 @@ b { font-weight: 600; }
   zones.threshold.video();wash.style.background=zones.threshold.wash;vaT.style.opacity=1;
 })();
 (function(){
+  // ── Scroll-reveal observer (skips breath-gated elements) ──
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}});
   },{threshold:0,rootMargin:'0px 0px -15% 0px'});
-  document.querySelectorAll('.d').forEach(el=>obs.observe(el));
-  // "From the darkness" — expand, contract, become clickable exit
-  const darknessEl=document.getElementById('darkness-exit');
-  const lastObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        // Wait a beat, then trigger expansion
-        setTimeout(()=>{
-          darknessEl.classList.add('expanding');
-          // After animation completes (8s), make it clickable
+  document.querySelectorAll('.d:not(.breath-gated)').forEach(el=>obs.observe(el));
+
+  // ── Breathing gate: timed reveal triggered by "4-7-8 Breathing" ──
+  const breathHeader=document.querySelectorAll('.d.a-blur.t-breath')[0]||null;
+  const gatedEls=document.querySelectorAll('.breath-gated');
+  const blocker=document.getElementById('breath-blocker');
+
+  if(breathHeader && gatedEls.length){
+    const breathObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          breathObs.unobserve(e.target);
+          gatedEls.forEach(el=>{
+            const delay=parseInt(el.dataset.breath)||0;
+            setTimeout(()=>{
+              el.classList.add('revealed');
+            },delay);
+          });
+          // Collapse blocker after full sequence (25s)
           setTimeout(()=>{
-            darknessEl.classList.remove('expanding');
-            darknessEl.classList.add('darkness-clickable');
-            darknessEl.classList.add('darkness-breathing');
-          },16000);
-        },2000);
-        lastObs.unobserve(e.target);
-      }
+            if(blocker)blocker.classList.add('collapsed');
+          },25000);
+        }
+      });
+    },{threshold:0.5});
+    breathObs.observe(breathHeader);
+  }
+
+  // ── Background ambient: starts on first scroll ──
+  const ambient=document.getElementById('audio-ambient');
+  if(ambient){
+    let ambientStarted=false;
+    window.addEventListener('scroll',function startAmbient(){
+      if(ambientStarted)return;
+      ambientStarted=true;
+      ambient.volume=0;
+      ambient.play().catch(()=>{});
+      // Fade in to 8%
+      let vol=0;
+      const fadeInt=setInterval(()=>{
+        vol=Math.min(0.08,vol+0.002);
+        ambient.volume=vol;
+        if(vol>=0.08)clearInterval(fadeInt);
+      },100);
+      window.removeEventListener('scroll',startAmbient);
     });
-  },{threshold:0.5});
-  if(darknessEl)lastObs.observe(darknessEl);
+  }
+
+  // ── "From the darkness" — auto-exit, no click ──
+  const darknessEl=document.getElementById('darkness-exit');
+  if(darknessEl){
+    const darkObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          darkObs.unobserve(e.target);
+          // Reader has 5s to sit with the words, alone on screen
+          setTimeout(()=>{
+            if(window.parent&&window.parent!==window){
+              window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');
+            }
+          },5000);
+        }
+      });
+    },{threshold:0.5});
+    darkObs.observe(darknessEl);
+  }
 })();
-document.getElementById('darkness-exit').addEventListener('click',function(){
-  if(!this.classList.contains('darkness-clickable'))return;
-  if(window.parent&&window.parent!==window)window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');
-});
 </script>
 </body>
 </html>

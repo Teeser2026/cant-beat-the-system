@@ -6234,25 +6234,38 @@ function renderDream(turnData) {
       const prompt = document.createElement('div');
       prompt.innerHTML = 'Go and put the kettle on';
       prompt.style.cssText = [
-        'position:absolute', 'bottom:15%', 'left:0', 'right:0',
+        'position:absolute', 'top:50%', 'left:50%',
+        'transform:translate(-50%,-50%)',
         'text-align:center', 'font-family:"Crimson Pro",serif',
-        'font-size:1.2rem', 'color:rgba(255,255,255,0)',
-        'cursor:pointer', 'transition:color 1s ease',
-        'letter-spacing:0.05em', 'user-select:none'
+        'font-size:clamp(32px, 5vw, 52px)', 'font-weight:300',
+        'color:rgba(255,255,255,0)',
+        'cursor:pointer', 'transition:color 1.5s ease, text-shadow 1s ease',
+        'letter-spacing:0.06em', 'user-select:none',
+        'line-height:1.3', 'max-width:80vw'
       ].join(';') + ';';
       overlay.appendChild(prompt);
 
-      // Fade prompt text in after a beat
-      setTimeout(() => {
-        prompt.style.color = 'rgba(255,255,255,0.3)';
-      }, 1500);
+      // Inject pulse keyframe
+      const pulseStyle = document.createElement('style');
+      pulseStyle.textContent = '@keyframes kettlePulse { 0%,100% { opacity:0.35; } 50% { opacity:0.55; } }';
+      document.head.appendChild(pulseStyle);
 
-      // Hover warmth
+      // Fade prompt text in after a beat, then pulse
+      setTimeout(() => {
+        prompt.style.color = 'rgba(255,255,255,0.35)';
+        prompt.style.animation = 'kettlePulse 4s ease-in-out infinite';
+      }, 2000);
+
+      // Hover — bright and still
       prompt.addEventListener('mouseenter', () => {
-        prompt.style.color = 'rgba(255,255,255,0.55)';
+        prompt.style.animation = 'none';
+        prompt.style.color = 'rgba(255,255,255,0.7)';
+        prompt.style.textShadow = '0 0 40px rgba(200,180,230,0.2)';
       });
       prompt.addEventListener('mouseleave', () => {
-        prompt.style.color = 'rgba(255,255,255,0.3)';
+        prompt.style.textShadow = 'none';
+        prompt.style.color = 'rgba(255,255,255,0.35)';
+        prompt.style.animation = 'kettlePulse 4s ease-in-out infinite';
       });
 
       // Click to advance — fade everything out

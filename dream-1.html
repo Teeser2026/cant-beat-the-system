@@ -135,6 +135,30 @@ b { font-weight: 600; }
 .continue-btn { font-family:'Crimson Pro',serif; font-size:15px; font-weight:300; font-style:italic; color:var(--text-ghost); background:none; border:none; cursor:pointer; letter-spacing:6px; padding:20px 40px; transition:color 1s ease,letter-spacing 1s ease,text-shadow 1s ease; }
 .continue-btn:hover { color:var(--text-dim); letter-spacing:12px; text-shadow:0 0 30px var(--glow); }
 
+@keyframes darkness-expand {
+  0%   { transform:scale(1); opacity:0.6; }
+  8%   { transform:scale(1); opacity:0.6; }
+  40%  { transform:scale(5); opacity:0.85; letter-spacing:0.15em; }
+  60%  { transform:scale(5); opacity:0.85; letter-spacing:0.15em; }
+  95%  { transform:scale(1); opacity:0.5; letter-spacing:inherit; }
+  100% { transform:scale(1); opacity:0.5; letter-spacing:inherit; }
+}
+#darkness-exit {
+  will-change:transform,opacity;
+  transform-origin:center center;
+}
+#darkness-exit.expanding {
+  animation:darkness-expand 8s ease-in-out forwards;
+}
+.darkness-clickable {
+  cursor:pointer;
+  transition:text-shadow 1s ease, color 1s ease;
+}
+.darkness-clickable:hover {
+  text-shadow:0 0 30px rgba(180,160,200,0.25);
+  color:var(--text-ghost);
+}
+
 @media (max-width:600px) {
   .t-monument { font-size:52px; } .t-hero { font-size:40px; } .t-breath { font-size:28px; }
   .t-large { font-size:24px; } .t-body { font-size:19px; } .d { padding:0 18px; }
@@ -323,10 +347,9 @@ b { font-weight: 600; }
 <div class="d a-up t-body c g-med">The feeling is already fading. The feeling of <b>something vast</b>, alive, relentless. Something I've <b>been inside</b>, something I've been a part of for my <b>whole life</b>.</div>
 <div class="d a-up t-body c g-close">I pull the duvet up to cover my eyes</div>
 <div class="d a-up t-body c g-close">Not from the light</div>
-<div class="d a-up t-small c g-large">From the darkness</div>
+<div class="d a-up t-small c g-large" id="darkness-exit">From the darkness</div>
 
-<div class="continue-wrap" id="continueWrap"><button class="continue-btn" id="dreamContinue">.&ensp;.&ensp;.</button></div>
-<div style="min-height:15vh;"></div>
+<div style="min-height:30vh;"></div>
 </div>
 
 <audio id="audio-gongs" src="dream-gongs.mp3" preload="auto"></audio>
@@ -466,13 +489,28 @@ b { font-weight: 600; }
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}});
   },{threshold:0,rootMargin:'0px 0px -15% 0px'});
   document.querySelectorAll('.d').forEach(el=>obs.observe(el));
-  const cw=document.getElementById('continueWrap'),allD=document.querySelectorAll('.d');
+  // "From the darkness" — expand, contract, become clickable exit
+  const darknessEl=document.getElementById('darkness-exit');
   const lastObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>cw.classList.add('visible'),1500);lastObs.unobserve(e.target)}});
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        // Wait a beat, then trigger expansion
+        setTimeout(()=>{
+          darknessEl.classList.add('expanding');
+          // After animation completes (8s), make it clickable
+          setTimeout(()=>{
+            darknessEl.classList.remove('expanding');
+            darknessEl.classList.add('darkness-clickable');
+          },8000);
+        },2000);
+        lastObs.unobserve(e.target);
+      }
+    });
   },{threshold:0.5});
-  if(allD.length)lastObs.observe(allD[allD.length-1]);
+  if(darknessEl)lastObs.observe(darknessEl);
 })();
-document.getElementById('dreamContinue').addEventListener('click',function(){
+document.getElementById('darkness-exit').addEventListener('click',function(){
+  if(!this.classList.contains('darkness-clickable'))return;
   if(window.parent&&window.parent!==window)window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');
 });
 </script>

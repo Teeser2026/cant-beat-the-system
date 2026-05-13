@@ -185,9 +185,9 @@ b { font-weight: 600; }
 <div class="d breath-gated a-up t-large c g-close" data-breath="0">Inhale…</div>
 <div class="d breath-gated a-blur t-body c g-large" data-breath="2000">Four seconds, through the nose</div>
 <div class="d breath-gated a-up t-large c g-close" data-breath="6000">Hold…</div>
-<div class="d breath-gated a-blur t-body c g-large" data-breath="8000">Seven seconds</div>
-<div class="d breath-gated a-up t-large c g-close" data-breath="15000">Exhale…</div>
-<div class="d breath-gated a-blur t-body c g-large" data-breath="17000">Eight seconds, through the nose</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="7000">Seven seconds</div>
+<div class="d breath-gated a-up t-large c g-close" data-breath="12000">Exhale…</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="14000">Eight seconds, through the nose</div>
 <div id="breath-blocker"></div>
 <div class="d a-up t-large c g-large">A mantra</div>
 <div class="d a-blur t-body c g-close">Breathing in…</div>
@@ -336,7 +336,7 @@ b { font-weight: 600; }
 <div class="d a-up t-body c g-med">The emptiness begins to fill</div>
 <div class="d a-up t-body c g-breath">I reach for my phone</div>
 <div class="d a-up t-body c g-close">Time</div>
-<div class="d a-up t-breath t-machine c g-breath">3:47am</div>
+<div class="d a-up t-breath t-machine c g-breath">6:47am</div>
 <div class="d a-up t-body c g-close">Blood sugar</div>
 <div class="d a-up t-breath t-machine c g-med">8.5 mmol/l</div>
 <div class="d a-up t-body c g-close">I feel grounded</div>
@@ -545,7 +545,7 @@ b { font-weight: 600; }
             document.documentElement.style.overflow='';
             document.body.style.overflow='';
             if(blocker)blocker.classList.add('collapsed');
-          },25000);
+          },22000);
         }
       });
     },{threshold:0.5});
@@ -554,14 +554,32 @@ b { font-weight: 600; }
 
   // ── Background ambient: started by audio system (see audioMap) ──
 
-  // ── "From the darkness" — auto-exit, no click ──
+  // ── "From the darkness" — auto-exit with audio fade ──
   const darknessEl=document.getElementById('darkness-exit');
   if(darknessEl){
     const darkObs=new IntersectionObserver(entries=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
           darkObs.unobserve(e.target);
-          // Reader has 5s to sit with the words, alone on screen
+
+          // Fade ALL audio to silence over 4s — the dream receding
+          const allAudio=document.querySelectorAll('audio');
+          allAudio.forEach(a=>{
+            if(a.paused)return;
+            const startVol=a.volume;
+            if(startVol<=0)return;
+            const steps=40;
+            const stepTime=4000/steps;
+            const volStep=startVol/steps;
+            let vol=startVol;
+            const fade=setInterval(()=>{
+              vol=Math.max(0,vol-volStep);
+              a.volume=vol;
+              if(vol<=0){clearInterval(fade);a.pause();}
+            },stepTime);
+          });
+
+          // Post dream-continue after 5s (audio already fading)
           setTimeout(()=>{
             if(window.parent&&window.parent!==window){
               window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');

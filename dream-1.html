@@ -136,10 +136,7 @@ b { font-weight: 600; }
 .millions-field.revealed .m:nth-child(12) { transition-delay:2.6s; }
 .millions-field.revealed .m:nth-child(13) { transition-delay:2.85s; }
 
-.continue-wrap { text-align:center; padding:20vh 24px 12vh; opacity:0; transition:opacity 3s ease; }
-.continue-wrap.visible { opacity:1; }
-.continue-btn { font-family:'Crimson Pro',serif; font-size:15px; font-weight:300; font-style:italic; color:var(--text-ghost); background:none; border:none; cursor:pointer; letter-spacing:6px; padding:20px 40px; transition:color 1s ease,letter-spacing 1s ease,text-shadow 1s ease; }
-.continue-btn:hover { color:var(--text-dim); letter-spacing:12px; text-shadow:0 0 30px var(--glow); }
+
 
 .breath-gated {
   opacity:0 !important; max-height:0; overflow:hidden;
@@ -167,8 +164,8 @@ b { font-weight: 600; }
 </head>
 <body>
 <div class="vid-atmos" id="va-threshold"><video src="dream-threshold.mp4" autoplay muted loop playsinline disablepictureinpicture></video></div>
-<div class="vid-atmos" id="va-entity"><video src="dream-entity.mp4" autoplay muted loop playsinline disablepictureinpicture></video></div>
-<div class="vid-atmos" id="va-depth"><video src="dream-depth.mp4" autoplay muted loop playsinline disablepictureinpicture></video></div>
+<div class="vid-atmos" id="va-entity"><video src="dream-entity.mp4" muted loop playsinline disablepictureinpicture></video></div>
+<div class="vid-atmos" id="va-depth"><video src="dream-depth.mp4" muted loop playsinline disablepictureinpicture></video></div>
 <div class="colour-wash" id="colourWash"></div>
 <div class="grain"></div>
 
@@ -187,7 +184,7 @@ b { font-weight: 600; }
 <div class="d breath-gated a-up t-large c g-close" data-breath="6000">Hold…</div>
 <div class="d breath-gated a-blur t-body c g-large" data-breath="7000">Seven seconds</div>
 <div class="d breath-gated a-up t-large c g-close" data-breath="12000">Exhale…</div>
-<div class="d breath-gated a-blur t-body c g-large" data-breath="14000">Eight seconds, through the nose</div>
+<div class="d breath-gated a-blur t-body c g-large" data-breath="14000">Eight seconds, through the mouth</div>
 <div id="breath-blocker"></div>
 <div class="d a-up t-large c g-large">A mantra</div>
 <div class="d a-blur t-body c g-close">Breathing in…</div>
@@ -481,13 +478,14 @@ b { font-weight: 600; }
 })();
 (function(){
   const vaT=document.getElementById('va-threshold'),vaE=document.getElementById('va-entity'),vaD=document.getElementById('va-depth'),wash=document.getElementById('colourWash');
-  document.querySelectorAll('.vid-atmos video').forEach(v=>v.play().catch(()=>{}));
+  const vT=vaT.querySelector('video'),vE=vaE.querySelector('video'),vD=vaD.querySelector('video');
+  vT.play().catch(()=>{});
   const zones={
-    threshold:{video:()=>{vaT.style.opacity=1;vaE.style.opacity=0;vaD.style.opacity=0},wash:'rgba(30,16,50,.55)'},
-    descent:{video:()=>{vaT.style.opacity=0.3;vaE.style.opacity=0.5;vaD.style.opacity=0},wash:'rgba(22,10,42,.50)'},
-    encounter:{video:()=>{vaT.style.opacity=0;vaE.style.opacity=1;vaD.style.opacity=0},wash:'rgba(14,6,28,.38)'},
-    depth:{video:()=>{vaT.style.opacity=0;vaE.style.opacity=0;vaD.style.opacity=1},wash:'rgba(6,2,14,.55)'},
-    waking:{video:()=>{vaT.style.opacity=1;vaE.style.opacity=0;vaD.style.opacity=0},wash:'rgba(30,16,50,.50)'}
+    threshold:{video:()=>{vaT.style.opacity=1;vaE.style.opacity=0;vaD.style.opacity=0;vT.play().catch(()=>{});vE.pause();vD.pause()},wash:'rgba(30,16,50,.55)'},
+    descent:{video:()=>{vaT.style.opacity=0.3;vaE.style.opacity=0.5;vaD.style.opacity=0;vT.play().catch(()=>{});vE.play().catch(()=>{});vD.pause()},wash:'rgba(22,10,42,.50)'},
+    encounter:{video:()=>{vaT.style.opacity=0;vaE.style.opacity=1;vaD.style.opacity=0;vT.pause();vE.play().catch(()=>{});vD.pause()},wash:'rgba(14,6,28,.38)'},
+    depth:{video:()=>{vaT.style.opacity=0;vaE.style.opacity=0;vaD.style.opacity=1;vT.pause();vE.pause();vD.play().catch(()=>{})},wash:'rgba(6,2,14,.55)'},
+    waking:{video:()=>{vaT.style.opacity=1;vaE.style.opacity=0;vaD.style.opacity=0;vT.play().catch(()=>{});vE.pause();vD.pause()},wash:'rgba(30,16,50,.50)'}
   };
   const markers=document.querySelectorAll('.zone-marker');
   const zoneObs=new IntersectionObserver(entries=>{
@@ -554,37 +552,43 @@ b { font-weight: 600; }
 
   // ── Background ambient: started by audio system (see audioMap) ──
 
-  // ── "From the darkness" — auto-exit with audio fade ──
+  // ── "From the darkness" — auto-exit with dwell check ──
   const darknessEl=document.getElementById('darkness-exit');
   if(darknessEl){
+    let darkTimer=null;
     const darkObs=new IntersectionObserver(entries=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          darkObs.unobserve(e.target);
+          if(darkTimer)return;
+          darkTimer=setTimeout(()=>{
+            darkObs.unobserve(e.target);
 
-          // Fade ALL audio to silence over 4s — the dream receding
-          const allAudio=document.querySelectorAll('audio');
-          allAudio.forEach(a=>{
-            if(a.paused)return;
-            const startVol=a.volume;
-            if(startVol<=0)return;
-            const steps=40;
-            const stepTime=4000/steps;
-            const volStep=startVol/steps;
-            let vol=startVol;
-            const fade=setInterval(()=>{
-              vol=Math.max(0,vol-volStep);
-              a.volume=vol;
-              if(vol<=0){clearInterval(fade);a.pause();}
-            },stepTime);
-          });
+            // Fade ALL audio to silence over 4s — the dream receding
+            const allAudio=document.querySelectorAll('audio');
+            allAudio.forEach(a=>{
+              if(a.paused)return;
+              const startVol=a.volume;
+              if(startVol<=0)return;
+              const steps=40;
+              const stepTime=4000/steps;
+              const volStep=startVol/steps;
+              let vol=startVol;
+              const fade=setInterval(()=>{
+                vol=Math.max(0,vol-volStep);
+                a.volume=vol;
+                if(vol<=0){clearInterval(fade);a.pause();}
+              },stepTime);
+            });
 
-          // Post dream-continue after 5s (audio already fading)
-          setTimeout(()=>{
-            if(window.parent&&window.parent!==window){
-              window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');
-            }
+            // Post dream-continue after audio fade completes
+            setTimeout(()=>{
+              if(window.parent&&window.parent!==window){
+                window.parent.postMessage({type:'dream-continue',id:'dream-1'},'*');
+              }
+            },4500);
           },5000);
+        } else {
+          if(darkTimer){clearTimeout(darkTimer);darkTimer=null;}
         }
       });
     },{threshold:0.5});

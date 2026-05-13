@@ -504,7 +504,7 @@ b { font-weight: 600; }
   },{threshold:0,rootMargin:'0px 0px -15% 0px'});
   document.querySelectorAll('.d:not(.breath-gated)').forEach(el=>obs.observe(el));
 
-  // ── Breathing gate: timed reveal triggered by "4-7-8 Breathing" ──
+  // ── Breathing gate: scroll-lock + timed reveal ──
   const breathHeader=document.querySelectorAll('.d.a-blur.t-breath')[0]||null;
   const gatedEls=document.querySelectorAll('.breath-gated');
   const blocker=document.getElementById('breath-blocker');
@@ -514,14 +514,36 @@ b { font-weight: 600; }
       entries.forEach(e=>{
         if(e.isIntersecting){
           breathObs.unobserve(e.target);
+
+          // Lock scroll — reader breathes with Simon
+          const scrollY=window.scrollY;
+          document.documentElement.style.overflow='hidden';
+          document.body.style.overflow='hidden';
+          window.scrollTo(0,scrollY);
+
+          // Reveal each breath line on real-time delay
           gatedEls.forEach(el=>{
             const delay=parseInt(el.dataset.breath)||0;
             setTimeout(()=>{
               el.classList.add('revealed');
+              // Scroll down slightly to keep revealed content in view
+              const rect=el.getBoundingClientRect();
+              if(rect.bottom>window.innerHeight*0.85){
+                document.documentElement.style.overflow='';
+                document.body.style.overflow='';
+                window.scrollBy({top:rect.bottom-window.innerHeight*0.6,behavior:'smooth'});
+                setTimeout(()=>{
+                  document.documentElement.style.overflow='hidden';
+                  document.body.style.overflow='hidden';
+                },600);
+              }
             },delay);
           });
-          // Collapse blocker after full sequence (25s)
+
+          // Unlock scroll after full sequence
           setTimeout(()=>{
+            document.documentElement.style.overflow='';
+            document.body.style.overflow='';
             if(blocker)blocker.classList.add('collapsed');
           },25000);
         }

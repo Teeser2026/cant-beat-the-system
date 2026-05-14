@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leipzig Trip Plan — May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a5c;
+    --gold: #c9a84c;
+    --gold-light: #e8d48b;
+    --cream: #faf6ed;
+    --warm-white: #fffdf7;
+    --text: #2a2a2a;
+    --muted: #6b7280;
+    --red: #c0392b;
+    --green: #27ae60;
+    --border: #e5e0d5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #2c5f8a 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 span { color: var(--gold); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero-meta strong { color: rgba(255,255,255,0.9); }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Day sections */
+  .day {
+    margin: 40px auto;
+    max-width: 860px;
+    padding: 0 24px;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .day-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .day-date {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .route-badge {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .tl-item {
+    position: relative;
+    padding: 0 0 20px 20px;
+  }
+
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--cream);
+  }
+
+  .tl-item.highlight::before {
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+  }
+
+  .tl-item.match::before {
+    background: var(--red);
+    box-shadow: 0 0 0 3px rgba(192,57,43,0.2);
+  }
+
+  .tl-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+
+  .tl-event {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .tl-detail {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: var(--navy);
+  }
+
+  .card p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .card.match-card {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3d5f 100%);
+    color: white;
+    border: none;
+  }
+
+  .card.match-card .card-label { color: var(--gold); }
+  .card.match-card h4 { color: white; font-size: 20px; }
+  .card.match-card p { color: rgba(255,255,255,0.7); }
+  .card.match-card .match-teams {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: white;
+  }
+  .card.match-card .match-teams span { color: var(--gold); }
+
+  .card.warning {
+    border-left: 3px solid var(--gold);
+    background: #fffbeb;
+  }
+
+  .card.taxi-card {
+    border-left: 3px solid var(--blue);
+  }
+
+  /* Route text */
+  .route-text {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin: 8px 0 16px;
+    line-height: 1.7;
+  }
+
+  .route-text strong { color: var(--text); font-weight: 500; }
+
+  /* Cost tables */
+  .cost-section {
+    margin: 40px auto;
+    max-width: 860px;
+    padding: 0 24px;
+  }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  .cost-table th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    padding: 10px 16px;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .cost-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .cost-table td:last-child {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .cost-table tr.total td {
+    border-top: 2px solid var(--navy);
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding-top: 14px;
+    color: var(--navy);
+  }
+
+  .cost-table .sub { color: var(--muted); font-size: 12px; }
+
+  /* Per person highlight */
+  .per-person {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+
+  .pp-box {
+    flex: 1;
+    min-width: 200px;
+    background: var(--navy);
+    color: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .pp-box .pp-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .pp-box .pp-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+  }
+
+  .pp-box .pp-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* Summary strip */
+  .summary-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .ss-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .ss-item .ss-day {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .ss-item .ss-place {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .ss-item .ss-drive {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Apps */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .app-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .app-item strong {
+    font-size: 13px;
+    color: var(--navy);
+  }
+
+  .app-item span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 24px;
+    margin-top: 48px;
+    font-size: 14px;
+  }
+
+  .footer .eagle {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+
+  .footer strong {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px auto;
+    max-width: 860px;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 40px 20px 36px; }
+    .summary-strip { grid-template-columns: repeat(2, 1fr); }
+    .apps-grid { grid-template-columns: 1fr; }
+    .per-person { flex-direction: column; }
+    .hero-meta { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">Journey Plan</div>
+    <h1>Leipzig <span>&</span> the<br>Conference League <span>Final</span></h1>
+    <p class="hero-sub">Heathfield → Folkestone → Calais → Germany → Maastricht → Home</p>
+    <div class="hero-meta">
+      <span><strong>26–29 May 2026</strong></span>
+      <span>Vehicle: <strong>JAECOO 7</strong></span>
+      <span>Passengers: <strong>4</strong></span>
+      <span>~1,800 km total</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY STRIP -->
+<div class="container" style="margin-top:28px;">
+  <div class="summary-strip">
+    <div class="ss-item">
+      <div class="ss-day">Tue 26</div>
+      <div class="ss-place">Teistungenburg</div>
+      <div class="ss-drive">6 hrs from Calais</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-day">Wed 27</div>
+      <div class="ss-place">Leipzig / Lagovida</div>
+      <div class="ss-drive">2.5 hrs + match</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-day">Thu 28</div>
+      <div class="ss-place">Maastricht</div>
+      <div class="ss-drive">5 hrs from Leipzig</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-day">Fri 29</div>
+      <div class="ss-place">Home</div>
+      <div class="ss-drive">3.5 hrs to Calais</div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">1</div>
+    <div>
+      <div class="day-title">Heathfield → Teistungenburg</div>
+      <div class="day-date">Tuesday 26 May</div>
+    </div>
+  </div>
+
+  <span class="route-badge">~620 km · ~6 hrs driving</span>
+
+  <p class="route-text">
+    A265 → A21 → M25 (J5) → M20 → J11A Folkestone &nbsp;|&nbsp;
+    Then: A16/A26 → Lille → Brussels ring → E40 → Liège → Aachen → A4 → Cologne → A2 → Dortmund → A44 → Kassel → A7 → Göttingen → B247 → Teistungenburg
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">06:45</div>
+      <div class="tl-event">Leave Heathfield</div>
+      <div class="tl-detail">Allow 1 hr 15 min to Folkestone via A21/M25/M20</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">08:00</div>
+      <div class="tl-event">Arrive Folkestone terminal</div>
+      <div class="tl-detail">Check-in closes 35 min before departure</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">08:36</div>
+      <div class="tl-event">LeShuttle departs → Calais 10:11</div>
+      <div class="tl-detail">35 min crossing · Short Stay Saver · £154</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">10:15</div>
+      <div class="tl-event">Exit Calais terminal → A26 south</div>
+      <div class="tl-detail">Head for Lille / Belgian border</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~13:00</div>
+      <div class="tl-event">Lunch stop — Aachen or Cologne area</div>
+      <div class="tl-detail">Roughly halfway. Aachen Altstadt for a sit-down, or Raststätte for speed. 45 min.</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">~16:30</div>
+      <div class="tl-event">Arrive Victor's Residenz-Hotel Teistungenburg</div>
+      <div class="tl-detail">Former hilltop monastery · Pool, sauna, buffet dinner</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Overnight</div>
+    <h4>Victor's Residenz-Hotel Teistungenburg</h4>
+    <p>Hilltop former monastery in the Eichsfeld countryside. Pool, sauna, themed dinner buffets. The village is tiny — the hotel is your evening. After 6+ hours driving, that's ideal.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DAY 2 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">2</div>
+    <div>
+      <div class="day-title">Leipzig — Conference League Final</div>
+      <div class="day-date">Wednesday 27 May</div>
+    </div>
+  </div>
+
+  <span class="route-badge">~240 km · ~2.5 hrs driving</span>
+
+  <p class="route-text">
+    B247 north → <strong>A38 east</strong> → all the way to Leipzig. Simple, fast, scenic through the Harz foothills and Thuringia.
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">~09:00</div>
+      <div class="tl-event">Leave Teistungenburg</div>
+      <div class="tl-detail">No rush — short drive today</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~11:30</div>
+      <div class="tl-event">Arrive Leipzig</div>
+      <div class="tl-detail">Park at P+R Völkerschlachtdenkmal — tram into centre</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">11:30–17:00</div>
+      <div class="tl-event">Explore Leipzig / fan zone / pre-match</div>
+      <div class="tl-detail">Altstadt, Thomaskirche, Auerbachs Keller, Barfußgässchen bars. Check CPFC socials for fan zone location.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~17:30</div>
+      <div class="tl-event">Head to Red Bull Arena</div>
+      <div class="tl-detail">Tram lines 3/7/8/15 to Sportforum Süd · ~15 min from centre</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">19:00</div>
+      <div class="tl-event">Gates open</div>
+    </div>
+    <div class="tl-item match">
+      <div class="tl-time">21:00 CEST / 20:00 BST</div>
+      <div class="tl-event">KICK-OFF</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~23:00–23:30</div>
+      <div class="tl-event">Final whistle</div>
+      <div class="tl-detail">Allow extra for extra time / penalties / celebrations</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">~00:00–00:30</div>
+      <div class="tl-event">Arrive Lagovida, Störmthaler See</div>
+      <div class="tl-detail">~25 km south · 30–45 min by taxi/car</div>
+    </div>
+  </div>
+
+  <div class="card match-card">
+    <div class="card-label">UEFA Conference League Final</div>
+    <div class="match-teams">Crystal Palace <span>vs</span> Rayo Vallecano</div>
+    <p>Red Bull Arena, Leipzig · 47,000 capacity · 21:00 CEST<br>Palace's first-ever European final. Rayo's too. History either way.</p>
+  </div>
+
+  <div class="card taxi-card">
+    <div class="card-label">Getting to Lagovida after the match</div>
+    <h4>Pre-book your taxi — don't wing it</h4>
+    <p>47,000 people pouring out = taxi chaos. Best options:</p>
+    <p style="margin-top:8px;">
+      <strong>FreeNow</strong> or <strong>Bolt</strong> app — pre-book a pickup from Leipzig Hauptbahnhof (tram there first, runs late on match nights)<br>
+      <strong>Taxi Leipzig:</strong> +49 341 4884 — call to pre-arrange a time/location<br>
+      <strong>LeipzigMOVE app</strong> — official city app with taxi integration<br>
+      <strong>Private transfer:</strong> GetTransfer.com or AirportTransfer.com<br><br>
+      <em>If one of you isn't drinking:</em> P+R Völkerschlachtdenkmal is on the route south to Großpösna — you could drive yourselves.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Overnight</div>
+    <h4>Lagovida — Das Ferienresort am Störmthaler See</h4>
+    <p>Lakeside resort in Großpösna, 20 min south of Leipzig. Lake views, restaurant, bar, private beach, sauna. A peaceful contrast to the match-night madness.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DAY 3 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">3</div>
+    <div>
+      <div class="day-title">Lagovida → Maastricht</div>
+      <div class="day-date">Thursday 28 May</div>
+    </div>
+  </div>
+
+  <span class="route-badge">~530 km · ~5 hrs driving</span>
+
+  <p class="route-text">
+    A38 west → Göttingen → A7 north → A2/A44 west → Dortmund → A1 south → <strong>Cologne</strong> → A4 west → Aachen → A76 → Maastricht
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">~10:00</div>
+      <div class="tl-event">Leave Lagovida</div>
+      <div class="tl-detail">Enjoy the lake views at breakfast — no rush</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~13:00</div>
+      <div class="tl-event">Lunch — Cologne Altstadt</div>
+      <div class="tl-detail">Quick detour off the A1/A4. Kölsch + Schnitzel at a Brauhaus by the Dom. 45 min.</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">~15:30</div>
+      <div class="tl-event">Arrive Van der Valk Hotel Maastricht</div>
+      <div class="tl-detail">Pool, spa, restaurant · Great city for an evening out</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Overnight</div>
+    <h4>Van der Valk Hotel Maastricht</h4>
+    <p>Pool, spa and good restaurant. Walk the old town in the evening — cross the Sint Servaasbrug, eat on the Vrijthof square. Try Café Sjiek for Burgundian cuisine or Gadiot for French-Dutch.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DAY 4 -->
+<div class="day">
+  <div class="day-header">
+    <div class="day-num">4</div>
+    <div>
+      <div class="day-title">Maastricht → Home</div>
+      <div class="day-date">Friday 29 May</div>
+    </div>
+  </div>
+
+  <span class="route-badge">~370 km to Calais · ~3.5 hrs driving</span>
+
+  <p class="route-text">
+    A2 west → Liège → E40/A3 → Brussels ring (R0 north) → E40 → <strong>Ghent</strong> → E40 → A16 → Dunkirk → Calais terminal
+  </p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">~10:00</div>
+      <div class="tl-event">Leave Maastricht</div>
+      <div class="tl-detail">Plenty of time — enjoy a relaxed breakfast</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~12:00</div>
+      <div class="tl-event">Lunch — Ghent</div>
+      <div class="tl-detail">Beautiful city. Wander the Graslei/Korenlei waterfront, grab lunch. ~1 hr stop.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~14:30</div>
+      <div class="tl-event">Continue to Calais</div>
+      <div class="tl-detail">~1 hr from Ghent</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~15:30</div>
+      <div class="tl-event">Arrive Calais terminal</div>
+      <div class="tl-detail">Browse duty-free, stretch legs</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">17:24</div>
+      <div class="tl-event">LeShuttle departs Calais → Folkestone 16:59</div>
+      <div class="tl-detail">Short Stay Saver · £212</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">~17:15</div>
+      <div class="tl-event">Drive Folkestone → Heathfield</div>
+      <div class="tl-detail">M20 → M25 → A21 → A265 · ~1 hr 15 min</div>
+    </div>
+    <div class="tl-item highlight">
+      <div class="tl-time">~18:30</div>
+      <div class="tl-event">Home</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- COSTS -->
+<div class="cost-section">
+  <div class="day-header">
+    <div class="day-num" style="font-size:20px;">£</div>
+    <div>
+      <div class="day-title">Trip Costs</div>
+      <div class="day-date">All amounts in GBP</div>
+    </div>
+  </div>
+
+  <table class="cost-table">
+    <thead>
+      <tr><th>Item</th><th>Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LeShuttle outbound — Tue 26 May<br><span class="sub">Folkestone 08:36 → Calais 10:11 · Short Stay Saver</span></td>
+        <td>£154</td>
+      </tr>
+      <tr>
+        <td>LeShuttle return — Fri 29 May<br><span class="sub">Calais 17:24 → Folkestone 16:59 · Short Stay Saver</span></td>
+        <td>£212</td>
+      </tr>
+      <tr>
+        <td>Victor's Residenz-Hotel Teistungenburg — Tue night<br><span class="sub">2 rooms × £105</span></td>
+        <td>£210</td>
+      </tr>
+      <tr>
+        <td>Lagovida, Störmthaler See — Wed night<br><span class="sub">2 rooms × £175</span></td>
+        <td>£350</td>
+      </tr>
+      <tr>
+        <td>Van der Valk Maastricht — Thu night<br><span class="sub">2 rooms × £140</span></td>
+        <td>£280</td>
+      </tr>
+      <tr>
+        <td>Fuel (est. ~1,800 km)<br><span class="sub">Based on ~8 l/100km, ~£1.50/l equivalent</span></td>
+        <td>~£200</td>
+      </tr>
+      <tr>
+        <td>Taxi — Red Bull Arena → Lagovida<br><span class="sub">Post-match, ~25 km</span></td>
+        <td>~£50</td>
+      </tr>
+      <tr>
+        <td>Tolls (Belgium motorways, etc.)<br><span class="sub">Minimal — most routes are toll-free</span></td>
+        <td>~£10</td>
+      </tr>
+      <tr class="total">
+        <td>Total trip cost (travel + hotels)</td>
+        <td>~£1,466</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="per-person">
+    <div class="pp-box">
+      <div class="pp-label">Per Person</div>
+      <div class="pp-amount">~£367</div>
+      <div class="pp-note">Travel + hotels (excl. food, drink & match tickets)</div>
+    </div>
+    <div class="pp-box">
+      <div class="pp-label">Per Room</div>
+      <div class="pp-amount">~£733</div>
+      <div class="pp-note">Per pair sharing · All travel + 3 nights</div>
+    </div>
+  </div>
+
+  <div class="card warning">
+    <div class="card-label">Not included</div>
+    <p>Match tickets · Food & drink · Parking at hotels · Travel insurance · Any Vignette (not required on this route)</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- APPS -->
+<div class="cost-section">
+  <div class="day-header" style="border-bottom-color: var(--border);">
+    <div>
+      <div class="day-title">Download Before You Go</div>
+      <div class="day-date">Essential apps for the trip</div>
+    </div>
+  </div>
+
+  <div class="apps-grid">
+    <div class="app-item">
+      <strong>LeShuttle</strong>
+      <span>Boarding pass, live departures & updates</span>
+    </div>
+    <div class="app-item">
+      <strong>LeipzigMOVE</strong>
+      <span>Trams, taxis, bike share across Leipzig</span>
+    </div>
+    <div class="app-item">
+      <strong>FreeNow or Bolt</strong>
+      <span>Pre-book taxi from stadium to hotel</span>
+    </div>
+    <div class="app-item">
+      <strong>Google Maps / Waze</strong>
+      <span>Download offline maps for Germany & Belgium</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="eagle">🦅</div>
+  <strong>Come on Palace!</strong>
+  <p style="margin-top:8px;">Leipzig · 27 May 2026 · Making history</p>
+</div>
+
+</body>
+</html>

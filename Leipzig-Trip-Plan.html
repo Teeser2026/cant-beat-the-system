@@ -240,6 +240,29 @@
     color: var(--navy);
   }
 
+  .card h4 a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--gold);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .card h4 a:hover {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+
+  .hotel-link {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .hotel-link:hover {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+
   .card p {
     font-size: 13.5px;
     color: var(--muted);
@@ -483,6 +506,9 @@
     <div class="hero-label">Journey Plan</div>
     <h1>Leipzig <span>&</span> the<br>Conference League <span>Final</span></h1>
     <p class="hero-sub">Heathfield → Folkestone → Calais → Germany → Maastricht → Home</p>
+    <div style="margin-bottom:20px; font-size:15px; color:rgba(255,255,255,0.85); letter-spacing:0.3px;">
+      Simon Teesdale &nbsp;·&nbsp; Dave Young &nbsp;·&nbsp; George Young &nbsp;·&nbsp; Louis Young
+    </div>
     <div class="hero-meta">
       <span><strong>26–29 May 2026</strong></span>
       <span>Vehicle: <strong>JAECOO 7</strong></span>
@@ -570,7 +596,7 @@
 
   <div class="card">
     <div class="card-label">Overnight</div>
-    <h4>Victor's Residenz-Hotel Teistungenburg</h4>
+    <h4><a href="https://www.victors.de/en/hotels/victor-s-residenz-hotel-teistungenburg" target="_blank">Victor's Residenz-Hotel Teistungenburg ↗</a></h4>
     <p>Hilltop former monastery in the Eichsfeld countryside. Pool, sauna, themed dinner buffets. The village is tiny — the hotel is your evening. After 6+ hours driving, that's ideal.</p>
   </div>
 </div>
@@ -655,7 +681,7 @@
 
   <div class="card">
     <div class="card-label">Overnight</div>
-    <h4>Lagovida — Das Ferienresort am Störmthaler See</h4>
+    <h4><a href="https://lagovida.de" target="_blank">Lagovida — Das Ferienresort am Störmthaler See ↗</a></h4>
     <p>Lakeside resort in Großpösna, 20 min south of Leipzig. Lake views, restaurant, bar, private beach, sauna. A peaceful contrast to the match-night madness.</p>
   </div>
 </div>
@@ -698,7 +724,7 @@
 
   <div class="card">
     <div class="card-label">Overnight</div>
-    <h4>Van der Valk Hotel Maastricht</h4>
+    <h4><a href="https://www.hotelvandervalkmaastricht.nl/" target="_blank">Van der Valk Hotel Maastricht ↗</a></h4>
     <p>Pool, spa and good restaurant. Walk the old town in the evening — cross the Sint Servaasbrug, eat on the Vrijthof square. Try Café Sjiek for Burgundian cuisine or Gadiot for French-Dutch.</p>
   </div>
 </div>
@@ -785,15 +811,15 @@
         <td>£212</td>
       </tr>
       <tr>
-        <td>Victor's Residenz-Hotel Teistungenburg — Tue night<br><span class="sub">2 rooms × £105</span></td>
+        <td><a class="hotel-link" href="https://www.victors.de/en/hotels/victor-s-residenz-hotel-teistungenburg" target="_blank">Victor's Residenz-Hotel Teistungenburg</a> — Tue night<br><span class="sub">2 rooms × £105</span></td>
         <td>£210</td>
       </tr>
       <tr>
-        <td>Lagovida, Störmthaler See — Wed night<br><span class="sub">2 rooms × £175</span></td>
+        <td><a class="hotel-link" href="https://lagovida.de" target="_blank">Lagovida, Störmthaler See</a> — Wed night<br><span class="sub">2 rooms × £175</span></td>
         <td>£350</td>
       </tr>
       <tr>
-        <td>Van der Valk Maastricht — Thu night<br><span class="sub">2 rooms × £140</span></td>
+        <td><a class="hotel-link" href="https://www.hotelvandervalkmaastricht.nl/" target="_blank">Van der Valk Maastricht</a> — Thu night<br><span class="sub">2 rooms × £140</span></td>
         <td>£280</td>
       </tr>
       <tr>

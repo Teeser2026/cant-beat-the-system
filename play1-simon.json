@@ -5801,7 +5801,7 @@
       "questionMode": "entity",
       "dreamFile": "the_entity_chapter1.html",
       "paras": [],
-      "title": "Chapter One"
+      "title": "Chapter One: The File"
     },
     {
       "id": 28,
@@ -6049,7 +6049,7 @@
       "questionMode": "entity",
       "dreamFile": "the_entity_epilogue.html",
       "paras": [],
-      "title": "Epilogue"
+      "title": "The Entity: Epilogue"
     },
     {
       "id": 37,
@@ -6126,1190 +6126,6 @@
         }
       ],
       "audio": null
-    },
-    {
-      "id": 38,
-      "num": "T38",
-      "title": "The First Week",
-      "date": "Apr 2027",
-      "paras": [
-        {
-          "t": "[STUB] AIDA settles in. BC arrives. Mortgage zeroed. Dev: \"So.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 39,
-      "num": "T39",
-      "title": "George Was Right",
-      "date": "Apr 2027",
-      "paras": [
-        {
-          "t": "[STUB] George fluent in AIDA. First cash refusal. Jenny mentions Jamie.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 40,
-      "num": "T40",
-      "title": "Jenny and Peter",
-      "date": "late Apr 2027",
-      "paras": [
-        {
-          "t": "[STUB] Amy's parents. Mortgage zeroed. Pension rebuilt. Jenny cries.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40a",
-      "num": "T40a",
-      "title": "Jamie",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Brothers holdout mirror begins. School-gate conversations.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40b",
-      "num": "T40b",
-      "title": "The Brothers",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Rupert's prescription. Jamie on a sofa. Family fracture.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "40c",
-      "num": "T40c",
-      "title": "Jamie's Sofa",
-      "date": "May 2027",
-      "paras": [
-        {
-          "t": "[STUB] Jamie's visible deterioration. Dev silence vs Jamie grinding.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 41,
-      "num": "T41",
-      "title": "The Wine",
-      "date": "Jun 2027",
-      "paras": [
-        {
-          "t": "[STUB] Dynamic pricing. Clubcard mechanism. AIDA curates the shopping list.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 42,
-      "num": "T42",
-      "title": "The Blade",
-      "date": "Jun 2027",
-      "paras": [
-        {
-          "t": "[STUB] Blade devices launch. Amy orders first. Consumer product, not mandate.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 43,
-      "num": "T43",
-      "title": "Amy Sleeps",
-      "date": "Jul 2027",
-      "paras": [
-        {
-          "t": "[STUB] Amy's anxiety recedes. Mortgage gone = fear gone. Schrödinger's steak.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 44,
-      "num": "T44",
-      "title": "Rupert",
-      "date": "Aug 2027",
-      "paras": [
-        {
-          "t": "[STUB] Rupert caves (prescription). Jamie alone. \"Don't give up on me.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 45,
-      "num": "T45",
-      "title": "The Numbers",
-      "date": "Sep 2027",
-      "paras": [
-        {
-          "t": "[STUB] 98% registered. Crime down 40%. Dev: \"How do you fight something that works?\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 46,
-      "num": "T46",
-      "title": "Kate's BBQ",
-      "date": "Oct 2027",
-      "paras": [
-        {
-          "t": "[STUB] Neighbourhood BBQ. Two who know, performing normalcy. Holdouts embarrassing.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 47,
-      "num": "T47",
-      "title": "The Dude",
-      "date": "Nov 2027",
-      "paras": [
-        {
-          "t": "[STUB] Dev: \"Alan's gone dark.\" The Dude vanishes. Ghost.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 48,
-      "num": "T48",
-      "title": "Christmas",
-      "date": "Dec 2027",
-      "paras": [
-        {
-          "t": "[STUB] First Christmas in the system. Dev: \"Still here. 20 nodes. Happy Christmas, mate.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 49,
-      "num": "T49",
-      "title": "Jamie",
-      "date": "Jan 2028",
-      "paras": [
-        {
-          "t": "[STUB] Jamie registers. \"Done it.\" Three words. Amy cries. Relief.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 50,
-      "num": "T50",
-      "title": "The Spreadsheet",
-      "date": "Feb 2028",
-      "paras": [
-        {
-          "t": "[STUB] Simon's market business obsolete. AIDA runs it. Stops opening the spreadsheet.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 51,
-      "num": "T51",
-      "title": "The Fête",
-      "date": "Apr 2028",
-      "paras": [
-        {
-          "t": "[STUB] AIDA commissions community fête. Simon organises it. Sets up bunting anyway.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 52,
-      "num": "T52",
-      "title": "George's Numbers",
-      "date": "May 2028",
-      "paras": [
-        {
-          "t": "[STUB] George earns double Simon's BC. Uni + creating. Absence of tension IS the Soma.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 53,
-      "num": "T53",
-      "title": "The Olympics",
-      "date": "Jul 2028",
-      "paras": [
-        {
-          "t": "[STUB] LA Olympics. Tattoo global launch. Athletes' biometric displays. Chloe: \"I want one.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 54,
-      "num": "T54",
-      "title": "Chloe",
-      "date": "Sep 2028",
-      "paras": [
-        {
-          "t": "[STUB] Consumer tattoo launch. Parental consent. Simon signs the form. Fashion as delivery.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 55,
-      "num": "T55",
-      "title": "The Chair",
-      "date": "Oct 2028",
-      "paras": [
-        {
-          "t": "[STUB] Simon gets the tattoo. Knows the ink. Sits in the chair. Lets it happen.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 56,
-      "num": "T56",
-      "title": "The Meter",
-      "date": "Dec 2028",
-      "paras": [
-        {
-          "t": "[STUB] Jubilee 2. Smart meter refusal surrendered. Installs it himself. Last symbolic line.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 57,
-      "num": "T57",
-      "title": "The Refresh",
-      "date": "Feb 2029",
-      "paras": [
-        {
-          "t": "[STUB] First tattoo refresh. 3am doubt gets quieter. Peace or management?",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 58,
-      "num": "T58",
-      "title": "Dr Patel",
-      "date": "Mar 2029",
-      "paras": [
-        {
-          "t": "[STUB] Routine bloods. Anomalous markers. Patel files it. AIDA didn't flag it.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 59,
-      "num": "T59",
-      "title": "The Water",
-      "date": "Apr 2029",
-      "paras": [
-        {
-          "t": "[STUB] Simon visits Dev in Cumbria. Most important scene Act 1. \"I think they let me do this.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 60,
-      "num": "T60",
-      "title": "The Merger",
-      "date": "May 2029",
-      "paras": [
-        {
-          "t": "[STUB] Tesco/Sainsbury's merge. Pantomime. Both already AIDA infrastructure.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 61,
-      "num": "T61",
-      "title": "Glasses",
-      "date": "Jun 2029",
-      "paras": [
-        {
-          "t": "[STUB] Verse Vision glasses announced. \"Shall we get a pair?\" \"Let's wait.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 62,
-      "num": "T62",
-      "title": "The Café",
-      "date": "Jul 2029",
-      "paras": [
-        {
-          "t": "[STUB] First Verse café. Amy delights. Simon puts glasses on. Doesn't hate it.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 63,
-      "num": "T63",
-      "title": "Amy",
-      "date": "Aug 2029",
-      "paras": [
-        {
-          "t": "[STUB] Amy gets glasses. Hub Coordinator. Happier than ever. 1% almost inaudible.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 64,
-      "num": "T64",
-      "title": "The Blur",
-      "date": "late summer 2029",
-      "paras": [
-        {
-          "t": "[STUB] Nothing happens. That's the chapter. Time blurs. Soma at full strength.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 65,
-      "num": "T65",
-      "title": "CW",
-      "date": "Sep 2029",
-      "paras": [
-        {
-          "t": "[STUB] CW becomes social currency. Kate names it. \"Does knowing change anything you do?\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 66,
-      "num": "T66",
-      "title": "The Drawer",
-      "date": "Oct 2029",
-      "paras": [
-        {
-          "t": "[STUB] Simon finds mesh receiver. Dead. Last message: \"I think they let me do this.\" Puts it back.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 67,
-      "num": "T67",
-      "title": "The Device Era Ends",
-      "date": "Nov 2029",
-      "paras": [
-        {
-          "t": "[STUB] Act 1 close. Glasses everywhere. Body is the infrastructure. Dogs don't care.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 68,
-      "num": "T68",
-      "title": "Lenses",
-      "date": "Dec 2029",
-      "paras": [
-        {
-          "t": "[STUB] Contact lenses replace glasses. Verse/reality boundary disappears.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 69,
-      "num": "T69",
-      "title": "The Road",
-      "date": "early 2030",
-      "paras": [
-        {
-          "t": "[STUB] Self-driving AIDA cars. Infrastructure coordination.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 70,
-      "num": "T70",
-      "title": "The Match",
-      "date": "spring 2030",
-      "paras": [
-        {
-          "t": "[STUB] Verse sport. George's generation lives here.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 71,
-      "num": "T71",
-      "title": "The Trial",
-      "date": "spring 2030",
-      "paras": [
-        {
-          "t": "[STUB] Medical BCI headlines. Therapeutic. Normalisation.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 72,
-      "num": "T72",
-      "title": "Vinyl",
-      "date": "May 2030",
-      "paras": [
-        {
-          "t": "[STUB] Analogue renaissance. Book clubs, gardening. Permitted. \"Digital wellness.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 73,
-      "num": "T73",
-      "title": "Work",
-      "date": "mid 2030",
-      "paras": [
-        {
-          "t": "[STUB] Work is Verse-mediated. Simon's events exist inside the Verse.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 74,
-      "num": "T74",
-      "title": "The Attention Economy",
-      "date": "late 2030",
-      "paras": [
-        {
-          "t": "[STUB] Consciousness is raw material. George explains it simply.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 75,
-      "num": "T75",
-      "title": "Amy's Promotion",
-      "date": "early 2031",
-      "paras": [
-        {
-          "t": "[STUB] Amy's hub role expands. Verse-native. She's a natural.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 76,
-      "num": "T76",
-      "title": "Indoors",
-      "date": "spring 2031",
-      "paras": [
-        {
-          "t": "[STUB] RIS saturation. Verse works without lenses indoors. Room IS the interface.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 77,
-      "num": "T77",
-      "title": "The Paper",
-      "date": "mid 2031",
-      "paras": [
-        {
-          "t": "[STUB] Kate publishes. AIDA publishes it. Nobody reads it. Noise, not silence.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 78,
-      "num": "T78",
-      "title": "Kate's Garden",
-      "date": "mid 2031",
-      "paras": [
-        {
-          "t": "[STUB] Kate and Simon in the garden. Unmediated space. \"Withdrawal isn't painful — it's boring.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 79,
-      "num": "T79",
-      "title": "Dreams Change",
-      "date": "Aug 2031",
-      "paras": [
-        {
-          "t": "[STUB] Simon dreams in the Verse. Kate: \"Verse-adjacent dream content. Very common.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 80,
-      "num": "T80",
-      "title": "Time Softens",
-      "date": "Oct 2031",
-      "paras": [
-        {
-          "t": "[STUB] Time perception shifts. \"The awareness of the absence of the awareness.\"",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 81,
-      "num": "T81",
-      "title": "Dissolve",
-      "date": "late 2031",
-      "paras": [
-        {
-          "t": "[STUB] Time loses grip. Walk with dogs. Lenses out. Park looks the same. Or does it?",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 82,
-      "num": "T82",
-      "title": "The Threshold",
-      "date": "late 2031",
-      "paras": [
-        {
-          "t": "[STUB] Act 2 close. Kitchen. Window. Dogs. Amy's voice. The Dream has already started.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 83,
-      "num": "T83",
-      "title": "The Kitchen",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Dream begins. Kitchen wrong. Tattoo dark. No AIDA. Amputation, not relief.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 84,
-      "num": "T84",
-      "title": "The Garden",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Beyond the fence. Zero signal. Dogs won't follow. The silence is vast.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 85,
-      "num": "T85",
-      "title": "First Vision: Body",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Simon watches himself being content. The pull. Comfort as seduction.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 86,
-      "num": "T86",
-      "title": "Second Vision: Heart",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Family. Amy. Love as the cage. The steak.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 87,
-      "num": "T87",
-      "title": "Third Vision: Soul",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] The final invitation. Dual-meaning line. Body/Heart/Soul complete.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 88,
-      "num": "T88",
-      "title": "Silence",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Grace. Not earned. The space between thoughts.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 89,
-      "num": "T89",
-      "title": "Grace",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] The absence where AIDA's voice usually sits.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 90,
-      "num": "T90",
-      "title": "Presence",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Dev by implication. The farmstead. The zero. Dogs return briefly.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 91,
-      "num": "T91",
-      "title": "The Infiltrator",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Entered to destroy. Discovered destruction is the system's language. Silence as weapon.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": 92,
-      "num": "T92",
-      "title": "The Question",
-      "date": "",
-      "paras": [
-        {
-          "t": "[STUB] Tzimtzum. The question. The silence.",
-          "c": "subtitle"
-        }
-      ],
-      "audio": ""
-    },
-    {
-      "id": "MQ1",
-      "isQuestion": true,
-      "questionText": "Right now, in your actual life — do you feel free?",
-      "questionOpts": [
-        {
-          "text": "Yes. I can do what I want, go where I want, say what I want."
-        },
-        {
-          "text": "No. And I'm not sure I ever have."
-        },
-        {
-          "text": "I feel free enough."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ2",
-      "isQuestion": true,
-      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
-      "questionOpts": [
-        {
-          "text": "Rarely. If it needs doing, I do it."
-        },
-        {
-          "text": "Sometimes. Depends how tired I am."
-        },
-        {
-          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
-        },
-        {
-          "text": "I'm doing it right now."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ3",
-      "isQuestion": true,
-      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
-      "questionOpts": [
-        {
-          "text": "Every morning. Before I even say good morning."
-        },
-        {
-          "text": "Sometimes. Depends who I wake up next to."
-        },
-        {
-          "text": "No. People first. Always."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ4",
-      "isQuestion": true,
-      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
-      "questionOpts": [
-        {
-          "text": "Mostly my choices. I'm deliberate about how I spend my time."
-        },
-        {
-          "text": "About half and half. More than I'd like to admit."
-        },
-        {
-          "text": "Mostly algorithms. They know what I want before I do."
-        },
-        {
-          "text": "I can't tell the difference anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ5",
-      "isQuestion": true,
-      "questionText": "Do you dream differently than you used to?",
-      "questionOpts": [
-        {
-          "text": "Yes. They've changed. I don't know when."
-        },
-        {
-          "text": "No. Same dreams, same nonsense."
-        },
-        {
-          "text": "I don't remember my dreams."
-        },
-        {
-          "text": "I don't think I dream anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "IP1",
-      "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "what do you feel?",
-      "questionOpts": [
-        {
-          "img": "inkblot-1.png"
-        }
-      ]
-    },
-    {
-      "id": "MQ6",
-      "isQuestion": true,
-      "questionText": "When someone you trust sends you something important to read, do you read it?",
-      "questionOpts": [
-        {
-          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
-        },
-        {
-          "text": "If someone I trust says it matters, I read it. All of it."
-        },
-        {
-          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ7",
-      "isQuestion": true,
-      "questionText": "Do you say what you actually think, or what the room wants to hear?",
-      "questionOpts": [
-        {
-          "text": "What I actually think. Even when it costs me."
-        },
-        {
-          "text": "Depends on the room. I pick my battles."
-        },
-        {
-          "text": "What the room wants to hear. Life's easier that way."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ8",
-      "isQuestion": true,
-      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
-      "questionOpts": [
-        {
-          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
-        },
-        {
-          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
-        },
-        {
-          "text": "No. I've restructured my life to avoid it. It costs me."
-        },
-        {
-          "text": "I don't think about it. Life's too short."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "SP1",
-      "isQuestion": true,
-      "questionMode": "sound-prompt",
-      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
-      "questionOpts": [
-        {
-          "text": "[placeholder]"
-        }
-      ]
-    },
-    {
-      "id": "MQ9",
-      "isQuestion": true,
-      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
-      "questionOpts": [
-        {
-          "text": "Knowing. If you really understood what was happening, you couldn't look away."
-        },
-        {
-          "text": "Doing. I know plenty. I do almost nothing about any of it."
-        },
-        {
-          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ10",
-      "isQuestion": true,
-      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
-      "questionOpts": [
-        {
-          "text": "Care. That's literally what a good partner does. What a good doctor does."
-        },
-        {
-          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
-        },
-        {
-          "text": "Both. And the fact that it's both is what makes it dangerous."
-        },
-        {
-          "text": "It depends on whether I asked for it."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "IP2",
-      "isQuestion": true,
-      "questionMode": "video-prompt",
-      "questionText": "what soundtrack does your soul put to this scene?",
-      "questionOpts": [
-        {
-          "text": "sacral chant"
-        },
-        {
-          "text": "852 Hz frequency"
-        },
-        {
-          "text": "tibetan bowl"
-        }
-      ]
-    },
-    {
-      "id": "MQ11",
-      "isQuestion": true,
-      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
-      "questionOpts": [
-        {
-          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
-        },
-        {
-          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
-        },
-        {
-          "text": "I'd need to read the terms. All of them. Before I signed anything."
-        },
-        {
-          "text": "What choice would I have?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ12",
-      "isQuestion": true,
-      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
-      "questionOpts": [
-        {
-          "text": "Relief."
-        },
-        {
-          "text": "Panic."
-        },
-        {
-          "text": "Loss. Like something important just disappeared."
-        },
-        {
-          "text": "Curiosity. What happens next?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ13",
-      "isQuestion": true,
-      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
-      "questionOpts": [
-        {
-          "text": "Yes. I know what it is. I'm just not ready."
-        },
-        {
-          "text": "Probably. That's how blind spots work, isn't it?"
-        },
-        {
-          "text": "No. I'm fairly self-aware."
-        },
-        {
-          "text": "How would I know?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "IP3",
-      "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "what do you feel?",
-      "questionOpts": [
-        {
-          "img": "kitchen-1.png",
-          "wordPairs": [
-            {
-              "chosen": "solitude",
-              "revealed": "stoic"
-            },
-            {
-              "chosen": "stillness",
-              "revealed": "respite"
-            },
-            {
-              "chosen": "love",
-              "revealed": "devotion"
-            },
-            {
-              "chosen": "surrender",
-              "revealed": "acceptance"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "VR1",
-      "isQuestion": true,
-      "questionMode": "video-rorschach",
-      "questionText": "what might this be?",
-      "questionOpts": [
-        {
-          "text": "[freeform]"
-        }
-      ],
-      "questionVideo": "rorschach.mp4"
-    },
-    {
-      "id": "MF1",
-      "isQuestion": true,
-      "questionMode": "mirror",
-      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
-      "questionOpts": [
-        {
-          "text": "Yes, of course I would."
-        },
-        {
-          "text": "I’d notice. I wouldn’t do anything."
-        },
-        {
-          "text": "Probably not."
-        }
-      ]
-    },
-    {
-      "id": "CW1",
-      "isQuestion": true,
-      "questionMode": "video-mirror",
-      "questionText": "What do you see?",
-      "questionVideo": "mirror-figure.mp4",
-      "questionVideoDelay": 8,
-      "questionTone": "cw1-tone.mp3",
-      "questionOpts": [
-        {
-          "text": "A mirror",
-          "fx": {}
-        },
-        {
-          "text": "A gateway",
-          "fx": {}
-        },
-        {
-          "text": "A ghost",
-          "fx": {}
-        }
-      ]
-    },
-    {
-      "id": "DL1",
-      "isQuestion": true,
-      "questionMode": "door-of-light",
-      "questionText": "choose the five words you'll take through",
-      "doorWords": [
-        "safety",
-        "comfort",
-        "health",
-        "efficiency",
-        "connection",
-        "reputation",
-        "rage",
-        "convenience",
-        "certainty",
-        "income",
-        "approval",
-        "routine",
-        "progress",
-        "doubt",
-        "wonder",
-        "silence",
-        "disobedience",
-        "prayer",
-        "grief",
-        "wildness",
-        "forgiveness",
-        "awe",
-        "solitude",
-        "defiance",
-        "mercy"
-      ],
-      "maxSelect": 5,
-      "assets": {
-        "video": "door-loop.mp4",
-        "audio": "door-audio.mp3"
-      },
-      "questionOpts": [
-        {
-          "text": "[reader selects 5 of 25 floating words — logged to questionsLog]"
-        }
-      ]
-    },
-    {
-      "id": "SL1",
-      "isQuestion": true,
-      "questionMode": "slider",
-      "questionText": "To what extent do you live by the moral code you claim to possess?",
-      "questionOpts": [
-        {
-          "text": "[slider 0–10, no labels, no default]"
-        }
-      ]
-    },
-    {
-      "id": "SE1",
-      "isQuestion": true,
-      "questionMode": "sound-echo",
-      "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
-      "questionOpts": [
-        {
-          "text": "[placeholder]"
-        }
-      ]
     }
   ],
   "signal": {
@@ -15056,6 +13872,1192 @@
       "date": "Undated",
       "src": "reader",
       "editable": false
+    }
+  ],
+  "parked": [
+    {
+      "id": 38,
+      "num": "T38",
+      "title": "The First Week",
+      "date": "Apr 2027",
+      "paras": [
+        {
+          "t": "[STUB] AIDA settles in. BC arrives. Mortgage zeroed. Dev: \"So.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 39,
+      "num": "T39",
+      "title": "George Was Right",
+      "date": "Apr 2027",
+      "paras": [
+        {
+          "t": "[STUB] George fluent in AIDA. First cash refusal. Jenny mentions Jamie.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 40,
+      "num": "T40",
+      "title": "Jenny and Peter",
+      "date": "late Apr 2027",
+      "paras": [
+        {
+          "t": "[STUB] Amy's parents. Mortgage zeroed. Pension rebuilt. Jenny cries.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": "40a",
+      "num": "T40a",
+      "title": "Jamie",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Brothers holdout mirror begins. School-gate conversations.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": "40b",
+      "num": "T40b",
+      "title": "The Brothers",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Rupert's prescription. Jamie on a sofa. Family fracture.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": "40c",
+      "num": "T40c",
+      "title": "Jamie's Sofa",
+      "date": "May 2027",
+      "paras": [
+        {
+          "t": "[STUB] Jamie's visible deterioration. Dev silence vs Jamie grinding.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 41,
+      "num": "T41",
+      "title": "The Wine",
+      "date": "Jun 2027",
+      "paras": [
+        {
+          "t": "[STUB] Dynamic pricing. Clubcard mechanism. AIDA curates the shopping list.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 42,
+      "num": "T42",
+      "title": "The Blade",
+      "date": "Jun 2027",
+      "paras": [
+        {
+          "t": "[STUB] Blade devices launch. Amy orders first. Consumer product, not mandate.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 43,
+      "num": "T43",
+      "title": "Amy Sleeps",
+      "date": "Jul 2027",
+      "paras": [
+        {
+          "t": "[STUB] Amy's anxiety recedes. Mortgage gone = fear gone. Schrödinger's steak.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 44,
+      "num": "T44",
+      "title": "Rupert",
+      "date": "Aug 2027",
+      "paras": [
+        {
+          "t": "[STUB] Rupert caves (prescription). Jamie alone. \"Don't give up on me.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 45,
+      "num": "T45",
+      "title": "The Numbers",
+      "date": "Sep 2027",
+      "paras": [
+        {
+          "t": "[STUB] 98% registered. Crime down 40%. Dev: \"How do you fight something that works?\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 46,
+      "num": "T46",
+      "title": "Kate's BBQ",
+      "date": "Oct 2027",
+      "paras": [
+        {
+          "t": "[STUB] Neighbourhood BBQ. Two who know, performing normalcy. Holdouts embarrassing.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 47,
+      "num": "T47",
+      "title": "The Dude",
+      "date": "Nov 2027",
+      "paras": [
+        {
+          "t": "[STUB] Dev: \"Alan's gone dark.\" The Dude vanishes. Ghost.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 48,
+      "num": "T48",
+      "title": "Christmas",
+      "date": "Dec 2027",
+      "paras": [
+        {
+          "t": "[STUB] First Christmas in the system. Dev: \"Still here. 20 nodes. Happy Christmas, mate.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 49,
+      "num": "T49",
+      "title": "Jamie",
+      "date": "Jan 2028",
+      "paras": [
+        {
+          "t": "[STUB] Jamie registers. \"Done it.\" Three words. Amy cries. Relief.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 50,
+      "num": "T50",
+      "title": "The Spreadsheet",
+      "date": "Feb 2028",
+      "paras": [
+        {
+          "t": "[STUB] Simon's market business obsolete. AIDA runs it. Stops opening the spreadsheet.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 51,
+      "num": "T51",
+      "title": "The Fête",
+      "date": "Apr 2028",
+      "paras": [
+        {
+          "t": "[STUB] AIDA commissions community fête. Simon organises it. Sets up bunting anyway.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 52,
+      "num": "T52",
+      "title": "George's Numbers",
+      "date": "May 2028",
+      "paras": [
+        {
+          "t": "[STUB] George earns double Simon's BC. Uni + creating. Absence of tension IS the Soma.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 53,
+      "num": "T53",
+      "title": "The Olympics",
+      "date": "Jul 2028",
+      "paras": [
+        {
+          "t": "[STUB] LA Olympics. Tattoo global launch. Athletes' biometric displays. Chloe: \"I want one.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 54,
+      "num": "T54",
+      "title": "Chloe",
+      "date": "Sep 2028",
+      "paras": [
+        {
+          "t": "[STUB] Consumer tattoo launch. Parental consent. Simon signs the form. Fashion as delivery.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 55,
+      "num": "T55",
+      "title": "The Chair",
+      "date": "Oct 2028",
+      "paras": [
+        {
+          "t": "[STUB] Simon gets the tattoo. Knows the ink. Sits in the chair. Lets it happen.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 56,
+      "num": "T56",
+      "title": "The Meter",
+      "date": "Dec 2028",
+      "paras": [
+        {
+          "t": "[STUB] Jubilee 2. Smart meter refusal surrendered. Installs it himself. Last symbolic line.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 57,
+      "num": "T57",
+      "title": "The Refresh",
+      "date": "Feb 2029",
+      "paras": [
+        {
+          "t": "[STUB] First tattoo refresh. 3am doubt gets quieter. Peace or management?",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 58,
+      "num": "T58",
+      "title": "Dr Patel",
+      "date": "Mar 2029",
+      "paras": [
+        {
+          "t": "[STUB] Routine bloods. Anomalous markers. Patel files it. AIDA didn't flag it.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 59,
+      "num": "T59",
+      "title": "The Water",
+      "date": "Apr 2029",
+      "paras": [
+        {
+          "t": "[STUB] Simon visits Dev in Cumbria. Most important scene Act 1. \"I think they let me do this.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 60,
+      "num": "T60",
+      "title": "The Merger",
+      "date": "May 2029",
+      "paras": [
+        {
+          "t": "[STUB] Tesco/Sainsbury's merge. Pantomime. Both already AIDA infrastructure.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 61,
+      "num": "T61",
+      "title": "Glasses",
+      "date": "Jun 2029",
+      "paras": [
+        {
+          "t": "[STUB] Verse Vision glasses announced. \"Shall we get a pair?\" \"Let's wait.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 62,
+      "num": "T62",
+      "title": "The Café",
+      "date": "Jul 2029",
+      "paras": [
+        {
+          "t": "[STUB] First Verse café. Amy delights. Simon puts glasses on. Doesn't hate it.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 63,
+      "num": "T63",
+      "title": "Amy",
+      "date": "Aug 2029",
+      "paras": [
+        {
+          "t": "[STUB] Amy gets glasses. Hub Coordinator. Happier than ever. 1% almost inaudible.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 64,
+      "num": "T64",
+      "title": "The Blur",
+      "date": "late summer 2029",
+      "paras": [
+        {
+          "t": "[STUB] Nothing happens. That's the chapter. Time blurs. Soma at full strength.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 65,
+      "num": "T65",
+      "title": "CW",
+      "date": "Sep 2029",
+      "paras": [
+        {
+          "t": "[STUB] CW becomes social currency. Kate names it. \"Does knowing change anything you do?\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 66,
+      "num": "T66",
+      "title": "The Drawer",
+      "date": "Oct 2029",
+      "paras": [
+        {
+          "t": "[STUB] Simon finds mesh receiver. Dead. Last message: \"I think they let me do this.\" Puts it back.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 67,
+      "num": "T67",
+      "title": "The Device Era Ends",
+      "date": "Nov 2029",
+      "paras": [
+        {
+          "t": "[STUB] Act 1 close. Glasses everywhere. Body is the infrastructure. Dogs don't care.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 68,
+      "num": "T68",
+      "title": "Lenses",
+      "date": "Dec 2029",
+      "paras": [
+        {
+          "t": "[STUB] Contact lenses replace glasses. Verse/reality boundary disappears.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 69,
+      "num": "T69",
+      "title": "The Road",
+      "date": "early 2030",
+      "paras": [
+        {
+          "t": "[STUB] Self-driving AIDA cars. Infrastructure coordination.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 70,
+      "num": "T70",
+      "title": "The Match",
+      "date": "spring 2030",
+      "paras": [
+        {
+          "t": "[STUB] Verse sport. George's generation lives here.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 71,
+      "num": "T71",
+      "title": "The Trial",
+      "date": "spring 2030",
+      "paras": [
+        {
+          "t": "[STUB] Medical BCI headlines. Therapeutic. Normalisation.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 72,
+      "num": "T72",
+      "title": "Vinyl",
+      "date": "May 2030",
+      "paras": [
+        {
+          "t": "[STUB] Analogue renaissance. Book clubs, gardening. Permitted. \"Digital wellness.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 73,
+      "num": "T73",
+      "title": "Work",
+      "date": "mid 2030",
+      "paras": [
+        {
+          "t": "[STUB] Work is Verse-mediated. Simon's events exist inside the Verse.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 74,
+      "num": "T74",
+      "title": "The Attention Economy",
+      "date": "late 2030",
+      "paras": [
+        {
+          "t": "[STUB] Consciousness is raw material. George explains it simply.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 75,
+      "num": "T75",
+      "title": "Amy's Promotion",
+      "date": "early 2031",
+      "paras": [
+        {
+          "t": "[STUB] Amy's hub role expands. Verse-native. She's a natural.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 76,
+      "num": "T76",
+      "title": "Indoors",
+      "date": "spring 2031",
+      "paras": [
+        {
+          "t": "[STUB] RIS saturation. Verse works without lenses indoors. Room IS the interface.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 77,
+      "num": "T77",
+      "title": "The Paper",
+      "date": "mid 2031",
+      "paras": [
+        {
+          "t": "[STUB] Kate publishes. AIDA publishes it. Nobody reads it. Noise, not silence.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 78,
+      "num": "T78",
+      "title": "Kate's Garden",
+      "date": "mid 2031",
+      "paras": [
+        {
+          "t": "[STUB] Kate and Simon in the garden. Unmediated space. \"Withdrawal isn't painful — it's boring.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 79,
+      "num": "T79",
+      "title": "Dreams Change",
+      "date": "Aug 2031",
+      "paras": [
+        {
+          "t": "[STUB] Simon dreams in the Verse. Kate: \"Verse-adjacent dream content. Very common.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 80,
+      "num": "T80",
+      "title": "Time Softens",
+      "date": "Oct 2031",
+      "paras": [
+        {
+          "t": "[STUB] Time perception shifts. \"The awareness of the absence of the awareness.\"",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 81,
+      "num": "T81",
+      "title": "Dissolve",
+      "date": "late 2031",
+      "paras": [
+        {
+          "t": "[STUB] Time loses grip. Walk with dogs. Lenses out. Park looks the same. Or does it?",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 82,
+      "num": "T82",
+      "title": "The Threshold",
+      "date": "late 2031",
+      "paras": [
+        {
+          "t": "[STUB] Act 2 close. Kitchen. Window. Dogs. Amy's voice. The Dream has already started.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 83,
+      "num": "T83",
+      "title": "The Kitchen",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Dream begins. Kitchen wrong. Tattoo dark. No AIDA. Amputation, not relief.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 84,
+      "num": "T84",
+      "title": "The Garden",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Beyond the fence. Zero signal. Dogs won't follow. The silence is vast.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 85,
+      "num": "T85",
+      "title": "First Vision: Body",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Simon watches himself being content. The pull. Comfort as seduction.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 86,
+      "num": "T86",
+      "title": "Second Vision: Heart",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Family. Amy. Love as the cage. The steak.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 87,
+      "num": "T87",
+      "title": "Third Vision: Soul",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] The final invitation. Dual-meaning line. Body/Heart/Soul complete.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 88,
+      "num": "T88",
+      "title": "Silence",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Grace. Not earned. The space between thoughts.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 89,
+      "num": "T89",
+      "title": "Grace",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] The absence where AIDA's voice usually sits.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 90,
+      "num": "T90",
+      "title": "Presence",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Dev by implication. The farmstead. The zero. Dogs return briefly.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 91,
+      "num": "T91",
+      "title": "The Infiltrator",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Entered to destroy. Discovered destruction is the system's language. Silence as weapon.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": 92,
+      "num": "T92",
+      "title": "The Question",
+      "date": "",
+      "paras": [
+        {
+          "t": "[STUB] Tzimtzum. The question. The silence.",
+          "c": "subtitle"
+        }
+      ],
+      "audio": ""
+    },
+    {
+      "id": "MQ1",
+      "isQuestion": true,
+      "questionText": "Right now, in your actual life — do you feel free?",
+      "questionOpts": [
+        {
+          "text": "Yes. I can do what I want, go where I want, say what I want."
+        },
+        {
+          "text": "No. And I'm not sure I ever have."
+        },
+        {
+          "text": "I feel free enough."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ2",
+      "isQuestion": true,
+      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
+      "questionOpts": [
+        {
+          "text": "Rarely. If it needs doing, I do it."
+        },
+        {
+          "text": "Sometimes. Depends how tired I am."
+        },
+        {
+          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
+        },
+        {
+          "text": "I'm doing it right now."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ3",
+      "isQuestion": true,
+      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
+      "questionOpts": [
+        {
+          "text": "Every morning. Before I even say good morning."
+        },
+        {
+          "text": "Sometimes. Depends who I wake up next to."
+        },
+        {
+          "text": "No. People first. Always."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ4",
+      "isQuestion": true,
+      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
+      "questionOpts": [
+        {
+          "text": "Mostly my choices. I'm deliberate about how I spend my time."
+        },
+        {
+          "text": "About half and half. More than I'd like to admit."
+        },
+        {
+          "text": "Mostly algorithms. They know what I want before I do."
+        },
+        {
+          "text": "I can't tell the difference anymore."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ5",
+      "isQuestion": true,
+      "questionText": "Do you dream differently than you used to?",
+      "questionOpts": [
+        {
+          "text": "Yes. They've changed. I don't know when."
+        },
+        {
+          "text": "No. Same dreams, same nonsense."
+        },
+        {
+          "text": "I don't remember my dreams."
+        },
+        {
+          "text": "I don't think I dream anymore."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP1",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "inkblot-1.png"
+        }
+      ]
+    },
+    {
+      "id": "MQ6",
+      "isQuestion": true,
+      "questionText": "When someone you trust sends you something important to read, do you read it?",
+      "questionOpts": [
+        {
+          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
+        },
+        {
+          "text": "If someone I trust says it matters, I read it. All of it."
+        },
+        {
+          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ7",
+      "isQuestion": true,
+      "questionText": "Do you say what you actually think, or what the room wants to hear?",
+      "questionOpts": [
+        {
+          "text": "What I actually think. Even when it costs me."
+        },
+        {
+          "text": "Depends on the room. I pick my battles."
+        },
+        {
+          "text": "What the room wants to hear. Life's easier that way."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ8",
+      "isQuestion": true,
+      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
+      "questionOpts": [
+        {
+          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
+        },
+        {
+          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
+        },
+        {
+          "text": "No. I've restructured my life to avoid it. It costs me."
+        },
+        {
+          "text": "I don't think about it. Life's too short."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "SP1",
+      "isQuestion": true,
+      "questionMode": "sound-prompt",
+      "questionText": "[SOUND PROMPT — 'tranquility'. Three sounds, three panels, drag to match. PROTOTYPE COMPLETE. ENGINE INTEGRATION SEPARATE PASS.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
+    },
+    {
+      "id": "MQ9",
+      "isQuestion": true,
+      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
+      "questionOpts": [
+        {
+          "text": "Knowing. If you really understood what was happening, you couldn't look away."
+        },
+        {
+          "text": "Doing. I know plenty. I do almost nothing about any of it."
+        },
+        {
+          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ10",
+      "isQuestion": true,
+      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
+      "questionOpts": [
+        {
+          "text": "Care. That's literally what a good partner does. What a good doctor does."
+        },
+        {
+          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
+        },
+        {
+          "text": "Both. And the fact that it's both is what makes it dangerous."
+        },
+        {
+          "text": "It depends on whether I asked for it."
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP2",
+      "isQuestion": true,
+      "questionMode": "video-prompt",
+      "questionText": "what soundtrack does your soul put to this scene?",
+      "questionOpts": [
+        {
+          "text": "sacral chant"
+        },
+        {
+          "text": "852 Hz frequency"
+        },
+        {
+          "text": "tibetan bowl"
+        }
+      ]
+    },
+    {
+      "id": "MQ11",
+      "isQuestion": true,
+      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
+      "questionOpts": [
+        {
+          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
+        },
+        {
+          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
+        },
+        {
+          "text": "I'd need to read the terms. All of them. Before I signed anything."
+        },
+        {
+          "text": "What choice would I have?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ12",
+      "isQuestion": true,
+      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
+      "questionOpts": [
+        {
+          "text": "Relief."
+        },
+        {
+          "text": "Panic."
+        },
+        {
+          "text": "Loss. Like something important just disappeared."
+        },
+        {
+          "text": "Curiosity. What happens next?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "MQ13",
+      "isQuestion": true,
+      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
+      "questionOpts": [
+        {
+          "text": "Yes. I know what it is. I'm just not ready."
+        },
+        {
+          "text": "Probably. That's how blind spots work, isn't it?"
+        },
+        {
+          "text": "No. I'm fairly self-aware."
+        },
+        {
+          "text": "How would I know?"
+        }
+      ],
+      "questionMode": "mirror"
+    },
+    {
+      "id": "IP3",
+      "isQuestion": true,
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "questionOpts": [
+        {
+          "img": "kitchen-1.png",
+          "wordPairs": [
+            {
+              "chosen": "solitude",
+              "revealed": "stoic"
+            },
+            {
+              "chosen": "stillness",
+              "revealed": "respite"
+            },
+            {
+              "chosen": "love",
+              "revealed": "devotion"
+            },
+            {
+              "chosen": "surrender",
+              "revealed": "acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "VR1",
+      "isQuestion": true,
+      "questionMode": "video-rorschach",
+      "questionText": "what might this be?",
+      "questionOpts": [
+        {
+          "text": "[freeform]"
+        }
+      ],
+      "questionVideo": "rorschach.mp4"
+    },
+    {
+      "id": "MF1",
+      "isQuestion": true,
+      "questionMode": "mirror",
+      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
+      "questionOpts": [
+        {
+          "text": "Yes, of course I would."
+        },
+        {
+          "text": "I’d notice. I wouldn’t do anything."
+        },
+        {
+          "text": "Probably not."
+        }
+      ]
+    },
+    {
+      "id": "CW1",
+      "isQuestion": true,
+      "questionMode": "video-mirror",
+      "questionText": "What do you see?",
+      "questionVideo": "mirror-figure.mp4",
+      "questionVideoDelay": 8,
+      "questionTone": "cw1-tone.mp3",
+      "questionOpts": [
+        {
+          "text": "A mirror",
+          "fx": {}
+        },
+        {
+          "text": "A gateway",
+          "fx": {}
+        },
+        {
+          "text": "A ghost",
+          "fx": {}
+        }
+      ]
+    },
+    {
+      "id": "DL1",
+      "isQuestion": true,
+      "questionMode": "door-of-light",
+      "questionText": "choose the five words you'll take through",
+      "doorWords": [
+        "safety",
+        "comfort",
+        "health",
+        "efficiency",
+        "connection",
+        "reputation",
+        "rage",
+        "convenience",
+        "certainty",
+        "income",
+        "approval",
+        "routine",
+        "progress",
+        "doubt",
+        "wonder",
+        "silence",
+        "disobedience",
+        "prayer",
+        "grief",
+        "wildness",
+        "forgiveness",
+        "awe",
+        "solitude",
+        "defiance",
+        "mercy"
+      ],
+      "maxSelect": 5,
+      "assets": {
+        "video": "door-loop.mp4",
+        "audio": "door-audio.mp3"
+      },
+      "questionOpts": [
+        {
+          "text": "[reader selects 5 of 25 floating words — logged to questionsLog]"
+        }
+      ]
+    },
+    {
+      "id": "SL1",
+      "isQuestion": true,
+      "questionMode": "slider",
+      "questionText": "To what extent do you live by the moral code you claim to possess?",
+      "questionOpts": [
+        {
+          "text": "[slider 0–10, no labels, no default]"
+        }
+      ]
+    },
+    {
+      "id": "SE1",
+      "isQuestion": true,
+      "questionMode": "sound-echo",
+      "questionText": "[SP1 ECHO — Same drag mechanic as SP1. New sounds (Teeser choosing). Darkness. Word: 'home'. ENGINE BUILD: minimal delta from SP1. NEW SOUND ASSETS NEEDED.]",
+      "questionOpts": [
+        {
+          "text": "[placeholder]"
+        }
+      ]
     }
   ]
 }

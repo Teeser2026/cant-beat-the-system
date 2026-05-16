@@ -6364,7 +6364,7 @@ function renderEntity(turnData) {
     if (!e.data || typeof e.data !== 'object') return;
     if (e.data.type === 'entity-finished') {
       window.removeEventListener('message', entityMsgHandler);
-      btn.style.display = '';
+      btn.style.display = 'block';
       setTimeout(() => { btn.style.color = 'rgba(255,255,255,0.35)'; }, 300);
     }
   });

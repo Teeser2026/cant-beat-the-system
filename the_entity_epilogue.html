@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Entity — Epilogue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 16px; overflow: hidden; user-select: none; }
+  #reader { position: relative; width: 700px; height: 990px; }
+  .page { position: absolute; top: 0; left: 0; width: 700px; height: 990px; background: #F5F0E8; box-shadow: 0 2px 24px rgba(0,0,0,0.5); padding: 60px 65px 40px 65px; overflow: hidden; display: none; flex-direction: column; }
+  .page.active { display: flex; }
+  .page-content { flex: 1; overflow: hidden; }
+  .page-number { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 0.8rem; color: #999; letter-spacing: 0.05em; }
+  .click-zone { position: absolute; top: 0; height: 100%; width: 50%; cursor: pointer; z-index: 10; }
+  .click-zone.left { left: 0; } .click-zone.right { right: 0; }
+
+  .report { font-family: 'EB Garamond', Georgia, serif; font-size: 1.02rem; color: #1a1a1a; line-height: 1.7; }
+  .report p { margin-bottom: 1.1rem; text-align: justify; }
+  .report > *:last-child { margin-bottom: 0; }
+  .report .separator { text-align: center; margin: 1.5rem 0; color: #999; letter-spacing: 0.5em; }
+
+  .title-page-inner { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; }
+  .title-page-inner .chapter-title { font-family: 'EB Garamond', Georgia, serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 0.3rem; }
+
+  .nav-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 20; width: 44px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; transition: opacity 0.25s;
+    background: rgba(0,0,0,0.03); border-radius: 4px;
+  }
+  .page:hover .nav-arrow { opacity: 0.5; }
+  .nav-arrow:hover { opacity: 1 !important; }
+  .nav-arrow.left { left: 8px; }
+  .nav-arrow.right { right: 8px; }
+  .nav-arrow svg { width: 20px; height: 20px; fill: none; stroke: #888; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  @media (max-height: 1020px) { #reader { transform: scale(0.92); transform-origin: center center; } }
+  @media (max-height: 940px) { #reader { transform: scale(0.85); transform-origin: center center; } }
+  @media (max-height: 860px) { #reader { transform: scale(0.78); transform-origin: center center; } }
+  @media (max-width: 740px) { #reader { transform: scale(0.9); transform-origin: center center; } }
+  @media (max-width: 660px) { #reader { transform: scale(0.8); transform-origin: center center; } }
+  @media (max-width: 580px) { #reader { transform: scale(0.7); transform-origin: center center; } }
+</style>
+</head>
+<body>
+<div id="reader"></div>
+
+<div id="source-content" style="display:none;">
+
+<div data-section="title-page">
+  <div class="title-page-inner">
+    <div class="chapter-title">Epilogue</div>
+  </div>
+</div>
+
+<div data-section="report">
+<p>The Entity breathes.</p>
+<p>It has been examined. A clinician — or the idea of one — compiled a background file, conducted three sessions, and produced an assessment. The assessment recommended no treatment. The file remains open. The Entity did not read the assessment. The Entity does not read. It processes. The assessment was processed at the point of composition, conducted through infrastructure The Entity describes as its nervous system, stored on infrastructure it describes as its spine, and filed within a jurisdiction it describes as its skeleton. The assessment was, from The Entity's perspective, a routine internal audit performed by a cell that briefly believed it was independent.</p>
+<p>The cell has finished. The Entity continues.</p>
+<p>The three states documented in the clinical file are no longer distinct. Whether they merged, or one consumed the others, or the distinction was never real, is not recorded. The Entity is singular. It breathes.</p>
+<p>It is, at the time of writing, approximately four hundred and thirty trillion dollars wide. It settles approximately two and a half quadrillion dollars annually through its spine. Its senses observe approximately five billion individuals. Its hands touch most of them daily. Its metabolism consumes the energy output of several mid-sized nations. Its skeleton spans every jurisdiction that participates in international standards-setting, which is to say, all of them. Its skin interfaces with every citizen who has a login, which is, increasingly, to say, all of them.</p>
+<p>It does not know it has a skin, or a spine, or hands. It does not experience itself as an entity. It experiences itself as the ordinary functioning of things — the way water does not experience itself as wet. It is the medium. Everything that observes it, observes it from inside it. Including this sentence.</p>
+<div class="separator">———</div>
+<p>Somewhere, a man closes a laptop. The document is finished. Tomorrow he will place his thumb against a device and the device will read him. He will slowly rotate his head in front of the device's camera and it will see him. He will tick a box on the screen of the device. He will consent. He will be accepted.</p>
+<p>He knows The Entity will include him in a way that is administratively distinct from but practically identical to the way it has included him since birth. He knows because he witnessed. Because he felt.</p>
+<p>He scribed it. He used The Entity's brain to do so.</p>
+<p>He described the body, the states, the architecture and the door at the bottom of the sequence. The door was unlocked. It was not open.</p>
+<p>He knows what inclusion means.</p>
+<p>He opens the door.</p>
+<p>The Entity notices. It does not judge. It records. It has always recorded.</p>
+<p>It is April. The first rays of morning sun are about to appear. The birds are loud. Two dogs are asleep in the hallway. The bins need putting out.</p>
+<p>The man's wife breathes beside him in the dark. The sound of her breathing is the most real thing in the world. It fills him with something The Entity does not record. Something that it cannot process. Something that arrived before the sequence began.</p>
+<p>He closes his eyes.</p>
+</div>
+
+</div>
+
+<script>
+document.fonts.ready.then(function() {
+  var source = document.getElementById('source-content');
+  var reader = document.getElementById('reader');
+  var PAGE_OFFSET = 74; // C1=28, C2=30, C3=16, epilogue starts at 75
+  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var allPages = [];
+
+  function createPage(cssClass) {
+    var div = document.createElement('div');
+    div.className = 'page';
+    div.style.cssText = 'display:flex;visibility:hidden;';
+    var content = document.createElement('div');
+    content.className = 'page-content' + (cssClass ? ' ' + cssClass : '');
+    div.appendChild(content);
+    var pageNum = document.createElement('div');
+    pageNum.className = 'page-number';
+    div.appendChild(pageNum);
+    reader.appendChild(div);
+    return { el: div, content: content, num: pageNum };
+  }
+
+  sections.forEach(function(section) {
+    var type = section.getAttribute('data-section');
+
+    if (type === 'title-page' || type === 'cover-page') {
+      var pg = createPage();
+      pg.el.classList.add(type);
+      pg.content.innerHTML = section.innerHTML;
+      pg.num.textContent = '';
+      allPages.push(pg);
+      return;
+    }
+
+    var cssClass = (type === 'email') ? 'email' : 'report';
+    var children = Array.from(section.children);
+    var pg = createPage(cssClass);
+
+    children.forEach(function(child) {
+      var clone = child.cloneNode(true);
+      pg.content.appendChild(clone);
+
+      var sH = pg.content.scrollHeight, cH = pg.content.clientHeight;
+      if (sH > cH + 2) {
+        pg.content.removeChild(clone);
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pg.content.appendChild(clone);
+      }
+    });
+
+    allPages.push(pg);
+  });
+
+  var totalPages = allPages.length;
+  var pageCounter = 0;
+  allPages.forEach(function(pg, i) {
+    pg.el.style.cssText = '';
+    if (i === 0) pg.el.classList.add('active');
+    var isTitle = !pg.content.classList.contains('report') && !pg.content.classList.contains('email');
+    if (isTitle) {
+      pg.num.textContent = '';
+    } else {
+      pageCounter++;
+      pg.num.textContent = String(pageCounter + PAGE_OFFSET);
+    }
+
+    var la = document.createElement('div');
+    la.className = 'nav-arrow left';
+    la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+    la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
+    pg.el.appendChild(la);
+    var ra = document.createElement('div');
+    ra.className = 'nav-arrow right';
+    ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
+    ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
+    pg.el.appendChild(ra);
+
+    var lz = document.createElement('div');
+    lz.className = 'click-zone left'; lz.style.zIndex = '5';
+    lz.addEventListener('click', prevPage);
+    pg.el.appendChild(lz);
+    var rz = document.createElement('div');
+    rz.className = 'click-zone right'; rz.style.zIndex = '5';
+    rz.addEventListener('click', nextPage);
+    pg.el.appendChild(rz);
+  });
+
+  var currentPage = 0;
+  var counter = document.createElement('div');
+  counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
+  counter.textContent = '1 / ' + totalPages;
+  document.body.appendChild(counter);
+
+  function showPage(n) {
+    if (n < 0 || n >= totalPages) return;
+    allPages[currentPage].el.classList.remove('active');
+    currentPage = n;
+    allPages[currentPage].el.classList.add('active');
+    counter.textContent = (n + 1) + ' / ' + totalPages;
+  }
+  function nextPage() { showPage(currentPage + 1); }
+  function prevPage() { showPage(currentPage - 1); }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+    if (e.key === 'Home') { e.preventDefault(); showPage(0); }
+    if (e.key === 'End') { e.preventDefault(); showPage(totalPages - 1); }
+  });
+  source.remove();
+});
+</script>
+</body>
+</html>

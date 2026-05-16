@@ -3096,7 +3096,8 @@ body.game-active .ticker-bar { display: flex; }
   flex: 1; width: 100%; border: 0; display: block;
 }
 .entity-overlay .entity-continue {
-  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+  display: none;
   font-family: 'Crimson Pro', serif;
   font-size: clamp(18px, 3vw, 26px);
   font-weight: 300;
@@ -6348,7 +6349,7 @@ function renderEntity(turnData) {
 
   const btn = document.createElement('div');
   btn.className = 'entity-continue';
-  btn.textContent = 'Continue \u2192';
+  btn.textContent = 'Finish reading';
   overlay.appendChild(btn);
 
   document.body.appendChild(overlay);
@@ -6356,8 +6357,16 @@ function renderEntity(turnData) {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       overlay.classList.add('visible');
-      setTimeout(() => { btn.style.color = 'rgba(255,255,255,0.35)'; }, 2000);
     });
+  });
+
+  window.addEventListener('message', function entityMsgHandler(e) {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (e.data.type === 'entity-finished') {
+      window.removeEventListener('message', entityMsgHandler);
+      btn.style.display = '';
+      setTimeout(() => { btn.style.color = 'rgba(255,255,255,0.35)'; }, 300);
+    }
   });
 
   btn.addEventListener('mouseenter', () => {

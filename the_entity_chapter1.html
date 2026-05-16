@@ -457,6 +457,7 @@ document.fonts.ready.then(function() {
     reader.querySelectorAll('.page')[n].classList.add('active');
     currentPage = n;
     counter.textContent = (n + 1) + ' / ' + totalPages;
+    if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
   }
   function nextPage() { showPage(currentPage + 1); }
   function prevPage() { showPage(currentPage - 1); }

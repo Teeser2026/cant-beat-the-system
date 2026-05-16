@@ -864,6 +864,7 @@ function show(i) {
   cur = i;
   pages[cur].classList.add('active');
   counter.textContent = (cur + 1 + PAGE_OFFSET) + ' / ' + (N + PAGE_OFFSET);
+  if (cur === N - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
 }
 function next() { show(cur + 1); }
 function prev() { show(cur - 1); }

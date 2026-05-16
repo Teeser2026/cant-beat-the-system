@@ -5399,7 +5399,7 @@
     {
       "id": "24a",
       "num": "T24a",
-      "title": "The Afternoon Flat",
+      "title": "Once Around the Block",
       "date": "16 FEBRUARY 2027",
       "paras": [
         {
@@ -5421,7 +5421,7 @@
     {
       "id": "24b",
       "num": "T24b",
-      "title": "Restoration",
+      "title": "Contemplation",
       "date": "16 FEBRUARY 2027",
       "paras": [
         {
@@ -5785,6 +5785,17 @@
       ]
     },
     {
+      "id": "27c",
+      "num": "T27c",
+      "title": "The Entity",
+      "date": "20 FEBRUARY 2027 — LATE EVENING",
+      "paras": [
+        {
+          "t": "Simon reveals he’s been writing. A short story. Using AI. ‘It just seemed to flow.’ The knowing-doing gap performed: he’s handed his threat model to the machine and he’s showing you the output."
+        }
+      ]
+    },
+    {
       "id": "E1",
       "isQuestion": true,
       "questionMode": "entity",
@@ -5795,7 +5806,7 @@
     {
       "id": 28,
       "num": "T28",
-      "title": "Soup",
+      "title": "Notes",
       "date": "21 FEBRUARY 2027",
       "paras": [
         {
@@ -5841,10 +5852,29 @@
       "id": "28c",
       "num": "T28c",
       "title": "The Old Normal",
-      "date": "23–28 FEBRUARY 2027",
+      "date": "23–25 FEBRUARY 2027",
       "paras": [
         {
           "t": "The first chapter that compresses time. EPM Week 2 refresh: another £200 drops into the phone. A push notification. Simon sees it, swipes it away, tells Amy over dinner. Already normalised. Six days from ‘the Chancellor has put money in your hands’ to swiping away the notification like a Deliveroo promo. The PM does a midweek address. Simon doesn’t watch it. He sees the ARC push summary while making coffee. Doesn’t turn the telly on."
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "isQuestion": true,
+      "questionMode": "dream",
+      "dreamFile": "dream-2.html",
+      "paras": [],
+      "title": "Dream 2"
+    },
+    {
+      "id": "28d",
+      "num": "T28d",
+      "title": "The Calendar",
+      "date": "25–28 FEBRUARY 2027",
+      "paras": [
+        {
+          "t": "Time marked on paper. The calendar on the fridge becomes the central document. Amy’s handwriting. Simon’s additions in pencil."
         }
       ]
     },
@@ -5860,13 +5890,32 @@
       "id": 29,
       "num": "T29",
       "title": "Dev",
-      "date": "1–6 MARCH 2027",
+      "date": "1–4 MARCH 2027",
       "paras": [
         {
           "t": "Dev’s forensic dump arrives at 2am. The Signal channel goes from short probes to a wall of text. ARC timeline analysis. AIDA architecture matching a DARPA proposal from 2019. The FCA interoperability mandate. The procurement contracts. Amy comes downstairs. Reads it over Simon’s shoulder. Neither of them speaks for a while. Then Amy says something practical — ‘What are we supposed to do with this?’ Simon doesn’t have an answer."
         }
       ],
       "audio": null
+    },
+    {
+      "id": "D3",
+      "isQuestion": true,
+      "questionMode": "dream",
+      "dreamFile": "dream-3.html",
+      "paras": [],
+      "title": "Dream 3"
+    },
+    {
+      "id": "29aa",
+      "num": "T29aa",
+      "title": "The Last Page",
+      "date": "4–6 MARCH 2027",
+      "paras": [
+        {
+          "t": "The story is finished. Three chapters. Simon presents the final one."
+        }
+      ]
     },
     {
       "id": "E3",
@@ -13244,6 +13293,24 @@
       "context": "1971 — before I was born",
       "src": "simon",
       "turn": "23b"
+    },
+    {
+      "id": "s023",
+      "title": "Once Around the Block",
+      "artist": "Badly Drawn Boy",
+      "url": "https://open.spotify.com/track/2AGcgmUIBlSUKiJlEruHrI?si=68ddb9a8de8b4810",
+      "context": "The queue snakes round the car park. We go once around the block and keep driving.",
+      "src": "simon",
+      "turn": "24a"
+    },
+    {
+      "id": "s024",
+      "title": "Unfinished Sympathy",
+      "artist": "Massive Attack",
+      "url": "https://open.spotify.com/track/6OKUMxI7u6p3c4ViM8IXIx?si=b2508890b52048f4",
+      "context": "Like a soul without a mind. The epigraph chose itself.",
+      "src": "simon",
+      "turn": "28"
     }
   ],
   "ticker": {

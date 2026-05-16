@@ -5785,6 +5785,14 @@
       ]
     },
     {
+      "id": "E1",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_chapter1.html",
+      "paras": [],
+      "title": "Chapter One"
+    },
+    {
       "id": 28,
       "num": "T28",
       "title": "Soup",
@@ -5841,6 +5849,14 @@
       ]
     },
     {
+      "id": "E2",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_chapter2.html",
+      "paras": [],
+      "title": "Chapter Two: Disregard Marginalia"
+    },
+    {
       "id": 29,
       "num": "T29",
       "title": "Dev",
@@ -5851,6 +5867,14 @@
         }
       ],
       "audio": null
+    },
+    {
+      "id": "E3",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_chapter3.html",
+      "paras": [],
+      "title": "Chapter Three: The Door"
     },
     {
       "id": "29a",
@@ -5969,6 +5993,14 @@
         }
       ],
       "audio": null
+    },
+    {
+      "id": "E4",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_epilogue.html",
+      "paras": [],
+      "title": "Epilogue"
     },
     {
       "id": 37,

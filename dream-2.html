@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  /* D2 palette: amber → teal → grey */
+  --text-warm: rgba(220,185,120,.88);
+  --text-amber: rgba(200,160,100,.50);
+  --text-teal: rgba(120,185,170,.65);
+  --text-grey: rgba(155,155,155,.45);
+  --text-ghost: rgba(140,135,125,.18);
+  --text-dim: rgba(180,165,130,.40);
+  --glow-warm: rgba(220,170,80,.18);
+  --glow-teal: rgba(80,165,150,.15);
+  --glow-grey: rgba(140,140,140,.08);
+  --fib-text: rgba(130,130,130,.55);
+  --fib-bg: rgba(60,60,58,.12);
+}
+body { background:#080604; color:var(--text-warm); font-family:'Crimson Pro',serif; font-weight:300; font-style:italic; overflow-x:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+b { font-weight: 600; }
+
+/* ═══ LAYER STACK ═══ */
+.vid-atmos { position:fixed; inset:0; z-index:0; overflow:hidden; opacity:0; transition:opacity 3s ease; }
+.vid-atmos video { width:100vw; height:100vh; object-fit:cover; }
+#va-state-a video { filter:brightness(0.45) saturate(0.8) sepia(0.15); }
+#va-state-b video { filter:brightness(0.35) saturate(0.6) hue-rotate(20deg); }
+#va-state-b2 video { filter:brightness(0.25) saturate(0.5) hue-rotate(30deg); }
+
+.colour-wash { position:fixed; inset:0; z-index:1; pointer-events:none; transition:background 3s ease; background:rgba(30,22,10,.50); animation:washBreathe 12s ease-in-out infinite; }
+@keyframes washBreathe { 0%,100% { opacity:1; } 50% { opacity:0.65; } }
+
+.grain { position:fixed; inset:0; z-index:2; pointer-events:none; opacity:0.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:160px; mix-blend-mode:overlay; }
+.content { position:relative; z-index:3; }
+.zone-marker { position:relative; height:0; width:0; overflow:hidden; }
+
+/* ═══ FIBONACCI OVERLAY ═══ */
+#fibonacci-cascade { position:fixed; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity 2s ease; overflow:hidden; }
+#fibonacci-cascade.active { opacity:1; }
+#fibonacci-cascade .fib-num {
+  position:absolute; font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:300;
+  color:var(--fib-text); opacity:0; white-space:nowrap;
+  animation:fibFall linear forwards;
+}
+@keyframes fibFall {
+  0% { opacity:0; transform:translateY(0); }
+  8% { opacity:0.6; }
+  70% { opacity:0.35; }
+  100% { opacity:0; transform:translateY(85vh); }
+}
+
+/* ═══ SCROLL REVEAL ═══ */
+.d { opacity:0; padding:0 24px; max-width:720px; margin:0 auto; }
+.d.revealed { opacity:1; }
+
+/* ═══ ANIMATION CLASSES (inherited from D1) ═══ */
+.a-up { transform:translateY(45px); transition:opacity 2s cubic-bezier(.16,1,.3,1),transform 2s cubic-bezier(.16,1,.3,1),filter 1.6s ease; }
+.a-up.revealed { transform:translateY(0); }
+.a-left { transform:translateX(-70px) rotate(-2deg); transition:opacity 2.2s cubic-bezier(.16,1,.3,1),transform 2.2s cubic-bezier(.16,1,.3,1),filter 1.6s ease; }
+.a-left.revealed { transform:translateX(0) rotate(0); }
+.a-right { transform:translateX(70px) rotate(2deg); transition:opacity 2.2s cubic-bezier(.16,1,.3,1),transform 2.2s cubic-bezier(.16,1,.3,1),filter 1.6s ease; }
+.a-right.revealed { transform:translateX(0) rotate(0); }
+.a-drift { transform:translateY(35px) translateX(25px) rotate(0.5deg); transition:opacity 2.5s cubic-bezier(.16,1,.3,1),transform 2.5s cubic-bezier(.16,1,.3,1); }
+.a-drift.revealed { transform:translate(0) rotate(0); }
+.a-blur { filter:blur(8px); transform:translateY(15px); transition:opacity 2s ease,transform 2.5s ease,filter 2.8s ease; }
+.a-blur.revealed { filter:blur(0); transform:translateY(0); }
+.a-slow { transform:translateY(80px); transition:opacity 4s cubic-bezier(.16,1,.3,1),transform 4s cubic-bezier(.16,1,.3,1); }
+.a-slow.revealed { transform:translateY(0); }
+.a-grow { transform:scale(0.2); filter:blur(3px); transition:opacity 2.5s cubic-bezier(.16,1,.3,1),transform 2.5s cubic-bezier(.16,1,.3,1),filter 1.8s ease; }
+.a-grow.revealed { transform:scale(1); filter:blur(0); }
+.a-shrink { transform:scale(2.8); filter:blur(5px); transition:opacity 2.5s cubic-bezier(.16,1,.3,1),transform 3s cubic-bezier(.16,1,.3,1),filter 2s ease; }
+.a-shrink.revealed { transform:scale(1); filter:blur(0); }
+.a-zap { opacity:0; transition:none; }
+.a-zap.revealed { opacity:1; animation:zapFlicker 3s ease-out; }
+@keyframes zapFlicker {
+  0% { opacity:0; } 4% { opacity:1; } 7% { opacity:0.08; transform:translateX(4px) skewX(2deg); }
+  10% { opacity:0.9; transform:translateX(-3px); } 14% { opacity:0.05; transform:translateX(2px) skewX(-3deg); }
+  18% { opacity:1; transform:none; } 22% { opacity:0.1; transform:translateX(-4px); }
+  27% { opacity:0.8; transform:skewX(1deg); } 32% { opacity:0.05; } 38% { opacity:1; transform:translateX(2px); }
+  42% { opacity:0.15; } 48% { opacity:0.9; } 55% { opacity:0.2; transform:translateX(-2px); }
+  62% { opacity:1; transform:none; } 70% { opacity:0.4; } 80% { opacity:1; } 90% { opacity:0.7; } 100% { opacity:1; transform:none; }
+}
+
+.a-breathe { transform:scale(0.88); transition:opacity 3s ease,transform 3s ease; }
+.a-breathe.revealed { transform:scale(1); animation:breatheScale 6s ease-in-out infinite 3s; }
+@keyframes breatheScale { 0%,100% { transform:scale(1); } 50% { transform:scale(1.03); } }
+
+.a-breathe-pulse { transform:scale(0.7); transition:opacity 3s ease,transform 3s ease; }
+.a-breathe-pulse.revealed { transform:scale(1); animation:breathePulse 5s ease-in-out infinite 3s; }
+@keyframes breathePulse { 0%,100% { transform:scale(1); } 40% { transform:scale(0.6); } 60% { transform:scale(1.1); } }
+
+.colour-pulse.revealed { animation:humColour 3.5s ease-in-out infinite; }
+@keyframes humColour {
+  0%,100% { color:var(--text-warm); text-shadow:0 0 30px var(--glow-warm),0 0 60px var(--glow-warm); }
+  20% { color:rgba(220,160,80,.9); text-shadow:0 0 40px rgba(200,140,40,.35); }
+  40% { color:rgba(180,140,90,.95); text-shadow:0 0 50px rgba(160,120,60,.3); }
+  60% { color:rgba(140,180,160,.85); text-shadow:0 0 40px var(--glow-teal); }
+  80% { color:rgba(160,165,150,.9); text-shadow:0 0 45px var(--glow-grey); }
+}
+
+.float-after.revealed { animation:gentleFloat 7s ease-in-out infinite 2.5s; }
+@keyframes gentleFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+
+/* ═══ TYPOGRAPHY SCALE ═══ */
+.t-monument { font-size:96px; font-weight:200; line-height:1.05; letter-spacing:-2px; }
+.t-hero { font-size:72px; font-weight:200; line-height:1.1; letter-spacing:-1.5px; }
+.t-breath { font-size:48px; font-weight:300; line-height:1.25; letter-spacing:-0.5px; }
+.t-large { font-size:34px; font-weight:300; line-height:1.45; }
+.t-body { font-size:22px; font-weight:300; line-height:1.85; }
+.t-small { font-size:16px; font-weight:300; line-height:1.95; color:var(--text-dim); }
+.t-whisper { font-size:13px; font-weight:300; line-height:2.2; color:var(--text-ghost); letter-spacing:2px; }
+.t-tiny { font-size:11px; font-weight:400; line-height:2.4; color:var(--text-ghost); letter-spacing:4px; text-transform:uppercase; }
+.t-machine { font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:400; letter-spacing:2px; }
+
+/* ═══ D2-SPECIFIC TEXT COLOURS ═══ */
+.t-teal { color:var(--text-teal); }
+.t-grey { color:var(--text-grey); }
+.glow { text-shadow:0 0 35px var(--glow-warm),0 0 70px var(--glow-warm); }
+.glow-strong { text-shadow:0 0 25px rgba(220,170,80,.22),0 0 50px rgba(200,150,60,.12),0 0 100px rgba(180,130,40,.08); }
+.glow-teal { text-shadow:0 0 25px var(--glow-teal),0 0 60px var(--glow-teal); }
+
+/* ═══ GAP CLASSES ═══ */
+.g-abyss { margin-bottom:100vh; } .g-void { margin-bottom:80vh; } .g-huge { margin-bottom:60vh; }
+.g-large { margin-bottom:40vh; } .g-med { margin-bottom:25vh; } .g-small { margin-bottom:14vh; }
+.g-breath { margin-bottom:6vh; } .g-close { margin-bottom:2.5vh; }
+
+/* ═══ LAYOUT HELPERS ═══ */
+.c { text-align:center; margin-left:auto; margin-right:auto; }
+.narrow { max-width:400px; } .tight { max-width:280px; } .wide { max-width:900px; }
+.off-l { margin-left:5%; margin-right:auto; } .off-r { margin-left:auto; margin-right:8%; text-align:right; }
+.off-far-r { margin-left:auto; margin-right:3%; text-align:right; }
+.ghost-border { border-left:1px solid rgba(255,255,255,.05); padding-left:24px; }
+.haze { filter:blur(1.2px); } .haze.revealed { filter:blur(0.7px); }
+
+/* ═══ GLITCH EFFECT ═══ */
+.glitch-active .vid-atmos {
+  animation:videoGlitch 0.15s steps(1) infinite;
+}
+@keyframes videoGlitch {
+  0%  { transform:translate(0,0) skewX(0); filter:brightness(0.25) saturate(0.5) hue-rotate(30deg); }
+  10% { transform:translate(-4px,2px) skewX(2deg); filter:brightness(0.6) saturate(0.3) hue-rotate(60deg); }
+  20% { transform:translate(3px,-1px) skewX(-1deg); filter:brightness(0.15) saturate(0.7); }
+  30% { transform:translate(0,3px) skewX(3deg); filter:brightness(0.5) saturate(0.2) hue-rotate(-20deg); }
+  40% { transform:translate(-2px,0) skewX(0); filter:brightness(0.1) saturate(0.9); }
+  50% { transform:translate(5px,-2px) skewX(-2deg); filter:brightness(0.55) saturate(0.4) hue-rotate(40deg); }
+  60% { transform:translate(-3px,1px) skewX(1deg); filter:brightness(0.2) saturate(0.6); }
+  70% { transform:translate(2px,2px) skewX(-3deg); filter:brightness(0.45) saturate(0.3) hue-rotate(80deg); }
+  80% { transform:translate(-1px,-2px) skewX(2deg); filter:brightness(0.15) saturate(0.5); }
+  90% { transform:translate(4px,0) skewX(0); filter:brightness(0.35) saturate(0.4) hue-rotate(-10deg); }
+  100%{ transform:translate(0,0) skewX(0); filter:brightness(0.25) saturate(0.5) hue-rotate(30deg); }
+}
+
+/* Post-glitch drain: video smooths out and fades to nothing */
+.drain-active .vid-atmos {
+  animation:none !important;
+  transform:translate(0,0) skewX(0) !important;
+  transition:opacity 4s ease, filter 4s ease;
+  opacity:0 !important;
+  filter:brightness(0) saturate(0) !important;
+}
+
+@media (max-width:600px) {
+  .t-monument { font-size:52px; } .t-hero { font-size:40px; } .t-breath { font-size:28px; }
+  .t-large { font-size:24px; } .t-body { font-size:19px; } .d { padding:0 18px; }
+  .g-abyss { margin-bottom:70vh; } .g-void { margin-bottom:55vh; } .g-huge { margin-bottom:40vh; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ VIDEO ATMOSPHERE LAYERS ═══ -->
+<div class="vid-atmos" id="va-state-a"><video src="d2-state-a.mp4" autoplay muted loop playsinline disablepictureinpicture></video></div>
+<div class="vid-atmos" id="va-state-b"><video src="d2-state-b.mp4" muted loop playsinline disablepictureinpicture></video></div>
+<div class="vid-atmos" id="va-state-b2"><video src="d2-state-b2.mp4" muted loop playsinline disablepictureinpicture></video></div>
+<div class="colour-wash" id="colourWash"></div>
+<div class="grain"></div>
+
+<!-- ═══ FIBONACCI CASCADE OVERLAY ═══ -->
+<div id="fibonacci-cascade"></div>
+
+<div class="content">
+
+<!-- ═══ THRESHOLD ═══ -->
+<div class="zone-marker" data-zone="threshold"></div>
+<div style="min-height:100vh;"></div>
+<div class="d a-slow t-large c g-huge">The room again</div>
+<div class="d a-blur t-body c g-large">The same room</div>
+<div class="d a-up t-body c g-void">He knows this room</div>
+
+<!-- ═══ STATE A — THE DESIGNER FELT ═══ -->
+<div class="zone-marker" data-zone="state-a"></div>
+
+<!-- PLACEHOLDER — A-state prose goes here.
+     Register: warmth, confidence, sexual almost.
+     The pleasure of understanding. Every surface legible.
+     Simon recognises this feeling — Illuminatus at 16.
+     KEEP SHORT. A doesn't know it's a state.
+     3-6 sparse lines maximum. -->
+
+<div class="d a-breathe t-hero c glow g-close">Warmth</div>
+<div class="d a-blur t-body c g-med">Every surface in the room is legible. Every connection visible. And it feels <b>good</b>.</div>
+<div class="d a-up t-body c g-close">The pleasure of understanding</div>
+<div class="d a-up t-large c g-med">He has felt this before</div>
+<div class="d a-up t-small off-far-r g-large" style="max-width:300px">Illuminatus. Sixteen. The first time the pattern locks.</div>
+<div class="d a-up t-large c glow g-huge"><b>I see it</b></div>
+
+<!-- ═══ TRANSITION A→B ═══ -->
+<div class="zone-marker" data-zone="transition"></div>
+
+<!-- PLACEHOLDER — The souring.
+     Same room. Same connections.
+     But now every connection is a wire.
+     Every legible surface is surveillance.
+     The sense-making flips to sense-trapping. -->
+
+<div class="d a-drift t-body c g-med">The same room</div>
+<div class="d a-up t-body c g-close">The same connections</div>
+<div class="d a-up t-large c g-med" style="color:var(--text-teal)">But now every one of them is a <b>wire</b></div>
+
+<!-- ═══ STATE B — THE CONSPIRATOR FELT ═══ -->
+<div class="zone-marker" data-zone="state-b"></div>
+
+<!-- PLACEHOLDER — B-state prose goes here.
+     Register: body changes. Breathing tightens, hands clench.
+     Paranoia isn't irrational — everything B sees is documented.
+     "I'm right and it doesn't matter."
+     Anger at having understood, because understanding changed nothing.
+     B gets the LONGEST screen time. More lines than A. -->
+
+<div class="d a-up t-body c g-close" style="color:var(--text-teal)">His breathing changes</div>
+<div class="d a-up t-body c g-close" style="color:var(--text-teal); transition-delay:.2s">Tightens</div>
+<div class="d a-up t-body c g-med" style="color:var(--text-teal); transition-delay:.4s">His hands clench</div>
+<div class="d a-left t-body off-l ghost-border g-med" style="color:var(--text-teal)">Every legible surface is surveillance. The same pattern that felt like understanding now feels like prosecution. Not paranoia. <b>Documentation.</b></div>
+<div class="d a-up t-large c glow-teal g-close">I'm right</div>
+<div class="d a-up t-body c g-med" style="color:var(--text-teal)">And it doesn't matter</div>
+<div class="d a-right t-body off-r g-med" style="color:var(--text-teal)">The anger underneath is specific. Not anger at the architecture. Anger at having <b>understood</b>. Because understanding changed nothing.</div>
+<div class="d a-up t-large c g-large" style="color:var(--text-teal)">The wires don't loosen</div>
+<div class="d a-up t-body c g-void" style="color:var(--text-teal)">They don't need to</div>
+
+<!-- ═══ GLITCH — B→C TRANSITION ═══ -->
+<div class="zone-marker" data-zone="glitch"></div>
+
+<!-- No prose. Video jitters. C arrives as a fix.
+     The glitch smooths out. But what's left isn't alive.
+     C optimised the dream by draining everything
+     that made it a dream. -->
+
+<div style="min-height:60vh;"></div>
+
+<!-- ═══ STATE C — THE INDIFFERENT FELT ═══ -->
+<div class="zone-marker" data-zone="state-c"></div>
+
+<!-- NO PROSE. Video is dead. Fibonacci cascade only.
+     Numbers: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+     No zero. IBM Plex Mono. Grey on grey.
+     Matrix rain but dull. Pure process.
+     Numbers slow. Thin. Stop.
+     Simon wakes from being code. -->
+
+<div style="min-height:140vh;"></div>
+
+<!-- ═══ WAKING ═══ -->
+<div class="zone-marker" data-zone="waking"></div>
+
+<!-- PLACEHOLDER — Waking from being code.
+     Not from fear (B) or seduction (A) but from nothing (C).
+     From "whatever."
+     The most disturbing waking.
+     Then reaches for the AI. -->
+
+<div class="d a-up t-body c g-breath">Not a scream this time</div>
+<div class="d a-up t-body c g-med">Not from fear</div>
+<div class="d a-up t-body c g-close">Not from seduction</div>
+<div class="d a-up t-large c g-med">From <b>nothing</b></div>
+<div class="d a-up t-body c g-close">From pure process that forgot it was a person</div>
+<div class="d a-up t-body c g-med">The room is still the room</div>
+<div class="d a-up t-body c g-close" data-audio="heartbeat">Amy's breathing</div>
+<div class="d a-up t-body c g-close">The duvet</div>
+<div class="d a-up t-body c g-med">The feeling is already separating</div>
+<div class="d a-up t-body c g-close">Three things that were one thing</div>
+<div class="d a-up t-body c g-close">Now three memories of one dream</div>
+<div class="d a-up t-body c g-med">He reaches for his phone</div>
+<div class="d a-up t-body c g-close">Not for the time</div>
+<div class="d a-up t-body c g-close">Not for the glucose</div>
+<div style="min-height:20vh;"></div>
+<div class="d a-up t-large c g-large">For the AI</div>
+<div style="min-height:20vh;"></div>
+<div class="d a-blur t-small c g-close" id="whatever-exit">Whatever</div>
+
+<div style="min-height:30vh;"></div>
+</div>
+
+<!-- ═══ AUDIO (placeholder paths — source your own) ═══ -->
+<audio id="audio-warm" src="d2-warm.mp3" preload="auto"></audio>
+<audio id="audio-mechanical" src="d2-mechanical.mp3" preload="auto"></audio>
+<audio id="audio-drone" src="d2-drone.mp3" preload="auto"></audio>
+<audio id="audio-heartbeat" src="d2-heartbeat.mp3" preload="auto"></audio>
+<audio id="audio-ambient" src="d2-ambient.mp3" preload="auto" loop></audio>
+
+<script>
+/* ═══════════════════════════════════════════════
+   AUDIO SYSTEM — same pattern as D1
+   ═══════════════════════════════════════════════ */
+(function() {
+  const audioMap = {
+    warm:       document.getElementById('audio-warm'),
+    mechanical: document.getElementById('audio-mechanical'),
+    drone:      document.getElementById('audio-drone'),
+    heartbeat:  document.getElementById('audio-heartbeat')
+  };
+  const ambientAudio = document.getElementById('audio-ambient');
+
+  Object.values(audioMap).forEach(a => { if(a) a.volume = 0; });
+  if (ambientAudio) ambientAudio.volume = 0;
+
+  let activeAudio = null;
+
+  function fadeIn(audio, targetVol, duration) {
+    if (!audio) return;
+    if (activeAudio && activeAudio !== audio) fadeOut(activeAudio, 1500);
+    activeAudio = audio;
+    audio.volume = 0;
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+    const steps = 30, stepTime = duration / steps, volStep = targetVol / steps;
+    let vol = 0;
+    const interval = setInterval(() => {
+      vol = Math.min(targetVol, vol + volStep);
+      audio.volume = vol;
+      if (vol >= targetVol) clearInterval(interval);
+    }, stepTime);
+  }
+
+  function fadeOut(audio, duration) {
+    if (!audio || audio.paused) return;
+    const startVol = audio.volume, steps = 20, stepTime = duration / steps, volStep = startVol / steps;
+    let vol = startVol;
+    const interval = setInterval(() => {
+      vol = Math.max(0, vol - volStep);
+      audio.volume = vol;
+      if (vol <= 0) { clearInterval(interval); audio.pause(); }
+    }, stepTime);
+  }
+
+  const triggers = {
+    warm:       { vol: 0.3,  fade: 3000 },
+    mechanical: { vol: 0.35, fade: 2500 },
+    drone:      { vol: 0.2,  fade: 4000 },
+    heartbeat:  { vol: 0.35, fade: 2000 }
+  };
+
+  const audioObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const key = e.target.dataset.audio;
+        const audio = audioMap[key];
+        const cfg = triggers[key];
+        if (audio && cfg) {
+          if (ambientAudio && ambientAudio.paused) {
+            ambientAudio.volume = 0;
+            ambientAudio.play().catch(() => {});
+            let aVol = 0;
+            const aFade = setInterval(() => {
+              aVol = Math.min(0.08, aVol + 0.002);
+              ambientAudio.volume = aVol;
+              if (aVol >= 0.08) clearInterval(aFade);
+            }, 100);
+          }
+          fadeIn(audio, cfg.vol, cfg.fade);
+        }
+        audioObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-audio]').forEach(el => audioObs.observe(el));
+})();
+
+/* ═══════════════════════════════════════════════
+   ZONE SWITCHING — video crossfade + wash colour
+   ═══════════════════════════════════════════════ */
+(function(){
+  const vaA=document.getElementById('va-state-a'),vaB=document.getElementById('va-state-b'),vaB2=document.getElementById('va-state-b2'),wash=document.getElementById('colourWash');
+  const vA=vaA.querySelector('video'),vB=vaB.querySelector('video'),vB2=vaB2.querySelector('video');
+  const fibContainer=document.getElementById('fibonacci-cascade');
+  let glitchTimer=null, fibStarted=false;
+
+  vA.play().catch(()=>{});
+
+  const zones={
+    'threshold':{
+      video:()=>{vaA.style.opacity=0.4;vaB.style.opacity=0;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.pause();vB2.pause()},
+      wash:'rgba(30,22,10,.55)'
+    },
+    'state-a':{
+      video:()=>{vaA.style.opacity=1;vaB.style.opacity=0;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.pause();vB2.pause()},
+      wash:'rgba(40,28,10,.40)'
+    },
+    'transition':{
+      video:()=>{vaA.style.opacity=0.3;vaB.style.opacity=0.6;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.play().catch(()=>{});vB2.pause()},
+      wash:'rgba(18,25,22,.45)'
+    },
+    'state-b':{
+      video:()=>{vaA.style.opacity=0;vaB.style.opacity=0.4;vaB2.style.opacity=0.8;vA.pause();vB.play().catch(()=>{});vB2.play().catch(()=>{})},
+      wash:'rgba(10,22,20,.50)'
+    },
+    'glitch':{
+      video:()=>{
+        // Start glitch animation on body
+        document.body.classList.add('glitch-active');
+        // After 3s of glitch, C "fixes" it — drain all video
+        if(!glitchTimer){
+          glitchTimer=setTimeout(()=>{
+            document.body.classList.remove('glitch-active');
+            document.body.classList.add('drain-active');
+          },3000);
+        }
+      },
+      wash:'rgba(12,18,16,.55)'
+    },
+    'state-c':{
+      video:()=>{
+        // All video dead. Fibonacci takes over.
+        document.body.classList.remove('glitch-active');
+        document.body.classList.add('drain-active');
+        vaA.style.opacity=0;vaB.style.opacity=0;vaB2.style.opacity=0;
+        vA.pause();vB.pause();vB2.pause();
+        if(!fibStarted){ fibStarted=true; startFibonacci(); }
+      },
+      wash:'rgba(20,20,18,.65)'
+    },
+    'waking':{
+      video:()=>{
+        // Fibonacci stops, warm video returns faintly
+        document.body.classList.remove('drain-active');
+        fibContainer.classList.remove('active');
+        vaA.style.opacity=0.3;vaB.style.opacity=0;vaB2.style.opacity=0;
+        vA.play().catch(()=>{});vB.pause();vB2.pause();
+      },
+      wash:'rgba(25,20,15,.50)'
+    }
+  };
+
+  const markers=document.querySelectorAll('.zone-marker');
+  const zoneObs=new IntersectionObserver(entries=>{
+    let active=null;
+    entries.forEach(e=>{if(e.isIntersecting)active=e.target.dataset.zone});
+    if(!active)return;
+    const z=zones[active];
+    if(z){z.video();wash.style.background=z.wash}
+  },{rootMargin:'-30% 0px -30% 0px'});
+  markers.forEach(m=>zoneObs.observe(m));
+
+  // Initial state
+  zones.threshold.video();
+  wash.style.background=zones.threshold.wash;
+  vaA.style.opacity=0.4;
+
+  /* ═══ FIBONACCI CASCADE ═══ */
+  function startFibonacci(){
+    fibContainer.classList.add('active');
+    const seq=[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765];
+    // No zero. The zero that initiated the sequence is absent.
+    let idx=0;
+    const columns=5; // Number of parallel fall columns
+
+    function spawnNumber(){
+      if(idx>=seq.length) return;
+      const num=seq[idx];
+      const el=document.createElement('span');
+      el.className='fib-num';
+      el.textContent=num;
+
+      // Font size decreases as numbers get larger (sequence consuming itself)
+      const baseFontSize=Math.max(14, 48 - idx*1.5);
+      el.style.fontSize=baseFontSize+'px';
+
+      // Random horizontal position across columns
+      const col=idx%columns;
+      const xBase=(col/columns)*80+10; // 10% to 90%
+      const xJitter=(Math.random()-0.5)*8;
+      el.style.left=(xBase+xJitter)+'%';
+      el.style.top='-5%';
+
+      // Opacity decreases with progression
+      const opacity=Math.max(0.12, 0.6-idx*0.025);
+      el.style.setProperty('--fib-opacity',opacity);
+      el.style.color='rgba(130,130,130,'+opacity+')';
+
+      // Animation duration increases — sequence slowing
+      const duration=Math.min(18, 6+idx*0.6);
+      el.style.animationDuration=duration+'s';
+
+      fibContainer.appendChild(el);
+
+      // Remove after animation completes
+      setTimeout(()=>{ if(el.parentNode) el.parentNode.removeChild(el); }, duration*1000);
+
+      idx++;
+
+      // Delay between numbers increases (slowing down)
+      const nextDelay=Math.min(3000, 400+idx*120);
+      setTimeout(spawnNumber, nextDelay);
+    }
+
+    spawnNumber();
+  }
+})();
+
+/* ═══════════════════════════════════════════════
+   SCROLL REVEAL + EXIT
+   ═══════════════════════════════════════════════ */
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}});
+  },{threshold:0,rootMargin:'0px 0px -15% 0px'});
+  document.querySelectorAll('.d').forEach(el=>obs.observe(el));
+
+  // "Whatever" — auto-exit with dwell check (matching D1 "From the darkness")
+  const exitEl=document.getElementById('whatever-exit');
+  if(exitEl){
+    let exitTimer=null;
+    const exitObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          if(exitTimer)return;
+          exitTimer=setTimeout(()=>{
+            exitObs.unobserve(e.target);
+
+            // Fade ALL audio to silence over 4s
+            const allAudio=document.querySelectorAll('audio');
+            allAudio.forEach(a=>{
+              if(a.paused)return;
+              const startVol=a.volume;
+              if(startVol<=0)return;
+              const steps=40, stepTime=4000/steps, volStep=startVol/steps;
+              let vol=startVol;
+              const fade=setInterval(()=>{
+                vol=Math.max(0,vol-volStep);
+                a.volume=vol;
+                if(vol<=0){clearInterval(fade);a.pause();}
+              },stepTime);
+            });
+
+            // Post dream-continue after audio fade
+            setTimeout(()=>{
+              if(window.parent&&window.parent!==window){
+                window.parent.postMessage({type:'dream-continue',id:'dream-2'},'*');
+              }
+            },4500);
+          },5000);
+        } else {
+          if(exitTimer){clearTimeout(exitTimer);exitTimer=null;}
+        }
+      });
+    },{threshold:0.5});
+    exitObs.observe(exitEl);
+  }
+})();
+</script>
+</body>
+</html>

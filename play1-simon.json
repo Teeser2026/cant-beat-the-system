@@ -10112,6 +10112,21 @@
             "date": "21 Feb 2027"
           }
         ]
+      },
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "Massive Attack",
+            "ttl": "Unfinished Sympathy",
+            "snip": "You're the book that I have opened",
+            "tag": "the entity's overture",
+            "cls": "",
+            "type": "song",
+            "time": "23:40",
+            "date": "20 Feb 2027"
+          }
+        ]
       }
     ],
     "29": [
@@ -12104,7 +12119,24 @@
     "28b": [],
     "28c": [],
     "29a": [],
-    "27b": []
+    "27b": [],
+    "24a": [
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "Badly Drawn Boy",
+            "ttl": "Once Around the Block",
+            "snip": "A never-ending queue. We go once around the block and back home.",
+            "tag": "WASTED JOURNEY",
+            "cls": "",
+            "type": "song",
+            "time": "14:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      }
+    ]
   },
   "threads": [
     {
@@ -13299,7 +13331,7 @@
       "title": "Once Around the Block",
       "artist": "Badly Drawn Boy",
       "url": "https://open.spotify.com/track/2AGcgmUIBlSUKiJlEruHrI?si=68ddb9a8de8b4810",
-      "context": "The queue snakes round the car park. We go once around the block and keep driving.",
+      "context": "I've gotta search hard for your clues",
       "src": "simon",
       "turn": "24a"
     },
@@ -13308,9 +13340,9 @@
       "title": "Unfinished Sympathy",
       "artist": "Massive Attack",
       "url": "https://open.spotify.com/track/6OKUMxI7u6p3c4ViM8IXIx?si=b2508890b52048f4",
-      "context": "Like a soul without a mind. The epigraph chose itself.",
+      "context": "A soul without a mind?",
       "src": "simon",
-      "turn": "28"
+      "turn": 28
     }
   ],
   "ticker": {

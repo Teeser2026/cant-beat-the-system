@@ -3083,6 +3083,31 @@ body.game-active .ticker-bar { display: flex; }
   width: 100%; height: 100%; border: 0; display: block;
 }
 
+.entity-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #000;
+  display: none;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+.entity-overlay.open { display: flex; flex-direction: column; }
+.entity-overlay.visible { opacity: 1; }
+.entity-overlay iframe {
+  flex: 1; width: 100%; border: 0; display: block;
+}
+.entity-overlay .entity-continue {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  font-family: 'Crimson Pro', serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 300;
+  color: rgba(255,255,255,0);
+  cursor: pointer;
+  transition: color 1.5s ease, text-shadow 1s ease;
+  letter-spacing: 0.06em;
+  user-select: none;
+  z-index: 10000;
+}
+
 
 #sound-prompt-overlay {
   position: fixed;
@@ -6305,6 +6330,69 @@ function renderDream(turnData) {
   });
 }
 
+function renderEntity(turnData) {
+  const file = turnData.dreamFile;
+
+  const wrap = document.querySelector('.wrap');
+  const econBar = document.querySelector('.econ-bar');
+  wrap.style.display = 'none';
+  econBar.style.display = 'none';
+
+  const overlay = document.createElement('div');
+  overlay.className = 'entity-overlay open';
+
+  const iframe = document.createElement('iframe');
+  iframe.src = file;
+  iframe.title = turnData.title || 'The Entity';
+  overlay.appendChild(iframe);
+
+  const btn = document.createElement('div');
+  btn.className = 'entity-continue';
+  btn.textContent = 'Continue \u2192';
+  overlay.appendChild(btn);
+
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.classList.add('visible');
+      setTimeout(() => { btn.style.color = 'rgba(255,255,255,0.35)'; }, 2000);
+    });
+  });
+
+  btn.addEventListener('mouseenter', () => {
+    btn.style.color = 'rgba(255,255,255,0.7)';
+    btn.style.textShadow = '0 0 40px rgba(200,180,230,0.2)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.color = 'rgba(255,255,255,0.35)';
+    btn.style.textShadow = 'none';
+  });
+
+  btn.addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    setTimeout(() => {
+      overlay.remove();
+      wrap.style.display = '';
+      econBar.style.display = '';
+      goTo(state.turnIndex + 1);
+    }, 1500);
+  });
+
+  document.addEventListener('keydown', function escHandler(e) {
+    if (e.key === 'Escape') {
+      document.removeEventListener('keydown', escHandler);
+      overlay.classList.remove('visible');
+      setTimeout(() => {
+        overlay.remove();
+        wrap.style.display = '';
+        econBar.style.display = '';
+        goTo(state.turnIndex + 1);
+      }, 1500);
+    }
+  });
+}
+
 function renderSlider(turnData) {
   const overlay = document.getElementById('slider-overlay');
   overlay.style.display = 'flex';
@@ -6875,6 +6963,16 @@ function goTo(idx) {
     return;
   }
 
+  // ── ENTITY — full-screen iframe overlay ──
+  if (turn.questionMode === 'entity') {
+    titleEl.style.display = 'none';
+    dateEl.style.display = 'none';
+    numEl.textContent = '';
+    renderEntity(turn);
+    updateNavList();
+    return;
+  }
+
   // ── SLIDER — full-screen takeover ──
   if (turn.questionMode === 'slider') {
     titleEl.style.display = 'none';
@@ -6922,6 +7020,8 @@ function goTo(idx) {
   if (bcOv) { bcOv.remove(); }
   const drOv = document.querySelector('.dream-overlay');
   if (drOv) { drOv.remove(); }
+  const enOv = document.querySelector('.entity-overlay');
+  if (enOv) { enOv.remove(); }
   // Restore main UI
   document.querySelector('.wrap').style.display = '';
   document.querySelector('.econ-bar').style.display = '';

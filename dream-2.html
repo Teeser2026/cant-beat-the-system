@@ -316,32 +316,32 @@ var scrollPaused = true;
     'threshold':{
       video:()=>{vaA.style.opacity=0.4;vaB.style.opacity=0;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.pause();vB2.pause()},
       audio:()=>{},
-      wash:'rgba(30,22,10,.55)', speed:1.5
+      wash:'rgba(30,22,10,.55)', speed:4.5
     },
     'state-a':{
       video:()=>{vaA.style.opacity=1;vaB.style.opacity=0;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.pause();vB2.pause()},
       audio:()=>{ fadeIn(audio.texture, 0.25, 3000); },
-      wash:'rgba(40,28,10,.40)', speed:1.0
+      wash:'rgba(40,28,10,.40)', speed:3.0
     },
     'transition':{
       video:()=>{vaA.style.opacity=0.3;vaB.style.opacity=0.6;vaB2.style.opacity=0;vA.play().catch(()=>{});vB.play().catch(()=>{});vB2.pause()},
       audio:()=>{ fadeIn(audio.boo, 0.08, 2500); },
-      wash:'rgba(18,25,22,.45)', speed:2.0
+      wash:'rgba(18,25,22,.45)', speed:6.0
     },
     'state-b':{
       video:()=>{vaA.style.opacity=0;vaB.style.opacity=0.4;vaB2.style.opacity=0.8;vA.pause();vB.play().catch(()=>{});vB2.play().catch(()=>{})},
       audio:()=>{ fadeOut(audio.texture, 3000); raiseTo(audio.boo, 0.22, 2000); },
-      wash:'rgba(10,22,20,.50)', speed:1.5
+      wash:'rgba(10,22,20,.50)', speed:4.5
     },
     'state-b-mid':{
       video:()=>{},
       audio:()=>{ fadeIn(audio.sinister, 0.18, 2000); },
-      wash:'rgba(8,20,18,.55)', speed:1.5
+      wash:'rgba(8,20,18,.55)', speed:4.5
     },
     'state-b-late':{
       video:()=>{},
       audio:()=>{ fadeOut(audio.boo, 3000); fadeOut(audio.sinister, 3000); fadeIn(audio.falling, 0.28, 2500); },
-      wash:'rgba(6,16,14,.58)', speed:1.2
+      wash:'rgba(6,16,14,.58)', speed:3.5
     },
     'glitch':{
       video:()=>{
@@ -369,7 +369,7 @@ var scrollPaused = true;
         if(!fibStarted){ fibStarted=true; startFibonacci(); }
       },
       audio:()=>{ fadeIn(audio.transmission, 0.22, 3000); fadeIn(audio.server, 0.12, 4000); },
-      wash:'rgba(20,20,18,.65)', speed:0.7
+      wash:'rgba(20,20,18,.65)', speed:2.0
     },
     'waking':{
       video:()=>{
@@ -379,7 +379,7 @@ var scrollPaused = true;
         vA.play().catch(()=>{});vB.pause();vB2.pause();
       },
       audio:()=>{ fadeOut(audio.transmission, 2000); raiseTo(audio.server, 0.08, 3000); },
-      wash:'rgba(25,20,15,.50)', speed:1.2
+      wash:'rgba(25,20,15,.50)', speed:3.5
     }
   };
 
@@ -433,7 +433,7 @@ window.addEventListener('keydown', e=>{
 });
 
 const gate=document.getElementById('start-gate');
-function startDream(){
+function startDream(){Object.values(audio).forEach(a=>{if(a){a.volume=0;a.play().then(()=>a.pause()).catch(()=>{});}});
   if(dreamStarted)return;
   dreamStarted=true;
   gate.classList.add('fading');

@@ -310,6 +310,7 @@ var timeline=[
 
 function doExit(){
   if(window._exited)return;window._exited=true;
+  console.log('[D2] exit');
   for(var k in aud)if(aud[k]&&!aud[k].paused)aFadeOut(aud[k],4000);
   // Fade Whatever out
   var words=stage.querySelectorAll('.word');for(var i=0;i<words.length;i++){words[i].classList.remove('visible');words[i].classList.add('fading')}
@@ -328,6 +329,7 @@ gate.addEventListener('touchend',function(e){e.preventDefault();go()},false);
 
 function go(){
   if(dreamStart>0)return;
+  console.log('[D2] starting');
   for(var k in aud){if(aud[k]){try{aud[k].volume=0;aud[k].play();aud[k].pause();aud[k].currentTime=0}catch(e){}}}
   vA.play();
   gate.classList.add('fading');
@@ -335,6 +337,7 @@ function go(){
   setTimeout(function(){
     dreamStart=performance.now();
     fired=[];for(var i=0;i<timeline.length;i++)fired.push(false);
+    console.log('[D2] timeline running, '+timeline.length+' events');
   },2000);
 }
 
@@ -343,6 +346,7 @@ function tick(){
   if(dreamStart>0){
     var elapsed=(performance.now()-dreamStart)/1000;
     for(var i=0;i<timeline.length;i++){
+      if(!fired[i]&&elapsed>=timeline[i].t){fired[i]=true;console.log('[D2] t='+timeline[i].t);timeline[i].fn()}
     }
     debug.textContent=Math.floor(elapsed)+'s';
   }
@@ -371,11 +375,42 @@ function jumpTo(sec){
     fired[i]=(timeline[i].t<=sec);
     if(fired[i])timeline[i].fn();
   }
+  console.log('[D2] jumped to '+Math.floor(sec)+'s');
 }
 
-/* dev controls removed */
+window.addEventListener('keydown',function(e){
+  if(dreamStart<=0)return;
+  var elapsed=(performance.now()-dreamStart)/1000;
+  // 0-9 jump to sections
+  var jumps={
+    '0':0,'1':15,'2':49,'3':75,'4':100,'5':118,'6':129,'7':135,'8':165,'9':185
+  };
+  if(jumps[e.key]!==undefined){e.preventDefault();jumpTo(jumps[e.key])}
+  if(e.key===' '){
+    e.preventDefault();
+    paused=!paused;
+    if(paused){
+      window._pausedAt=performance.now();
+      debug.textContent=Math.floor(elapsed)+'s PAUSED';
+    }else{
+      dreamStart+=(performance.now()-window._pausedAt);
+    }
+  }
+},false);
 
-/* dev tick override removed */
+// Override tick to respect pause
+var _origTick=tick;
+tick=function(){
+  if(paused){requestAnimationFrame(tick);return}
+  if(dreamStart>0){
+    var elapsed=(performance.now()-dreamStart)/1000;
+    for(var i=0;i<timeline.length;i++){
+      if(!fired[i]&&elapsed>=timeline[i].t){fired[i]=true;console.log('[D2] t='+timeline[i].t);timeline[i].fn()}
+    }
+    debug.textContent=Math.floor(elapsed)+'s  [0-9: jump | space: pause]';
+  }
+  requestAnimationFrame(tick);
+};
 </script>
 </body>
 </html>

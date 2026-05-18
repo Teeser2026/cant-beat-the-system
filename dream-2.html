@@ -14,6 +14,7 @@ b{font-weight:600}
 .vid-atmos{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;overflow:hidden;opacity:0;-webkit-transition:opacity 3s ease;transition:opacity 3s ease}
 .vid-atmos video{width:100%;height:100%;object-fit:cover;-webkit-transition:filter 4s ease;transition:filter 4s ease}
 #va-a video{filter:brightness(0.45) saturate(0.8) sepia(0.15)}
+#va-b video{filter:brightness(0.35) saturate(0.6) hue-rotate(20deg)}
 #va-b2 video{filter:brightness(0.25) saturate(0.5) hue-rotate(30deg)}
 #va-fib video{filter:brightness(0.3) saturate(0.7) hue-rotate(0deg)}
 
@@ -56,11 +57,13 @@ b{font-weight:600}
 .glitch-active .vid-atmos{-webkit-animation:vGlitch 0.15s steps(1) infinite;animation:vGlitch 0.15s steps(1) infinite}
 @keyframes vGlitch{0%{transform:translate(0,0) skewX(0)}20%{transform:translate(3px,-1px) skewX(-1deg);filter:brightness(0.15)}50%{transform:translate(-2px,2px) skewX(2deg);filter:brightness(0.5)}80%{transform:translate(1px,-2px) skewX(-2deg);filter:brightness(0.2)}100%{transform:translate(0,0) skewX(0)}}
 @-webkit-keyframes vGlitch{0%{-webkit-transform:translate(0,0) skewX(0)}20%{-webkit-transform:translate(3px,-1px) skewX(-1deg);filter:brightness(0.15)}50%{-webkit-transform:translate(-2px,2px) skewX(2deg);filter:brightness(0.5)}80%{-webkit-transform:translate(1px,-2px) skewX(-2deg);filter:brightness(0.2)}100%{-webkit-transform:translate(0,0) skewX(0)}}
-.drain-active #va-a,.drain-active #va-b2{-webkit-animation:none!important;animation:none!important;-webkit-transform:none!important;transform:none!important;-webkit-transition:opacity 4s ease;transition:opacity 4s ease;opacity:0!important}
+.drain-active #va-a,.drain-active #va-b,.drain-active #va-b2{-webkit-animation:none!important;animation:none!important;-webkit-transform:none!important;transform:none!important;-webkit-transition:opacity 4s ease;transition:opacity 4s ease;opacity:0!important}
 
 #start-gate{position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;background:#080604;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;cursor:pointer}
 #start-gate.fading{-webkit-transition:opacity 3s ease;transition:opacity 3s ease;opacity:0;pointer-events:none}
 #start-gate span{font-family:'Crimson Pro',serif;font-style:italic;font-weight:200;font-size:28px;color:rgba(180,160,120,.45)}
+
+#debug{display:none}
 
 @media(max-width:600px){.sz-hero{font-size:48px}.sz-large{font-size:28px}.sz-body{font-size:20px}}
 </style>
@@ -70,12 +73,14 @@ b{font-weight:600}
 <div id="start-gate"><span>I'm back</span></div>
 
 <div class="vid-atmos" id="va-a"><video src="d2-state-a.mp4" muted loop playsinline webkit-playsinline></video></div>
+<div class="vid-atmos" id="va-b"><video src="d2-state-b.mp4" muted loop playsinline webkit-playsinline></video></div>
 <div class="vid-atmos" id="va-b2"><video src="d2-state-b2.mp4" muted loop playsinline webkit-playsinline></video></div>
 <div class="vid-atmos" id="va-fib"><video src="d2-fib.mp4" muted playsinline webkit-playsinline></video></div>
 <div class="colour-wash" id="wash"></div>
 <div class="grain"></div>
 <div id="fibonacci-cascade"></div>
 <div id="stage"></div>
+<div id="debug">click to start</div>
 
 <audio id="a-clock" src="d2-clock.mp3" preload="auto"></audio>
 <audio id="a-clock-slow" src="d2-clock-slow.mp3" preload="auto" loop></audio>
@@ -92,13 +97,13 @@ b{font-weight:600}
 var stage=document.getElementById('stage');
 var wash=document.getElementById('wash');
 var fibBox=document.getElementById('fibonacci-cascade');
-
+var debug=document.getElementById('debug');
 var vaA=document.getElementById('va-a');
-
+var vaB=document.getElementById('va-b');
 var vaB2=document.getElementById('va-b2');
 var vaFib=document.getElementById('va-fib');
 var vA=vaA.querySelector('video');
-
+var vB=vaB.querySelector('video');
 var vB2=vaB2.querySelector('video');
 var vFib=vaFib.querySelector('video');
 
@@ -167,7 +172,16 @@ function showLines(lines,interval,totalDur,cls,pos){
   setTimeout(function(){container.classList.remove('visible');container.classList.add('fading');setTimeout(function(){if(container.parentNode)container.parentNode.removeChild(container)},2500)},totalDur);
 }
 
-function vidSet(opA,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765];
+function vidSet(opA,opB,opB2){
+  vaA.style.opacity=opA;vaB.style.opacity=opB;vaB2.style.opacity=opB2;
+  if(opA>0)vA.play();else vA.pause();
+  if(opB>0)vB.play();else vB.pause();
+  if(opB2>0)vB2.play();else vB2.pause();
+}
+
+function startFib(){
+  fibBox.classList.add('active');
+  var seq=[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765];
   var columns=18;
   var totalSpawns=160;
   var idx=0;
@@ -202,13 +216,13 @@ function vidSet(opA,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,
 var timeline=[
 
   // ── THRESHOLD ──
-  {t:0, fn:function(){vidSet(0.4,0);wash.style.background='rgba(30,22,10,.55)';aFadeIn(aud.clock,0.3,2000)}},
+  {t:0, fn:function(){vidSet(0.4,0,0);wash.style.background='rgba(30,22,10,.55)';aFadeIn(aud.clock,0.3,2000)}},
   {t:2, fn:function(){showText("We're back",5000,'sz-large col-warm','pos-center')}},
   {t:7, fn:function(){showText("We've been here before",4500,'sz-body col-warm','pos-center')}},
   {t:11,fn:function(){showText("We know this place",4500,'sz-body col-warm','pos-low')}},
 
   // ── STATE A — THE DESIGNER FELT ──
-  {t:15,fn:function(){vidSet(1,0);wash.style.background='rgba(40,28,10,.40)';aFadeOut(aud.clock,3000);aFadeIn(aud.texture,0.25,3000)}},
+  {t:15,fn:function(){vidSet(1,0,0);wash.style.background='rgba(40,28,10,.40)';aFadeOut(aud.clock,3000);aFadeIn(aud.texture,0.25,3000)}},
   {t:16,fn:function(){showText("I feel its warmth",6000,'sz-hero col-warm glow','pos-center')}},
   {t:17,fn:function(){aFadeIn(aud.clockSlow,0.05,4000)}},
   {t:22,fn:function(){showLines(["Every surface in the room is legible","Every connection visible","And it feels <span style='font-size:44px'>good</span>"],2500,7000,'sz-body col-warm','pos-center')}},
@@ -227,7 +241,7 @@ var timeline=[
   {t:73,fn:function(){showText("Every one of them is a <b>wire</b>",5500,'sz-large col-teal','pos-center')}},
 
   // ── STATE B — THE CONSPIRATOR FELT ──
-  {t:75,fn:function(){vidSet(0,0.8);wash.style.background='rgba(10,22,20,.50)';aFadeOut(aud.texture,3000);vA.style.filter=''}},
+  {t:75,fn:function(){vidSet(0,0,0.8);wash.style.background='rgba(10,22,20,.50)';aFadeOut(aud.texture,3000);vA.style.filter=''}},
   {t:76,fn:function(){showText("Breathing quickens",3500,'sz-body col-teal','pos-center')}},
   {t:77,fn:function(){aFadeIn(aud.heartbeat,0.2,2000)}},
   {t:80,fn:function(){showText("Tightens",3000,'sz-body col-teal','pos-center');aFadeOut(aud.heartbeat,3000);aFadeIn(aud.sinister,0.06,3000)}},
@@ -247,7 +261,7 @@ var timeline=[
 
   // ── GLITCH ──
   {t:139,fn:function(){aFadeOut(aud.falling,500);aBurst(aud.glitch,0.35);document.body.classList.add('glitch-active')}},
-  {t:142.5,fn:function(){document.body.classList.remove('glitch-active');document.body.classList.add('drain-active');vidSet(0,0);wash.style.background='rgba(12,12,10,.65)'}},
+  {t:142.5,fn:function(){document.body.classList.remove('glitch-active');document.body.classList.add('drain-active');vidSet(0,0,0);wash.style.background='rgba(12,12,10,.65)'}},
 
   // ── STATE C — FIBONACCI, NO PROSE ──
   {t:140,fn:function(){aFadeIn(aud.trans,0.22,3000)}},
@@ -296,7 +310,7 @@ var timeline=[
 
 function doExit(){
   if(window._exited)return;window._exited=true;
-    for(var k in aud)if(aud[k]&&!aud[k].paused)aFadeOut(aud[k],4000);
+  for(var k in aud)if(aud[k]&&!aud[k].paused)aFadeOut(aud[k],4000);
   // Fade Whatever out
   var words=stage.querySelectorAll('.word');for(var i=0;i<words.length;i++){words[i].classList.remove('visible');words[i].classList.add('fading')}
   setTimeout(function(){
@@ -314,14 +328,14 @@ gate.addEventListener('touchend',function(e){e.preventDefault();go()},false);
 
 function go(){
   if(dreamStart>0)return;
-    for(var k in aud){if(aud[k]){try{aud[k].volume=0;aud[k].play();aud[k].pause();aud[k].currentTime=0}catch(e){}}}
+  for(var k in aud){if(aud[k]){try{aud[k].volume=0;aud[k].play();aud[k].pause();aud[k].currentTime=0}catch(e){}}}
   vA.play();
   gate.classList.add('fading');
   setTimeout(function(){gate.style.display='none'},3000);
   setTimeout(function(){
     dreamStart=performance.now();
     fired=[];for(var i=0;i<timeline.length;i++)fired.push(false);
-      },2000);
+  },2000);
 }
 
 // ═══ MASTER CLOCK ═══
@@ -329,12 +343,39 @@ function tick(){
   if(dreamStart>0){
     var elapsed=(performance.now()-dreamStart)/1000;
     for(var i=0;i<timeline.length;i++){
-      if(!fired[i]&&elapsed>=timeline[i].t){fired[i]=true;timeline[i].fn()}
     }
+    debug.textContent=Math.floor(elapsed)+'s';
   }
   requestAnimationFrame(tick);
 }
 requestAnimationFrame(tick);
+
+// ═══ DEV SCRUB CONTROLS ═══
+// → skip forward 15s | ← skip back 15s | space pause/resume
+var paused=false;
+function jumpTo(sec){
+  if(sec<0)sec=0;
+  // Clear stage + audio + effects
+  while(stage.firstChild)stage.removeChild(stage.firstChild);
+  for(var k in aud){if(aud[k]){aud[k].pause();aud[k].volume=0;aud[k].currentTime=0}}
+  document.body.classList.remove('glitch-active','drain-active');
+  fibBox.classList.remove('active');
+  while(fibBox.firstChild)fibBox.removeChild(fibBox.firstChild);
+  window._exited=false;
+  // Reset video filter
+  vA.style.filter='';
+  // Set time
+  dreamStart=performance.now()-(sec*1000);
+  // Re-fire all events up to target
+  for(var i=0;i<timeline.length;i++){
+    fired[i]=(timeline[i].t<=sec);
+    if(fired[i])timeline[i].fn();
+  }
+}
+
+/* dev controls removed */
+
+/* dev tick override removed */
 </script>
 </body>
 </html>

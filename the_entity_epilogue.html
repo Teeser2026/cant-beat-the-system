@@ -84,7 +84,7 @@
 document.fonts.ready.then(function() {
   var source = document.getElementById('source-content');
   var reader = document.getElementById('reader');
-  var PAGE_OFFSET = 98; // E1=28, E2=30, E3=16, E4=7, E5=17. Epilogue starts at 99.
+  var PAGE_OFFSET = 96; // E1=28, E2=30, E3=16, E4=7, E5=15. Epilogue starts at 97.
   var sections = Array.from(source.querySelectorAll('[data-section]'));
   var allPages = [];
 

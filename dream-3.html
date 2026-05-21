@@ -54,7 +54,7 @@
   <source src="dream-3-audio.mp3" type="audio/mpeg">
 </audio>
 
-<div id="wake"><span>·</span></div>
+<div id="wake"><span>exit sequence</span></div>
 
 <script>
 (function() {
@@ -67,13 +67,13 @@
 
   // Timing constants (seconds)
   var AUDIO_START     = 3;    // audio begins fading in
-  var AUDIO_FADE_IN   = 5;    // seconds to reach full volume
+  var AUDIO_FADE_IN   = 10;   // seconds to reach full volume (gradual)
   var VIDEO_FADE_IN   = 8;    // video starts appearing
   var VIDEO_FADE_DUR  = 5;    // seconds for video to reach full opacity
   var VIDEO_FADE_OUT  = 55;   // video starts disappearing
   var VIDEO_FOUT_DUR  = 5;    // seconds for video to disappear
-  var AUDIO_FADE_OUT  = 65;   // audio starts fading out
-  var AUDIO_FOUT_DUR  = 10;   // seconds to silence
+  var AUDIO_FADE_OUT  = 60;   // audio starts fading out
+  var AUDIO_FOUT_DUR  = 15;   // seconds to silence (gradual)
   var WAKE_APPEAR     = 77;   // wake prompt appears
   var MAX_VOLUME      = 0.6;  // peak audio volume
 
@@ -93,22 +93,24 @@
     if (woken) return;
     var elapsed = (performance.now() - t0) / 1000;
 
-    // --- Audio fade in ---
+    // --- Audio fade in (ease-in: slow start, gradual rise) ---
     if (elapsed >= AUDIO_START && audio.paused) {
       audio.volume = 0;
       audio.play().catch(function(){});
     }
     if (elapsed >= AUDIO_START && elapsed < AUDIO_START + AUDIO_FADE_IN) {
       var p = (elapsed - AUDIO_START) / AUDIO_FADE_IN;
-      audio.volume = Math.min(p * MAX_VOLUME, MAX_VOLUME);
+      var eased = p * p; // ease-in curve
+      audio.volume = Math.min(eased * MAX_VOLUME, MAX_VOLUME);
     } else if (elapsed >= AUDIO_START + AUDIO_FADE_IN && elapsed < AUDIO_FADE_OUT) {
       audio.volume = MAX_VOLUME;
     }
 
-    // --- Audio fade out ---
+    // --- Audio fade out (ease-out: gradual then trails off) ---
     if (elapsed >= AUDIO_FADE_OUT && elapsed < AUDIO_FADE_OUT + AUDIO_FOUT_DUR) {
-      var p = 1 - (elapsed - AUDIO_FADE_OUT) / AUDIO_FOUT_DUR;
-      audio.volume = Math.max(p * MAX_VOLUME, 0);
+      var p = (elapsed - AUDIO_FADE_OUT) / AUDIO_FOUT_DUR;
+      var eased = (1 - p) * (1 - p); // ease-out curve
+      audio.volume = Math.max(eased * MAX_VOLUME, 0);
     } else if (elapsed >= AUDIO_FADE_OUT + AUDIO_FOUT_DUR) {
       audio.volume = 0;
       if (!audio.paused) audio.pause();

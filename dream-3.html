@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream 3</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: #000; overflow: hidden;
+    cursor: default; user-select: none;
+  }
+
+  #door-video {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw; max-height: 100vh;
+    width: auto; height: 100vh;
+    object-fit: contain;
+    opacity: 0;
+    transition: none; /* JS controls opacity */
+  }
+
+  #wake {
+    position: fixed;
+    bottom: 15vh; left: 0; right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s ease;
+    cursor: pointer;
+    z-index: 10;
+  }
+  #wake span {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    color: #555;
+    text-transform: lowercase;
+  }
+  #wake:hover span { color: #888; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<video id="door-video" muted loop playsinline>
+  <source src="dream-3-door.mp4" type="video/mp4">
+</video>
+
+<audio id="dream-audio" preload="auto">
+  <source src="dream-3-audio.mp3" type="audio/mpeg">
+</audio>
+
+<div id="wake"><span>·</span></div>
+
+<script>
+(function() {
+  var audio = document.getElementById('dream-audio');
+  var video = document.getElementById('door-video');
+  var wakeEl = document.getElementById('wake');
+  var started = false;
+  var woken = false;
+  var wakeReady = false;
+
+  // Timing constants (seconds)
+  var AUDIO_START     = 3;    // audio begins fading in
+  var AUDIO_FADE_IN   = 5;    // seconds to reach full volume
+  var VIDEO_FADE_IN   = 8;    // video starts appearing
+  var VIDEO_FADE_DUR  = 5;    // seconds for video to reach full opacity
+  var VIDEO_FADE_OUT  = 55;   // video starts disappearing
+  var VIDEO_FOUT_DUR  = 5;    // seconds for video to disappear
+  var AUDIO_FADE_OUT  = 65;   // audio starts fading out
+  var AUDIO_FOUT_DUR  = 10;   // seconds to silence
+  var WAKE_APPEAR     = 77;   // wake prompt appears
+  var MAX_VOLUME      = 0.6;  // peak audio volume
+
+  var t0 = null;
+  var animFrame = null;
+
+  function startExperience() {
+    if (started) return;
+    started = true;
+    document.body.style.cursor = 'none';
+    audio.volume = 0;
+    t0 = performance.now();
+    tick();
+  }
+
+  function tick() {
+    if (woken) return;
+    var elapsed = (performance.now() - t0) / 1000;
+
+    // --- Audio fade in ---
+    if (elapsed >= AUDIO_START && audio.paused) {
+      audio.volume = 0;
+      audio.play().catch(function(){});
+    }
+    if (elapsed >= AUDIO_START && elapsed < AUDIO_START + AUDIO_FADE_IN) {
+      var p = (elapsed - AUDIO_START) / AUDIO_FADE_IN;
+      audio.volume = Math.min(p * MAX_VOLUME, MAX_VOLUME);
+    } else if (elapsed >= AUDIO_START + AUDIO_FADE_IN && elapsed < AUDIO_FADE_OUT) {
+      audio.volume = MAX_VOLUME;
+    }
+
+    // --- Audio fade out ---
+    if (elapsed >= AUDIO_FADE_OUT && elapsed < AUDIO_FADE_OUT + AUDIO_FOUT_DUR) {
+      var p = 1 - (elapsed - AUDIO_FADE_OUT) / AUDIO_FOUT_DUR;
+      audio.volume = Math.max(p * MAX_VOLUME, 0);
+    } else if (elapsed >= AUDIO_FADE_OUT + AUDIO_FOUT_DUR) {
+      audio.volume = 0;
+      if (!audio.paused) audio.pause();
+    }
+
+    // --- Video fade in ---
+    if (elapsed >= VIDEO_FADE_IN && video.paused) {
+      video.play().catch(function(){});
+    }
+    if (elapsed >= VIDEO_FADE_IN && elapsed < VIDEO_FADE_IN + VIDEO_FADE_DUR) {
+      var p = (elapsed - VIDEO_FADE_IN) / VIDEO_FADE_DUR;
+      video.style.opacity = p;
+    } else if (elapsed >= VIDEO_FADE_IN + VIDEO_FADE_DUR && elapsed < VIDEO_FADE_OUT) {
+      video.style.opacity = 1;
+    }
+
+    // --- Video fade out ---
+    if (elapsed >= VIDEO_FADE_OUT && elapsed < VIDEO_FADE_OUT + VIDEO_FOUT_DUR) {
+      var p = 1 - (elapsed - VIDEO_FADE_OUT) / VIDEO_FOUT_DUR;
+      video.style.opacity = Math.max(p, 0);
+    } else if (elapsed >= VIDEO_FADE_OUT + VIDEO_FOUT_DUR) {
+      video.style.opacity = 0;
+      if (!video.paused) video.pause();
+    }
+
+    // --- Wake prompt ---
+    if (elapsed >= WAKE_APPEAR && !wakeReady) {
+      wakeReady = true;
+      wakeEl.style.opacity = '1';
+      document.body.style.cursor = 'default';
+    }
+
+    animFrame = requestAnimationFrame(tick);
+  }
+
+  function wake() {
+    if (woken) return;
+    woken = true;
+    cancelAnimationFrame(animFrame);
+
+    // Quick fade everything
+    wakeEl.style.opacity = '0';
+    video.style.opacity = '0';
+
+    // Fade audio fast
+    var fadeStep = function() {
+      if (audio.volume > 0.02) {
+        audio.volume = Math.max(audio.volume - 0.03, 0);
+        setTimeout(fadeStep, 30);
+      } else {
+        audio.volume = 0;
+        audio.pause();
+        // Signal engine
+        try { window.parent.postMessage({ type: 'entity-finished' }, '*'); } catch(e){}
+      }
+    };
+    fadeStep();
+  }
+
+  // Expose globally for onclick
+  window.wake = wake;
+
+  // Body click triggers wake after wake point
+  document.body.addEventListener('click', function() {
+    if (wakeReady && !woken) wake();
+  });
+
+  // Start on first interaction (autoplay policy)
+  function onInteract() {
+    startExperience();
+    document.removeEventListener('click', onInteract);
+    document.removeEventListener('touchstart', onInteract);
+    document.removeEventListener('keydown', onInteract);
+  }
+
+  // Try autostart, fall back to interaction
+  audio.volume = 0;
+  var autoplayTest = audio.play();
+  if (autoplayTest && autoplayTest.then) {
+    autoplayTest.then(function() {
+      // Autoplay allowed — pause immediately, let timer handle it
+      audio.pause();
+      audio.currentTime = 0;
+      startExperience();
+    }).catch(function() {
+      // Autoplay blocked — need interaction
+      wakeEl.querySelector('span').textContent = '';
+      // Show a subtle start prompt
+      var startEl = document.createElement('div');
+      startEl.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;cursor:pointer;text-align:center;';
+      startEl.innerHTML = '<span style="font-family:IBM Plex Mono,monospace;font-size:0.7rem;letter-spacing:0.3em;color:#333;">click</span>';
+      startEl.addEventListener('click', function() {
+        startEl.remove();
+        startExperience();
+      });
+      document.body.appendChild(startEl);
+    });
+  } else {
+    document.addEventListener('click', onInteract);
+    document.addEventListener('touchstart', onInteract);
+    document.addEventListener('keydown', onInteract);
+  }
+
+})();
+</script>
+</body>
+</html>

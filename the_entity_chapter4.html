@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Entity — Chapter Four</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 16px; overflow: hidden; user-select: none; }
+  #reader { position: relative; width: 700px; height: 990px; }
+  .page { position: absolute; top: 0; left: 0; width: 700px; height: 990px; background: #F5F0E8; box-shadow: 0 2px 24px rgba(0,0,0,0.5); padding: 60px 65px 40px 65px; overflow: hidden; display: none; flex-direction: column; }
+  .page.active { display: flex; }
+  .page-content { flex: 1; overflow: hidden; }
+  .page-number { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 0.8rem; color: #999; letter-spacing: 0.05em; }
+  .click-zone { position: absolute; top: 0; height: 100%; width: 50%; cursor: pointer; z-index: 10; }
+  .click-zone.left { left: 0; } .click-zone.right { right: 0; }
+
+  /* --- PROSE --- */
+  .report { font-family: 'EB Garamond', Georgia, serif; font-size: 1.02rem; color: #1a1a1a; line-height: 1.7; }
+  .report p { margin-bottom: 1.1rem; text-align: justify; }
+  .report .separator { text-align: center; margin: 1.5rem 0; color: #999; letter-spacing: 0.5em; }
+
+  /* --- CHAPTER HEADER --- */
+  .report .chapter-header { font-style: italic; font-size: 1.15rem; color: #444; margin-bottom: 2.2rem; text-align: left; }
+
+  /* --- TITLE PAGE --- */
+  .title-page-inner { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center; }
+  .title-page-inner .chapter-title { font-family: 'EB Garamond', Georgia, serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #333; margin-bottom: 0.3rem; }
+  .title-page-inner .chapter-subtitle { font-family: 'EB Garamond', Georgia, serif; font-size: 1.12rem; font-weight: 400; font-style: italic; color: #555; }
+
+  /* --- NAV ARROWS --- */
+  .nav-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 20; width: 44px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; transition: opacity 0.25s;
+    background: rgba(0,0,0,0.03); border-radius: 4px;
+  }
+  .page:hover .nav-arrow { opacity: 0.5; }
+  .nav-arrow:hover { opacity: 1 !important; }
+  .nav-arrow.left { left: 8px; }
+  .nav-arrow.right { right: 8px; }
+  .nav-arrow svg { width: 20px; height: 20px; fill: none; stroke: #888; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* --- RESPONSIVE --- */
+  @media (max-height: 1020px) { #reader { transform: scale(0.92); transform-origin: center center; } }
+  @media (max-height: 940px) { #reader { transform: scale(0.85); transform-origin: center center; } }
+  @media (max-height: 860px) { #reader { transform: scale(0.78); transform-origin: center center; } }
+  @media (max-width: 740px) { #reader { transform: scale(0.9); transform-origin: center center; } }
+  @media (max-width: 660px) { #reader { transform: scale(0.8); transform-origin: center center; } }
+  @media (max-width: 580px) { #reader { transform: scale(0.7); transform-origin: center center; } }
+
+  #measurer { position: absolute; left: -9999px; top: 0; width: 570px; visibility: hidden; }
+</style>
+</head>
+<body>
+<div id="reader"></div>
+
+<div id="measurer"></div>
+<div id="source-content" style="display:none;">
+
+<!-- ==================== TITLE PAGE ==================== -->
+<div data-section="title-page">
+  <div class="title-page-inner">
+    <p class="chapter-title">Chapter Four</p>
+    <p class="chapter-subtitle">The Study</p>
+  </div>
+</div>
+
+<!-- ==================== PROSE ==================== -->
+<div data-section="report">
+
+
+<p>The desk is wrong.</p>
+
+<p>Helen noticed before I did. She didn&rsquo;t say anything &mdash; she hasn&rsquo;t said anything for several days now &mdash; but I saw her pause in the doorway last Tuesday evening, holding two glasses of wine, and look at the surface of the desk, and then look at me, and then place one glass on the only clear corner and leave without the conversation we would normally have. The conversation we&rsquo;ve had every evening for twenty-six years, which begins with wine and ends with bed and fills the space between with whatever the day produced. Last Tuesday the day had produced a printout of the Federal Reserve&rsquo;s ownership structure annotated in my handwriting with arrows connecting it to the Bank for International Settlements&rsquo; governance charter, and Helen looked at that, and at me, and decided the wine could speak for itself.</p>
+
+<p>She is not wrong to be concerned. The desk is wrong. The desk should have the British Journal of Psychiatry. Case notes. Referral letters. The Lancet, which I have been reading since 1993 and which I now struggle to open without hearing the second presentation&rsquo;s voice: &lsquo;peer-reviewed. Published. Retracted when it became inconvenient. The journal is not the science. The journal is the managing of the science.&rsquo; I didn&rsquo;t check that claim when I heard it. I am checking it now. The retraction record for papers critical of pharmaceutical efficacy is &mdash; I want to use the word &lsquo;troubling,&rsquo; which is the clinical word, the measured word, the word that keeps the finding inside the professional frame. The retraction record is not troubling. The retraction record is systematic.</p>
+
+<p>I am going to write down what I have found because I cannot say it to anyone and because the alternative is to stop looking and I have passed the point where stopping is available.</p>
+
+<p>The background file required one hundred and four hours. I recorded that in the &sect;4 assessment as a clinical observation &mdash; a ratio of preparation to contact unprecedented in my career. What I did not record is that the preparation did not stop when the assessment was written. The assessment was submitted. The file was closed. And I continued.</p>
+
+<p>This is not clinically indicated. There is no patient care justification for what I have been doing these past weeks. Treatment is contraindicated &mdash; I wrote that myself, and I stand by it. No further sessions were scheduled when the third session ended. The file is administratively closed. What I am doing in this study, at this desk, with these documents, is not professional. It is personal.</p>
+
+<p>It began with the pharmaceutical thread. The second presentation &mdash; I still use my labels, though one of them requires revision &mdash; brought documentation of the opioid litigation. Settlement figures. Internal communications disclosed during discovery. Marketing directives that used the word &lsquo;non-addictive&rsquo; in documents dated after the clinical trials demonstrated addiction. I noted this in the background file. I verified the settlement figures against court records. They were accurate. I moved on.</p>
+
+<p>I did not move on.</p>
+
+<p>Three evenings later I was reading the Purdue Pharma bankruptcy filing. A week after that, the Vioxx internal risk assessments &mdash; the ones Merck&rsquo;s own scientists flagged before the cardiovascular events began appearing in the data. The ones that were, in the language of the subsequent litigation, &lsquo;not adequately communicated to prescribers.&rsquo; I am a prescriber. I have prescribed Vioxx. The documents I was reading described a period during which I was actively writing prescriptions for a medication whose manufacturer possessed internal evidence of cardiovascular risk and chose &mdash; the word is &lsquo;chose,&rsquo; there is no passive construction available &mdash; chose not to share that evidence with the clinicians whose patients would bear the consequences.</p>
+
+<p>This is not new information. I was aware of the Vioxx litigation. Every physician is aware of the Vioxx litigation. We are aware of it the way we are aware of Tuskegee: as history, filed under lessons learned, located safely in the past tense. What the background file did &mdash; what the second presentation&rsquo;s documentation did &mdash; was remove the past tense. The same institutional structures that produced the Vioxx decision are currently operational. The same regulatory frameworks. The same revolving door between the companies and the agencies tasked with overseeing them. The personnel have changed. The architecture has not.</p>
+
+<p>The revolving door. I have drawn it. On paper, with a pen, the way I used to draw molecular structures in medical school &mdash; carefully, with the precision of someone trained to record what they observe. I took the second presentation&rsquo;s data &mdash; eighty-four officials between one regulatory agency and the firms it regulates &mdash; and I drew the movements. Not as a list. As a shape. When you draw it as a shape, you see something the list conceals: the rotation is not random. The same individuals move through the same positions in the same sequence. The pattern repeats across decades. It is not a door. It is a mechanism.</p>
+
+<p>I drew the foundation-to-think-tank-to-policy pipeline. The same exercise. Names documented in annual reports. Funding flows documented in tax filings. Policy papers documented in government white papers. The pipeline is not hidden. It is published. Every connection I have drawn is sourced from documents that are, in the second presentation&rsquo;s phrase, &lsquo;public, verified, and ignored.&rsquo;</p>
+
+<p>I drew the BIS governance structure. An institution that exists outside the jurisdiction of every sovereign government on earth. Not by accident &mdash; by treaty. The headquarters agreement explicitly grants immunity from search, seizure, and legal process. I verified this against the treaty text. The second presentation was accurate. I drew it on the same sheet as the revolving door and the policy pipeline, and the three drawings produced, when placed together, a network diagram. The network diagram sits on my desk between the wine glass Helen left on Tuesday and the Journal of Psychiatric Practice I haven&rsquo;t opened in eleven days.</p>
+
+<p>It looks &mdash; I am recording this with clinical detachment &mdash; it looks like the work of a patient I would refer for assessment.</p>
+
+<p>I have been using the word &lsquo;Conspirator&rsquo; for the second presentation since Session 2. I noted at the time that I resisted the label. I noted the irony &mdash; that I was categorising the patient in exactly the way the patient had spent decades adapting against. I used the word &lsquo;provisionally&rsquo; and moved on.</p>
+
+<p>The word is wrong.</p>
+
+<p>It has been wrong since I wrote it, and I knew it was wrong when I wrote it, and I wrote it because my vocabulary &mdash; the vocabulary of my profession, the vocabulary the DSM provides, the vocabulary of thirty-one years of clinical training &mdash; does not contain the correct word. The closest the diagnostic framework comes is &lsquo;persecutory ideation&rsquo; and &lsquo;grandiose delusion,&rsquo; and I have excluded both on evidential grounds because the patient&rsquo;s claims are documented and verified and I cannot in professional conscience categorise documented, verified claims as delusional.</p>
+
+<p>The second presentation is not a conspirator. The second presentation brings evidence. Printed documents. Sourced, dated, cross-referenced. &lsquo;I am not inferring. I am reading.&rsquo; That is not conspiracy. That is prosecution. The second presentation assembled a case &mdash; against an architecture, against a network, against a documented pattern of coordination that my own subsequent research has confirmed &mdash; and presented it in a clinical setting because the clinical setting was the only setting where the evidence would be received by a professional obligated to verify it.</p>
+
+<p>I am crossing out &lsquo;Conspirator&rsquo; in my notes. In the margin I am writing: &lsquo;The Prosecutor.&rsquo;</p>
+
+<p>And I am aware &mdash; with the cold clarity that comes from standing outside my own professional framework and looking back at it &mdash; that this relabelling implicates me. If the second presentation is a prosecutor, then the thing being prosecuted is real. The coordination is real. The revolving door is real. The pharmaceutical suppression is real. The targeting of backup systems with inside knowledge of redundancy architecture is real. The evidence is real. And I have verified it. And I am now a man who has verified it.</p>
+
+<p>I am, by the operating standards of my own profession, a conspiracy theorist.</p>
+
+<p>The phrase applies to me the way it applied to the patient. It categorises rather than describing. It pathologises rather than engaging. It is, I am beginning to understand, a diagnostic category designed not to identify a condition but to contain a conclusion. The DSM does not have a code for &lsquo;clinician who followed the evidence.&rsquo; It has codes for the people who bring the evidence and labels for the state of having received it. The labels function as containment. They ensure the evidence remains inside the clinical file rather than entering the professional discourse. I used one of those labels on the patient. I used it provisionally. I used it knowing it was wrong. And I used it because my training provided it and my training is &mdash; I am going to write this down because I need to see it in my own handwriting &mdash; my training is part of the architecture the patient described.</p>
+
+</div>
+
+<div data-section="report">
+
+<p>The fourth appointment is booked.</p>
+
+<p>A request for a follow-up session via email. Reason given as &lsquo;ongoing assessment.&rsquo; I replied within the hour. I did not consult my diary. I did not discuss clinical justification with Hargreaves. I said yes because I want to see him.</p>
+
+<p>I am aware of what this is. Counter-transference is the first thing you learn to identify and the last thing you learn to manage, and after thirty-one years I can diagnose my own anticipation with the same precision I would bring to a patient&rsquo;s. The anticipation is inappropriate. It compromises clinical neutrality. It reflects an emotional investment in the case that exceeds the therapeutic relationship. I can document every red flag. I can cite the relevant literature. I can hear exactly what my supervisor &mdash; dead now, twelve years &mdash; would say. And none of it diminishes the anticipation by one degree.</p>
+
+<p>Because I have been sitting alone with this. Three weeks. The network diagram on my desk and the wine glass Helen stopped refilling and the Journal of Psychiatric Practice I can&rsquo;t open and the clinical framework I can&rsquo;t use and the evidence I can&rsquo;t stop verifying. Alone. My colleagues would &mdash; I know what my colleagues would do. They would use the same label I used on the patient. They would use it provisionally. They would note the irony. They would refer me to someone.</p>
+
+<p>The only person who understands what I now understand is the patient who made me understand it.</p>
+
+<p>I don&rsquo;t know what to call that. Not counter-transference &mdash; that implies a therapeutic relationship, and the therapeutic relationship ended when I wrote &lsquo;treatment contraindicated.&rsquo; Not folie &agrave; deux &mdash; that requires shared delusion, and the evidence is not delusional. Not collegial consultation &mdash; he is not my colleague; he is a man who was referred to my practice and examined across three sessions and whose documentation I have now spent more hours with than any clinical case in my career.</p>
+
+<p>He is the only person I can talk to. And he has booked an appointment. And I am, for the first time in thirty-one years of practice, looking forward to seeing a patient with something that feels &mdash; that I am going to record honestly, because the notebook is the only document left that is truly mine &mdash; that feels like relief.</p>
+
+<p>Helen came to the doorway ten minutes ago. She didn&rsquo;t bring wine.</p>
+
+<p>She said: &lsquo;Are you coming to bed?&rsquo;</p>
+
+<p>I said: &lsquo;Soon.&rsquo;</p>
+
+<p>She looked at the desk. The network diagram. The pharmaceutical printouts. The BIS treaty text with my annotations.</p>
+
+<p>She said: &lsquo;You look like your patients.&rsquo;</p>
+
+<p>She is not wrong.</p>
+
+</div>
+
+</div><!-- end source-content -->
+
+<script>
+document.fonts.ready.then(function() {
+  var source = document.getElementById('source-content');
+  var reader = document.getElementById('reader');
+  var PAGE_OFFSET = 74; // E1=28, E2=30, E3=16. E4 starts at page 75.
+  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var allPages = [];
+
+  var probe = document.getElementById('measurer');
+  var MAX_H = 890; // 990 - 60 top - 40 bottom
+
+  sections.forEach(function(section) {
+    var type = section.getAttribute('data-section');
+
+    if (type === 'title-page') {
+      allPages.push({ type: type, html: section.innerHTML });
+      return;
+    }
+
+    // Flowable section
+    var cssClass = type;
+    var children = Array.from(section.children);
+    var pageChildren = [];
+    probe.className = 'page-content ' + cssClass;
+    probe.innerHTML = '';
+
+    children.forEach(function(child) {
+      var clone = child.cloneNode(true);
+      probe.appendChild(clone);
+
+      if (probe.scrollHeight > MAX_H && pageChildren.length > 0) {
+        probe.removeChild(clone);
+        allPages.push({ type: cssClass, children: pageChildren.slice() });
+
+        probe.innerHTML = '';
+        pageChildren = [];
+        probe.appendChild(clone);
+        pageChildren.push(child.outerHTML);
+      } else {
+        pageChildren.push(child.outerHTML);
+      }
+    });
+
+    if (pageChildren.length > 0) {
+      allPages.push({ type: cssClass, children: pageChildren });
+    }
+    probe.innerHTML = '';
+  });
+
+  probe.remove();
+
+  // --- Render ---
+  var totalPages = allPages.length;
+  var currentPage = 0;
+  var pageCounter = 0;
+
+  allPages.forEach(function(pg, i) {
+    var div = document.createElement('div');
+    div.className = 'page' + (i === 0 ? ' active' : '');
+    var content = document.createElement('div');
+    content.className = 'page-content';
+
+    if (pg.type === 'title-page') {
+      content.innerHTML = pg.html;
+    } else {
+      content.className += ' ' + pg.type;
+      content.innerHTML = pg.children.join('');
+    }
+
+    var pageNum = document.createElement('div');
+    pageNum.className = 'page-number';
+    if (pg.type === 'title-page') {
+      pageNum.textContent = '';
+    } else {
+      pageCounter++;
+      pageNum.textContent = String(pageCounter + PAGE_OFFSET);
+    }
+    div.appendChild(content);
+    div.appendChild(pageNum);
+
+    // Arrows
+    var la = document.createElement('div');
+    la.className = 'nav-arrow left';
+    la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+    la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
+    div.appendChild(la);
+    var ra = document.createElement('div');
+    ra.className = 'nav-arrow right';
+    ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
+    ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
+    div.appendChild(ra);
+
+    // Click zones
+    var lz = document.createElement('div');
+    lz.className = 'click-zone left'; lz.style.zIndex='5';
+    lz.addEventListener('click', prevPage);
+    div.appendChild(lz);
+    var rz = document.createElement('div');
+    rz.className = 'click-zone right'; rz.style.zIndex='5';
+    rz.addEventListener('click', nextPage);
+    div.appendChild(rz);
+
+    reader.appendChild(div);
+  });
+
+  // Counter
+  var counter = document.createElement('div');
+  counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
+  counter.textContent = '1 / ' + totalPages;
+  document.body.appendChild(counter);
+
+  function showPage(n) {
+    if (n < 0 || n >= totalPages) return;
+    reader.querySelectorAll('.page')[currentPage].classList.remove('active');
+    reader.querySelectorAll('.page')[n].classList.add('active');
+    currentPage = n;
+    counter.textContent = (n + 1) + ' / ' + totalPages;
+    if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
+  }
+  function nextPage() { showPage(currentPage + 1); }
+  function prevPage() { showPage(currentPage - 1); }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+  });
+  source.remove();
+});
+</script>
+</body>
+</html>

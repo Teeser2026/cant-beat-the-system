@@ -438,7 +438,7 @@
 
 <p>He watches until the man turns the corner.</p>
 
-<p>He sits down. Opens the notebook. Uncaps his pen. Holds it over the page. Writes nothing.</p>
+<p>He sits down. Opens the notebook. Uncaps his pen. Holds it over the page.Writes nothing.</p>
 
 <p>Closes the notebook.</p>
 
@@ -482,9 +482,9 @@
 document.fonts.ready.then(function() {
   var source = document.getElementById('source-content');
   var reader = document.getElementById('reader');
-  // PAGE_OFFSET: placeholder — calibrate when E4 page count is known.
+  // PAGE_OFFSET: E1=28, E2=30, E3=16, E4=7. E5 starts at page 82.
   // E1=28, E2=30, E3=16, E4=TBD. Set to 0 for now.
-  var PAGE_OFFSET = 0;
+  var PAGE_OFFSET = 81;
   var sections = Array.from(source.querySelectorAll('[data-section]'));
   var allPages = [];
 

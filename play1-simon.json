@@ -6218,6 +6218,22 @@
       "audio": null
     },
     {
+      "id": "E4",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_chapter4.html",
+      "paras": [],
+      "title": "Chapter Four: The Study"
+    },
+    {
+      "id": "E5",
+      "isQuestion": true,
+      "questionMode": "entity",
+      "dreamFile": "the_entity_chapter5.html",
+      "paras": [],
+      "title": "Chapter Five: The Prosecutor"
+    },
+    {
       "id": 35,
       "num": "T35",
       "title": "Chloe",
@@ -6242,7 +6258,7 @@
       "audio": null
     },
     {
-      "id": "E4",
+      "id": "E6",
       "isQuestion": true,
       "questionMode": "entity",
       "dreamFile": "the_entity_epilogue.html",

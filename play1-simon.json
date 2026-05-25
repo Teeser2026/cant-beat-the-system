@@ -5623,7 +5623,346 @@
       "date": "16 FEBRUARY 2027",
       "paras": [
         {
-          "t": "[STUB — Post-BC3. Evening. Power's back, or partly. The house exhales. Amy makes tea. Kids settle. The PM's words hang. Simon watches the kettle boil. Everything almost normal. Almost.]"
+          "t": "Days of the week have a certain feel. Everyone knows this. Friday has a spring in its step. Sunday evening carries a low-grade existential dread that no amount of roast potato can fully neutralise. Monday is Monday. Wednesday is the day nobody has ever written a song about. Actually ‘a boring Wednesday’ is referenced in <em>That’s Entertainment</em>, I take it back. Even the weird no-man's-land between Christmas and New Year has a feel — the feel of a screensaver put on the laptop of your life while it waits for further instructions."
+        },
+        {
+          "t": "Today didn't feel like any of them. It felt, well, just different. Not the different I might have expected. It felt muted. Flat. Redolent of the <em>Come on, do something</em> cartoon meme where the man prods something with a stick. In this case a cyber attack."
+        },
+        {
+          "t": "A cyber attack that has been brewing. At least another event of magnitude has. Another pandemic ‘that really gets our attention’. Or some sort of hybrid clusterfuck. What was it branded by WEF? A <em>polycrisis</em> I believe? <em>Something Big</em> has always been just around the corner. I’ve been waiting for it the way a storm chaser waits for a tornado. Years of tracking, predicting, preparing, being dismissed. And now it's here. And it’s a little anti-climactic."
+        },
+        {
+          "t": "I’m not going to lie, when the klaxon went off it was exhilarating. I’d never felt more alive. Every nerve started firing. The internet - down, payment systems - not operating, people - confused, scared. I was buzzing. This was vindication."
+        },
+        {
+          "t": "This was <em>I fucking told you so.</em>"
+        },
+        {
+          "t": "But now, two days in, the<em> I fucking told you so </em>has become Kate with a Victoria sponge cake in front of The Beeb instead of an angry mob with pitch forks in front of The Houses of Parliament. I’d expected Mad Max and so far we’ve had a long weekend with beef stew and dog walks."
+        },
+        {
+          "t": "It’s confusing AND suspicious AND — if I’m honest — disappointing? Not that I wanted chaos. Well not <em>total</em> chaos. But enough to liven all you stiffs up a bit, to paraphrase Withnail."
+        },
+        {
+          "t": "The gap between Schwab's ‘it will make COVID seem like a small disturbance’ and the actual experience - deciding not to queue at Waitrose for shallots - is a gap I’m yet to get to grips with."
+        },
+        {
+          "t": "Perhaps the flatness IS the design. A crisis calibrated to be just severe enough to justify the response and just mild enough that nobody panics."
+        },
+        {
+          "t": "In fact, the household tonight is the very opposite of a state of panic. There was very little discussion at the end of the broadcast. Some shoulder shrugs, some mutterings of ‘back to normal soon, it seems’ and sighs of relief that the internet would soon be back up and running. ‘Reassuring’ offered George, and he appeared to speak for all the kids. Kate had given us a quick lowdown on the community hub - in short - tea, cake and gossip and had left with a ‘might see you tomorrow?’ rather than a definite same time, same place for the next instalment."
+        },
+        {
+          "t": "We’re well fed (the stew hit the spot, every last drop demolished - and I’d cooked enough to feed a dozen), pleasantly tired from the walk, fresh winter air and a few glasses of red, and well, content. The children are in their rooms - offline gaming for the boys, gossip and giggles from the girls. Amy headed to bed to read just before ten."
+        },
+        {
+          "t": "Me? I’m sitting at the kitchen table, mulling things over, glass of bourbon in hand. Eagle Rare 10 Year Old."
+        },
+        {
+          "t": "I’ve tried calling Dev quite a few times. Nothing. Not connecting to voicemail, not ringing. Just nothing. I’ve texted him too. No idea if he’s receiving them."
+        },
+        {
+          "t": "So it’s just me sitting with my own thoughts. The peace occasionally punctuated by a crackle from the dying embers of the fire. Solitude. Other than the dogs, curled up contentedly by my feet. I doubt they’re analysing the PM’s words. Well, perhaps Olive."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "I must admit there was something reassuring about the words of the PM and his cohorts tonight. Their performance suggested normality was imminent. <em>Of course</em> there will be repercussions, fast-tracked regulations and vows that ‘we will do everything within our power to ensure this doesn't happen again’. But ultimately it’s a blip that will be ironed out with the appropriate <em>solutions</em>."
+        },
+        {
+          "t": "I pick up my phone. It’s become a 1999 Nokia in function. And I kind of like it. At the same time I <em>really</em> want to be able to scroll my way through the X algo. Or dive into some juicy cyber attack Substacks. All I’ve got is a selection of ‘how’s it going?’ texts from friends and family and Arc Emergency - which has been updated with the transcript of the 6pm Joint Address. I give it a read."
+        },
+        {
+          "t": "The key words, the morale boosters - Orderly - Calm - Patient - Normal - Broadly Positive - On Schedule"
+        },
+        {
+          "t": "Our introduction to a new sidekick on the podium - Paul Chichester from The National Cyber Security Centre. Jargon Man. He’s the cyber attack’s Chris Whitty - replacing Covid’s atypical pneumonia, consensus sequence, r0, Case Fatality Rate, etc with cyber-tech jargon. Jargon that sounds plausible but that most people won’t be able to fully comprehend, let alone challenge. Stay in your lane, good people. Trust the experts."
+        },
+        {
+          "t": "Apparently - ‘The attack targeted the legacy public-key cryptography that has underpinned online banking and card payments for thirty years — the algorithms RSA, ECDSA, Diffie-Hellman. These standards have now been comprehensively compromised across the twenty-three affected nations.’"
+        },
+        {
+          "t": "Dev could explain this. I can picture him giving a real-time running commentary. Not only translating the jargon but explaining the architecture behind the words."
+        },
+        {
+          "t": "Also I note it was - ‘designed to undermine trust in the cryptography, not to encrypt or to steal.’"
+        },
+        {
+          "t": "Cui bono? Sorry, rhetorical question. Who, or what, always benefits? And if trust is lost, what do you do? Rebuild it. Stronger than before. More resilient. Better."
+        },
+        {
+          "t": "This is also intriguing - ‘ARC operates at the device level, beneath the application layer, and uses post-quantum cryptographic standards. It has not been compromised by this attack.’"
+        },
+        {
+          "t": "They’re bringing back the layer that has been compromised. Whilst the biometrics functions from the OTA push sit dormant."
+        },
+        {
+          "t": "And of course there’s - ‘Good night. And Be Well.’"
+        },
+        {
+          "t": "Be Well. The third time he's said it. Slightly affected, slightly knowing, said in a manner that you had to notice, but that simultaneously comes across as a pleasantry. A caring sign-off. The verbal equivalent of a wave. Kate heard it on night one. Whispered it back to me like a question she already knew the answer to."
+        },
+        {
+          "t": "The same two words, in the same cadence, at the end of every address. As a one off sign off it was worthy of a Roger Moore eyebrow raise. But three times? Nobody writes the same sign-off three times by accident. Someone chose those words. Designed them. Tested them."
+        },
+        {
+          "t": "‘Be Well.’ Not ‘Stay Safe.’ That was Covid, that was Boris, that was fear dressed as concern during those early lockdown days — March 2020, the sun, the empty roads, the daily countryside walks, the family together, Amy's sourdough phase, the kids doing school on Zoom in their pyjamas, bumbled briefings, raging at the telly. The guilty pleasure of furlough. The Scamdemic apocalypse was the best family holiday I'd ever had."
+        },
+        {
+          "t": "Take the rose tinted spectacles off, you prick.",
+          "c": "inner"
+        },
+        {
+          "t": "Where was I? Ah yes, ‘Be Well.’"
+        },
+        {
+          "t": "’Be Well’ is warmer. Paternal. The government wishing us wellness, not warning us of danger. A blessing, almost. But with the undertone that not Being Well is not an option. Am I reading too much into two words? Probably."
+        },
+        {
+          "t": "Sign off aside, the Prime Minister was <em>convincing</em> tonight. That's the thing. He didn’t appear to be lying. He spoke the language of institutions. Of competence. Of managed outcomes. The language that says: we have this. The language understood by those who haven’t bothered to ask ‘who designed the <em>we</em>.'"
+        },
+        {
+          "t": "He delivered it well."
+        },
+        {
+          "t": "‘I trust you to handle the truth, and I have given you as much of it as we have.’"
+        },
+        {
+          "t": "But he was omitting."
+        },
+        {
+          "t": "I witnessed a man who knew much more than he was letting on, more than he was at liberty to say - more than his script allowed. Did he know the <em>full</em> picture? I doubt it. How many do? The full picture is compartmentalised. It exists in a place he doesn't have access to. It’s above his pay grade."
+        },
+        {
+          "t": "But he knows the direction of travel. You’d have to have your head lodged firmly up your arse not to. One doesn't need the full picture to know that the reassuring, not too cold, not too hot script is a lie by omission."
+        },
+        {
+          "t": "Exhibit A: The firmware analysis. The one Dev sent me on Signal. It’s still there on my phone. An undocumented OTA push. <em>Undocumented</em> is doing some work here, considering the fact that it’s here. Documented. Also analysed by a not-suspicious-at-all, newly-created anonymous systems analyst Substack account. And debunked (yet simultaneously amplified) by multiple mainstream media outlets."
+        },
+        {
+          "t": "I open my phone with Face ID (yeah, I know) and find the analysis Dev sent. Documents like this don’t just <em>happen</em>. They aren’t <em>accidentally</em> pre-positioned."
+        },
+        {
+          "t": "I read it again, slowly. A dormant service container provisioned with local storage permissions, NFC write access, and an encrypted callback to a routing address that resolves to BIS infrastructure in Basel."
+        },
+        {
+          "t": "My mind turns to the firmware analysis Substack. It’s not saved to my phone, so I can’t access it, but the last few lines are inked into my memory."
+        },
+        {
+          "t": "It is not active. It is waiting. I don’t know what it’s waiting for.",
+          "c": "quote"
+        },
+        {
+          "t": "I bet he’s closer to knowing now. But if he’s like me he’ll be closer, but not there yet. The thing that survived is the thing that was pre-positioned. The thing being restored is the thing that was attacked. The dormant biometric layer sits there, untouched, waiting. The cognitive dissonance between the severity of the prediction and the banality of the experience is…what?"
+        },
+        {
+          "t": "A data point? Worthy of note? Confusing as fuck? I don't know how to read it yet. Broadly speaking it’s surely either one of two scenarios."
+        },
+        {
+          "t": "Here they are - the absence of any external analysis or algorithmic distractions has given me time to craft something a little more considered than trying to cram some analysis into a two hundred and eighty character maximum tweet. (My account isn’t verified - what a rebel, eh? A real body blow to <em>the system</em>)"
+        },
+        {
+          "t": "The first scenario, the tiptoe. The event is <em>contained</em>. Multiple nations, including many of the likely suspects. Global payment systems frozen. Internet, the public facing elements at least, suspended. But no cascading effects. Yet. The attack is <em>real</em> but <em>manageable</em>. The communication blackout will lift within days, payment systems will come back online within a week or two. Life will resume. But — and this is the mechanism — the legislation that will follow will be permanent. Emergency powers that will become structural. The Patriot Act model: a contained crisis producing permanent architecture. The event doesn't need to be catastrophic. It needs to be sufficient. Sufficient to justify digital ID. Sufficient to justify centralised payment infrastructure. Sufficient to make ‘we can't let this happen again’ the unassailable political position. The crisis as pretext for pre-written legislation that was sitting in policy papers years before the crisis existed."
+        },
+        {
+          "t": "The second scenario, the polycrisis cometh. We’re currently fighting our way through level one, easy mode, yet to reach the end of level guardian. In fact we’re probably still in the tutorial. This <em>Victoria Sponge Crisis</em> is just the amuse-fucking-bouche. The communication blackout isn't a side effect of the attack — it's the attack's primary function. Sever horizontal communication, establish an official channel as the single source of truth, and then deliver the next blow while we’re isolated and informed only by the people who are managing the crisis. The Davos polycrisis - a cascading, compounding series of interconnected shocks. A series of end of level guardians - cyber, then energy, then supply chain, then public health. Each one justifying the next escalation. Each escalation making the previous emergency powers look proportionate by comparison. The pre-positioned deployment is a loaded weapon waiting for a signal. We’re forty-eight hours into a multi-week operation, the population is doing exactly what the operation requires — staying <em>local</em>, staying calm, being appreciative of the quiet, grateful for the mildness and not only just hearing, but trusting the only voice still speaking."
+        },
+        {
+          "t": "I text it to Dev. To Rupert. A short question before it. Where we at? First or second? Or something else altogether? I’ll talk about it with Amy in the morning. Probably. It’s the kind of analysis she might not want to hear. The kind that will stop her sleeping."
+        },
+        {
+          "t": "I doubt I’d have <em>written</em> this if the usual noise had not been silenced. WhatsApp is down. Signal is down. Substack is down. X is down. The forums, the group chats, the Telegram channels where everything would have usually been mapped, analysed, debated, debunked and argued about in real time are down. In their place - peace, space, time to consider, my own thoughts, my own words."
+        },
+        {
+          "t": "Now consider what’s not down? ARC Emergency - our new buddy with a funky teal logo. BBC, but for the emergency broadcast only. No rolling news. Not even a few Dad’s Army repeats. One channel. One direction. Government to citizen."
+        },
+        {
+          "t": "Who do you think you are kidding?",
+          "c": "inner"
+        },
+        {
+          "t": "I try Dev again. Nothing. Still not even connecting."
+        },
+        {
+          "t": "And it occurs to me — slowly, the way important things always occur to me, about two hours after they should — that Dev is sitting in a kitchen in Cumbria having the same experience. Not ignoring me. Cut off from me. He's got the same firmware analysis on his phone, a remarkable analytical brain, the same questions, and no way to compare notes with anyone. Rupert is somewhere doing the same. The Dude is, wherever he is, doing the same. His prediction engine presumably out of action. Oh the irony. Every person I know who would be pulling this apart in real time — who would be three Substacks deep by now, who would have built a timeline, who would have found something I missed — is sitting alone in their own kitchen with their bourbon or cup of tea, their version of Victoria sponge, and their own silence."
+        },
+        {
+          "t": "The dissenters have been atomised. Not rounded up. Not censored. Isolated. And the isolation feels like a holiday."
+        },
+        {
+          "t": "Because that's the thing I keep circling back to. The quiet is lovely. I wasn't being ironic earlier when I said the phone feels like nineties Nokia and I kind of like it. I do like it. No algorithmic feed. No notifications. No one tagging me in something that will ruin my evening. No doom-scrolling at 2am. The house is the quietest it's been since before we all got these bastard things in our pockets. Normal. Domestic. Lovely."
+        },
+        {
+          "t": "And that's the design, isn't it? The vertical channel stays open — government to people, top-down, one voice, one narrative, 'Be Well.' The horizontal channels severed - but severed in the opposite way they were during Covid. Person to person, face to face contact is positively encouraged, as long as you <em>stay local</em> and <em>help thy neighbour</em>. An <em>orderly</em> supermarket queue or a bowl of soup in the community hub is fine. What’s not fine is the comparison of online notes or social media collating forty million individual suspicions into something collective. ARC works. WhatsApp doesn't. If anyone’s complaining I can’t hear them."
+        },
+        {
+          "t": "I take a sip of bourbon. Olive shifts at my feet, huffs and resettles. The fire gives a little crackle. The kitchen tap issues a solitary drip. Tiny sounds that prove the peace is real."
+        },
+        {
+          "t": "Right. Let's try something."
+        },
+        {
+          "t": "I'm going to remove the prosecution case. Deliberately. I'm going to build a model where nobody is evil. Where everything that's happened in the last forty-eight hours can be explained without the need for malice. The dormant biometric payment system, the surgical precision and predicted timing of the attack, ARC being the only thing that works, the inorganic sounding ‘Be Well’. Where emergence explains the absence of every safeguard that should have prevented this? Conspiracy without the conspirators. Emergence with the precision of design. A beast system without the beast."
+        },
+        {
+          "t": "Convergent design can certainly get us so far. Regulatory oversight — neutralised by lobbying and revolving doors. Independent auditing — captured by the firms being audited. Democratic consent — hollowed out by complexity and technical vocabulary. Nobody sets out to build a cage. It’s just people <em>doing their best</em>, jobsworths and yes-men in different departments and different buildings and different cities working to make things more efficient. Which requires more data. More surveillance. It requires <em>more</em> of <em>us. </em>All of us logged, tagged, scored, settled. Each step made sense. Each step is rational in isolation. Each step was someone's KPI, a promotion, a patent, a TED talk. Nobody woke up and thought 'right, let's build a panopticon.’"
+        },
+        {
+          "t": "Well, almost nobody."
+        },
+        {
+          "t": "It's like weight gain. Nobody decides to put on four stone. You just can’t stop saying ‘yes’ to biscuits."
+        },
+        {
+          "t": "This is the model most people choose to believe.  The normies. The comfortably numb. Those that choose cock-up over conspiracy. A model reassuring in its familiarity, in its trust in the inherent <em>kindness</em> of human nature. In its reinforcement of the belief that ‘they wouldn't do <em>that</em>’."
+        },
+        {
+          "t": "But it’s not just drift. It's not entropy alone. They don’t produce the surgical removal of democratic oversight across every institution at the same time. That requires intent. That requires people — not necessarily in a room together smoking cigars and stroking cats, not necessarily coordinating directly — but people who wanted the same outcome and worked, across decades, across institutions, across jurisdictions, toward the same destination."
+        },
+        {
+          "t": "Convergence doesn't provision dormant containers. Convergence doesn't write encrypted callbacks to the Bank for International Settlements. Convergence doesn't time-lock activation windows so that whatever it does, it does everywhere simultaneously, on a date the deployers have chosen not to <em>formally</em> disclose."
+        },
+        {
+          "t": "That's intentional design carried out by someone (or something?) who knew the architecture of every major bank's redundancy infrastructure and designed an attack to neutralise it specifically. As Dev said — that's not a foreign state actor. That's someone who built the systems. Or someone paid by someone who built them. The distinction is largely an irrelevance."
+        },
+        {
+          "t": "I glance at my phone to check my blood glucose. 12.2. A bit high, a carb-laden stew. Two units of insulin should bring it down a little. I smile a wry smile. My phone’s most important app is still functioning at least."
+        },
+        {
+          "t": "I block out a brief sense of disgust over my own double standards."
+        },
+        {
+          "t": "So, can I build a model that functions without the need for malice?"
+        },
+        {
+          "t": "Can I fuck."
+        },
+        {
+          "t": "The furthest I can push it is to suggest that the distinction between evil and ‘it’s just good business’ conducted by people indifferent to consequence might be philosophically interesting, but experientially irrelevant. The cage feels the same regardless of whether someone meant to build it."
+        },
+        {
+          "t": "I’m not sure much solace can be found in that."
+        },
+        {
+          "t": "But here's where I always get stuck. Because even if I accept the intent — and I do, I have done for years — I can't map it out in its entirety."
+        },
+        {
+          "t": "I can feel it. The way you feel a word on the tip of your tongue. You know the shape. You know the first letter. You know how many syllables. You can almost say it. But the word won't come."
+        },
+        {
+          "t": "Network maps almost absurd in their details have been produced - Mat Crawford, 7Sees, The Dude. Works of passion, dedication, beauty and perhaps insanity. Ever expanding, never complete. They point at revolving doors between government and industry — documented, named, dated. Foundation-think-tank-policy pipeline — traceable, undeniable. The families, the trusts, the standards bodies, the intelligence apparatus, the pharmaceutical complex, the financial settlement infrastructure. I can recite the names. I can draw individual arrows between individual nodes. BIS to Basel Committee. Basel Committee to NGFS. NGFS to central banks. Central banks to commercial lending. Commercial lending to the farmer who can't get a loan for a crop the algorithm doesn't approve of."
+        },
+        {
+          "t": "But the whole. The actual shape. The complete map of how the families connect to the institutions connect to the standards bodies connect to the intelligence apparatus connect to the pharmaceutical industry connect to the settlement infrastructure. The overlapping, interlocking, multigenerational network that isn't one thing or ten things or fifty things. Not one <em>they</em> but fifty shades of coordinated interest arranged in a pattern I can almost see."
+        },
+        {
+          "t": "Dev can trace the financial plumbing with his eyes closed. The independent journalists — the real ones, not the ones who got assimilated — have mapped individual corridors in extraordinary detail. But nobody's got the whole shape. Nobody can hold it all in their head at once. The architecture is too big, too distributed, too layered across too many jurisdictions and too many decades for any single mind to render it complete."
+        },
+        {
+          "t": "And that's not a design flaw. That's a feature. The architecture protects itself by being too complex for any one person to describe in a sentence. Try it at a dinner party. Try it at the school gates. Try explaining that the Bank for International Settlements, a standards body most people have never heard of, sets the risk weightings that determine what your bank can lend you money for, and that those risk weightings are now being calibrated against climate scenarios modelled by a committee that meets behind closed doors under rules that prohibit participants from disclosing what was discussed. Try explaining that in between the sorbet and the stilton. You can't. It takes too long. It sounds insane. And the fact that it sounds insane is, I'm increasingly convinced, part of the design."
+        },
+        {
+          "t": "You say 'new world order' and people hear tinfoil. You say 'global governance architecture implemented through multilateral standards bodies and conditional settlement infrastructure' and their eyes glaze over. Both descriptions are accurate. Neither is usable."
+        },
+        {
+          "t": "I knock back the rest of the bourbon in my glass. I don't pour another."
+        },
+        {
+          "t": "Have you ever had this feeling? Late at night, when the reading's been heavy and the house is quiet and your analytical mind has done one revolution too many — this feeling, this sensation that someone else is thinking the exact same thought. At the exact same time."
+        },
+        {
+          "t": "Not the same subject. The same shape. The same conclusion, arrived at from completely different evidence, in a completely different vocabulary, by someone I've never met, on the other side of a door I can't see."
+        },
+        {
+          "t": "I used to dismiss it as main-character syndrome. The conspiracy theorist's delusion of significance. Of course someone else is thinking what I'm thinking. I think it because it's true, and truth converges."
+        },
+        {
+          "t": "But it doesn't feel like convergence. It feels like connection."
+        },
+        {
+          "t": "Two tuning forks in different rooms. The understanding isn't travelling between us. It's arising in both places at once, from something around us, or within us, that neither of us can see.",
+          "c": "inner"
+        },
+        {
+          "t": "But the feeling persists. That somewhere, right now, someone with better credentials and a tidier desk is looking at the same evidence and arriving at the same barrier. And feeling the same thing I feel — that the wall isn't the end of the analysis. There’s something on the other side, on the outside. I don’t know how to reach it. But I know it’s there. And so does he."
+        },
+        {
+          "t": "Sorry, ignore me. Probably the bourbon. Witching hour bollocks. No idea where that came from. Time to switch off."
+        },
+        {
+          "t": "Final blood glucose check before bed. 9.2 - still a little high - 2 extra units of insulin should sort it."
+        },
+        {
+          "t": "Second thoughts, I’ll put one song before bed. To chill out. Let’s go vinyl."
+        },
+        {
+          "t": "I flick through the (still randomly ordered) collection until one jumps out at me."
+        },
+        {
+          "t": "Moby. Extreme Ways."
+        },
+        {
+          "t": "I know what I'm doing. I know the cliché. I’m not Jason Bourne. I watched Jason Bourne from the sofa with a takeaway curry on his lap. In fact I’m doing myself a slight disservice - I watched the first Bourne film in the cinema in Surrey Quays and sat there transfixed at the end credits when I heard this for the first time. The song just fitted. And the feeling fits now. A scratchy mechanical sound before the needle hits the groove. A synthetic hum. An electronic pulse. A machine breathing."
+        },
+        {
+          "t": "I’ve seen so much in so many places",
+          "c": "lyric"
+        },
+        {
+          "t": "So many heartaches, so many faces"
+        },
+        {
+          "t": "So many dirty things"
+        },
+        {
+          "t": "You couldn't even believe"
+        },
+        {
+          "t": "The middle of the night research. The dirty basements of the internet. The too-much-seeing."
+        },
+        {
+          "t": "I would stand in line for this.",
+          "c": "lyric"
+        },
+        {
+          "t": "How do you not stand in line for it? Orderly queues. Consent."
+        },
+        {
+          "t": "I close my eyes."
+        },
+        {
+          "t": "I let the rest of the track wash over me. The loops, the layers. A machine breathing."
+        },
+        {
+          "t": "It ends. I don't put on another."
+        },
+        {
+          "t": "I should go to bed. My eyes are heavy and the bourbon's done its work and the analytical mind — finally, mercifully — is shutting down. The day's thoughts settle like sediment. The scenarios, the firmware, the map I can't draw, the quiet that's a cage, the cage that feels like peace."
+        },
+        {
+          "t": "I tiptoe into the bedroom using the light from my phone to guide me. Amy is asleep but unconsciously recognises my arrival in bed with a barely audible huff and faint smile."
+        },
+        {
+          "t": "I lie in the darkness. There’s peace but not silence. My mind still humming to the loops."
+        },
+        {
+          "t": "I had to close down everything, I had to close down my mind.",
+          "c": "lyric"
+        },
+        {
+          "t": "I banish the lyrics from my mind but they are replaced with sounds of the house. The sounds of infrastructure. The domestic architecture doing what it does irrespective of an observer. Systems running. The house breathing. The fridge compressor in the utility room, cycling on and off and on again. The boiler, ticking as it cools. Radiator pipes leading to the bathroom towel rail. The familiar yet unidentified metallic click that Amy says sounds like the house cracking its knuckles."
+        },
+        {
+          "t": "Sounds I’ve heard a thousand times. Sounds I hear differently tonight. The boiler ticks - I hear a countdown. The hum of the fridge pulsing in waves - I hear a mantra. The metallic knuckle clicks - an entity preparing for action."
+        },
+        {
+          "t": "Switch off, Simon. You need sleep.",
+          "c": "inner"
+        },
+        {
+          "t": "Breathe…"
         }
       ]
     },
@@ -11166,6 +11505,33 @@
           }
         ]
       }
+    ],
+    "24b": [
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "The Jam",
+            "ttl": "That's Entertainment",
+            "snip": "Waking up from bad dreams",
+            "tag": "Boring Wednesday",
+            "cls": "",
+            "type": "song",
+            "time": "22:15",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "Moby",
+            "ttl": "Extreme Ways",
+            "snip": "I would stand in line for this.",
+            "tag": "Extreme places",
+            "cls": "",
+            "type": "song",
+            "time": "00:51",
+            "date": "17 Feb 2027"
+          }
+        ]
+      }
     ]
   },
   "threads": [
@@ -12373,6 +12739,24 @@
       "context": "A soul without a mind?",
       "src": "simon",
       "turn": 28
+    },
+    {
+      "id": "s025",
+      "title": "Extreme Ways",
+      "artist": "Moby",
+      "url": "https://open.spotify.com/track/00TFDHSe7s8cWm5CzDY8UP?si=6245784c649842a9",
+      "context": "A machine breathing.",
+      "src": "simon",
+      "turn": "24b"
+    },
+    {
+      "id": "s026",
+      "title": "That's Entertainment",
+      "artist": "The Jam",
+      "url": "https://open.spotify.com/track/7MH7TkjQ4RA1vG454dciw0?si=0e9846a5b7974fcc",
+      "context": "Lights going out and a kick in the balls",
+      "src": "simon",
+      "turn": "24b"
     }
   ],
   "ticker": {

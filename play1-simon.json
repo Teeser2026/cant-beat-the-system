@@ -6585,6 +6585,14 @@
       "audio": null
     },
     {
+      "id": "GPA1",
+      "isQuestion": true,
+      "questionMode": "document",
+      "dreamFile": "gpa-reader.html",
+      "paras": [],
+      "title": "The Global Power Architecture"
+    },
+    {
       "id": 36,
       "num": "T36",
       "title": "The Kitchen",

@@ -5978,7 +5978,7 @@
       "id": 25,
       "num": "T25",
       "title": "The Beep",
-      "date": "16–17 FEBRUARY 2027",
+      "date": "17 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 3–4. Cards 'returning.' Cautious optimism. Tesco self-checkout beep gets applause. George helps at corner shop. Chloe ecstatic — school Monday. Dev's 2am mesh warning: 'Stage 2 is in the walls.' Simon reads it and goes back to sleep.]"
@@ -6041,12 +6041,13 @@
         }
       ],
       "broadcastFile": "BC4.html",
-      "title": "PM Address · Day 3 Evening"
+      "title": "PM Address · Day 3 Evening",
+      "date": "17 FEBRUARY 2027"
     },
     {
       "id": "25a",
       "num": "T25a",
-      "title": "Normality Returning",
+      "title": "The Big Shop",
       "date": "17–18 FEBRUARY 2027",
       "paras": [
         {
@@ -6093,12 +6094,13 @@
         }
       ],
       "broadcastFile": "BC5.html",
-      "title": "PM Address · Day 4 Evening"
+      "title": "PM Address · Day 4 Evening",
+      "date": "18 FEBRUARY 2027"
     },
     {
       "id": 26,
       "num": "T26",
-      "title": "False Dawn",
+      "title": "6:33",
       "date": "18–19 FEBRUARY 2027",
       "paras": [
         {
@@ -6165,12 +6167,13 @@
           "t": "Stay safe. Stay local."
         }
       ],
-      "title": "PM Address · Day 5 Evening"
+      "title": "PM Address · Day 5 Evening",
+      "date": "19 FEBRUARY 2027"
     },
     {
       "id": "26a",
       "num": "T26a",
-      "title": "Tomorrow",
+      "title": "The Hodgepodge",
       "date": "19–20 FEBRUARY 2027",
       "paras": [
         {
@@ -6189,12 +6192,13 @@
       "broadcastArc": true,
       "broadcastFile": "BC7.html",
       "paras": [],
-      "title": "Joint Address · Day 6 Morning"
+      "title": "Joint Address · Day 6 Morning",
+      "date": "20 FEBRUARY 2027"
     },
     {
       "id": 27,
       "num": "T27",
-      "title": "Free Lunch",
+      "title": "The Volunteer",
       "date": "20 FEBRUARY 2027",
       "paras": [
         {
@@ -6212,13 +6216,14 @@
       "broadcastArc": true,
       "broadcastFile": "BC8.html",
       "paras": [],
-      "title": "PM Address · Day 6 Evening"
+      "title": "PM Address · Day 6 Evening",
+      "date": "20 FEBRUARY 2027"
     },
     {
       "id": "27b",
       "num": "T27b",
       "title": "101 Dots",
-      "date": "20 FEBRUARY 2027 — EVENING",
+      "date": "20 FEBRUARY 2027",
       "paras": [
         {
           "t": "The screen holds for a moment after he finishes. The seal. The flag. Then black."
@@ -6325,7 +6330,7 @@
       "id": "27c",
       "num": "T27c",
       "title": "The Entity",
-      "date": "20 FEBRUARY 2027 — LATE EVENING",
+      "date": "20 FEBRUARY 2027",
       "paras": [
         {
           "t": "Simon reveals he’s been writing. A short story. Using AI. ‘It just seemed to flow.’ The knowing-doing gap performed: he’s handed his threat model to the machine and he’s showing you the output."
@@ -6343,7 +6348,7 @@
     {
       "id": 28,
       "num": "T28",
-      "title": "Notes",
+      "title": "The Same Beep",
       "date": "21 FEBRUARY 2027",
       "paras": [
         {
@@ -6361,13 +6366,14 @@
       "broadcastArc": true,
       "broadcastFile": "BC9.html",
       "paras": [],
-      "title": "PM & Chancellor · Day 7 Noon"
+      "title": "PM & Chancellor · Day 7 Noon",
+      "date": "21 FEBRUARY 2027"
     },
     {
       "id": "28a",
       "num": "T28a",
-      "title": "An Orderly Queue",
-      "date": "21 FEBRUARY 2027 — AFTERNOON",
+      "title": "Withdrawal",
+      "date": "21–22 FEBRUARY 2027",
       "paras": [
         {
           "t": "Two o’clock. Simon goes to Tesco. The queue starts in the car park. Not panicked — orderly, British, resigned. Soldiers in the car park directing traffic, high-vis over camo. Inside: shelves patchy but bread and milk and tins in decent supply. The beep. Simon holds his phone to the terminal. ARC EMERGENCY — PAYMENT CONFIRMED — BALANCE: £131.40. He’s bought bread, milk, eggs, pasta, tinned tomatoes, teabags, dog food, paracetamol, and a bottle of wine."
@@ -6375,24 +6381,25 @@
       ]
     },
     {
-      "id": "28b",
-      "num": "T28b",
-      "title": "Dopamine Hits",
+      "id": "BC10",
+      "num": "BC10",
+      "title": "PM Address · Day 8 Evening",
       "date": "22 FEBRUARY 2027",
       "paras": [
         {
-          "t": "Amy leaves at 7am for the hub. Hamper distribution starts at 8. George is on Instagram — it came back yesterday afternoon. The crisis is the content. Everyone posting their Dark Month experience. Empty shelf photos. Hamper queue selfies. The algorithm doing what it always does. WhatsApp is alive. A text from Simon’s mum sent at 11pm on Valentine’s Day: ‘Hope you had a lovely evening darling xxx.’ Sent before the Event. Arriving now."
+          "t": "The steady-state address. Restoration proceeding. Hubs operational. The last broadcast Simon watches before going deeper."
         }
-      ]
+      ],
+      "broadcastFile": "BC10.html"
     },
     {
-      "id": "28c",
-      "num": "T28c",
-      "title": "The Old Normal",
-      "date": "23–25 FEBRUARY 2027",
+      "id": "28aa",
+      "num": "T28aa",
+      "title": "Deeper Withdrawal",
+      "date": "22–25 FEBRUARY 2027",
       "paras": [
         {
-          "t": "The first chapter that compresses time. EPM Week 2 refresh: another £200 drops into the phone. A push notification. Simon sees it, swipes it away, tells Amy over dinner. Already normalised. Six days from ‘the Chancellor has put money in your hands’ to swiping away the notification like a Deliveroo promo. The PM does a midweek address. Simon doesn’t watch it. He sees the ARC push summary while making coffee. Doesn’t turn the telly on."
+          "t": "The deeper disconnection. No internet, no feed, no algorithm. Dogs get longer walks. Meals take longer. Simon writes E2 on local AI. The sky is noticed. Something beautiful is happening inside the crisis."
         }
       ]
     },
@@ -6405,17 +6412,6 @@
       "title": "Dream 2"
     },
     {
-      "id": "28d",
-      "num": "T28d",
-      "title": "The Calendar",
-      "date": "25–28 FEBRUARY 2027",
-      "paras": [
-        {
-          "t": "Time marked on paper. The calendar on the fridge becomes the central document. Amy’s handwriting. Simon’s additions in pencil."
-        }
-      ]
-    },
-    {
       "id": "E2",
       "isQuestion": true,
       "questionMode": "entity",
@@ -6424,10 +6420,43 @@
       "title": "Chapter Two: Disregard Marginalia"
     },
     {
+      "id": "28b",
+      "num": "T28b",
+      "title": "Withdrawal Symptoms",
+      "date": "26 FEBRUARY – 2 MARCH 2027",
+      "paras": [
+        {
+          "t": "Amy leaves at 7am for the hub. Hamper distribution starts at 8. George is on Instagram — it came back yesterday afternoon. The crisis is the content. Everyone posting their Dark Month experience. Empty shelf photos. Hamper queue selfies. The algorithm doing what it always does. WhatsApp is alive. A text from Simon’s mum sent at 11pm on Valentine’s Day: ‘Hope you had a lovely evening darling xxx.’ Sent before the Event. Arriving now."
+        }
+      ]
+    },
+    {
+      "id": "28c",
+      "num": "T28c",
+      "title": "The Feed",
+      "date": "2–6 MARCH 2027",
+      "paras": [
+        {
+          "t": "The first chapter that compresses time. EPM Week 2 refresh: another £200 drops into the phone. A push notification. Simon sees it, swipes it away, tells Amy over dinner. Already normalised. Six days from ‘the Chancellor has put money in your hands’ to swiping away the notification like a Deliveroo promo. The PM does a midweek address. Simon doesn’t watch it. He sees the ARC push summary while making coffee. Doesn’t turn the telly on."
+        }
+      ]
+    },
+    {
+      "id": "28d",
+      "num": "T28d",
+      "title": "The Call",
+      "date": "4–6 MARCH 2027",
+      "paras": [
+        {
+          "t": "Time marked on paper. The calendar on the fridge becomes the central document. Amy’s handwriting. Simon’s additions in pencil."
+        }
+      ]
+    },
+    {
       "id": 29,
       "num": "T29",
-      "title": "Dev",
-      "date": "1–4 MARCH 2027",
+      "title": "Decent",
+      "date": "6–8 MARCH 2027",
       "paras": [
         {
           "t": "Dev’s forensic dump arrives at 2am. The Signal channel goes from short probes to a wall of text. ARC timeline analysis. AIDA architecture matching a DARPA proposal from 2019. The FCA interoperability mandate. The procurement contracts. Amy comes downstairs. Reads it over Simon’s shoulder. Neither of them speaks for a while. Then Amy says something practical — ‘What are we supposed to do with this?’ Simon doesn’t have an answer."
@@ -6444,17 +6473,6 @@
       "title": "Dream 3"
     },
     {
-      "id": "29aa",
-      "num": "T29aa",
-      "title": "The Last Page",
-      "date": "4–6 MARCH 2027",
-      "paras": [
-        {
-          "t": "The story is finished. Three chapters. Simon presents the final one."
-        }
-      ]
-    },
-    {
       "id": "E3",
       "isQuestion": true,
       "questionMode": "entity",
@@ -6465,96 +6483,13 @@
     {
       "id": "29a",
       "num": "T29a",
-      "title": "The Thing",
-      "date": "7–11 MARCH 2027",
+      "title": "Rama",
+      "date": "8–12 MARCH 2027",
       "paras": [
         {
           "t": "The dead zone. Dev’s forensic dump is a week old. Simon has read it three times. He can’t verify it, can’t dismiss it, can’t act on it. Social media is fully operational. The conversation has moved from ‘what happened’ to ‘what’s next.’ Half of it matches what Dev sent him. The other half is conspiracy noise he can’t distinguish from the signal. Amy comes home from the hub: ‘You’re doing the thing again.’ ‘What thing?’"
         }
       ]
-    },
-    {
-      "id": "29b",
-      "num": "T29b",
-      "title": "The Old System Failed Us",
-      "date": "12–16 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 26–30. The language shifts. PM Week 3: 'The old system failed us.' Nobody says 'back to normal' anymore. Kate notices registration equipment at community centres. Cash nearly exhausted. BBC running 'what might the new system look like' segments. The country stops waiting to go back and starts waiting to go forward.]"
-        }
-      ]
-    },
-    {
-      "id": "29c",
-      "num": "T29c",
-      "title": "Something Better",
-      "date": "17–21 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 31–35. The anticipation week. BBC speculation on new system. Hubs being fitted with registration equipment — Kate notices. Cash virtually gone. PM expected to address nation ‘within days.’ 23 nations confirm coordinated announcement. Schools ready to reopen within 48 hours. The build-up.]"
-        }
-      ],
-      "audio": null
-    },
-    {
-      "id": 30,
-      "num": "T30",
-      "title": "The Announcement",
-      "date": "22 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 35. HEAVY — centrepiece turn. PM prime time. International simulcast. Seven beats: old system broken → ARC survived → AIDA → THE DEBT JUBILEE → registration open → not temporary → 23 nations. Amy's eyes when the mortgage disappears. Street parties. Neighbours hugging. The gratitude is seismic, genuine, earned. Dev mesh: 'speech metadata. created 9 feb. six days before the attack.' Amy's inner voice: 'God help me, yes.']"
-        }
-      ],
-      "audio": null
-    },
-    {
-      "id": 31,
-      "num": "T31",
-      "title": "The Evening",
-      "date": "22–23 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 36–37. Registered vs unregistered contrast. Amy's mum sends hamper photos. George: 'Mum, can I just register? I'm 19.' He does. 'Dad, it's just an app.' Simon finds out via AIDA notification. BritCoin first allocation: 10,000 BC/adult.]"
-        }
-      ],
-      "audio": null
-    },
-    {
-      "id": 32,
-      "num": "T32",
-      "title": "Family Discussions",
-      "date": "23–24 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 38–42. Sam and Emilia registered by their mum. 'Your ex texted.' The knife that isn't AIDA — it's his ex-wife doing the right thing. Simon's rage/relief/grief. Mortgage showing £0.00. The horror of ease.]"
-        }
-      ],
-      "audio": null
-    },
-    {
-      "id": 33,
-      "num": "T33",
-      "title": "The Knife",
-      "date": "25 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 49. Chloe in the kitchen doorway. 17. 'I'm literally the only person in my year who isn't registered.' She needs Simon's signature — under 18. The A-levels she's missing. Amy won't sign without Simon. AIDA learning platform genuinely excellent. Hub learning: worksheets.]"
-        }
-      ],
-      "audio": null
-    },
-    {
-      "id": 34,
-      "num": "T34",
-      "title": "Kate",
-      "date": "26–27 March 2027",
-      "paras": [
-        {
-          "t": "[STUB — Day 56. HEAVY. Kate from next door. Psychologist. Registered yesterday. Wine in the garden. 'I know what they're doing, Simon. The NLP in the speeches. The fear-reassurance cycle. I can see every stitch in the puppet strings.' She drinks. 'I registered anyway. Because seeing the strings doesn't make you less of a puppet. It just makes you a sad one.' Simon's mirror.]"
-        }
-      ],
-      "audio": null
     },
     {
       "id": "E4",
@@ -6573,16 +6508,15 @@
       "title": "Chapter Five: The Prosecutor"
     },
     {
-      "id": 35,
-      "num": "T35",
-      "title": "Chloe",
-      "date": "28–29 March 2027",
+      "id": "29b",
+      "num": "T29b",
+      "title": "The Dictionary",
+      "date": "12–15 MARCH 2027",
       "paras": [
         {
-          "t": "[STUB — Day 63. Amy's brothers are holdouts. Rupert can't get his prescription. Jamie can't buy fuel. Amy's mum crying on the phone. Simon visits dad in care home — dad registered by institution, no consent. AIDA knows Simon through everyone else's data. Protest that evening: hundreds in a nation of 67 million. Police almost bored. 'Resistance is a luxury good.']"
+          "t": "[STUB — Day 26–30. The language shifts. PM Week 3: 'The old system failed us.' Nobody says 'back to normal' anymore. Kate notices registration equipment at community centres. Cash nearly exhausted. BBC running 'what might the new system look like' segments. The country stops waiting to go back and starts waiting to go forward.]"
         }
-      ],
-      "audio": null
+      ]
     },
     {
       "id": "GPA1",
@@ -6593,10 +6527,117 @@
       "title": "The Global Power Architecture"
     },
     {
+      "id": "29c",
+      "num": "T29c",
+      "title": "Something's Coming",
+      "date": "15–18 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 31–35. The anticipation week. BBC speculation on new system. Hubs being fitted with registration equipment — Kate notices. Cash virtually gone. PM expected to address nation ‘within days.’ 23 nations confirm coordinated announcement. Schools ready to reopen within 48 hours. The build-up.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "30a",
+      "num": "T30a",
+      "title": "The Sign",
+      "date": "18–21 MARCH 2027",
+      "paras": [
+        {
+          "t": "The protests. Multiple factions, contradictory agendas. The whole family goes."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "num": "T30",
+      "title": "The Announcement",
+      "date": "22 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 35. HEAVY — centrepiece turn. PM prime time. International simulcast. Seven beats: old system broken → ARC survived → AIDA → THE DEBT JUBILEE → registration open → not temporary → 23 nations. Amy's eyes when the mortgage disappears. Street parties. Neighbours hugging. The gratitude is seismic, genuine, earned. Dev mesh: 'speech metadata. created 9 feb. six days before the attack.' Amy's inner voice: 'God help me, yes.']"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": "BC11",
+      "num": "BC11",
+      "title": "The Announcement",
+      "date": "22 MARCH 2027",
+      "paras": [
+        {
+          "t": "Registration. Jubilee. Debt cancelled. UBI. The PM stands up for the first time in a month."
+        }
+      ],
+      "broadcastFile": "BC11.html"
+    },
+    {
+      "id": 31,
+      "num": "T31",
+      "title": "The Evening",
+      "date": "22–23 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 36–37. Registered vs unregistered contrast. Amy's mum sends hamper photos. George: 'Mum, can I just register? I'm 19.' He does. 'Dad, it's just an app.' Simon finds out via AIDA notification. BritCoin first allocation: 10,000 BC/adult.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 32,
+      "num": "T32",
+      "title": "Kate",
+      "date": "23–25 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 38–42. Sam and Emilia registered by their mum. 'Your ex texted.' The knife that isn't AIDA — it's his ex-wife doing the right thing. Simon's rage/relief/grief. Mortgage showing £0.00. The horror of ease.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 33,
+      "num": "T33",
+      "title": "The Table",
+      "date": "25–27 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 49. Chloe in the kitchen doorway. 17. 'I'm literally the only person in my year who isn't registered.' She needs Simon's signature — under 18. The A-levels she's missing. Amy won't sign without Simon. AIDA learning platform genuinely excellent. Hub learning: worksheets.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 34,
+      "num": "T34",
+      "title": "The Protest",
+      "date": "27–28 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 56. HEAVY. Kate from next door. Psychologist. Registered yesterday. Wine in the garden. 'I know what they're doing, Simon. The NLP in the speeches. The fear-reassurance cycle. I can see every stitch in the puppet strings.' She drinks. 'I registered anyway. Because seeing the strings doesn't make you less of a puppet. It just makes you a sad one.' Simon's mirror.]"
+        }
+      ],
+      "audio": null
+    },
+    {
+      "id": 35,
+      "num": "T35",
+      "title": "The Girls",
+      "date": "28–29 MARCH 2027",
+      "paras": [
+        {
+          "t": "[STUB — Day 63. Amy's brothers are holdouts. Rupert can't get his prescription. Jamie can't buy fuel. Amy's mum crying on the phone. Simon visits dad in care home — dad registered by institution, no consent. AIDA knows Simon through everyone else's data. Protest that evening: hundreds in a nation of 67 million. Police almost bored. 'Resistance is a luxury good.']"
+        }
+      ],
+      "audio": null
+    },
+    {
       "id": 36,
       "num": "T36",
       "title": "The Kitchen",
-      "date": "30–31 March 2027",
+      "date": "30–31 MARCH 2027",
       "paras": [
         {
           "t": "[STUB — Day 70. HEAVY — heart of the game. After the teenagers have gone upstairs. Dogs on the kitchen floor. Kettle boiling. Amy: 'Where's the mass, Simon?' The conversation. Not screaming — quiet, tired, honest. Dev on mesh: 'Don't do it.' AIDA: 'We're here when you're ready, Simon.' It used his name. 'We'll go tomorrow. Together.']"
@@ -6616,7 +6657,7 @@
       "id": 37,
       "num": "T37",
       "title": "Morning Coffee",
-      "date": "1 April 2027",
+      "date": "1 APRIL 2027",
       "paras": [
         {
           "t": "She said nothing. She played Northern Sky by Nick Drake. We hugged. We cried. We left for the Community Recovery Hub."

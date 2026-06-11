@@ -8929,6 +8929,15 @@
         "sec": "Text Message",
         "cards": [
           {
+            "src": "Sam",
+            "ttl": "I’ll see you later Pa. About 9. Put the kettle on 😉 x",
+            "snip": "Pa. He still says Pa.",
+            "tag": "08:11",
+            "cls": "",
+            "time": "08:11",
+            "date": "16 Feb 2027"
+          },
+          {
             "src": "Vince",
             "ttl": "this is chaos mate. u getting any of this? tried calling u earlier. networks jammed. mental. stay safe bud",
             "snip": "Vince. Reliable as gravity. If Vince is texting instead of calling, the networks really are jammed.",
@@ -9076,36 +9085,102 @@
     ],
     "25a": [
       {
-        "sec": "UK GOV Alert",
+        "sec": "Phone Call",
         "cards": [
           {
-            "src": "UK GOV",
-            "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Essential travel permitted.",
-            "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
-            "tag": "Update",
-            "cls": "x",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "UK GOV",
-            "ttl": "The Chancellor will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
-            "snip": "The Chancellor, not the PM. They're sending the money person. That feels like good news.",
-            "tag": "3:30pm",
-            "cls": "x",
-            "date": "18 Feb 2027"
+            "src": "Mum (Spain)",
+            "ttl": "Call connected — 8 minutes 12 seconds.",
+            "snip": "First call that’s gone through since Sunday. She cried. I told her everything was fine. Five times. Tony’s sorting the heating. Dash is fine. She asked about the kids three times. I said they’re fine three times. Eight minutes that felt like an hour.",
+            "tag": "CONNECTED",
+            "cls": "",
+            "date": "17 Feb 2027",
+            "time": "09:46"
           }
         ]
       },
       {
-        "sec": "Notification",
+        "sec": "Text Message",
         "cards": [
           {
-            "src": "BBC News",
-            "ttl": "Payment systems restoring across affected regions. Chancellor: 'Worst appears to be over.'",
-            "snip": "The worst appears to be over. The Chancellor said it. Must be true.",
-            "tag": "Breaking",
+            "src": "Vince",
+            "ttl": "You ok buddy? Hopefully game will be on next week? ❤️💙",
+            "snip": "Palace at home to Arsenal next Saturday. Supposedly.",
+            "tag": "",
             "cls": "",
-            "date": "18 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "15:01"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Louis is back. Repatriated 😂 😂 Two nights at the hotel gratis! You guys ok mate? Beers soon? 😂",
+            "snip": "Dave. Whatever the question, the answer is always pub.",
+            "tag": "",
+            "cls": "",
+            "date": "17 Feb 2027",
+            "time": "15:21"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "The PM will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
+            "snip": "Next steps. Next step in a return to normality? Or something else?",
+            "tag": "UK-EMRG-2027-019",
+            "cls": "x",
+            "date": "17 Feb 2027",
+            "time": "15:30"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Sarah",
+            "ttl": "Can you tell Sam and E to come back tomorrow. They aren’t answering me 😡 Their Nan and Grampy are coming for lunch tomorrow",
+            "snip": "National emergency, day three. Kids still ignoring our messages.",
+            "tag": "16:55",
+            "cls": "",
+            "time": "16:55",
+            "date": "17 Feb 2027"
+          },
+          {
+            "src": "Amy's dad (Peter)",
+            "ttl": "Got fuel! Nearly half a tank. Queues not too bad. We could come over for lunch on Sunday?",
+            "snip": "Inviting themselves over for Sunday lunch. Normality returns.",
+            "tag": "",
+            "cls": "",
+            "date": "17 Feb 2027",
+            "time": "17:56"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "PM address 17 Feb — transcript via ARC",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "ttl": "<strong>PM ADDRESS  17/2— 18:00 GMT — Transcript</strong>",
+            "snip": "Progress. Recovery. Thirty-eight per cent and climbing.",
+            "time": "18:30",
+            "date": "17 Feb 2027"
+          },
+          {
+            "src": "ARC",
+            "ttl": "PM 6pm address — key points: Markets to resume trading Thursday. Contactless restored at most major retailers. NCSC: 'Worst appears to be over.' Full recovery expected within days.",
+            "snip": "Full recovery expected within days. The Chancellor said it at 6pm. ARC had the summary up by 6:04. Nobody noticed the speed anymore.",
+            "tag": "6:04pm",
+            "cls": "a",
+            "date": "17 Feb 2027",
+            "time": "18:34"
           }
         ]
       },
@@ -9118,55 +9193,13 @@
             "snip": "Sent 2am. Read 2.02am. Still awake at 5am. He's right. Of course.",
             "tag": "2:00am",
             "cls": "",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "Amy's dad (Peter)",
-            "ttl": "Got fuel! Half a tank. Queues not too bad. Your mum says come for lunch Sunday if you can.",
-            "snip": "Half a tank feels like a fortune. Sunday lunch feels like the old world coming back.",
-            "tag": "",
-            "cls": "",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "Dave",
-            "ttl": "You ok mate? Beers tomorrow? 😂",
-            "snip": "Dave. Three days of national emergency and his first text is about the pub.",
-            "tag": "",
-            "cls": "",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "Vince",
-            "ttl": "Hopefully game will be on next week. You planning on going? ❤️💙",
-            "snip": "Vince is already thinking about the football. The world is ending and Vince wants to know about Saturday.",
-            "tag": "",
-            "cls": "",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "Sam",
-            "ttl": "I'll see you later Pa x",
-            "snip": "Pa. He still says Pa.",
-            "tag": "",
-            "cls": "",
-            "date": "18 Feb 2027"
+            "date": "18 Feb 2027",
+            "time": "02:00"
           }
         ]
-      },
-      {
-        "sec": "Phone Call",
-        "cards": [
-          {
-            "src": "Mum (Spain)",
-            "ttl": "Call connected — 4 minutes 12 seconds.",
-            "snip": "First call that's gone through since Sunday. She cried. He told her everything was fine. Tony's sorting the heating. Dash is fine. She asked about the kids three times. He said they're fine three times. Four minutes felt like an hour.",
-            "tag": "Connected",
-            "cls": "",
-            "date": "18 Feb 2027"
-          }
-        ]
-      },
+      }
+    ],
+    "26": [
       {
         "sec": "ARC Emergency",
         "cards": [
@@ -9176,35 +9209,35 @@
             "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
             "tag": "Update",
             "cls": "a",
-            "date": "18 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "ttl": "Chancellor 6pm address — key points: Markets to resume trading Thursday. Contactless restored at most major retailers. NCSC: 'Worst appears to be over.' Full recovery expected within days.",
-            "snip": "Full recovery expected within days. The Chancellor said it at 6pm. ARC had the summary up by 6:04. Nobody noticed the speed anymore.",
-            "tag": "6:04pm",
-            "cls": "a",
-            "date": "18 Feb 2027"
+            "date": "18 Feb 2027",
+            "time": "09:00"
           },
           {
             "src": "ARC",
             "tag": "BE WELL",
             "cls": "a",
-            "txt": "PM address 17 Feb — transcript via ARC",
+            "txt": "PM address 18 Feb — transcript via ARC",
+            "ttl": "<strong>PM ADDRESS  18/2— 18:00 GMT — Transcript</strong>",
+            "snip": "The shortest broadcast. The most hopeful. Sixty-one per cent.",
             "type": "thread-notify",
             "threadRef": "official",
-            "ttl": "<strong>PM ADDRESS  17/2— 18:00 GMT — Transcript</strong>",
-            "snip": "Progress. Recovery. Thirty-eight per cent and climbing.",
             "time": "18:00 GMT",
-            "date": "18 Feb 2027"
+            "date": "19 Feb 2027"
           }
         ]
-      }
-    ],
-    "26": [
+      },
       {
         "sec": "UK GOV Alert",
         "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Non-essential travel now permitted.",
+            "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
+            "tag": "Update",
+            "cls": "x",
+            "date": "18 Feb 2027",
+            "time": "18:30"
+          },
           {
             "src": "UK GOV",
             "tag": "5:59pm",
@@ -9316,18 +9349,6 @@
             "txt": "PM Address — key points: second phase of attack triggered by reconnection. Cloud services taken offline as precaution. Schools will not reopen Monday. ‘I cannot confirm that timetable tonight.’ Stay safe, stay local.",
             "ttl": "ARC EMERGENCY — PM ADDRESS",
             "snip": "No ‘be well.’ She didn’t say it.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "BE WELL",
-            "cls": "a",
-            "txt": "PM address 18 Feb — transcript via ARC",
-            "ttl": "<strong>PM ADDRESS  18/2— 18:00 GMT — Transcript</strong>",
-            "snip": "The shortest broadcast. The most hopeful. Sixty-one per cent.",
-            "type": "thread-notify",
-            "threadRef": "official",
-            "time": "18:00 GMT",
             "date": "19 Feb 2027"
           }
         ]
@@ -11580,29 +11601,6 @@
             "date": "16 Feb 2027"
           }
         ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
-            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
-            "tag": "6:00pm",
-            "cls": "a",
-            "time": "18:45",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "Repatriation",
-            "cls": "a",
-            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
-            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
-            "time": "19:30",
-            "date": "16 Feb 2027"
-          }
-        ]
       }
     ],
     "24b": [
@@ -11619,6 +11617,57 @@
             "threadRef": "official",
             "txt": "Joint address — transcript via ARC",
             "time": "18:30",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "ARC",
+            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
+            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
+            "tag": "6:00pm",
+            "cls": "a",
+            "time": "18:45",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "Cards working again tomorrow here 😊 Tony is taking me into town to do a big shop. Love to you all xxx",
+            "snip": "Spain getting their instructions from the same place.",
+            "tag": "19:17",
+            "cls": "",
+            "time": "19:17",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "Repatriation",
+            "cls": "a",
+            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
+            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
+            "time": "19:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Joe (market)",
+            "ttl": "Greengrocer coming and cakes. Pizza a maybe. No fish.",
+            "snip": "It’s almost as if the world could function without emails and WhatsApp.",
+            "tag": "20:14",
+            "cls": "",
+            "time": "20:14",
             "date": "16 Feb 2027"
           }
         ]

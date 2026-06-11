@@ -9220,23 +9220,14 @@
             "snip": "Next steps. Next step in a return to normality? Or something else?",
             "tag": "UK-EMRG-2027-019",
             "cls": "x",
-            "date": "18 Feb 2027",
-            "time": "15:30"
+            "time": "15:30",
+            "date": "18 Feb 2027"
           }
         ]
       },
       {
         "sec": "Text Message",
         "cards": [
-          {
-            "src": "Sarah",
-            "ttl": "Can you tell Sam and E to come back tomorrow. They aren’t answering me 😡 Their Nan and Grampy are coming for lunch tomorrow",
-            "snip": "National emergency, day three. Kids still ignoring our messages.",
-            "tag": "16:55",
-            "cls": "",
-            "time": "16:55",
-            "date": "18 Feb 2027"
-          },
           {
             "src": "Amy's dad (Peter)",
             "ttl": "Got fuel! Nearly half a tank. Queues not too bad. We could come over for lunch on Sunday?",

@@ -6438,6 +6438,14 @@
       ]
     },
     {
+      "id": "D3",
+      "isQuestion": true,
+      "questionMode": "dream",
+      "dreamFile": "dream-3.html",
+      "paras": [],
+      "title": "Dream 3"
+    },
+    {
       "id": "28c",
       "num": "T28c",
       "title": "The Feed",
@@ -6470,14 +6478,6 @@
         }
       ],
       "audio": null
-    },
-    {
-      "id": "D3",
-      "isQuestion": true,
-      "questionMode": "dream",
-      "dreamFile": "dream-3.html",
-      "paras": [],
-      "title": "Dream 3"
     },
     {
       "id": "E3",

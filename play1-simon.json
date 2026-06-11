@@ -9085,80 +9085,6 @@
     ],
     "25a": [
       {
-        "sec": "Phone Call",
-        "cards": [
-          {
-            "src": "Mum (Spain)",
-            "ttl": "Call connected — 8 minutes 12 seconds.",
-            "snip": "First call that’s gone through since Sunday. She cried. I told her everything was fine. Five times. Tony’s sorting the heating. Dash is fine. She asked about the kids three times. I said they’re fine three times. Eight minutes that felt like an hour.",
-            "tag": "CONNECTED",
-            "cls": "",
-            "date": "17 Feb 2027",
-            "time": "09:46"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "Vince",
-            "ttl": "You ok buddy? Hopefully game will be on next week? ❤️💙",
-            "snip": "Palace at home to Arsenal next Saturday. Supposedly.",
-            "tag": "",
-            "cls": "",
-            "date": "17 Feb 2027",
-            "time": "15:01"
-          },
-          {
-            "src": "Dave",
-            "ttl": "Louis is back. Repatriated 😂 😂 Two nights at the hotel gratis! You guys ok mate? Beers soon? 😂",
-            "snip": "Dave. Whatever the question, the answer is always pub.",
-            "tag": "",
-            "cls": "",
-            "date": "17 Feb 2027",
-            "time": "15:21"
-          }
-        ]
-      },
-      {
-        "sec": "UK GOV Alert",
-        "cards": [
-          {
-            "src": "UK GOV",
-            "ttl": "The PM will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
-            "snip": "Next steps. Next step in a return to normality? Or something else?",
-            "tag": "UK-EMRG-2027-019",
-            "cls": "x",
-            "date": "17 Feb 2027",
-            "time": "15:30"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "Sarah",
-            "ttl": "Can you tell Sam and E to come back tomorrow. They aren’t answering me 😡 Their Nan and Grampy are coming for lunch tomorrow",
-            "snip": "National emergency, day three. Kids still ignoring our messages.",
-            "tag": "16:55",
-            "cls": "",
-            "time": "16:55",
-            "date": "17 Feb 2027"
-          },
-          {
-            "src": "Amy's dad (Peter)",
-            "ttl": "Got fuel! Nearly half a tank. Queues not too bad. We could come over for lunch on Sunday?",
-            "snip": "Inviting themselves over for Sunday lunch. Normality returns.",
-            "tag": "",
-            "cls": "",
-            "date": "17 Feb 2027",
-            "time": "17:56"
-          }
-        ]
-      },
-      {
         "sec": "ARC Emergency",
         "cards": [
           {
@@ -9176,8 +9102,8 @@
           {
             "src": "ARC",
             "ttl": "PM 6pm address — key points: Markets to resume trading Thursday. Contactless restored at most major retailers. NCSC: 'Worst appears to be over.' Full recovery expected within days.",
-            "snip": "Full recovery expected within days. The Chancellor said it at 6pm. ARC had the summary up by 6:04. Nobody noticed the speed anymore.",
-            "tag": "6:04pm",
+            "snip": "Full recovery expected within days. Let’s hope it’s the last we hear of Be bloody Well.",
+            "tag": "BE WELL",
             "cls": "a",
             "date": "17 Feb 2027",
             "time": "18:34"
@@ -9195,6 +9121,80 @@
             "cls": "",
             "date": "18 Feb 2027",
             "time": "02:00"
+          }
+        ]
+      },
+      {
+        "sec": "Phone Call",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "Call connected — 8 minutes 12 seconds.",
+            "snip": "First call that’s gone through since Sunday. She cried. I told her everything was fine. Five times. Tony’s sorting the heating. Dash is fine. She asked about the kids three times. I said they’re fine three times. Eight minutes that felt like an hour.",
+            "tag": "CONNECTED",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "09:46"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Vince",
+            "ttl": "You ok buddy? Hopefully game will be on next week? ❤️💙",
+            "snip": "Palace at home to Arsenal next Saturday. Supposedly.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "15:01"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Louis is back. Repatriated 😂 😂 Two nights at the hotel gratis! You guys ok mate? Beers soon? 😂",
+            "snip": "Dave. Whatever the question, the answer is always pub.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "15:21"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "The PM will address the nation at 6pm on all BBC channels and via ARC Emergency. An update on the recovery of financial systems and next steps.",
+            "snip": "Next steps. Next step in a return to normality? Or something else?",
+            "tag": "UK-EMRG-2027-019",
+            "cls": "x",
+            "date": "18 Feb 2027",
+            "time": "15:30"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Sarah",
+            "ttl": "Can you tell Sam and E to come back tomorrow. They aren’t answering me 😡 Their Nan and Grampy are coming for lunch tomorrow",
+            "snip": "National emergency, day three. Kids still ignoring our messages.",
+            "tag": "16:55",
+            "cls": "",
+            "time": "16:55",
+            "date": "18 Feb 2027"
+          },
+          {
+            "src": "Amy's dad (Peter)",
+            "ttl": "Got fuel! Nearly half a tank. Queues not too bad. We could come over for lunch on Sunday?",
+            "snip": "Inviting themselves over for Sunday lunch. Normality returns.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "17:56"
           }
         ]
       }
@@ -9253,7 +9253,7 @@
           {
             "src": "ARC",
             "ttl": "<strong>PM ADDRESS  19/2— 21:00 GMT — Transcript</strong>",
-            "snip": "",
+            "snip": "‘Significant and unexpected’ setback. Sure.",
             "tag": "BE WELL",
             "cls": "a",
             "type": "thread-notify",
@@ -9285,7 +9285,7 @@
           {
             "src": "ARC",
             "ttl": "<strong>JOINT ADDRESS  20/2— 09:00 GMT — Transcript</strong>",
-            "snip": "",
+            "snip": "This is no longer a matter of days. There it is.",
             "tag": "BE WELL",
             "cls": "a",
             "type": "thread-notify",
@@ -11463,7 +11463,7 @@
           {
             "src": "to Joe",
             "ttl": "🤷‍♂️ will let you know asap",
-            "snip": "",
+            "snip": "I shiver as I recall the Covid arguments over whether a plant stall was ‘essential retail’.",
             "tag": "15:34",
             "cls": "",
             "time": "15:34",

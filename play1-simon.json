@@ -8936,24 +8936,6 @@
             "cls": "",
             "time": "09:11",
             "date": "16 Feb 2027"
-          },
-          {
-            "src": "Mum (Spain)",
-            "ttl": "I'm fine love. Tony sorted everything. No heating though. Love mum x",
-            "snip": "Eighteen hours to arrive. Two lines. She's fine. Tony sorted everything. Tony always sorts everything.",
-            "tag": "Delivered",
-            "cls": "",
-            "time": "10:33",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "Dave",
-            "ttl": "Mate were stuck in Tenerife. Nickys going mental. They’re saying flights tomorrow but nobody actually knows anything. How much cash have you got? We’ve got about 200 euros between us. Hotel’s being sound for now",
-            "snip": "Dave and Nicky. Tenerife. Two hundred euros and a hotel that’s being sound. For now.",
-            "tag": "",
-            "cls": "",
-            "time": "12:01",
-            "date": "16 Feb 2027"
           }
         ]
       },
@@ -8989,56 +8971,6 @@
             "cls": "a",
             "time": "10:30",
             "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
-            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
-            "tag": "6:00pm",
-            "cls": "a",
-            "time": "18:45",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "Repatriation",
-            "cls": "a",
-            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
-            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
-            "time": "19:30",
-            "date": "16 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "UK GOV Alert",
-        "cards": [
-          {
-            "src": "UK GOV — NCSC",
-            "ttl": "NCSC Update: The cyber incident affecting financial infrastructure is under active investigation. Legacy banking and payment systems remain compromised. Do not attempt to access online banking. A further update will be issued at 6pm.",
-            "snip": "Active investigation. The word 'active' doing the work of reassurance while 'compromised' does the work of fear.",
-            "tag": "10:00am",
-            "cls": "x",
-            "time": "10:00",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "UK GOV — FCDO",
-            "ttl": "TO ALL BRITISH NATIONALS OVERSEAS: Contact your nearest British embassy or consulate for guidance. Do not travel to airports unless directed by embassy staff. Emergency repatriation flights are being organised. Check ARC Emergency for schedules and assembly points.",
-            "snip": "Not everyone is watching the PM at 10am. Some people are watching the ceiling of a hotel room in Tenerife wondering when they can come home.",
-            "tag": "TRAVEL ADVISORY",
-            "cls": "x",
-            "time": "10:30",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "UK GOV",
-            "ttl": "The National Cyber Security Centre will brief the nation at 6pm on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
-            "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
-            "tag": "4:30pm",
-            "cls": "x",
-            "time": "16:30",
-            "date": "16 Feb 2027"
           }
         ]
       }
@@ -9051,17 +8983,19 @@
             "src": "UK GOV",
             "ttl": "Payment systems are restoring across affected regions. Schools confirm reopening Monday 22 February. Continue to follow guidance via ARC and BBC.",
             "snip": "Schools Monday. Cards working. The government sounds like it believes its own good news.",
-            "tag": "Update",
+            "tag": "UK-EMRG-2027-017",
             "cls": "x",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "07:00"
           },
           {
             "src": "UK GOV",
             "ttl": "The PM will address the nation at 6pm. NCSC will provide a further assessment of the recovery. All BBC channels and ARC Emergency.",
             "snip": "Another 6pm. But this one feels different. This one feels like good news coming.",
-            "tag": "4:00pm",
+            "tag": "UK-EMRG-2027-018",
             "cls": "x",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "16:00"
           }
         ]
       },
@@ -9069,20 +9003,13 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Amy",
-            "ttl": "Cards work at Tesco! Getting a big shop in. Anything you need? xx",
-            "snip": "She's spending the cash reserves she doesn't know she'll need in four days.",
-            "tag": "",
-            "cls": "",
-            "date": "17 Feb 2027"
-          },
-          {
             "src": "Amy's mum",
             "ttl": "Cards working! Got a lovely joint of beef. Back to normal soon love.",
             "snip": "Lovely joint of beef. The optimism of a woman who's already spent her emergency cash on a roasting joint.",
             "tag": "",
             "cls": "",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "11:46"
           }
         ]
       },
@@ -9093,61 +9020,46 @@
             "src": "ARC",
             "ttl": "Payment systems are restoring. ARC Emergency remains your verified source for updates during the recovery period. Continue to check for updates.",
             "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
-            "tag": "Update",
+            "tag": "BE WELL",
             "cls": "a",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "10:00"
           },
           {
             "src": "ARC",
-            "ttl": "PM 6pm address — key points: 60% of payment terminals operational. Schools to reopen Monday. NCSC assessment: 'The correction appears contained.' Full recovery expected within days.",
-            "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
-            "tag": "6:00pm",
-            "cls": "a",
-            "date": "17 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "ARC Education",
+            "tag": "ARC EDUCATION",
             "cls": "a",
             "ttl": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council.",
             "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time.",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "08:00"
           },
           {
             "src": "ARC",
-            "tag": "12:15pm",
+            "tag": "ARC BUSINESS",
             "cls": "a",
             "ttl": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region.",
             "snip": "ARC → Business → Your Region. Will this be helpful advice or furlough?",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "15:15"
           },
           {
             "src": "ARC",
-            "tag": "3:30pm",
+            "tag": "BE WELL",
             "cls": "a",
             "ttl": "Support during the restoration period — guidance now available. Access via ARC → Support → Your Region. Includes: employer obligations, emergency hub services, prescription access, utility protections.",
             "snip": "Everything on one app. How helpful.",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "15:30"
           },
           {
             "src": "ARC",
-            "tag": "Repatriation",
+            "tag": "BE WELL",
             "cls": "a",
             "ttl": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub.",
             "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go.",
-            "date": "17 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "ttl": "JOINT ADDRESS  16/2— 18:00 GMT — Transcript",
-            "snip": "back to the card taps and beeps tomorrow",
-            "tag": "BE WELL",
-            "cls": "a",
-            "type": "thread-notify",
-            "threadRef": "official",
-            "txt": "Joint address — transcript via ARC",
-            "time": "18:00 GMT",
-            "date": "17 Feb 2027"
+            "date": "17 Feb 2027",
+            "time": "10:30"
           }
         ]
       }
@@ -9343,6 +9255,14 @@
       {
         "sec": "ARC Emergency",
         "cards": [
+          {
+            "src": "ARC",
+            "ttl": "PM 6pm address — key points: 60% of payment terminals operational. Schools to reopen Monday. NCSC assessment: 'The correction appears contained.' Full recovery expected within days.",
+            "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
+            "tag": "6:00pm",
+            "cls": "a",
+            "date": "17 Feb 2027"
+          },
           {
             "src": "ARC",
             "tag": "5:44pm",
@@ -11540,6 +11460,111 @@
     "27b": [],
     "24a": [
       {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV — NCSC",
+            "ttl": "NCSC Update: The cyber incident affecting financial infrastructure is under active investigation. Legacy banking and payment systems remain compromised. Do not attempt to access online banking. A further update will be issued at 6pm.",
+            "snip": "Active investigation. The word 'active' doing the work of reassurance while 'compromised' does the work of fear.",
+            "tag": "UK-EMRG-2027-014",
+            "cls": "x",
+            "time": "10:00",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "UK GOV — FCDO",
+            "ttl": "TO ALL BRITISH NATIONALS OVERSEAS: Contact your nearest British embassy or consulate for guidance. Do not travel to airports unless directed by embassy staff. Emergency repatriation flights are being organised. Check ARC Emergency for schedules and assembly points.",
+            "snip": "Not everyone is watching the PM at 10am. Some people are watching the ceiling of a hotel room in Tenerife wondering when they can come home.",
+            "tag": "UK-EMRG-2027-015",
+            "cls": "x",
+            "time": "10:30",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "UK GOV",
+            "ttl": "The National Cyber Security Centre will brief the nation at 6pm on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
+            "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
+            "tag": "UK-EMRG-2027-016",
+            "cls": "x",
+            "time": "16:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
+            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
+            "tag": "6:00pm",
+            "cls": "a",
+            "time": "18:45",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "ARC",
+            "tag": "Repatriation",
+            "cls": "a",
+            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
+            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
+            "time": "19:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Mum (Spain)",
+            "ttl": "I'm fine love. Tony sorted everything. No heating though. Love mum x",
+            "snip": "Eighteen hours to arrive. Two lines. She's fine. Tony sorted everything. Tony always sorts everything.",
+            "tag": "Delivered",
+            "cls": "",
+            "time": "10:33",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Mate. Louis is stuck in Tenerife. Nicky’s going mental. They’re saying flights tomorrow but nobody actually knows anything. He wants to come back so he’s here for the Palace game. I told him to stay out there and enjoy the sun and the free hotel!",
+            "snip": "Dave’s son on his first holiday alone. Dave just laughing about it, his wife is worried sick. Sums them up.",
+            "tag": "",
+            "cls": "",
+            "time": "12:01",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "Joe (market)",
+            "ttl": "Hope you guys are ok? You reckon markets will be on this week?",
+            "snip": "How long is a piece of string.",
+            "tag": "15:32",
+            "cls": "",
+            "time": "15:32",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "to Joe",
+            "ttl": "🤷‍♂️ will let you know asap",
+            "snip": "",
+            "tag": "15:34",
+            "cls": "",
+            "time": "15:34",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "Steve (bread stall)",
+            "ttl": "We’re still planning on trading Thursday. Cash only obviously. Save you a sourdough?",
+            "snip": "The most resilient supply chain in Sussex is a man with a sourdough starter and a cash tin. Not asking if we’re open, telling me he’ll be there!",
+            "tag": "17:01",
+            "cls": "",
+            "time": "17:01",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
         "sec": "Song",
         "cards": [
           {
@@ -11556,6 +11581,23 @@
       }
     ],
     "24b": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "JOINT ADDRESS  16/2— 18:00 GMT — Transcript",
+            "snip": "back to the card taps and beeps tomorrow",
+            "tag": "BE WELL",
+            "cls": "a",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "txt": "Joint address — transcript via ARC",
+            "time": "18:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
       {
         "sec": "Song",
         "cards": [
@@ -11630,7 +11672,7 @@
         {
           "text": "ARC — Transcript: Joint Address to the Nation — 16 February 2027",
           "src": "arc",
-          "turn": 25,
+          "turn": "24b",
           "article": {
             "style": "arc",
             "source": "ARC",

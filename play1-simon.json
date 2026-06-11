@@ -8987,15 +8987,38 @@
             "cls": "x",
             "date": "17 Feb 2027",
             "time": "07:00"
+          }
+        ]
+      },
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "ARC EDUCATION",
+            "cls": "a",
+            "ttl": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council.",
+            "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time.",
+            "date": "17 Feb 2027",
+            "time": "08:00"
           },
           {
-            "src": "UK GOV",
-            "ttl": "The PM will address the nation at 6pm. NCSC will provide a further assessment of the recovery. All BBC channels and ARC Emergency.",
-            "snip": "Another 6pm. But this one feels different. This one feels like good news coming.",
-            "tag": "UK-EMRG-2027-018",
-            "cls": "x",
+            "src": "ARC",
+            "ttl": "Payment systems are restoring. ARC Emergency remains your verified source for updates during the recovery period. Continue to check for updates.",
+            "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
+            "tag": "BE WELL",
+            "cls": "a",
             "date": "17 Feb 2027",
-            "time": "16:00"
+            "time": "10:00"
+          },
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "ttl": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub.",
+            "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go.",
+            "date": "17 Feb 2027",
+            "time": "10:30"
           }
         ]
       },
@@ -9018,24 +9041,6 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Payment systems are restoring. ARC Emergency remains your verified source for updates during the recovery period. Continue to check for updates.",
-            "snip": "Cards work again but ARC isn't going anywhere. It's still in your notification tray. Watching the restoration it doesn't seem to need.",
-            "tag": "BE WELL",
-            "cls": "a",
-            "date": "17 Feb 2027",
-            "time": "10:00"
-          },
-          {
-            "src": "ARC",
-            "tag": "ARC EDUCATION",
-            "cls": "a",
-            "ttl": "Learning at Home — now live. BHASVIC Sixth Form College: Key Stage 5 materials available. Access via ARC → Education → Your School. Content updated daily by your teachers through Brighton & Hove Council.",
-            "snip": "I bet the teachers are loving this. They don’t even have to set up a Teams call this time.",
-            "date": "17 Feb 2027",
-            "time": "08:00"
-          },
-          {
-            "src": "ARC",
             "tag": "ARC BUSINESS",
             "cls": "a",
             "ttl": "Business Continuity Guidance — now available. Employers: wage obligations, absence provisions, emergency operating procedures. Sole traders and small businesses: emergency support and hub access. Full document via ARC → Business → Your Region.",
@@ -9051,15 +9056,20 @@
             "snip": "Everything on one app. How helpful.",
             "date": "17 Feb 2027",
             "time": "15:30"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
           {
-            "src": "ARC",
-            "tag": "BE WELL",
-            "cls": "a",
-            "ttl": "Repatriation update: over 80,000 British nationals have returned to the UK in the last 48 hours. Emergency flights continuing from 14 countries. Cross-channel ferry services running on military-assisted emergency schedules. If overseas: check ARC Emergency for updated flight schedules. If returned: report to your nearest Community Recovery Hub.",
-            "snip": "Eighty thousand people in forty-eight hours. That’s not improvised. That’s a logistics operation that was ready to go.",
+            "src": "UK GOV",
+            "ttl": "The PM will address the nation at 6pm. NCSC will provide a further assessment of the recovery. All BBC channels and ARC Emergency.",
+            "snip": "Another 6pm. But this one feels different. This one feels like good news coming.",
+            "tag": "UK-EMRG-2027-018",
+            "cls": "x",
             "date": "17 Feb 2027",
-            "time": "10:30"
+            "time": "16:00"
           }
         ]
       }
@@ -11479,38 +11489,6 @@
             "cls": "x",
             "time": "10:30",
             "date": "16 Feb 2027"
-          },
-          {
-            "src": "UK GOV",
-            "ttl": "The National Cyber Security Centre will brief the nation at 6pm on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
-            "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
-            "tag": "UK-EMRG-2027-016",
-            "cls": "x",
-            "time": "16:30",
-            "date": "16 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
-            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
-            "tag": "6:00pm",
-            "cls": "a",
-            "time": "18:45",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "Repatriation",
-            "cls": "a",
-            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
-            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
-            "time": "19:30",
-            "date": "16 Feb 2027"
           }
         ]
       },
@@ -11534,7 +11512,27 @@
             "cls": "",
             "time": "12:01",
             "date": "16 Feb 2027"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "Song",
+        "cards": [
+          {
+            "src": "Badly Drawn Boy",
+            "ttl": "Once Around the Block",
+            "snip": "A never-ending queue. We go once around the block and back home.",
+            "tag": "WASTED JOURNEY",
+            "cls": "",
+            "type": "song",
+            "time": "14:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
           {
             "src": "Joe (market)",
             "ttl": "Hope you guys are ok? You reckon markets will be on this week?",
@@ -11552,7 +11550,26 @@
             "cls": "",
             "time": "15:34",
             "date": "16 Feb 2027"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "The National Cyber Security Centre will brief the nation at 6pm on all BBC channels and via ARC Emergency. Key guidance on communications and family contact to follow.",
+            "snip": "Another 6pm address. They like 6pm. Teatime. Everyone home. Everyone watching.",
+            "tag": "UK-EMRG-2027-016",
+            "cls": "x",
+            "time": "16:30",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
           {
             "src": "Steve (bread stall)",
             "ttl": "We’re still planning on trading Thursday. Cash only obviously. Save you a sourdough?",
@@ -11565,16 +11582,24 @@
         ]
       },
       {
-        "sec": "Song",
+        "sec": "ARC Emergency",
         "cards": [
           {
-            "src": "Badly Drawn Boy",
-            "ttl": "Once Around the Block",
-            "snip": "A never-ending queue. We go once around the block and back home.",
-            "tag": "WASTED JOURNEY",
-            "cls": "",
-            "type": "song",
-            "time": "14:30",
+            "src": "ARC",
+            "ttl": "NCSC 6pm briefing — key points: Phone calls and SMS are operational but subject to heavy congestion. Use for emergencies only. Email, WhatsApp, and social media services remain offline. Do not rely on messaging apps for urgent communication.",
+            "snip": "Phone works. Text works. Everything else is dead. ARC laid it out cleaner than the broadcast did.",
+            "tag": "6:00pm",
+            "cls": "a",
+            "time": "18:45",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "ARC",
+            "tag": "Repatriation",
+            "cls": "a",
+            "ttl": "Emergency repatriation flights now operating from: Spain (Malaga, Alicante, Tenerife South), Portugal (Faro, Lisbon), Greece (Athens, Heraklion), Turkey (Antalya, Dalaman), Thailand (Bangkok, Phuket). RAF and requisitioned aircraft. Report to designated embassy assembly points. Do not travel independently to airports. Schedule updating via ARC Emergency.",
+            "snip": "Malaga. Alicante. Tenerife. ‘Do not travel independently to airports.’ Who’s enforcing that? In fact, how many actually want to be ‘repatriated?’",
+            "time": "19:30",
             "date": "16 Feb 2027"
           }
         ]

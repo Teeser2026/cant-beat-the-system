@@ -9083,14 +9083,6 @@
             "tag": "",
             "cls": "",
             "date": "17 Feb 2027"
-          },
-          {
-            "src": "Dev",
-            "ttl": "The firmware payload. Two stages. Stage 1 encrypted. Stage 2 is in the walls. When they reconnect the old systems, it triggers. Don't celebrate yet. Setting up a Signal group — I'll add you when it's back up. Few days.",
-            "snip": "2am. He read it. He went back to sleep. The bit about Signal didn't register. The bit about Stage 2 didn't either.",
-            "tag": "2:00am",
-            "cls": "",
-            "date": "17 Feb 2027"
           }
         ]
       },
@@ -9198,6 +9190,14 @@
       {
         "sec": "Text Message",
         "cards": [
+          {
+            "src": "Dev",
+            "ttl": "Don't celebrate yet. False dawn. Too clean. Too soon. The rails are in place. Expect a setback.",
+            "snip": "Sent 2am. Read 2.02am. Still awake at 5am. He's right. Of course.",
+            "tag": "2:00am",
+            "cls": "",
+            "date": "18 Feb 2027"
+          },
           {
             "src": "Amy's dad (Peter)",
             "ttl": "Got fuel! Half a tank. Queues not too bad. Your mum says come for lunch Sunday if you can.",

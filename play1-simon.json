@@ -6174,7 +6174,7 @@
       "id": "26a",
       "num": "T26a",
       "title": "The Hodgepodge",
-      "date": "19–20 FEBRUARY 2027",
+      "date": "19 FEBRUARY 2027",
       "paras": [
         {
           "t": "[STUB — Day 6. First full day of confirmed collapse. Nobody saying ‘it’ll blow over’ any more. Chloe was told school Monday — now she won’t go. Amy’s parents used cards during false dawn, now have less cash than before. First fuel queue. Mood shift from crisis to siege.]"
@@ -6182,6 +6182,21 @@
       ],
       "audio": null,
       "dateHeader": "20 FEBRUARY 2027"
+    },
+    {
+      "id": "D2",
+      "isQuestion": true,
+      "questionMode": "dream",
+      "dreamFile": "dream-2.html",
+      "paras": [],
+      "title": "Dream 2"
+    },
+    {
+      "id": "26b",
+      "title": "We've Been Here Before",
+      "date": "20 FEBRUARY 2027",
+      "paras": [],
+      "choices": []
     },
     {
       "id": "BC7",
@@ -6402,14 +6417,6 @@
           "t": "The deeper disconnection. No internet, no feed, no algorithm. Dogs get longer walks. Meals take longer. Simon writes E2 on local AI. The sky is noticed. Something beautiful is happening inside the crisis."
         }
       ]
-    },
-    {
-      "id": "D2",
-      "isQuestion": true,
-      "questionMode": "dream",
-      "dreamFile": "dream-2.html",
-      "paras": [],
-      "title": "Dream 2"
     },
     {
       "id": "E2",
@@ -11635,7 +11642,8 @@
           }
         ]
       }
-    ]
+    ],
+    "26b": []
   },
   "threads": [
     {

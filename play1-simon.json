@@ -9042,6 +9042,42 @@
             "cls": "",
             "date": "17 Feb 2027",
             "time": "11:46"
+          },
+          {
+            "src": "Rupert",
+            "ttl": "2 cases of Cotes du Rhone. Beep. Beep.",
+            "snip": "Rupert’s version of testing the payment infrastructure.",
+            "tag": "14:22",
+            "cls": "",
+            "time": "14:22",
+            "date": "17 Feb 2027"
+          },
+          {
+            "src": "to Rupert",
+            "ttl": "We were already pretty well stocked 😂 We queued up 30 mins for milk!",
+            "snip": "We have enough wine for a month, this ain’t our first rodeo.",
+            "tag": "14:24",
+            "cls": "",
+            "time": "14:24",
+            "date": "17 Feb 2027"
+          },
+          {
+            "src": "Rupert",
+            "ttl": "Support during the restoration period. Business Continuity Guidance. Repatriation. It’s hardly been WW3.",
+            "snip": "He’s been waiting for this his whole life and it’s disappointed him.",
+            "tag": "14:27",
+            "cls": "",
+            "time": "14:27",
+            "date": "17 Feb 2027"
+          },
+          {
+            "src": "to Rupert",
+            "ttl": "Yet",
+            "snip": "A word that might come back to bite me?",
+            "tag": "14:28",
+            "cls": "",
+            "time": "14:28",
+            "date": "17 Feb 2027"
           }
         ]
       },
@@ -9079,6 +9115,20 @@
             "cls": "x",
             "date": "17 Feb 2027",
             "time": "16:00"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Sarah",
+            "ttl": "Can you tell Sam and E to come back tomorrow. They aren’t answering me 😡 Their Nan and Grampy are coming for lunch tomorrow",
+            "snip": "National emergency, day three. Kids still ignoring our messages.",
+            "tag": "16:45",
+            "cls": "",
+            "time": "16:45",
+            "date": "17 Feb 2027"
           }
         ]
       }

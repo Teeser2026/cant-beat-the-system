@@ -9205,15 +9205,6 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
-            "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
-            "tag": "Update",
-            "cls": "a",
-            "date": "18 Feb 2027",
-            "time": "09:00"
-          },
-          {
-            "src": "ARC",
             "tag": "BE WELL",
             "cls": "a",
             "txt": "PM address 18 Feb — transcript via ARC",
@@ -9221,8 +9212,8 @@
             "snip": "The shortest broadcast. The most hopeful. Sixty-one per cent.",
             "type": "thread-notify",
             "threadRef": "official",
-            "time": "18:00 GMT",
-            "date": "19 Feb 2027"
+            "time": "18:30",
+            "date": "18 Feb 2027"
           }
         ]
       },
@@ -9233,65 +9224,10 @@
             "src": "UK GOV",
             "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Non-essential travel now permitted.",
             "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
-            "tag": "Update",
+            "tag": "UK-EMRG-2027-020",
             "cls": "x",
             "date": "18 Feb 2027",
             "time": "18:30"
-          },
-          {
-            "src": "UK GOV",
-            "tag": "5:59pm",
-            "cls": "x",
-            "txt": "A second cyber incident has affected financial systems across multiple nations. The PM will address the nation this evening. Time to be confirmed. Do not attempt to access banking applications.",
-            "ttl": "UK GOVERNMENT ALERT",
-            "snip": "Twenty-six minutes after ARC. The gap is widening.",
-            "date": "19 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "Notification",
-        "cards": [
-          {
-            "src": "BBC News",
-            "tag": "Breaking",
-            "cls": "",
-            "txt": "PM: ‘We are back to where we were at the start of this week.’ Second disruption hits financial systems across 23 nations. Cloud services pulled offline.",
-            "ttl": "BBC News — Breaking",
-            "snip": "The Breaking chime. Again.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "SMS — Chloe’s school",
-            "tag": "SMS",
-            "cls": "",
-            "txt": "Monday reopening postponed. ARC Education continues. Further updates to follow.",
-            "ttl": "BHASVIC",
-            "snip": "Chloe read it before Amy did.",
-            "date": "19 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "Amy’s mum",
-            "tag": "",
-            "cls": "",
-            "txt": "Cards stopped again. We’ve hardly got any food in. Your dad’s upset.",
-            "ttl": "",
-            "snip": "",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "Dev",
-            "tag": "",
-            "cls": "",
-            "txt": "Stage 2. Told you. This one corrupts — doesn’t encrypt. The records aren’t locked. They’re gone.",
-            "ttl": "",
-            "snip": "",
-            "date": "19 Feb 2027"
           }
         ]
       },
@@ -9300,61 +9236,33 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "PM 6pm address — key points: 60% of payment terminals operational. Schools to reopen Monday. NCSC assessment: 'The correction appears contained.' Full recovery expected within days.",
-            "snip": "Full recovery expected within days. ARC delivered the summary before the PM finished speaking. Faster every time.",
-            "tag": "6:00pm",
+            "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
+            "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
+            "tag": "UPDATE",
             "cls": "a",
-            "date": "17 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "5:44pm",
-            "cls": "a",
-            "txt": "A second phase of disruption has affected financial and payment systems. This is affecting all 23 nations identified in the original incident. Remain calm. Do not attempt further card transactions. Updates to follow.",
-            "ttl": "ARC EMERGENCY",
-            "snip": "Eleven minutes. Eleven minutes of silence before anyone said anything.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "5:48pm",
-            "cls": "a",
-            "txt": "The PM’s 6pm address to the nation has been delayed. The PM is chairing an emergency COBRA session. A revised time will be confirmed shortly.",
-            "ttl": "ARC EMERGENCY",
-            "snip": "She was twenty-seven minutes from telling us everything was fine.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "7:15pm",
-            "cls": "a",
-            "txt": "The PM will address the nation at 9:00pm this evening on BBC Television, BBC Radio and ARC Emergency. COBRA remains in session. All emergency measures remain in place.",
-            "ttl": "ARC EMERGENCY",
-            "snip": "Ninety minutes of nothing. Then this.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "8:55pm",
-            "cls": "a",
-            "txt": "The PM’s address to the nation will begin at 9:00pm. Live on BBC One, BBC Radio 4 and ARC Emergency.",
-            "ttl": "ARC EMERGENCY",
-            "snip": "Five minutes.",
-            "date": "19 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "tag": "9:00pm",
-            "cls": "a",
-            "txt": "PM Address — key points: second phase of attack triggered by reconnection. Cloud services taken offline as precaution. Schools will not reopen Monday. ‘I cannot confirm that timetable tonight.’ Stay safe, stay local.",
-            "ttl": "ARC EMERGENCY — PM ADDRESS",
-            "snip": "No ‘be well.’ She didn’t say it.",
-            "date": "19 Feb 2027"
+            "date": "18 Feb 2027",
+            "time": "21:00"
           }
         ]
       }
     ],
     "26a": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "<strong>PM ADDRESS  19/2— 21:00 GMT — Transcript</strong>",
+            "snip": "",
+            "tag": "BE WELL",
+            "cls": "a",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "time": "21:30",
+            "date": "19 Feb 2027"
+          }
+        ]
+      },
       {
         "sec": "UK GOV Alert",
         "cards": [
@@ -9362,43 +9270,31 @@
             "src": "UK GOV",
             "ttl": "Remain at home. Essential travel only. The threat of further disruption remains active. NCSC is assessing the full scope of damage to financial data. Updates via ARC and BBC.",
             "snip": "Further disruption remains active. Not 'is over.' Not 'is contained.' Remains active. They don't know if there's a Stage 3.",
-            "tag": "8:00am",
+            "tag": "UK-EMRG-2027-021",
             "cls": "x",
-            "date": "20 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "Text Message",
-        "cards": [
-          {
-            "src": "Kate",
-            "ttl": "The community centre's talking about opening as a walk-in clinic. They need volunteers. Might go in tomorrow. You two okay? x",
-            "snip": "Even Kate is saying tomorrow. Nobody's doing anything today. Today is just the sound of phones buzzing with bad news.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
-          },
-          {
-            "src": "Amy's mum",
-            "ttl": "Your brothers aren't answering their phones. Your dad's worried sick.",
-            "snip": "Rupert and Jamie. Off grid before off grid was mandatory. Amy's mum says it like they've joined a cult.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
-          },
-          {
-            "src": "Dave",
-            "ttl": "Mate what the fuck has happened here. We landed three hours ago and there’s army at Tesco. What have we come back to. Ring me when you can",
-            "snip": "Three hours ago Dave was in the air, watching films, thinking the worst was over. He landed in a different country.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
+            "date": "19 Feb 2027",
+            "time": "22:00"
           }
         ]
       }
     ],
     "27": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "<strong>JOINT ADDRESS  20/2— 09:00 GMT — Transcript</strong>",
+            "snip": "",
+            "tag": "BE WELL",
+            "cls": "a",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "time": "09:30",
+            "date": "20 Feb 2027"
+          }
+        ]
+      },
       {
         "sec": "UK GOV Alert",
         "cards": [
@@ -9476,24 +9372,6 @@
             "type": "song",
             "time": "23:40",
             "date": "20 Feb 2027"
-          }
-        ]
-      },
-      {
-        "sec": "ARC Emergency",
-        "cards": [
-          {
-            "src": "ARC",
-            "tag": "BE WELL",
-            "cls": "a",
-            "txt": "PM address 20 Feb evening — transcript via ARC",
-            "type": "thread-notify",
-            "threadRef": "official",
-            "ttl": "<strong>PM ADDRESS  20/2— 18:00 GMT — Transcript</strong>",
-            "snip": "Every one of those points of light is a place you can walk to.",
-            "isnew": true,
-            "time": "18:00 GMT",
-            "date": "21 Feb 2027"
           }
         ]
       }
@@ -11488,7 +11366,26 @@
     "28b": [],
     "28c": [],
     "29a": [],
-    "27b": [],
+    "27b": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "tag": "BE WELL",
+            "cls": "a",
+            "txt": "PM address 20 Feb evening — transcript via ARC",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "ttl": "<strong>PM ADDRESS  20/2— 18:00 GMT — Transcript</strong>",
+            "snip": "Every one of those points of light is a place you can walk to.",
+            "isnew": true,
+            "time": "18:30",
+            "date": "20 Feb 2027"
+          }
+        ]
+      }
+    ],
     "24a": [
       {
         "sec": "UK GOV Alert",
@@ -11772,7 +11669,7 @@
         {
           "text": "ARC — Transcript: PM Address to the Nation — 19 February 2027",
           "src": "arc",
-          "turn": 26,
+          "turn": "26a",
           "article": {
             "style": "arc",
             "source": "ARC",
@@ -11797,7 +11694,7 @@
           }
         },
         {
-          "turn": "26a",
+          "turn": "27",
           "text": "ARC — Transcript: Joint Address to the Nation — 20 Feb 2027",
           "article": {
             "style": "arc",
@@ -11813,7 +11710,7 @@
         {
           "text": "ARC — Transcript: PM Address to the Nation — 20 February 2027 (Evening)",
           "src": "arc",
-          "turn": "28",
+          "turn": "27b",
           "article": {
             "style": "arc",
             "source": "ARC",

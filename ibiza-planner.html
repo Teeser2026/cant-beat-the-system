@@ -106,11 +106,12 @@ const sb=supabase.createClient(SUPA_URL,SUPA_KEY);
 
 // ─── DATA ───────────────────────────────────────────────────
 const SLOTS=[
-  {id:"breakfast",label:"Breakfast",time:"08:00 – 10:30",icon:"☀️"},
-  {id:"daytime",label:"Daytime Activity",time:"10:30 – 17:00",icon:"🏖️"},
-  {id:"lunch",label:"Lunch",time:"13:00 – 15:00",icon:"🍽️"},
-  {id:"dinner",label:"Dinner",time:"19:00 – 21:30",icon:"🥂"},
-  {id:"evening",label:"Evening Event",time:"21:00 – late",icon:"🌙"},
+  {id:"breakfast",label:"Breakfast",icon:"☀️"},
+  {id:"daytime",label:"Morning Activity",icon:"🏖️"},
+  {id:"lunch",label:"Lunch",icon:"🍽️"},
+  {id:"afternoon",label:"Afternoon Activity",icon:"⛱️"},
+  {id:"dinner",label:"Dinner",icon:"🥂"},
+  {id:"evening",label:"Evening Event",icon:"🌙"},
 ];
 const CATS={
   restaurant:{bg:"#fef3ec",bd:"#d4724e",tx:"#8a3a1f",tg:"#d4724e"},
@@ -206,6 +207,8 @@ async function loadState(){
       // Ensure selDay and filter exist (older saves)
       if(state.selDay===undefined)state.selDay=0;
       if(!state.filter)state.filter="all";
+      // Ensure all slots exist on all days (handles new slots added later)
+      DAYS.forEach(d=>{if(!state.placed[d.d])state.placed[d.d]={};if(!state.comments[d.d])state.comments[d.d]={};SLOTS.forEach(sl=>{if(!state.placed[d.d][sl.id])state.placed[d.d][sl.id]=[];if(!state.comments[d.d][sl.id])state.comments[d.d][sl.id]=""})});
       syncStatus="ok";
     }
   }catch(e){
@@ -326,7 +329,7 @@ function render(){
       ondrop="dropCard(event,'${sl.id}')">
       <div class="slot-hdr${items.length?" has-items":""}">
         <span class="slot-icon">${sl.icon}</span>
-        <div><div class="slot-label">${sl.label}</div><div class="slot-time">${sl.time}</div></div>
+        <div><div class="slot-label">${sl.label}</div></div>
       </div>`;
     if(!items.length)h+=`<div class="slot-empty">Drop here</div>`;
     h+=`<div class="slot-items">`;

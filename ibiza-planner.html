@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ibiza Jul 2026 — Teesdale / Murrell</title>
+<title>Ibiza July 2026</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -152,7 +152,7 @@ const DEFAULT_ACTS=[
   {id:"namaste",title:"Namasté at Akasha",sub:"Las Dalias, San Carlos",desc:"Colourful Wednesday night party — food, live events, music, trance. New chapter at Akasha club space.",cat:"music",notes:"Wed nights Jun–Sep · food + live events then club · check age policy for Akasha (likely 18+)",area:"san-carlos"},
   {id:"beachouse",title:"Beachouse BOHO Night",sub:"Playa d'en Bossa",desc:"Barefoot dancing, communal dining, DJs on the sand. Family-friendly.",cat:"music",notes:"Thursdays · sunset to moonlight · book ahead · ~€70–100pp",area:"bossa"},
   {id:"beachouse-moonlit",title:"Beachouse Moonlit Dinner",sub:"Playa d'en Bossa",desc:"Candlelit dinner on the beach with rotating DJ roster.",cat:"music",notes:"Fri / Sat / Sun evenings · book ahead",area:"bossa"},
-  {id:"calvin-harris",title:"Calvin Harris @ Ushuaïa",sub:"Playa d'en Bossa",desc:"Open-air day party from 17:00. Strictly 18+ — Sam & George only.",cat:"club",notes:"Fri 17 Jul · 17:00 · 18+ only · Buy tickets at theushuaiaexperience.com",area:"bossa",who:"Sam & George only"},
+  {id:"calvin-harris",title:"Calvin Harris @ Ushuaïa",sub:"Playa d'en Bossa",desc:"Open-air day party from 17:00. Strictly 18+ — Sam & George only.",cat:"club",notes:"Fri 17 July · 17:00 · 18+ only · Buy tickets at theushuaiaexperience.com",area:"bossa",who:"Sam & George only"},
   // Activities
   {id:"dalt-vila",title:"Explore Dalt Vila (Old Town)",sub:"Ibiza Town",desc:"UNESCO fortress. Cobbled streets, cathedral, panoramic views.",cat:"activity",area:"ibiza-town"},
   {id:"santa-gertrudis",title:"Santa Gertrudis Shopping",sub:"Santa Gertrudis",desc:"Boutiques, galleries, cafés in the pretty village square.",cat:"shopping",area:"interior"},
@@ -218,13 +218,17 @@ function render(){
   <div class="hdr">
     <div class="hdr-top">
       <div class="hdr-left">
-        <small>Teesdale · Murrell</small>
-        <h1>Ibiza · 11–18 Jul 2026</h1>
+        <small>Simon · Amy · George · Sam · Chloe · Emilia</small>
+        <h1>Ibiza · 11–18 July 2026</h1>
+        <div style="display:flex;gap:10px;margin-top:6px;font-size:10px;font-weight:600">
+          <span style="background:var(--green);padding:2px 8px;border-radius:4px">🟢 INNSiDE July 11–15</span>
+          <span style="background:var(--sea);padding:2px 8px;border-radius:4px">🔵 BLESS July 15–18</span>
+        </div>
       </div>
       <div class="hdr-right">
         <div>BA2680 LGW 09:25 → IBZ 13:05</div>
         <div>BA2681 IBZ 13:55 → LGW 15:30</div>
-        <div style="margin-top:2px;font-size:9.5px;opacity:.6">6 pax · Ref ZZZEDN</div>
+        <div style="margin-top:2px;font-size:9.5px;opacity:.6">Ref ZZZEDN</div>
       </div>
     </div>
     <div class="tabs">`;
@@ -240,7 +244,7 @@ function render(){
 
   // Day bar
   h+=`<div class="daybar">
-    <div><span class="daybar-label">${day.l} Jul</span><span class="daybar-title">${day.t}</span></div>
+    <div><span class="daybar-label">${day.l} July</span><span class="daybar-title">${day.t}</span></div>
     <div style="display:flex;align-items:center;gap:8px">
       <span class="hotel-badge" style="background:${day.bless?"var(--navy-light)":"var(--green)"}">🏨 ${day.h}</span>
       ${day.n?`<span class="hotel-note">${day.n}</span>`:""}
@@ -297,8 +301,7 @@ function render(){
 
   // Footer
   h+=`<div class="foot">
-    <div><strong>Travelling:</strong> Simon · Amy · George · Samuel · Emila · Chloe</div>
-    <div style="display:flex;gap:12px"><span>🟢 INNSiDE Jul 11–15</span><span>🔵 BLESS Jul 15–18</span></div>
+    <div>Ibiza · 11–18 July 2026 · Ref ZZZEDN</div>
   </div>`;
 
   // Reset button

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibiza Jul 2026 — Teesdale / Murrell</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2744;--navy-light:#2d4a6f;--sand:#faf9f6;--border:#e4e2dc;
+  --sea:#3a8fb7;--green:#4a9e6b;--terra:#d4724e;--purple:#7c5cbf;
+  --pink:#c4547a;--gold:#c9a94e;--sage:#8a8a72;--rose:#b8608a;
+}
+body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;background:#f0eee9;color:var(--navy);min-height:100vh}
+.wrap{max-width:940px;margin:0 auto;padding:0 12px 40px}
+.hdr{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:0 0 14px 14px;padding:16px 18px 12px;color:#fff;margin-bottom:14px}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:6px}
+.hdr-left small{font-size:10px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;font-weight:600}
+.hdr-left h1{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-top:3px}
+.hdr-right{font-size:10.5px;opacity:.75;text-align:right;line-height:1.5}
+.tabs{display:flex;gap:3px;margin-top:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:6px 11px;border:none;border-radius:7px;font-size:11.5px;cursor:pointer;white-space:nowrap;transition:all .15s;border-bottom:2.5px solid transparent;font-family:inherit}
+.tab.active{background:rgba(255,255,255,.93);color:var(--navy);font-weight:700}
+.tab:not(.active){background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-weight:500}
+.tab .dot{display:inline-block;width:4.5px;height:4.5px;border-radius:50%;margin-left:5px;vertical-align:middle}
+.daybar{display:flex;justify-content:space-between;align-items:center;padding:0 3px;margin-bottom:12px;flex-wrap:wrap;gap:5px}
+.daybar-label{font-weight:700;font-size:15px}
+.daybar-title{color:#888;font-size:12.5px;margin-left:8px}
+.hotel-badge{font-size:10.5px;color:#fff;padding:2.5px 9px;border-radius:4.5px;font-weight:600}
+.hotel-note{font-size:10.5px;color:#999;font-style:italic}
+.main{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.slots{flex:1 1 340px;min-width:270;display:flex;flex-direction:column;gap:8px}
+.slot{background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:12px;min-height:58px;transition:all .15s}
+.slot.over{background:rgba(58,143,183,.06);border:2px dashed var(--sea)}
+.slot-hdr{display:flex;align-items:center;gap:7px;margin-bottom:0}
+.slot-hdr.has-items{margin-bottom:8px}
+.slot-icon{font-size:16px}
+.slot-label{font-weight:650;font-size:12.5px;color:var(--navy)}
+.slot-time{font-size:10.5px;color:#999}
+.slot-empty{font-size:11.5px;color:#c5c5c5;text-align:center;padding:6px 0;font-style:italic}
+.slot-items{display:flex;flex-direction:column;gap:6px}
+/* Comment box per slot */
+.slot-comment{margin-top:8px}
+.slot-comment textarea{width:100%;border:1px solid #e8e6e0;border-radius:6px;padding:6px 8px;font-size:11px;font-family:inherit;color:#666;resize:vertical;min-height:28px;outline:none;background:#fdfcfa;transition:border .15s}
+.slot-comment textarea:focus{border-color:var(--sea)}
+.slot-comment textarea::placeholder{color:#ccc}
+/* Pool */
+.pool-wrap{flex:0 0 270px;min-width:230}
+.pool{background:var(--sand);border:1.5px solid var(--border);border-radius:11px;padding:12px;position:sticky;top:10px;max-height:85vh;overflow-y:auto}
+.pool-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pool-hdr h3{font-size:13.5px;font-weight:700;color:var(--navy);cursor:pointer}
+.pool-btn{background:var(--navy);color:#fff;border:none;border-radius:5px;padding:4px 10px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.filters{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px}
+.fbtn{font-size:10px;padding:2.5px 7px;border-radius:4px;border:1px solid #ddd;cursor:pointer;font-weight:500;font-family:inherit;transition:all .1s}
+.fbtn.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
+.fbtn:not(.active){background:#fff;color:#888}
+.area-label{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;padding:0 2px}
+.area-group{margin-bottom:10px}
+.area-cards{display:flex;flex-direction:column;gap:5px}
+/* Cards */
+.card{border-radius:10px;padding:10px 12px;cursor:grab;transition:all .15s;box-shadow:0 1px 4px rgba(0,0,0,.06);user-select:none;position:relative}
+.card.dragging{opacity:.35}
+.card:hover{box-shadow:0 3px 12px rgba(0,0,0,.1);transform:translateY(-1px)}
+.card.compact{padding:8px 10px}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px}
+.card-title{font-weight:650;font-size:13.5px;line-height:1.25}
+.card.compact .card-title{font-size:12.5px}
+.card-sub{font-size:10.5px;margin-top:1.5px;font-weight:500}
+.card-tag{font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#fff;padding:2px 6px;border-radius:3.5px;white-space:nowrap;flex-shrink:0}
+.card-desc{font-size:11.5px;color:#555;margin-top:5px;line-height:1.4}
+.card-notes{font-size:10.5px;color:#888;margin-top:4px;font-style:italic;line-height:1.3}
+.card-rm,.card-del{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.4);color:#fff;border:none;border-radius:50%;width:17px;height:17px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1}
+.card-del{background:rgba(180,50,50,.6)}
+.card-del:hover{background:rgba(180,50,50,.85)}
+.card-rm:hover{background:rgba(0,0,0,.6)}
+.card-who{font-size:9.5px;margin-top:3px;color:#fff;background:var(--sea);padding:1.5px 6px;border-radius:3px;display:inline-block;font-weight:600}
+/* Footer */
+.foot{margin-top:20px;padding:10px 14px;background:#f5f5f0;border-radius:9px;font-size:11px;color:#777;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.foot strong{color:#555}
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.modal{background:#fff;border-radius:14px;padding:22px;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal h3{margin:0 0 14px;font-size:16px;color:var(--navy)}
+.modal input,.modal textarea,.modal select{padding:8px 11px;border:1.5px solid #ddd;border-radius:7px;font-size:13.5px;outline:none;width:100%;font-family:inherit}
+.modal textarea{resize:vertical}
+.modal-fields{display:flex;flex-direction:column;gap:9px}
+.modal-btns{display:flex;gap:8px;margin-top:3px}
+.modal-btns button{flex:1;padding:9px;border-radius:7px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.mbtn-cancel{border:1.5px solid #ddd;background:#fff;color:#666}
+.mbtn-ok{border:none;background:var(--navy);color:#fff}
+.mbtn-ok:disabled{background:#ccc;cursor:default}
+@media(max-width:680px){.main{flex-direction:column}.pool-wrap{flex:1 1 100%;min-width:0}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────
+const SLOTS=[
+  {id:"breakfast",label:"Breakfast",time:"08:00 – 10:30",icon:"☀️"},
+  {id:"daytime",label:"Daytime Activity",time:"10:30 – 17:00",icon:"🏖️"},
+  {id:"lunch",label:"Lunch",time:"13:00 – 15:00",icon:"🍽️"},
+  {id:"dinner",label:"Dinner",time:"19:00 – 21:30",icon:"🥂"},
+  {id:"evening",label:"Evening Event",time:"21:00 – late",icon:"🌙"},
+];
+
+const CATS={
+  restaurant:{bg:"#fef3ec",bd:"#d4724e",tx:"#8a3a1f",tg:"#d4724e"},
+  activity:{bg:"#eef6fb",bd:"#3a8fb7",tx:"#1a4d6b",tg:"#3a8fb7"},
+  market:{bg:"#f3f0fb",bd:"#7c5cbf",tx:"#3e2d6b",tg:"#7c5cbf"},
+  beach:{bg:"#eef8f0",bd:"#4a9e6b",tx:"#1f5a35",tg:"#4a9e6b"},
+  music:{bg:"#fdf4f8",bd:"#c4547a",tx:"#6e2040",tg:"#c4547a"},
+  travel:{bg:"#f5f5f0",bd:"#8a8a72",tx:"#4a4a3a",tg:"#8a8a72"},
+  breakfast:{bg:"#fdf9ee",bd:"#c9a94e",tx:"#6b5a1f",tg:"#c9a94e"},
+  shopping:{bg:"#fef0f5",bd:"#b8608a",tx:"#6b2d4a",tg:"#b8608a"},
+  club:{bg:"#1a2744",bd:"#e63946",tx:"#fff",tg:"#e63946"},
+};
+
+const AREAS={
+  "san-antonio":"San Antonio","ibiza-town":"Ibiza Town","bossa":"Playa d'en Bossa",
+  "santa-eulalia":"Santa Eulalia","san-carlos":"San Carlos","interior":"Interior",
+  "west":"West Coast","south":"South","formentera":"Formentera","travel":"Travel","custom":"Custom"
+};
+
+const DEFAULT_ACTS=[
+  // San Antonio
+  {id:"skinny-kitchen",title:"The Skinny Kitchen",sub:"San Antonio marina",desc:"Healthy eating — breakfasts, poke bowls, steaks, burgers. Sea-view terrace.",cat:"restaurant",notes:"Your note: Definite · ★4.4 · British/Cafe · $$",area:"san-antonio"},
+  {id:"tapas-ibiza",title:"Tapas Ibiza",sub:"San Antonio (restored finca)",desc:"Modern tapas in a beautiful garden. Sharing plates, cocktails, wine list.",cat:"restaurant",notes:"★4.7 (2,312) · Med/European · $$ · Book ahead",area:"san-antonio"},
+  {id:"johnnys-bar",title:"Johnny's Bar",sub:"San Antonio",desc:"Burgers and street food since 1993. Fresh produce, casual vibe.",cat:"restaurant",notes:"★4.3 (362) · Bar/Street Food · $",area:"san-antonio"},
+  {id:"relish",title:"Relish Restaurant & Pool Bar",sub:"San Antonio",desc:"Mediterranean poolside dining. Wide variety of tapas and mains.",cat:"restaurant",notes:"★4.7 (1,162) · Mediterranean · $$",area:"san-antonio"},
+  {id:"wild-beets",title:"Wild Beets",sub:"San Antonio area",desc:"International and European dishes. Health-conscious.",cat:"restaurant",notes:"★4.2 (241) · International/European · $$",area:"san-antonio"},
+  // Ibiza Town
+  {id:"amorous-project",title:"The Amorous Project",sub:"Ibiza Town",desc:"Italian restaurant with beautiful floral interior. Intimate, stylish.",cat:"restaurant",notes:"★4.4 (15) · Italian",area:"ibiza-town"},
+  {id:"hostaria-rugantino",title:"Hostaria Rugantino",sub:"Ibiza Town",desc:"Proper Italian — wood-fired oven, Mediterranean flavours. Small, highly rated.",cat:"restaurant",notes:"★4.9 (14) · Italian/Med · $$",area:"ibiza-town"},
+  {id:"es-mercat",title:"Es Mercat Ibiza",sub:"Ibiza Town",desc:"Farm-to-table Mediterranean. Fresh local produce, seafood, great burgers.",cat:"restaurant",notes:"Your note: Burgers Ibiza town · ★4.5 (423) · $$",area:"ibiza-town"},
+  {id:"sa-cova",title:"Sa Cova",sub:"Dalt Vila, Ibiza Town",desc:"French-Med with terrace overlooking the cathedral. Intimate, romantic.",cat:"restaurant",notes:"★4.7 (557) · French/Med · $$",area:"ibiza-town"},
+  {id:"mumak",title:"Mumak",sub:"Ibiza Town",desc:"Highly rated restaurant in Ibiza Town.",cat:"restaurant",notes:"★4.6 (427)",area:"ibiza-town"},
+  {id:"empanadas-malvon",title:"Empanadas Malvón",sub:"Ibiza Town",desc:"Argentinian empanadas and street food. Quick, tasty lunch.",cat:"restaurant",notes:"★4.9 (236) · Argentinian · $$",area:"ibiza-town"},
+  {id:"mitchs-bar",title:"Mitchs Bar Ibiza",sub:"Ibiza Town",desc:"Italian and pizza. Relaxed, well-rated locals' favourite.",cat:"restaurant",notes:"★4.8 (737) · Italian/Pizza · $$",area:"ibiza-town"},
+  {id:"bamboo-bar",title:"Bamboo Bar Ibiza",sub:"Ibiza",desc:"Casual bar and restaurant.",cat:"restaurant",notes:"From TripAdvisor saves",area:"ibiza-town"},
+  // Bossa
+  {id:"passion",title:"Passion",sub:"Playa d'en Bossa",desc:"Cafés & bio shops. Vegan, cold-pressed juicery, healthy options.",cat:"breakfast",notes:"Your note: Bossa healthy breakfast · ★4.3 · $$",area:"bossa"},
+  {id:"tacosanto",title:"Tacosanto Taquería",sub:"Playa d'en Bossa",desc:"Authentic Mexican tacos, burritos and Latin flavours.",cat:"restaurant",notes:"Your note: Bossa tacos · ★4.9 (140) · Mexican · $$",area:"bossa"},
+  {id:"vanilla-beach",title:"Vanilla Beach Ibiza",sub:"Playa d'en Bossa",desc:"Bar & restaurant on the beach. Mediterranean menu, great breakfast.",cat:"breakfast",notes:"Your note: Great breakfast Bossa · ★4.8 (587) · $$",area:"bossa"},
+  // Santa Eulalia / San Carlos
+  {id:"ohana",title:"Ohana Ibiza",sub:"Santa Eulalia (also Ibiza Town)",desc:"Fusion — poke bowls, sushi, Mediterranean seafood. Beachside, tropical vibe.",cat:"restaurant",notes:"★4.7 (2,883) · Fusion · $$",area:"santa-eulalia"},
+  {id:"can-gourmet",title:"Can Gourmet",sub:"San Carlos",desc:"Fast food & Catalan bites. Good pit stop near Las Dalias.",cat:"restaurant",notes:"★4.7 (267) · Catalan · $",area:"san-carlos"},
+  // Events
+  {id:"lasdalias",title:"Las Dalias Night Market",sub:"San Carlos",desc:"Hippy market stalls, live music in the garden, PaloSanto restaurant. All ages.",cat:"market",notes:"Mon nights Jun–Sep · ~110 stalls · food, live music",area:"san-carlos"},
+  {id:"namaste",title:"Namasté at Akasha",sub:"Las Dalias, San Carlos",desc:"Colourful Wednesday night party — food, live events, music, trance. New chapter at Akasha club space.",cat:"music",notes:"Wed nights Jun–Sep · food + live events then club · check age policy for Akasha (likely 18+)",area:"san-carlos"},
+  {id:"beachouse",title:"Beachouse BOHO Night",sub:"Playa d'en Bossa",desc:"Barefoot dancing, communal dining, DJs on the sand. Family-friendly.",cat:"music",notes:"Thursdays · sunset to moonlight · book ahead · ~€70–100pp",area:"bossa"},
+  {id:"beachouse-moonlit",title:"Beachouse Moonlit Dinner",sub:"Playa d'en Bossa",desc:"Candlelit dinner on the beach with rotating DJ roster.",cat:"music",notes:"Fri / Sat / Sun evenings · book ahead",area:"bossa"},
+  {id:"calvin-harris",title:"Calvin Harris @ Ushuaïa",sub:"Playa d'en Bossa",desc:"Open-air day party from 17:00. Strictly 18+ — Sam & George only.",cat:"club",notes:"Fri 17 Jul · 17:00 · 18+ only · Buy tickets at theushuaiaexperience.com",area:"bossa",who:"Sam & George only"},
+  // Activities
+  {id:"dalt-vila",title:"Explore Dalt Vila (Old Town)",sub:"Ibiza Town",desc:"UNESCO fortress. Cobbled streets, cathedral, panoramic views.",cat:"activity",area:"ibiza-town"},
+  {id:"santa-gertrudis",title:"Santa Gertrudis Shopping",sub:"Santa Gertrudis",desc:"Boutiques, galleries, cafés in the pretty village square.",cat:"shopping",area:"interior"},
+  {id:"cala-conta",title:"Cala Conta Beach",sub:"West coast",desc:"Turquoise water, rocky coves, sunset views. Bring snorkels.",cat:"beach",area:"west"},
+  {id:"cala-bassa",title:"Cala Bassa Beach",sub:"West coast",desc:"Sandy beach with beach club. Good for families. Water sports.",cat:"beach",area:"west"},
+  {id:"ses-salines",title:"Ses Salines Beach",sub:"South",desc:"Long sandy beach near salt flats. Natural park. Restaurants nearby.",cat:"beach",area:"south"},
+  {id:"formentera",title:"Formentera Day Trip",sub:"Ferry from Ibiza Town",desc:"30-min ferry. Crystal-clear beaches, bike hire, seafood lunch.",cat:"activity",notes:"Book ferry in advance · bikes at port",area:"formentera"},
+  // Travel
+  {id:"arrival",title:"Arrival — BA2680",sub:"LGW → IBZ",desc:"Depart Gatwick 09:25, arrive Ibiza 13:05. Transfer to INNSiDE.",cat:"travel",area:"travel"},
+  {id:"hotel-change",title:"Hotel Change Day",sub:"INNSiDE → BLESS The Site",desc:"Check out INNSiDE San Antonio Bay → BLESS Ibiza The Site, Playa d'en Bossa.",cat:"travel",area:"travel"},
+  {id:"departure",title:"Departure — BA2681",sub:"IBZ → LGW",desc:"Depart Ibiza 13:55, arrive Gatwick 15:30. Airport by ~11:30.",cat:"travel",area:"travel"},
+];
+
+const DAYS=[
+  {d:"2026-07-11",l:"Sat 11",t:"Arrival",h:"INNSiDE Ibiza Beach",n:"Land 13:05",bless:false},
+  {d:"2026-07-12",l:"Sun 12",t:"First Full Day",h:"INNSiDE Ibiza Beach",bless:false},
+  {d:"2026-07-13",l:"Mon 13",t:"Monday",h:"INNSiDE Ibiza Beach",n:"Las Dalias night market",bless:false},
+  {d:"2026-07-14",l:"Tue 14",t:"Tuesday",h:"INNSiDE Ibiza Beach",bless:false},
+  {d:"2026-07-15",l:"Wed 15",t:"Hotel Change",h:"→ BLESS The Site",n:"INNSiDE → BLESS",bless:true},
+  {d:"2026-07-16",l:"Thu 16",t:"Thursday",h:"BLESS The Site",n:"Beachouse BOHO?",bless:true},
+  {d:"2026-07-17",l:"Fri 17",t:"Last Full Day",h:"BLESS The Site",n:"Calvin Harris 18+",bless:true},
+  {d:"2026-07-18",l:"Sat 18",t:"Departure",h:"BLESS The Site",n:"Depart 13:55",bless:true},
+];
+
+const STORE_KEY="ibiza2026_v3";
+
+// ─── STATE ──────────────────────────────────────────────────
+let state;
+function initState(){
+  const saved=localStorage.getItem(STORE_KEY);
+  if(saved){try{state=JSON.parse(saved);return}catch(e){}}
+  state={acts:JSON.parse(JSON.stringify(DEFAULT_ACTS)),placed:{},comments:{},selDay:0,filter:"all"};
+  DAYS.forEach(d=>{state.placed[d.d]={};state.comments[d.d]={};SLOTS.forEach(s=>{state.placed[d.d][s.id]=[];state.comments[d.d][s.id]=""})});
+  state.placed["2026-07-11"].daytime=["arrival"];
+  state.placed["2026-07-13"].evening=["lasdalias"];
+  state.placed["2026-07-15"].daytime=["hotel-change"];
+  state.placed["2026-07-16"].evening=["beachouse"];
+  state.placed["2026-07-17"].evening=["calvin-harris"];
+  state.placed["2026-07-18"].daytime=["departure"];
+}
+function save(){localStorage.setItem(STORE_KEY,JSON.stringify(state))}
+
+// ─── RENDER ─────────────────────────────────────────────────
+let dragId=null;
+
+function render(){
+  const day=DAYS[state.selDay];
+  const ds=state.placed[day.d];
+  const dc=state.comments[day.d];
+  const placedSet=new Set();
+  Object.values(ds).forEach(a=>a.forEach(id=>placedSet.add(id)));
+
+  let unplaced=state.acts.filter(a=>{
+    if(placedSet.has(a.id))return false;
+    if(state.filter==="all")return true;
+    return a.area===state.filter;
+  });
+  const grouped={};
+  unplaced.forEach(a=>{const k=a.area||"custom";if(!grouped[k])grouped[k]=[];grouped[k].push(a)});
+  const areas=[...new Set(state.acts.map(a=>a.area))].filter(Boolean).sort();
+
+  let h=`
+  <div class="hdr">
+    <div class="hdr-top">
+      <div class="hdr-left">
+        <small>Teesdale · Murrell</small>
+        <h1>Ibiza · 11–18 Jul 2026</h1>
+      </div>
+      <div class="hdr-right">
+        <div>BA2680 LGW 09:25 → IBZ 13:05</div>
+        <div>BA2681 IBZ 13:55 → LGW 15:30</div>
+        <div style="margin-top:2px;font-size:9.5px;opacity:.6">6 pax · Ref ZZZEDN</div>
+      </div>
+    </div>
+    <div class="tabs">`;
+  DAYS.forEach((d,i)=>{
+    const active=i===state.selDay;
+    const has=Object.values(state.placed[d.d]).some(a=>a.length>0);
+    const bdr=active?(d.bless?"border-color:var(--sea)":"border-color:var(--green)"):"";
+    h+=`<button class="tab${active?" active":""}" onclick="selDay(${i})" style="${bdr}">
+      ${d.l}${has?`<span class="dot" style="background:${active?"var(--sea)":"rgba(255,255,255,.45)"}"></span>`:""}
+    </button>`;
+  });
+  h+=`</div></div>`;
+
+  // Day bar
+  h+=`<div class="daybar">
+    <div><span class="daybar-label">${day.l} Jul</span><span class="daybar-title">${day.t}</span></div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="hotel-badge" style="background:${day.bless?"var(--navy-light)":"var(--green)"}">🏨 ${day.h}</span>
+      ${day.n?`<span class="hotel-note">${day.n}</span>`:""}
+    </div>
+  </div>`;
+
+  // Main
+  h+=`<div class="main"><div class="slots">`;
+  SLOTS.forEach(sl=>{
+    const items=(ds[sl.id]||[]).map(id=>state.acts.find(a=>a.id===id)).filter(Boolean);
+    h+=`<div class="slot" id="slot-${sl.id}"
+      ondragover="event.preventDefault();event.dataTransfer.dropEffect='move';this.classList.add('over')"
+      ondragleave="this.classList.remove('over')"
+      ondrop="dropCard(event,'${sl.id}')">
+      <div class="slot-hdr${items.length?" has-items":""}">
+        <span class="slot-icon">${sl.icon}</span>
+        <div><div class="slot-label">${sl.label}</div><div class="slot-time">${sl.time}</div></div>
+      </div>`;
+    if(!items.length)h+=`<div class="slot-empty">Drop here</div>`;
+    h+=`<div class="slot-items">`;
+    items.forEach(a=>{
+      h+=cardHTML(a,true,`rmFromSlot('${sl.id}','${a.id}')`);
+    });
+    h+=`</div>`;
+    // Comment
+    const cval=(dc[sl.id]||"").replace(/"/g,"&quot;");
+    h+=`<div class="slot-comment">
+      <textarea placeholder="Notes…" rows="1" oninput="saveComment('${sl.id}',this.value)">${cval}</textarea>
+    </div>`;
+    h+=`</div>`;
+  });
+  h+=`</div>`; // end slots
+
+  // Pool
+  h+=`<div class="pool-wrap"><div class="pool">
+    <div class="pool-hdr">
+      <h3>Activities (${unplaced.length})</h3>
+      <button class="pool-btn" onclick="showAddModal()">+ Add</button>
+    </div>
+    <div class="filters">
+      <button class="fbtn${state.filter==="all"?" active":""}" onclick="setFilter('all')">All</button>`;
+  areas.forEach(a=>{
+    h+=`<button class="fbtn${state.filter===a?" active":""}" onclick="setFilter('${a}')">${AREAS[a]||a}</button>`;
+  });
+  h+=`</div>`;
+  Object.entries(grouped).sort(([a],[b])=>a.localeCompare(b)).forEach(([area,items])=>{
+    h+=`<div class="area-group"><div class="area-label">${AREAS[area]||area}</div><div class="area-cards">`;
+    items.forEach(a=>{h+=cardHTML(a,false,null,true)});
+    h+=`</div></div>`;
+  });
+  if(!unplaced.length)h+=`<div style="font-size:11.5px;color:#bbb;text-align:center;padding:14px 0;font-style:italic">All placed for this day</div>`;
+  h+=`</div></div>`; // pool
+  h+=`</div>`; // main
+
+  // Footer
+  h+=`<div class="foot">
+    <div><strong>Travelling:</strong> Simon · Amy · George · Samuel · Emila · Chloe</div>
+    <div style="display:flex;gap:12px"><span>🟢 INNSiDE Jul 11–15</span><span>🔵 BLESS Jul 15–18</span></div>
+  </div>`;
+
+  // Reset button
+  h+=`<div style="text-align:center;margin-top:14px">
+    <button onclick="resetAll()" style="font-size:10px;color:#bbb;background:none;border:1px solid #ddd;border-radius:5px;padding:3px 12px;cursor:pointer;font-family:inherit">Reset planner to defaults</button>
+  </div>`;
+
+  document.getElementById("app").innerHTML=h;
+}
+
+function cardHTML(a,compact,rmAction,showDel){
+  const c=CATS[a.cat]||CATS.restaurant;
+  const pr=rmAction?20:(showDel?20:0);
+  let s=`background:${c.bg};border:1.5px solid ${c.bd}`;
+  let h=`<div class="card${compact?" compact":""}" draggable="true"
+    ondragstart="dragStart(event,'${a.id}')" ondragend="dragEnd()"
+    style="${s}">`;
+  if(rmAction)h+=`<button class="card-rm" onclick="${rmAction}" title="Remove">×</button>`;
+  if(showDel)h+=`<button class="card-del" onclick="delActivity('${a.id}')" title="Delete activity">×</button>`;
+  h+=`<div class="card-top" style="padding-right:${pr}px">
+    <div style="flex:1;min-width:0">
+      <div class="card-title" style="color:${c.tx}">${a.title}</div>
+      <div class="card-sub" style="color:${c.tg}">${a.sub}</div>
+    </div>
+    <span class="card-tag" style="background:${c.tg}">${a.cat}</span>
+  </div>`;
+  if(!compact&&a.desc)h+=`<div class="card-desc">${a.desc}</div>`;
+  if(!compact&&a.notes)h+=`<div class="card-notes">${a.notes}</div>`;
+  if(a.who)h+=`<span class="card-who">${a.who}</span>`;
+  h+=`</div>`;
+  return h;
+}
+
+// ─── ACTIONS ────────────────────────────────────────────────
+function selDay(i){state.selDay=i;save();render()}
+function setFilter(f){state.filter=f;save();render()}
+
+function dragStart(e,id){dragId=id;e.dataTransfer.setData("text/plain",id);e.dataTransfer.effectAllowed="move"}
+function dragEnd(){dragId=null}
+
+function dropCard(e,slotId){
+  e.preventDefault();e.currentTarget.classList.remove("over");
+  const id=e.dataTransfer.getData("text/plain");if(!id)return;
+  const day=DAYS[state.selDay].d;
+  // remove from other slots on this day
+  SLOTS.forEach(s=>{state.placed[day][s.id]=state.placed[day][s.id].filter(x=>x!==id)});
+  if(!state.placed[day][slotId].includes(id))state.placed[day][slotId].push(id);
+  save();render();
+}
+
+function rmFromSlot(slotId,actId){
+  const day=DAYS[state.selDay].d;
+  state.placed[day][slotId]=state.placed[day][slotId].filter(x=>x!==actId);
+  save();render();
+}
+
+function delActivity(id){
+  if(!confirm("Delete this activity from the planner?"))return;
+  state.acts=state.acts.filter(a=>a.id!==id);
+  // remove from all days
+  DAYS.forEach(d=>{SLOTS.forEach(s=>{state.placed[d.d][s.id]=state.placed[d.d][s.id].filter(x=>x!==id)})});
+  save();render();
+}
+
+function saveComment(slotId,val){
+  const day=DAYS[state.selDay].d;
+  state.comments[day][slotId]=val;
+  save();
+}
+
+function resetAll(){
+  if(!confirm("Reset the entire planner to defaults? All placements and notes will be lost."))return;
+  localStorage.removeItem(STORE_KEY);
+  initState();save();render();
+}
+
+function showAddModal(){
+  const bg=document.createElement("div");bg.className="modal-bg";bg.onclick=e=>{if(e.target===bg)bg.remove()};
+  bg.innerHTML=`<div class="modal">
+    <h3>Add Activity</h3>
+    <div class="modal-fields">
+      <input id="ma-title" placeholder="Name">
+      <input id="ma-sub" placeholder="Location">
+      <textarea id="ma-desc" placeholder="Description" rows="2"></textarea>
+      <input id="ma-notes" placeholder="Notes">
+      <select id="ma-cat">${Object.keys(CATS).map(k=>`<option value="${k}">${k.charAt(0).toUpperCase()+k.slice(1)}</option>`).join("")}</select>
+      <div class="modal-btns">
+        <button class="mbtn-cancel" onclick="this.closest('.modal-bg').remove()">Cancel</button>
+        <button class="mbtn-ok" onclick="addActivity()">Add</button>
+      </div>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+}
+
+function addActivity(){
+  const t=document.getElementById("ma-title").value.trim();
+  if(!t)return;
+  const a={id:"c-"+Date.now(),title:t,
+    sub:document.getElementById("ma-sub").value.trim(),
+    desc:document.getElementById("ma-desc").value.trim(),
+    cat:document.getElementById("ma-cat").value,
+    notes:document.getElementById("ma-notes").value.trim()||undefined,
+    area:"custom"};
+  state.acts.push(a);
+  save();render();
+  document.querySelector(".modal-bg")?.remove();
+}
+
+// ─── INIT ───────────────────────────────────────────────────
+initState();save();render();
+</script>
+</body>
+</html>

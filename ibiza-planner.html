@@ -33,7 +33,9 @@ body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;backgroun
 .tab .dot{display:inline-block;width:4.5px;height:4.5px;border-radius:50%;margin-left:5px;vertical-align:middle}
 .daybar{display:flex;justify-content:space-between;align-items:center;padding:0 3px;margin-bottom:12px;flex-wrap:wrap;gap:5px}
 .daybar-label{font-weight:700;font-size:15px}
-.daybar-title{color:#888;font-size:12.5px;margin-left:8px}
+.daybar-title{color:#888;font-size:12.5px;margin-left:8px;cursor:pointer;border-bottom:1px dashed #ccc;padding-bottom:1px}
+.daybar-title:hover{color:var(--navy);border-color:#999}
+.daybar-title-input{font-size:12.5px;margin-left:8px;border:1.5px solid var(--sea);border-radius:5px;padding:2px 8px;outline:none;font-family:inherit;color:var(--navy);width:160px}
 .hotel-badge{font-size:10.5px;color:#fff;padding:2.5px 9px;border-radius:4.5px;font-weight:600}
 .hotel-note{font-size:10.5px;color:#999;font-style:italic}
 .main{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
@@ -74,8 +76,9 @@ body{font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;backgroun
 .card-tag{font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#fff;padding:2px 6px;border-radius:3.5px;white-space:nowrap;flex-shrink:0}
 .card-desc{font-size:11.5px;color:#555;margin-top:5px;line-height:1.4}
 .card-notes{font-size:10.5px;color:#888;margin-top:4px;font-style:italic;line-height:1.3}
-.card-rm,.card-del{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.4);color:#fff;border:none;border-radius:50%;width:17px;height:17px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1}
-.card-del{background:rgba(180,50,50,.6)}.card-del:hover{background:rgba(180,50,50,.85)}
+.card-rm,.card-del,.card-edit{position:absolute;top:3px;background:rgba(0,0,0,.4);color:#fff;border:none;border-radius:50%;width:17px;height:17px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1}
+.card-rm{right:3px}.card-del{right:3px;background:rgba(180,50,50,.6)}.card-del:hover{background:rgba(180,50,50,.85)}
+.card-edit{right:24px;background:rgba(58,143,183,.6);font-size:10px}.card-edit:hover{background:rgba(58,143,183,.85)}
 .card-rm:hover{background:rgba(0,0,0,.6)}
 .card-who{font-size:9.5px;margin-top:3px;color:#fff;background:var(--sea);padding:1.5px 6px;border-radius:3px;display:inline-block;font-weight:600}
 .foot{margin-top:20px;padding:10px 14px;background:#f5f5f0;border-radius:9px;font-size:11px;color:#777;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
@@ -176,8 +179,8 @@ const DEFAULT_ACTS=[
 ];
 
 function makeDefault(){
-  const s={acts:JSON.parse(JSON.stringify(DEFAULT_ACTS)),placed:{},comments:{},selDay:0,filter:"all"};
-  DAYS.forEach(d=>{s.placed[d.d]={};s.comments[d.d]={};SLOTS.forEach(sl=>{s.placed[d.d][sl.id]=[];s.comments[d.d][sl.id]=""})});
+  const s={acts:JSON.parse(JSON.stringify(DEFAULT_ACTS)),placed:{},comments:{},dayTitles:{},selDay:0,filter:"all"};
+  DAYS.forEach(d=>{s.placed[d.d]={};s.comments[d.d]={};s.dayTitles[d.d]=d.t;SLOTS.forEach(sl=>{s.placed[d.d][sl.id]=[];s.comments[d.d][sl.id]=""})});
   s.placed["2026-07-11"].daytime=["arrival"];
   s.placed["2026-07-13"].evening=["lasdalias"];
   s.placed["2026-07-15"].daytime=["hotel-change"];
@@ -209,6 +212,9 @@ async function loadState(){
       if(!state.filter)state.filter="all";
       // Ensure all slots exist on all days (handles new slots added later)
       DAYS.forEach(d=>{if(!state.placed[d.d])state.placed[d.d]={};if(!state.comments[d.d])state.comments[d.d]={};SLOTS.forEach(sl=>{if(!state.placed[d.d][sl.id])state.placed[d.d][sl.id]=[];if(!state.comments[d.d][sl.id])state.comments[d.d][sl.id]=""})});
+      // Ensure dayTitles exists
+      if(!state.dayTitles)state.dayTitles={};
+      DAYS.forEach(d=>{if(!state.dayTitles[d.d])state.dayTitles[d.d]=d.t});
       syncStatus="ok";
     }
   }catch(e){
@@ -312,8 +318,9 @@ function render(){
   });
   h+=`</div></div>`;
 
+  const dayTitle=state.dayTitles[day.d]||day.t;
   h+=`<div class="daybar">
-    <div><span class="daybar-label">${day.l} July</span><span class="daybar-title">${day.t}</span></div>
+    <div><span class="daybar-label">${day.l} July</span><span class="daybar-title" onclick="editDayTitle(this,'${day.d}')" title="Click to rename">${dayTitle}</span></div>
     <div style="display:flex;align-items:center;gap:8px">
       <span class="hotel-badge" style="background:${day.bless?"var(--navy-light)":"var(--green)"}">🏨 ${day.h}</span>
       ${day.n?`<span class="hotel-note">${day.n}</span>`:""}
@@ -373,10 +380,11 @@ function render(){
 
 function cardHTML(a,compact,rmAction,showDel){
   const c=CATS[a.cat]||CATS.restaurant;
-  const pr=rmAction?20:(showDel?20:0);
+  const pr=rmAction?40:(showDel?40:20);
   let h=`<div class="card${compact?" compact":""}" draggable="true"
     ondragstart="dragStart(event,'${a.id}')" ondragend="dragEnd()"
     style="background:${c.bg};border:1.5px solid ${c.bd}">`;
+  h+=`<button class="card-edit" onclick="event.stopPropagation();editActivity('${a.id}')" title="Edit">✎</button>`;
   if(rmAction)h+=`<button class="card-rm" onclick="${rmAction}" title="Remove">×</button>`;
   if(showDel)h+=`<button class="card-del" onclick="delActivity('${a.id}')" title="Delete activity">×</button>`;
   h+=`<div class="card-top" style="padding-right:${pr}px">
@@ -396,6 +404,24 @@ function cardHTML(a,compact,rmAction,showDel){
 // ─── ACTIONS ────────────────────────────────────────────────
 function selDay(i){state.selDay=i;render();/* don't sync selDay — local UI */}
 function setFilter(f){state.filter=f;render()}
+
+function editDayTitle(el,dateKey){
+  const cur=state.dayTitles[dateKey]||"";
+  const input=document.createElement("input");
+  input.className="daybar-title-input";
+  input.value=cur;
+  input.maxLength=30;
+  el.replaceWith(input);
+  input.focus();
+  input.select();
+  const commit=()=>{
+    const v=input.value.trim();
+    if(v)state.dayTitles[dateKey]=v;
+    ignoreNext=true;debounceSave();render();
+  };
+  input.onblur=commit;
+  input.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();commit()}if(e.key==="Escape"){render()}};
+}
 
 function dragStart(e,id){dragId=id;e.dataTransfer.setData("text/plain",id);e.dataTransfer.effectAllowed="move"}
 function dragEnd(){dragId=null}
@@ -422,6 +448,46 @@ function delActivity(id){
   ignoreNext=true;debounceSave();render();
 }
 
+function editActivity(id){
+  const a=state.acts.find(x=>x.id===id);
+  if(!a)return;
+  const esc=v=>(v||"").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+  const bg=document.createElement("div");bg.className="modal-bg";bg.onclick=e=>{if(e.target===bg)bg.remove()};
+  bg.innerHTML=`<div class="modal">
+    <h3>Edit Activity</h3>
+    <div class="modal-fields">
+      <input id="me-title" placeholder="Name" value="${esc(a.title)}">
+      <input id="me-sub" placeholder="Location" value="${esc(a.sub)}">
+      <textarea id="me-desc" placeholder="Description" rows="2">${esc(a.desc)}</textarea>
+      <input id="me-notes" placeholder="Notes" value="${esc(a.notes||"")}">
+      <input id="me-who" placeholder="Who? (e.g. Sam &amp; George only)" value="${esc(a.who||"")}">
+      <select id="me-cat">${Object.keys(CATS).map(k=>`<option value="${k}"${a.cat===k?" selected":""}>${k.charAt(0).toUpperCase()+k.slice(1)}</option>`).join("")}</select>
+      <select id="me-area">${Object.entries(AREAS).map(([k,v])=>`<option value="${k}"${a.area===k?" selected":""}>${v}</option>`).join("")}</select>
+      <div class="modal-btns">
+        <button class="mbtn-cancel" onclick="this.closest('.modal-bg').remove()">Cancel</button>
+        <button class="mbtn-ok" onclick="saveEditActivity('${a.id}')">Save</button>
+      </div>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+}
+
+function saveEditActivity(id){
+  const a=state.acts.find(x=>x.id===id);
+  if(!a)return;
+  const t=document.getElementById("me-title").value.trim();
+  if(!t)return;
+  a.title=t;
+  a.sub=document.getElementById("me-sub").value.trim();
+  a.desc=document.getElementById("me-desc").value.trim();
+  a.notes=document.getElementById("me-notes").value.trim()||undefined;
+  a.who=document.getElementById("me-who").value.trim()||undefined;
+  a.cat=document.getElementById("me-cat").value;
+  a.area=document.getElementById("me-area").value;
+  ignoreNext=true;debounceSave();render();
+  document.querySelector(".modal-bg")?.remove();
+}
+
 function saveComment(slotId,val){
   const day=DAYS[state.selDay].d;
   if(!state.comments[day])state.comments[day]={};
@@ -445,6 +511,7 @@ function showAddModal(){
       <textarea id="ma-desc" placeholder="Description" rows="2"></textarea>
       <input id="ma-notes" placeholder="Notes">
       <select id="ma-cat">${Object.keys(CATS).map(k=>`<option value="${k}">${k.charAt(0).toUpperCase()+k.slice(1)}</option>`).join("")}</select>
+      <select id="ma-area">${Object.entries(AREAS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select>
       <div class="modal-btns">
         <button class="mbtn-cancel" onclick="this.closest('.modal-bg').remove()">Cancel</button>
         <button class="mbtn-ok" onclick="addActivity()">Add</button>
@@ -462,7 +529,7 @@ function addActivity(){
     desc:document.getElementById("ma-desc").value.trim(),
     cat:document.getElementById("ma-cat").value,
     notes:document.getElementById("ma-notes").value.trim()||undefined,
-    area:"custom"});
+    area:document.getElementById("ma-area").value});
   ignoreNext=true;debounceSave();render();
   document.querySelector(".modal-bg")?.remove();
 }

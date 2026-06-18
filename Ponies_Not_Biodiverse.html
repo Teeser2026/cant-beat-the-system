@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Ponies Aren't Biodiversity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --linen: #f5f0e8;
+    --ink: #2c2a26;
+    --warm-grey: #7a756b;
+    --teal: #2a7a6e;
+    --soft-red: #a8433a;
+    --rule: #d4cfc5;
+    --highlight: #e8e2d4;
+  }
+
+  @media print {
+    body { font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; padding: 1cm; }
+    @page { margin: 1.5cm; }
+  }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--linen);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 1.5rem;
+    font-size: 17px;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-size: 0.88rem;
+    color: var(--warm-grey);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--warm-grey);
+    border-left: 3px solid var(--teal);
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin-bottom: 0.9rem; }
+
+  .term {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--soft-red);
+    display: inline;
+  }
+
+  .explainer {
+    background: #f9f7f2;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0 1.2rem 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--warm-grey);
+  }
+
+  .explainer .explainer-label {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .diagram {
+    background: var(--highlight);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.2rem 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .diagram .arrow {
+    color: var(--teal);
+    font-weight: 600;
+    padding: 0 0.2rem;
+  }
+
+  .diagram .step {
+    display: block;
+    padding: 0.15rem 0;
+  }
+
+  .key-line {
+    font-style: italic;
+    color: var(--soft-red);
+    margin: 1rem 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .tier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .tier-table th {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--warm-grey);
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .tier-table th:first-child { text-align: left; }
+
+  .tier-table td {
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .tier-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .tier-table tr:last-child td {
+    color: var(--soft-red);
+    font-weight: 600;
+  }
+
+  .bottom-note {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--warm-grey);
+    line-height: 1.45;
+  }
+
+  strong { font-weight: 600; }
+
+  @media (max-width: 500px) {
+    body { padding: 0.8rem; font-size: 16px; }
+    .page { padding: 1.5rem 1.2rem; }
+    h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>When Ponies Aren't Biodiversity</h1>
+<p class="subtitle">How a spreadsheet is culling Dartmoor's endangered ponies to save Dartmoor's biodiversity</p>
+
+<p class="lead">Dartmoor's semi-wild ponies have grazed the moor for 4,500 years. There are fewer than 1,000 left. They are classed as endangered by the United Nations and listed by DEFRA as a native species at risk. Peer-reviewed science — which Natural England accepts as part of its own evidence portfolio — shows that pony grazing is the most effective tool for managing the invasive Molinia grass that is choking Dartmoor's protected habitats. Natural England has just demanded livestock reductions of between 56% and 89% on the moor. The ponies will be the first to go.</p>
+
+<h2>What's Happening</h2>
+
+<p>Dartmoor's commons are currently managed under Higher Level Stewardship agreements, which allow a grazing density of 0.36 livestock units per hectare. Natural England is now transitioning the commons into Countryside Stewardship — a new scheme with dramatically lower stocking limits. The reductions operate on three tiers:</p>
+
+<table class="tier-table">
+  <tr>
+    <th></th>
+    <th>Current (HLS)</th>
+    <th>CS Tier 1</th>
+    <th>CS Tier 2</th>
+    <th>CS Tier 3</th>
+  </tr>
+  <tr>
+    <td>Grazing density (lsu/ha)</td>
+    <td>0.36</td>
+    <td>0.16</td>
+    <td>0.08</td>
+    <td>0.04</td>
+  </tr>
+  <tr>
+    <td>Reduction required</td>
+    <td>—</td>
+    <td>56%</td>
+    <td>78%</td>
+    <td>89%</td>
+  </tr>
+</table>
+
+<p>The stated reason is habitat protection. Dartmoor is a Site of Special Scientific Interest, and Natural England says reducing grazing pressure will allow protected habitats — blanket bogs, heathland, rare mosses — to recover. Natural England doesn't mention ponies in the ruling. It sets a total livestock number. Farmers choose what to keep. Cattle and sheep pay the bills. Ponies don't. The cull isn't ordered. It's made financially inevitable.</p>
+
+<p>Natural England says decisions about which animals stay "rest with individual landowners not with Natural England." That sentence is doing a lot of work.</p>
+
+<h2>The Catch-22</h2>
+
+<p>Any financial support for ponies — grazing supplements, Native At Risk payments — is only available to farmers <em>after</em> a minimum 56–89% reduction has already been carried out. The system will help you keep ponies, but only once you've removed hundreds of them first. The safety net requires the fall.</p>
+
+<p>And Natural England isn't waiting for its own process. The Dartmoor Land Use Management Group was appointed to report in late 2027 on how to implement the recommendations of the 2023 Dartmoor Review — the same review that explicitly said Natural England <strong>"should not take actions likely to result in a reduction in pony numbers."</strong> Natural England is moving commons into Countryside Stewardship now, with the lower stocking numbers, pre-empting the review body it set up to address the question.</p>
+
+<h2>The Bit That Makes No Sense (Until It Does)</h2>
+
+<p>In the late 1980s, Molinia grass covered 1% of Dartmoor's commons. Today it has spread across huge areas of the moor, suffocating blanket bog, putting Sites of Special Scientific Interest into unfavourable condition, and destroying habitats for insects, birds, and reptiles. The moor isn't overgrazed. It's undergrazed. The Molinia is winning because there aren't enough animals eating it.</p>
+
+<p>The Dartmoor Hill Pony Association puts it simply: the ponies, uniquely adapted to Dartmoor's terrain after 4,500 years, are the best tool for managing Molinia and restoring the moor's biodiversity. Published, peer-reviewed science supports this (Lunt et al 2021, Fraser et al 2019). Natural England accepts this science. And Natural England is implementing a policy that removes the animals the science says should stay.</p>
+
+<p>So why would a conservation body ignore its own evidence, override its own commissioned review, and pre-empt its own appointed working group — to implement a policy that removes the species best equipped to solve the problem the policy claims to address?</p>
+
+<p>Because the ponies' contribution doesn't fit the measurement system.</p>
+
+<h2>How Biodiversity Is Measured (And Why Ponies Don't Count)</h2>
+
+<p>Since February 2024, every new development in England must leave wildlife habitats 10% better than before. This is called <span class="term">Biodiversity Net Gain</span>. Developers who can't deliver the improvement on-site buy "Biodiversity Units" from landowners elsewhere. Average price: around £30,000 per unit.</p>
+
+<div class="explainer">
+  <span class="explainer-label">How do you measure biodiversity?</span>
+  A government spreadsheet — the Statutory Metric — scores every habitat by size, type, condition, and location. Multiply them together: that's a Biodiversity Unit. A development site is surveyed before and after. The "after" number must be 10% higher. If it isn't, the developer buys units from someone else's land — a landowner who has restored or created habitat, had the improvement verified, and registered the units for sale. The land is then locked under a conservation covenant for a minimum of 30 years. The metric measures habitat categories, not the animals living in them. A field with ponies and a field without ponies can score identically. The system sees the number, not the horse.
+</div>
+
+<p>A managed rewilding programme with satellite-verified milestones, a 30-year legal agreement, and a registered conservation covenant generates Biodiversity Units. A pony grazing a hillside for 4,500 years does not. The pony's work is real. It's just not in the spreadsheet.</p>
+
+<p class="key-line">The ponies' crime isn't ecological. It's that their contribution is unmeasured.<br>What the system can't measure, the system can't value.<br>What it can't value, it replaces with something it can.</p>
+
+<h2>Where the Land Goes</h2>
+
+<p>Once farming becomes unviable — and a 56–89% livestock reduction will achieve that — the land shifts into environmental stewardship agreements. The farmer is paid to manage land for biodiversity outcomes instead of food. That land generates Biodiversity Units: registered, priced, tradeable. The same stretch can simultaneously generate nutrient credits (offsetting pollution from new developments) and carbon credits (sequestering carbon through habitat creation). This is called <span class="term">stacking</span> — three revenue streams from one piece of land, all locked under conservation covenants at the Land Registry.</p>
+
+<p>The land isn't confiscated. It's <span class="term">tokenised</span> — its ecological value quantified, registered, and entered into financial markets as a tradeable asset. The ponies, whose grazing IS the biodiversity management, are replaced by a measurement system that generates financial instruments from the distance between a degraded baseline and a restored one.</p>
+
+<div class="explainer">
+  <span class="explainer-label">Who runs the system?</span>
+  Natural England — the quango that just demanded the livestock reductions — also runs the Biodiversity Gain Sites Register. It sets the conditions that push land out of farming, and it administers the registry that land enters when farming ends. It also runs the nutrient mitigation scheme. It recommends stacking. It sets the metric. It advises on baselines. The regulator and the market-maker are the same institution.
+</div>
+
+<h2>What's Underneath</h2>
+
+<p>Dartmoor sits on one of the world's largest tungsten deposits. The Hemerdon mine, 7 miles from Plymouth, is restarting — mining equipment is already on site, with full commissioning targeted for early 2027. The UK's Critical Minerals Strategy names Devon as a key growth area. Tungsten is essential for defence and advanced manufacturing, and its supply is dominated by China and Russia.</p>
+
+<p>Plymouth's freeport — a zone with tax breaks, relaxed planning rules, and reduced regulation — has a 75km outer boundary that covers most of Dartmoor. The National Park Authority was never consulted on this boundary.</p>
+
+<p>The same piece of land is simultaneously inside a national park, inside a Site of Special Scientific Interest, inside a freeport boundary, and above a strategic mineral deposit. Four governance layers, none of which reference each other, all converging on the same outcome: existing communities and land uses priced out, replaced by institutional frameworks they have no meaningful input into.</p>
+
+<h2>The Bit That Should Bother You</h2>
+
+<p>Nobody planned this as a sequence. The environmental regulator, the freeport authority, and the critical minerals strategy don't coordinate. Three separate institutional frameworks, each with its own logic, each producing the same result: a farmer in October, choosing between ponies and cattle at the annual drift roundup, making a decision shaped by a formula written in an office in Bristol, inside a system designed in Westminster, serving a market that trades nature as a financial instrument.</p>
+
+<p>The Dartmoor Hill Pony Association says it isn't ponies <em>or</em> cattle. It's ponies <em>and</em> cattle. The commons have run both for centuries. The livestock unit formula that forces farmers to choose is the mechanism that splits them — and the split is what makes the land available for the system that comes next.</p>
+
+<p>The pony looking at the farmer across the pen has been part of the landscape since the Bronze Age. The spreadsheet that says it doesn't count as biodiversity was published last year.</p>
+
+<div class="bottom-note">
+  <strong>Sources:</strong> The Times (15 Jun 2026) — "Dartmoor ponies could be put to death under biodiversity plans"; Dartmoor Hill Pony Association (17 Jun 2026) — Fact Check response; Lunt, P. et al 2021 Conservation Evidence Journal; Fraser M, Stanley C, Hegarty M 2019 Biological Conservation; Environment Act 2021; Natural England Biodiversity Gain Sites Register; Dartmoor Independent Review (2023); UK Critical Minerals Strategy 2035; Tungsten West PLC corporate filings; Plymouth &amp; South Devon Freeport boundary maps (Gov.uk).
+</div>
+
+</div>
+</body>
+</html>

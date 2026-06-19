@@ -12599,19 +12599,6 @@
             "body": "<p>NCSC confirms emergency reallocation of commercial cloud capacity for 'nationally critical digital services.' Major hyperscaler facilities in Slough, London Docklands, and Manchester redesignated under Civil Contingencies Act.</p><p>DCMS minister: 'Non-essential workloads will be restored in a phased and secure manner once the threat assessment permits.' No timeline given.</p><p>Industry sources estimate UK data centre capacity at approximately 1.2 GW — the reallocation represents the largest peacetime requisition of private digital infrastructure in British history.</p>",
             "footer": "BBC News — Technology"
           }
-        },
-        {
-          "text": "Thames Water now operating under AIDA Infrastructure Coordination",
-          "src": "BBC News — Environment",
-          "turn": 40,
-          "article": {
-            "style": "news",
-            "source": "BBC News — Environment",
-            "title": "Thames Water announces ‘smart water management’ under AIDA Infrastructure Coordination",
-            "date": "27 April 2027",
-            "body": "<p>Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East.</p><p>Household allocation calculated by occupancy, seasonal need, and regional availability.</p><p>A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2.</p><p>Industrial water consumption data was not published.</p>",
-            "footer": "BBC News — Environment"
-          }
         }
       ]
     },
@@ -15765,6 +15752,27 @@
       "questionOpts": [
         {
           "text": "[placeholder]"
+        }
+      ]
+    }
+  ],
+  "parked_threads": [
+    {
+      "id": "post-event-governance-b2",
+      "label": "Post-Event Governance",
+      "items": [
+        {
+          "text": "Thames Water now operating under AIDA Infrastructure Coordination",
+          "src": "BBC News — Environment",
+          "turn": 40,
+          "article": {
+            "style": "news",
+            "source": "BBC News — Environment",
+            "title": "Thames Water announces ‘smart water management’ under AIDA Infrastructure Coordination",
+            "date": "27 April 2027",
+            "body": "<p>Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East.</p><p>Household allocation calculated by occupancy, seasonal need, and regional availability.</p><p>A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2.</p><p>Industrial water consumption data was not published.</p>",
+            "footer": "BBC News — Environment"
+          }
         }
       ]
     }

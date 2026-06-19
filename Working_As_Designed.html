@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everything Is Working Exactly As Designed</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --linen: #f5f0e8;
+    --ink: #2c2a26;
+    --warm-grey: #7a756b;
+    --teal: #2a7a6e;
+    --soft-red: #a8433a;
+    --rule: #d4cfc5;
+    --highlight: #e8e2d4;
+  }
+
+  @media print {
+    body { font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; padding: 1cm; }
+    @page { margin: 1.5cm; }
+  }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--linen);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 1.5rem;
+    font-size: 17px;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-size: 0.88rem;
+    color: var(--warm-grey);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--warm-grey);
+    border-left: 3px solid var(--teal);
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin-bottom: 0.9rem; }
+
+  .term {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--soft-red);
+    display: inline;
+  }
+
+  .explainer {
+    background: #f9f7f2;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0 1.2rem 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--warm-grey);
+  }
+
+  .explainer .explainer-label {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .key-line {
+    font-style: italic;
+    color: var(--soft-red);
+    margin: 1rem 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .appendix {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 2px solid var(--rule);
+  }
+
+  .appendix h3 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .appendix p, .appendix li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--warm-grey);
+    margin-bottom: 0.5rem;
+  }
+
+  .appendix ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .appendix li {
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .appendix li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .bottom-note {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--warm-grey);
+    line-height: 1.45;
+  }
+
+  strong { font-weight: 600; }
+
+  @media (max-width: 500px) {
+    body { padding: 0.8rem; font-size: 16px; }
+    .page { padding: 1.5rem 1.2rem; }
+    h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Everything Is Working Exactly As Designed</h1>
+<p class="subtitle">How a bat tunnel, a fish disco, and a government spreadsheet are turning nature into a financial instrument</p>
+
+<p class="lead">In Buckinghamshire, HS2 built a kilometre-long mesh tunnel to protect 300 bats. It cost £216 million. At Hinkley Point C, 300 underwater speakers repel fish from intake pipes that suck in 134 cubic metres of seawater per second. The fish protection measures cost £700 million and are expected to save 0.083 salmon per year. Everyone agrees this is insane. The government agreed too. So it built a new system. This is what the new system does.</p>
+
+<h2>The New System</h2>
+
+<p>Environment Secretary Steve Reed called the bat tunnel "ludicrous." Rachel Reeves said she wanted industry to "stop worrying about the bats and the newts." The response wasn't to fix the planning system. It was to replace it with a market.</p>
+
+<p>The <span class="term">Planning and Infrastructure Act</span> became law on 18 December 2025. It includes provisions for a <span class="term">Nature Restoration Levy</span> — a fund, paid for by developers, that finances nature restoration somewhere else. Instead of protecting the actual bats in the actual wood, developers pay into a fund. The fund handles nature. Managed by Natural England.</p>
+
+<p>The bats become a line item. The fish become a line item. Nature becomes a line item. Everything enters the fund. Everything is measured, registered, and tradeable.</p>
+
+<p>The system has five layers. A metric that measures nature in units. A register that makes those units tradeable. A legal covenant that locks the land for a minimum of thirty years. A levy that requires developers to buy credits. And a financial infrastructure — currently being built by the FCA and the Bank of England — that will put all of it on the same digital rails as bonds and equities. The detail of each layer is set out at the end of this article. Here is what the system looks like when it meets a person.</p>
+
+<h2>Three Stories About What Happens Next</h2>
+
+<p><a href="https://teeser2026.github.io/cant-beat-the-system/Ponies_Not_Biodiverse.html" target="_blank" style="color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--teal);"><strong>Dartmoor.</strong></a> Semi-wild ponies have grazed the moor for 4,500 years. They are classed as endangered. Peer-reviewed science — which Natural England accepts — shows that pony grazing is the most effective tool for managing the invasive grass that is choking Dartmoor's habitats. Natural England has demanded livestock reductions of up to 89%. The ponies will be the first to go: cattle and sheep pay the bills, ponies don't. The cull isn't ordered. It's made financially inevitable. The ponies' grazing IS the biodiversity management. But pony grazing doesn't generate <span class="term">Biodiversity Units</span>. What the system can't measure, it can't value. What it can't value, it replaces with something it can.</p>
+
+<p><a href="https://teeser2026.github.io/cant-beat-the-system/Cleaning_River_Bad.html" target="_blank" style="color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--teal);"><strong>The River Roding.</strong></a> A barrister pulled over 200 bags of rubbish out of a river in East London. The Environment Agency is prosecuting him — operating without a permit carries up to two years in prison. A few hundred metres upstream, Thames Water pumps 750 million litres of raw sewage into the same river. Not under investigation. The EA's own catchment partnership celebrates the same type of cleanup as a success. Its enforcement arm prosecutes it. Why? Because the system generates credits from the distance between a degraded baseline and a restored one. The dirtier the river, the bigger the gain, the more credits the restoration generates. A volunteer who cleans a river for free doesn't just fail to produce credits. He destroys the baseline that makes the credits valuable.</p>
+
+<p><a href="https://teeser2026.github.io/cant-beat-the-system/Oysters_Aren't_Food.html" target="_blank" style="color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--teal);"><strong>The River Avon.</strong></a> A government-funded study conducted on Tim Edwards's oyster farm found it enhances biodiversity and improves water quality. The Duchy of Cornwall — Prince William's estate, valued at over £1 billion — is shutting the farm down. His oysters are classified as "invasive." Fifty years, no feed, no chemicals, sterile stock, no adverse impact. Native oysters can't be farmed on this river — they die. But the Duchy will only support native restoration, "in line with marine conservation societies and government policy." Off the Norfolk coast, a pet food company is restoring four million native oysters, generating credits for a pension fund targeting 8–12% returns. The farm that works has nothing the system can count. The restoration that replaces it does.</p>
+
+<p class="key-line">In every case: a traditional practice that IS the ecological stewardship gets displaced.<br>The displacement gets measured as improvement.<br>The improvement gets sold.</p>
+
+<h2>The Same Body Runs Both Sides</h2>
+
+<p>Natural England demanded the Dartmoor livestock reductions. Natural England runs the <span class="term">Biodiversity Gain Sites Register</span> — the national registry where restoration credits are listed for sale. Natural England administers the nutrient mitigation scheme. Natural England advised the Duchy of Cornwall. Natural England is building POSEIDON, a marine mapping tool launching summer 2026 to give offshore wind developers access to marine biodiversity data. The Environment Agency celebrates river cleanup partnerships on one webpage and prosecutes the same work on another.</p>
+
+<p>The regulator, the market-maker, and the enforcer are the same family of institutions. They set the conditions that remove existing practice. They administer the market that the replacement enters. And they prosecute anyone who does the work outside the system.</p>
+
+<h2>Where It All Meets</h2>
+
+<p>Teesworks, on the south bank of the Tees. One piece of ground. £560 million of public money spent regenerating contaminated industrial land. That land sold at £1 per acre to private interests who now own 90%. A freeport with tax breaks, relaxed planning rules, and reduced regulation. A Carbon Capture, Utilisation and Storage facility that will capture 10 million tonnes of CO2 per year — not stopping the emissions, but capturing them and generating <span class="term">carbon credits</span> that are tradeable financial instruments. An AI Growth Zone, with discussions for what is slated to become Europe's largest data centre. 5,600 jobs delivered against 18,000 promised. The government blocked independent audit.</p>
+
+<p>Freeport tax breaks. Public subsidy. Carbon credits. AI infrastructure. Tokenisation rails. Every layer of the architecture mapped in the three stories above — from the livestock formula on Dartmoor to the oyster credits off Norfolk — converges on this site. The ponies, the river, and the oysters are at the edge of the system. Teesworks is at the centre. The website is public.</p>
+
+<h2>The Rails</h2>
+
+<p>On 18 May 2026, the Financial Conduct Authority and the Bank of England jointly published a call for input on the future of tokenisation in UK wholesale markets.</p>
+
+<p>"Tokenisation is the digital representation of assets and their ownership using distributed ledger technology. It could represent one of the most consequential changes to wholesale financial markets for decades."</p>
+
+<p>Sixteen firms are already in the FCA's <span class="term">Digital Securities Sandbox</span> — a live, regulated environment for testing tokenised issuance, trading, and settlement. In April, PS 26/7 moved fund tokenisation from experimentation to adoption. The current scope is securities — bonds, equities, fund units. But the FCA and the Bank of England explicitly flag: "we and the Bank expect to look beyond this in future."</p>
+
+<p>Biodiversity Units are already registered financial instruments. Nutrient credits are already tradeable. Carbon credits are already a market. Ecosystem service payments are already being stacked on land. The same rails that carry tokenised bonds will carry tokenised nature.</p>
+
+<h2>The Bit That Should Bother You</h2>
+
+<p>Nobody planned this as a sequence. That's the comfortable version. The environmental regulator, the freeport authority, the offshore wind developer, the pension fund, and the pet food company don't sit in the same room. But Natural England published its strategy. The FCA published its vision. The Duchy published its policy. The Rivers Trust published its funding model. None of them hid. The plans are in public documents with reference numbers and consultation deadlines. The coordination isn't in a memo. It's in the architecture — shared frameworks, shared metrics, shared time horizons, each institution's rational self-interest pointing the same direction. Three separate logics, each staffed by people doing their jobs, each producing the same result: existing communities and land uses priced out, replaced by institutional frameworks they have no meaningful input into.</p>
+
+<p>The system never scowls. The restoration is real. The oysters are genuinely coming back. The science is genuinely being done. The volunteers who scrub shells at Chichester Harbour are doing beautiful work. The horror isn't that the system doesn't work. The horror is that it works perfectly — for a purpose none of them were consulted about.</p>
+
+<p>A farmer at an October roundup, choosing between ponies and cattle. A barrister with a bin bag and a hired digger. An oysterman cutting up trestles on a Devon mudflat. A fisherman finding legal papers zip-tied to his hull at dawn. Four people. Four places. The same spreadsheet.</p>
+
+<p>The consultation closes on 3 July 2026. You weren't consulted.</p>
+
+<div class="appendix">
+
+<h2 style="border-bottom: none; margin-bottom: 0.2rem;">Appendix: The Five Layers</h2>
+<p style="font-size: 0.85rem; color: var(--warm-grey); margin-bottom: 1rem;">How the system turns nature into a financial instrument</p>
+
+<h3>Layer 1 — What Gets Generated (the credit types)</h3>
+<ul>
+  <li><strong>Biodiversity Net Gain units:</strong> Mandatory since February 2024 for all developments. Mandatory for nationally significant infrastructure (roads, railways, offshore wind) from November 2026. A government spreadsheet — the Statutory Metric — scores habitats by size, type, condition, and location. Developers must deliver a 10% uplift or buy units. Average price: ~£30,000 per unit. Last-resort statutory credits from the government: £42,000 per unit.</li>
+  <li><strong>Nutrient credits:</strong> In 27 river catchments, new developments must achieve nutrient neutrality. Developers buy credits from landowners who reduce nutrient run-off. One credit = 1 kg of nitrogen or phosphate offset. Price: £2,000–£5,000 per credit. Natural England administers the market.</li>
+  <li><strong>Carbon credits:</strong> Generated by habitat creation that sequesters carbon — peatland restoration, woodland planting, wetland creation, CCUS facilities. Tradeable on voluntary and compliance markets.</li>
+  <li><strong>Blue carbon credits:</strong> The marine equivalent. Generated by seagrass, salt marsh, and oyster reef restoration. Emerging market.</li>
+  <li><strong>Ecosystem services payments:</strong> Companies pay for outcomes — flood protection, water purification, biodiversity uplift. Rebalance Earth's model: nature as infrastructure, targeting 8–12% returns over 15 years for institutional investors.</li>
+  <li><strong>Marine Net Gain credits:</strong> The sea version of BNG. Government has announced it will be mandatory for all marine developments. Not yet formally enacted, but the architecture is being built ahead of the requirement.</li>
+</ul>
+
+<h3>Layer 2 — What Locks the Land (the legal mechanism)</h3>
+<ul>
+  <li><strong>Conservation covenants:</strong> A legal agreement, registered at the Land Registry, binding the land for a minimum of 30 years. Once land enters the credit system, it is bound. The covenant runs with the land — it applies to all future owners, not just the person who signed it.</li>
+  <li><strong>Section 106 agreements:</strong> Planning obligations that tie nutrient or biodiversity credits to specific development consents.</li>
+</ul>
+
+<h3>Layer 3 — What Transitions the Land (the policy mechanism)</h3>
+<ul>
+  <li><strong>Countryside Stewardship:</strong> Replacing Higher Level Stewardship with dramatically lower stocking limits. The mechanism forcing the Dartmoor pony reductions.</li>
+  <li><strong>Environmental Land Management Schemes (ELMS):</strong> The post-Brexit replacement for EU farm subsidies. Pays farmers for environmental outcomes — biodiversity, water quality, flood mitigation — instead of food production. Makes the transition from farming to credit-generation financially rational.</li>
+  <li><strong>Nature Restoration Levy:</strong> Developers pay into a Nature Restoration Fund instead of doing on-site mitigation. The fund finances restoration elsewhere. Managed by Natural England.</li>
+  <li><strong>Marine Recovery Fund:</strong> Launched December 2025. Offshore wind developers pay into a Defra-administered fund delivering strategic compensatory measures — including, since May 2026, native oyster restoration.</li>
+</ul>
+
+<h3>Layer 4 — What Creates Demand (the spatial mechanism)</h3>
+<ul>
+  <li><strong>Special Economic Zones / Freeports:</strong> 48 SEZs mapped across England, each with a 45km buffer. Tax breaks, relaxed planning, accelerated development. Every development inside these boundaries that triggers BNG needs credits. Every development near a nutrient-sensitive waterway needs nutrient credits.</li>
+  <li><strong>Local Nature Recovery Strategies:</strong> Every local authority must produce one, mapping where nature recovery should happen. This is the spatial planning layer that directs where credits get generated.</li>
+  <li><strong>Habitat banks:</strong> Commercial operations that generate and sell BNG credits as a business. Landowners create or restore habitat, register the gain, and sell units to developers. A multi-billion-pound market is emerging.</li>
+</ul>
+
+<h3>Layer 5 — What Puts It on Rails (the financial mechanism)</h3>
+<ul>
+  <li><strong>FCA Digital Securities Sandbox:</strong> 16 firms testing tokenised issuance, trading, and settlement in a live, regulated environment.</li>
+  <li><strong>PS 26/7 (April 2026):</strong> Fund tokenisation moved from experimentation to adoption.</li>
+  <li><strong>FCA/Bank of England call for input (18 May 2026):</strong> "Tokenisation could represent one of the most consequential changes to wholesale financial markets for decades." Currently securities. "We and the Bank expect to look beyond this in future." Consultation closes 3 July 2026.</li>
+  <li><strong>Stacking:</strong> The force multiplier. One piece of land generating BNG units AND nutrient credits AND carbon credits simultaneously. Three revenue streams from one field, all registered, all tradeable, all locked under covenant at the Land Registry.</li>
+</ul>
+
+</div>
+
+<div class="bottom-note">
+  <strong>Sources:</strong> Gov.uk — Planning and Infrastructure Act 2025; Environment Act 2021; Gov.uk (May 2026) — offshore wind compensation regulations; FCA (18 May 2026) — "The Future of Tokenisation: Joint vision of UK authorities for wholesale markets"; FCA — PS 26/7; The Times (15 Jun 2026) — Dartmoor ponies; Dartmoor Hill Pony Association (17 Jun 2026); The Guardian (17 Jun 2026) — Powlesland prosecution; BBC News (Jun 2026) — Edwards / River Avon; Envision Marine &amp; University of Essex (2024) — FISP ECM_65323; Purina UK / Nestlé (Sep 2025); Rebalance Earth / IPE Real Assets (Sep 2025); RWE (Jul 2025); TOPPING / The Nature Conservancy (Apr 2026); EDP24 (Jun 2026) — Equinor / Norfolk fishermen; Bristol Avon Rivers Trust — Five-Year Strategy 2025–2030; BBC News (Jul 2023) — Haward / sewage; Teesworks.co.uk; Natural England — Biodiversity Gain Sites Register; Natural England — POSEIDON; Geomaptric — SEZ boundary map; Carter Jonas (2024) — HS2 bat tunnel; Gov.uk (Dec 2025) — Marine Recovery Fund; Dickens, <em>The Pickwick Papers</em> (1836).
+</div>
+
+</div>
+</body>
+</html>

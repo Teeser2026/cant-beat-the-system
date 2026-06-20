@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Greenness</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --linen: #f5f0e8;
+    --ink: #2c2a26;
+    --warm-grey: #7a756b;
+    --teal: #2a7a6e;
+    --soft-red: #a8433a;
+    --rule: #d4cfc5;
+    --highlight: #e8e2d4;
+  }
+
+  @media print {
+    body { font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; padding: 1cm; }
+    @page { margin: 1.5cm; }
+  }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--linen);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 1.5rem;
+    font-size: 17px;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  }
+
+  h1 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+  }
+
+  .subtitle {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-size: 0.88rem;
+    color: var(--warm-grey);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--warm-grey);
+    border-left: 3px solid var(--teal);
+    padding-left: 1rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  p { margin-bottom: 0.9rem; }
+
+  .term {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--soft-red);
+    display: inline;
+  }
+
+  .explainer {
+    background: #f9f7f2;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0 1.2rem 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--warm-grey);
+  }
+
+  .explainer .explainer-label {
+    font-family: 'Outfit', Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .key-line {
+    font-style: italic;
+    color: var(--soft-red);
+    margin: 1rem 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .bottom-note {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--warm-grey);
+    line-height: 1.45;
+  }
+
+  strong { font-weight: 600; }
+
+  @media (max-width: 500px) {
+    body { padding: 0.8rem; font-size: 16px; }
+    .page { padding: 1.5rem 1.2rem; }
+    h1 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Engineering Greenness</h1>
+<p class="subtitle">Everything Is Working Exactly As Designed — the demand side</p>
+
+<p class="lead"><a href="https://teeser2026.github.io/cant-beat-the-system/Working_As_Designed.html" target="_blank" style="color: var(--warm-grey); text-decoration: none; border-bottom: 1px solid var(--teal); font-style: italic;">Everything Is Working Exactly As Designed</a> documented where nature credits come from — ponies displaced from moorland, a river kept dirty to preserve a restoration opportunity, an oyster fisherman replaced by a conservation project that generates tradeable biodiversity units. Those are the supply side. This is the demand side: what generates the need for all those credits, and what the certificates are purchased to conceal.</p>
+
+<h2>Auchtertool</h2>
+
+<p>In the early 1980s, Auchtertool had a post office, a shop, a pub, a school, a hotel, and a garage. It is a village of around six hundred people in Fife, and since then every one of those amenities has closed. Only the school remains, hanging on, as one resident put it, by its fingernails.</p>
+
+<p>Over the same period, and within a two-mile radius of the village, the following have been built: the Mossmorran petrochemical plant, three wind farms, a massive solar farm on prime agricultural land, battery storage facilities, two quarries, and the EGL4 subsea power cable, which takes electricity generated in Fife directly to England. Every one of these projects extracts wealth from the area. None of them employ significant numbers of people locally. Only one small wind farm contributes to a community fund, and that arrangement exists only because the late farmer who owned the land was an elder in the Kirk and insisted on it before he died.</p>
+
+<p>Auchtertool, as its residents have observed, should be the richest village in Europe. It is not. Fife endures high levels of poverty. The energy leaves. The wealth leaves. The village gets to keep the landscape disruption and the construction traffic.</p>
+
+<p>Now a 600-megawatt AI data centre has been proposed on a green field site next to the village. It would be roughly fifty football pitches in area and more than eight double-decker buses high. It would consume the electricity of more than half the households in Scotland. Its water consumption figures have not been disclosed; the developer, Fife Council, and Scottish Water have all been evasive on the numbers. No Environmental Impact Assessment has been required.</p>
+
+<div class="explainer">
+<span class="explainer-label">Water</span>
+Water companies are not statutory consultees for data centre planning applications in the United Kingdom. A facility that may abstract millions of litres of water daily for cooling does not require the water company to confirm whether there is enough water to supply it. Britain already faces a projected daily water deficit of nearly five billion litres by 2050. That projection does not include AI infrastructure. The community subject to a hosepipe ban and the data centre abstracting water from the same catchment are connected by the same resource. The planning system treats them as unrelated.
+</div>
+
+<p>Thirty miles south, a smaller data centre — 300 megawatts, half the size — has undergone an Environmental Impact Assessment, because that particular site happened to need one. The developer's own modelling found that routine backup generator testing alone would release 288 tonnes of nitrogen oxides annually, and that nearby homes, a hospital, and a kindergarten — all within 350 metres — could be exposed to nitrogen dioxide concentrations of up to 8,800 micrograms per cubic metre. The safe hourly limit is 200. That is forty-four times over. The facility, marketed as a "green data centre," would rank among Scotland's top ten industrial polluters, ahead of Shell's plant at Mossmorran and the gas-fired Peterhead power station.</p>
+
+<p>Auchtertool's proposed data centre is twice the size. Nobody has been required to ask what it would emit, because nobody has been required to ask anything at all.</p>
+
+<h2>Four Certificates</h2>
+
+<p>A data centre of this kind requires four certificates. Each one converts a question that should require evidence into a question that requires only process.</p>
+
+<p><strong>The first is a <span class="term">REGO</span></strong> — a Renewable Energy Guarantee of Origin, issued by Ofgem. A REGO certifies that a unit of renewable energy was generated somewhere, at some point. It can be purchased entirely separately from the electricity it certifies. A data centre can draw every watt from a gas-fired plant and hold REGOs claiming one hundred per cent renewable energy. The certificate does not require the energy to be renewable. It requires the certificate to exist.</p>
+
+<p>The renewable energy generated within two miles of Auchtertool — three wind farms, a solar farm, battery storage — leaves Fife via the EGL4 subsea cable and goes to England. The data centre proposed for Auchtertool would not run on any of it. Its fallback power supply would be a 600-megawatt gas-fired plant at Mossmorran. The wind turbines power someone else's grid. The gas plant powers the data centre. The data centre holds a REGO. The data centre is called green.</p>
+
+<div class="explainer">
+<span class="explainer-label">Your energy bill</span>
+Two-thirds of a British household energy bill is not the cost of energy. It is levies, subsidies, and network charges — fixed costs that fund the construction and connection of wind farms, solar farms, and nuclear capacity. Those costs totalled eleven billion pounds last year. They will rise to nineteen billion by 2030. The energy those subsidies have paid for is, increasingly, energy nobody needs. Last year, wholesale electricity prices in Britain went negative for 150 hours — a sevenfold increase since 2021. Negative pricing means the grid has more power than it can use, and Britain pays other countries — France, Belgium, the Netherlands, Norway — to take the surplus. By 2028, prices are projected to be below zero for more than 1,300 hours a year. Fifteen per cent of the time, British electricity will be a waste product. When prices go negative, the benefit flows to people wealthy enough to own electric vehicles, run air conditioning, or heat swimming pools on demand. Everyone else continues to pay the subsidies that built the surplus. As one energy analyst put it: all consumers pay for these solar farms to be subsidised, so the people who cannot afford electric cars are subsidising those who can. This is not just wasteful. It is socially unjust.
+</div>
+
+<p><strong>The second is the label itself.</strong> On 18 June 2026, Scotland's First Minister was asked in Parliament to define a "green data centre." The answer, entered into the official parliamentary record, was that a green data centre is one "approved with due account taken of the environmental implications." A green data centre is one that has been approved as a green data centre. There is no threshold. No metric. No standard capable of being failed. This is not a definition. It is the absence of one, dressed in the language of one.</p>
+
+<p><strong>The third is a <span class="term">Biodiversity Net Gain</span> credit.</strong> In England, BNG is mandatory: developers must leave a site ten per cent richer in biodiversity than they found it, measured by a statutory metric, and can purchase off-site credits to make up the difference. Scotland does not yet have this system. NatureScot is developing a Scottish Planning Biodiversity Metric, modelled on England's, due in 2027. The consultation is scheduled for mid-2026.</p>
+
+<p>The veteran oaks at Muirhead, connected to the Muirhead Clan seat, providing bat roosts and ecological corridors, were felled for a data centre extension before any of this arrived. The metric that would have measured their value does not exist yet. When it launches next year, it will measure gain from whatever baseline it finds. The oaks will not be in the calculation, because they will not be there to count. The destruction outruns the measurement. The measurement arrives to find rubble, and measures from the rubble.</p>
+
+<p><strong>The fourth is a <span class="term">carbon credit</span></strong>, and this is where the structure reveals itself. Under current UK rules, biodiversity credits and carbon credits can be stacked on the same parcel of land, provided each represents a distinct environmental outcome. In practice, this means the following: destroy a mature ecosystem that was simultaneously sequestering carbon and supporting biodiversity. Both baselines drop. Replant on the degraded land. The replanting generates BNG credits — biodiversity gain from a low baseline — and carbon credits under the Woodland Carbon Code — sequestration gain from a low baseline. One act of destruction. Two revenue streams from the recovery. Both sold as tradeable credits to other developers who need to offset their own destruction elsewhere.</p>
+
+<p>The system does not merely permit the destruction. It makes destruction more profitable than preservation, because replanting degraded land generates credits that maintaining an intact ecosystem never could. A two-hundred-year-old oak sequestering carbon and sheltering breeding birds produces no tradeable credits. It is simply doing what it does. Cut it down, and the land it stood on becomes a credit opportunity — twice over.</p>
+
+<p class="key-line">Four certificates. Each one converts a material question into a ledger entry.<br>The REGO launders gas as green. The label launders approval as definition.<br>The BNG credit launders loss as gain. The carbon credit doubles the receipt.</p>
+
+<h2>The Snail Farm</h2>
+
+<p>In October 2025, Westminster City Council officers investigating tax avoidance found boxes of snails in offices on Old Marylebone Road. Landlords had been claiming agricultural business rate exemptions by saying the buildings were snail farms. The council called it fraud. Four such operations have been liquidated. The Insolvency Service has been asked to consider banning the directors. The council has lost approximately £370,000 to the scheme and wants new legislation to shut down avoidance scams without having to go to court.</p>
+
+<p>Everyone can see it is a scam. You do not need an agricultural inspector to tell you that boxes of gastropods in a Marylebone office are not a working farm. The snails are technically present. The exemption claim is technically filed. But the difference between what is in the building and what the certificate describes is visible to anyone who opens the door.</p>
+
+<p>Now scale it up.</p>
+
+<p>A developer destroys a County Wildlife Site — veteran oaks, bat roosts, breeding birds, two hundred years of ecological accumulation — pours a fifty-football-pitch data centre on it, plants some saplings and wildflower mix around the edge, and the metric says <em>net gain</em>. The saplings are technically present. The certificate is technically issued. The claim is technically made.</p>
+
+<p>The difference between a landscaping plan on rubble and a functioning ecosystem is the same difference as between boxes of snails in an office and a working farm. Everyone can see it. You do not need a metric. But when someone puts snails in an office and calls it agriculture, the council calls it fraud and goes to court. When someone puts saplings on rubble and calls it biodiversity net gain, the government calls it policy and issues the credit.</p>
+
+<p>The snail farm gets you investigated. The BNG credit gets you planning permission.</p>
+
+<h2>Where the Credits Come From</h2>
+
+<p>If Auchtertool's data centre proceeds — and if Scotland eventually adopts the BNG framework it is currently designing, modelled on England's — the developer will need biodiversity credits. If the site cannot generate enough on-site gain from landscaping and replanting, it will buy credits from the off-site market. Those credits will come from land where biodiversity has been enhanced: a moor where grazing was removed, a riverbank where habitat was restored, a coastline where a native species was reintroduced.</p>
+
+<p>They will come, in other words, from the places documented in the first three pieces of this series. From the field where the ponies used to graze, now generating units because the ponies were moved. From the river kept dirty until the system was ready to restore it and claim the credit. From the estuary where an oysterman used to work, replaced by a conservation project that produces tradeable nature.</p>
+
+<p>The data centre that consumed half of Scotland's household electricity, powered by gas, certified green by a certificate that does not require green energy, labelled green by a definition that cannot be failed, and offset by credits stacked two-deep on land degraded by similar developments — that data centre completes the circuit. It is the demand. The ponies, the river, and the oyster farm are the supply. The credits flow from one to the other, and at every stage, a certificate asserts that something has been gained.</p>
+
+<p>Auchtertool had a post office. It does not have a post office. It has four certificates and a school that hangs on by its fingernails, and the green energy generated within sight of the village leaves by subsea cable for England, and the data centre that would take its place would run on gas from Mossmorran, and the children of the village would grow up next to a facility consuming more electricity than their entire country produces at peak, inside a planning system that has no definition of green, no metric for biodiversity, no requirement to assess environmental impact, and no obligation to tell anyone how much water it will use.</p>
+
+<p>Every certificate says gain. The village says otherwise. You do not need a metric to tell the difference.</p>
+
+<div class="bottom-note">
+  <strong>Sources:</strong> The National (11 Jun 2026) — Simon Forrest, "Fife village bracing for AI data centre size of 50 football pitches"; The National (18 Jun 2026) — Petra Matijevic, "AI data centre would be a 'top 10 polluter'"; Scottish Parliament Official Report (18 Jun 2026) — FMQs, Ross Greer MSP; The Telegraph (19 Jun 2026) — Jonathan Leake, "The net zero bungle that has left Britain paying France to take our power"; BBC News (Jun 2026) — Quest Park Data Centre Campus, Bedfordshire; Investigate Europe / The Guardian / Le Monde / El País (Apr 2026) — Microsoft/DigitalEurope EU secrecy clause; David Powell / European Powell (May–Jun 2026) — UK data centre governance architecture; DEFRA (2 Jun 2026) — BNG Statement for Data Centre NSIPs, ISBN 978-1-5286-6478-3; Friends of the Earth (2026) — Q&A: Planning Applications and Data Centres; BBC News (Oct 2025) — Westminster snail farm tax avoidance; AHDB / NFU (2024) — BNG stacking guidance; LustraSkye (Jun 2026) — Scottish data centre moratorium thread; APRS / Environmental Rights Centre for Scotland (Dec 2025) — moratorium request; Aurora Energy / LCP Delta — negative pricing projections; Watt-Logic — Kathryn Porter on negative pricing; Prof Dieter Helm — UK generating capacity projections.
+</div>
+
+</div>
+</body>
+</html>

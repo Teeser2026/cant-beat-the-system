@@ -6111,10 +6111,10 @@
           "t": "I said I would return at six with a progress report, and I am here with an encouraging update."
         },
         {
-          "t": "Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not all terminals. Not all cards. Not yet. But the trajectory is clear, and it is accelerating."
+          "t": "Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not everywhere. Not all cards. Not yet. But the trajectory is clear, and it is accelerating."
         },
         {
-          "t": "On your screen is a tracker that shows a regional breakdown of terminal restoration. Thirty-eight per cent of payment terminals are now operational, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed."
+          "t": "On your screen is a tracker that shows a regional breakdown of card transaction processing. Thirty-eight per cent of card transactions attempted today processed successfully, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed."
         },
         {
           "t": "The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified."
@@ -6157,11 +6157,281 @@
     {
       "id": "25a",
       "num": "T25a",
-      "title": "The Big Shop",
+      "title": "False Dawn",
       "date": "17–18 FEBRUARY 2027",
       "paras": [
         {
-          "t": "[STUB — Day 4. Peak hope. Almost normal. 60% cards working. Schools confirm Monday. Amy’s mum: cards work, lovely joint of beef. George helps at corner shop. Simon reads Dev’s 2am mesh warning about Stage 2 and goes back to sleep. The gap between knowing and doing.]"
+          "t": "I’m in bed. It’s nearly eleven. Amy’s asleep, breathing slowly, steadily, contentedly. She read for a good three quarters of an hour. I’ve no idea what she’s reading currently. She ploughs through books so quickly. Devours them. They calm her. Distract her. She can’t sleep without reading first. It’s worked a treat tonight. I should’ve read too. Instead I tried to go straight to sleep, hoping the bottle of red I’d drunk would do its job. I’d tried to empty my mind. I’d nearly drifted off a couple of times but woke up each time with a jolt. So here I am. Awake. Eyes closed. Indeterminate fractal light patterns projected onto the back of my eyelids where I wish there was just still, inky blackness. I play with the patterns, manipulating them into shapes, figures, entities. I listen. Consciously. Where I’d thought there was silence, there was noise. Outside a scurrying. A cat? Badger? Hard to tell. Inside, house sounds. The radiator clicking itself to coolness. Indeterminate house creaks that can only be heard if you actively listen."
+        },
+        {
+          "t": "I’ve resigned myself to not sleeping now. I should get up and change the scenery for a bit. Reset. A herbal tea. Sit and read in the armchair in the hallway for a bit — the warmth of the fire embers will ensure it’s still cosy. I can’t be bothered to move though. I check my blood sugar — 7.7 — decent. I pull the duvet and extra blanket up over my eyes and cast my mind back over the evening."
+        },
+        {
+          "t": "The PM’s cautious optimism. The stats — Thirty-eight per cent of cards processing and climbing. Tracked very precisely. Stock markets resuming. The worst appeared to be over. The <em>worst</em> being pretty milquetoast. Chloe had watched the whole thing standing up, arms folded, nodding at the screen like she was being personally briefed. ‘Told you,’ she said, though she hadn’t told anyone anything specific. She’d just believed it would be fine, which in fairness was a prediction that was currently outperforming more <em>considered</em> takes. Amy offered a semi-forced smile — I’d warned her to be suspicious about the depth of the crisis and the speed of the recovery — but something about her body language suggested to me that it was her instinct rather than my words that told her <em>this is not over yet.</em> George had half-watched, slumped on the sofa, texting his mates. Sam and Emilia had gone back to Sarah’s before the broadcast."
+        },
+        {
+          "t": "Dinner had been chilli con carne — Amy cooked it using her tried and trusted ‘Nigella’s Quick Chilli’ recipe — 30 minutes and about 5 ingredients — it hits the spot every time. Red wine — a cheap-but-gluggable German Pinot Noir for Amy, a Baron de Ley Gran Reserva Rioja for me — it had been on offer in Waitrose a few weeks back — worked well with the chorizo in the chilli. A couple of beers for George. Mineral water for Chloe."
+        },
+        {
+          "t": "Chloe went straight up to bed after we’d eaten. George went to his room doing something that generated occasional bursts of laughter and the smell of toast. Amy and I pottered until bedtime. A passing-the-time, semi-sigh-of-relief, fingers-crossed kind of potter. Dishwasher loading. Wine finished and glasses washed by hand. Thirty minutes of idle, skirting any major talking points, chit-chat at the kitchen table. Wees for the dogs. Goodnight to the kids. Bed."
+        },
+        {
+          "t": "That was the evening. This is the now. My mind back in the present. And my mind in the present means it’s thinking of the future. I try to map it out. How will this play out? I’m itching for info. For the usual channels. X, for all its drawbacks <em>is</em> the news. Substacks <em>are</em> the analysis. I’m in the dark without them. But the dark isn’t empty tonight. It’s populated."
+        },
+        {
+          "t": "Populated by something with three moods. Three states. Thoughts that arrive fully formed, the way things do when you’ve been processing them unconsciously for days. Flashes of the dream return — a clinical file, three dissociated states, a receptionist who notices in an instant what psychiatrists train for years to detect. The idea someone, something, could present with three personalities, but in fact be one thing. One thing that doesn’t care. Not malicious. Not benevolent. Indifferent. The indifference is the most horrifying element of all."
+        },
+        {
+          "t": "I consider reaching for my phone to make notes. But I’m not ready for notes yet. The idea is embryonic. Nebulous. It’s starting to make sense instinctively but not intellectually. I’m kneading the dough but I’ve yet to set it aside to rise."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "The phone, charging on my bedside table, lights up at two minutes past two. I’m still awake. Kind of. I’ve been in that no man’s land where you’re not asleep but you’re not consciously thinking for God knows how long. Not dreaming either. Receiving?"
+        },
+        {
+          "t": "I pick up the phone. A text. Dev."
+        },
+        {
+          "t": "Don’t celebrate yet. False dawn. Too clean. Too soon. The rails are in place. Expect a setback.",
+          "c": "quote"
+        },
+        {
+          "t": "I read it once. Then read it again. I close my eyes to reflect. I consider every word. Every word Dev writes <em>matters</em>. Has <em>meaning</em>. <em>Intent</em>. The screen has burnt the words into the darkness and I can still see despite my eyes being shut. Green text floating around in a void. The afterimage of a warning."
+        },
+        {
+          "t": "Dev confirming what I already thought. What I suspected. What I <em>knew</em>. I’ve known it since the beep at Waitrose, since before the beep. Before the <em>event</em>. Eighty thousand people repatriated in forty-eight hours. An app with a logo on forty million phones overnight. An authentication framework that is <em>performing exactly as it was designed to</em>. That’s pre-positioning. Planning. A co-ordinated and justifiable response to an <em>emergency</em>. So what’s a fingerprint and vein-pattern payment authentication layer a response to? Nothing that’s happened. So far."
+        },
+        {
+          "t": "I open my eyes. Blurry green ‘setback’ lingers. I type back."
+        },
+        {
+          "t": "I’m expecting one. That’s why I’m lying awake at 2am. Trying to anticipate what’s next.",
+          "c": "quote"
+        },
+        {
+          "t": "Sent. A pause. A <em>ping</em>. Delivered. The intimacy of a conversation between two phones at 2am while everyone else is asleep."
+        },
+        {
+          "t": "Dev replies in under a minute."
+        },
+        {
+          "t": "What’s coming is coming. Switch your brain off. 4-7-8 breathing. Sleep. I’m going dark for a bit. Over and out.",
+          "c": "quote"
+        },
+        {
+          "t": "Over and out. Military. ‘Over and out’ is technically wrong, as Dev has explained more than once. ‘Over’ means I’m done talking, your turn. ‘Out’ means I’m done talking, end of conversation. You don’t use both. Dev uses both because his dad used both. The ‘Over and out’ tale is one of the few occasions he ever mentions his dad. His dad got it wrong. Everyone’s dad got it wrong."
+        },
+        {
+          "t": "4-7-8 breathing. In for four, hold for seven, out for eight. Dev taught me this method years ago. It’s as if he knew I’d used it last night. It bridged the gap between consciousness, awareness of the self and the hazy otherworldliness of the dream state."
+        },
+        {
+          "t": "I put the phone face back down on the bedside table. The room is dark again. I should focus on my breathing, but a phrase enters my mind."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "Designed to.",
+          "c": "quote"
+        },
+        {
+          "t": "Two words. Placed towards the end of the speech. Placed with intent. With purpose. Something more than a statistic — more than the repatriation number or the number of payment transactions being processed. The PM’s words from six o’clock — <em>The ARC authentication framework performed exactly as it was designed to.</em> Sitting on the sofa earlier, Amy’s feet tucked under my leg, the sentence didn’t register as anything other than words of comfort. Of resilience. The old system failed. The new framework is fixing it. We built something new that didn’t break."
+        },
+        {
+          "t": "The same sentence repeated in the darkness of the bedroom at an ungodly hour instead of being heard from the cosiness of the sofa at <em>Family Hour</em> conveys a different meaning."
+        },
+        {
+          "t": "<em>Performed exactly as it was designed to.</em> Not ‘held up under unprecedented pressure.’ Not ‘proved resilient beyond expectations.’ Not even a simple ‘worked.’",
+          "c": "solo"
+        },
+        {
+          "t": "<em>Designed to.</em>",
+          "c": "solo"
+        },
+        {
+          "t": "As if there were a brief. As if someone had written down what the framework should do in the event of a simultaneous cryptographic hack across the globe. And the PM was reporting on the single available channel, with a steady voice, at a podium, to a nation eating dinner off its lap, that the system had met spec."
+        },
+        {
+          "t": "Who writes the design spec for a catastrophe?"
+        },
+        {
+          "t": "Stop. Why are you doing this? Sleep. 4-7-8 breathing…",
+          "c": "inner"
+        },
+        {
+          "t": "It won’t stop. The spiral has started."
+        },
+        {
+          "t": "Be <em>rational</em>, Simon",
+          "c": "inner"
+        },
+        {
+          "t": "It’s perfectly reasonable for nations to have resilient scenario planning. Of course it is. It’s perfectly reasonable for these plans to be co-ordinated globally. Foolhardy not to. Of course there’s lockstep — these plans aren’t just drawn up at the national level. Think Pandemic Preparedness Plan. Of course communication channels should be limited. Of course the internet should be shut down. It’s an <em>emergency</em>."
+        },
+        {
+          "t": "But something feels off. Dev knows it. I know it. It’s too clean. And the rails that were put in place haven’t yet dropped us off at the final destination."
+        },
+        {
+          "t": "All aboard. This service is for Global Tyranny via Cyber Attack. Calling at all stations.",
+          "c": "inner"
+        },
+        {
+          "t": "We’ve had our first stop en route. ARC.",
+          "c": "inner"
+        },
+        {
+          "t": "My mind wanders back to the card reader at Waitrose. The cheer. Amy’s little <em>namaste</em> to the scanner. The receipt — Barclays — twenty-odd quid. All of it real, all of it felt, all of it genuine. But those beeps aren’t what everyone thinks they are. The old authentication that’s been running card payments for thirty years is dead. That’s what the cyberattack killed. The NCSC Director explained it on Tuesday evening. Legacy cryptography compromised. So what’s making the beeps? What’s verifying me when I tap my phone at the self-checkout?"
+        },
+        {
+          "t": "ARC is. ARC has been running since December. Dev messaged me about it towards the end of last year. The message about it still on my phone."
+        },
+        {
+          "t": "I pick the phone up again. Blue light infiltrates the darkness. I scroll back through my WhatsApps to Dev’s message from December. The link he sent. I tap it. Nothing. Of course there’s nothing — there’s no internet. But the preview is still there. I have the cached summary."
+        },
+        {
+          "t": "ARC. A unified device-level authentication layer pushed to every terminal in the country via acquirer firmware updates. No merchant action. No consumer awareness. Below the application layer.",
+          "c": "quote"
+        },
+        {
+          "t": "Dull as ditchwater. Installed while everyone was watching Love Island or arguing about men on dinghies."
+        },
+        {
+          "t": "Same beeps. Same receipts. Same bank notifications. New plumbing underneath. Nobody noticed because there was nothing to notice. Every contactless payment since December has been authenticated by ARC. The old system was still running alongside it — belt and braces — until Sunday night, when the old system was ‘compromised’ and ARC was the only thing left standing."
+        },
+        {
+          "t": "And it’s all working exactly as it was designed to. And where do the ARC rails lead? Where’s the destination? Biometrics. Something’s brewing."
+        },
+        {
+          "t": "My mind darts back to the ’90s. Stone Roses. Oh, wait, that was Something’s <em>Burning</em>. Either way, a great tune."
+        },
+        {
+          "t": "I can see the love and the hate in your eyes.<br>Penny for the thoughts behind your disguise.",
+          "c": "lyric"
+        },
+        {
+          "t": "Where was I? ARC wasn’t designed to survive this attack as a happy accident. ARC was designed to survive it. Full stop. I refer to the WhatsApp again."
+        },
+        {
+          "t": "Post-quantum cryptography. Device-level authentication. Built in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements.",
+          "c": "quote"
+        },
+        {
+          "t": "Mandated four months before the attack. Installed two months before the attack. Surviving the attack because that is what it was for."
+        },
+        {
+          "t": "Thirty-eight per cent and climbing.",
+          "c": "quote"
+        },
+        {
+          "t": "Why thirty-eight? Why not all of them? If ARC is the authentication and ARC is working, what’s the bottleneck? Why not just flip the switch? It’s outside my wheelhouse. The banking systems sitting on top — card networks, acquirers, each bank’s own applications — I guess they need to be verified and brought back one by one. With caution. For safety. Or the appearance of safety. But thirty-eight per cent on Wednesday, financial markets on Thursday, schools on Monday — that doesn’t look like a system lurching back to life. It looks like something running to a schedule. Pages in a document that was written before any of this happened."
+        },
+        {
+          "t": "Every transaction at Waitrose today ran through ARC. The receipt said Barclays because the banking application sits on top of ARC. Same beep. Same branding. Same twenty-odd quid. But the foundation underneath has been quietly replaced. The Barclays balance, the account number, the transaction history — all of it sitting on top of ARC like furniture in a house whose foundations were replaced while you were asleep. You come downstairs, the kitchen looks the same, the kettle’s where you left it. You don’t check the foundations. Why would you?"
+        },
+        {
+          "t": "So what happens when you wake up and the kettle is gone? Along with all the furniture. Then you’d notice. That’d get your attention. Make the pandemic seem like a <em>small disturbance</em>."
+        },
+        {
+          "t": "The foundations, ARC, the only thing left standing. Left standing and with the ability to connect to something sitting in two million terminals. Something biometric. My mind returns to Dev’s message. <em>Expect a setback</em>. Something’s brewing."
+        },
+        {
+          "t": "I turn onto my side. Amy’s breathing hasn’t changed."
+        },
+        {
+          "t": "Oh for the same sweet oblivion.",
+          "c": "inner"
+        },
+        {
+          "t": "I pick up my phone again to text Dev. I know he won’t reply. But I want to text anyway. To show him I get it. That maybe he’s only one step ahead now. I want to crystallise the fog into a sentence. And somehow I do."
+        },
+        {
+          "t": "Bought milk today. Cards beeping at checkout. The beeps were not recovery. They were a demonstration.",
+          "c": "quote"
+        },
+        {
+          "t": "Sent. Cryptic in a way Dev will like."
+        },
+        {
+          "t": "3:14am. Pi. 3.14296 or whatever it is? To infinity and beyond. George can recite it to 20 decimal places. My brain is mush. It’s doing that thing where it finds patterns in everything including the time on the clock. Apophenia, is it?"
+        },
+        {
+          "t": "I put the phone down. Sleep. Please. Time for the breathing. In for four. Hold. One, two, three — the repatriation number comes back. Eighty thousand. Forty-eight hours. Eighty thousand people moved across international borders in two days whilst the banking system is dead and the internet is suspended. That’s not an emergency response. Emergency responses are ragged, improvised, inefficient. Crap. Eighty thousand people in forty-eight hours is planning. The kind of plan that’s been rehearsed in the field, not on a piece of paper."
+        },
+        {
+          "t": "Kate’s line comes back to me. ‘There’s a difference between having a plan in a drawer and having an app with a logo on forty million phones within twelve hours.’"
+        },
+        {
+          "t": "She sees it. She knows. She must do. Well, part of her knows. The part she leaves at home whilst she goes to help at the hub. The part that sees the gap where the plan stops being a plan and starts being a script."
+        },
+        {
+          "t": "Amy turns over and makes a sound. A collection of grunts and snuffles that aren’t a sentence as such but functions as one. Somewhere between a plea, a cry for help and a command to go to fucking sleep. She’s dealing with thoughts she dare not express when she’s awake. Thoughts she blocks out by listening to an audiobook or listening to her mum telling her how her garden grows. I hold her. Her breathing resettles."
+        },
+        {
+          "t": "In for four. Hold. One, two, three, four…",
+          "c": "inner"
+        },
+        {
+          "t": "………………………",
+          "c": "solo"
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "Dawn comes the way February dawns come in England — grudgingly, fading towards something resembling daylight through fifty shades of grey, as if the sky is doing it under protest. The room goes from black to dark grey to a grey that has no name but means the birds have started. First the blackbird. Then a robin. Then a bird I can’t identify but Amy probably could. The heating comes on. The boiler fires. The house makes its morning sounds — the infrastructure of domesticity reassembling itself, one system at a time."
+        },
+        {
+          "t": "7.42am. I’ve hardly slept. Blood sugar. 5.2. Perfect. Amy. Not there. Making tea?"
+        },
+        {
+          "t": "I get up. Slippers on. I stumble towards the kitchen to find her."
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "Thursday 18th February. Normality kickstarted. I’d toyed with the idea of going to the market, but Joe had it covered. And I was pooped. I was better off doing ‘admin’. Which involved a two hour kip on the sofa."
+        },
+        {
+          "t": "Emails arrived through the morning in fits and starts — not a flood, not an inbox suddenly full, but a stuttering resumption like a tap being turned by a cowboy plumber who wasn’t sure if the pipe he’d fixed would burst. Apple Mail’s outbox number ticked down. 21. 17. 14. 14. 14 for a long time. Then 11. Replies arrived out of sequence — answers to questions already answered by phone two days ago."
+        },
+        {
+          "t": "Mum had rung at quarter to ten. First call that had properly connected since Sunday. Eight minutes. She cried. Tony was sorting the heating. Dash was fine. She asked about the kids three times and I said fine three times. Tony’s brother had driven over with supplies. Same thing there — cards coming back, shops reopening, everyone saying worst was over. Same words, same timescale, same exhale. Eight minutes that felt like an hour."
+        },
+        {
+          "t": "WhatsApp came back around eleven. Not with a fanfare — the app just opened, the contacts loaded, the chats appeared. Three days of messages arrived in a small riot of green bubbles and bleeps in a random order. I’d messaged Mum. <em>Hi mum, you getting this?</em> One grey arrow. Sent. It was somewhere in the ether between Sussex and the Costa Brava. Two grey arrows. Delivered. I guess. No reply yet though."
+        },
+        {
+          "t": "The market went ahead. Joe said it was much busier than usual. Cards working pretty much as normal. The baker sold out of bread before noon. Cheryl’s card reader accepted three payments in a row without failing, which she announced to me via text as if reporting a moon landing."
+        },
+        {
+          "t": "Everyone had been planning. A day of planning. Planning for normality. Weekends, school runs, football, pub, Saturday markets, Peter and Jenny inviting themselves over for Sunday lunch. I hadn’t told Amy about Dev’s text. I’d been performing normality — tea, market, texts, banter — while carrying the burden of a pattern I prayed I was wrong about."
+        },
+        {
+          "t": "I’m currently sitting at the kitchen table with Amy. We’ve got a cup of tea. The last of the day. We considered a glass of wine but it’s not even six yet. PM speech in a few minutes. The <em>buzz</em> of anticipation prior to the addresses of the first few days has become a sense of formality. Duty. Anticlimactic. We drag ourselves off to the snug to watch it. Just the two of us. George and Chloe both at friends’ houses. Kate at the hub? Next door? Either way, she’s not here. Not like the good old days."
+        },
+        {
+          "t": "The UK GOV alert had arrived at half three. A reminder about the address. I re-read it whilst waiting for the PM to show up and Amy to return from the kitchen. You know what she went to get."
+        },
+        {
+          "t": "An update of the recovery of financial systems and next steps.",
+          "c": "quote"
+        },
+        {
+          "t": "I reach for the glass. ‘Thank you, darling’"
+        },
+        {
+          "t": "Next steps. Next steps in the return to normality. Or something else?",
+          "c": "inner"
+        },
+        {
+          "t": "The chime. Six o’clock. <em>Be Well.</em>"
         }
       ],
       "audio": null,
@@ -6179,7 +6449,7 @@
           "t": "Good evening. A short update tonight, because the picture is a good one."
         },
         {
-          "t": "Sixty-one per cent of payment terminals are now operational. Some regions are above seventy per cent. The numbers speak for themselves."
+          "t": "Sixty-one per cent of card transactions are now processing successfully. Some regions are above seventy per cent. The numbers speak for themselves."
         },
         {
           "t": "The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well."
@@ -7553,12 +7823,17 @@
             "cls": "",
             "time": "10:00",
             "date": "5 Dec 2026"
-          },
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
           {
-            "src": "FCA — Financial Conduct Authority",
-            "ttl": "PS26/4: ARC authentication framework — implementation update",
-            "snip": "Open since September. You skimmed the summary. The rest is 84 pages of implementation detail you keep meaning to read.",
-            "tag": "Open Tab",
+            "src": "Dev",
+            "ttl": "New mandated authentication layer goes live tomorrow. Not sure what it means yet. Have a skim.",
+            "snip": "Opened. Skimmed. Full of jargon. Filed.",
+            "tag": "",
             "cls": "",
             "threadRef": "finance-commerce",
             "type": "thread-notify",
@@ -9302,6 +9577,47 @@
             "cls": "",
             "date": "18 Feb 2027",
             "time": "02:00"
+          },
+          {
+            "src": "Simon",
+            "ttl": "I’m expecting one. That’s why I’m lying awake at 2am. Trying to anticipate what’s next.",
+            "snip": "Thumbs on glass in the dark. What else is there to say.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "02:04"
+          },
+          {
+            "src": "Dev",
+            "ttl": "What’s coming is coming. Switch your brain off. 4-7-8 breathing. Sleep. I’m going dark for a bit. Over and out.",
+            "snip": "Over and out. His dad’s sign-off. The last message for a while.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "02:07"
+          },
+          {
+            "src": "Simon",
+            "ttl": "Bought milk today. Cards beeping at checkout. The beeps were not recovery. They were a demonstration.",
+            "snip": "Sent. He won’t reply. But he’ll know I get it.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "02:48"
+          }
+        ]
+      },
+      {
+        "sec": "WhatsApp",
+        "cards": [
+          {
+            "src": "Simon → Mum",
+            "ttl": "Hi mum, you getting this?",
+            "snip": "Two grey arrows. Not blue. But sent.",
+            "tag": "",
+            "cls": "",
+            "date": "18 Feb 2027",
+            "time": "11:03"
           }
         ]
       },
@@ -9394,7 +9710,7 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "Payment systems continue to restore. 60% of terminals now operational. Schools confirmed to reopen Monday 22 February. Non-essential travel now permitted.",
+            "ttl": "Payment systems continue to restore. 60% of card transactions now processing. Schools confirmed to reopen Monday 22 February. Non-essential travel now permitted.",
             "snip": "Essential travel permitted. Yesterday it was 'stay local.' Today it's 'permitted.' The leash is loosening.",
             "tag": "UK-EMRG-2027-020",
             "cls": "x",
@@ -9408,7 +9724,7 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Recovery is progressing. 60% of payment terminals are now operational. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
+            "ttl": "Recovery is progressing. 60% of card transactions now processing successfully. Schools confirm reopening Monday 22 February. Continue to check ARC Emergency for verified updates.",
             "snip": "Sixty percent. Good enough for relief. Not good enough to stop checking.",
             "tag": "UPDATE",
             "cls": "a",
@@ -11822,7 +12138,7 @@
             "source": "ARC",
             "title": "Joint Address to the Nation<br>PM, Chancellor, NCSC<br>16 February 2027",
             "date": "16 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
-            "body": "<p><strong>THE PRIME MINISTER:</strong> Good evening.</p><p>I want to begin by saying that the country has had a calm and patient day. Two days into this disruption, the streets are orderly, hospitals are open, emergency services are responding normally, and the early signs from our restoration work are good. I am grateful for that patience, and I will not over-thank you for it. We have a job to do, and we are getting on with it.</p><p>I am joined this evening, as I said I would be, by the Chancellor of the Exchequer and by Paul Chichester, the Director of Operations at the National Cyber Security Centre. The Chancellor will set out the practical measures and the restoration timeline. Paul will explain, in plain terms, what has happened and what is being done. I will close.</p><p>Chancellor.</p><p><strong>THE CHANCELLOR:</strong> Thank you, Prime Minister.</p><p>I am going to focus on three things this evening. The restoration plan and what to expect tomorrow. The practical arrangements for the days in between. And the support measures that are now in place.</p><p>On restoration. The 24-hour assessment window the Prime Minister announced last night has now concluded. The picture from that assessment is broadly positive. The disruption is at the authentication layer — the cryptographic system that verifies who is who when a card is presented at a terminal, or when you log in to your bank. The legacy cryptography that has underpinned that layer for thirty years has been compromised. The newer authentication framework — already deployed across UK payment infrastructure under regulation from last year — has not been. Our work since yesterday morning has been to verify each banking application, each card network, and each payment acquirer’s systems, and to bring them back online on the new framework, in sequence, as each is confirmed safe.</p><p>That work is moving on schedule. The largest UK card networks expect to begin processing transactions through tomorrow morning, with the major UK banks following through the day as their core systems complete verification. We expect to see meaningful progress through Wednesday and Thursday, and the great majority of the retail payment estate to be operational by the weekend. The Prime Minister will give a detailed restoration update tomorrow evening at six o’clock.</p><p>To be clear about what this means in practice tomorrow: some terminals at some retailers will accept some cards from some banks. Coverage will broaden through the day. If your card does not work at a particular terminal in the morning, please do not assume the system is broken — it may simply not yet have been restored. Cash will continue to be the most reliable payment method until coverage is widespread.</p><p>On the practical arrangements. From seven o’clock tomorrow morning, the network of designated retail outlets that opened this morning will expand significantly. More stores in more locations. Longer opening hours. Major supermarket chains, additional pharmacies, post offices, and selected hardware and home essentials stores will join the designated network. The full updated list is being distributed tonight through ARC Emergency, the BBC, and printed notices at every Community Recovery Hub. Cash payments only, until card coverage is restored. A household member may visit once per day.</p><p>A designated fuel network begins today, expanding to additional stations from tomorrow. Cash only, with rationing in place, a limit of £30 per vehicle. The list is being distributed alongside the retail list. Please use the designated stations, and please travel only if you need to.</p><p>From ten o’clock tomorrow morning, a designated network of high street bank branches will open between ten and two for cash withdrawals. Daily withdrawal limits will apply, and these will be communicated through ARC Emergency overnight. Please do not attempt to access online banking or mobile banking — these services are paused while restoration completes, and attempting to use them will not bring them back any sooner.</p><p>On support. Community Recovery Hubs are now open across every local authority area. They are warm, welcoming places — hot meals, hot drinks, a place to sit, somebody to talk to. They are particularly intended for those who are alone, those who are elderly, those without smartphones, those finding this period anxious. They are open today, they will be open tomorrow, and they will continue to be open for as long as is needed.</p><p>On wages, pensions, and benefits — I know this is a question on many minds. I will be straightforward with you. Your entitlements are protected. They are commitments of the Government and they will be honoured in full as our payment infrastructure is restored. I cannot promise that your usual payment will arrive in your account this week through the usual channels — that depends on the speed of restoration. What I can promise is that anyone in genuine difficulty in the meantime — anyone short of food, anyone short of essentials, anyone whose elderly parent or vulnerable neighbour is struggling — will be supported through the Community Recovery Hubs. Every hub has hot meals, hot drinks, volunteers and local authority staff trained to help, and information about what to do next. Detailed guidance for individual entitlements during this restoration period will be issued tomorrow afternoon, through ARC Emergency, the BBC, and at every hub. No one in this country needs to be hungry, cold, or alone tonight.</p><p>A business continuity package will be announced tomorrow at midday. The detailed guidance for employers, sole traders, and small businesses on how to handle this period will follow with it.</p><p>On schools. Schools are on schedule to reopen early next week. In the meantime, the Department for Education is working with local authorities to make educational content available through ARC from tomorrow morning. Your school will contact you directly with details.</p><p>For British nationals stranded overseas, the government will meet reasonable hotel and subsistence costs for the duration. These obligations will be settled government-to-government — no individual will be asked to pay upfront and seek reimbursement.</p><p>Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor. Paul.</p><p><strong>NCSC DIRECTOR OF OPERATIONS:</strong> Thank you, Prime Minister. I will be brief.</p><p>I want to explain, plainly, what happened and what we are doing about it.</p><p>The attack targeted the legacy public-key cryptography that has underpinned online banking and card payments for thirty years — the algorithms RSA, ECDSA, Diffie-Hellman. These standards have now been comprehensively compromised across the twenty-three affected nations. This was not a conventional ransomware attack. The malware was designed to undermine trust in the cryptography, not to encrypt or to steal.</p><p>That is why systems have been taken offline. What has been compromised is the <em>authentication layer</em> — the mathematical proof that, when a card is tapped at a terminal, the parties to the transaction are who they say they are.</p><p>I want to be precise about a question some of you will be asking. There is a newer authentication framework — known as ARC, mandated by the Financial Conduct Authority under Policy Statement twenty-six, four, and integrated across all UK payment infrastructure since 30 September last year. ARC operates at the device level, beneath the application layer, and uses post-quantum cryptographic standards. It has not been compromised by this attack. It is the framework on which this broadcast is reaching you — the ARC Emergency app runs on top of it. It is also the framework on which the wider banking and card payment systems sit. What we are now in the process of bringing back online is the application layer above the framework: each bank’s systems, each card network, each payment acquirer’s infrastructure — every one of which must be verified and restored on the new framework before transactions can flow.</p><p>In the hours following Sunday night’s attack, the National Cyber Security Centre issued an emergency directive, under Civil Contingencies Act authority, to UK cloud service providers and major communications platforms. The directive suspended all non-essential consumer internet services to prevent any lateral spread of the attack into other infrastructure. This is standard cyber-incident procedure — the same approach taken by United States agencies after the SolarWinds incident in 2020. As verification work completes, those services will be progressively restored.</p><p>In practical terms tonight: telephone calls and text messages remain operational but congested. Email, messaging applications, and social media remain suspended. Tomorrow morning we will begin phased restoration of email services, followed by messaging platforms later in the week. ARC Emergency and BBC broadcast remain reliable.</p><p>I will provide a further technical update tomorrow afternoon. Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Paul. Thank you, Chancellor.</p><p>I will close briefly.</p><p>Two days ago, before any of us had heard of any of this, a coordinated attack was made on the financial infrastructure of twenty-three countries, including ours. Two days on, the lights are still on, the hospitals are still open, the streets are calm, and the work to restore our systems is moving on schedule. That is the picture. It is, broadly, a good one.</p><p>Tomorrow I expect the first systems to begin coming back. Coverage will be patchy in the morning and stronger by the evening. The Chancellor and I will speak to you again at six o’clock with a full update. I do not expect to need to keep you informed at this rhythm beyond this week, and I do not intend to keep you on the news any longer than necessary.</p><p>Until tomorrow evening, please continue with the three things I asked of you yesterday. Stay local. Stay safe. Look after each other.</p><p>Good night. And be well.</p>",
+            "body": "<p><strong>THE PRIME MINISTER:</strong> Good evening.</p><p>I want to begin by saying that the country has had a calm and patient day. Two days into this disruption, the streets are orderly, hospitals are open, emergency services are responding normally, and the early signs from our restoration work are good. I am grateful for that patience, and I will not over-thank you for it. We have a job to do, and we are getting on with it.</p><p>I am joined this evening, as I said I would be, by the Chancellor of the Exchequer and by Paul Chichester, the Director of Operations at the National Cyber Security Centre. The Chancellor will set out the practical measures and the restoration timeline. Paul will explain, in plain terms, what has happened and what is being done. I will close.</p><p>Chancellor.</p><p><strong>THE CHANCELLOR:</strong> Thank you, Prime Minister.</p><p>I am going to focus on three things this evening. The restoration plan and what to expect tomorrow. The practical arrangements for the days in between. And the support measures that are now in place.</p><p>On restoration. The 24-hour assessment window the Prime Minister announced last night has now concluded. The picture from that assessment is broadly positive. The disruption is at the authentication layer — the cryptographic system that verifies who is who when a card is presented at a terminal, or when you log in to your bank. The legacy cryptography that has underpinned that layer for thirty years has been compromised. The newer authentication framework — already deployed across UK payment infrastructure under regulation from last year — has not been. Our work since yesterday morning has been to verify each banking application, each card network, and each payment acquirer’s systems, and to bring them back online on the new framework, in sequence, as each is confirmed safe.</p><p>That work is moving on schedule. The largest UK card networks expect to begin processing transactions through tomorrow morning, with the major UK banks following through the day as their core systems complete verification. We expect to see meaningful progress through Wednesday and Thursday, and the great majority of the retail payment estate to be operational by the weekend. The Prime Minister will give a detailed restoration update tomorrow evening at six o’clock.</p><p>To be clear about what this means in practice tomorrow: some terminals at some retailers will accept some cards from some banks. Coverage will broaden through the day. If your card does not work at a particular terminal in the morning, please do not assume the system is broken — it may simply not yet have been restored. Cash will continue to be the most reliable payment method until coverage is widespread.</p><p>On the practical arrangements. From seven o’clock tomorrow morning, the network of designated retail outlets that opened this morning will expand significantly. More stores in more locations. Longer opening hours. Major supermarket chains, additional pharmacies, post offices, and selected hardware and home essentials stores will join the designated network. The full updated list is being distributed tonight through ARC Emergency, the BBC, and printed notices at every Community Recovery Hub. Cash payments only, until card coverage is restored. A household member may visit once per day.</p><p>A designated fuel network begins today, expanding to additional stations from tomorrow. Cash only, with rationing in place, a limit of £30 per vehicle. The list is being distributed alongside the retail list. Please use the designated stations, and please travel only if you need to.</p><p>From ten o’clock tomorrow morning, a designated network of high street bank branches will open between ten and two for cash withdrawals. Daily withdrawal limits will apply, and these will be communicated through ARC Emergency overnight. Please do not attempt to access online banking or mobile banking — these services are paused while restoration completes, and attempting to use them will not bring them back any sooner.</p><p>On support. Community Recovery Hubs are now open across every local authority area. They are warm, welcoming places — hot meals, hot drinks, a place to sit, somebody to talk to. They are particularly intended for those who are alone, those who are elderly, those without smartphones, those finding this period anxious. They are open today, they will be open tomorrow, and they will continue to be open for as long as is needed.</p><p>On wages, pensions, and benefits — I know this is a question on many minds. I will be straightforward with you. Your entitlements are protected. They are commitments of the Government and they will be honoured in full as our payment infrastructure is restored. I cannot promise that your usual payment will arrive in your account this week through the usual channels — that depends on the speed of restoration. What I can promise is that anyone in genuine difficulty in the meantime — anyone short of food, anyone short of essentials, anyone whose elderly parent or vulnerable neighbour is struggling — will be supported through the Community Recovery Hubs. Every hub has hot meals, hot drinks, volunteers and local authority staff trained to help, and information about what to do next. Detailed guidance for individual entitlements during this restoration period will be issued tomorrow afternoon, through ARC Emergency, the BBC, and at every hub. No one in this country needs to be hungry, cold, or alone tonight.</p><p>A business continuity package will be announced tomorrow at midday. The detailed guidance for employers, sole traders, and small businesses on how to handle this period will follow with it.</p><p>On schools. Schools are on schedule to reopen early next week. In the meantime, the Department for Education is working with local authorities to make educational content available through ARC from tomorrow morning. Your school will contact you directly with details.</p><p>For British nationals stranded overseas, the government will meet reasonable hotel and subsistence costs for the duration. These obligations will be settled government-to-government — no individual will be asked to pay upfront and seek reimbursement.</p><p>Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor. Paul.</p><p><strong>NCSC DIRECTOR OF OPERATIONS:</strong> Thank you, Prime Minister. I will be brief.</p><p>I want to explain, plainly, what happened and what we are doing about it.</p><p>The attack targeted the legacy public-key cryptography that has underpinned online banking and card payments for thirty years — the algorithms RSA, ECDSA, Diffie-Hellman. These standards have now been comprehensively compromised across the twenty-three affected nations. This was not a conventional ransomware attack. The malware was designed to undermine trust in the cryptography, not to encrypt or to steal.</p><p>That is why systems have been taken offline. What has been compromised is the <em>authentication layer</em> — the mathematical proof that, when a card is tapped at a terminal, the parties to the transaction are who they say they are.</p><p>I want to be precise about a question some of you will be asking. There is a newer authentication framework — known as ARC, mandated by the Financial Conduct Authority under Policy Statement twenty-six, four, and integrated across all UK payment infrastructure since December last year. ARC operates at the device level, beneath the application layer, and uses post-quantum cryptographic standards. It has not been compromised by this attack. It is the framework on which this broadcast is reaching you — the ARC Emergency app runs on top of it. It is also the framework on which the wider banking and card payment systems sit. What we are now in the process of bringing back online is the application layer above the framework: each bank’s systems, each card network, each payment acquirer’s infrastructure — every one of which must be verified and restored on the new framework before transactions can flow.</p><p>In the hours following Sunday night’s attack, the National Cyber Security Centre issued an emergency directive, under Civil Contingencies Act authority, to UK cloud service providers and major communications platforms. The directive suspended all non-essential consumer internet services to prevent any lateral spread of the attack into other infrastructure. This is standard cyber-incident procedure — the same approach taken by United States agencies after the SolarWinds incident in 2020. As verification work completes, those services will be progressively restored.</p><p>In practical terms tonight: telephone calls and text messages remain operational but congested. Email, messaging applications, and social media remain suspended. Tomorrow morning we will begin phased restoration of email services, followed by messaging platforms later in the week. ARC Emergency and BBC broadcast remain reliable.</p><p>I will provide a further technical update tomorrow afternoon. Prime Minister.</p><p><strong>THE PRIME MINISTER:</strong> Thank you, Paul. Thank you, Chancellor.</p><p>I will close briefly.</p><p>Two days ago, before any of us had heard of any of this, a coordinated attack was made on the financial infrastructure of twenty-three countries, including ours. Two days on, the lights are still on, the hospitals are still open, the streets are calm, and the work to restore our systems is moving on schedule. That is the picture. It is, broadly, a good one.</p><p>Tomorrow I expect the first systems to begin coming back. Coverage will be patchy in the morning and stronger by the evening. The Chancellor and I will speak to you again at six o’clock with a full update. I do not expect to need to keep you informed at this rhythm beyond this week, and I do not intend to keep you on the news any longer than necessary.</p><p>Until tomorrow evening, please continue with the three things I asked of you yesterday. Stay local. Stay safe. Look after each other.</p><p>Good night. And be well.</p>",
             "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
@@ -11835,7 +12151,7 @@
             "source": "ARC",
             "title": "PM’s Address to the Nation<br>17 February 2027",
             "date": "17 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
-            "body": "<p>Good evening.</p><p>I said I would return at six with a progress report, and I am here with an encouraging update.</p><p>Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not all terminals. Not all cards. Not yet. But the trajectory is clear, and it is accelerating.</p><p>On your screen is a tracker that shows a regional breakdown of terminal restoration. Thirty-eight per cent of payment terminals are now operational, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed.</p><p>The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified.</p><p>The network of essential retail outlets that opened yesterday has expanded today, as we said it would. Longer hours. More stores. More locations. From tomorrow morning, designated high street bank branches will open between ten and two for cash withdrawals — the list has been published through ARC and is available at your nearest Community Recovery Hub.</p><p>Our transport network is recovering. Limited rail services are running on key routes using manual signalling while our digital systems are verified. Transport for London has restored partial Tube and bus services. Fuel distribution continues at designated stations. The stay-local guidance remains in place, but we have broadened the definition of essential travel to include travel to work for those in critical roles, and travel to care for vulnerable relatives.</p><p>I want to say a word about the international picture. This attack struck twenty-three nations. I have spoken with fourteen heads of government in the last forty-eight hours. We are coordinating closely with our allies — sharing intelligence, sharing technical expertise, and learning from each other’s responses in real time. I have to be direct with you: not every country is recovering at the same pace. You will have seen reports of disorder in some cities overseas. That has not happened here, and I want to thank you for that. The calm and discipline shown by the British public over these three days has been, frankly, extraordinary. I spoke with the Japanese Prime Minister this morning, and he echoed that sentiment — our two nations, he said, have responded with a composure that others have not. We are sharing our technical recovery framework with partner nations who have requested it. The United Kingdom is among the first to begin restoring payment services. That is not luck. That is preparation, and it is resilience.</p><p>Emergency repatriation flights have now operated from fourteen countries. Over forty thousand British nationals returned to the UK today, with further flights running through the night and into tomorrow. Cross-channel ferry services are running on emergency schedules. For those still overseas — your ARC notification will update with new flight schedules as they are confirmed.</p><p>On communications. I know this has been one of the hardest parts of this week — not being able to message your family, to email, to connect in the ways we rely on. We said on Monday that we had restricted these services ourselves, as a precaution, while our cloud infrastructure was verified. That verification is progressing, and I can now set out the next steps. Email services are being restored this evening. For those of you with family overseas — and I know there are millions of you who have not been able to reach loved ones — international messaging services, including WhatsApp, will be restored from tomorrow morning. Domestic messaging services will follow as each platform completes verification with the National Cyber Security Centre. I know that is not fast enough. But the sequence matters, and we are moving as quickly as we safely can.</p><p>Schools will reopen on Monday. I confirm that without reservation. In the meantime, ARC Education went live this morning. Over two million households accessed educational content today. Your children’s schools are uploading lesson materials, reading lists, and video lessons through their local authority ARC channels. The streaming is fast, the materials are good, and your children’s teachers are working hard to keep them learning. I have been told by more than one parent that it is, and I quote, “better than lockdown.” ARC Education will continue until schools reopen.</p><p>The practical guidance on support during this period was published this afternoon through ARC, as the Chancellor committed to last evening. If you are in difficulty — if you cannot access food, medication, or essential supplies — your local Community Recovery Hub is there for you.</p><p>I want to say one more thing about the infrastructure that has made this recovery possible. The ARC authentication framework — the layer that sits beneath our payment systems, that has been powering your emergency alerts, that kept this channel open when everything else went dark — performed exactly as it was designed to. It is this framework that is enabling the restoration you are seeing on your screens tonight. It worked. And it will continue to work.</p><p>We expect the great majority of services to be restored by the weekend, with a return to normal schooling and work patterns from Monday and Tuesday of next week.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
+            "body": "<p>Good evening.</p><p>I said I would return at six with a progress report, and I am here with an encouraging update.</p><p>Forty-eight hours ago, our payment infrastructure was offline. Today, payment terminals are processing transactions across the country. Not everywhere. Not all cards. Not yet. But the trajectory is clear, and it is accelerating.</p><p>On your screen is a tracker that shows a regional breakdown of card transaction processing. Thirty-eight per cent of card transactions attempted today processed successfully, up from zero on Monday. Some of you will have used your card today. More of you will be able to tomorrow. These figures will be updated hourly and sent to you via ARC Emergency and Local ARC Updates. I will share these figures every evening until they are no longer needed.</p><p>The London Stock Exchange has confirmed that trading will resume tomorrow morning. This is a significant step. The markets are returning because the data underpinning them is intact and verified.</p><p>The network of essential retail outlets that opened yesterday has expanded today, as we said it would. Longer hours. More stores. More locations. From tomorrow morning, designated high street bank branches will open between ten and two for cash withdrawals — the list has been published through ARC and is available at your nearest Community Recovery Hub.</p><p>Our transport network is recovering. Limited rail services are running on key routes using manual signalling while our digital systems are verified. Transport for London has restored partial Tube and bus services. Fuel distribution continues at designated stations. The stay-local guidance remains in place, but we have broadened the definition of essential travel to include travel to work for those in critical roles, and travel to care for vulnerable relatives.</p><p>I want to say a word about the international picture. This attack struck twenty-three nations. I have spoken with fourteen heads of government in the last forty-eight hours. We are coordinating closely with our allies — sharing intelligence, sharing technical expertise, and learning from each other’s responses in real time. I have to be direct with you: not every country is recovering at the same pace. You will have seen reports of disorder in some cities overseas. That has not happened here, and I want to thank you for that. The calm and discipline shown by the British public over these three days has been, frankly, extraordinary. I spoke with the Japanese Prime Minister this morning, and he echoed that sentiment — our two nations, he said, have responded with a composure that others have not. We are sharing our technical recovery framework with partner nations who have requested it. The United Kingdom is among the first to begin restoring payment services. That is not luck. That is preparation, and it is resilience.</p><p>Emergency repatriation flights have now operated from fourteen countries. Over forty thousand British nationals returned to the UK today, with further flights running through the night and into tomorrow. Cross-channel ferry services are running on emergency schedules. For those still overseas — your ARC notification will update with new flight schedules as they are confirmed.</p><p>On communications. I know this has been one of the hardest parts of this week — not being able to message your family, to email, to connect in the ways we rely on. We said on Monday that we had restricted these services ourselves, as a precaution, while our cloud infrastructure was verified. That verification is progressing, and I can now set out the next steps. Email services are being restored this evening. For those of you with family overseas — and I know there are millions of you who have not been able to reach loved ones — international messaging services, including WhatsApp, will be restored from tomorrow morning. Domestic messaging services will follow as each platform completes verification with the National Cyber Security Centre. I know that is not fast enough. But the sequence matters, and we are moving as quickly as we safely can.</p><p>Schools will reopen on Monday. I confirm that without reservation. In the meantime, ARC Education went live this morning. Over two million households accessed educational content today. Your children’s schools are uploading lesson materials, reading lists, and video lessons through their local authority ARC channels. The streaming is fast, the materials are good, and your children’s teachers are working hard to keep them learning. I have been told by more than one parent that it is, and I quote, “better than lockdown.” ARC Education will continue until schools reopen.</p><p>The practical guidance on support during this period was published this afternoon through ARC, as the Chancellor committed to last evening. If you are in difficulty — if you cannot access food, medication, or essential supplies — your local Community Recovery Hub is there for you.</p><p>I want to say one more thing about the infrastructure that has made this recovery possible. The ARC authentication framework — the layer that sits beneath our payment systems, that has been powering your emergency alerts, that kept this channel open when everything else went dark — performed exactly as it was designed to. It is this framework that is enabling the restoration you are seeing on your screens tonight. It worked. And it will continue to work.</p><p>We expect the great majority of services to be restored by the weekend, with a return to normal schooling and work patterns from Monday and Tuesday of next week.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
             "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
@@ -11862,7 +12178,7 @@
             "source": "ARC",
             "title": "PM’s Address to the Nation<br>18 February 2027",
             "date": "18 February 2027 — 18:00 GMT — Transcript via ARC Emergency",
-            "body": "<p>Good evening. A short update tonight, because the picture is a good one.</p><p>Sixty-one per cent of payment terminals are now operational. Some regions are above seventy per cent. The numbers speak for themselves.</p><p>The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well.</p><p>International messaging was restored this morning. I know that many of you have been able to reach family overseas today for the first time this week. The phased restoration of internet services, email, and domestic messaging is continuing, and the National Cyber Security Centre is clearing platforms as quickly and safely as it can.</p><p>Schools reopen on Monday. ARC Education continues until then.</p><p>We are now working with business and industry on a phased return to normal operations from Monday. Many businesses depend on cloud-hosted platforms and cannot fully reopen until those services are restored. The NCSC is prioritising the verification and restoration of business-critical cloud services over the weekend to support that reopening. A detailed sector-by-sector timetable will be published through ARC tomorrow.</p><p>We remain on track. The great majority of services will be restored by the weekend, with normal schooling and work patterns resuming from Monday.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
+            "body": "<p>Good evening. A short update tonight, because the picture is a good one.</p><p>Sixty-one per cent of card transactions are now processing successfully. Some regions are above seventy per cent. The numbers speak for themselves.</p><p>The London Stock Exchange reopened this morning. Trading was orderly. Designated bank branches opened for cash withdrawals as planned. These are the signs of a system that is recovering, and recovering well.</p><p>International messaging was restored this morning. I know that many of you have been able to reach family overseas today for the first time this week. The phased restoration of internet services, email, and domestic messaging is continuing, and the National Cyber Security Centre is clearing platforms as quickly and safely as it can.</p><p>Schools reopen on Monday. ARC Education continues until then.</p><p>We are now working with business and industry on a phased return to normal operations from Monday. Many businesses depend on cloud-hosted platforms and cannot fully reopen until those services are restored. The NCSC is prioritising the verification and restoration of business-critical cloud services over the weekend to support that reopening. A detailed sector-by-sector timetable will be published through ARC tomorrow.</p><p>We remain on track. The great majority of services will be restored by the weekend, with normal schooling and work patterns resuming from Monday.</p><p>I will address you again tomorrow evening at six.</p><p>Be well.</p>",
             "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
@@ -11902,7 +12218,7 @@
             "source": "ARC",
             "title": "Joint Address to the Nation<br>21 February 2027",
             "date": "21 February 2027 — 12:00 GMT — Transcript via ARC Emergency",
-            "body": "<p><strong>THE PRIME MINISTER:</strong> Good afternoon.</p>\n<p>Last night I told you that the Chancellor would address you today at midday with the full detail of the emergency measures we have been preparing. Before I hand to him, one thing.</p>\n<p>Denmark and the Netherlands activated their own emergency payment systems yesterday. France and Canada begin this afternoon. Australia and Japan have announced measures for later this week. What the Chancellor is about to set out is consistent with what our partner nations are deploying. We are not alone in this.</p>\n<p>Chancellor.</p>\n<p><strong>THE CHANCELLOR OF THE EXCHEQUER:</strong> Thank you, Prime Minister.</p>\n<p>I said on Saturday morning that I would set out the detail of our emergency payment infrastructure today. I said it would put money in your hands, on your devices, regardless of what has happened to the banking system. Here is that detail.</p>\n<p>The Emergency Payment Module is live. As I speak, every ARC-enabled device in the United Kingdom is being credited with two hundred pounds. If your phone is beside you, check it now. You will see a notification from ARC Emergency. That money is yours.</p>\n<p>Let me be precise about what this is and what it is not. It is not a loan. You will not be asked to repay it. It is not an advance on wages or benefits. It is an emergency allocation from this Government to you, directly. There is no application. There is no form. There is no means test. Every device receives the same amount.</p>\n<p>I want to answer the questions I know you are asking.</p>\n<p>How does it work. You use your phone exactly as you have always used it. You hold it to the payment terminal. You hear the beep. The transaction is confirmed. The amount is deducted from your EPM balance, which you can see at any time in ARC Emergency. The terminals are the same terminals you have always used. Every payment terminal in this country — in supermarkets, in pharmacies, in petrol stations, in corner shops, in pubs — has been ARC-enabled since September of last year under the Financial Conduct Authority’s interoperability mandate. The infrastructure is already there. We are using it.</p>\n<p>Where can I spend it. Everywhere. Any terminal that accepted a contactless payment before this crisis will accept EPM today. From two o’clock this afternoon, major retailers will reopen — Tesco, Sainsbury’s, Asda, Morrisons, Waitrose, Aldi, Lidl, the Co-op. Boots and Superdrug will reopen for pharmacy services and essential items. Designated fuel stations are already operating and will continue. Your ARC Local app now contains a live map of open retailers and their operating hours in your area. Hours will vary — most major stores will operate from two o’clock until eight o’clock this evening, and from eight until eight from tomorrow onward.</p>\n<p>What about my family’s phones. Every ARC-enabled device receives its own allocation. If your household has three phones, your household has received six hundred pounds. Children’s devices receive the same amount. I know this is imperfect — a single pensioner with one phone receives two hundred, while a family of four with four phones receives eight hundred. We chose speed and simplicity over precision. The Community Recovery Hubs exist to close that gap, and I will come to them in a moment.</p>\n<p>What about prescriptions. Pharmacies reopening this afternoon will dispense NHS prescriptions. If you have a repeat prescription, bring your most recent packaging or a note of the medication name and dosage. Pharmacists are authorised to issue emergency supplies of regular medication for up to thirty days without a prescription, under the Emergency Supply provisions. If you are running low on essential medication, please go to your pharmacy this afternoon. Do not wait.</p>\n<p>What happens when I run out. This is the first allocation, not the last. Further allocations will follow on a regular cycle. I will confirm the schedule and the amount by the end of this week. No one in this country will be left without the means to buy food and essentials. That is my commitment.</p>\n<p>Is there a transaction limit. No. You can spend your balance in a single transaction or across as many as you wish. There is no minimum and no cap per purchase. When your balance reaches zero, it will be refreshed at the next allocation.</p>\n<p>What will I see at the shops. Military personnel are present at major retail sites. They are there to help — to manage queues, to assist with logistics, to ensure deliveries reach the shelves. They are not there for security and they are not there for enforcement. They are squaddies helping stack shelves and carry boxes. If you see a uniform in the car park, that person is on your side.</p>\n<p>On stock. I will be honest with you. Shelves will be patchy. Supply chains that rely on digital invoicing and automated ordering have been disrupted. Fresh produce will be limited. Bread, milk, eggs, tinned goods, rice, pasta, and frozen food are available in reasonable quantities at most major stores. The situation will improve daily as distribution recovers. Please buy what you need. Please do not buy more than you need.</p>\n<p>On prices. Price controls are in effect under the Civil Contingencies Act for the duration of this emergency.</p>\n<p>Now — for those without a smartphone. I know there are many of you, particularly among our older citizens, those in rural communities, and those whose phones were damaged, lost, or simply never owned. You have not been forgotten.</p>\n<p>From tomorrow morning, Community Recovery Hubs across the country will begin distributing emergency food hampers. These are free. No identification is required. You walk in, you receive a hamper — tinned goods, rice, pasta, milk, tea, cooking oil, toiletries, batteries, candles. The basics. Hot food and drinks are available at most hubs now and will continue. If you have an older relative or a neighbour without a phone, please help them find their nearest hub.</p>\n<p>On wages, pensions, and savings. I will address these in full on Wednesday once the NCSC has completed its data integrity assessment. For now, the position is unchanged — the obligations freeze protects you from any consequence of non-payment, and EPM provides the means to buy what you need. The bridge will hold.</p>\n<p>Prime Minister.</p>\n<p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor.</p>\n<p>One week ago the country woke up to something unprecedented. Five days ago we believed the worst was over. Two days ago we learned it was not. I will not dress that up.</p>\n<p>But I want you to notice what just happened. The Chancellor has put money in your hands. Not next week. Not tomorrow. Now. The system he has described — the terminals, the hubs, the logistics, the payment infrastructure — was deployed in seven days by the men and women of the Treasury, the National Cyber Security Centre, the ARC programme, the armed forces, and thousands of local authority workers and volunteers across this country.</p>\n<p>On the security situation. The National Cyber Security Centre continues to assess the full scope and origin of this attack. I have received a briefing this morning and I want to be straightforward with you. We have no intelligence to suggest a third phase is imminent. But we have not yet established the full capability of the actor responsible, and until we have, we must proceed with caution. That is why certain digital services remain restricted. That is why the measures the Chancellor has set out today are built on infrastructure that does not depend on the systems that were attacked.</p>\n<p>These measures are not temporary. They are designed to hold for as long as they are needed. And they are designed to function whatever comes next.</p>\n<p>This afternoon, go to the shops. Buy what you need for the week. If you have a neighbour who cannot get there, ask them what they need. If someone near you does not have a phone, walk them to the hub tomorrow morning.</p>\n<p>This address has been broadcast live on BBC television and radio, and on ARC Emergency and ARC Local.</p>\n<p>Stay local. Stay safe. Look after each other.</p>\n<p>Be well.</p>",
+            "body": "<p><strong>THE PRIME MINISTER:</strong> Good afternoon.</p>\n<p>Last night I told you that the Chancellor would address you today at midday with the full detail of the emergency measures we have been preparing. Before I hand to him, one thing.</p>\n<p>Denmark and the Netherlands activated their own emergency payment systems yesterday. France and Canada begin this afternoon. Australia and Japan have announced measures for later this week. What the Chancellor is about to set out is consistent with what our partner nations are deploying. We are not alone in this.</p>\n<p>Chancellor.</p>\n<p><strong>THE CHANCELLOR OF THE EXCHEQUER:</strong> Thank you, Prime Minister.</p>\n<p>I said on Saturday morning that I would set out the detail of our emergency payment infrastructure today. I said it would put money in your hands, on your devices, regardless of what has happened to the banking system. Here is that detail.</p>\n<p>The Emergency Payment Module is live. As I speak, every ARC-enabled device in the United Kingdom is being credited with two hundred pounds. If your phone is beside you, check it now. You will see a notification from ARC Emergency. That money is yours.</p>\n<p>Let me be precise about what this is and what it is not. It is not a loan. You will not be asked to repay it. It is not an advance on wages or benefits. It is an emergency allocation from this Government to you, directly. There is no application. There is no form. There is no means test. Every device receives the same amount.</p>\n<p>I want to answer the questions I know you are asking.</p>\n<p>How does it work. You use your phone exactly as you have always used it. You hold it to the payment terminal. You hear the beep. The transaction is confirmed. The amount is deducted from your EPM balance, which you can see at any time in ARC Emergency. The terminals are the same terminals you have always used. Every payment terminal in this country — in supermarkets, in pharmacies, in petrol stations, in corner shops, in pubs — has been ARC-enabled since December of last year under the Financial Conduct Authority’s interoperability mandate. The infrastructure is already there. We are using it.</p>\n<p>Where can I spend it. Everywhere. Any terminal that accepted a contactless payment before this crisis will accept EPM today. From two o’clock this afternoon, major retailers will reopen — Tesco, Sainsbury’s, Asda, Morrisons, Waitrose, Aldi, Lidl, the Co-op. Boots and Superdrug will reopen for pharmacy services and essential items. Designated fuel stations are already operating and will continue. Your ARC Local app now contains a live map of open retailers and their operating hours in your area. Hours will vary — most major stores will operate from two o’clock until eight o’clock this evening, and from eight until eight from tomorrow onward.</p>\n<p>What about my family’s phones. Every ARC-enabled device receives its own allocation. If your household has three phones, your household has received six hundred pounds. Children’s devices receive the same amount. I know this is imperfect — a single pensioner with one phone receives two hundred, while a family of four with four phones receives eight hundred. We chose speed and simplicity over precision. The Community Recovery Hubs exist to close that gap, and I will come to them in a moment.</p>\n<p>What about prescriptions. Pharmacies reopening this afternoon will dispense NHS prescriptions. If you have a repeat prescription, bring your most recent packaging or a note of the medication name and dosage. Pharmacists are authorised to issue emergency supplies of regular medication for up to thirty days without a prescription, under the Emergency Supply provisions. If you are running low on essential medication, please go to your pharmacy this afternoon. Do not wait.</p>\n<p>What happens when I run out. This is the first allocation, not the last. Further allocations will follow on a regular cycle. I will confirm the schedule and the amount by the end of this week. No one in this country will be left without the means to buy food and essentials. That is my commitment.</p>\n<p>Is there a transaction limit. No. You can spend your balance in a single transaction or across as many as you wish. There is no minimum and no cap per purchase. When your balance reaches zero, it will be refreshed at the next allocation.</p>\n<p>What will I see at the shops. Military personnel are present at major retail sites. They are there to help — to manage queues, to assist with logistics, to ensure deliveries reach the shelves. They are not there for security and they are not there for enforcement. They are squaddies helping stack shelves and carry boxes. If you see a uniform in the car park, that person is on your side.</p>\n<p>On stock. I will be honest with you. Shelves will be patchy. Supply chains that rely on digital invoicing and automated ordering have been disrupted. Fresh produce will be limited. Bread, milk, eggs, tinned goods, rice, pasta, and frozen food are available in reasonable quantities at most major stores. The situation will improve daily as distribution recovers. Please buy what you need. Please do not buy more than you need.</p>\n<p>On prices. Price controls are in effect under the Civil Contingencies Act for the duration of this emergency.</p>\n<p>Now — for those without a smartphone. I know there are many of you, particularly among our older citizens, those in rural communities, and those whose phones were damaged, lost, or simply never owned. You have not been forgotten.</p>\n<p>From tomorrow morning, Community Recovery Hubs across the country will begin distributing emergency food hampers. These are free. No identification is required. You walk in, you receive a hamper — tinned goods, rice, pasta, milk, tea, cooking oil, toiletries, batteries, candles. The basics. Hot food and drinks are available at most hubs now and will continue. If you have an older relative or a neighbour without a phone, please help them find their nearest hub.</p>\n<p>On wages, pensions, and savings. I will address these in full on Wednesday once the NCSC has completed its data integrity assessment. For now, the position is unchanged — the obligations freeze protects you from any consequence of non-payment, and EPM provides the means to buy what you need. The bridge will hold.</p>\n<p>Prime Minister.</p>\n<p><strong>THE PRIME MINISTER:</strong> Thank you, Chancellor.</p>\n<p>One week ago the country woke up to something unprecedented. Five days ago we believed the worst was over. Two days ago we learned it was not. I will not dress that up.</p>\n<p>But I want you to notice what just happened. The Chancellor has put money in your hands. Not next week. Not tomorrow. Now. The system he has described — the terminals, the hubs, the logistics, the payment infrastructure — was deployed in seven days by the men and women of the Treasury, the National Cyber Security Centre, the ARC programme, the armed forces, and thousands of local authority workers and volunteers across this country.</p>\n<p>On the security situation. The National Cyber Security Centre continues to assess the full scope and origin of this attack. I have received a briefing this morning and I want to be straightforward with you. We have no intelligence to suggest a third phase is imminent. But we have not yet established the full capability of the actor responsible, and until we have, we must proceed with caution. That is why certain digital services remain restricted. That is why the measures the Chancellor has set out today are built on infrastructure that does not depend on the systems that were attacked.</p>\n<p>These measures are not temporary. They are designed to hold for as long as they are needed. And they are designed to function whatever comes next.</p>\n<p>This afternoon, go to the shops. Buy what you need for the week. If you have a neighbour who cannot get there, ask them what they need. If someone near you does not have a phone, walk them to the hub tomorrow morning.</p>\n<p>This address has been broadcast live on BBC television and radio, and on ARC Emergency and ARC Local.</p>\n<p>Stay local. Stay safe. Look after each other.</p>\n<p>Be well.</p>",
             "footer": "Source: 10 Downing Street · Official Transcript"
           }
         },
@@ -12519,8 +12835,8 @@
             "style": "gov",
             "source": "Financial Conduct Authority",
             "title": "PS26/4: Authenticated Residential Computing (ARC) — Implementation Notice",
-            "date": "Published 14 June 2026 · Policy Statement",
-            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 30 September 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
+            "date": "Published October 2026 · Policy Statement",
+            "body": "<p>The Financial Conduct Authority confirms that the ARC authentication framework will be integrated across all UK-regulated payment infrastructure by 6 December 2026, as outlined in Consultation Paper CP25/12.</p><p>ARC provides a unified device-level authentication layer across payment terminals, banking applications, and regulated financial services platforms. It standardises identity verification at the hardware level, replacing the current patchwork of vendor-specific authentication protocols.</p><p>All acquirers (Worldpay, Barclaycard, Global Payments, etc.) are required to push ARC integration to merchant terminal fleets via scheduled firmware updates. ARC operates below the application layer and requires no merchant action or configuration. End users will not experience any change to transaction workflows.</p><p>ARC has been developed in coordination with the Bank of England, the Payment Systems Regulator, and the Bank for International Settlements Innovation Hub (Basel). Compliance is mandatory for all FCA-regulated payment service providers.</p><p style=\"font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;letter-spacing:0.5px;\">Further technical documentation: fca.org.uk/arc-implementation</p>",
             "footer": "Source: FCA Policy Statement · Filed under: Payment Infrastructure"
           }
         },

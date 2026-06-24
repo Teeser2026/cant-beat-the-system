@@ -9849,6 +9849,29 @@
         ]
       },
       {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Joe",
+            "ttl": "Johnny the fish man can’t make Saturday. Hasn’t been able to get the boat out.",
+            "snip": "Damn. I wanted some hot smoked salmon.",
+            "tag": "",
+            "cls": "",
+            "time": "10:01",
+            "date": "19 Feb 2027"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Let me know if you fancy a beer Saturday? You at the market?",
+            "snip": "‘A’ beer. Just one, yeah?",
+            "tag": "",
+            "cls": "",
+            "time": "11:56",
+            "date": "19 Feb 2027"
+          }
+        ]
+      },
+      {
         "sec": "UK GOV Alert",
         "cards": [
           {

@@ -10153,12 +10153,28 @@
         "cards": [
           {
             "src": "ARC",
-            "ttl": "Updated Guidance",
-            "snip": "Essential services unaffected. Non-essential travel suspended. Next address: 9am tomorrow.",
-            "time": "21:18",
-            "date": "19 FEBRUARY 2027",
-            "tag": "Guidance",
-            "cls": "a"
+            "ttl": "<strong>PM ADDRESS  19/2— 21:00 GMT — Transcript</strong>",
+            "snip": "‘Significant and unexpected’ setback. Sure.",
+            "tag": "BE WELL?",
+            "cls": "a",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "time": "21:30",
+            "date": "19 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Remain at home. Essential travel only. The threat of further disruption remains active. NCSC is assessing the full scope of damage to financial data. Updates via ARC and BBC.",
+            "snip": "Further disruption remains active. Not ‘is over.’ Not ‘is contained.’ Remains active. They don’t know if there’s a Stage 3.",
+            "tag": "UK-EMRG-2027-024",
+            "cls": "x",
+            "date": "19 Feb 2027",
+            "time": "22:00"
           }
         ]
       },
@@ -10167,30 +10183,30 @@
         "cards": [
           {
             "src": "Rupert",
-            "ttl": "Rupert",
-            "snip": "Chapter 2.",
-            "time": "21:44",
-            "date": "19 FEBRUARY 2027",
+            "ttl": "Chapter 2.",
+            "snip": "Chapter 2 of how many?",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "21:44",
+            "date": "19 FEBRUARY 2027"
           },
           {
             "src": "Chloe",
-            "ttl": "Chloe",
-            "snip": "School off again isnt it 😭😭",
-            "time": "22:02",
-            "date": "19 FEBRUARY 2027",
+            "ttl": "School off again isnt it 😭😭",
+            "snip": "the indoctrination camps might be the least of our worries",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "22:02",
+            "date": "19 FEBRUARY 2027"
           },
           {
             "src": "Sarah",
-            "ttl": "Sarah",
-            "snip": "Kids fine. Sam watching telly. Call me tmrw? x",
-            "time": "22:18",
-            "date": "19 FEBRUARY 2027",
+            "ttl": "Kids fine. They somehow seem resigned to this. Call me tmrw? x",
+            "snip": "Resigned. An excellent choice of word.",
             "tag": "",
-            "cls": ""
+            "cls": "",
+            "time": "22:18",
+            "date": "19 FEBRUARY 2027"
           }
         ]
       }

@@ -291,12 +291,12 @@ var timeline=[
     aFadeIn(aud.clockSlow,0.2,4000);
   }},
   {t:183,fn:function(){showText("Amy?",4500,'sz-body col-warm','pos-center')}},
-  {t:190,fn:function(){showText("9:33",4500,'sz-large col-ghost machine','pos-center')}},
-  {t:197,fn:function(){showText("Shit, I didn't put the bins out",4500,'sz-body col-dim','pos-center')}},
+  {t:190,fn:function(){showText("6:33",4500,'sz-large col-ghost machine','pos-center')}},
+  {t:197,fn:function(){showText("Amy's side is cold. Her pillow too.",4500,'sz-body col-dim','pos-center')}},
   {t:204,fn:function(){
     var el=document.createElement('div');
     el.className='word sz-small col-dim pos-center clickable';
-    el.innerHTML='Whatever';
+    el.innerHTML='Get up';
     el.addEventListener('click',function(){doExit()},false);
     el.addEventListener('touchend',function(e){e.preventDefault();doExit()},false);
     stage.appendChild(el);
@@ -312,7 +312,7 @@ function doExit(){
   if(window._exited)return;window._exited=true;
   console.log('[D2] exit');
   for(var k in aud)if(aud[k]&&!aud[k].paused)aFadeOut(aud[k],4000);
-  // Fade Whatever out
+  // Fade exit text out
   var words=stage.querySelectorAll('.word');for(var i=0;i<words.length;i++){words[i].classList.remove('visible');words[i].classList.add('fading')}
   setTimeout(function(){
     if(window.parent&&window.parent!==window)window.parent.postMessage({type:'dream-continue',id:'dream-2'},'*');

@@ -10149,44 +10149,50 @@
     ],
     "26a": [
       {
-        "src": "ARC Emergency",
         "sec": "ARC Emergency",
-        "ttl": "Updated Guidance",
-        "snip": "Essential services unaffected. Non-essential travel suspended. Next address: 9am tomorrow.",
-        "time": "21:18",
-        "date": "19 FEBRUARY 2027",
-        "tag": "Guidance",
-        "cls": "a"
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Updated Guidance",
+            "snip": "Essential services unaffected. Non-essential travel suspended. Next address: 9am tomorrow.",
+            "time": "21:18",
+            "date": "19 FEBRUARY 2027",
+            "tag": "Guidance",
+            "cls": "a"
+          }
+        ]
       },
       {
-        "src": "Rupert",
-        "sec": "SMS · Text Message",
-        "ttl": "Rupert",
-        "snip": "Chapter 2.",
-        "time": "21:44",
-        "date": "19 FEBRUARY 2027",
-        "tag": "",
-        "cls": ""
-      },
-      {
-        "src": "Chloe",
-        "sec": "SMS · Text Message",
-        "ttl": "Chloe",
-        "snip": "School off again isnt it 😭😭",
-        "time": "22:02",
-        "date": "19 FEBRUARY 2027",
-        "tag": "",
-        "cls": ""
-      },
-      {
-        "src": "Sarah",
-        "sec": "SMS · Text Message",
-        "ttl": "Sarah",
-        "snip": "Kids fine. Sam watching telly. Call me tmrw? x",
-        "time": "22:18",
-        "date": "19 FEBRUARY 2027",
-        "tag": "",
-        "cls": ""
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "Rupert",
+            "snip": "Chapter 2.",
+            "time": "21:44",
+            "date": "19 FEBRUARY 2027",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Chloe",
+            "ttl": "Chloe",
+            "snip": "School off again isnt it 😭😭",
+            "time": "22:02",
+            "date": "19 FEBRUARY 2027",
+            "tag": "",
+            "cls": ""
+          },
+          {
+            "src": "Sarah",
+            "ttl": "Sarah",
+            "snip": "Kids fine. Sam watching telly. Call me tmrw? x",
+            "time": "22:18",
+            "date": "19 FEBRUARY 2027",
+            "tag": "",
+            "cls": ""
+          }
+        ]
       }
     ],
     "27": [

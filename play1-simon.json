@@ -10153,6 +10153,15 @@
         "cards": [
           {
             "src": "ARC",
+            "ttl": "Updated Guidance",
+            "snip": "Essential services unaffected. Non-essential travel suspended. Next address: 9am tomorrow.",
+            "time": "21:18",
+            "date": "19 FEBRUARY 2027",
+            "tag": "Guidance",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
             "ttl": "<strong>PM ADDRESS  19/2— 21:00 GMT — Transcript</strong>",
             "snip": "‘Significant and unexpected’ setback. Sure.",
             "tag": "BE WELL?",
@@ -10193,7 +10202,7 @@
           {
             "src": "Chloe",
             "ttl": "School off again isnt it 😭😭",
-            "snip": "the indoctrination camps might be the least of our worries",
+            "snip": "The indoctrination camps might be the least of our worries",
             "tag": "",
             "cls": "",
             "time": "22:02",

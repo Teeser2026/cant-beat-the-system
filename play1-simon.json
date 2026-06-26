@@ -12702,7 +12702,54 @@
         ]
       }
     ],
-    "26b": []
+    "26b": [
+      {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "Overnight Status: No further incidents reported. NCSC assessment of financial data integrity continues. Essential services unaffected.",
+            "snip": "No further incidents. Two was enough.",
+            "time": "03:15",
+            "date": "20 FEBRUARY 2027",
+            "tag": "UPDATE",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "Morning Update: Emergency food distribution operational at Community Recovery Hubs from 08:00. Schools remain closed until further notice. Cash-only purchasing continues at participating retailers.",
+            "snip": "‘Participating’ retailers. That’s a new one.",
+            "time": "06:00",
+            "date": "20 FEBRUARY 2027",
+            "tag": "UPDATE",
+            "cls": "a"
+          },
+          {
+            "src": "ARC",
+            "ttl": "ARC LOCAL provides a list of hubs in your area. Hot food. Medical advice. Information. Somewhere warm.",
+            "snip": "Seems like we’re in it for the long haul.",
+            "time": "07:45",
+            "date": "20 FEBRUARY 2027",
+            "tag": "ARC LOCAL",
+            "cls": "a"
+          }
+        ]
+      },
+      {
+        "sec": "UK GOV Alert",
+        "cards": [
+          {
+            "src": "UK GOV",
+            "ttl": "Joint Address · 09:00 GMT. The Prime Minister, the Chancellor of the Exchequer, and Paul Chichester, NCSC Director of Operations.",
+            "snip": "The boys are back in town. They mean business.",
+            "time": "08:00",
+            "date": "20 FEBRUARY 2027",
+            "tag": "UK-EMRG-2027-025",
+            "cls": "x"
+          }
+        ]
+      }
+    ]
   },
   "threads": [
     {

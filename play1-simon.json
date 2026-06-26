@@ -4859,7 +4859,8 @@
           "t": "Good night. And be well."
         }
       ],
-      "title": "PM Address · Day 1 Evening"
+      "title": "PM Address · Day 1 Evening",
+      "date": "15 FEBRUARY 2027"
     },
     {
       "id": "23b",
@@ -5101,7 +5102,8 @@
       "broadcastArc": true,
       "broadcastFile": "BC2.html",
       "paras": [],
-      "title": "PM Address · Day 2 Morning"
+      "title": "PM Address · Day 2 Morning",
+      "date": "16 FEBRUARY 2027"
     },
     {
       "id": 24,
@@ -5614,7 +5616,8 @@
       "broadcastArc": true,
       "broadcastFile": "BC3.html",
       "paras": [],
-      "title": "Joint Address · Day 2 Evening"
+      "title": "Joint Address · Day 2 Evening",
+      "date": "16 FEBRUARY 2027"
     },
     {
       "id": "24b",
@@ -6773,8 +6776,170 @@
       "id": "26b",
       "title": "We've Been Here Before",
       "date": "20 FEBRUARY 2027",
-      "paras": [],
-      "choices": []
+      "paras": [
+        {
+          "t": "Six-thirty-three. The heating hasn't come on yet. The bedroom is cold. The timer is set for seven - yet to click into action. Instinctively, I pick up my phone to open the Hive app so I can give the heating a manual <em>boost -</em> and soon realise, like all apps it’s un-openable, functionally useless. Dead. "
+        },
+        {
+          "t": "Amy’s side of the bed is empty. Empty and cold. Her pillow is cold too. Not recently-left to go for a wee cold, but properly cold. She's been gone a while."
+        },
+        {
+          "t": "I lie still for a moment. A dream lingering, not in my thoughts, not as an image but as a feeling - an intangible low hum. It fades as the room comes into focus. The picture of the wall by my side of the bed - a wedding collage that’s just the right side of cheesy - I think. A stack of cream velvet cushions on the floor - daytime aesthetics that become nighttime inconvenience. The curtains - a small chink of something that isn’t total gloom appearing through a chink in them. The shape of an ordinary Saturday morning."
+        },
+        {
+          "t": "The hallway is dark but there's light coming from the kitchen. I follow it."
+        },
+        {
+          "t": "Amy is sitting at the table in her dressing gown, both hands around her favourite mug - a Kinta stoneware mug handmade in Vietnam - I think the official description of the colour is ivory and mustard. It’ll be full of Earl Grey. Her third cup of the morning based on the used teabags sitting on a side-plate by the kettle. The dogs are at her feet. The kitchen has that particular warmth of a room where the kettle has been boiled more than once. She looks up."
+        },
+        {
+          "t": "'You were making noises.'"
+        },
+        {
+          "t": "I fill the kettle. 'What kind of noises?'"
+        },
+        {
+          "t": "'Talking. Sort of. Like you were having a conversation with someone. And then - this sounds mad - booing. Jeering. Like you were at a pantomime or something.' She pauses. 'And then nothing. Completely still. For ages. I nearly woke you.'"
+        },
+        {
+          "t": "'How long have you been up?'"
+        },
+        {
+          "t": "'Half five. Couldn't sleep.'"
+        },
+        {
+          "t": "I drop a teabag into a mug. I have a matching Kinta mug. Perhaps not matching. A companion piece. It’s black. Matt black with glossy band is the official description. The kettle boils. The click of the kettle switch is the loudest thing in the house."
+        },
+        {
+          "t": "'Weird dream,' I say, stating the obvious. I leave it at that, because whatever it was - and it was definitely <em>something</em> - something I can’t quite get the shape of yet. And even if I could, I wouldn’t be able to put it into words at half six in the morning. Not yet. Not before a cup of tea."
+        },
+        {
+          "t": "My blood glucose level is good. Flat arrow overnight. I take 4 units of insulin. The tea and the dawn phenomenon will send it spiking without some injected <em>Fiasp</em>. The small rituals of a body that has been monitored by a sensor for years now. I have no idea how I coped for decades without continuous monitoring and never-ending finger pricks."
+        },
+        {
+          "t": "The heating fires at seven. Amy has been sitting in the cold. I don’t tell her she could have turned it on from the thermostat on the wall. The boiler clicks on and the house is filled with the sound of radiator ticks. The same ticking from last night. The hum again. Just for a second."
+        },
+        {
+          "t": "The house warms around us."
+        },
+        {
+          "t": "Amy puts her mug down. 'You know what's weird? We've got no idea what's happening out there. Not really. It's just us, this house, the neighbours, a few texts, family and close friends, Waitrose, a few shops and pubs. The Prime Minister and an app giving us <em>the single source of truth</em>.’"
+        },
+        {
+          "t": "I cringe at the memory of Covid-era Jacinda Ardern. <em>Unless you hear it from us, it is not the truth.</em>"
+        },
+        {
+          "t": "‘Unthinking respect for authority is the greatest enemy of truth.’ I pluck an Einstein quote from somewhere before my first sip of tea."
+        },
+        {
+          "t": "‘Sounds like something Dev would say,’ Amy replies - half-statement, half-question."
+        },
+        {
+          "t": "‘Einstein’ I reply. "
+        },
+        {
+          "t": "We giggle."
+        },
+        {
+          "t": "'Do we ever know what’s going on out there? Really? We’re drip-fed whatever the algorithm decides to shove under our noses. How much of what we thought we knew was actually…’ I wave my hands theatrically whilst thinking for the right way to put it… 'Curated. Selected. Engagement-optimised bullshit. One big psyop?’"
+        },
+        {
+          "t": "'That's different though. At least there was more than one source of bullshit.'"
+        },
+        {
+          "t": "We simultaneously make the same sound, somewhere between a scoff and a laugh."
+        },
+        {
+          "t": "'Maybe this is how it's supposed to be,' I continue. 'Small communities. Local. Your actual neighbours, not social media bollocks with a bot or people you've never met. There's a number, it’s called…what is it?’"
+        },
+        {
+          "t": "I’m racking my brains. ‘Hold on, it’ll come to me.’"
+        },
+        {
+          "t": "‘It doesn’t matter what it’s called, just tell me what it is,’ Amy is getting impatient."
+        },
+        {
+          "t": "‘No, I want to remember it, hold on…’"
+        },
+        {
+          "t": "I tap my index finger on the table rhythmically in an attempt to speed up the thought process."
+        },
+        {
+          "t": "‘Got it. Dunbar’s number’ I say triumphantly."
+        },
+        {
+          "t": "Amy looks at me, none the wiser. "
+        },
+        {
+          "t": "‘Dunbar’s number. A hundred and fifty. That's the number of people you can actually hold a meaningful relationship with. After that, everyone's just a name. We've probably got about a hundred and fifty. Family, friends, people from the market, work, neighbours. That’s a community. A real one.'"
+        },
+        {
+          "t": "'A hundred and fifty,' Amy says, her eyes glazed over as if she’s totting them up."
+        },
+        {
+          "t": "'Give or take. The point is - maybe we're not supposed to know what's happening in Manchester and Chicago and wherever else. Not from an anthropological perspective. Our brains aren’t wired for it. Maybe the everything-connected, always-online world is an aberration, and this - I gesture at the kitchen, the dogs, the <em>Kinta</em> mugs, the quiet - 'is actually closer to how we are supposed to live.'"
+        },
+        {
+          "t": "The dogs shift position at Amy's feet with a synchronised <em>huff</em>. Outside, the sky is slowly becoming a brighter shade of grey. A blackbird starts singing. Amy’s favourite bird. We had one that nested in the garage at our old house. We had to leave the door open permanently for her. She was so tame, so beautiful. She became a family member, a friend. Part of our Dunbar number for sure. "
+        },
+        {
+          "t": "'But that's the thing,' Amy says. She puts her mug down. 'We're happy. I mean, all things considered, sitting here, right now, I'm alright. You're alright. The kids are fine. Mum's fine. Jamie and Rupert are OK. And it's nice. The quiet. No pings, no scrolling, no constant barrage. It's actually been lovely.' She pauses. 'But what about everyone else? Are people in Birmingham sitting in their kitchens feeling like this? Or is there chaos. Panic. Actual panic. Rioting. Things we just haven't heard about because we can't hear about them.'"
+        },
+        {
+          "t": "I pause to consider. The blackbird has encountered something that is causing her excitement. A worm?"
+        },
+        {
+          "t": "‘That’s the flip side isn’t it? The yin to the yang of peace, the community and the isolation that feels wholesome. We’re so conditioned to needing to know, to having our finger on the pulse, that we feel lost without it. Bereft. Incomplete. Part of me really wanted to get back online. The knowledge vacuum has been freaking me out. No X to scroll through. Warts and all. I was genuinely excited to see what the Substacks were saying. See if anyone had actually worked out what happened. And then…’ I click my fingers."
+        },
+        {
+          "t": "'And then…I don't know if I'm disappointed or relieved.'"
+        },
+        {
+          "t": "Amy looks at me, the <em>that was a bit of a diatribe</em> look. 'Both.'"
+        },
+        {
+          "t": "'Both. Yeah.'"
+        },
+        {
+          "t": "She picks up her mug again. ‘You’d soon get used to the rhythm of ‘living local’ I reckon’- Exaggerated air quotes - an annoying habit she’s picked up from me. ‘Less connected but more <em>connected</em>.’"
+        },
+        {
+          "t": "I know exactly what she means. "
+        },
+        {
+          "t": "She continues - ’If you broke the world down into little pockets - small communities, growing food, everyone looking after each other and their own patch - I think we’d be happier. I know it sounds a bit Good Life.’"
+        },
+        {
+          "t": "‘It sounds like the Dunbar number made manifest.’ I cringe at my slightly wanky language. "
+        },
+        {
+          "t": "‘Surely this is the way <em>God</em> made us?’ She visibly stops herself air-quoting <em>God</em>. ‘Humanity’s default. Everything you need within touching distance. People would be happier, I’m sure?’"
+        },
+        {
+          "t": "‘Sounds like a 15 minute city,’ I say with a wry smile."
+        },
+        {
+          "t": "Amy looks at her phone. ’Just over an hour until the PM gives us the single source of truth.’ "
+        },
+        {
+          "t": "I take a sip of tea. "
+        },
+        {
+          "t": "Nothing further to add, M’lud.",
+          "c": "inner"
+        },
+        {
+          "t": "The blackbird makes a very high-pitched whistle. Amy recognises it straight away as the response to predators."
+        },
+        {
+          "t": "She jumps up to go into the garden to investigate. "
+        },
+        {
+          "t": "‘Could be a magpie,’ she says. ‘Bloody bastards.’"
+        }
+      ],
+      "num": "T26b",
+      "audio": null
     },
     {
       "id": "BC7",

@@ -5591,6 +5591,10 @@
           "t": "My view is that they probably have taken the internet down purely as a precaution — or at least the pretence of a precaution — rather than it being hacked. Either way it’s not working. My hunch is it’ll be back in days. There will be uproar without it. Half the country would rather starve than be without their precious TikTok."
         },
         {
+          "t": "All they have at the moment is the telly with the PM address on loop when he’s not presenting live interspersed with ARC Emergency ‘Situation Update’ scrolling across the screen like a non-interactive social media-lite.",
+          "c": ""
+        },
+        {
           "t": "Amy comes into the kitchen again. She’s been in and out for the last hour or so. Never settling. Laps of the house from kitchen to bathroom to utility room and back again. Stoking the fire in the hallway. Doing the bits and bobs that keep the ship afloat."
         },
         {
@@ -6421,6 +6425,10 @@
         },
         {
           "t": "I’m currently sitting at the kitchen table with Amy. We’ve got a cup of tea. The last of the day. We considered a glass of wine but it’s not even six yet. PM speech in a few minutes. The <em>buzz</em> of anticipation prior to the addresses of the first few days has become a sense of formality. Duty. Anticlimactic. We drag ourselves off to the snug to watch it. Just the two of us. George and Chloe both at friends’ houses. Kate at the hub? Next door? Either way, she’s not here. Not like the good old days."
+        },
+        {
+          "t": "I turn the telly on. No PM yet. Just the ‘Situation Update’ on loop. They could have put a presenter on. An introduction. Some analysis. But no. Just ‘facts’ scrolling across the screen like East German propaganda. Thats a choice, not a constraint.",
+          "c": ""
         },
         {
           "t": "The UK GOV alert had arrived at half three. No longer accompanied by the terrifying klaxon of the early alerts. Now it just buzzes like a Deliveroo promo. A reminder about the address. I re-read it whilst waiting for the PM to show up and Amy to return from the kitchen. You know what she went to get."
@@ -9726,26 +9734,6 @@
             "cls": "a",
             "time": "10:00",
             "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "ttl": "NCSC confirms: legacy digital systems compromised by embedded malware. Do not access banking or financial applications. ARC Emergency is your verified source for updates.",
-            "snip": "The government said 'compromised.' ARC said 'compromised by embedded malware.' Three extra words. ARC knows more than the government is saying. Or it's saying what the government won't.",
-            "tag": "Update",
-            "cls": "a",
-            "time": "10:30",
-            "date": "16 Feb 2027"
-          },
-          {
-            "src": "ARC",
-            "type": "thread-notify",
-            "threadRef": "official",
-            "ttl": "ARC EMERGENCY · SITUATION UPDATE",
-            "snip": "Twenty-three countries. No money gone. Everything turned off while they check the wiring. ARC works because it’s newer. Hubs from midday.",
-            "tag": "SITUATION UPDATE",
-            "cls": "a",
-            "time": "10:45",
-            "date": "16 Feb 2027"
           }
         ]
       }
@@ -9808,6 +9796,15 @@
             "cls": "",
             "date": "17 Feb 2027",
             "time": "11:46"
+          },
+          {
+            "src": "Rupert",
+            "ttl": "Post-quantum crypto in a payment framework. In 2026. Because they were worried about… what exactly?",
+            "snip": "Since when does Rupert know what post-quantum cryptography is?",
+            "tag": "13:15",
+            "cls": "",
+            "time": "13:15",
+            "date": "17 Feb 2027"
           },
           {
             "src": "Rupert",
@@ -10023,6 +10020,15 @@
       {
         "sec": "Text Message",
         "cards": [
+          {
+            "src": "Rupert",
+            "ttl": "They could put a presenter on. They’re choosing not to. Think about why.",
+            "snip": "Email’s back. WhatsApp’s patchy. BBC still on loop. He’s got a point.",
+            "tag": "14:15",
+            "cls": "",
+            "time": "14:15",
+            "date": "18 Feb 2027"
+          },
           {
             "src": "Vince",
             "ttl": "You ok buddy? Hopefully game will be on next week? ❤️💙",
@@ -12552,6 +12558,31 @@
         ]
       },
       {
+        "sec": "ARC Emergency",
+        "cards": [
+          {
+            "src": "ARC",
+            "ttl": "NCSC confirms: legacy digital systems compromised by embedded malware. Do not access banking or financial applications. ARC Emergency is your verified source for updates.",
+            "snip": "The government said 'compromised.' ARC said 'compromised by embedded malware.' Three extra words. ARC knows more than the government is saying. Or it's saying what the government won't.",
+            "tag": "Update",
+            "cls": "a",
+            "time": "10:30",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "ARC",
+            "type": "thread-notify",
+            "threadRef": "official",
+            "ttl": "ARC EMERGENCY · SITUATION UPDATE",
+            "snip": "Twenty-three countries. No money gone. Everything turned off while they check the wiring. ARC works because it’s newer. Hubs from midday.",
+            "tag": "SITUATION UPDATE",
+            "cls": "a",
+            "time": "10:45",
+            "date": "16 Feb 2027"
+          }
+        ]
+      },
+      {
         "sec": "Text Message",
         "cards": [
           {
@@ -12570,6 +12601,15 @@
             "tag": "",
             "cls": "",
             "time": "12:01",
+            "date": "16 Feb 2027"
+          },
+          {
+            "src": "Rupert",
+            "ttl": "Information warfare component. Convenient. Name one piece of disinformation that’s been spread. Through what? Carrier pigeon?",
+            "snip": "Day two and he’s already in full Rupert mode.",
+            "tag": "13:45",
+            "cls": "",
+            "time": "13:45",
             "date": "16 Feb 2027"
           }
         ]

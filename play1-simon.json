@@ -6964,7 +6964,7 @@
     {
       "id": 27,
       "num": "T27",
-      "title": "The Volunteer",
+      "title": "Honest Thoughts",
       "date": "20 FEBRUARY 2027",
       "paras": [
         {
@@ -6998,7 +6998,10 @@
           "t": "Amy doesn't say anything. She picks up her tea. It'll be cold by now. She drinks it anyway."
         },
         {
-          "t": "I don't know what I expected. Something. An admission, maybe. A flicker of honesty behind the rehearsed concern and the carefully modulated pauses. What we got was a man in a good suit reading someone else's words in front of someone else's flag, telling us that everything was under control in a way that made it abundantly clear that nothing was under control and that this was, in fact, the point."
+          "t": "I don't know what I expected. Something. An admission, maybe. A flicker of honesty behind the rehearsed concern and the carefully modulated pauses. What we got was a man in a good suit reading someone else's words in front of someone else's flag, telling us that everything was under control in a way that made it abundantly clear that nothing was under control."
+        },
+        {
+          "t": "And that this was, in fact, the point."
         },
         {
           "t": "The map was a nice touch. The national recovery hub map. Clean. Colour-coded. Teal dots for open hubs, gold for opening soon. It looked like a weather forecast. Friendly and reassuring and designed to make you feel that someone, somewhere, was across it. Three thousand and something. More by morning. The Prime Minister had gestured at it with the practised ease of a man who had never set foot in a community centre in his life."
@@ -7037,7 +7040,7 @@
           "t": "I scroll east. Bexhill. Eastbourne. The coast peppered with dots. Each one a place I've driven past or walked through or cursed at for its one-way system. Each one now a node in something. A network."
         },
         {
-          "t": "Sixty more gold dots. <em>Opening within 24 hours.</em> Not being built. Being opened. Because they were already built. Or at least the infrastructure was. The registration points. The distribution routes. The capacity allocations. Kate said the clinic hub she's been volunteering at had cabling in the walls that wasn't connected to anything she recognised. Pre-installed. Waiting."
+          "t": "Sixty more gold dots. <em>Opening within 24 hours.</em> Not being built. Being opened. Because they were already built. Or at least the infrastructure was. The registration points. The distribution routes. The capacity allocations. Kate said the hub she's been volunteering at took delivery of forty brand-new iPads yesterday. Military drop-off. Still in cellophane. Each box coded with a hub reference number she didn't recognise. Nobody told her what they were for. The number matched the capacity of the building exactly."
         },
         {
           "t": "Amy leans over. She looks at the screen. She doesn't say anything for a while."
@@ -7058,7 +7061,7 @@
           "t": "'The PM said local authorities and emergency—'"
         },
         {
-          "t": "'No. How do they <em>know</em>. How do they know that Heathfield needs a hub and where to put it. How do they know the capacity for Wealden versus Rother. This isn't improvised, Simon. You don't colour-code an app in six days.'"
+          "t": "'No. How do they <em>know</em>. How do they know that Heathfield needs a hub and where to put it. How do they know the capacity for Wealden versus Rother. This isn't improvised, Simon. You don't allocate capacity by district in six days. You do it in six days if you already had the plan.'"
         },
         {
           "t": "I look at her."
@@ -7078,17 +7081,17 @@
         {
           "t": "She's not wrong."
         },
-        {
-          "t": "I take a screenshot of the map. Lewes to Rye. One hundred and one dots of teal. Sixty dots of gold. A network that appeared like infrastructure always appears when it's been planned for years — suddenly, and all at once, and with a colour scheme."
+      {
+          "t": "I take a screenshot of the map to send to Dev. Lewes to Rye. One hundred and one dots of teal. Sixty dots of gold. A network that appeared like infrastructure always appears when it's been planned for years — suddenly, and all at once, and with a colour scheme."
         },
         {
-          "t": "I send it to Dev."
+          "t": "I prepare to send it to Dev. I remember I can only send words, no photos."
         },
         {
-          "t": "No message. Just the screenshot."
+          "t": "I write a text instead. Quite cryptic."
         },
         {
-          "t": "He'll know."
+          "t": "He'll get it."
         }
       ]
     },
@@ -7114,7 +7117,7 @@
     {
       "id": 28,
       "num": "T28",
-      "title": "The Same Beep",
+      "title": "Twitchy",
       "date": "21 FEBRUARY 2027",
       "paras": [
         {
@@ -7200,7 +7203,7 @@
       "id": "28c",
       "num": "T28c",
       "title": "The Feed",
-      "date": "2–6 MARCH 2027",
+      "date": "3 MARCH 2027",
       "paras": [
         {
           "t": "The first chapter that compresses time. EPM Week 2 refresh: another £200 drops into the phone. A push notification. Simon sees it, swipes it away, tells Amy over dinner. Already normalised. Six days from ‘the Chancellor has put money in your hands’ to swiping away the notification like a Deliveroo promo. The PM does a midweek address. Simon doesn’t watch it. He sees the ARC push summary while making coffee. Doesn’t turn the telly on."
@@ -10435,8 +10438,8 @@
         "cards": [
           {
             "src": "UK GOV",
-            "ttl": "The PM will chair COBRA at 11am. A further statement will be made this afternoon. Citizens are advised to conserve food supplies and check on vulnerable neighbours.",
-            "snip": "Conserve food supplies. That’s come out of nowhere.",
+            "ttl": "Your Community Recovery Hubs remain open — please use them, particularly if you are elderly, alone, or struggling. Details at ARC Local.",
+            "snip": "No mention of food. No mention of cash. Just: come to the hub. The hub will sort it out.",
             "tag": "UK-EMRG-2027-026",
             "cls": "x",
             "date": "20 Feb 2027",
@@ -10453,14 +10456,16 @@
             "snip": "ARC Emergency remains operational and unaffected. Everything else is broken. ARC isn't. That sentence is doing more work than it looks like.",
             "tag": "Update",
             "cls": "a",
+            "time": "11:00",
             "date": "20 Feb 2027"
           },
           {
             "src": "ARC",
             "ttl": "PM statement — key points: 'The threat remains active. We are taking every precaution. Emergency food and fuel distribution plans are being finalised and will be announced tomorrow.'",
             "snip": "Tomorrow. Everything is tomorrow. The food plan is tomorrow. The fuel plan is tomorrow. Today is just waiting.",
-            "tag": "3:00pm",
+            "tag": "Update",
             "cls": "a",
+            "time": "11:30",
             "date": "20 Feb 2027"
           }
         ]
@@ -10469,28 +10474,76 @@
         "sec": "Text Message",
         "cards": [
           {
-            "src": "Kate",
-            "ttl": "Volunteering at the community centre. They've set up a food collection for people without phones. It's actually really well organised. Wine later? x",
-            "snip": "People without phones. Kate's helping the fifteen percent. The eighty-five percent are tapping at Tesco and barely thinking about it.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
+            "src": "Mum (Spain)",
+            "ttl": "Are you getting this? I've sent 4 texts since last night and don't know if any got through. Please reply darling. Please. xxx",
+            "snip": "Four texts. None arrived. The fifth did.",
+            "tag": "", "cls": "", "time": "07:12", "date": "20 Feb 2027"
+          },
+          {
+            "src": "to Mum (Spain)",
+            "ttl": "Getting this one! We're all fine mum. Phones playing up. Don't worry. Will call when lines clear. Love you x",
+            "snip": "Thirty seconds to type. She's been awake since 3am.",
+            "tag": "", "cls": "", "time": "07:14", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Sarah",
+            "ttl": "Call connected — 20 minutes 14 seconds.",
+            "snip": "Twenty minutes. The longest conversation we've had since the decree absolute.",
+            "tag": "CONNECTED", "cls": "", "time": "10:35", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Sam",
+            "ttl": "This is mental Pa. What do you reckon's actually going on? Mum's being weird about it",
+            "snip": "Mum's being weird about it. He means Sarah. He means she asked him what I said.",
+            "tag": "", "cls": "", "time": "12:15", "date": "20 Feb 2027"
+          },
+          {
+            "src": "to Sam",
+            "ttl": "Nobody knows mate. Sit tight. I'll drive over in the next couple of days and pick you and E up. Love you x",
+            "snip": "Nobody knows. The lie that isn't quite a lie.",
+            "tag": "", "cls": "", "time": "12:18", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Emilia",
+            "ttl": "hiii dad 💕 im fine dont worry. mums making us help clean the house lol. see u soon love u xxx",
+            "snip": "Cleaning the house during a national emergency. Sarah would.",
+            "tag": "", "cls": "", "time": "13:00", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Ben",
+            "ttl": "Mate it's grim in town. Queues at every cashpoint even though they don't work. Spar's been cleaned out. Army on Western Road. Not aggressive just... there. Emma wants to come to yours if it gets worse",
+            "snip": "Brighton's not Lewes. Different density, different mood. Ben sees the edges I don't.",
+            "tag": "", "cls": "", "time": "13:45", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Giles → Parklife",
+            "ttl": "Lads — reckon they'll have to print cash? Like actual emergency banknotes? My neighbour reckons ration books. His wife's already labelling tupperware 😂",
+            "snip": "Hampshire is preparing for the wrong war. Ration books. Tupperware. As if the solution will be analogue.",
+            "tag": "", "cls": "", "time": "14:20", "date": "20 Feb 2027"
+          },
+          {
+            "src": "Dave",
+            "ttl": "Guessing beers off then 😂 Stay safe mate. Nicky's panic-frozen about 9000 fishfingers",
+            "snip": "Nine thousand fishfingers. Dave's household preparing for the apocalypse one breaded rectangle at a time.",
+            "tag": "", "cls": "", "time": "14:50", "date": "20 Feb 2027"
           },
           {
             "src": "Vince",
-            "ttl": "Army blokes outside Tesco. Proper friendly though. One of them helped mum with her bags. Police everywhere too but keeping back. Feels safe tbh",
-            "snip": "Feels safe. That's the sentence. Not 'feels scary' or 'feels wrong.' Feels safe. The soldiers made Vince feel safe. That's the Soma working at street level.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
+            "ttl": "Record week at the gallery. Sold absolutely nothing. Might pivot to tinned goods. You reckon Palace will even have a ground to come back to at this rate?",
+            "snip": "Vince. The only man alive who can pivot from financial collapse to Selhurst Park in two sentences.",
+            "tag": "", "cls": "", "time": "15:02", "date": "20 Feb 2027"
           },
           {
-            "src": "Dev",
-            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
-            "snip": "Signal came back yesterday. Dev had the group ready. Seven people in it. Simon reads. He doesn't type.",
-            "tag": "",
-            "cls": "",
-            "date": "20 Feb 2027"
+            "src": "Rupert",
+            "ttl": "If they can hit the banks twice they can hit the grid. Water. Gas. It's all networked. Come over tomorrow — bring everyone. We'll cook. Freezer's full. Let's compare notes.",
+            "snip": "He's expecting Chapter 3. Power, water, the full cascade. He's wrong — but he doesn't know he's wrong yet. The grid was never the target.",
+            "tag": "", "cls": "", "time": "15:11", "date": "20 Feb 2027"
+          },
+          {
+            "src": "to Rupert",
+            "ttl": "Yeah. Bring Amy and the dogs. Let me know when.",
+            "snip": "Three words about what I actually think: none. He'll read into the silence. He usually does.",
+            "tag": "", "cls": "", "time": "15:14", "date": "20 Feb 2027"
           }
         ]
       }
@@ -12497,6 +12550,38 @@
             "date": "22 Feb 2027"
           }
         ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "Kate",
+            "ttl": "Volunteering at the community centre. They've set up a food collection for people without phones. It's actually really well organised. Wine later? x",
+            "snip": "People without phones. Kate's helping the fifteen percent. The eighty-five percent are tapping at Tesco and barely thinking about it.",
+            "tag": "",
+            "cls": "",
+            "time": "14:30",
+            "date": "21 Feb 2027"
+          },
+          {
+            "src": "Vince",
+            "ttl": "Army blokes outside Tesco. Proper friendly though. One of them helped mum with her bags. Police everywhere too but keeping back. Feels safe tbh",
+            "snip": "Feels safe. That's the sentence. Not 'feels scary' or 'feels wrong.' Feels safe. The soldiers made Vince feel safe. That's the Soma working at street level.",
+            "tag": "",
+            "cls": "",
+            "time": "15:00",
+            "date": "21 Feb 2027"
+          },
+          {
+            "src": "Dev",
+            "ttl": "Did you catch the PM's language? Not restoration. Replacement. And the emergency payment module — that was already compiled. Check the ARC version number.",
+            "snip": "Dev breaks two days of silence. Seven words and a version number. He doesn't need to explain. Simon knows.",
+            "tag": "",
+            "cls": "",
+            "time": "15:30",
+            "date": "21 Feb 2027"
+          }
+        ]
       }
     ],
     "28b": [],
@@ -12528,6 +12613,20 @@
             "tag": "SITUATION UPDATE",
             "cls": "a",
             "time": "19:00",
+            "date": "20 Feb 2027"
+          }
+        ]
+      },
+      {
+        "sec": "Text Message",
+        "cards": [
+          {
+            "src": "to Dev",
+            "ttl": "Suddenly, all at once, with a teal and gold colour scheme",
+            "snip": "Community recovery. ARC. Biblical.",
+            "tag": "",
+            "cls": "",
+            "time": "19:14",
             "date": "20 Feb 2027"
           }
         ]
@@ -13108,7 +13207,7 @@
             "source": "Digital Rights UK — Analysis",
             "title": "Optional Until It Isn't",
             "date": "2 December 2026",
-            "body": "<p>Every voluntary digital programme introduced by a UK government in the last decade has become effectively mandatory within five years. This is not a conspiracy theory. It is a pattern with publicly available evidence, and it is accelerating.</p><p>In 2014, the Cabinet Office launched GOV.UK Verify as a voluntary identity verification service. Users could choose it or continue using existing methods to access government services. By 2018, DWP and HMRC had quietly removed the alternative pathways for an expanding list of services. By 2020, Verify was shut down entirely — not because it failed, but because its successor, One Login, had absorbed its function and its user base. One Login currently has 4.2 million accounts. It has never been described as mandatory. It does not need to be. If you want to access your tax account, your driving licence, your student loan, or your state pension forecast, you use One Login. The alternative is a phone call that averages forty-seven minutes.</p><p>Smart meters follow the same trajectory. The 2012 rollout was explicitly voluntary — the government emphasised that no household would be forced to accept one. By 2024, thirty million were installed. Energy suppliers now design their tariffs, billing platforms, and customer service around the assumption that you have one. The cheapest rates require half-hourly usage data. The most responsive support channels require app access, which requires a meter that talks to the network. You are not required to have a smart meter. You are simply penalised, gradually and diffusely, for not having one.</p><p>Contactless payments crossed the same threshold invisibly. When the limit was raised to £100, then £150, each increase was reported as consumer convenience. What went unreported was the corresponding contraction of cash infrastructure — one in seven ATMs has closed since 2021, bank branches continue to disappear, and the quiet removal of \"cash accepted\" signage has accelerated. The choice is technically preserved. The infrastructure that supports the choice is being disassembled.</p><p>Three current programmes are following this curve at compressed timescales. The Digital Identity and Attributes Trust Framework, now in its third version, establishes the technical standards for digital identity across the private sector. One Login continues to expand its service footprint across government. And biometric boarding — facial recognition at airport security gates — went from a pilot at fourteen airports last year to a mandatory requirement on all domestic and EU routes, with no parliamentary debate and almost no press coverage. Each is voluntary, or was. Each is interoperable with the others by design. That interoperability is the mechanism that makes individual choice irrelevant.</p><p>And then there are the programmes that skip the voluntary phase entirely. In June, the Financial Conduct Authority mandated a unified device-level authentication layer — ARC — across every regulated payment terminal, banking application, and financial services platform in the country, with a compliance deadline of September. No consultation with the public. No consumer opt-in. No opt-out. No coverage outside the financial trade press. Most people reading this will not have heard of it. It is already installed.</p><p>A resident who opts out of digital identity verification in 2026 can still function — with friction. They can queue at a post office, write a cheque, present physical documents. If the current trajectory holds, a resident who attempts the same in 2028 will find that the friction has quietly become a wall. Not because a law was passed, but because the systems that accepted the alternatives will have been decommissioned, defunded, or redesigned around the assumption of digital participation.</p><p>This is not about whether digital identity is good or bad. Framing it that way is how the pattern survives scrutiny. The question is whether a service that cannot practically be refused should still be called voluntary — and whether a country in which every transaction, journey, and government interaction is authenticated through a single interoperable framework has made a democratic choice, or simply arrived at an outcome that was never voted on.</p>",
+            "body": "<p>Every voluntary digital programme introduced by a UK government in the last decade has become effectively mandatory within five years. This is not a conspiracy theory. It is a pattern with publicly available evidence, and it is accelerating.</p><p>In 2014, the Cabinet Office launched GOV.UK Verify as a voluntary identity verification service. Users could choose it or continue using existing methods to access government services. By 2018, DWP and HMRC had quietly removed the alternative pathways for an expanding list of services. By 2020, Verify was shut down entirely — not because it failed, but because its successor, One Login, had absorbed its function and its user base. One Login currently has 4.2 million accounts. It has never been described as mandatory. It does not need to be. If you want to access your tax account, your driving licence, your student loan, or your state pension forecast, you use One Login. The alternative is a phone call that averages forty-seven minutes.</p><p>Smart meters follow the same trajectory. The 2012 rollout was explicitly voluntary — the government emphasised that no household would be forced to accept one. By 2024, thirty million were installed. Energy suppliers now design their tariffs, billing platforms, and customer service around the assumption that you have one. The cheapest rates require half-hourly usage data. The most responsive support channels require app access, which requires a meter that talks to the network. You are not required to have a smart meter. You are simply penalised, gradually and diffusely, for not having one.</p><p>Contactless payments crossed the same threshold invisibly. When the limit was raised to £100, then £150, each increase was reported as consumer convenience. What went unreported was the corresponding contraction of cash infrastructure — one in seven ATMs has closed since 2021, bank branches continue to disappear, and the quiet removal of \"cash accepted\" signage has accelerated. The choice is technically preserved. The infrastructure that supports the choice is being disassembled.</p><p>Three current programmes are following this curve at compressed timescales. The Digital Identity and Attributes Trust Framework, now in its third version, establishes the technical standards for digital identity across the private sector. One Login continues to expand its service footprint across government. And biometric boarding — facial recognition at airport security gates — went from a pilot at fourteen airports last year to a mandatory requirement on all domestic and EU routes, with no parliamentary debate and almost no press coverage. Each is voluntary, or was. Each is interoperable with the others by design. That interoperability is the mechanism that makes individual choice irrelevant.</p><p>And then there are the programmes that skip the voluntary phase entirely. In June, the Financial Conduct Authority mandated a unified device-level authentication layer — ARC — across every regulated payment terminal, banking application, and financial services platform in the country, with a compliance deadline of 6 December. No consultation with the public. No consumer opt-in. No opt-out. No coverage outside the financial trade press. Most people reading this will not have heard of it. It is already installed.</p><p>A resident who opts out of digital identity verification in 2026 can still function — with friction. They can queue at a post office, write a cheque, present physical documents. If the current trajectory holds, a resident who attempts the same in 2028 will find that the friction has quietly become a wall. Not because a law was passed, but because the systems that accepted the alternatives will have been decommissioned, defunded, or redesigned around the assumption of digital participation.</p><p>This is not about whether digital identity is good or bad. Framing it that way is how the pattern survives scrutiny. The question is whether a service that cannot practically be refused should still be called voluntary — and whether a country in which every transaction, journey, and government interaction is authenticated through a single interoperable framework has made a democratic choice, or simply arrived at an outcome that was never voted on.</p>",
             "footer": "Digital Rights UK — Analysis"
           }
         },

@@ -13951,6 +13951,66 @@
           "turn": 18
         }
       ]
+    },
+    {
+      "id": "simons-articles",
+      "label": "Simon's Articles",
+      "items": [
+        {
+          "text": "Cleaning the River with Bad",
+          "src": "simon",
+          "turn": 27,
+          "url": "Cleaning_River_Bad.html"
+        },
+        {
+          "text": "Engineering Greenness",
+          "src": "simon",
+          "turn": 27,
+          "url": "Engineering_Greenness.html"
+        },
+        {
+          "text": "Working As Designed",
+          "src": "simon",
+          "turn": 27,
+          "url": "Working_As_Designed.html"
+        },
+        {
+          "text": "Oysters Aren’t Food",
+          "src": "simon",
+          "turn": 27,
+          "url": "Oysters_Aren't_Food.html"
+        },
+        {
+          "text": "Ponies Not Biodiverse",
+          "src": "simon",
+          "turn": 27,
+          "url": "Ponies_Not_Biodiverse.html"
+        },
+        {
+          "text": "The Interoperable State",
+          "src": "simon",
+          "turn": 27,
+          "url": "The_Interoperable_State.html"
+        },
+        {
+          "text": "The Null Hypothesis",
+          "src": "simon",
+          "turn": 27,
+          "url": "The_Null_Hypothesis.html"
+        },
+        {
+          "text": "The Surveillance Architecture",
+          "src": "simon",
+          "turn": 27,
+          "url": "The_Surveillance_Architecture.html"
+        },
+        {
+          "text": "The Science of Surveillance",
+          "src": "simon",
+          "turn": 27,
+          "url": "The_Science_of_Surveillance.html"
+        }
+      ]
     }
   ],
   "songs": [

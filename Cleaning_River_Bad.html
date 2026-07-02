@@ -1,320 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Why Cleaning a River Is Illegal (But Filling It With Sewage Isn't)</title>
+<meta property="og:title" content="Why Cleaning a River Is Illegal">
+<meta property="og:description" content="Inside the system where a dirty river is worth more than a clean one &mdash; Green by Numbers">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;600&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --linen: #f5f0e8;
-    --ink: #2c2a26;
-    --warm-grey: #7a756b;
-    --teal: #2a7a6e;
-    --soft-red: #a8433a;
-    --rule: #d4cfc5;
-    --highlight: #e8e2d4;
-  }
-
-  @media print {
-    body { font-size: 11pt; }
-    .page { box-shadow: none; max-width: 100%; padding: 1cm; }
-    @page { margin: 1.5cm; }
-  }
-
-  body {
-    font-family: 'Crimson Pro', Georgia, serif;
-    background: var(--linen);
-    color: var(--ink);
-    line-height: 1.55;
-    padding: 1.5rem;
-    font-size: 17px;
-  }
-
-  .page {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 2.5rem 2.2rem;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  }
-
-  h1 {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.32rem;
-    line-height: 1.3;
-    margin-bottom: 0.3rem;
-    color: var(--ink);
-  }
-
-  .subtitle {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-size: 0.88rem;
-    color: var(--warm-grey);
-    margin-bottom: 1.8rem;
-    letter-spacing: 0.01em;
-  }
-
-  .lead {
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--warm-grey);
-    border-left: 3px solid var(--teal);
-    padding-left: 1rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.92rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--teal);
-    margin-top: 1.8rem;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  p { margin-bottom: 0.9rem; }
-
-  .term {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--soft-red);
-    display: inline;
-  }
-
-  .term-def {
-    margin-bottom: 1rem;
-  }
-
-  .vs-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin: 1.2rem 0;
-  }
-
-  .vs-panel {
-    background: var(--highlight);
-    border-radius: 4px;
-    padding: 1rem 1.1rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .vs-panel.bad {
-    border-left: 3px solid var(--soft-red);
-  }
-
-  .vs-panel.good {
-    border-left: 3px solid var(--teal);
-  }
-
-  .vs-label {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
-    display: block;
-  }
-
-  .vs-panel.bad .vs-label { color: var(--soft-red); }
-  .vs-panel.good .vs-label { color: var(--teal); }
-
-  .diagram {
-    background: var(--highlight);
-    border-radius: 4px;
-    padding: 1.2rem 1.4rem;
-    margin: 1.2rem 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-
-  .diagram .arrow {
-    color: var(--teal);
-    font-weight: 600;
-    padding: 0 0.2rem;
-  }
-
-  .diagram .step {
-    display: block;
-    padding: 0.15rem 0;
-  }
-
-  .key-line {
-    font-style: italic;
-    color: var(--soft-red);
-    margin: 1rem 0;
-    padding: 0.6rem 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .explainer {
-    background: #f9f7f2;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 1rem 1.2rem;
-    margin: -0.2rem 0 1rem 0;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: var(--warm-grey);
-  }
-
-  .explainer .explainer-label {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--teal);
-    display: block;
-    margin-bottom: 0.35rem;
-  }
-
-  .pullquote {
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--ink);
-    margin: 1.2rem 0;
-    padding: 0.8rem 1.2rem;
-    background: var(--highlight);
-    border-radius: 4px;
-    text-align: center;
-    line-height: 1.45;
-  }
-
-  .bottom-note {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.85rem;
-    color: var(--warm-grey);
-    line-height: 1.45;
-  }
-
-  strong { font-weight: 600; }
-
-  @media (max-width: 500px) {
-    body { padding: 0.8rem; font-size: 16px; }
-    .page { padding: 1.5rem 1.2rem; }
-    h1 { font-size: 1.25rem; }
-    .vs-box { grid-template-columns: 1fr; }
-  }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2ece4;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes gbnCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gbn-gauge{display:none!important}}
+@media(max-width:720px){.gbn-hero-title{font-size:44px!important}.gbn-h-title{font-size:34px!important}.gbn-wrap{padding-left:24px!important;padding-right:24px!important}}
 </style>
 </head>
 <body>
-<div class="page">
 
-<h1>Why Cleaning a River Is Illegal (But Filling It With Sewage Isn't)</h1>
-<p class="subtitle">Inside the system where a dirty river is worth more than a clean one</p>
+<div id="gbn-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#7a6a58;z-index:60;transition:width .12s linear"></div>
+<nav id="gbn-gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
 
-<p class="lead">In March 2026, a barrister named Paul Powlesland and a group of volunteers pulled over 200 bags of rubbish out of the River Roding in East London. Syringes. Weapons. Domestic appliances. They hired a digger for £1,000 of their own money and cleared 250 metres of choked waterway. Within days — before Powlesland had even posted about the work publicly — the Environment Agency was investigating him. The offence carries up to two years in prison. A few hundred metres upstream, a Thames Water outfall pumps 750 million litres of raw sewage into the same river. That is not under investigation.</p>
+<main style="position:relative">
 
-<h2>What Happened</h2>
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0c0a08">
+    <div style="position:absolute;inset:0;background:#0c0a08 url('gbn-river-cover.jpg') center/cover no-repeat;filter:grayscale(1)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(12,10,8,.78)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(12,10,8,.88))"></div>
 
-<p>Powlesland lives on a houseboat on the Roding. He runs the River Roding Trust, a grassroots charity. The volunteers removed rubbish, cleared invasive Himalayan Balsam, and let light back to the water. The results were immediate: irises and reed beds returned, fish appeared for the first time, dragonflies and herons came back. "The whole ecosystem is coming back to life," he said.</p>
+    <div style="position:absolute;top:50%;right:7%;transform:translateY(-50%);width:120px;display:flex;flex-direction:column;gap:8px;opacity:.9;pointer-events:none">
+      <div style="height:6px;background:#7a6a58;opacity:.08"></div><div style="height:6px;background:#7a6a58;opacity:.13"></div><div style="height:6px;background:#7a6a58;opacity:.19"></div><div style="height:6px;background:#7a6a58;opacity:.26"></div><div style="height:6px;background:#7a6a58;opacity:.34"></div><div style="height:6px;background:#7a6a58;opacity:.43"></div><div style="height:6px;background:#7a6a58;opacity:.53"></div><div style="height:6px;background:#7a6a58;opacity:.64"></div><div style="height:6px;background:#7a6a58;opacity:.76"></div><div style="height:6px;background:#7a6a58;opacity:.88"></div><div style="height:6px;background:#7a6a58;opacity:1"></div>
+    </div>
 
-<p>He suspects the Environment Agency had someone monitoring his private Facebook group. "I hadn't even posted about the works publicly. So it seems like there's EA spies in our Facebook group, spying on local people restoring a river. I don't see how else they would have known."</p>
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#9a8a78;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:gbnCue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
 
-<p>The EA's position is that he operated without a permit. You need a licence to alter a watercourse — even to clean one. The framework exists to prevent unauthorised interference that might damage riverbanks or habitats. Reasonable enough in principle. But here's the thing.</p>
+    <div class="gbn-wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#9a8a78;text-transform:uppercase">Green by Numbers</div>
+      <h1 class="gbn-hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(44px,6.2vw,80px);line-height:1.05;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:16ch">Why Cleaning a River Is Illegal</h1>
+      <div style="width:64px;height:2px;background:#7a6a58;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a4;margin:0;max-width:42ch">But filling it with sewage isn&rsquo;t.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#6a6458;text-transform:uppercase;white-space:nowrap">
+        <span>Nature, credit markets and the people caught between them</span>
+        <span style="width:5px;height:5px;background:#7a6a58;transform:rotate(45deg)"></span>
+        <span>June 2026</span>
+      </div>
+    </div>
+  </section>
 
-<h2>The Bit Where It Stops Making Sense</h2>
+  <!-- ============ 01 · OVERVIEW ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 Overview" style="position:relative;z-index:2;padding:130px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">01<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Overview</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">200 bags of rubbish. Under criminal investigation.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In March 2026, a barrister named Paul Powlesland and a group of volunteers pulled over 200 bags of rubbish out of the River Roding in East London. Syringes. Weapons. Domestic appliances. They hired a digger for &pound;1,000 of their own money and cleared 250 metres of choked waterway. Within days &mdash; before Powlesland had even posted about the work publicly &mdash; the Environment Agency was investigating him. The offence carries up to two years in prison. A few hundred metres upstream, a Thames Water outfall pumps 750 million litres of raw sewage into the same river. That is not under investigation.</p>
+    <div style="border-top:1px solid rgba(122,106,88,.22);padding-top:28px;margin-top:36px">
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 14px;max-width:680px">This piece is part of a series:</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Working_As_Designed.html" style="color:#5a5044;text-decoration:underline;text-underline-offset:3px">Everything Is Working Exactly As Designed</a> &mdash; a bat tunnel, a fish disco, and a financial instrument.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Ponies_Not_Biodiverse.html" style="color:#5a5044;text-decoration:underline;text-underline-offset:3px">When Ponies Aren&rsquo;t Biodiversity</a> &mdash; how a spreadsheet is culling Dartmoor&rsquo;s endangered ponies.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Oysters_Aren't_Food.html" style="color:#5a5044;text-decoration:underline;text-underline-offset:3px">When Oysters Aren&rsquo;t Food</a> &mdash; how does closing an oyster farm bring back oysters?</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Engineering_Greenness.html" style="color:#5a5044;text-decoration:underline;text-underline-offset:3px">Engineering Greenness</a> &mdash; the demand side.</p>
+    </div>
+  </div></section>
 
-<div class="vs-box">
-  <div class="vs-panel bad">
-    <span class="vs-label">Prosecuted</span>
-    Paul Powlesland.<br>
-    Removed 200+ bags of rubbish.<br>
-    Spent £1,000 of his own money.<br>
-    River came back to life.<br>
-    Under criminal investigation.
-  </div>
-  <div class="vs-panel good">
-    <span class="vs-label">Not Prosecuted</span>
-    Thames Water.<br>
-    750 million litres of raw sewage.<br>
-    Outfall a few hundred metres away.<br>
-    "Operates within limits set by the Environment Agency."<br>
-    Not under investigation.
-  </div>
-</div>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>Thames Water's response to journalists was a masterpiece of bureaucratic calm: the outfalls "operate within limits set by the Environment Agency and are a legally permitted process of the wastewater system." The sewage, they explained, is "heavily diluted by rainwater." The system was "originally designed this way." They are, in other words, legally filling the river with sewage. Powlesland is illegally cleaning it.</p>
+  <!-- ============ 02 · WHAT HAPPENED ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 What Happened" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">02<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What Happened</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">EA spies in our Facebook group.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Powlesland lives on a houseboat on the Roding. He runs the River Roding Trust, a grassroots charity. The volunteers removed rubbish, cleared invasive Himalayan Balsam, and let light back to the water. The results were immediate: irises and reed beds returned, fish appeared for the first time, dragonflies and herons came back. &ldquo;The whole ecosystem is coming back to life,&rdquo; he said.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">He suspects the Environment Agency had someone monitoring his private Facebook group. &ldquo;I hadn&rsquo;t even posted about the works publicly. So it seems like there&rsquo;s EA spies in our Facebook group, spying on local people restoring a river. I don&rsquo;t see how else they would have known.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The EA&rsquo;s position is that he operated without a permit. You need a licence to alter a watercourse &mdash; even to clean one. The framework exists to prevent unauthorised interference that might damage riverbanks or habitats. Reasonable enough in principle. But here&rsquo;s the thing.</p>
+  </div></section>
 
-<p>The River Roding Trust — Powlesland's charity — is listed on the Environment Agency's own Catchment Data Explorer as a <strong>Catchment Partnership contributor</strong>. The same website celebrates "rubbish clearance" and "clearing of invasive Himalayan Balsam" along the River Roding as partnership success highlights. The EA's partnership arm celebrates the work. The EA's enforcement arm prosecutes it.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p class="pullquote">"This river will be restored — they now have a clear choice."<br>— Paul Powlesland</p>
+  <!-- ============ 03 · STOPS MAKING SENSE ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 Stops Making Sense" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">03<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit Where It Stops Making Sense</h2>
+    </div>
 
-<h2>Why a Dirty River Is Worth More Than a Clean One</h2>
+    <div style="overflow-x:auto;margin:0 0 36px"><table style="width:100%;max-width:680px;border-collapse:collapse;font-family:'Spectral',serif"><thead><tr>
+      <th style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#8a4a3a;padding:0 16px 11px 0;border-bottom:1.5px solid #7a6a58;width:50%;border-right:1px solid rgba(122,106,88,.15)">Prosecuted</th>
+      <th style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#7a6a58;padding:0 0 11px 16px;border-bottom:1.5px solid #7a6a58;width:50%">Not prosecuted</th>
+    </tr></thead><tbody>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top;border-right:1px solid rgba(122,106,88,.12)">Paul Powlesland</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top">Thames Water</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top;border-right:1px solid rgba(122,106,88,.12)">Removed 200+ bags of rubbish</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top">750 million litres of raw sewage</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top;border-right:1px solid rgba(122,106,88,.12)">Spent &pound;1,000 of his own money</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top">&ldquo;Operates within limits set by the EA&rdquo;</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top;border-right:1px solid rgba(122,106,88,.12)">River came back to life</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top">Sewage &ldquo;heavily diluted by rainwater&rdquo;</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#8a4a3a;font-weight:500;padding:13px 16px 13px 0;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top;border-right:1px solid rgba(122,106,88,.12)">Under criminal investigation</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#7a6a58;font-weight:500;padding:13px 0 13px 16px;border-bottom:1px solid rgba(122,106,88,.12);vertical-align:top">Not under investigation</td></tr>
+    </tbody></table></div>
 
-<p>This is where it gets structural. To understand why the system responds faster to a man with a bin bag than to a company with a sewage pipe, you need to understand three things that didn't exist ten years ago.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Thames Water&rsquo;s response to journalists was a masterpiece of bureaucratic calm: the outfalls &ldquo;operate within limits set by the Environment Agency and are a legally permitted process of the wastewater system.&rdquo; The sewage, they explained, is &ldquo;heavily diluted by rainwater.&rdquo; The system was &ldquo;originally designed this way.&rdquo; They are, in other words, legally filling the river with sewage. Powlesland is illegally cleaning it.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The River Roding Trust &mdash; Powlesland&rsquo;s charity &mdash; is listed on the Environment Agency&rsquo;s own Catchment Data Explorer as a <strong style="color:#1c1a16">Catchment Partnership contributor</strong>. The same website celebrates &ldquo;rubbish clearance&rdquo; and &ldquo;clearing of invasive Himalayan Balsam&rdquo; along the River Roding as partnership success highlights. The EA&rsquo;s partnership arm celebrates the work. The EA&rsquo;s enforcement arm prosecutes it.</p>
 
-<p class="term-def"><span class="term">Biodiversity Net Gain (BNG)</span> — Since February 2024, every new development in England must leave habitats 10% better than before. If a developer can't deliver this on-site, they buy "Biodiversity Units" from landowners elsewhere. Average price: around £30,000 per unit. Rivers and waterways generate units too — the worse the baseline condition, the more units a future restoration project can generate.</p>
+    <div style="position:relative;margin:0 0 42px;background:#2a2824 url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(32,30,26,.65)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">&ldquo;This river will be restored &mdash; they now have a clear choice.&rdquo;<br><span style="font-size:16px;font-weight:400;color:#9a8a78">&mdash; Paul Powlesland</span></p>
+      </div>
+    </div>
 
-<div class="explainer">
-  <span class="explainer-label">How do you measure 10%?</span>
-  A government spreadsheet scores every habitat by size, type, condition, and location. Multiply them together: that's a Biodiversity Unit. A development site is surveyed before and after — the "after" number must be 10% higher. If it isn't, the developer buys units from someone else's land — a landowner who has restored or created habitat, had the improvement verified, and registered the units for sale. The land is then locked under a conservation covenant for a minimum of 30 years. The metric measures habitat categories, not the animals living in them. A field with ponies and a field without ponies can score identically. The system sees the number, not the horse.
-</div>
+  </div></section>
 
-<p class="term-def"><span class="term">Nutrient Credits</span> — In 27 river catchments across England, new developments must achieve "nutrient neutrality" — they can't add nutrients to already-polluted waterways. Developers achieve this by buying credits from landowners who reduce nutrient run-off. One credit = 1 kg of nitrogen or phosphate offset. Price: £2,000–£5,000 per credit. Natural England launched its own nutrient mitigation scheme in 2023 and administers the market.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<div class="explainer">
-  <span class="explainer-label">Wait — why are nutrients bad?</span>
-  Nutrients — nitrogen and phosphate from sewage and farm run-off — act as fertiliser for algae. Too many, and the algae bloom across the water surface, blocking light to underwater plants. The plants die. Bacteria decompose the dead algae and consume the oxygen. Fish suffocate. The river dies — not from poison, but from an overdose of food. That's eutrophication. So how do new homes cause it? New homes connect to the sewer network. The sewer network discharges into the river — treated, but still nutrient-rich, or often completely untreated when overwhelmed treatment plants overflow raw sewage directly into the river. In 27 catchments the rivers can't absorb any more. Rather than fix the pipes, the system created a market that lets developers pay to offset the damage. A landowner converts nutrient-heavy farmland to wetland, the nutrient reduction is measured, and each kilogram no longer reaching the waterway becomes a credit for sale. The land is bound for a minimum of 20 years. The pipe keeps flowing. The spreadsheet balances.
-</div>
+  <!-- ============ 04 · WHY A DIRTY RIVER IS WORTH MORE ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 Dirty River Worth More" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">04<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Why a Dirty River Is Worth More Than a Clean One</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Three things that didn&rsquo;t exist ten years ago.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">This is where it gets structural. To understand why the system responds faster to a man with a bin bag than to a company with a sewage pipe, you need to understand three things that didn&rsquo;t exist ten years ago.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 12px;max-width:680px"><strong style="color:#8a4a3a">Biodiversity Net Gain (BNG)</strong> &mdash; Since February 2024, every new development in England must leave habitats 10% better than before. If a developer can&rsquo;t deliver this on-site, they buy &ldquo;Biodiversity Units&rdquo; from landowners elsewhere. Average price: around &pound;30,000 per unit. Rivers and waterways generate units too &mdash; the worse the baseline condition, the more units a future restoration project can generate.</p>
 
-<p class="term-def"><span class="term">Stacking</span> — The same piece of land, or the same stretch of river, can generate BNG units AND nutrient credits AND carbon credits simultaneously. Natural England recommends this. It's called "stacking." One restoration project, three revenue streams, all registered, all tradeable.</p>
+    <div style="border-left:2px solid #7a6a58;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(122,106,88,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a6a58;margin:0 0 10px">How do you measure 10%?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">A government spreadsheet scores every habitat by size, type, condition, and location. Multiply them together: that&rsquo;s a Biodiversity Unit. A development site is surveyed before and after &mdash; the &ldquo;after&rdquo; number must be 10% higher. If it isn&rsquo;t, the developer buys units from someone else&rsquo;s land &mdash; a landowner who has restored or created habitat, had the improvement verified, and registered the units for sale. The land is then locked under a conservation covenant for a minimum of 30 years. The metric measures habitat categories, not the animals living in them. A field with ponies and a field without ponies can score identically. The system sees the number, not the horse.</p>
+    </div>
 
-<p>Now here's the rule that locks it together: <strong>additionality</strong>. You cannot get credits for work that's already been done. A clean river can technically enter a credit scheme — but it generates almost nothing, because there's no gap left to sell. All units must result from a measurable gain from an original baseline. The dirtier the baseline, the bigger the gain, the more credits the restoration generates. The system doesn't ban clean rivers. It makes them financially worthless.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 12px;max-width:680px"><strong style="color:#8a4a3a">Nutrient Credits</strong> &mdash; In 27 river catchments across England, new developments must achieve &ldquo;nutrient neutrality&rdquo; &mdash; they can&rsquo;t add nutrients to already-polluted waterways. Developers achieve this by buying credits from landowners who reduce nutrient run-off. One credit = 1 kg of nitrogen or phosphate offset. Price: &pound;2,000&ndash;&pound;5,000 per credit. Natural England launched its own nutrient mitigation scheme in 2023 and administers the market.</p>
 
-<p class="key-line">A volunteer who cleans a river without a permit doesn't just fail to generate credits.<br>He <em>destroys the baseline</em> that makes the credits valuable.</p>
+    <div style="border-left:2px solid #7a6a58;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(122,106,88,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7a6a58;margin:0 0 10px">Wait &mdash; why are nutrients bad?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">Nutrients &mdash; nitrogen and phosphate from sewage and farm run-off &mdash; act as fertiliser for algae. Too many, and the algae bloom across the water surface, blocking light to underwater plants. The plants die. Bacteria decompose the dead algae and consume the oxygen. Fish suffocate. The river dies &mdash; not from poison, but from an overdose of food. That&rsquo;s eutrophication. So how do new homes cause it? New homes connect to the sewer network. The sewer network discharges into the river &mdash; treated, but still nutrient-rich, or often completely untreated when overwhelmed treatment plants overflow raw sewage directly into the river. In 27 catchments the rivers can&rsquo;t absorb any more. Rather than fix the pipes, the system created a market that lets developers pay to offset the damage. A landowner converts nutrient-heavy farmland to wetland, the nutrient reduction is measured, and each kilogram no longer reaching the waterway becomes a credit for sale. The land is bound for a minimum of 20 years. The pipe keeps flowing. The spreadsheet balances.</p>
+    </div>
 
-<p>Powlesland improved 250 metres of the Aldersbrook channel for free. In doing so, he raised the baseline. If that stretch is ever enrolled in a BNG or nutrient credit scheme, the improvement he delivered — the irises, the fish, the herons — is already there. It can't be counted as a gain. It can't be sold. In market terms, he burned value. He made the river better in a way the system can't monetise.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px"><strong style="color:#8a4a3a">Stacking</strong> &mdash; The same piece of land, or the same stretch of river, can generate BNG units AND nutrient credits AND carbon credits simultaneously. Natural England recommends this. It&rsquo;s called &ldquo;stacking.&rdquo; One restoration project, three revenue streams, all registered, all tradeable.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Now here&rsquo;s the rule that locks it together: <strong style="color:#1c1a16">additionality</strong>. You cannot get credits for work that&rsquo;s already been done. A clean river can technically enter a credit scheme &mdash; but it generates almost nothing, because there&rsquo;s no gap left to sell. All units must result from a measurable gain from an original baseline. The dirtier the baseline, the bigger the gain, the more credits the restoration generates. The system doesn&rsquo;t ban clean rivers. It makes them financially worthless.</p>
 
-<h2>The Same Body Runs Both Sides</h2>
+    <div style="position:relative;margin:0 0 42px;background:#2a2824 url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(32,30,26,.65)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">A volunteer who cleans a river without a permit doesn&rsquo;t just fail to generate credits.<br>He <em>destroys the baseline</em> that makes the credits valuable.</p>
+      </div>
+    </div>
 
-<p>The Environment Agency regulates what you can do to a river. It also administers the catchment partnership framework that identifies which rivers need restoration. It also sets the conditions under which river restoration generates tradeable credits. It also monitors compliance with those credits over their 20-to-30-year lifespan.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Powlesland improved 250 metres of the Aldersbrook channel for free. In doing so, he raised the baseline. If that stretch is ever enrolled in a BNG or nutrient credit scheme, the improvement he delivered &mdash; the irises, the fish, the herons &mdash; is already there. It can&rsquo;t be counted as a gain. It can&rsquo;t be sold. In market terms, he burned value. He made the river better in a way the system can&rsquo;t monetise.</p>
+  </div></section>
 
-<p>Natural England — the EA's sister quango under DEFRA — runs the Biodiversity Gain Sites Register and the nutrient mitigation scheme. It recommends stacking. It sets the metric that calculates unit values. It advises on baselines.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>The regulator, the market-maker, and the enforcer are the same family of institutions. They set the conditions that keep rivers dirty ("funding sources need identifying," says the EA's own catchment plan). They administer the market that monetises the eventual cleanup. And they prosecute anyone who does the cleanup outside the system.</p>
+  <!-- ============ 05 · SAME BODY RUNS BOTH SIDES ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 Same Body Both Sides" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">05<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Same Body Runs Both Sides</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The regulator, the market-maker, and the enforcer.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Environment Agency regulates what you can do to a river. It also administers the catchment partnership framework that identifies which rivers need restoration. It also sets the conditions under which river restoration generates tradeable credits. It also monitors compliance with those credits over their 20-to-30-year lifespan.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Natural England &mdash; the EA&rsquo;s sister quango under DEFRA &mdash; runs the Biodiversity Gain Sites Register and the nutrient mitigation scheme. It recommends stacking. It sets the metric that calculates unit values. It advises on baselines.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">The regulator, the market-maker, and the enforcer are the same family of institutions. They set the conditions that keep rivers dirty. They administer the market that monetises the eventual cleanup. And they prosecute anyone who does the cleanup outside the system.</p>
+  </div></section>
 
-<h2>One More Thing</h2>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>The River Roding, in Barking and Ilford, sits inside the boundary of a Special Economic Zone — one of 48 SEZs mapped across England, each with a 45km-diameter buffer. These are zones with tax breaks, relaxed planning rules, and reduced regulation, designed to accelerate development. Every new development inside an SEZ boundary that triggers BNG requirements needs biodiversity units. Every development near a nutrient-sensitive waterway needs nutrient credits.</p>
+  <!-- ============ 06 · ONE MORE THING ============ -->
+  <section id="S6" data-layer="5" data-screen-label="06 One More Thing" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">06<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">One More Thing</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">He&rsquo;s not a threat to the river. He&rsquo;s a threat to the pipeline.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The River Roding, in Barking and Ilford, sits inside the boundary of a Special Economic Zone &mdash; one of 48 SEZs mapped across England, each with a 45km-diameter buffer. These are zones with tax breaks, relaxed planning rules, and reduced regulation, designed to accelerate development. Every new development inside an SEZ boundary that triggers BNG requirements needs biodiversity units. Every development near a nutrient-sensitive waterway needs nutrient credits.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The river that Powlesland cleaned flows through a zone where development is being actively accelerated. That development generates demand for credits. The credits require dirty baselines to be valuable. The baselines require the river to stay dirty until someone restores it inside the system, with permits, with registered credits, with 30-year conservation covenants.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">Powlesland, with his bin bags and his hired digger, is not a threat to the river. He&rsquo;s a threat to the pipeline.</p>
+  </div></section>
 
-<p>The river that Powlesland cleaned flows through a zone where development is being actively accelerated. That development generates demand for credits. The credits require dirty baselines to be valuable. The baselines require the river to stay dirty until someone restores it inside the system, with permits, with registered credits, with 30-year conservation covenants.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(122,106,88,.2) 20%,rgba(122,106,88,.35) 50%,rgba(122,106,88,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>Powlesland, with his bin bags and his hired digger, is not a threat to the river. He's a threat to the pipeline.</p>
+  <!-- ============ 07 · SHOULD BOTHER YOU ============ -->
+  <section id="S7" data-layer="6" data-screen-label="07 Should Bother You" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#7a6a58">07<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#7a6a58;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Should Bother You</h2>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The EA&rsquo;s catchment plan for the Roding, Beam &amp; Ingrebourne sets a target: achieve Good Ecological Potential by 2027. That&rsquo;s next year. The plan lists a dozen priority restoration measures. Most are flagged &ldquo;less certain&rdquo; with the same note: &ldquo;funding sources need identifying.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The funding mechanism exists. It&rsquo;s called the credit market. But the credit market needs permits, baselines, registered schemes, and conservation covenants. It needs the work to happen <em>inside the system</em>. A man who scales a razor-wire fence with a wood saw and a group of volunteers and makes the river come back to life &mdash; for free, without permission, because he lives on it and can see it dying &mdash; is doing the right thing in a way the system cannot recognise, reward, or allow.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">So the system sends a letter. The letter threatens two years in prison. The river, for a few hundred metres at least, has fish in it again. The sewage outfall upstream continues to operate within its legally permitted limits.</p>
 
-<h2>The Bit That Should Bother You</h2>
+    <div style="position:relative;margin:0 0 42px;background:#2a2824 url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(32,30,26,.65)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Everything is working exactly as designed.</p>
+      </div>
+    </div>
 
-<p>The EA's catchment plan for the Roding, Beam &amp; Ingrebourne sets a target: achieve Good Ecological Potential by 2027. That's next year. The plan lists a dozen priority restoration measures. Most are flagged "less certain" with the same note: "funding sources need identifying."</p>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#8a8478;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: The Guardian (17 Jun 2026) &mdash; &ldquo;Campaigner threatened with prosecution by Environment Agency after waterway cleanup&rdquo;; Yahoo News UK (18 Jun 2026) &mdash; &ldquo;Environmental lawyer facing up to 2 years in prison&rdquo;; Channel 4 News / Substack (Jun 2026) &mdash; &ldquo;England&rsquo;s guerrilla litterpickers&rdquo;; Environment Agency Catchment Data Explorer &mdash; Roding, Beam &amp; Ingrebourne Partnership (WEIF5701); Gov.uk &mdash; &ldquo;Combining environmental payments: BNG and nutrient mitigation&rdquo; (Feb 2024); Gaia &mdash; &ldquo;Natural Capital Stacking Explained&rdquo; (Apr 2026); Geomaptric &mdash; SEZ boundary map of England; Environment Act 2021.</em></p>
+  </div></section>
 
-<p>The funding mechanism exists. It's called the credit market. But the credit market needs permits, baselines, registered schemes, and conservation covenants. It needs the work to happen <em>inside the system</em>. A man who scales a razor-wire fence with a wood saw and a group of volunteers and makes the river come back to life — for free, without permission, because he lives on it and can see it dying — is doing the right thing in a way the system cannot recognise, reward, or allow.</p>
+  <footer style="padding:80px 0 60px;background:#f2ece4;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase">Green by Numbers &middot; Why Cleaning a River Is Illegal &middot; June 2026</div>
+  </footer>
 
-<p>So the system sends a letter. The letter threatens two years in prison. The river, for a few hundred metres at least, has fish in it again. The sewage outfall upstream continues to operate within its legally permitted limits.</p>
+</main>
 
-<p>Everything is working exactly as designed.</p>
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('gbn-progress').style.width=((st/sh)*100)+'%';
+});
+(function(){
+  var gauge=document.getElementById('gbn-gauge');
+  var labels=["Overview","What Happened","Stops Making Sense","Dirty River Worth More","Same Body Both Sides","One More Thing","Should Bother You"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#8a8478;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#7a6a58;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#8a8478;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';r.bar.style.background='#7a6a58';
+            r.num.style.color='#5a5044';r.label.style.color='#5a5044';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';r.bar.style.background='#7a6a58';
+            r.num.style.color='#8a8478';r.label.style.color='#8a8478';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
 
-<div class="bottom-note">
-  <strong>Sources:</strong> The Guardian (17 Jun 2026) — "Campaigner threatened with prosecution by Environment Agency after waterway cleanup"; Yahoo News UK (18 Jun 2026) — "Environmental lawyer facing up to 2 years in prison"; Channel 4 News / Substack (Jun 2026) — "England's guerrilla litterpickers"; Environment Agency Catchment Data Explorer — Roding, Beam &amp; Ingrebourne Partnership (WEIF5701); Gov.uk — "Combining environmental payments: BNG and nutrient mitigation" (Feb 2024); Gaia — "Natural Capital Stacking Explained" (Apr 2026); Geomaptric — SEZ boundary map of England; Environment Act 2021.
-</div>
-
-</div>
 </body>
 </html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Genie and the Bottle</title>
+<meta property="og:title" content="The Genie and the Bottle">
+<meta property="og:description" content="Trading Microplastics — Green by Numbers">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080c0a;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes gbnCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gbn-gauge{display:none!important}}
+@media(max-width:720px){.gbn-hero-title{font-size:54px!important}.gbn-h-title{font-size:34px!important}.gbn-wrap{padding-left:24px!important;padding-right:24px!important}}
+</style>
+</head>
+<body>
+
+<div id="gbn-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#5a8a5a;z-index:60;transition:width .12s linear"></div>
+<nav id="gbn-gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#4a5a48;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
+
+<main style="position:relative">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#080c0a">
+    <div style="position:absolute;inset:0;background:#080c0a url('gbn-genie-cover.jpg') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(8,12,10,.58)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(8,12,10,.85))"></div>
+
+    <div style="position:absolute;top:50%;right:7%;transform:translateY(-50%);width:120px;display:flex;flex-direction:column;gap:8px;opacity:.9;pointer-events:none">
+      <div style="height:6px;background:#5a8a5a;opacity:.08"></div><div style="height:6px;background:#5a8a5a;opacity:.13"></div><div style="height:6px;background:#5a8a5a;opacity:.19"></div><div style="height:6px;background:#5a8a5a;opacity:.26"></div><div style="height:6px;background:#5a8a5a;opacity:.34"></div><div style="height:6px;background:#5a8a5a;opacity:.43"></div><div style="height:6px;background:#5a8a5a;opacity:.53"></div><div style="height:6px;background:#5a8a5a;opacity:.64"></div><div style="height:6px;background:#5a8a5a;opacity:.76"></div><div style="height:6px;background:#5a8a5a;opacity:.88"></div><div style="height:6px;background:#5a8a5a;opacity:1"></div>
+    </div>
+
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#7aaa7a;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:gbnCue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
+
+    <div class="gbn-wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#7aaa7a;text-transform:uppercase">Green by Numbers</div>
+      <h1 class="gbn-hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(52px,7.2vw,92px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:14ch">The Genie and the Bottle</h1>
+      <div style="width:64px;height:2px;background:#5a8a5a;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b4a8;margin:0;max-width:42ch">Trading Microplastics.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#4a5a48;text-transform:uppercase;white-space:nowrap">
+        <span>Glass, plastic, and the algorithm between them</span>
+        <span style="width:5px;height:5px;background:#5a8a5a;transform:rotate(45deg)"></span>
+        <span>July 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · THE BOTTLE ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 The Bottle" style="position:relative;z-index:2;padding:130px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">01<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Bottle</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">Inert, circular, infinitely recyclable.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">This is a glass bottle. It comes from Plaw Hatch Farm in East Sussex &mdash; a Demeter-certified biodynamic dairy that produces unpasteurised raw milk. The bottle travels from the farm to my kitchen and back again, indefinitely. It is washed and refilled. It does not degrade. It does not shed. It does not leach chemicals into the milk. It is made from sand, soda ash, and limestone &mdash; melted, shaped, and cooled. When it eventually breaks, the glass is melted down and made into another bottle, with zero loss of quality. This process can repeat forever. Infinitely recyclable is not a marketing phrase. It is a material fact.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The bottle needs no algorithm to prove it is sustainable. No compliance scheme. No tradable certificate. No centralised data submission. No seven-year audit trail. No red-amber-green rating from a government methodology. It just works &mdash; farm, crate, kitchen, farm &mdash; in a closed loop that predates the internal combustion engine.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 0;max-width:660px">The United Kingdom government has decided that this bottle is a problem.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 02 · THE LEVY ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 The Levy" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">02<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Levy</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">The per-unit cost of glass is dramatically higher than plastic.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Since January 2025, the Extended Producer Responsibility scheme for packaging has charged producers a fee for every tonne of household packaging they place on the UK market. The fee is calculated by weight. Glass is heavy. A standard wine bottle now carries an additional 9p. A 330ml beer bottle, about 4p. A spirits bottle, 11p. These costs are passed to producers, then to retailers, then to you.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The base fee for glass is &pound;192 per tonne. The base fee for plastic is &pound;423 per tonne &mdash; which sounds like plastic pays more until you do the arithmetic that matters. Producers don&rsquo;t buy a tonne of packaging. They buy a million bottles. Glass bottles weigh roughly ten times more than their plastic equivalents per unit. So the per-unit cost of glass packaging under EPR is dramatically higher than plastic. A glass bottle of ketchup costs more to comply with than a plastic squeeze bottle. The same ketchup. The same customer. The same bin.</p>
+
+    <div style="border-left:2px solid #5a8a5a;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(90,138,90,.06);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5a8a5a;margin:0 0 10px">The gap</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#8a8a7a;margin:0">Single-use drinks containers made from PET plastic and aluminium are currently exempt from EPR fees altogether. They were supposed to be covered by a separate Deposit Return Scheme &mdash; but that scheme has been delayed until October 2027 at the earliest. Glass beverage containers are excluded from the DRS in England, so they remain fully liable for EPR fees now. This creates a two-year window &mdash; at minimum &mdash; where producers using plastic bottles or aluminium cans for drinks pay nothing, while their competitors using glass pay 4-11p per unit.</p>
+    </div>
+
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 0;max-width:660px">Someone, or a group of someones, looked at these two overlapping policy timelines, noticed the gap, and chose not to close it. That is not incompetence. Incompetence would be not noticing.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 03 · INSIDE THE PACKAGING ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 Inside the Packaging" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">03<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">Inside the Packaging</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">Nothing migrates. Nothing leaches. Nothing sheds.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Glass is chemically inert. Nothing migrates from the container to the contents. Nothing leaches. Nothing sheds. This is not contested by anyone. It is settled material science. Your grandparents knew it, which is why they stored everything in glass.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Plastic is not inert.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">In 2024, a landmark study published in the New England Journal of Medicine examined patients undergoing surgery to remove plaque from their arteries. Researchers found microplastics embedded in the arterial plaque itself. Patients who had microplastics in their plaque showed a significantly higher risk of heart attack, stroke, and death than those who did not.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">In 2025, a study published in Nature Medicine used pyrolysis gas chromatography to analyse human tissue samples from 2016 and 2024. They found microplastics and nanoplastics in human brain, kidney, and liver tissue. Concentrations were higher in the brain than in other organs &mdash; and measurably elevated in tumour tissue compared with healthy brain tissue.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">That same year, a study analysing 155 common beverages &mdash; tea, coffee, soft drinks &mdash; found microplastics in every single sample tested. Hot drinks contained far more than cold. Researchers have measured up to 500 microplastic particles released by a single untwist of a plastic bottle cap.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Microplastics have now been found in human blood, placental tissue, breast milk, and children&rsquo;s tonsils. The exposure pathway through food packaging is direct and documented. Plastic containers subjected to heat or repeated use shed progressively greater amounts. Foods that used to be packaged in glass &mdash; ketchup, peanut butter, baby food, cooking oils &mdash; have migrated to plastic over the last two decades, and the particles have migrated with them.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The health advice from every research institution is now uniform: use glass, ceramic, or stainless steel containers for storing food. Never heat food in plastic.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 0;max-width:660px">So the government has designed a levy that financially penalises the packaging material that every health researcher in the world says you should be using more of, and financially advantages the one they are finding in human brain tissue.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 04 · THE ALGORITHM ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 The Algorithm" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">04<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Algorithm</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">Nobody calls this algorithmic governance of manufacturing.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">At this point the standard critique says: <em>bad policy, inept ministers, unintended consequences.</em> And stops.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">It doesn&rsquo;t stop here.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Before EPR, the UK operated a system called Packaging Recovery Notes. A PRN was a tradable certificate &mdash; one note proved that one tonne of packaging waste had been recovered and recycled. PRNs were bought and sold on an open market, with weekly price publishing, benchmark pricing, and live trading data. Reprocessors could withhold notes from the market until demand peaked, inflating end-of-year prices. The market was volatile, opaque, and profitable for intermediaries.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">PRNs were, in plain language, tradable compliance tokens. Environmental obligation turned into a financial instrument. One tonne of glass recycled, one note issued, one note sold. The mechanism was identical to carbon credits &mdash; a real environmental process converted into an abstract tradable unit, with an intermediary layer extracting value at every exchange.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">EPR replaces that market with something quieter but more total. The tradable tokens are gone. In their place: a centrally calculated fee, determined by an algorithm called the Recyclability Assessment Methodology. The RAM assigns every piece of packaging a red, amber, or green rating. The rating determines your fee. From the second year of the scheme, the additional funds raised by higher fees on red-rated packaging form a redistribution pot, used to lower fees for green-rated packaging. Red pays. Green benefits. The system administers the redistribution automatically.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Nobody calls this algorithmic governance of manufacturing. They call it &ldquo;fee modulation.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 30px;max-width:660px">It is worth saying that sentence again. An algorithm designed by the Department for Environment, Food and Rural Affairs now classifies every piece of packaging in the United Kingdom by recyclability, assigns it a colour code, and uses that code to determine whether the product it contains is economically viable to produce. The algorithm decides what gets made. Not the market. Not the consumer. Not the manufacturer. The algorithm.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 0;max-width:680px">The Plaw Hatch milk bottle doesn&rsquo;t need an algorithm. The plastic pouch needs an entire compliance industry to qualify as sustainable.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 05 · THE DATA ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 The Data" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">05<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Data</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">The data will outlast any fee reform.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">But the fees are only the visible mechanism. Underneath them is something more durable: the data.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Under EPR, every producer above threshold must collect and report detailed packaging data to PackUK, a body within Defra. The data includes material type, weight, packaging class, supply chain role, and recyclability rating. From 2026, large producers must also report nation-of-sale data &mdash; where in the UK their packaging is sold, broken down by nation. All supporting evidence must be retained for at least seven years. Large producers submit every six months. The data underpins the fee calculation, but the data will outlast any fee reform.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 30px;max-width:660px">What this creates &mdash; and what nobody in the EPR debate is discussing &mdash; is a comprehensive, real-time, government-held map of every physical product supply chain in the United Kingdom. What is being manufactured. In what quantities. Using what materials. Shipped where. Sold to whom. Retained for seven years with full audit trails.</p>
+
+    <div style="border-left:2px solid #5a8a5a;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(90,138,90,.06);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5a8a5a;margin:0 0 10px">Cost</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#8a8a7a;margin:0">The total cost of the system has risen from &pound;200-300 million per year under the old PRN regime to an estimated &pound;1.7 billion per year under EPR. That is not a fee increase. That is the capitalisation of a new governance layer &mdash; a layer that now sits between every producer in the country and the right to put a product on a shelf.</p>
+    </div>
+
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 0;max-width:680px">And the compliance industry that services it &mdash; the firms that interpret the algorithm, manage the data, calculate the obligations, submit the returns &mdash; is extracting rent from the gap between the system&rsquo;s complexity and the producer&rsquo;s capacity to understand it. They are the priesthood of the algorithm. They don&rsquo;t make packaging. They don&rsquo;t recycle packaging. They make the system legible to the people who do, and they charge for the service.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 06 · THE ARCHITECTURE ============ -->
+  <section id="S6" data-layer="5" data-screen-label="06 The Architecture" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">06<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Architecture</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">The environmental problem is real. The governance infrastructure is permanent.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Stack this alongside what is happening in adjacent sectors and the architecture becomes unmistakable.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">UK farming policy now requires all farm businesses to maintain a single digital account integrating subsidy claims, environmental compliance, land management records, and market data reporting. The Biodiversity Net Gain scheme &mdash; mandatory in England since February 2024 &mdash; locks land under charges at the Land Registry for minimum thirty-year terms, with satellite-verified conservation outcomes generating tradable biodiversity credits averaging &pound;30,000 per unit. The Natural Capital Registry prices ecosystem services &mdash; pollination, flood protection, carbon sequestration &mdash; as tradable financial instruments.</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#0e1410 url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(8,12,10,.7)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Land is being tokenised through BNG.<br>Supply chains are being mapped through EPR.<br>Farming is being digitised through single accounts.</p>
+      </div>
+    </div>
+
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 0;max-width:680px">In each case, the mechanism is the same: a genuine environmental concern generates a governance response that requires centralised data collection, algorithmic classification, and tradable compliance instruments. The environmental problem is real. The governance infrastructure it justifies is permanent. And in each case, the instinctive, verifiable, low-tech green solution &mdash; the traditional farm, the local supply chain, the glass bottle &mdash; is the one that becomes harder to sustain. Not because it fails environmentally, but because it doesn&rsquo;t generate the data the system needs.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,138,90,.25) 20%,rgba(90,138,90,.45) 50%,rgba(90,138,90,.25) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 07 · THE GENIE ============ -->
+  <section id="S7" data-layer="6" data-screen-label="07 The Genie" style="position:relative;z-index:2;padding:120px 0 120px;background:#080c0a"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a8a5a">07<span style="color:#4a5a48"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a8a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Genie</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5a48;margin:0 0 36px;max-width:52ch">Once it&rsquo;s out, it doesn&rsquo;t go back in.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">I keep coming back to the bottle on my kitchen counter. It&rsquo;ll soon be a relic. A collector&rsquo;s item. The milk within it raw and unpasteurised. Buying it is seen as an act of extremism. Dangerous. Drinking it completely banned in Scotland.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Plaw Hatch Farm could not exist in Scotland. Fortunately for me it&rsquo;s in Sussex. The farm has been doing things in a sustainable manner long before sustainability had a brand. Biodynamic agriculture. Raw milk. Glass bottles in a closed-loop return system. No algorithm required. No data submission. No compliance scheme. No tradable certificate proving that the bottle was, in fact, a bottle.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The EPR scheme has decided that this bottle &mdash; inert, circular, infinitely recyclable, shedding nothing into the milk, nothing into the bloodstream, nothing into the brain tissue of the person drinking from it &mdash; is less sustainable than a plastic alternative that requires an entire bureaucratic infrastructure to manage its lifecycle, because that infrastructure generates the data, the tokens, and the algorithmic oversight that the system requires.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 30px;max-width:660px">Greenness is being redefined so that only system-compatible outcomes qualify.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 0;max-width:680px">The bottle was always the answer. The genie they&rsquo;re letting out is the system that replaces it &mdash; and once it&rsquo;s out, it doesn&rsquo;t go back in. Not because it can&rsquo;t. Because too many people are now being paid to keep it out.</p>
+  </div></section>
+
+  <footer style="padding:80px 0 60px;background:#080c0a;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#4a5a48;text-transform:uppercase">Green by Numbers &middot; The Genie and the Bottle &middot; July 2026</div>
+  </footer>
+
+</main>
+
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('gbn-progress').style.width=((st/sh)*100)+'%';
+});
+(function(){
+  var gauge=document.getElementById('gbn-gauge');
+  var labels=["The Bottle","The Levy","Inside the Packaging","The Algorithm","The Data","The Architecture","The Genie"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#4a5a48;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#5a8a5a;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#4a5a48;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';r.bar.style.background='#5a8a5a';
+            r.num.style.color='#7aaa7a';r.label.style.color='#7aaa7a';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';r.bar.style.background='#5a8a5a';
+            r.num.style.color='#4a5a48';r.label.style.color='#4a5a48';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+
+</body>
+</html>

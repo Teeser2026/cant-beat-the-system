@@ -470,18 +470,18 @@ let LON_SHIFT=0.9, LAT_SHIFT=0;
   const UK_BOUNDS = { lonMin: -11.0, latMin: 47.0, lonMax: 4.0, latMax: 60.0 };
 
   const dayUrls = [
-    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/2_no_clouds_8k.jpg',
-    'https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg',
-    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/2_no_clouds_4k.jpg',
-    'https://unpkg.com/three-globe@2.31.1/example/img/earth-blue-marble.jpg',
-    'https://unpkg.com/three-globe@2.31.1/example/img/earth-dark.jpg'
+    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/2_no_clouds_8k.webp',
+    'https://www.solarsystemscope.com/textures/download/8k_earth_daymap.webp',
+    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/2_no_clouds_4k.webp',
+    'https://unpkg.com/three-globe@2.31.1/example/img/earth-blue-marble.webp',
+    'https://unpkg.com/three-globe@2.31.1/example/img/earth-dark.webp'
   ];
-  const nightUrls = [ 'https://unpkg.com/three-globe@2.31.1/example/img/earth-night.jpg' ];
+  const nightUrls = [ 'https://unpkg.com/three-globe@2.31.1/example/img/earth-night.webp' ];
   const cloudUrls = [
-    'https://www.solarsystemscope.com/textures/download/8k_earth_clouds.jpg',
-    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/fair_clouds_8k.jpg',
-    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/fair_clouds_4k.png',
-    'https://unpkg.com/three-globe@2.31.1/example/img/earth-clouds.png'
+    'https://www.solarsystemscope.com/textures/download/8k_earth_clouds.webp',
+    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/fair_clouds_8k.webp',
+    'https://cdn.jsdelivr.net/gh/turban/webgl-earth@master/images/fair_clouds_4k.webp',
+    'https://unpkg.com/three-globe@2.31.1/example/img/earth-clouds.webp'
   ];
   async function firstTex(urls) {
     for (const u of urls) { const t = await loadTex(u); if (t) return t; }

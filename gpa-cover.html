@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Power Architecture — Service and Repair Manual</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Oswald:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1A1A18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  .cover {
+    width: 500px;
+    aspect-ratio: 210 / 297;
+    background: #15355E;
+    position: relative;
+    font-family: 'IBM Plex Sans', sans-serif;
+    box-shadow: 4px 6px 24px rgba(0,0,0,0.6);
+    border: 6px solid #15355E;
+    outline: 2px solid #0D2240;
+    display: flex;
+    flex-direction: column;
+  }
+  .cover-inner {
+    border: 1.5px solid rgba(255,255,255,0.2);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .text-block {
+    padding: 22px 24px 12px;
+    position: relative;
+  }
+  .they-badge {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 90px;
+    height: 90px;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .they-badge img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .model-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #FFFFFF;
+    line-height: 1.0;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    max-width: 350px;
+  }
+  .specs-line {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 12.5px;
+    color: #FBF200;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .specs-detail {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    margin-bottom: 6px;
+    max-width: 340px;
+  }
+  .specs-caveat {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    max-width: 340px;
+  }
+
+  /* Service and Repair Manual — full width band with rules */
+  .service-band {
+    border-top: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    padding: 10px 24px;
+    margin-top: 4px;
+  }
+  .service-title {
+    font-family: 'Rockwell', 'Rockwell Nova', 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FBF200;
+  }
+  .service-title .they-light {
+    font-weight: 300;
+  }
+  .service-sub {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+  }
+
+  /* Image area with padding */
+  .image-area {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 16px 0;
+  }
+  .image-area img {
+    width: 100%;
+    display: block;
+    border-radius: 1px;
+  }
+
+  .bottom-strip {
+    background: #15355E;
+    padding: 10px 24px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tagline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    color: #FBF200;
+    font-style: italic;
+    max-width: 360px;
+    line-height: 1.6;
+  }
+  .edition-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .edition-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1;
+  }
+  .edition-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 6px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="text-block">
+        <div class="they-badge">
+          <img src="They.webp" alt="They logo">
+        </div>
+
+        <div class="model-name">Global Power<br>Architecture</div>
+        <div class="specs-line">Layers 0–3 (all tiers) Conspiracy, Design &amp; Emergence</div>
+        <div class="specs-detail">
+          VERTICAL: 4 layers from Design Tier to National Implementation<br>
+          HORIZONTAL: 7 functions, 10 factions, 12 enforcement mechanisms
+        </div>
+        <div class="specs-caveat">Does NOT cover user-serviceable parts at Layer 0</div>
+      </div>
+
+      <div class="service-band">
+        <div class="service-title"><span class="they-light">They</span> Service and Repair Manual</div>
+        <div class="service-sub">step-by-step disassembly and diagnosis</div>
+      </div>
+
+      <div class="image-area">
+        <img src="gpa-cover-image.webp" alt="Technical cutaway illustration of a globe revealing interlocking mechanical infrastructure inside">
+      </div>
+
+      <div class="bottom-strip">
+        <div class="tagline">
+          The architecture does not need to own assets<br>
+          It owns the dictionary
+        </div>
+        <div class="edition-circle">
+          <div class="edition-num">v1.3</div>
+          <div class="edition-label">2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

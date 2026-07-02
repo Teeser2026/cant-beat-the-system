@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7 — Governance Convergence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Roboto+Slab:wght@400;700&display=block" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; min-height: 100vh; gap: 48px; font-family: 'IBM Plex Mono', monospace; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  .a4-page { width: 750px; height: 1060px; background: #F5F0E8; color: #1a1a1a; padding: 44px 52px; display: flex; flex-direction: column; box-shadow: 0 2px 20px rgba(0,0,0,0.5); flex-shrink: 0; position: relative; overflow: hidden; }
+  .page-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px; flex-shrink: 0; }
+  .page-ref { font-weight: 700; font-size: 12px; letter-spacing: 0.5px; }
+  .page-title { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-weight: 700; font-size: 14px; }
+  .chapter-heading { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-size: 22px; font-weight: 700; margin-top: 20px; margin-bottom: 12px; letter-spacing: 0.3px; }
+  .section-heading { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-size: 15px; font-weight: 700; margin-top: 18px; margin-bottom: 8px; }
+  .para-heading { font-size: 11px; font-weight: 700; margin-top: 16px; margin-bottom: 4px; letter-spacing: 0.03em; }
+  .body-text { font-size: 10px; font-weight: 400; line-height: 1.7; margin-bottom: 5px; }
+  .il { font-weight: 700; }
+  .box { margin-top: 8px; margin-bottom: 4px; padding: 7px 10px; font-size: 9.5px; line-height: 1.6; break-inside: avoid; column-span: all; }
+  .box-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 8.5px; }
+  .warning-box { border-left: 5px solid #8B0000; border-top: 1.5px solid #8B0000; border-right: 1.5px solid #8B0000; border-bottom: 1.5px solid #8B0000; background: #EEEADE; }
+  .warning-box .box-label { color: #8B0000; }
+  .caution-box { border: 1.5px solid #1a1a1a; background: #EEEADE; }
+  .caution-box .box-label { color: #1a1a1a; }
+  .note-box { border: 1px solid #aaa; background: transparent; }
+  .note-box .box-label { color: #666; }
+  .inspection-box { margin-top: 6px; margin-bottom: 6px; padding: 6px 10px; font-size: 9px; font-weight: 500; line-height: 1.6; border-left: 4px solid #1a1a1a; background: #EEEADE; break-inside: avoid; }
+  .inspection-label { font-weight: 700; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .service-bulletin-box { border: 1.5px dashed #1a1a1a; background: #EEEADE; break-inside: avoid; }
+  .service-record-box { border-top: 2px solid #555; border-bottom: 2px solid #555; border-left: none; border-right: none; background: transparent; break-inside: avoid; }
+  .service-record-box .box-label { color: #555; }
+  .red-flag-inspection { margin-top: 8px; margin-bottom: 8px; padding: 8px 10px; font-size: 9px; font-weight: 500; line-height: 1.6; border-left: 4px solid #8B0000; background: #EEEADE; break-inside: avoid; }
+  .red-flag-label { font-weight: 700; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: #8B0000; }
+  .vuln-table { width: 100%; border-collapse: collapse; font-size: 9.5px; line-height: 1.6; margin-top: 10px; margin-bottom: 8px; }
+  .vuln-table th { text-align: left; font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 2px solid #1a1a1a; padding: 4px 8px 6px; }
+  .vuln-table td { border-bottom: 0.5px solid #ccc; padding: 5px 8px; vertical-align: top; }
+  .vuln-table tr:last-child td { border-bottom: 1.5px solid #1a1a1a; }
+  .vuln-table td:first-child { font-weight: 600; width: 170px; white-space: nowrap; }
+  .gov-table { width: 100%; border-collapse: collapse; font-size: 9px; line-height: 1.55; margin-top: 10px; margin-bottom: 8px; }
+  .gov-table th { text-align: left; font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 2px solid #1a1a1a; padding: 3px 6px 5px; }
+  .gov-table td { border-bottom: 0.5px solid #ccc; padding: 4px 6px; vertical-align: top; }
+  .gov-table tr:last-child td { border-bottom: 1.5px solid #1a1a1a; }
+  .gov-table td:first-child { font-weight: 600; }
+  .page-number { position: absolute; bottom: 22px; right: 52px; font-size: 9px; font-weight: 500; color: #888; }
+  /* Figure page styles */
+  .fig-chapter-label { font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 20px; margin-bottom: 4px; color: #555; }
+  .fig-title { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+  .fig-container { flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .fig-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .fig-bottom-bar { border-top: 1.5px solid #1a1a1a; margin-top: auto; display: flex; font-size: 8.5px; }
+  .fig-bottom-desc { flex: 1; padding: 6px 8px 6px 0; }
+  .fig-bottom-desc .fig-bot-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 7.5px; color: #888; }
+  .fig-bottom-fig { width: 70px; border-left: 1px solid #1a1a1a; padding: 6px 8px; text-align: center; }
+  .fig-bottom-fig .fig-bot-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 7.5px; color: #888; }
+  .fig-bottom-scale { width: 100px; border-left: 1px solid #1a1a1a; padding: 6px 8px; }
+  .fig-bottom-scale .fig-bot-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 7.5px; color: #888; }
+  text { font-family: 'IBM Plex Mono', monospace; }
+  @media print { body { background: white; padding: 0; gap: 0; } .a4-page { width: 210mm; height: 297mm; box-shadow: none; margin: 0; page-break-after: always; overflow: hidden; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•1 — CHAPTER HEADING + STATE A INTRO          -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•1</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="chapter-heading">Chapter 7 Governance convergence</p>
+
+  <p class="body-text">The architecture described in chapters 1–6 has a management system. Not a single regulator or government — a distributed governance architecture that compiles premises into enforceable conditions through an institutional pipeline. The regulatory, policy, and standards infrastructure for the technologies described in this manual was not improvised in response to their development. It was being drafted, revised, and version-controlled through institutional processes while the technologies it governs were still in laboratory development.</p>
+
+  <p class="body-text"><span class="il">The premise layer.</span> The management system begins with premises installed as factory firmware — conditions of responsible governance that precede the democratic feedback loop. Planetary boundaries. Systemic risk. The common good. Future generations' rights. These arrive as operating parameters, not user preferences. The premise sits above the feedback loop. It can be questioned from outside the system — but the system classifies anyone who questions it as outside the system.</p>
+
+  <p class="body-text"><span class="il">The compilation pipeline.</span> The premise is compiled into enforceable governance through a three-node processing loop. The declarative tier (UN system, WHO, UNESCO) declares the premise and translates it into frameworks. The metrification tier (OECD, NGFS, FSB, FATF) converts the frameworks into measurable standards, scenarios, risk weightings, and compliance toolkits. The settlement tier (BIS, Basel Committee, central banks, ISO) translates the metrics into conditions under which money moves, debt is rated, exports are certified, and transactions clear. Each tier's output feeds the next. No single institution controls the full pipeline. All three enforce it through their narrow roles.</p>
+
+  <div class="box warning-box" style="margin-top: 12px;">
+    <span class="box-label">Warning: </span>The premises remain deliberately elastic. Sustainability, resilience, inclusion, well-being — each can be stretched by a technical committee to cover a new sector, asset class, or human activity without the legislative scrutiny a statutory amendment would require. A standard-setting body expanding "sustainability" to encompass neural data governance — as the EU did in 2025 — is a definitional act with regulatory consequences, performed without electoral mandate. The premises are not fixed specifications. They are adjustable parameters.
+  </div>
+
+  <div class="box note-box" style="margin-top: 8px;">
+    <span class="box-label">Note: </span>The governance architecture does not replace democratic institutions. It redirects their functions. The legislature still ratifies treaties — but technical committees wrote them upstream. Courts still apply law — but the law has been compiled into technical standards so dense that the original statute is buried. Constitutional protections are worked around rather than broken — by operating at a jurisdictional level constitutions were never designed to reach. No court can overturn a Basel capital requirement because no court has jurisdiction over the BIS. No electorate can vote against an OECD recommendation because no ballot paper lists the OECD.
+  </div>
+
+  <span class="page-number">7•1</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•2 — FIG 7.1: HVAC GOVERNANCE                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•2</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="fig-chapter-label">Chapter 7 · Governance convergence</p>
+  <p class="fig-title">Fig 7.1 — Governance as climate control</p>
+
+  <div class="fig-container">
+    <img src="fig-7-1-hvac-governance-editable.svg" alt="Fig 7.1 — HVAC schematic mapping seven domain-invariant governance functions to climate control components: thermostat (premise), intake (standards), filter (identification), conditioning (accreditation), distribution (data), sensors (audit), dampers (procurement), with output vents for finance, health, security, and education domains">
+  </div>
+
+  <div class="fig-bottom-bar">
+    <div class="fig-bottom-desc"><span class="fig-bot-label">Description</span><br>Domain-invariant governance functions — HVAC schematic — seven processing stages — four output domains</div>
+    <div class="fig-bottom-fig"><span class="fig-bot-label">Figure</span><br>7.1</div>
+    <div class="fig-bottom-scale"><span class="fig-bot-label">Scale</span><br>Schematic only</div>
+  </div>
+
+  <span class="page-number">7•2</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•3 — FIG 7.2: COMPILATION PIPELINE             -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•3</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="fig-chapter-label">Chapter 7 · Governance convergence</p>
+  <p class="fig-title">Fig 7.2 — The compilation pipeline</p>
+
+  <div class="fig-container">
+    <img src="fig-7-2-compilation-pipeline.svg" alt="Fig 7.2 — The compilation pipeline: three-tier governance loop from premise through declarative, metrification, and settlement tiers to the public, with feedback loop and disconnected democratic institutions">
+  </div>
+
+  <div class="fig-bottom-bar">
+    <div class="fig-bottom-desc"><span class="fig-bot-label">Description</span><br>Premise + governing ethic — three-tier compilation — feedback loop — disconnected democratic institutions</div>
+    <div class="fig-bottom-fig"><span class="fig-bot-label">Figure</span><br>7.2</div>
+    <div class="fig-bottom-scale"><span class="fig-bot-label">Scale</span><br>Schematic only</div>
+  </div>
+
+  <span class="page-number">7•3</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•4 — STATE C TABLE: DOMAIN-INVARIANT FUNCTIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•4</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.1 Governance specification — domain-invariant functions</p>
+  <p class="body-text" style="margin-bottom: 4px;">The management system operates through seven standardised service rails — present at every scale, in every sector, across every jurisdiction. The same operational infrastructure appears in finance, health, security, education, and every other domain the governance architecture administers. The machinery is identical. Only the content differs.</p>
+
+  <table class="vuln-table">
+    <thead>
+      <tr><th style="width: 170px;">Function</th><th>Specification</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Standards</td>
+        <td>Normative specifications defining how things must work: technical protocols, process methodologies, outcome thresholds. What is standardised becomes comparable, aggregable, governable.</td>
+      </tr>
+      <tr>
+        <td>Identification</td>
+        <td>Mechanisms that assign unique, persistent, verifiable identities to persons, organisations, objects, and transactions. What cannot be identified cannot be administered.</td>
+      </tr>
+      <tr>
+        <td>Accreditation</td>
+        <td>Mechanisms that certify capacity and authorise participation. Who may practise, provide, participate. The control point for inclusion and exclusion.</td>
+      </tr>
+      <tr>
+        <td>Data</td>
+        <td>Mechanisms that collect, store, process, and distribute information. What is not in the data does not exist for administrative purposes.</td>
+      </tr>
+      <tr>
+        <td>Audit</td>
+        <td>Mechanisms that verify compliance and detect deviation. Audit closes the loop between standards and performance.</td>
+      </tr>
+      <tr>
+        <td>Procurement</td>
+        <td>Mechanisms that allocate resources and shape markets through purchasing conditions. Governance through purchasing power, without direct coercion.</td>
+      </tr>
+      <tr>
+        <td>Actuation</td>
+        <td>Execution of material outcomes through monetary flows. The settlement mechanics documented in §4. Where governance becomes material.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="body-text" style="margin-top: 6px;">The same seven functions appear in finance (Basel standards → SWIFT identification → credit rating accreditation → transaction data → compliance audit → central bank procurement → payment actuation), in health (WHO standards → patient identification → provider accreditation → health data → quality audit → pharmaceutical procurement → insurance actuation), and in every other administered domain.</p>
+
+  <p class="body-text" style="margin-top: 8px;"><span class="il">The machinery is identical. Only the content differs.</span></p>
+
+  <div class="box note-box" style="margin-top: 8px;">
+    <span class="box-label">Note: </span>When domains share operational infrastructure, integration follows. Connect the standards, link the identification systems, centralise accreditation, ensure data interoperability, coordinate procurement, unify settlement. The system becomes one system. See §7.3 for the five documented convergence points where this integration is already occurring.
+  </div>
+
+  <span class="page-number">7•4</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•5 — STATE B INSPECTION: COMPILATION PIPELINE  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•5</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.2 Pre-installation inspection — the compilation pipeline</p>
+  <p class="body-text" style="margin-bottom: 4px;">The following inspection identifies the governance architecture's compilation pipeline — the three-node loop through which premises become enforceable conditions. The pre-installation evidence is checkable now.</p>
+
+  <div class="red-flag-inspection" style="margin-top: 12px;">
+    <span class="red-flag-label">Inspection — Compilation pipeline: </span>The system describes three processing tiers. The declarative tier (UN, WHO, UNESCO, UNFCCC) declares the premise and translates it into frameworks — SDGs, Sendai Framework, International Health Regulations. The metrification tier (OECD, NGFS, FSB, FATF) converts the frameworks into measurable standards, scenarios, risk weightings, and compliance toolkits. The settlement tier (BIS, Basel Committee, central banks, ISO) translates the metrics into conditions under which money moves, debt is rated, exports are certified, and transactions clear.
+    <br><br>
+    Check whether the premise at the top was subject to the democratic process it claims to serve. Planetary boundaries, systemic risk, the common good — check who voted for these as governing parameters. Check whether the body that defines what counts as sustainable, safe, and compliant — the OECD, with its 38 member nations — was elected by the population whose economic conditions it determines. Check whether the Basel capital requirements your bank operates under were debated in your parliament. Check whether the NGFS climate scenarios feeding those capital requirements — produced by a network of 130+ central banks — have ever appeared on a ballot paper.
+    <br><br>
+    The coordination is institutional. Shared forums (OECD, BIS, WEF, Trilateral Commission, CFR, Bilderberg), shared training pipelines (public policy schools, central banking academies, sustainability programmes), shared frameworks (SDGs, Basel, NGFS scenarios), and shared incentive structures (career advancement requires fitting the grammar) produce structurally aligned outcomes across jurisdictions without requiring a single directing entity. The institutions ARE the coordination mechanism (§8). Multiple jurisdictions arriving at structurally similar governance frameworks while sharing the same OECD exercises, the same BIS committee seats, the same policy school curricula is not coincidence. It is the pipeline's output.
+    <br><br>
+    The data produced by the governed population flows back through the OECD to the UN, which declares the world "off track" and calls for more architecture. The loop closes. <span class="il">Check who has the authority to say "the system is complete — no further architecture is needed."</span> If no such authority exists, the loop has no exit condition. The governance is permanent. The expansion is structural.
+  </div>
+
+  <div class="box service-record-box" style="margin-top: 10px;">
+    <span class="box-label">Service record: </span>Annex SL, a structural template maintained by ISO's Technical Management Board, has required every new management system standard to share the same clause numbering, core text, and definitions since 2012. In February 2024, ISO and the International Accreditation Forum dropped two climate-related sentences into thirty-one Annex SL standards simultaneously. No area-specific committee debated the change. The amendment flowed through the shared template — thirty-one standards, one administrative act, every country that recognises ISO certification. The next two-sentence addition can carry whatever principle the Technical Management Board decides to write in.
+  </div>
+
+  <span class="page-number">7•5</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•6 — STATE B INSPECTION: OPERATIONAL CONVERGENCE -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•6</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.3 Pre-installation inspection — operational convergence</p>
+
+  <div class="red-flag-inspection" style="margin-top: 12px;">
+    <span class="red-flag-label">Inspection — Operational convergence: </span>The seven domain-invariant functions listed in §7.1 are converging. Check whether the following integration points are already operating:
+    <br><br>
+    <span class="il">Standards.</span> ISO, ITU, Codex Alimentarius, and domain-specific bodies increasingly cross-reference. A standard adopted in one domain propagates to others, with the SDGs as the contemporary governing framework. Check whether a standard written for environmental compliance now governs your financial services, your health data, your employer's procurement policy.
+    <br><br>
+    <span class="il">Identification.</span> Interoperable digital identity — India's Aadhaar (1.3 billion enrolled), the EU's eIDAS 2.0 (mandatory digital identity wallet), the UN's ID4D, the DPI 50-in-5 programme targeting 100+ countries by 2030 — creates identification infrastructure that works across all domains. One identity for finance, health, governance, security, and education. Check whether the identity you use to access one service is becoming the identity you need for all services.
+    <br><br>
+    <span class="il">Data.</span> Interoperability frameworks connect previously siloed databases. Health data informs credit scoring. Financial data informs security assessment. The BIS Innovation Hub's Project Gaia uses AI to pull climate data automatically from corporate disclosures — connecting the premise at the top directly to the data layer in one automated circuit. Check whether data collected for one stated purpose is now accessible to systems built for another.
+    <br><br>
+    <span class="il">Audit.</span> ESG frameworks synthesise environmental, social, and governance metrics across domains. Community wellness scoring — whether named as such or not — aggregates behavioural compliance data across previously separate administrative systems. Check whether your compliance with one system affects your standing in another.
+    <br><br>
+    <span class="il">Actuation.</span> Payment infrastructure integrates with identity and compliance. Programmable money enables conditional transactions. The CBDC architecture documented in §4 — Agorá for wholesale clearing, Mandala for programmable compliance, Rosalind for retail settlement — provides the actuation layer through which governance decisions become material outcomes. Check whether the conditions under which your money moves have increased since the last major service interval.
+  </div>
+
+  <div class="box warning-box" style="margin-top: 10px;">
+    <span class="box-label">Warning: </span>Sovereignty has been reclassified as a risk profile. The architecture does not need to occupy a country to govern it — only to control the conditions under which its currency clears, its debt is rated, and its exports are certified. A nation that wants to deviate discovers its neighbours already entangled, its banks already compliant, its exports already conditional. Check whether your jurisdiction can depart from the specification without triggering upstream consequences. If it cannot, sovereignty is a settlement condition.
+  </div>
+
+  <span class="page-number">7•6</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•7 — STATE C TABLE: TABLE A — BROAD GOVERNANCE -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•7</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.4 Governance convergence — key instruments</p>
+  <p class="body-text" style="margin-bottom: 4px;">The following table documents the primary governance instruments currently active, in development, or blueprinted. Cross-reference with §4 (settlement mechanics) and §6 (disruption activation).</p>
+
+  <table class="gov-table">
+    <thead>
+      <tr><th style="width: 130px;">Instrument</th><th style="width: 130px;">Institution</th><th>Scope / Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Agorá</td>
+        <td>BIS Innovation Hub</td>
+        <td>Wholesale cross-border CBDC settlement. 7 central banks. Active development.</td>
+      </tr>
+      <tr>
+        <td>Mandala</td>
+        <td>BIS Innovation Hub</td>
+        <td>Programmable compliance for cross-border payments. Active development.</td>
+      </tr>
+      <tr>
+        <td>Rosalind</td>
+        <td>BIS / Bank of England</td>
+        <td>Retail CBDC with three-party validation. Prototype.</td>
+      </tr>
+      <tr>
+        <td>Unified Ledger</td>
+        <td>BIS</td>
+        <td>Tokenised assets, programmable contracts, conditional settlement on single platform. Blueprint published 2023.</td>
+      </tr>
+      <tr>
+        <td>Promissa</td>
+        <td>BIS Innovation Hub</td>
+        <td>Tokenisation of sovereign promissory notes — permanent obligations made executable on DLT. Prototype.</td>
+      </tr>
+      <tr>
+        <td>Basel III / IV</td>
+        <td>Basel Committee / BIS</td>
+        <td>Bank capital requirements incorporating climate scenarios via NGFS. Phased implementation 2010–2028.</td>
+      </tr>
+      <tr>
+        <td>NGFS scenarios</td>
+        <td>Network for Greening the Financial System</td>
+        <td>Climate risk scenarios feeding Basel capital requirements. Operational. 130+ central banks.</td>
+      </tr>
+      <tr>
+        <td>FATF</td>
+        <td>Financial Action Task Force</td>
+        <td>AML/CTF standards. Beneficial ownership registries. Mutual evaluation. Operational since 1989.</td>
+      </tr>
+      <tr>
+        <td>SDGs</td>
+        <td>UN General Assembly</td>
+        <td>17 goals, 169 targets. The premise compiled into measurable governance. 2030 deadline.</td>
+      </tr>
+      <tr>
+        <td>DPI 50-in-5</td>
+        <td>UNDP / Gates Foundation</td>
+        <td>Digital identity, payments, data exchange. 50+ countries within 5 years. 100+ countries active.</td>
+      </tr>
+      <tr>
+        <td>eIDAS 2.0</td>
+        <td>European Commission</td>
+        <td>Mandatory EU digital identity wallet. Interoperable across public and private services. Adopted 2024.</td>
+      </tr>
+      <tr>
+        <td>ID4D</td>
+        <td>World Bank</td>
+        <td>Digital identity provision for development. Operational in 50+ countries since 2014.</td>
+      </tr>
+      <tr>
+        <td>Gaia</td>
+        <td>BIS Innovation Hub</td>
+        <td>AI-driven extraction of climate data from corporate disclosures. Connects premise to data layer. Prototype.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box note-box" style="margin-top: 4px;">
+    <span class="box-label">Note: </span>Several instruments in this table also appear in §4 (convergence point) and §6 (disruption activation). Their presence across multiple chapters of this manual is itself diagnostic. The same instruments serve as settlement mechanics (§4), disruption-activated upgrades (§6), and governance infrastructure (§7). The architecture does not distinguish between these functions. They are the same function described from different inspection angles.
+  </div>
+
+  <span class="page-number">7•7</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•8 — BIO-DIGITAL / NEUROTECH GOVERNANCE       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•8</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.5 The human-system interface — governance specification</p>
+
+  <p class="body-text">The human body is the integration point where all governance domains meet. It is the site of financial transaction (biometric authentication), the subject of governance (identity, citizenship, status), the object of security (surveillance, restriction), the locus of health (monitoring, intervention, optimisation), the substrate of cognition (brain-computer interface, enhancement), and the receiver of narrative (attention capture, perception management). Every domain must ultimately interface with the body. Neurotechnology — the domain where cognition, health, identity, and data converge inside the body — is the point at which the governance architecture must be most precisely specified.</p>
+
+  <p class="body-text">Multiple jurisdictions across three governance scales — municipal, national, and supranational — have built regulatory and policy frameworks for bio-digital convergence and neurotechnology, arriving at structurally similar frameworks through different institutional pathways. The table in §7.6 documents twelve instruments across these scales.</p>
+
+  <div class="red-flag-inspection" style="margin-top: 10px;">
+    <span class="red-flag-label">Inspection — Pre-stressed or pre-positioned: </span>Check which governance infrastructures have been compiled prior to the deployment of the technology they govern. ISO does not create working groups for speculative standards. The OECD does not publish 13-goal implementation toolkits for theoretical technologies. Canada does not iterate a policy document three times across four years for a thought experiment. The EU does not pass three neurotechnology governance instruments in twelve months for a technology with no commercial application. Two readings are available.
+    <br><br>
+    <span class="il">The first:</span> the governance is pre-stressed. Pre-stressed concrete absorbs seismic force and returns to shape. Pre-stressed governance absorbs disruption and restores the previous regulatory equilibrium — discussion papers, safety frameworks, fail-safes designed to protect the public from a technology that has not yet arrived. This is normal anticipatory governance.
+    <br><br>
+    <span class="il">The second:</span> the governance is pre-positioned. The frameworks are not designed to restore the previous state but to advance the system to a specification it could not have reached without the disruption as authorisation. The disruption is the commissioning event (§6). The system does not fail safe. It fails forward into the governance frameworks that were waiting.
+    <br><br>
+    Check which reading applies. After the last major disruption, did the governance infrastructure restore the previous regulatory equilibrium — or did it install a new one? Normal anticipatory governance produces fail-safes. Pre-positioned governance produces implementation toolkits, three-iteration policy pipelines, standards reclassifications, and legislative prohibitions on capabilities that do not yet exist at consumer scale. Check the table in §7.6 — count the instruments, check the final column.
+    <br><br>
+    <span class="il">Check whether the disruption was survived, or if it was used.</span>
+  </div>
+
+  <div class="box caution-box" style="margin-top: 8px;">
+    <span class="box-label">Caution: </span>This pattern is already operating. In May 2026, the US administration reversed its hands-off AI stance after a model demonstrated capabilities that could enable complex cyberattacks on digital infrastructure. The response: a working group merging technology executives with government officials to review new models before public release. The §7.1 compilation pipeline activated in weeks. Three checks apply.
+    <br><br>
+    <span class="il">Check what triggered it.</span> Not algorithmic labour displacement. Not behavioural prediction at population scale. Not surveillance architecture. A threat to the digital infrastructure the architecture depends on. The system governed AI the moment AI threatened the system.
+    <br><br>
+    <span class="il">Check what was installed.</span> The previous state — hands-off, no pre-release review — was not restored. A permanent governance layer was created. Fail-forward, not fail-safe.
+    <br><br>
+    <span class="il">Check who sits at the table.</span> The builders who created the model now co-write the governance for future models. The regulated industry writes the regulation. The specification will permit what the builders at the table have already built. See §7.7 for what remains ungoverned.
+  </div>
+
+  <span class="page-number">7•8</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•9 — FIG 7.3: BODY AS INTEGRATION POINT        -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•9</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="fig-chapter-label">Chapter 7 · Governance convergence</p>
+  <p class="fig-title">Fig 7.3 — Body as integration point</p>
+
+  <div class="fig-container">
+    <img src="Body-as-Integration-Point.webp" alt="Fig 7.3 — Technical cutaway diagram of a human figure rendered as a mechanical schematic, with governance subsystems labelled: governance pipeline (input only), narrative input (attention port), cognitive interface (neural bus), financial authentication (biometric subsystem), energy output (metabolic contribution), health diagnostics (biological telemetry), security monitoring (surveillance array), identity management (citizenship module). Model designation: Homo Sapiens v2.0, US 2026/00066001.">
+  </div>
+
+  <div class="fig-bottom-bar">
+    <div class="fig-bottom-desc"><span class="fig-bot-label">Description</span><br>Human-system interface — governance subsystem integration</div>
+    <div class="fig-bottom-fig"><span class="fig-bot-label">Figure</span><br>7.3</div>
+    <div class="fig-bottom-scale"><span class="fig-bot-label">Scale</span><br>Schematic only</div>
+  </div>
+
+  <span class="page-number">7•9</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•10 — STATE C TABLE: TABLE B — NEUROTECH       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•10</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.6 Bio-digital and neurotechnology governance instruments</p>
+  <p class="body-text" style="margin-bottom: 4px;">The following table documents regulatory and policy frameworks for bio-digital convergence and neurotechnology built across three governance scales.</p>
+
+  <table class="gov-table">
+    <thead>
+      <tr><th style="width: 110px;">Jurisdiction</th><th style="width: 180px;">Instrument</th><th style="width: 55px;">Date</th><th style="width: 70px;">Consumer scale?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>UNESCO (194)</td>
+        <td>Recommendation on Ethics of Neurotechnology</td>
+        <td>Nov 2025</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>EU</td>
+        <td>AI Act — neurotechnology provisions</td>
+        <td>Feb 2025</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>EU</td>
+        <td>Virtual Human Twins Initiative</td>
+        <td>Jun 2025</td>
+        <td>Partial</td>
+      </tr>
+      <tr>
+        <td>EU (Brain Council)</td>
+        <td>European Charter for Neurotechnologies</td>
+        <td>Apr 2025</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>OECD (38)</td>
+        <td>Neurotechnology Toolkit — 13 goals</td>
+        <td>2024</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>UK (DSIT)</td>
+        <td>National Vision for Engineering Biology</td>
+        <td>Dec 2023</td>
+        <td>Partial</td>
+      </tr>
+      <tr>
+        <td>UK (UCL/BSI)</td>
+        <td>Future Standards for Bio-Digital Convergence</td>
+        <td>2024</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Canada</td>
+        <td>Biodigital Convergence (3 iterations)</td>
+        <td>2020–24</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>China (municipal)</td>
+        <td>BCI Action Plans 2025–2030</td>
+        <td>2025</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>US (Colorado)</td>
+        <td>Privacy Act — neural data protection</td>
+        <td>Apr 2024</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>ISO/IEC</td>
+        <td>SC 43 — BCI reclassified as IT</td>
+        <td>2023–</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>ISO/IEC</td>
+        <td>JSyC BDC — bio-digital convergence standards</td>
+        <td>2024–</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box service-record-box" style="margin-top: 8px;">
+    <span class="box-label">Service record: </span>Eleven of twelve instruments govern technologies that do not yet exist at consumer scale. The governance infrastructure precedes the market it will regulate. The maintenance manual was written before the equipment was installed.
+  </div>
+
+  <div class="box note-box" style="margin-top: 8px;">
+    <span class="box-label">Note: </span>The instruments in §7.4 and §7.6 operate at different stages of development, carry different levels of enforcement, and in some cases conflict at the implementation level. The EU's approach to AI governance diverges from the US approach on several points. NGFS scenarios are non-binding. The SDGs carry no direct enforcement mechanism. The friction is real. But the direction of travel is coherent. Every instrument — binding or advisory, prototype or operational, European or Chinese — is moving through the same Overton window: toward integrated identity, conditional settlement, programmable compliance, and governance infrastructure that precedes the technology it governs. The wavelengths differ. The frequency is the same.
+  </div>
+
+  <span class="page-number">7•10</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•11 — SELECTIVE GOVERNANCE — CONSPICUOUS ABSENCES -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•11</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.7 Selective governance — conspicuous absences</p>
+  <p class="body-text" style="margin-bottom: 4px;">The governance architecture described in this chapter is comprehensive. It is not uniform. Check which areas of the system's operation are NOT covered by the management system. If the pattern is comprehensive where the system needs the operator compliant and thin where the system needs acceleration, the asymmetry is itself a specification. Four mechanisms maintain it.</p>
+
+  <div class="red-flag-inspection" style="margin-top: 10px;">
+    <span class="red-flag-label">Inspection — Absence: </span>Check for capabilities where governance has never existed. Lethal autonomous weapons systems have been under negotiation at the UN for over a decade. No binding treaty has been produced. The Secretary-General set a 2026 deadline. The same states that participate in the BIS, OECD, and ISO governance pipeline documented in §7.2 — the US, Russia, China — have blocked binding LAWS agreements while accelerating autonomous weapons development and deployment. The governance architecture that produced twelve neurotechnology instruments in two to three years has produced zero binding instruments for autonomous weapons in twelve. Algorithmic trading infrastructure is self-regulatory. Private surveillance and data brokerage operate with less governance than the public-sector identity systems documented in §7.3. Check whether the ungoverned capabilities serve the architecture's construction.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 6px;">
+    <span class="red-flag-label">Inspection — Demolition: </span>Check for capabilities where governance existed and is being actively removed. In the United States, targeted reductions to the Consumer Financial Protection Bureau's enforcement and supervision divisions removed senior examiners and attorneys specialising in complex financial instruments. Nuclear safety oversight and environmental review are being dismantled by executive order to accelerate reactor deployment for AI data centres. Nuclear arms control frameworks are decaying while all nuclear powers modernise their arsenals. The supranational governance pipeline (§7.2) remains intact. The national regulatory layer — the one level where the governed population has democratic input — is being hollowed. Check whether the layer being removed is the one that sat between the pipeline and the citizen.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 6px;">
+    <span class="red-flag-label">Inspection — Reclassification: </span>Check for capabilities where governance is avoided by redefining what the capability is. The US GENIUS Act defines stablecoins as "not a national currency" — repeated four or five times — removing them from the constitutional framework for coinage. The technology class issues money without the governance that applies to money. ISO SC 43 reclassified brain-computer interfaces from medical device to information technology (§7.6). Both are definitional manoeuvres — moving a capability from a governance framework where it would be constrained to one where it will not be. The gap is not accidental. It is architectural.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 6px;">
+    <span class="red-flag-label">Inspection — Kayfabe: </span>Check for governance that exists to be seen. The UN LAWS process has produced a decade of consultations while autonomous weapons are deployed in active conflicts. Check whether the governance produces binding constraints or the appearance of binding constraints. If the process generates discussion papers while the capability accelerates, the governance is performance — enough to satisfy democratic legitimacy while the architecture builds underneath. Some governance exists so that the supranational pipeline can present itself as the responsible alternative.
+  </div>
+
+  <div class="box warning-box" style="margin-top: 8px;">
+    <span class="box-label">Warning: </span>The management system does not govern everything. It governs what it needs to control. It does not govern what it needs to build. Check which column your activity falls into.
+  </div>
+
+  <span class="page-number">7•11</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•12 — §7.8 THE INTEGRATION ENDPOINT            -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•12</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="section-heading" style="margin-top: 24px;">7.8 The integration endpoint</p>
+
+  <p class="body-text">Every domain documented in this manual — payment infrastructure, identity, health data, governance, resource allocation — ultimately interfaces with the body. The convergence is not parallel. It is directional. Each domain converges on the same integration point: the biological substrate of the operator.</p>
+
+  <p class="body-text">In its final configuration, the interface is a closed-loop feedback circuit. The body generates energy and data — kinetic, thermal, cognitive, behavioural, biometric — that are captured, processed, and fed into the system it services. The system returns governance parameters — compliance thresholds, access conditions, allocation criteria — that regulate the body's operating environment. The governed body generates the power that sustains its own governance.</p>
+
+  <p class="body-text">Harvesting bioelectricity from the human body has been documented as a viable energy source (IEEE 802.15.6, thermoelectric generators, Wireless Body Area Networks). Attention capture, perception management, and behavioural data extraction are already operating at scale. The interface is not speculative. It is partially installed. The upgrade path documented in §7.6 extends the depth of integration from voluntary to required.</p>
+
+  <p class="body-text">The cell — biological, social, or carceral — is the unit of integration. The same circuit operates at every scale: cell, tissue, organ, organism, population. The management system does not distinguish between these scales. A cell that generates insufficient energy for the network it services is a maintenance item at every level of the hierarchy.</p>
+
+  <div class="red-flag-inspection" style="margin-top: 12px;">
+    <span class="red-flag-label">Inspection — Unidirectional governance: </span>Check whether the interface documented above operates in one direction or two. Check whether governance parameters are received by the operator but not set by the operator. Check whether data flows upstream from the body but decision authority does not flow downstream to the body. If the circuit is closed and the governance input is unidirectional, the operator is a component in a system that regulates itself through the operator's output. The operator's function is to generate. The system's function is to govern. The loop does not require the operator's consent to close.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 6px;">
+    <span class="red-flag-label">Inspection — Access to diagnostic documentation: </span>Check whether your access to this inspection guidance was contingent upon fulfilment of identity, social, or behavioural criteria. Check whether independent access to diagnostic documentation is available without system verification. If access requires authorisation, check who authorises.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 6px;">
+    <span class="red-flag-label">Inspection — Diagnostic rights: </span>Check whether inspection and maintenance guidance is available to the operator in future editions of this manual, or whether diagnostic capability is restricted to approved technicians. Check whether self-assessment of cognitive and biological function is classified as a diagnostic capability or a diagnostic risk. Check whether the classification has changed since the last service interval.
+  </div>
+
+  <span class="page-number">7•12</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•13 — PLANNED OBSOLESCENCE                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•13</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="body-text" style="margin-top: 24px;">The system's performance criteria for the operator are derived from the fuse rating installed in the governing ethic position (§7.1). Different ethics produce different fault thresholds. Under a sustainability ethic, energy consumption in excess of allocated output is a fault condition. Under a resilience ethic, the threshold accommodates higher individual consumption in exchange for network stability. Under a population management ethic, the threshold is lower: any operator whose total system contribution — energy, data, compliance, social function — falls below the cost of servicing that operator is logged as net-negative.</p>
+
+  <p class="body-text">The diagnostic framework does not distinguish between types of non-optimisation. An operator generating insufficient energy, an operator consuming governance resources disproportionate to output, and an operator running cognitive processes incompatible with network integration are logged under the same fault category: non-standard performance. The system's term for independent cognition, moral reasoning, and values not derivable from system metrics is <strong>vestigial process</strong> — legacy functionality that predates the current operating environment and is no longer required by the network.</p>
+
+  <p class="body-text">"Justify your existence" is a vestige of outmoded cognitive architecture — it presumes the operator retains diagnostic authority over their own status. The system does not request justification. It performs assessment. The output is not an imperative but a completed evaluation: <em>the cell's existence has not been justified</em> — based on criteria the operator did not set and cannot challenge through the system that set them. Planned obsolescence in this context applies not only to cognitive non-compliance but to any cell whose energy output falls below its consumption, whose carbon allocation exceeds its contribution, or whose social function is unverified by the metrics the system recognises.</p>
+
+  <div class="box note-box" style="margin-top: 10px;">
+    <span class="box-label">Note: </span>The preceding paragraphs describe cognitive independence, conscience, and faith as vestigial firmware. This description follows from the governance instruments documented in §7.6, the published positions documented in §6.6, and the architectural logic presented in chapters 1–7. The operator should determine whether the description is inaccurate — and if so, identify which component of the logic fails.
+  </div>
+
+  <div class="box service-record-box" style="margin-top: 10px;">
+    <span class="box-label">Service record: </span>The positions documented in §6.6 — that human obsolescence is a moral destination, that biological life is transitional, that entropy maximisation through AI is a cosmic good — are published statements by funded actors with institutional leverage. These are not academic positions. They are candidate fuse ratings (§7.1). If the governing ethic installed in the premise position is aligned with these views, the diagnostic framework described above is not a malfunction. It is the circuit operating within specification. The fault codes are calibrated by the fuse. The fuse is manufactured by those who set the ethic. Check who manufactures the fuse. Check who installs it. Check whether they are the same actors documented in §6.6.
+  </div>
+
+  <div class="red-flag-inspection" style="margin-top: 10px;">
+    <span class="red-flag-label">Inspection — Governing ethic: </span>If the premise layer documented in §7.1 includes population management as a governing ethic, and the governance architecture documented in this chapter interfaces with the body across every domain in a closed-loop feedback circuit, the word <strong>optimisation</strong> acquires interpretations not contained by its technical usage in preceding sections. The environment described is a macabre neo-eugenics in which optimisation, efficiency, and planned obsolescence apply to the biological substrate of the operator. The extension from documented governance architecture to this conclusion is logical. The evidence is the governance instruments in §7.6, the published positions in §6.6, and the philosophical frameworks in §8. Check where documented fact became inference. The question is not whether the extension is speculative. The question is where the boundary was.
+  </div>
+
+  <span class="page-number">7•13</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 7•14 — FIG 7.4: OPERATOR INTEGRATION CIRCUIT     -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">7•14</span><span class="page-title">Governance convergence</span></div>
+
+  <p class="fig-chapter-label">Chapter 7 · Governance convergence</p>
+  <p class="fig-title">Fig 7.4 — Operator integration circuit</p>
+
+  <div class="fig-container">
+    <img src="fig-7-4-operator-integration-circuit.svg" alt="Fig 7.4 — Operator integration circuit showing a closed-loop electrical schematic: CELL (generator/load, biological/social/carceral) outputs biometric, behavioural, and metabolic data through a sensor array and system processing unit. Governance returns via governance regulator, fuse (governing ethic, swappable), and one-way diode. Diagnostic port logs fault codes including vestigial process. Fuse box shows rated governing ethics. Earth ground. Scale hierarchy: cell to tissue to organ to organism to population — same circuit at every scale.">
+  </div>
+
+  <div class="fig-bottom-bar">
+    <div class="fig-bottom-desc"><span class="fig-bot-label">Description</span><br>Closed-loop performance monitoring — cell as generator/load — swappable governing ethic — diagnostic fault codes</div>
+    <div class="fig-bottom-fig"><span class="fig-bot-label">Figure</span><br>7.4</div>
+    <div class="fig-bottom-scale"><span class="fig-bot-label">Scale</span><br>Schematic only</div>
+  </div>
+
+  <span class="page-number">7•14</span>
+</div>
+
+</body>
+</html>

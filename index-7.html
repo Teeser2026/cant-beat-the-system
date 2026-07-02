@@ -5176,17 +5176,17 @@ function renderSoundEcho(turnData) {
     {
       file: 'cork-pull.mp3',
       aftermath: 'The ritual of an ordinary evening',
-      img: 'se-home-1.png'
+      img: 'se-home-1.webp'
     },
     {
       file: 'fire-crackle.mp3',
       aftermath: 'Warmth and comfort',
-      img: 'se-home-2.png'
+      img: 'se-home-2.webp'
     },
     {
       file: 'child-laugh.mp3',
       aftermath: 'What you would give everything for',
-      img: 'se-home-3.png'
+      img: 'se-home-3.webp'
     }
   ];
 
@@ -5375,9 +5375,9 @@ function renderSoundPrompt(turnData) {
   const devList = document.getElementById('devTurnList');
 
   const SP_CLIPS = [
-    { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', img: 'peace-1.jpg' },
-    { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', img: 'peace-2.jpg' },
-    { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', img: 'peace-3.jpg' }
+    { file: 'gong.mp3', color: 'rgba(160,130,80,0.5)', img: 'peace-1.webp' },
+    { file: 'whale.mp3', color: 'rgba(60,90,120,0.4)', img: 'peace-2.webp' },
+    { file: 'lowchant.mp3', color: 'rgba(100,120,70,0.4)', img: 'peace-3.webp' }
   ];
 
   const SP_AFTERMATH = [
@@ -5982,7 +5982,7 @@ function renderImagePrompt(turnData) {
   const devList = document.getElementById('devTurnList');
 
   const imgSrc = turnData.questionOpts && turnData.questionOpts[0] && turnData.questionOpts[0].img
-    ? turnData.questionOpts[0].img : 'inkblot-1.png';
+    ? turnData.questionOpts[0].img : 'inkblot-1.webp';
   const promptText = turnData.questionText || 'what do you feel?';
 
   // Detect word-select variant (IP3+): questionOpts[0].wordPairs present

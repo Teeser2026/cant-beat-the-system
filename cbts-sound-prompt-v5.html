@@ -143,7 +143,7 @@ html, body {
 .triptych-bg {
   position: absolute;
   inset: 0;
-  background-image: url('peace-triptych.png');
+  background-image: url('peace-triptych.webp');
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -538,7 +538,7 @@ document.querySelectorAll('.zone').forEach((zone, i) => {
       zone.classList.add('dragging-active');
       imageArea.classList.add('zones-hovering');
       // Ghost shows this zone's portion
-      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.png" style="object-position:' + CLIPS[i].pos + ';">';
+      dragGhost.innerHTML = '<img class="ghost-img" src="peace-triptych.webp" style="object-position:' + CLIPS[i].pos + ';">';
       dragGhost.style.display = 'block';
       stopAll();
     }

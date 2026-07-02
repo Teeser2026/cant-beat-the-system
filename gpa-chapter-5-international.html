@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 — International Convergence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Roboto+Slab:wght@400;700&display=block" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; min-height: 100vh; gap: 48px; font-family: 'IBM Plex Mono', monospace; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  .a4-page { width: 750px; height: 1060px; background: #F5F0E8; color: #1a1a1a; padding: 44px 52px; display: flex; flex-direction: column; box-shadow: 0 2px 20px rgba(0,0,0,0.5); flex-shrink: 0; position: relative; overflow: hidden; }
+  .page-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px; flex-shrink: 0; }
+  .page-ref { font-weight: 700; font-size: 12px; letter-spacing: 0.5px; }
+  .page-title { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-weight: 700; font-size: 14px; }
+  .chapter-heading { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-size: 22px; font-weight: 700; margin-top: 20px; margin-bottom: 12px; letter-spacing: 0.3px; }
+  .section-heading { font-family: 'Rockwell','Rockwell Nova','Roboto Slab',serif; font-size: 15px; font-weight: 700; margin-top: 18px; margin-bottom: 8px; }
+  .para-heading { font-size: 11px; font-weight: 700; margin-top: 16px; margin-bottom: 4px; letter-spacing: 0.03em; }
+  .body-text { font-size: 10px; font-weight: 400; line-height: 1.7; margin-bottom: 5px; }
+  .il { font-weight: 700; }
+  .box { margin-top: 8px; margin-bottom: 4px; padding: 7px 10px; font-size: 9.5px; line-height: 1.6; break-inside: avoid; column-span: all; }
+  .box-label { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 8.5px; }
+  .warning-box { border-left: 5px solid #8B0000; border-top: 1.5px solid #8B0000; border-right: 1.5px solid #8B0000; border-bottom: 1.5px solid #8B0000; background: #EEEADE; }
+  .warning-box .box-label { color: #8B0000; }
+  .caution-box { border: 1.5px solid #1a1a1a; background: #EEEADE; }
+  .caution-box .box-label { color: #1a1a1a; }
+  .note-box { border: 1px solid #aaa; background: transparent; }
+  .note-box .box-label { color: #666; }
+  .inspection-box { margin-top: 6px; margin-bottom: 6px; padding: 6px 10px; font-size: 9px; font-weight: 500; line-height: 1.6; border-left: 4px solid #1a1a1a; background: #EEEADE; break-inside: avoid; }
+  .inspection-label { font-weight: 700; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .service-bulletin-box { border: 1.5px dashed #1a1a1a; background: #EEEADE; break-inside: avoid; }
+  .service-record-box { border-top: 2px solid #555; border-bottom: 2px solid #555; border-left: none; border-right: none; background: transparent; break-inside: avoid; }
+  .service-record-box .box-label { color: #555; }
+  .page-number { position: absolute; bottom: 22px; right: 52px; font-size: 9px; font-weight: 500; color: #888; }
+  .fig-label { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #444; margin-bottom: 4px; }
+  .fig-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+  .fig-note { font-size: 10px; line-height: 1.6; color: #444; }
+  .fig-note-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .title-block { border-top: 2px solid #1A1A1A; display: grid; grid-template-columns: 1fr auto auto; font-size: 10px; flex-shrink: 0; }
+  .tb-cell { border-right: 1px solid #1A1A1A; padding: 6px 12px; display: flex; flex-direction: column; justify-content: center; }
+  .tb-cell:last-child { border-right: none; }
+  .tb-label { font-size: 8px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #777; margin-bottom: 2px; }
+  .tb-value { font-weight: 600; font-size: 10px; }
+  .parts-section-label { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #777; margin: 10px 0 5px; padding-top: 6px; border-top: 0.5px solid #ccc; }
+  .parts-section-label:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+  .parts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 16px; }
+  .part-item { font-size: 10px; line-height: 1.55; color: #333; display: flex; gap: 6px; }
+  .part-num { font-weight: 700; min-width: 16px; color: #1A1A1A; flex-shrink: 0; }
+  .photo-caption { font-size: 9px; line-height: 1.5; color: #555; margin-top: 8px; }
+  .photo-caption b { color: #1a1a1a; }
+  text { font-family: 'IBM Plex Mono', monospace; }
+  @media print { body { background: white; padding: 0; gap: 0; } .a4-page { width: 210mm; height: 297mm; box-shadow: none; margin: 0; page-break-after: always; overflow: hidden; } }
+</style>
+</head>
+<body>
+
+<!-- 5•1 — FIG 5.1 + KEY -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">5•1</span><span class="page-title">International convergence</span></div>
+  <div style="padding: 16px 0 8px;">
+    <div class="fig-label">Chapter 5 · International convergence</div>
+    <div class="fig-title">Fig 5.1 — National implementation variants (common protocol layer)</div>
+    <img src="fig-5-1-franchise-sockets-editable.svg" width="100%" style="max-height: 460px;" alt="Fig 5.1 — Seven national socket types converging to a single settlement protocol layer">
+  </div>
+
+  <!-- KEY TO FIG 5.1 -->
+  <div style="margin-top: 6px;">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;">Key to Fig 5.1</div>
+    <div class="parts-section-label" style="border-top: none; margin-top: 0; padding-top: 0;">National faceplates — implementation variants</div>
+    <div style="display: flex; gap: 20px; margin-top: 4px;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 7px;">
+        <div class="part-item"><span class="part-num">1</span><span>USA. GENIUS Act stablecoins, FedNow instant settlement. Type A socket.</span></div>
+        <div class="part-item"><span class="part-num">2</span><span>EU. Digital Euro, eIDAS 2.0 identity wallet, AI Act. Type C socket.</span></div>
+        <div class="part-item"><span class="part-num">3</span><span>UK. Post-Brexit digital identity, FCA regulatory sandbox, Palantir NHS/MoD contracts. Type G socket.</span></div>
+        <div class="part-item"><span class="part-num">4</span><span>China. e-CNY (260M users), social credit, Great Firewall. Type I socket.</span></div>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 7px;">
+        <div class="part-item"><span class="part-num">5</span><span>Russia. NSPK-Mir domestic payment, RuNet sovereign internet. Type C socket — same as EU.</span></div>
+        <div class="part-item"><span class="part-num">6</span><span>Gulf / UAE. NEOM smart city, sovereign wealth digital infrastructure. Type G socket — same as UK.</span></div>
+        <div class="part-item"><span class="part-num">7</span><span>India. UPI unified payments, DPI 50-in-5 programme, mBridge observer. Type D socket.</span></div>
+      </div>
+    </div>
+    <div class="parts-section-label">Common supply — protocol layer</div>
+    <div class="parts-grid">
+      <div class="part-item"><span class="part-num">G</span><span>Settlement protocol layer. BIS-coordinated clearing and compliance infrastructure shared across all national implementations.</span></div>
+      <div class="part-item"><span class="part-num">—</span><span>Agorá: wholesale CBDC clearing (BIS + 7 central banks). Mandala: programmable compliance.</span></div>
+      <div class="part-item"><span class="part-num">—</span><span>mBridge: cross-border CBDC settlement ($55B+ processed, 31 observers).</span></div>
+      <div class="part-item"><span class="part-num">—</span><span>DPI 50-in-5: digital public infrastructure across 100 countries by 2030.</span></div>
+    </div>
+  </div>
+
+  <div class="title-block" style="margin-top: auto;">
+    <div class="tb-cell"><span class="tb-label">Description</span><span class="tb-value">National implementation variants — common supply</span></div>
+    <div class="tb-cell"><span class="tb-label">Figure</span><span class="tb-value">5.1</span></div>
+    <div class="tb-cell"><span class="tb-label">Scale</span><span class="tb-value">Schematic only</span></div>
+  </div>
+  <span class="page-number">5•1</span>
+</div>
+
+<!-- 5•2 — CHAPTER HEADING + THESIS -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">5•2</span><span class="page-title">International convergence</span></div>
+  <p class="chapter-heading">Chapter 5 International convergence</p>
+  <p class="body-text">Apparent geopolitical competition between nation-states masks convergence at the supranational policy layer. The US, China, Russia, the EU, the UK, the Gulf states, and India appear to compete for technological dominance. The competition is real at the implementation layer — which companies build the infrastructure, which nations host the data centres, whose currency anchors the digital economy. At the policy layer, every major power is building the same architecture: digital identity, CBDC, social credit (explicit or tacit), biosecurity governance, AI-mediated resource allocation. Seven socket types (see Fig 5.1). Same current.</p>
+  <p class="body-text">China's social credit system and Western behavioural scoring infrastructure — credit scores, ESG ratings, insurance telematics, platform trust metrics — are different user interfaces on the same operating system. China brands it. Western nations distribute the same function across enough systems that no single one bears the name. The US GENIUS Act and the EU Digital Identity Wallet regulation arrive at the same destination through different legislative traditions. The UK left the EU and built the same digital infrastructure under a different flag — Palantir's 24 NHS, MoD, and Cabinet Office contracts document the wiring. The competition is real. The specification is shared. Two contractors competing to build the same building to the same blueprint are genuinely competing. They are not building different buildings.</p>
+  <p class="body-text"><span class="il">The franchise model.</span> Different countries, independent decisions, same policies emerging simultaneously — not because of a Zoom call, but because the institutional infrastructure (Trilateral Commission, CFR, Chatham House, and equivalents in every major nation) produces compatible policy frameworks that national governments then implement as if they'd originated domestically. The franchise does not require a head office issuing instructions. It requires only a shared training manual — and the training manual is the institutional network itself.</p>
+  <p class="body-text"><span class="il">The CFR says the quiet part.</span> The Council on Foreign Relations published in February 2026 an article describing American hyperscaler dominance as an "invisible empire" controlling two-thirds of global cloud infrastructure, owning 70%+ of undersea cable capacity, operating in 190 countries. The article frames this as a "trust problem" requiring better democratic legitimacy — not as an architecture to dismantle. The proposed solution is making the digital empire more palatable, not less imperial. The franchise model does not hide. It publishes.</p>
+  <div class="box warning-box" style="margin-top: 12px;">
+    <span class="box-label">Warning: </span>The national faceplates are not cosmetic by accident. Visible competition between implementations serves the architecture: it produces the narrative of sovereign choice while the protocol layer underneath — the generator — is shared. The user who selects their national socket type experiences autonomy. The current they receive is specified elsewhere. See §8.
+  </div>
+  <div class="box note-box" style="margin-top: 6px;">
+    <span class="box-label">Note: </span>Two shared socket types appear in Fig 5.1. Items 2 and 5 (EU and Russia) share Type C — geopolitical adversaries, identical pin configuration. Items 3 and 6 (UK and Gulf/UAE) share Type G — a former colonial power and its Gulf partners, same standard. The diagram does not editorialize this. It shows it.
+  </div>
+  <span class="page-number">5•2</span>
+</div>
+
+<!-- 5•3 — RUSSIA FIELD FAILURE + CHINA REFERENCE IMPLEMENTATION -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">5•3</span><span class="page-title">International convergence</span></div>
+  <p class="section-heading" style="margin-top: 28px;">5.1 Field failure — the Russia disconnection</p>
+  <p class="body-text"><span class="il">Failure mode.</span> When US hyperscalers severed Russian access in 2022–24, Russia lost what one tech executive described as twenty years of its future in a heartbeat. The scramble to build domestic alternatives produced a patchwork of degrading cybersecurity and incompatible systems.</p>
+  <p class="body-text"><span class="il">Diagnostic.</span> The lesson every nation drew: dependence on US digital infrastructure is an existential vulnerability. The response: build sovereign alternatives. But "sovereign alternatives" means building national instances of the same architecture — not building something fundamentally different. The nations fleeing the empire build local franchises of the empire's design. The escape route leads to the same destination.</p>
+  <p class="body-text"><span class="il">Observed in service.</span> Russia now operates NSPK (National Payment Card System) and the Mir card network — functionally identical to the Visa/Mastercard infrastructure they replaced. RuNet sovereign internet legislation mirrors the Great Firewall's architecture. The socket is relabelled. The current specification is unchanged. A unit disconnected from the grid does not question whether it needs electricity. It builds a local generator to the same specification.</p>
+  <div class="box note-box" style="margin-top: 8px;">
+    <span class="box-label">Note: </span>Russia's disconnection is not a counter-example to the convergence thesis. It is a stress test that confirms it. Under maximum geopolitical pressure, the architecture a nation builds from scratch converges on the same design. The specification is not imposed. It is gravitational.
+  </div>
+  <p class="section-heading">5.2 The reference implementation</p>
+  <p class="body-text">China is not an exception to the convergence. It is the most advanced implementation of it. The e-CNY (digital yuan) is the world's furthest-developed CBDC, reaching 260 million people across 200 use cases from e-commerce to government stimulus. The social credit system is the explicit, branded version of what Western nations distribute across credit scores, ESG ratings, insurance telematics, and platform compliance frameworks — the same behavioural architecture, partitioned so that no individual component looks like what it is. The Great Firewall is the tiered internet with identity verification that §2.2 describes as an intelligence community aspiration. Alipay and WeChat Pay process the vast majority of China's consumer payments, demonstrating cashless society at population scale.</p>
+  <p class="body-text"><span class="il">Cross-border settlement.</span> Project mBridge — the cross-border CBDC platform connecting the central banks of China, Hong Kong, Thailand, the UAE, and Saudi Arabia — has settled over $55 billion in transactions, with the e-CNY accounting for approximately 95% of settlement volume (Atlantic Council, Jan 2026). The BIS coordinated the project from 2021 before handing it to the participating central banks in late 2024. It now has 31 observing members. India, chairing BRICS in 2026, has proposed linking all member states' digital currencies for cross-border payments. All eleven BRICS members are exploring a CBDC; nine are already in the pilot phase.</p>
+  <div class="inspection-box" style="margin-top: 10px;"><span class="inspection-label">Inspection: </span>Check whether your nearest supermarket has installed electronic shelf labels. If prices are displayed on screens rather than paper, the infrastructure for dynamic pricing — where the cost of the same item varies by time, demand, or customer — is installed. Check whether the “standard” price and the “member” price are displayed side by side on the same label. The member price requires identification at the till. The two-tier price tag is the franchise faceplate applied to a tin of beans. You see a discount. The system sees an identity.</div>
+  <div class="inspection-box" style="margin-top: 6px;"><span class="inspection-label">Inspection: </span>Identify whether your country's digital identity framework references ISO/IEC SC 43, the OECD Neurotechnology Toolkit, or the DPI 50-in-5 programme. If any of these standards appear in your national policy documents — regardless of which government drafted them — the franchise installation is documented. The socket type differs. The wiring specification does not.</div>
+  <span class="page-number">5•3</span>
+</div>
+
+<!-- 5•4 — LAYER 0 FACILITATION -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">5•4</span><span class="page-title">International convergence</span></div>
+  <p class="section-heading" style="margin-top: 28px;">5.3 Layer 0 facilitation</p>
+  <p class="body-text">China's post-1978 integration into the global economic architecture was not accidental convergence — it was facilitated. Kissinger's 1971–72 opening. Western capital building the manufacturing base. The Trilateral Commission (founded 1973 by Rockefeller and Brzezinski, explicitly designed to coordinate policy across the US, Europe, and East Asia) providing the institutional framework. What emerged was not an alternative to Western technocracy but its most advanced testbed — a jurisdiction where single-party governance removed the democratic friction that slows implementation elsewhere.</p>
+  <p class="body-text">The "China threat" narrative operates at Layer 3. The architecture operates at Layer 0. A nominally communist state and nominally capitalist states are building the same architecture. The political branding differs. The infrastructure converges. At sufficient altitude, national boundaries are wiring colours, not circuit topology.</p>
+  <p class="body-text">The appearance of rivalry is genuine at the implementation layer — the competition for manufacturing capacity, chip supply chains, and AI compute is real and has real consequences. This analysis does not claim the rivalry is fabricated. It claims the rivalry operates within a shared architectural specification. Two contractors competing to build the same building to the same blueprint are genuinely competing. They are not building different buildings.</p>
+  <div class="inspection-box" style="margin-top: 8px;"><span class="inspection-label">Inspection: </span>Compare the functional specification of the EU Digital Identity Wallet (eIDAS 2.0) with China's resident identity card digital upgrade. Different legislative traditions. Different privacy frameworks. Same biometric data points collected. Same interoperability with financial settlement infrastructure. Same specification. Different socket.</div>
+
+  <div class="box service-bulletin-box" style="margin-top: 8px;">
+    <span class="box-label">Service bulletin: </span>The EU AI Act (2025) prohibits integration of social credit scoring with CBDC transactions. The valve assembly (item 12, Fig 4.1) navigates this through a structural split: the money carries no conditions — the wallet does. Central banks state, accurately, that their digital currencies embed no restrictions. The conditions live in the interface through which the individual accesses the money. The compliance sticker is on the housing. The current specification is unchanged.
+  </div>
+
+  <div class="box service-record-box" style="margin-top: 8px;">
+    <span class="box-label"><svg width="12" height="12" viewBox="0 0 20 20" style="vertical-align: -1px; margin-right: 2px;"><path d="M10 1.5L1.5 17.5h17L10 1.5z" fill="none" stroke="#555" stroke-width="1.8"/><path d="M11 7l-1.5 4.5h2.5l-1.5 4.5" fill="none" stroke="#555" stroke-width="1.2" stroke-linecap="round"/></svg> Service record: </span>The classify-then-deny valve (§3, downstream conditioning) has been operated at individual-account level on documented dates. <b>July 2023:</b> Coutts (NatWest) closed accounts on ESG grounds — no law required it, no regulator ordered it. <b>February 2022:</b> Canadian banks froze convoy donors’ accounts without court order under the Emergencies Act. Different institutional wrappers. Same valve operation. The component has been bench-tested. It works.
+  </div>
+
+  <div class="box warning-box" style="margin-top: 12px;">
+    <span class="box-label">Warning: </span>The franchise model inverts the usual analysis. The question is not "who is coordinating these nations?" The question is "why does the architecture converge without coordination?" The answer is structural: the institutional network (§3.1, mechanism 5 — ideological capture) produces compatible policy outputs from independent inputs. The generator does not need to instruct the sockets. It needs only to set the voltage. The sockets are manufactured to the standard because the standard is the only one taught.</div>
+  <span class="page-number">5•4</span>
+</div>
+
+<!-- 5•5 — FRANCHISE IN SERVICE (MJ photo page) -->
+<div class="a4-page">
+  <div class="page-header"><span class="page-ref">5•5</span><span class="page-title">International convergence</span></div>
+  <div style="padding: 16px 0 0; flex: 1; display: flex; flex-direction: column;">
+    <div class="fig-label">Chapter 5 · The franchise in service</div>
+    <div style="flex: 1; overflow: hidden; border: 1px solid #1a1a1a; margin-top: 8px; max-height: 620px;">
+      <img src="haynes-franchise.webp" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" alt="The franchise in service.">
+    </div>
+    <p class="photo-caption" style="margin-top: 10px;"><b>5.1a</b> Five denominations. One settlement layer. The national branding is the faceplate. The current is identical. See Fig 5.1.</p>
+  </div>
+  <div style="flex-shrink: 0; padding-top: 8px;">
+    <div class="box warning-box" style="margin-top: 0;">
+      <span class="box-label">Warning: </span>The currencies pictured appear to compete. They are denominated in different units, issued by different central banks, and governed by different regulatory frameworks. The settlement infrastructure underneath them — the protocol layer that clears the transaction, validates the identity, and enforces the conditions — is shared. The generator does not care which socket the appliance is plugged into. It cares that the current conforms to specification.
+    </div>
+    <div class="box note-box">
+      <span class="box-label">Note: </span>The operator conducting this transaction does not feel that they are participating in a global convergence architecture. The operator is buying coffee. The interface is local. The settlement is supranational. The franchise works precisely because the faceplate looks national.
+    </div>
+  </div>
+  <span class="page-number">5•5</span>
+</div>
+
+</body>
+</html>

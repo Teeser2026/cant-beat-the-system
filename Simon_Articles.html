@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles</title>
 <meta property="og:title" content="Articles">
-<meta property="og:description" content="Nine pieces. The supply side, the demand side, and four companion documents.">
+<meta property="og:description" content="Eleven pieces across three series. The architecture, the environment, and the food.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,6 +132,50 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   color:var(--txl);
 }
 
+/* ══ Full-width section ══ */
+.full-section{
+  grid-column:1/-1;
+  border-top:1px solid var(--abl);
+  display:flex;
+  align-items:stretch;
+}
+.full-section-header{
+  flex:0 0 auto;
+  width:320px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid var(--abl);
+}
+.full-section-img{
+  position:relative;
+  flex:0 0 320px;
+  min-height:200px;
+  overflow:hidden;
+  border-right:1px solid var(--abl);
+}
+.full-section-links{
+  flex:1;
+  list-style:none;padding:0 32px;margin:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.full-section-links li{
+  border-top:1px solid var(--abl);
+}
+.full-section-links li:first-child{border-top:none}
+.full-section-links a{
+  display:block;
+  padding:14px 0;
+  text-decoration:none;
+  color:inherit;
+  transition:padding-left .12s ease;
+}
+.full-section-links a:hover{padding-left:8px}
+.full-section-links a:hover .link-title{color:#aa8a6a}
+
 /* ══ Footer ══ */
 .page-footer{
   grid-column:1/-1;
@@ -157,6 +201,10 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   .col-links{padding:0 24px;padding-top:16px}
   .link-title{font-size:15px}
   .page-footer{padding:16px 24px}
+  .full-section{flex-direction:column}
+  .full-section-header{width:auto;border-right:none;border-bottom:1px solid var(--abl);padding:24px}
+  .full-section-img{flex:none;width:auto;height:260px;border-right:none;border-bottom:1px solid var(--abl)}
+  .full-section-links{padding:0 24px}
 }
 </style>
 </head>
@@ -229,11 +277,33 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
         <div class="link-title">Engineering Greenness</div>
         <div class="link-sub">Working as Designed &mdash; The demand side.</div>
       </a></li>
+      <li><a href="The_Genie_and_the_Bottle.html" target="_blank">
+        <div class="link-title">The Genie and the Bottle</div>
+        <div class="link-sub">Glass, plastic, and the algorithm between them.</div>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ FULL WIDTH: Mandatory Health ═══ -->
+  <div class="full-section">
+    <div class="full-section-img">
+      <img src="articles-health.jpg" alt="" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.4">
+      <div style="position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);text-align:center;padding:0 24px;z-index:2">
+        <div class="col-label" style="color:#8a6a4a">What Goes In Your Daily Bread?</div>
+        <h2 class="col-title" style="font-size:26px">Mandatory Health</h2>
+        <p class="col-sub">Food, water, and the things they add without asking</p>
+      </div>
+    </div>
+    <ul class="full-section-links">
+      <li><a href="Is_There_Death_in_the_Pot.html" target="_blank">
+        <div class="link-title">Is There Death in the Pot?</div>
+        <div class="link-sub">Food adulteration and the Obnoxious Word.</div>
+      </a></li>
     </ul>
   </div>
 
   <footer class="page-footer">
-    <span class="footer-text">June 2026</span>
+    <span class="footer-text">July 2026</span>
   </footer>
 
 </div>

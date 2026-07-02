@@ -1,305 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>When Ponies Aren't Biodiversity</title>
+<meta property="og:title" content="When Ponies Aren't Biodiversity">
+<meta property="og:description" content="How a spreadsheet is culling Dartmoor's endangered ponies &mdash; Green by Numbers">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Outfit:wght@400;600&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --linen: #f5f0e8;
-    --ink: #2c2a26;
-    --warm-grey: #7a756b;
-    --teal: #2a7a6e;
-    --soft-red: #a8433a;
-    --rule: #d4cfc5;
-    --highlight: #e8e2d4;
-  }
-
-  @media print {
-    body { font-size: 11pt; }
-    .page { box-shadow: none; max-width: 100%; padding: 1cm; }
-    @page { margin: 1.5cm; }
-  }
-
-  body {
-    font-family: 'Crimson Pro', Georgia, serif;
-    background: var(--linen);
-    color: var(--ink);
-    line-height: 1.55;
-    padding: 1.5rem;
-    font-size: 17px;
-  }
-
-  .page {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 2.5rem 2.2rem;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  }
-
-  h1 {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.55rem;
-    line-height: 1.3;
-    margin-bottom: 0.3rem;
-    color: var(--ink);
-  }
-
-  .subtitle {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-size: 0.88rem;
-    color: var(--warm-grey);
-    margin-bottom: 1.8rem;
-    letter-spacing: 0.01em;
-  }
-
-  .lead {
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--warm-grey);
-    border-left: 3px solid var(--teal);
-    padding-left: 1rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.5;
-  }
-
-  h2 {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.92rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--teal);
-    margin-top: 1.8rem;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  p { margin-bottom: 0.9rem; }
-
-  .term {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--soft-red);
-    display: inline;
-  }
-
-  .explainer {
-    background: #f9f7f2;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 1rem 1.2rem;
-    margin: 0.8rem 0 1.2rem 0;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: var(--warm-grey);
-  }
-
-  .explainer .explainer-label {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--teal);
-    display: block;
-    margin-bottom: 0.35rem;
-  }
-
-  .diagram {
-    background: var(--highlight);
-    border-radius: 4px;
-    padding: 1.2rem 1.4rem;
-    margin: 1.2rem 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-
-  .diagram .arrow {
-    color: var(--teal);
-    font-weight: 600;
-    padding: 0 0.2rem;
-  }
-
-  .diagram .step {
-    display: block;
-    padding: 0.15rem 0;
-  }
-
-  .key-line {
-    font-style: italic;
-    color: var(--soft-red);
-    margin: 1rem 0;
-    padding: 0.6rem 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .tier-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-
-  .tier-table th {
-    font-family: 'Outfit', Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--warm-grey);
-    text-align: center;
-    padding: 0.5rem 0.8rem;
-    border-bottom: 2px solid var(--rule);
-  }
-
-  .tier-table th:first-child { text-align: left; }
-
-  .tier-table td {
-    text-align: center;
-    padding: 0.5rem 0.8rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .tier-table td:first-child {
-    text-align: left;
-    font-weight: 600;
-  }
-
-  .tier-table tr:last-child td {
-    color: var(--soft-red);
-    font-weight: 600;
-  }
-
-  .bottom-note {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--rule);
-    font-size: 0.85rem;
-    color: var(--warm-grey);
-    line-height: 1.45;
-  }
-
-  strong { font-weight: 600; }
-
-  @media (max-width: 500px) {
-    body { padding: 0.8rem; font-size: 16px; }
-    .page { padding: 1.5rem 1.2rem; }
-    h1 { font-size: 1.25rem; }
-  }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2ece4;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes gbnCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gbn-gauge{display:none!important}}
+@media(max-width:720px){.gbn-hero-title{font-size:54px!important}.gbn-h-title{font-size:34px!important}.gbn-wrap{padding-left:24px!important;padding-right:24px!important}}
 </style>
 </head>
 <body>
-<div class="page">
 
-<h1>When Ponies Aren't Biodiversity</h1>
-<p class="subtitle">How a spreadsheet is culling Dartmoor's endangered ponies to save Dartmoor's biodiversity</p>
+<div id="gbn-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#5a7a5a;z-index:60;transition:width .12s linear"></div>
+<nav id="gbn-gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
 
-<p class="lead">Dartmoor's semi-wild ponies have grazed the moor for 4,500 years. There are fewer than 1,000 left. They are classed as endangered by the United Nations and listed by DEFRA as a native species at risk. Peer-reviewed science — which Natural England accepts as part of its own evidence portfolio — shows that pony grazing is the most effective tool for managing the invasive Molinia grass that is choking Dartmoor's protected habitats. Natural England has just demanded livestock reductions of between 56% and 89% on the moor. The ponies will be the first to go.</p>
+<main style="position:relative">
 
-<h2>What's Happening</h2>
+  <!-- ============ COVER (stays dark) ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0c0a08">
+    <div style="position:absolute;inset:0;background:#0c0a08 url('ponies.jpg') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(12,10,8,.6)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(12,10,8,.75))"></div>
 
-<p>Dartmoor's commons are currently managed under Higher Level Stewardship agreements, which allow a grazing density of 0.36 livestock units per hectare. Natural England is now transitioning the commons into Countryside Stewardship — a new scheme with dramatically lower stocking limits. The reductions operate on three tiers:</p>
+    <div style="position:absolute;top:50%;right:7%;transform:translateY(-50%);width:120px;display:flex;flex-direction:column;gap:8px;opacity:.9;pointer-events:none">
+      <div style="height:6px;background:#5a7a5a;opacity:.08"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.13"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.19"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.26"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.34"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.43"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.53"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.64"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.76"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.88"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:1"></div>
+    </div>
 
-<table class="tier-table">
-  <tr>
-    <th></th>
-    <th>Current (HLS)</th>
-    <th>CS Tier 1</th>
-    <th>CS Tier 2</th>
-    <th>CS Tier 3</th>
-  </tr>
-  <tr>
-    <td>Grazing density (lsu/ha)</td>
-    <td>0.36</td>
-    <td>0.16</td>
-    <td>0.08</td>
-    <td>0.04</td>
-  </tr>
-  <tr>
-    <td>Reduction required</td>
-    <td>—</td>
-    <td>56%</td>
-    <td>78%</td>
-    <td>89%</td>
-  </tr>
-</table>
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#7a9a7a;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:gbnCue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
 
-<p>The stated reason is habitat protection. Dartmoor is a Site of Special Scientific Interest, and Natural England says reducing grazing pressure will allow protected habitats — blanket bogs, heathland, rare mosses — to recover. Natural England doesn't mention ponies in the ruling. It sets a total livestock number. Farmers choose what to keep. Cattle and sheep pay the bills. Ponies don't. The cull isn't ordered. It's made financially inevitable.</p>
+    <div class="gbn-wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#7a9a7a;text-transform:uppercase">Green by Numbers</div>
+      <h1 class="gbn-hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(52px,7.2vw,92px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:14ch">When Ponies Aren&rsquo;t Biodiversity</h1>
+      <div style="width:64px;height:2px;background:#5a7a5a;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a4;margin:0;max-width:42ch">How a spreadsheet is culling Dartmoor&rsquo;s<br>endangered ponies to save Dartmoor&rsquo;s biodiversity.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#6a7264;text-transform:uppercase;white-space:nowrap">
+        <span>Nature, credit markets and the people caught between them</span>
+        <span style="width:5px;height:5px;background:#5a7a5a;transform:rotate(45deg)"></span>
+        <span>June 2026</span>
+      </div>
+    </div>
+  </section>
 
-<p>Natural England says decisions about which animals stay "rest with individual landowners not with Natural England." That sentence is doing a lot of work.</p>
+  <!-- ============ 01 · OVERVIEW ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 Overview" style="position:relative;z-index:2;padding:130px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">01<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Overview</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">4,500 years of grazing. Fewer than 1,000 left.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Dartmoor&rsquo;s semi-wild ponies have grazed the moor for 4,500 years. There are fewer than 1,000 left. They are classed as endangered by the United Nations and listed by DEFRA as a native species at risk. Peer-reviewed science &mdash; which Natural England accepts as part of its own evidence portfolio &mdash; shows that pony grazing is the most effective tool for managing the invasive Molinia grass that is choking Dartmoor&rsquo;s protected habitats.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Natural England has just demanded livestock reductions of between 56% and 89% on the moor. The ponies will be the first to go.</p>
+    <div style="border-top:1px solid rgba(90,122,90,.22);padding-top:28px;margin-top:36px">
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 14px;max-width:680px">This piece is part of a series:</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Working_As_Designed.html" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Everything Is Working Exactly As Designed</a> &mdash; a bat tunnel, a fish disco, and a financial instrument.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Cleaning_River_Bad.html" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Why Cleaning a River Is Illegal</a> &mdash; a dirty river is worth more than a clean one.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Oysters_Aren't_Food.html" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">When Oysters Aren&rsquo;t Food</a> &mdash; how does closing an oyster farm bring back oysters?</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Engineering_Greenness.html" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Engineering Greenness</a> &mdash; the demand side.</p>
+    </div>
+  </div></section>
 
-<h2>The Catch-22</h2>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>Any financial support for ponies — grazing supplements, Native At Risk payments — is only available to farmers <em>after</em> a minimum 56–89% reduction has already been carried out. The system will help you keep ponies, but only once you've removed hundreds of them first. The safety net requires the fall.</p>
+  <!-- ============ 02 · WHAT'S HAPPENING ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 What's Happening" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">02<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What&rsquo;s Happening</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The cull isn&rsquo;t ordered. It&rsquo;s made financially inevitable.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Dartmoor&rsquo;s commons are currently managed under Higher Level Stewardship agreements, which allow a grazing density of 0.36 livestock units per hectare. Natural England is now transitioning the commons into Countryside Stewardship &mdash; a new scheme with dramatically lower stocking limits. The reductions operate on three tiers:</p>
 
-<p>And Natural England isn't waiting for its own process. The Dartmoor Land Use Management Group was appointed to report in late 2027 on how to implement the recommendations of the 2023 Dartmoor Review — the same review that explicitly said Natural England <strong>"should not take actions likely to result in a reduction in pony numbers."</strong> Natural England is moving commons into Countryside Stewardship now, with the lower stocking numbers, pre-empting the review body it set up to address the question.</p>
+    <div style="overflow-x:auto;margin:0 0 36px"><table style="width:100%;max-width:680px;border-collapse:collapse;font-family:'Spectral',serif"><thead><tr>
+      <th style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#5a7a5a;padding:0 16px 11px 0;border-bottom:1.5px solid #5a7a5a;width:40%"></th>
+      <th style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#5a7a5a;padding:0 16px 11px 0;border-bottom:1.5px solid #5a7a5a">Current (HLS)</th>
+      <th style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#5a7a5a;padding:0 16px 11px 0;border-bottom:1.5px solid #5a7a5a">CS Tier 1</th>
+      <th style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#5a7a5a;padding:0 16px 11px 0;border-bottom:1.5px solid #5a7a5a">CS Tier 2</th>
+      <th style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#5a7a5a;padding:0 16px 11px 0;border-bottom:1.5px solid #5a7a5a">CS Tier 3</th>
+    </tr></thead><tbody>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#1c1a16;font-weight:500;padding:13px 16px 13px 0;border-bottom:1px solid rgba(90,122,90,.12);vertical-align:top">Grazing density (lsu/ha)</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">0.36</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">0.16</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">0.08</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">0.04</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#1c1a16;font-weight:500;padding:13px 16px 13px 0;border-bottom:1px solid rgba(90,122,90,.12);vertical-align:top">Reduction required</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">&mdash;</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#8a4a3a;font-weight:500;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">56%</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#8a4a3a;font-weight:500;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">78%</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#8a4a3a;font-weight:500;padding:13px 16px;border-bottom:1px solid rgba(90,122,90,.12);text-align:center">89%</td></tr>
+    </tbody></table></div>
 
-<h2>The Bit That Makes No Sense (Until It Does)</h2>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The stated reason is habitat protection. Dartmoor is a Site of Special Scientific Interest, and Natural England says reducing grazing pressure will allow protected habitats &mdash; blanket bogs, heathland, rare mosses &mdash; to recover. Natural England doesn&rsquo;t mention ponies in the ruling. It sets a total livestock number. Farmers choose what to keep. Cattle and sheep pay the bills. Ponies don&rsquo;t. The cull isn&rsquo;t ordered. It&rsquo;s made financially inevitable.</p>
 
-<p>In the late 1980s, Molinia grass covered 1% of Dartmoor's commons. Today it has spread across huge areas of the moor, suffocating blanket bog, putting Sites of Special Scientific Interest into unfavourable condition, and destroying habitats for insects, birds, and reptiles. The moor isn't overgrazed. It's undergrazed. The Molinia is winning because there aren't enough animals eating it.</p>
+    <div style="position:relative;margin:0 0 42px;background:#e0d8cc url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(242,236,228,.55)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0">Natural England says decisions about which animals stay &ldquo;rest with individual landowners not with Natural England.&rdquo; That sentence is doing a lot of work.</p>
+      </div>
+    </div>
 
-<p>The Dartmoor Hill Pony Association puts it simply: the ponies, uniquely adapted to Dartmoor's terrain after 4,500 years, are the best tool for managing Molinia and restoring the moor's biodiversity. Published, peer-reviewed science supports this (Lunt et al 2021, Fraser et al 2019). Natural England accepts this science. And Natural England is implementing a policy that removes the animals the science says should stay.</p>
+  </div></section>
 
-<p>So why would a conservation body ignore its own evidence, override its own commissioned review, and pre-empt its own appointed working group — to implement a policy that removes the species best equipped to solve the problem the policy claims to address?</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>Because the ponies' contribution doesn't fit the measurement system.</p>
+  <!-- ============ 03 · THE CATCH-22 ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 The Catch-22" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">03<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Catch&#8209;22</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The safety net requires the fall.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Any financial support for ponies &mdash; grazing supplements, Native At Risk payments &mdash; is only available to farmers <em>after</em> a minimum 56&ndash;89% reduction has already been carried out. The system will help you keep ponies, but only once you&rsquo;ve removed hundreds of them first. The safety net requires the fall.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">And Natural England isn&rsquo;t waiting for its own process. The Dartmoor Land Use Management Group was appointed to report in late 2027 on how to implement the recommendations of the 2023 Dartmoor Review &mdash; the same review that explicitly said Natural England <strong style="color:#1c1a16">&ldquo;should not take actions likely to result in a reduction in pony numbers.&rdquo;</strong> Natural England is moving commons into Countryside Stewardship now, with the lower stocking numbers, pre-empting the review body it set up to address the question.</p>
+  </div></section>
 
-<h2>How Biodiversity Is Measured (And Why Ponies Don't Count)</h2>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>Since February 2024, every new development in England must leave wildlife habitats 10% better than before. This is called <span class="term">Biodiversity Net Gain</span>. Developers who can't deliver the improvement on-site buy "Biodiversity Units" from landowners elsewhere. Average price: around £30,000 per unit.</p>
+  <!-- ============ 04 · THE BIT THAT MAKES NO SENSE ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 No Sense" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">04<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Makes No Sense</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Until it does.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In the late 1980s, Molinia grass covered 1% of Dartmoor&rsquo;s commons. Today it has spread across huge areas of the moor, suffocating blanket bog, putting Sites of Special Scientific Interest into unfavourable condition, and destroying habitats for insects, birds, and reptiles. The moor isn&rsquo;t overgrazed. It&rsquo;s undergrazed. The Molinia is winning because there aren&rsquo;t enough animals eating it.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Dartmoor Hill Pony Association puts it simply: the ponies, uniquely adapted to Dartmoor&rsquo;s terrain after 4,500 years, are the best tool for managing Molinia and restoring the moor&rsquo;s biodiversity. Published, peer-reviewed science supports this (Lunt et al 2021, Fraser et al 2019). Natural England accepts this science. And Natural England is implementing a policy that removes the animals the science says should stay.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">So why would a conservation body ignore its own evidence, override its own commissioned review, and pre-empt its own appointed working group &mdash; to implement a policy that removes the species best equipped to solve the problem the policy claims to address?</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Because the ponies&rsquo; contribution doesn&rsquo;t fit the measurement system.</p>
+  </div></section>
 
-<div class="explainer">
-  <span class="explainer-label">How do you measure biodiversity?</span>
-  A government spreadsheet — the Statutory Metric — scores every habitat by size, type, condition, and location. Multiply them together: that's a Biodiversity Unit. A development site is surveyed before and after. The "after" number must be 10% higher. If it isn't, the developer buys units from someone else's land — a landowner who has restored or created habitat, had the improvement verified, and registered the units for sale. The land is then locked under a conservation covenant for a minimum of 30 years. The metric measures habitat categories, not the animals living in them. A field with ponies and a field without ponies can score identically. The system sees the number, not the horse.
-</div>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>A managed rewilding programme with satellite-verified milestones, a 30-year legal agreement, and a registered conservation covenant generates Biodiversity Units. A pony grazing a hillside for 4,500 years does not. The pony's work is real. It's just not in the spreadsheet.</p>
+  <!-- ============ 05 · HOW BIODIVERSITY IS MEASURED ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 Biodiversity Metric" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">05<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">How Biodiversity Is Measured</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">And why ponies don&rsquo;t count.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Since February 2024, every new development in England must leave wildlife habitats 10% better than before. This is called <strong style="color:#8a4a3a">Biodiversity Net Gain</strong>. Developers who can&rsquo;t deliver the improvement on-site buy &ldquo;Biodiversity Units&rdquo; from landowners elsewhere. Average price: around &pound;30,000 per unit.</p>
 
-<p class="key-line">The ponies' crime isn't ecological. It's that their contribution is unmeasured.<br>What the system can't measure, the system can't value.<br>What it can't value, it replaces with something it can.</p>
+    <div style="border-left:2px solid #5a7a5a;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(90,122,90,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5a7a5a;margin:0 0 10px">How do you measure biodiversity?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">A government spreadsheet &mdash; the Statutory Metric &mdash; scores every habitat by size, type, condition, and location. Multiply them together: that&rsquo;s a Biodiversity Unit. A development site is surveyed before and after. The &ldquo;after&rdquo; number must be 10% higher. If it isn&rsquo;t, the developer buys units from someone else&rsquo;s land &mdash; a landowner who has restored or created habitat, had the improvement verified, and registered the units for sale. The land is then locked under a conservation covenant for a minimum of 30 years. The metric measures habitat categories, not the animals living in them. A field with ponies and a field without ponies can score identically. The system sees the number, not the horse.</p>
+    </div>
 
-<h2>Where the Land Goes</h2>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">A managed rewilding programme with satellite-verified milestones, a 30-year legal agreement, and a registered conservation covenant generates Biodiversity Units. A pony grazing a hillside for 4,500 years does not. The pony&rsquo;s work is real. It&rsquo;s just not in the spreadsheet.</p>
 
-<p>Once farming becomes unviable — and a 56–89% livestock reduction will achieve that — the land shifts into environmental stewardship agreements. The farmer is paid to manage land for biodiversity outcomes instead of food. That land generates Biodiversity Units: registered, priced, tradeable. The same stretch can simultaneously generate nutrient credits (offsetting pollution from new developments) and carbon credits (sequestering carbon through habitat creation). This is called <span class="term">stacking</span> — three revenue streams from one piece of land, all locked under conservation covenants at the Land Registry.</p>
+    <div style="position:relative;margin:0 0 42px;background:#e0d8cc url('gbn-texture.png') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(242,236,228,.55)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0;text-align:center">The ponies&rsquo; crime isn&rsquo;t ecological. It&rsquo;s that their contribution is unmeasured.<br>What the system can&rsquo;t measure, the system can&rsquo;t value.<br>What it can&rsquo;t value, it replaces with something it can.</p>
+      </div>
+    </div>
 
-<p>The land isn't confiscated. It's <span class="term">tokenised</span> — its ecological value quantified, registered, and entered into financial markets as a tradeable asset. The ponies, whose grazing IS the biodiversity management, are replaced by a measurement system that generates financial instruments from the distance between a degraded baseline and a restored one.</p>
+  </div></section>
 
-<div class="explainer">
-  <span class="explainer-label">Who runs the system?</span>
-  Natural England — the quango that just demanded the livestock reductions — also runs the Biodiversity Gain Sites Register. It sets the conditions that push land out of farming, and it administers the registry that land enters when farming ends. It also runs the nutrient mitigation scheme. It recommends stacking. It sets the metric. It advises on baselines. The regulator and the market-maker are the same institution.
-</div>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<h2>What's Underneath</h2>
+  <!-- ============ 06 · WHERE THE LAND GOES ============ -->
+  <section id="S6" data-layer="5" data-screen-label="06 Where Land Goes" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">06<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Where the Land Goes</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Three revenue streams from one piece of land.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Once farming becomes unviable &mdash; and a 56&ndash;89% livestock reduction will achieve that &mdash; the land shifts into environmental stewardship agreements. The farmer is paid to manage land for biodiversity outcomes instead of food. That land generates Biodiversity Units: registered, priced, tradeable. The same stretch can simultaneously generate nutrient credits (offsetting pollution from new developments) and carbon credits (sequestering carbon through habitat creation). This is called <strong style="color:#8a4a3a">stacking</strong> &mdash; three revenue streams from one piece of land, all locked under conservation covenants at the Land Registry.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The land isn&rsquo;t confiscated. It&rsquo;s <strong style="color:#8a4a3a">tokenised</strong> &mdash; its ecological value quantified, registered, and entered into financial markets as a tradeable asset. The ponies, whose grazing IS the biodiversity management, are replaced by a measurement system that generates financial instruments from the distance between a degraded baseline and a restored one.</p>
 
-<p>Dartmoor sits on one of the world's largest tungsten deposits. The Hemerdon mine, 7 miles from Plymouth, is restarting — mining equipment is already on site, with full commissioning targeted for early 2027. The UK's Critical Minerals Strategy names Devon as a key growth area. Tungsten is essential for defence and advanced manufacturing, and its supply is dominated by China and Russia.</p>
+    <div style="border-left:2px solid #5a7a5a;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(90,122,90,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5a7a5a;margin:0 0 10px">Who runs the system?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">Natural England &mdash; the quango that just demanded the livestock reductions &mdash; also runs the Biodiversity Gain Sites Register. It sets the conditions that push land out of farming, and it administers the registry that land enters when farming ends. It also runs the nutrient mitigation scheme. It recommends stacking. It sets the metric. It advises on baselines. The regulator and the market-maker are the same institution.</p>
+    </div>
 
-<p>Plymouth's freeport — a zone with tax breaks, relaxed planning rules, and reduced regulation — has a 75km outer boundary that covers most of Dartmoor. The National Park Authority was never consulted on this boundary.</p>
+  </div></section>
 
-<p>The same piece of land is simultaneously inside a national park, inside a Site of Special Scientific Interest, inside a freeport boundary, and above a strategic mineral deposit. Four governance layers, none of which reference each other, all converging on the same outcome: existing communities and land uses priced out, replaced by institutional frameworks they have no meaningful input into.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<h2>The Bit That Should Bother You</h2>
+  <!-- ============ 07 · WHAT'S UNDERNEATH ============ -->
+  <section id="S7" data-layer="6" data-screen-label="07 What's Underneath" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">07<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What&rsquo;s Underneath</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Four governance layers, none of which reference each other.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Dartmoor sits on one of the world&rsquo;s largest tungsten deposits. The Hemerdon mine, 7 miles from Plymouth, is restarting &mdash; mining equipment is already on site, with full commissioning targeted for early 2027. The UK&rsquo;s Critical Minerals Strategy names Devon as a key growth area. Tungsten is essential for defence and advanced manufacturing, and its supply is dominated by China and Russia.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Plymouth&rsquo;s freeport &mdash; a zone with tax breaks, relaxed planning rules, and reduced regulation &mdash; has a 75km outer boundary that covers most of Dartmoor. The National Park Authority was never consulted on this boundary.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The same piece of land is simultaneously inside a national park, inside a Site of Special Scientific Interest, inside a freeport boundary, and above a strategic mineral deposit. Four governance layers, none of which reference each other, all converging on the same outcome: existing communities and land uses priced out, replaced by institutional frameworks they have no meaningful input into.</p>
+  </div></section>
 
-<p>Nobody planned this as a sequence. The environmental regulator, the freeport authority, and the critical minerals strategy don't coordinate. Three separate institutional frameworks, each with its own logic, each producing the same result: a farmer in October, choosing between ponies and cattle at the annual drift roundup, making a decision shaped by a formula written in an office in Bristol, inside a system designed in Westminster, serving a market that trades nature as a financial instrument.</p>
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
 
-<p>The Dartmoor Hill Pony Association says it isn't ponies <em>or</em> cattle. It's ponies <em>and</em> cattle. The commons have run both for centuries. The livestock unit formula that forces farmers to choose is the mechanism that splits them — and the split is what makes the land available for the system that comes next.</p>
+  <!-- ============ 08 · THE BIT THAT SHOULD BOTHER YOU ============ -->
+  <section id="S8" data-layer="7" data-screen-label="08 What Should Bother You" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">08<span style="color:#8a8478"> / 08</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Should Bother You</h2>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Nobody planned this as a sequence. The environmental regulator, the freeport authority, and the critical minerals strategy don&rsquo;t coordinate. Three separate institutional frameworks, each with its own logic, each producing the same result: a farmer in October, choosing between ponies and cattle at the annual drift roundup, making a decision shaped by a formula written in an office in Bristol, inside a system designed in Westminster, serving a market that trades nature as a financial instrument.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Dartmoor Hill Pony Association says it isn&rsquo;t ponies <em>or</em> cattle. It&rsquo;s ponies <em>and</em> cattle. The commons have run both for centuries. The livestock unit formula that forces farmers to choose is the mechanism that splits them &mdash; and the split is what makes the land available for the system that comes next.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 36px;max-width:660px">The pony looking at the farmer across the pen has been part of the landscape since the Bronze Age. The spreadsheet that says it doesn&rsquo;t count as biodiversity was published last year.</p>
 
-<p>The pony looking at the farmer across the pen has been part of the landscape since the Bronze Age. The spreadsheet that says it doesn't count as biodiversity was published last year.</p>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#8a8478;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: The Times (15 Jun 2026) &mdash; &ldquo;Dartmoor ponies could be put to death under biodiversity plans&rdquo;; Dartmoor Hill Pony Association (17 Jun 2026) &mdash; Fact Check response; Lunt, P. et al 2021 Conservation Evidence Journal; Fraser M, Stanley C, Hegarty M 2019 Biological Conservation; Environment Act 2021; Natural England Biodiversity Gain Sites Register; Dartmoor Independent Review (2023); UK Critical Minerals Strategy 2035; Tungsten West PLC corporate filings; Plymouth &amp; South Devon Freeport boundary maps (Gov.uk).</em></p>
+  </div></section>
 
-<div class="bottom-note">
-  <strong>Sources:</strong> The Times (15 Jun 2026) — "Dartmoor ponies could be put to death under biodiversity plans"; Dartmoor Hill Pony Association (17 Jun 2026) — Fact Check response; Lunt, P. et al 2021 Conservation Evidence Journal; Fraser M, Stanley C, Hegarty M 2019 Biological Conservation; Environment Act 2021; Natural England Biodiversity Gain Sites Register; Dartmoor Independent Review (2023); UK Critical Minerals Strategy 2035; Tungsten West PLC corporate filings; Plymouth &amp; South Devon Freeport boundary maps (Gov.uk).
-</div>
+  <footer style="padding:80px 0 60px;background:#f2ece4;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase">Green by Numbers &middot; When Ponies Aren&rsquo;t Biodiversity &middot; June 2026</div>
+  </footer>
 
-</div>
+</main>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('gbn-progress').style.width=((st/sh)*100)+'%';
+});
+
+// Layer gauge
+(function(){
+  var gauge=document.getElementById('gbn-gauge');
+  var labels=["Overview","What\u2019s Happening","The Catch-22","No Sense","Biodiversity Metric","Where Land Goes","What\u2019s Underneath","Should Bother You"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#8a8478;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#5a7a5a;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#8a8478;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';r.bar.style.background='#5a7a5a';
+            r.num.style.color='#3a6a3a';r.label.style.color='#3a6a3a';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';r.bar.style.background='#5a7a5a';
+            r.num.style.color='#8a8478';r.label.style.color='#8a8478';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+
 </body>
 </html>

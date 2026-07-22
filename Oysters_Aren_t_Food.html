@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Oysters Aren't Food</title>
+<meta property="og:title" content="When Oysters Aren't Food">
+<meta property="og:description" content="How a classification is shutting a fifty-year farm &mdash; Green by Numbers">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://teeser2026.github.io/cant-beat-the-system/gbn-oysters-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://teeser2026.github.io/cant-beat-the-system/gbn-oysters-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2ece4;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes gbnCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gbn-gauge{display:none!important}}
+@media(max-width:720px){.gbn-hero-title{font-size:54px!important}.gbn-h-title{font-size:34px!important}.gbn-wrap{padding-left:24px!important;padding-right:24px!important}}
+@media(max-width:720px){section[data-screen-label="Cover"]{min-height:60vh!important;aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+
+<div id="gbn-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#6a7a84;z-index:60;transition:width .12s linear"></div>
+<nav id="gbn-gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
+
+<main style="position:relative">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0c0a08">
+    <div style="position:absolute;inset:0;background:#0c0a08 url('gbn-oysters-cover.webp') center/cover no-repeat;filter:grayscale(1)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(12,10,8,.78)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(12,10,8,.88))"></div>
+
+    <div style="position:absolute;top:50%;right:7%;transform:translateY(-50%);width:120px;display:flex;flex-direction:column;gap:8px;opacity:.9;pointer-events:none">
+      <div style="height:6px;background:#6a7a84;opacity:.08"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.13"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.19"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.26"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.34"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.43"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.53"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.64"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.76"></div>
+      <div style="height:6px;background:#6a7a84;opacity:.88"></div>
+      <div style="height:6px;background:#6a7a84;opacity:1"></div>
+    </div>
+
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#8a9aaa;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:gbnCue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
+
+    <div class="gbn-wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#8a9aaa;text-transform:uppercase">Green by Numbers</div>
+      <h1 class="gbn-hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(52px,7.2vw,92px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:14ch">When Oysters Aren&rsquo;t Food</h1>
+      <div style="width:64px;height:2px;background:#6a7a84;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a4;margin:0;max-width:42ch">How a classification is shutting a fifty-year farm &mdash;<br>so the system can bring the oysters back itself.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#6a7674;text-transform:uppercase;white-space:nowrap">
+        <span>Nature, credit markets and the people caught between them</span>
+        <span style="width:5px;height:5px;background:#6a7a84;transform:rotate(45deg)"></span>
+        <span>June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · OVERVIEW ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 Overview" style="position:relative;z-index:2;padding:130px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">01<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Overview</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Fifty years on the river. Classified as invasive.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On the River Avon in south Devon, Tim Edwards is cutting up trestles. His oyster farm has been here for fifty years. It produces 125,000 oysters a year using no feed and no chemicals. A government-funded scientific study conducted on this farm found it enhances biodiversity and improves water quality. The Duchy of Cornwall &mdash; Prince William&rsquo;s estate, valued at over &pound;1 billion &mdash; has told him to leave. His oysters are classified as &ldquo;invasive.&rdquo; Off the coast of Norfolk, a pet food company is restoring four million native oysters with backing from a pension fund. Those oysters generate biodiversity credits. Edwards&rsquo;s don&rsquo;t.</p>
+    <div style="border-top:1px solid rgba(106,122,132,.22);padding-top:28px;margin-top:36px">
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 14px;max-width:680px">This piece is part of a series:</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Working_As_Designed.html" style="color:#4a6a74;text-decoration:underline;text-underline-offset:3px">Everything Is Working Exactly As Designed</a> &mdash; a bat tunnel, a fish disco, and a financial instrument.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Ponies_Not_Biodiverse.html" style="color:#4a6a74;text-decoration:underline;text-underline-offset:3px">When Ponies Aren&rsquo;t Biodiversity</a> &mdash; how a spreadsheet is culling Dartmoor&rsquo;s endangered ponies.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Cleaning_River_Bad.html" style="color:#4a6a74;text-decoration:underline;text-underline-offset:3px">Why Cleaning a River Is Illegal</a> &mdash; a dirty river is worth more than a clean one.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Engineering_Greenness.html" style="color:#4a6a74;text-decoration:underline;text-underline-offset:3px">Engineering Greenness</a> &mdash; the demand side.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="The_Genie_and_the_Bottle.html" style="color:#4a6a74;text-decoration:underline;text-underline-offset:3px">The Genie and the Bottle</a> &mdash; glass, plastic, and the algorithm between them.</p>
+    </div>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 02 · WHAT'S HAPPENING ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 What's Happening" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">02<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What&rsquo;s Happening</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">They don&rsquo;t want to be farmed. They all die.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Edwards runs a small Pacific oyster farm on the muddy banks of the Avon, near Bantham. The farm has operated for over fifty years. The oysters sit in the estuary, filtering water. No feed. No chemicals. &ldquo;They literally just sit in the water, filter huge amounts of water every day,&rdquo; he says.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">His stock is <strong style="color:#8a4a3a">triploid</strong> &mdash; functionally sterile, meaning it cannot breed in the wild. A habitat regulation assessment found no adverse environmental impact. In 2023, the government co-funded a study &mdash; <em>Ecosystem Benefits of UK Oyster Aquaculture Sites</em>, conducted by Envision Marine and the University of Essex &mdash; which surveyed oyster baskets on Edwards&rsquo;s stretch of the Avon. The findings: Pacific oyster farms have minimal adverse impact. In some areas, seabed biodiversity was <strong style="color:#1c1a16">higher</strong> at oyster sites than in control areas.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Duchy of Cornwall is not renewing his lease. It will only support native oyster farming, &ldquo;in line with direct discussions with marine conservation societies, government policy, and our own environmental stewardship commitments.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Edwards tried native oysters. &ldquo;They don&rsquo;t want to be farmed &mdash; it&rsquo;s as simple as that,&rdquo; he says. &ldquo;They all die.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Duchy covers more than 128,000 acres across England and Wales. Its portfolio of land, property and investments is valued at more than &pound;1 billion and provides Prince William with a private income of nearly &pound;23 million a year.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">David Jarrad, chief executive of the Shellfish Association of Great Britain, called the policy on Pacific oysters &ldquo;absolutely daft.&rdquo; UK production is 2,000&ndash;3,000 tonnes a year. France produces 100,000.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 03 · WHAT KILLED THE OYSTERS ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 What Killed Them" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">03<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What Killed the Oysters in the First Place</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">700 million oysters consumed in London. 1864.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In 1864, 700 million oysters were consumed in London alone. They were the food of the poor. An oyster stall on every other street. Cheap, plentiful, available to anyone who could reach the foreshore. In Chichester Harbour, where harvesting dates back to Roman times, three million oysters a year came to market at the industry&rsquo;s peak.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Sewage destroyed them. In Emsworth, in 1902, the Dean of Winchester died of typhoid at a mayoral banquet after eating oysters contaminated by sewage from newly relaid drains. The industry collapsed. Native oyster populations across the UK fell by 95%.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">And it&rsquo;s still happening. Tom Haward, an eighth-generation oysterman on Mersea Island in Essex, took the government to court over what he called the &ldquo;relentless dumping of sewage into our seas.&rdquo; His family has farmed oysters in the creeks around West Mersea since the 1700s. His daughter is two. If she wants to be generation nine, he said, &ldquo;there&rsquo;s got to be safeguards there.&rdquo; The government&rsquo;s deadline for stopping sewage overflows is 2050. That is twenty-four years from now.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 04 · NO SENSE (UNTIL IT DOES) ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 No Sense" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">04<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Makes No Sense</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Until it does.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">So: a government co-funds a study. The study is conducted on Edwards&rsquo;s farm. The study finds his farm enhances biodiversity. The Duchy removes him &ldquo;in line with government policy.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">Why would a conservation framework remove a farm the science says helps?</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Because <em>native</em> generates something <em>Pacific</em> doesn&rsquo;t.</p>
+
+    <div style="border-left:2px solid #6a7a84;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(106,122,132,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6a7a84;margin:0 0 10px">Why does &ldquo;native&rdquo; matter to the system?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">Since February 2024, every new development in England must leave habitats 10% better than before &mdash; <strong style="color:#8a4a3a">Biodiversity Net Gain</strong>. Developers who can&rsquo;t deliver the improvement on-site buy credits from restoration projects that can. The credits require additionality: a measurable gain from a baseline. A Pacific oyster farm that has been enhancing biodiversity for fifty years has no gain left to measure &mdash; the improvement is already there. And even if it weren&rsquo;t, the species doing the improving is classified as invasive. The metric doesn&rsquo;t count enhancement from a species on the wrong list. Native oyster restoration, starting from a degraded baseline, generates the measurable uplift the system can register, verify, and sell. The farm that works has nothing the system can count. The restoration that replaces it does.</p>
+    </div>
+
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Devon Avon Estuary was designated a Marine Conservation Zone in 2019. The riverbed is privately owned by the Duchy. The same institutional preference for &ldquo;native&rdquo; that removes Edwards aligns with the framework that generates tradeable credits from native restoration. Bristol Avon Rivers Trust states in its 2025&ndash;2030 strategy that it will fund its work through &ldquo;emerging green finance mechanisms and markets&rdquo; &mdash; linking mandatory Biodiversity Net Gain improvements on rivers to the delivery of ecosystem services. The restoration organisations are building their revenue model around the credit market that native restoration feeds.</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#2a2824 url('gbn-oysters-texture.webp') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(32,30,26,.65)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Edwards&rsquo;s farm isn&rsquo;t being removed because it harms the river.<br>It&rsquo;s being removed because its benefits can&rsquo;t be sold.</p>
+      </div>
+    </div>
+
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 05 · WHO GETS TO BRING THEM BACK ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 Who Brings Them Back" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">05<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Who Gets to Bring Them Back</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Oysters on turbine foundations. Inside exclusion zones.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The oysters are coming back. Four million of them off the North Norfolk coast by the end of 2026 &mdash; the UK&rsquo;s largest oyster reef restoration, backed by Purina, the pet food company. Purina is a subsidiary of Nestl&eacute;. The restoration is delivered by Oyster Heaven, in partnership with Norfolk Seaweed, a local aquaculture business.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Oyster Heaven also has a partnership with <strong style="color:#8a4a3a">Rebalance Earth</strong>, a nature asset manager 25% owned by the West Yorkshire Pension Fund. Rebalance Earth monetises ecosystem services through carbon credits and Biodiversity Net Gain units, targeting returns of 8&ndash;12% over fifteen years. The same organisation restoring oysters for a pet food company is generating financial instruments for a pension fund.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">RWE, the German energy company, has completed a feasibility study proving that large-scale native oyster restoration can be executed inside offshore wind farms. Oysters on turbine foundations. Inside exclusion zones. Where fishermen can&rsquo;t go. The TOPPING programme &mdash; <em>The Oystrification Program for Practical Integrated Nature Gain</em> &mdash; is now developing standardised methods for deploying oyster larvae at offshore wind infrastructure across the North Sea.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On 21 May 2026, the UK government reformed its offshore wind compensation rules. The new regulations explicitly list &ldquo;restoration of native oyster populations&rdquo; as a valid compensatory measure for wind farm impacts on protected marine sites. Oyster restoration is now a formal offset mechanism for the industry displacing fishing communities from their traditional waters.</p>
+
+    <div style="overflow-x:auto;margin:0 0 36px"><table style="width:100%;max-width:680px;border-collapse:collapse;font-family:'Spectral',serif"><thead><tr>
+      <th style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#8a4a3a;padding:0 16px 11px 0;border-bottom:1.5px solid #6a7a84;width:50%;border-right:1px solid rgba(106,122,132,.15)">Shut down</th>
+      <th style="text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#6a7a84;padding:0 0 11px 16px;border-bottom:1.5px solid #6a7a84;width:50%">Scaling up</th>
+    </tr></thead><tbody>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top;border-right:1px solid rgba(106,122,132,.12)">Tim Edwards, Pacific oyster farmer, River Avon, Devon</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top">Purina (Nestl&eacute;) + Oyster Heaven, native restoration, North Norfolk</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top;border-right:1px solid rgba(106,122,132,.12)">50 years on the site. 125,000 oysters/year</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top">4 million oysters by end of 2026</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top;border-right:1px solid rgba(106,122,132,.12)">Government-funded study: enhances biodiversity</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top">Generates carbon credits + BNG units</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 16px 13px 0;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top;border-right:1px solid rgba(106,122,132,.12)">Removed by Duchy of Cornwall (&pound;1bn estate)</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#2c2a24;padding:13px 0 13px 16px;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top">Backed by West Yorkshire Pension Fund (8&ndash;12% target returns)</td></tr>
+      <tr><td style="font-size:14.5px;line-height:1.55;color:#8a4a3a;font-weight:500;padding:13px 16px 13px 0;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top;border-right:1px solid rgba(106,122,132,.12)">Classification: &ldquo;invasive&rdquo;</td>
+        <td style="font-size:14.5px;line-height:1.55;color:#6a7a84;font-weight:500;padding:13px 0 13px 16px;border-bottom:1px solid rgba(106,122,132,.12);vertical-align:top">Classification: &ldquo;native&rdquo;</td></tr>
+    </tbody></table></div>
+
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 06 · AND ON THE SAME COAST ============ -->
+  <section id="S6" data-layer="5" data-screen-label="06 On the Same Coast" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">06<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">And on the Same Coast</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Court papers zip-tied to the hulls.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On 12 June 2026, six fishermen arrived at their boats on the beach between Cley-next-the-Sea and Cromer to find legal papers zip-tied to the hulls. Equinor, the Norwegian energy company behind the Sheringham Shoal and Dudgeon wind farms, wanted a High Court order to exclude them from their traditional waters for a four-week survey.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">John Davies &mdash; eighth-generation fisherman, chairman of the North Norfolk Fishermen&rsquo;s Society, coxswain of the Cromer lifeboat &mdash; has fished these waters for fifty years. His society has twenty-one members. Cromer-based Jonas Seafood reported its seasonal crab catch fell by almost a quarter in 2025, which it blamed on offshore wind construction.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The same stretch of Norfolk coast. Equinor excluding fishermen. Purina restoring four million oysters. RWE proving oysters can grow on turbine foundations. Rebalance Earth generating credits for a pension fund. The fishermen whose families have worked these waters for generations, finding court papers on their boats at dawn.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On Mersea Island, the only Marine Conservation Zone in England designated specifically for native oysters has had its fishery <strong style="color:#1c1a16">closed since 2019</strong>. Native oyster stock declined 90% between 2016 and 2023. The oystermen who farmed these beds for centuries are locked out while conservation bodies run restoration programmes on the same water.</p>
+
+    <div style="border-left:2px solid #6a7a84;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(106,122,132,.05);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6a7a84;margin:0 0 10px">Who runs the system?</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#4a4840;margin:0">Natural England advised the Duchy of Cornwall. Natural England runs the Biodiversity Gain Sites Register. Natural England is building POSEIDON, a marine mapping tool launching summer 2026 to give developers access to marine biodiversity data. Natural England administers the nutrient mitigation scheme. The same institution that informs the decision to remove Edwards also administers the market that native restoration enters when Edwards is gone. The regulator and the market-maker are the same body.</p>
+    </div>
+
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,122,132,.2) 20%,rgba(106,122,132,.35) 50%,rgba(106,122,132,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 07 · THE BIT THAT SHOULD BOTHER YOU ============ -->
+  <section id="S7" data-layer="6" data-screen-label="07 Should Bother You" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7a84">07<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#6a7a84;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Should Bother You</h2>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Edwards used to say working on the river was a privilege. &ldquo;People come on holiday here, we&rsquo;re getting paid to be here.&rdquo; He kept the farm small on purpose. 125,000 oysters a year. &ldquo;Which isn&rsquo;t a big farm at all. We&rsquo;ve deliberately kept it small because it&rsquo;s not a big estuary.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In 1836, Dickens wrote a line about poverty and oysters always going together. Two centuries later, the oysters are coming back. They&rsquo;re on wind turbine foundations, inside exclusion zones, generating returns for pension funds and energy companies. A pet food company is restoring an ecosystem that fed human beings for two thousand years. An actress from <em>Gavin &amp; Stacey</em> visited the site for a promotional video. The credits are tradeable. The returns are projected. The oysters are back.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">They&rsquo;re just not food anymore.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Edwards&rsquo;s trestles will be gone by September. The river will look much as it always has. What will be missing is the quiet routine of sorting and grading, and one small farm that, for fifty years, filtered the water and fed people far beyond this bend of the Avon.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The study that proved it helped is still on the government&rsquo;s website.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">&ldquo;There is upset,&rdquo; Edwards says quietly. &ldquo;Anger, there&rsquo;s a lot of anger.&rdquo; He pauses. &ldquo;It&rsquo;s a huge wrench.&rdquo;</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#2a2824 url('gbn-oysters-texture.webp') center/cover no-repeat;border-radius:3px;max-width:700px;overflow:hidden">
+      <div style="padding:42px 40px;background:rgba(32,30,26,.65)">
+        <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Everything is working exactly as designed.</p>
+      </div>
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#8a8478;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: BBC News (Jun 2026) &mdash; &ldquo;Oyster farmer &lsquo;required to leave&rsquo; River Avon&rdquo;; Envision Marine &amp; University of Essex (2024) &mdash; &ldquo;Ecosystem Benefits of UK Oyster Aquaculture Sites&rdquo; (FISP ECM_65323); The Fishmongers&rsquo; Company (Aug 2024); Shellfish Association of Great Britain (Mar 2025); BBC News (Jul 2023) &mdash; &ldquo;Oyster farmer hopes for sewage concessions&rdquo;; Purina UK / Nestl&eacute; (Sep 2025); Rebalance Earth / IPE Real Assets (Sep 2025); RWE (Jul 2025); TOPPING / The Nature Conservancy (Apr 2026); Gov.uk (May 2026) &mdash; offshore wind compensation regulations; EDP24 (Jun 2026) &mdash; Equinor / Norfolk fishermen; BSAC &mdash; native oyster population data; Bristol Avon Rivers Trust &mdash; Five-Year Strategy 2025&ndash;2030; Kent &amp; Essex IFCA &mdash; BCRC MCZ native oyster survey reports (2022, 2024); Chichester Harbour Conservancy / Solent Seascape Project (May 2026); Dickens, <em>The Pickwick Papers</em> (1836).</em></p>
+  </div></section>
+
+  <footer style="padding:80px 0 60px;background:#f2ece4;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase">Green by Numbers &middot; When Oysters Aren&rsquo;t Food &middot; June 2026</div>
+  </footer>
+
+</main>
+
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('gbn-progress').style.width=((st/sh)*100)+'%';
+});
+(function(){
+  var gauge=document.getElementById('gbn-gauge');
+  var labels=["Overview","What\u2019s Happening","What Killed Them","No Sense","Who Brings Them Back","On the Same Coast","Should Bother You"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#8a8478;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#6a7a84;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#8a8478;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';r.bar.style.background='#6a7a84';
+            r.num.style.color='#4a6a74';r.label.style.color='#4a6a74';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';r.bar.style.background='#6a7a84';
+            r.num.style.color='#8a8478';r.label.style.color='#8a8478';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+
+</body>
+</html>

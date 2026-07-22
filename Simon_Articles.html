@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles</title>
 <meta property="og:title" content="Articles">
-<meta property="og:description" content="Eleven pieces across three series. The architecture, the environment, and the food.">
+<meta property="og:description" content="Twelve pieces across three series. The architecture, the environment, and the food.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,6 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   --abl:rgba(196,154,92,.10);
 }
 
-/* ══ Two-column grid ══ */
 .page-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -39,7 +38,6 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
 }
 .column:last-child{border-right:none}
 
-/* ══ Section image with overlaid title ══ */
 .col-image{
   position:relative;
   width:100%;
@@ -56,8 +54,9 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
 }
 .col-image.ev img{object-position:center 55%}
 .col-image.kt img{object-position:center 65%}
+.col-image.br img{object-position:center 40%}
+.col-image.mh img{object-position:center 30%}
 
-/* title overlay — centred, one-third from top */
 .col-header{
   position:absolute;
   top:33%;
@@ -75,6 +74,8 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   margin:0 0 10px;
   text-shadow:0 1px 8px rgba(0,0,0,.6);
 }
+.col-label.bridge-accent{color:#6a7e94}
+.col-label.health-accent{color:#aa8a6a}
 .col-title{
   font-family:'Spectral',serif;font-weight:500;
   font-size:30px;line-height:1.12;letter-spacing:-.01em;
@@ -88,7 +89,6 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   text-shadow:0 1px 8px rgba(0,0,0,.6);
 }
 
-/* ══ Article links ══ */
 .col-links{
   list-style:none;padding:0 32px;margin:0;
   flex:1;
@@ -107,6 +107,7 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
 }
 .col-links a:hover{padding-left:8px}
 .col-links a:hover .link-title{color:var(--acl)}
+.col-links.bridge-links a:hover .link-title{color:#8a9eb4}
 .link-title{
   font-family:'Spectral',serif;font-weight:500;
   font-size:16px;line-height:1.25;
@@ -119,7 +120,6 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   color:var(--txl);
 }
 
-/* ══ Header ══ */
 .page-header{
   grid-column:1/-1;
   padding:20px 32px 12px;
@@ -132,51 +132,13 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   color:var(--txl);
 }
 
-/* ══ Full-width section ══ */
-.full-section{
+/* Row separator */
+.row-break{
   grid-column:1/-1;
-  border-top:1px solid var(--abl);
-  display:flex;
-  align-items:stretch;
-}
-.full-section-header{
-  flex:0 0 auto;
-  width:320px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  border-right:1px solid var(--abl);
-}
-.full-section-img{
-  position:relative;
-  flex:0 0 320px;
-  min-height:200px;
-  overflow:hidden;
-  border-right:1px solid var(--abl);
-}
-.full-section-links{
-  flex:1;
-  list-style:none;padding:0 32px;margin:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.full-section-links li{
+  height:0;
   border-top:1px solid var(--abl);
 }
-.full-section-links li:first-child{border-top:none}
-.full-section-links a{
-  display:block;
-  padding:14px 0;
-  text-decoration:none;
-  color:inherit;
-  transition:padding-left .12s ease;
-}
-.full-section-links a:hover{padding-left:8px}
-.full-section-links a:hover .link-title{color:#aa8a6a}
 
-/* ══ Footer ══ */
 .page-footer{
   grid-column:1/-1;
   padding:16px 32px;
@@ -187,7 +149,6 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   font-size:10px;letter-spacing:.12em;color:var(--txl);
 }
 
-/* ══ Mobile ══ */
 @media(max-width:768px){
   .page-grid{
     grid-template-columns:1fr;
@@ -201,10 +162,7 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
   .col-links{padding:0 24px;padding-top:16px}
   .link-title{font-size:15px}
   .page-footer{padding:16px 24px}
-  .full-section{flex-direction:column}
-  .full-section-header{width:auto;border-right:none;border-bottom:1px solid var(--abl);padding:24px}
-  .full-section-img{flex:none;width:auto;height:260px;border-right:none;border-bottom:1px solid var(--abl)}
-  .full-section-links{padding:0 24px}
+  .row-break{display:none}
 }
 </style>
 </head>
@@ -216,7 +174,7 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
     <span class="header-text">Simon's Articles</span>
   </header>
 
-  <!-- ═══ LEFT: Evidence Suite ═══ -->
+  <!-- ═══ ROW 1 LEFT: The Architecture ═══ -->
   <div class="column">
     <div class="col-image ev">
       <img src="articles-evidence.webp" alt="">
@@ -246,7 +204,7 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
     </ul>
   </div>
 
-  <!-- ═══ RIGHT: Kitchen-Table ═══ -->
+  <!-- ═══ ROW 1 RIGHT: Green by Numbers ═══ -->
   <div class="column">
     <div class="col-image kt">
       <img src="articles-kitchen.webp" alt="">
@@ -284,12 +242,36 @@ body{margin:0;background:#0c0a08;color:#b8b0a8;font-family:'Spectral',Georgia,se
     </ul>
   </div>
 
-  <!-- ═══ BOTTOM LEFT: Mandatory Health ═══ -->
-  <div class="column" style="grid-column:1/2">
-    <div class="col-image" style="aspect-ratio:4/5;max-height:60vh">
-      <img src="articles-health.webp" alt="" style="object-position:center 30%">
+  <div class="row-break"></div>
+
+  <!-- ═══ ROW 2 LEFT: Bridge ═══ -->
+  <div class="column">
+    <div class="col-image br">
+      <img src="articles-bridge.webp" alt="">
       <div class="col-header">
-        <div class="col-label">What's In Your Daily Bread?</div>
+        <div class="col-label bridge-accent">The Architecture meets Green by Numbers</div>
+        <h2 class="col-title">A Sudden Sense of Liberty?</h2>
+        <p class="col-sub">Burnham&rsquo;s first week and the infrastructure behind the headlines</p>
+      </div>
+    </div>
+    <ul class="col-links bridge-links">
+      <li><a href="A_Sudden_Sense_of_Liberty.html" target="_blank">
+        <div class="link-title">A Sudden Sense of Liberty?</div>
+        <div class="link-sub">Every headline that says &lsquo;stopped&rsquo; means &lsquo;cleared the path.&rsquo;</div>
+      </a></li>
+      <li><a href="Same_Pipes.html" target="_blank">
+        <div class="link-title">Same Pipes</div>
+        <div class="link-sub">Energy infrastructure, carbon capture, hydrogen, data centres, water. <em>Forthcoming.</em></div>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ ROW 2 RIGHT: Mandatory Health ═══ -->
+  <div class="column">
+    <div class="col-image mh">
+      <img src="articles-health.webp" alt="">
+      <div class="col-header">
+        <div class="col-label health-accent">What's In Your Daily Bread?</div>
         <h2 class="col-title">Mandatory Health</h2>
         <p class="col-sub">Food, water, and the things they add without asking</p>
       </div>

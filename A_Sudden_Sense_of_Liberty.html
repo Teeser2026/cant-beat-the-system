@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Sudden Sense of Liberty?</title>
+<meta property="og:title" content="A Sudden Sense of Liberty?">
+<meta property="og:description" content="Burnham's First Week and the infrastructure behind the headlines — The Architecture meets Green by Numbers">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0b0e;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gauge{display:none!important}}
+@media(max-width:720px){.hero-title{font-size:54px!important}.h-title{font-size:34px!important}.wrap{padding-left:24px!important;padding-right:24px!important}.display-type{font-size:26px!important;padding:48px 28px!important}}
+</style>
+</head>
+<body>
+
+<div id="progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#6a7e94;z-index:60;transition:width .12s linear"></div>
+<nav id="gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#4a5868;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
+
+<main style="position:relative">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0a0b0e">
+    <div style="position:absolute;inset:0;background:#0a0b0e url('gbn-liberty-cover.webp') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(10,11,14,.72)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(10,11,14,.88))"></div>
+
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#6a7e94;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:cue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
+
+    <div class="wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#6a7e94;text-transform:uppercase">The Architecture meets Green by Numbers</div>
+      <h1 class="hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(52px,7.2vw,92px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:14ch">A Sudden Sense of Liberty?</h1>
+      <div style="width:64px;height:2px;background:#6a7e94;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b4a8;margin:0;max-width:42ch">Burnham&rsquo;s First Week and the infrastructure behind the headlines.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#4a5868;text-transform:uppercase;white-space:nowrap">
+        <span>The Prime Minister entered Downing Street to New Order&rsquo;s &lsquo;True Faith&rsquo;</span>
+        <span style="width:5px;height:5px;background:#6a7e94;transform:rotate(45deg)"></span>
+        <span>July 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · (SORRY FOR THE) CONFUSION ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 Confusion" style="position:relative;z-index:2;padding:130px 0 120px;background:#0a0b0e"><div class="wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7e94">01<span style="color:#4a5868"> / 05</span></div>
+      <div style="width:42px;height:2px;background:#6a7e94;margin:14px 0 16px"></div>
+      <h2 class="h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">(Sorry for the) Confusion</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5868;margin:0 0 36px;max-width:52ch">&ldquo;You just can&rsquo;t believe me, when I show you what you cannot see.&rdquo;</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">On Tuesday 21 July 2026, Cabinet Office Permanent Secretary Cat Little addressed civil servants. The digital identity policy, she explained, was not dead. It lived on within the Department for Culture, Media and Sport. She apologised for the confusion.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The confusion lasted about thirty-six hours.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">On Saturday, the incoming Prime Minister&rsquo;s spokesman told the press that &ldquo;all the time and resource that was going to be spent on a national ID scheme will go instead to where it&rsquo;s most needed, such as helping with the cost of living.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">On Monday, Andy Burnham took office and the cancellation became a headline. Many prominent civil liberties organisations, speaking for three million petition signers, declared the fight won.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">On Tuesday morning, Cat Little clarified. The Government Digital Service &mdash; the team that builds and operates Gov.uk Wallet, One Login, and the digital transformation programme &mdash; would move to DCMS. The digital identity infrastructure would move with it. The teams would not be sacked. They would be relocated.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The same day, the AI taskforce moved in the opposite direction &mdash; into the Cabinet Office, directly under the Prime Minister, with a new Director General and a Cabinet-level AI Minister.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The surveillance infrastructure slunk away to a dark corner. The AI that would run on it was paraded out in the open.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Cat Little is not a politician. She is the most senior operational civil servant in government &mdash; the person who moves the machinery. She did not contradict the Prime Minister. She <em>clarified</em>. There may have been some confusion. The policy lives on. Different department. Same infrastructure.</p>
+
+    <div style="border-left:2px solid #6a7e94;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(106,126,148,.06);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6a7e94;margin:0 0 10px">Cancelled, apparently</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#8a8a7a;margin:0">Days earlier, the government confirmed it will ban the sale of high-caffeine energy drinks to under-16s in England from April 2027. Buried in the outcome document were enforcement powers under the Regulation of Investigatory Powers Act 2000 &mdash; RIPA, the surveillance statute &mdash; extended to local authorities for covert test-purchasing operations. And a paragraph noting the work of the Office for Digital Identities and Attributes and the digital identity provisions of the Data (Use and Access) Act 2025, observing that as these technologies develop they &ldquo;may support age-restricted sales in a range of settings.&rdquo; The cancelled digital identity scheme is cited as future enforcement infrastructure in legislation published the same week it was cancelled.</p>
+    </div>
+
+    <div class="display-type" style="position:relative;margin:0 0 42px;background:#0e1014;border-radius:3px;max-width:700px;overflow:hidden;padding:52px 44px">
+      <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">A verification apparatus is not built in one law.<br>It is built in paragraphs like this one, in laws about fizzy drinks,<br>where nobody is looking.</p>
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#4a5868;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: Guido Fawkes (21 Jul 2026) &mdash; Adam Cherry, &ldquo;Cabinet Office Chief Claims Digital ID Policy Not Dead After All&rdquo;; Civil Service World (22 Jul 2026) &mdash; &ldquo;Burnham merges DBT with DSIT and hands digital back to DCMS&rdquo;; Gov.uk (16 Jul 2026) &mdash; Restricting the sale of energy drinks to under-16s: government response.</em></p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,126,148,.2) 20%,rgba(106,126,148,.4) 50%,rgba(106,126,148,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 02 · WEEK ONE ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 Week One" style="position:relative;z-index:2;padding:120px 0 120px;background:#0a0b0e"><div class="wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7e94">02<span style="color:#4a5868"> / 05</span></div>
+      <div style="width:42px;height:2px;background:#6a7e94;margin:14px 0 16px"></div>
+      <h2 class="h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">Week One</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5868;margin:0 0 36px;max-width:52ch">&ldquo;I left the North, I travelled South.&rdquo;</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Andy Burnham became Prime Minister on Monday 20 July 2026 &mdash; the seventh in a decade. His first week produced the following headlines, each reported as a separate story.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The digital identity scheme was cancelled. The &pound;1.8 billion allocated to the programme would be redirected to cost-of-living measures.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">North Sea oil and gas drilling was approved. The Jackdaw gas field and Rosebank oil field would proceed. The previous Energy Secretary, Ed Miliband, had resisted approval for over a year.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Palantir, the American surveillance technology company, would be dropped from NHS contracts.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">A Cabinet-level ministerial position was created &mdash; for artificial intelligence &mdash; the first time AI had been given Cabinet rank.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">A &pound;2 cap on bus fares was announced, funded by &lsquo;diverting&rsquo; &pound;454 million from overseas climate commitments.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">VAT on domestic electricity would be cut as a &ldquo;first cost-of-living move.&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Former Defence Secretary John Healey was appointed Chancellor of the Exchequer.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Each headline was defensible. Each was individually reported. None appeared in the same article.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 30px;max-width:660px">Is it really so strange?</p>
+
+    <div style="border-left:2px solid #6a7e94;padding:10px 18px 10px 22px;margin:0 0 36px;background:rgba(106,126,148,.06);border-radius:0 4px 4px 0;max-width:700px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6a7e94;margin:0 0 10px">The Maths</div>
+      <p style="font-family:'Spectral',serif;font-size:16.5px;line-height:1.66;color:#8a8a7a;margin:0">The &pound;454 million in climate funding was not diverted. &pound;400 million was restructured from grants to loans &mdash; the spending continues, the instrument changed. The VAT cut on domestic electricity saves approximately &pound;45 per household &mdash; against an energy price cap increase of &pound;221 in the same quarter. The digital identity programme was already unfunded. The savings announced do not exist in the form they are announced.</p>
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#4a5868;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: Bloomberg (16 Jul 2026); Euronews (20 Jul 2026); Reuters / Global Banking &amp; Finance (18 Jul 2026); The Register (20 Jul 2026); ITV News (21 Jul 2026); @Artemisfornow (21&ndash;22 Jul 2026).</em></p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,126,148,.2) 20%,rgba(106,126,148,.4) 50%,rgba(106,126,148,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 03 · THE SEQUENCE ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 The Sequence" style="position:relative;z-index:2;padding:120px 0 120px;background:#0a0b0e"><div class="wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7e94">03<span style="color:#4a5868"> / 05</span></div>
+      <div style="width:42px;height:2px;background:#6a7e94;margin:14px 0 16px"></div>
+      <h2 class="h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Sequence</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5868;margin:0 0 36px;max-width:52ch">&ldquo;Notice whom for wheels are turning.&rdquo;</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The <a href="Simon_Articles.html" target="_blank" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">Green by Numbers</a> series has documented nature, credit markets, and the people caught between them. Each piece tells the same three-step story.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">A genuine concern &mdash; habitat loss, plastic waste, river pollution, carbon emissions.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">An engineered response &mdash; a metric, a certificate, a credit, a levy, a register, a mandate.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">And the infrastructure that results &mdash; centralised data, algorithmic classification, tradeable compliance, digital rails &mdash; which serves a purpose none of those consulted were asked about.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">This week, the same sequence completed in forty-eight hours.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">Announce.</strong> The Prime Minister&rsquo;s spokesman confirmed the digital identity scheme was cancelled. North Sea drilling was approved. Palantir would be dropped. An AI minister was created. Bus fares would be capped. VAT on electricity would be cut. Seven headlines. Five days. Seven separate stories.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">Celebrate.</strong> The petition signers declared victory. The civil liberties organisations said the fight was won. Everyone responded to their headline. Nobody read anyone else&rsquo;s.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px"><strong style="color:#e4dcd4">Clarify.</strong> On Tuesday morning, the Cabinet Office Permanent Secretary told staff that the digital identity policy was not dead. The Government Digital Service moved to DCMS. The AI taskforce moved into the Prime Minister&rsquo;s office. The energy drinks ban cited the digital identity framework as future enforcement infrastructure.</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#0e1014;border-radius:3px;max-width:700px;overflow:hidden;padding:42px 40px">
+      <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Announce. Celebrate. Clarify.<br><br>The announcement is for the public.<br>The celebration is for the opposition.<br>The clarification is for the infrastructure.</p>
+    </div>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,126,148,.2) 20%,rgba(106,126,148,.4) 50%,rgba(106,126,148,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 04 · THE ACCELERATION ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 The Acceleration" style="position:relative;z-index:2;padding:120px 0 120px;background:#0a0b0e"><div class="wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7e94">04<span style="color:#4a5868"> / 05</span></div>
+      <div style="width:42px;height:2px;background:#6a7e94;margin:14px 0 16px"></div>
+      <h2 class="h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Acceleration</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5868;margin:0 0 36px;max-width:52ch">&ldquo;From the past until completion, they&rsquo;ll turn away no more.&rdquo;</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The architecture documented in this series did not pause for a change of Prime Minister. It did not rebrand. It accelerated. Every cancellation removed a specific friction point that was slowing deployment.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">The digital ID brand was generating opposition.</strong> Three million petition signatures. Parliamentary questions. Media oxygen consumed fighting the name. Cancel the name and the opposition declares victory, goes home, stops watching. The rails ship faster without the drag of a petition and a brand that journalists can photograph. Cancelling the visible version accelerates the invisible version by removing the political friction. The Gov.uk Wallet continues. One Login continues. The 2027 mandate for all government departments to issue digital verified credentials continues.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">Miliband blocked drilling.</strong> Burnham approved it. The gas feedstock for hydrogen production was bottlenecked. Now it flows. The CCS infrastructure &mdash; pipeline corridors, consumer levies, depleted-field repurposing &mdash; was committed under Starmer and continues without comment. What the drilling unlocks is the energy supply for the data centres and the feedstock for the hydrogen economy that the CCS infrastructure enables. The full architecture is documented in the <a href="Same_Pipes.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">companion piece</a>.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">Palantir was a lightning rod.</strong> American surveillance company. Privacy campaigns. NHS data concerns. Drop the American name &mdash; within days, a former GCHQ director told the Telegraph that Britain needs to build its own equivalent. Same function. Same data. Different flag. Domestication removes the friction. &ldquo;Britain&rsquo;s own Palantir&rdquo; will face less opposition than the American original. Not slower. Faster.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">GDS in the Cabinet Office attracted scrutiny.</strong> Move it to DCMS &mdash; quieter department, less political heat, same infrastructure, less oversight. The permanent secretary apologises for the confusion. Not a demotion. A relocation to somewhere less visible. Faster.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">AI had no seat at the table.</strong> Now it has Cabinet rank, directly under the Prime Minister. Not continuation. Elevation.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 12px;max-width:680px"><strong style="color:#e4dcd4">Devolution to Strategic Authorities with planning powers.</strong> Data centres, pipeline corridors, energy infrastructure approved at regional level without national scrutiny. The English Devolution Act creates the planning tier. Fewer bottlenecks. Faster.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px"><strong style="color:#e4dcd4">Defence secretary as Chancellor.</strong> Defence procurement meets treasury spending. National security classification available. Faster.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Every cancellation removed a brake. Every appointment cleared a path. The visible version was retired. The invisible version accelerated.</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#0e1014;border-radius:3px;max-width:700px;overflow:hidden;padding:42px 40px">
+      <p style="font-family:'Spectral',serif;font-weight:500;font-size:22px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">Every headline that says &lsquo;stopped&rsquo; means &lsquo;cleared the path.&rsquo;</p>
+    </div>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#4a5868;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: Bloomberg (16 Jul 2026); Euronews (20 Jul 2026); Reuters / Global Banking &amp; Finance (18 Jul 2026); The Register (20 Jul 2026); ITV News (21 Jul 2026); @Artemisfornow (21&ndash;22 Jul 2026).</em></p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(106,126,148,.2) 20%,rgba(106,126,148,.4) 50%,rgba(106,126,148,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 05 · THE INFRASTRUCTURE IS PERMANENT ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 Permanent" style="position:relative;z-index:2;padding:120px 0 120px;background:#0a0b0e"><div class="wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#6a7e94">05<span style="color:#4a5868"> / 05</span></div>
+      <div style="width:42px;height:2px;background:#6a7e94;margin:14px 0 16px"></div>
+      <h2 class="h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#e4dcd4;margin:0 0 18px">The Infrastructure Is Permanent</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#4a5868;margin:0 0 36px;max-width:52ch">&ldquo;So this is permanent.&rdquo;</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The following did not change this week.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The Gov.uk Wallet. One Login. The DVS Trust Framework. The OfDIA-certified identity providers. The digital driving licence. The 2027 mandate for all government departments to issue digital verified credentials.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The smart meter rollout. The Environmental Act compliance architecture. The BNG registers. The Land Registry covenants. The seven-year habitat audit trails.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The FCA&rsquo;s Digital Securities Sandbox. The tokenisation rails for bonds, equities, carbon credits, biodiversity credits, nutrient credits.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The &pound;22 billion CCS programme. The pipeline corridors with compulsory acquisition powers. The consumer energy levies. The Morecambe field repurposing. The Peak Cluster pipeline from Derbyshire to the Wirral. The St Fergus terminal where Shell&rsquo;s gas comes in and Shell&rsquo;s CO&#8322; goes out.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The water abstraction licences. The data centres. The 850 acres in a UNESCO Biosphere Reserve. The 11 million gallons of fresh water per day. The energy infrastructure that feeds them. The AI that runs on them. The data that feeds the AI.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">None of this was announced. None of it was cancelled. None of it was celebrated. None of it was reported.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0 0 30px;max-width:660px">None of it needed a Prime Minister.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">The man who implemented Tony Blair&rsquo;s identity cards in 2006 cancelled Keir Starmer&rsquo;s identity cards in 2026 and created a Cabinet-level AI ministry in between. The cards change. The direction doesn&rsquo;t.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">There was confusion. It was engineered by the sequence. Announce, celebrate, clarify.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#b8b4a8;margin:0 0 30px;max-width:680px">Cat Little apologised. Not for the policy continuing. For the confusion.</p>
+
+    <div style="position:relative;margin:0 0 42px;background:#0e1014;border-radius:3px;max-width:700px;overflow:hidden;padding:52px 44px">
+      <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#e4dcd4;margin:0;text-align:center">The confusion is always temporary.<br>The infrastructure appears to be permanent.</p>
+    </div>
+
+    <div style="border-top:1px solid rgba(106,126,148,.22);padding-top:28px;margin-top:36px">
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 14px;max-width:680px">This piece bridges two series:</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><strong style="color:#6a7e94">The Architecture</strong> &mdash; the construction of the technocratic system.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><a href="The_Interoperable_State.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">The Interoperable State</a> &mdash; digital identity systems, national frameworks, digital wallets, biometric registration.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><a href="Surveillance.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">The Surveillance Architecture</a> &mdash; what exists. How it got there. How it fits together.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><a href="The_Science_of_Surveillance.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">The Science of Surveillance</a> &mdash; published research, ratified standards, funded programmes.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 20px;max-width:680px"><a href="Null_Hypothesis.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">The Null Hypothesis</a> &mdash; there is no way to exist outside the surveillance architecture.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><strong style="color:#6a7e94">Green by Numbers</strong> &mdash; nature, credit markets, and the people caught between them.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><a href="Working_As_Designed.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">Everything Is Working Exactly As Designed</a> &mdash; the five-layer architecture.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px"><a href="Engineering_Greenness.html" style="color:#6a7e94;text-decoration:underline;text-underline-offset:3px">Engineering Greenness</a> &mdash; the demand side.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#4a5868;margin:0 0 6px;max-width:680px">Same Pipes &mdash; energy infrastructure, carbon capture, hydrogen, data centres, water. <em>[forthcoming]</em></p>
+    </div>
+  </div></section>
+
+  <footer style="padding:80px 0 60px;background:#0a0b0e;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#4a5868;text-transform:uppercase">A Sudden Sense of Liberty? &middot; The Architecture meets Green by Numbers &middot; July 2026</div>
+  </footer>
+
+</main>
+
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('progress').style.width=((st/sh)*100)+'%';
+});
+(function(){
+  var gauge=document.getElementById('gauge');
+  var labels=["Confusion","Week One","The Sequence","The Acceleration","Permanent"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#4a5868;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#6a7e94;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#4a5868;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';
+            r.num.style.color='#6a7e94';r.label.style.color='#6a7e94';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';
+            r.num.style.color='#4a5868';r.label.style.color='#4a5868';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+
+</body>
+</html>

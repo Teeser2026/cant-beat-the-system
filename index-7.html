@@ -2835,6 +2835,37 @@ body.game-active .ticker-bar { display: flex; }
     padding: 0 18px;
   }
 
+  /* ── Ticker contrast boost (phase-1 linen) ── */
+  body.phase-1 .ticker-bar {
+    background: #D4CFC5;
+  }
+  body.phase-1 .t-item {
+    color: #4A453D;
+    opacity: .65;
+  }
+  body.phase-1 .t-item.warm { color: #5A4030; opacity: .85; }
+  body.phase-1 .t-item.cold { color: #2A4A60; opacity: .75; }
+  body.phase-1 .t-item.buried { color: #6A655D; opacity: .45; }
+  body.phase-1 .ticker-label { color: #5A4A3A; opacity: .7; }
+  body.phase-1 .t-sep { color: #9A958D; opacity: .3; }
+
+  /* ── Mirror buttons contrast (phase-1 linen) ── */
+  body.phase-1 .mirror-opt {
+    background: rgba(58,54,48,0.08);
+    border: 1px solid rgba(58,54,48,0.18);
+  }
+  body.phase-1 .mirror-opt:active {
+    background: rgba(58,54,48,0.14);
+    border-color: rgba(58,54,48,0.28);
+  }
+  body.phase-1 .mirror-card {
+    background: rgba(58,54,48,0.06);
+    border-left-color: var(--warm);
+  }
+  body.phase-1 .mirror-hint {
+    opacity: .5;
+  }
+
   /* ── Prose media ── */
   .prose-media.pm-wide {
     width: calc(100% - 16px);
@@ -3040,7 +3071,7 @@ body.phase-3 .mob-tabs {
   font-size: 9px;
   font-weight: 300;
   color: var(--dim);
-  opacity: .5;
+  opacity: .7;
 }
 .mob-di-title {
   font-family: 'Crimson Pro', serif;
@@ -3055,7 +3086,7 @@ body.phase-3 .mob-tabs {
   font-weight: 300;
   letter-spacing: 1px;
   color: var(--dim);
-  opacity: .3;
+  opacity: .55;
 }
 
 /* ══════════════════════════════════════════════════════

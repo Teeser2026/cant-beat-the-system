@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CBTS — Can't Beat The System</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap');
@@ -30,6 +30,7 @@
   --heart-fine: #c8c4b8;
   --heart-declining: #c4956a;
   --heart-critical: #a65a4a;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -2768,22 +2769,293 @@ body.game-active .ticker-bar { display: flex; }
 .dtl-item.current .dtl-title { opacity: 1; color: var(--warm); }
 .dtl-item.stub .dtl-title { opacity: .3; font-style: italic; }
 
-/* ── RESPONSIVE ── */
+/* ── MOBILE ELEMENTS (hidden on desktop) ── */
+.mob-header, .mob-tabs, .mob-drawer-overlay { display: none; }
+
+/* ── RESPONSIVE — MOBILE ENGINE ── */
 @media (max-width: 900px) {
-  .right { display: none; }
-  .wrap { margin-right: 0; }
-  .left { border-right: none; }
-  .prose-wrap { padding: 32px 20px 120px; }
+
+  /* ── Hide desktop chrome ── */
   .dev-bar { display: none !important; }
   .reader-bar { display: none !important; }
+  .dev-turn-list { display: none !important; }
+  .chapter-nav { display: none !important; }
+
+  /* ── Show mobile chrome ── */
+  .mob-header { display: flex !important; }
+  .mob-tabs { display: flex !important; }
+
+  /* ── Layout reflow ── */
+  .wrap {
+    margin-right: 0;
+    margin-top: 52px;
+    height: calc(100vh - 136px - var(--safe-bottom));
+    /* 52px header + 32px ticker + 52px tabs = 136px */
+  }
+  .left {
+    border-right: none;
+  }
+  .prose-wrap {
+    padding: 32px 20px 80px;
+  }
+
+  /* ── Right panel → mobile overlay ── */
+  .right {
+    display: none;
+    position: fixed;
+    top: 52px;
+    left: 0; right: 0;
+    bottom: calc(84px + var(--safe-bottom));
+    width: 100%;
+    border-left: none;
+    border-radius: 0;
+    z-index: 50;
+  }
+  .right.mob-active {
+    display: flex;
+  }
+  .right .tabs {
+    display: none; /* desktop tabs hidden; mobile tab bar handles switching */
+  }
+
+  /* ── Ticker above tab bar ── */
+  .ticker-bar {
+    bottom: calc(52px + var(--safe-bottom));
+    height: 32px;
+  }
+  .ticker-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 0 10px;
+  }
+  .ticker-inner {
+    font-size: 10px;
+  }
+  .t-item {
+    padding: 0 18px;
+  }
+
+  /* ── Prose media ── */
   .prose-media.pm-wide {
     width: calc(100% - 16px);
     margin: 28px 8px;
     max-width: none;
   }
-  .dev-turn-list { display: none !important; }
-  .chapter-nav { display: none !important; }
-  .reader-bar { display: none !important; }
+}
+
+/* ── MOBILE HEADER ── */
+.mob-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--div);
+  transition: background .4s, border-color .4s, color .4s;
+}
+.mob-hdr-btn {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  flex-shrink: 0;
+  color: var(--dim);
+  font-size: 18px;
+}
+.mob-hdr-btn svg {
+  width: 20px; height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.mob-hdr-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  padding: 0 4px;
+}
+.mob-dev-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.mob-dev-btn {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--faint);
+  border-radius: 3px;
+  color: var(--dim);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity .2s;
+}
+.mob-dev-btn:active { opacity: 1; }
+.mob-dev-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--dim);
+  opacity: .5;
+  padding: 0 4px;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* ── MOBILE TAB BAR ── */
+.mob-tabs {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: calc(52px + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  background: rgba(10,10,12,0.97);
+  border-top: 1px solid var(--div);
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+body.phase-1 .mob-tabs {
+  background: rgba(200,196,188,0.97);
+  border-top-color: var(--div);
+}
+body.phase-3 .mob-tabs {
+  background: rgba(220,228,216,0.97);
+  border-top-color: var(--div);
+}
+.mob-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+.mob-tab-icon {
+  width: 18px; height: 18px;
+  stroke: var(--dim);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke .2s;
+}
+.mob-tab-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color .2s;
+}
+.mob-tab.active .mob-tab-icon { stroke: var(--warm); }
+.mob-tab.active .mob-tab-label { color: var(--warm); }
+.mob-tab-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  position: absolute;
+  top: 4px;
+  right: calc(50% - 14px);
+  display: none;
+}
+.mob-tab.has-new .mob-tab-dot { display: block; }
+
+/* ── MOBILE CHAPTER DRAWER ── */
+.mob-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.mob-drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+  display: block !important;
+}
+.mob-drawer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 280px;
+  max-width: 80vw;
+  background: var(--bg);
+  border-right: 1px solid var(--div);
+  z-index: 201;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+  padding: 16px 0;
+}
+.mob-drawer-overlay.open .mob-drawer {
+  transform: translateX(0);
+}
+.mob-drawer-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: .5;
+  padding: 12px 16px 8px;
+}
+.mob-drawer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--faint);
+  opacity: .8;
+  transition: background .15s;
+}
+.mob-drawer-item:active { opacity: 1; }
+.mob-drawer-item.current {
+  background: rgba(176,120,96,.08);
+  opacity: 1;
+}
+.mob-drawer-item.stub { opacity: .35; }
+.mob-di-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--dim);
+  opacity: .5;
+}
+.mob-di-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.3;
+}
+.mob-drawer-item.current .mob-di-title { color: var(--warm); }
+.mob-di-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--dim);
+  opacity: .3;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -4118,7 +4390,52 @@ body.game-active .ticker-bar { display: flex; }
   </div>
 </div>
 
+<!-- ══ MOBILE HEADER ══ -->
+<div class="mob-header" id="mobHeader">
+  <button class="mob-hdr-btn" id="mobMenuBtn" aria-label="Chapters">
+    <svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="14" y2="17"/></svg>
+  </button>
+  <div class="mob-hdr-title" id="mobHeaderTitle">CBTS</div>
+  <div class="mob-dev-nav" id="mobDevNav">
+    <button class="mob-dev-btn" id="mobPrev">←</button>
+    <span class="mob-dev-num" id="mobTNum">T1</span>
+    <button class="mob-dev-btn" id="mobNext">→</button>
+  </div>
+</div>
 
+<!-- ══ MOBILE TAB BAR ══ -->
+<div class="mob-tabs" id="mobTabs">
+  <button class="mob-tab active" data-mob="prose">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+    <span class="mob-tab-label">Prose</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+  <button class="mob-tab" data-mob="signal">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+    <span class="mob-tab-label">Feed</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+  <button class="mob-tab" data-mob="threads">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/><path d="m4.93 4.93 2.83 2.83m8.48 8.48 2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg>
+    <span class="mob-tab-label">Threads</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+  <button class="mob-tab" data-mob="songs">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <span class="mob-tab-label">Songs</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+  <button class="mob-tab" data-mob="mirror">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c-2 4-2 8 0 12s2 8 0 12" opacity=".4"/></svg>
+    <span class="mob-tab-label">Mirror</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+</div>
+
+<!-- ══ MOBILE CHAPTER DRAWER ══ -->
+<div class="mob-drawer-overlay" id="mobDrawerOverlay">
+  <div class="mob-drawer" id="mobDrawer"></div>
+</div>
 
 <script>
 // ══════════════════════════════════════════════════════════
@@ -7328,6 +7645,32 @@ function goTo(idx) {
   // devTurnList retired — chapterNav handles both modes
   document.querySelector('.left').scrollTop = 0;
 
+  // ── MOBILE SYNC (S266) ──
+  const mobTitle = document.getElementById('mobHeaderTitle');
+  const mobTNum = document.getElementById('mobTNum');
+  if (mobTitle) {
+    const isHubActive = document.querySelector('.right.mob-active');
+    if (!isHubActive && !turn.isQuestion) {
+      const tid = turn.num || turn.id;
+      mobTitle.textContent = tid + ' \u2014 ' + (turn.title || '').toUpperCase();
+    }
+  }
+  if (mobTNum) mobTNum.textContent = DEV ? (turn.num || turn.id) : '';
+  // Close drawer + return to prose on chapter nav
+  const mobDO = document.getElementById('mobDrawerOverlay');
+  if (mobDO) mobDO.classList.remove('open');
+  const mobRight = document.querySelector('.right');
+  if (mobRight && mobRight.classList.contains('mob-active')) {
+    mobRight.classList.remove('mob-active');
+    document.querySelectorAll('.mob-tab').forEach(t => t.classList.remove('active'));
+    const proseTab = document.querySelector('.mob-tab[data-mob="prose"]');
+    if (proseTab) proseTab.classList.add('active');
+    if (mobTitle && !turn.isQuestion) {
+      const tid = turn.num || turn.id;
+      mobTitle.textContent = tid + ' \u2014 ' + (turn.title || '').toUpperCase();
+    }
+  }
+
   // Check for new thread items at this turn — show dot on Threads tab
   checkTabNotifications(turn);
 
@@ -7375,6 +7718,30 @@ function checkTabNotifications(turn) {
       if (!mirrorTab.querySelector('.tab-dot')) {
         mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
       }
+    }
+  }
+
+  // ── MOBILE TAB DOTS (S266) ──
+  const mobFeedTab = document.querySelector('.mob-tab[data-mob="signal"]');
+  if (hasSignal && mobFeedTab && !mobFeedTab.classList.contains('active')) {
+    mobFeedTab.classList.add('has-new');
+  }
+  const mobThreadsTab = document.querySelector('.mob-tab[data-mob="threads"]');
+  if (hasNew && mobThreadsTab && !mobThreadsTab.classList.contains('active')) {
+    mobThreadsTab.classList.add('has-new');
+  }
+  if (songsData && songsData.length) {
+    const mobSongsTab = document.querySelector('.mob-tab[data-mob="songs"]');
+    const hasSongNew2 = songsData.some(s => String(s.turn) == String(turn.id));
+    if (hasSongNew2 && mobSongsTab && !mobSongsTab.classList.contains('active')) {
+      mobSongsTab.classList.add('has-new');
+    }
+  }
+  if (mirrorData && mirrorData.length) {
+    const mobMirrorTab = document.querySelector('.mob-tab[data-mob="mirror"]');
+    const hasMirrorNew2 = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
+    if (hasMirrorNew2 && mobMirrorTab && !mobMirrorTab.classList.contains('active')) {
+      mobMirrorTab.classList.add('has-new');
     }
   }
 }
@@ -7717,6 +8084,117 @@ document.getElementById('dev-skip-welcome').addEventListener('click', function(e
   document.getElementById('welcome-screen').style.display = 'none';
   document.body.classList.add('game-active');
 });
+
+// ── MOBILE ENGINE (S266) ──
+(function initMobile() {
+  const isMob = () => window.innerWidth <= 900;
+
+  // ── Tab switching ──
+  document.querySelectorAll('.mob-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.mob;
+      document.querySelectorAll('.mob-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      btn.classList.remove('has-new');
+
+      const rightPanel = document.querySelector('.right');
+      const mobTitle = document.getElementById('mobHeaderTitle');
+
+      if (target === 'prose') {
+        rightPanel.classList.remove('mob-active');
+        // Restore chapter title
+        if (mobTitle && playData && playData.turns) {
+          const turn = playData.turns[state.turnIndex];
+          if (turn && !turn.isQuestion) {
+            const tid = turn.num || turn.id;
+            mobTitle.textContent = tid + ' \u2014 ' + (turn.title || '').toUpperCase();
+          }
+        }
+      } else {
+        rightPanel.classList.add('mob-active');
+        // Activate panel
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+        const panel = document.querySelector('.panel[data-p="' + target + '"]');
+        if (panel) panel.classList.add('on');
+        // Sync desktop tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+        const dt = document.querySelector('.tab[data-p="' + target + '"]');
+        if (dt) dt.classList.add('on');
+        // Update header
+        const titles = { signal: 'FEED', threads: 'THREADS', songs: 'SONGS', mirror: 'MIRROR' };
+        if (mobTitle) mobTitle.textContent = titles[target] || target.toUpperCase();
+      }
+    });
+  });
+
+  // ── Chapter drawer ──
+  const mobMenuBtn = document.getElementById('mobMenuBtn');
+  const mobDrawerOverlay = document.getElementById('mobDrawerOverlay');
+
+  if (mobMenuBtn) {
+    mobMenuBtn.addEventListener('click', () => {
+      mobDrawerOverlay.classList.toggle('open');
+      if (mobDrawerOverlay.classList.contains('open')) renderMobDrawer();
+    });
+  }
+  if (mobDrawerOverlay) {
+    mobDrawerOverlay.addEventListener('click', (e) => {
+      if (e.target === mobDrawerOverlay) mobDrawerOverlay.classList.remove('open');
+    });
+  }
+
+  window.renderMobDrawer = function() {
+    const drawer = document.getElementById('mobDrawer');
+    if (!drawer || !playData || !playData.turns) return;
+    let html = '<div class="mob-drawer-heading">Chapters</div>';
+    let chNum = 0;
+    playData.turns.forEach((turn, idx) => {
+      if (!DEV && turn.isQuestion) return;
+      if (!DEV && idx > state.maxReached) return;
+      const isQ = turn.isQuestion;
+      const isStub = !isQ && turn.paras && turn.paras.length <= 1;
+      if (!isQ) chNum++;
+      const isCurrent = idx === state.turnIndex;
+      let cls = 'mob-drawer-item';
+      if (isCurrent) cls += ' current';
+      if (isStub) cls += ' stub';
+      const title = isQ
+        ? (turn.title || (turn.questionText ? turn.questionText.substring(0, 40) + '...' : 'Question'))
+        : (turn.title || 'Untitled');
+      const numText = isQ ? (turn.num || turn.id) : (DEV && turn.num ? chNum + ' \u00B7 ' + turn.num : chNum);
+      html += '<div class="' + cls + '" data-idx="' + idx + '">' +
+        '<span class="mob-di-num">' + numText + '</span>' +
+        '<span class="mob-di-title">' + title + '</span>' +
+        (turn.date ? '<span class="mob-di-date">' + turn.date + '</span>' : '') +
+        '</div>';
+    });
+    drawer.innerHTML = html;
+    drawer.querySelectorAll('.mob-drawer-item').forEach(item => {
+      item.addEventListener('click', function() {
+        goTo(parseInt(this.dataset.idx));
+      });
+    });
+    const current = drawer.querySelector('.current');
+    if (current) setTimeout(() => current.scrollIntoView({ block: 'center', behavior: 'smooth' }), 100);
+  };
+
+  // ── Dev nav (mobile) ──
+  const mobPrev = document.getElementById('mobPrev');
+  const mobNext = document.getElementById('mobNext');
+  const mobDevNav = document.getElementById('mobDevNav');
+
+  if (!DEV && mobDevNav) {
+    mobDevNav.style.display = 'none';
+  }
+  if (mobPrev) mobPrev.addEventListener('click', () => {
+    if (DEV) goTo(state.turnIndex - 1);
+    else goTo(prevProseIndex(state.turnIndex));
+  });
+  if (mobNext) mobNext.addEventListener('click', () => {
+    if (DEV) goTo(state.turnIndex + 1);
+    else goTo(nextProseIndex(state.turnIndex));
+  });
+})();
 
 // ── BOOT ──
 loadGame();

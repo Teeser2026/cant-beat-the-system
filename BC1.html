@@ -223,6 +223,7 @@
     cursor: grab;
     user-select: none;
   }
+  .globe-container { touch-action: none; }
   .globe-container.dragging { cursor: grabbing; }
   .globe-container.hovering-dot { cursor: pointer; }
   .globe-container canvas { width: 100% !important; height: 100% !important; display: block; }
@@ -1219,21 +1220,26 @@
   const mouseNDC = new THREE.Vector2();
   let hoveredIdx = -1;
 
-  container.addEventListener('mousedown', (e) => {
+  container.addEventListener('pointerdown', (e) => {
     isDragging = true;
     dragLastX = e.clientX;
     dragLastY = e.clientY;
     container.classList.add('dragging');
+    container.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
-  window.addEventListener('mouseup', () => {
+  container.addEventListener('pointerup', (e) => {
     if (isDragging) {
       isDragging = false;
       container.classList.remove('dragging');
       lastInteractionTime = performance.now();
     }
   });
-  container.addEventListener('mousemove', (e) => {
+  container.addEventListener('pointercancel', () => {
+    isDragging = false;
+    container.classList.remove('dragging');
+  });
+  container.addEventListener('pointermove', (e) => {
     const rect = container.getBoundingClientRect();
     mouseScreenX = e.clientX - rect.left;
     mouseScreenY = e.clientY - rect.top;
@@ -1261,7 +1267,7 @@
       else container.classList.remove('hovering-dot');
     }
   });
-  container.addEventListener('mouseleave', () => {
+  container.addEventListener('pointerleave', () => {
     isHovering = false;
     hoveredIdx = -1;
     container.classList.remove('hovering-dot');

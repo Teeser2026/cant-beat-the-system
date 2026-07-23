@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CBTS — Mobile Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   CBTS MOBILE PROTOTYPE
+   Phase 1 (Linen) tokens for prose
+   Dark tokens for feed/threads/songs
+   ═══════════════════════════════════════ */
+
+:root {
+  /* Prose (linen) */
+  --p-bg: #E8E2D6;
+  --p-text: #3A3630;
+  --p-dim: #7A756D;
+  --p-bright: #2E2B27;
+  --p-inner: #7A5D3A;
+  --p-lyric: #8B9968;
+  --p-quote: #7a8a5a;
+  --p-faint: #D4D0C8;
+  --p-div: #C8C4BC;
+  --p-warm: #B07860;
+
+  /* Hub (dark) */
+  --h-bg: #1a1a1e;
+  --h-text: #C8C4BC;
+  --h-dim: #706C66;
+  --h-bright: #E0DCD4;
+  --h-faint: #2A2826;
+  --h-div: #28262A;
+  --h-card: #1E1E22;
+  --h-card-b: #2A282E;
+  --h-warm: #B07860;
+  --h-cold: #5A7080;
+  --h-alert: #A05040;
+  --h-earth: #6A7A52;
+  --h-sys: #5A7080;
+
+  /* Tab bar */
+  --tab-bg: #111114;
+  --tab-border: #28262A;
+  --tab-text: #706C66;
+  --tab-active: #B07860;
+
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { height: 100%; -webkit-text-size-adjust: 100%; }
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Crimson Pro', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 100;
+  transition: background .3s, border-color .3s;
+  background: var(--p-bg);
+  border-bottom: 1px solid var(--p-div);
+}
+.header.hub-mode {
+  background: var(--h-bg);
+  border-bottom-color: var(--h-div);
+}
+.header-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: color .3s;
+  color: var(--p-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  padding: 0 12px;
+}
+.header.hub-mode .header-title { color: var(--h-dim); }
+
+.header-btn {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  flex-shrink: 0;
+  transition: color .3s;
+  color: var(--p-dim);
+}
+.header.hub-mode .header-btn { color: var(--h-dim); }
+.header-btn svg { width: 20px; height: 20px; }
+
+/* ── VIEWS CONTAINER ── */
+.views {
+  position: fixed;
+  top: 52px;
+  left: 0; right: 0;
+  bottom: calc(52px + var(--safe-bottom));
+  overflow: hidden;
+}
+
+.view {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.view.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── PROSE VIEW ── */
+.view-prose {
+  background: var(--p-bg);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 2px,
+      rgba(130,110,75,.045) 2px, rgba(130,110,75,.045) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 3px,
+      rgba(110,95,65,.035) 3px, rgba(110,95,65,.035) 4px
+    );
+}
+
+.prose-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.t-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 200;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--p-dim);
+  opacity: .6;
+  margin-bottom: 6px;
+}
+.t-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--p-bright);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.prose p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--p-text);
+  margin-bottom: 16px;
+}
+.prose .inner {
+  color: var(--p-inner);
+  font-style: italic;
+  border-left: 2px solid rgba(122,93,58,.22);
+  padding-left: 16px;
+  margin-left: 0;
+}
+.prose .lyric {
+  color: var(--p-lyric);
+  font-style: italic;
+  border-left: 2px solid var(--p-faint);
+  padding-left: 16px;
+}
+.prose .break {
+  border: none;
+  border-top: 1px solid var(--p-faint);
+  width: 40%;
+  margin: 32px auto;
+  opacity: 0.4;
+}
+.prose .solo {
+  color: var(--p-bright);
+  margin: 36px 0;
+  font-size: 18px;
+}
+.prose .subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--p-bright);
+  margin: 40px 0 20px;
+}
+
+/* ── HUB VIEWS (Feed, Threads, Songs) ── */
+.view-hub {
+  background: var(--h-bg);
+}
+
+.hub-container {
+  padding: 16px 12px 80px;
+}
+
+/* Signal cards */
+.card-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.sec-name {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--h-dim);
+  background: rgba(107,103,96,.15);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.card-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--h-dim);
+  opacity: .4;
+}
+
+.card {
+  background: var(--h-card);
+  border: 1px solid var(--h-card-b);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.card .src {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--h-text);
+  margin-bottom: 4px;
+}
+.card .ttl {
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--h-bright);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.card .snip {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--h-dim);
+  opacity: .55;
+  line-height: 1.5;
+}
+.card .tag {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  background: rgba(107,103,96,.12);
+  color: var(--h-text);
+}
+.tag.a { background: rgba(0,255,225,.08); color: #00FFE1; }
+.tag.x { background: rgba(212,61,61,.08); color: #d43d3d; }
+.tag.e { background: rgba(196,149,106,.1); color: var(--h-warm); }
+
+/* Thread items */
+.thread-group-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--h-dim);
+  opacity: .5;
+  padding: 16px 4px 8px;
+}
+.thread-item {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--h-div);
+  cursor: pointer;
+}
+.thread-item:active { background: rgba(107,103,96,.08); }
+.thread-text {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  color: var(--h-bright);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.thread-src {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  color: var(--h-dim);
+  opacity: .5;
+  letter-spacing: 1px;
+}
+
+/* Songs */
+.song {
+  background: var(--h-card);
+  border: 1px solid var(--h-card-b);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.song-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--h-bright);
+}
+.song-artist {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: var(--h-dim);
+  opacity: .5;
+  margin-top: 2px;
+}
+.song-context {
+  font-family: 'Crimson Pro', serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--h-dim);
+  opacity: .5;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.song-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--h-warm);
+  text-decoration: none;
+  margin-top: 8px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+/* ── TAB BAR ── */
+.tab-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: calc(52px + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  background: var(--tab-bg);
+  border-top: 1px solid var(--tab-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+.tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab-icon {
+  width: 20px; height: 20px;
+  transition: color .2s;
+  color: var(--tab-text);
+}
+.tab-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color .2s;
+  color: var(--tab-text);
+}
+.tab-btn.active .tab-icon,
+.tab-btn.active .tab-label {
+  color: var(--tab-active);
+}
+.tab-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--tab-active);
+  position: absolute;
+  top: 6px; right: calc(50% - 14px);
+  display: none;
+}
+.tab-btn { position: relative; }
+.tab-btn.has-new .tab-dot { display: block; }
+
+/* ── CHAPTER DRAWER ── */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.chapter-drawer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 280px;
+  max-width: 80vw;
+  background: var(--h-bg);
+  z-index: 201;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+}
+.drawer-overlay.open .chapter-drawer {
+  transform: translateX(0);
+}
+.drawer-header {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--h-dim);
+  opacity: .5;
+  padding: 20px 16px 10px;
+}
+.drawer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(40,38,42,.3);
+}
+.drawer-item:active { background: rgba(176,120,96,.06); }
+.drawer-item.current { background: rgba(176,120,96,.1); }
+.drawer-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--h-dim);
+  opacity: .4;
+}
+.drawer-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: var(--h-text);
+  opacity: .6;
+  line-height: 1.3;
+}
+.drawer-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--h-dim);
+  opacity: .3;
+}
+.drawer-item.current .drawer-title {
+  color: var(--h-warm);
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header" id="header">
+  <button class="header-btn" id="menuBtn" aria-label="Chapters">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="4" y1="7" x2="20" y2="7"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="17" x2="14" y2="17"/>
+    </svg>
+  </button>
+  <div class="header-title" id="headerTitle">T7 — BLUE MONDAY, BLACK FRIDAY</div>
+  <button class="header-btn" style="opacity:.3" aria-label="Settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+  </button>
+</div>
+
+<!-- VIEWS -->
+<div class="views">
+
+  <!-- PROSE -->
+  <div class="view view-prose active" id="viewProse">
+    <div class="prose-container">
+      <div class="t-date">Late November 2026</div>
+      <div class="t-title">Blue Monday, Black Friday</div>
+      <div class="prose">
+        <p>The Waitrose order was perfect again. Not just correct — optimised. The algorithm had learned that Simon preferred the Duchy Originals oats but would accept the own-brand if the price gap exceeded £1.40, that he bought semi-skimmed in winter and switched to oat milk around April, that Amy's wine consumption predicted itself with startling accuracy from the school calendar.</p>
+
+        <p class="inner">You're not a customer. You're a dataset with a Clubcard.</p>
+
+        <p>He unpacked the bags on the kitchen island while Amy talked about George's parents' evening. The boy was thriving. Every metric confirmed it — attendance, engagement scores, predicted grades, the nebulous "wellbeing indicators" the school app now surfaced alongside homework deadlines. George was, by every available measurement, doing brilliantly.</p>
+
+        <p>Simon opened the app and looked at the dashboard. Green across the board. A small notification: <em>George has been selected for the Digital Citizenship programme — consent form attached.</em></p>
+
+        <p class="inner">Consent. As if you could say no. As if any parent looked at a green dashboard and elected to introduce friction. The form wasn't asking permission. It was documenting compliance.</p>
+
+        <hr class="break">
+
+        <p class="subtitle">Evening</p>
+
+        <p>The Black Friday emails had started on the Wednesday. Simon counted seventeen in his inbox by Thursday morning, each one engineered with a precision that would have impressed a Cold War cryptographer. Subject lines tested across millions of eyeballs, send times calibrated to circadian vulnerability, discount percentages calculated not to maximise margin but to trigger the exact neurochemical response that converted browsing into buying.</p>
+
+        <p>He bought the drill bits. He didn't need drill bits. He knew he didn't need drill bits. He knew that the 43% discount was calculated from a reference price that had never existed outside an algorithm's imagination. He bought them anyway, because £8.99 for tungsten carbide masonry bits was objectively good value, and because the part of his brain that understood marketing was a completely different department from the part that responded to it.</p>
+
+        <p class="inner">The knowing-doing gap. The central problem of every sermon ever preached, every self-help book ever written, every cigarette packet warning ever printed. You can see the wire. You step over the wire. You see the next wire. You step over that one too. At no point does seeing the wire make the stepping difficult, because seeing and stepping were never connected. They run on different circuits, and the circuits do not talk to each other.</p>
+
+        <p class="lyric">Should I stay or should I go now?<br>If I go there will be trouble<br>And if I stay it will be double</p>
+
+        <p>Amy looked up from her phone. "Did you just buy drill bits?"</p>
+        <p>"They were forty-three percent off."</p>
+        <p>"You have drill bits."</p>
+        <p>"These are masonry bits. Different thing entirely."</p>
+        <p>"You said that about the brad-point set."</p>
+        <p class="inner">She was right. He did say that about the brad-point set. The brad-point set was in the garage, unopened, next to the step drill he'd bought in the January sales, which was next to the auger bits from the previous Black Friday, all of them arranged in a neat archaeology of manufactured desire.</p>
+
+        <p class="solo">He turned off the phone and went to bed. The drill bits would arrive tomorrow.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEED -->
+  <div class="view view-hub" id="viewFeed">
+    <div class="hub-container">
+      <div class="card-chrome">
+        <span class="sec-name">WhatsApp</span>
+        <span class="card-time">21:14</span>
+      </div>
+      <div class="card">
+        <div class="src">Amy</div>
+        <div class="ttl">Don't forget George's consent form</div>
+        <div class="snip">The digital citizenship thing. I've signed it already but it needs both of us apparently. In the school app x</div>
+      </div>
+
+      <div class="card-chrome">
+        <span class="sec-name">Email</span>
+        <span class="card-time">19:32</span>
+      </div>
+      <div class="card">
+        <div class="src">Waitrose</div>
+        <div class="ttl">Your order has been delivered</div>
+        <div class="snip">3 substitutions made. Your regular items have been updated based on your preferences.</div>
+        <div class="tag e">Shopping</div>
+      </div>
+
+      <div class="card-chrome">
+        <span class="sec-name">Signal</span>
+        <span class="card-time">17:45</span>
+      </div>
+      <div class="card">
+        <div class="src">Dev</div>
+        <div class="ttl">Have you seen the ARC consultation?</div>
+        <div class="snip">Page 47. Authentication framework for "all regulated financial service providers." Read the scope definition. Then read it again.</div>
+        <div class="tag a">ARC</div>
+      </div>
+
+      <div class="card-chrome">
+        <span class="sec-name">Notification</span>
+        <span class="card-time">14:20</span>
+      </div>
+      <div class="card">
+        <div class="src">BBC News</div>
+        <div class="ttl">Black Friday spending hits record £4.7bn</div>
+        <div class="snip">UK consumers spent a record £4.7 billion on Black Friday, with online transactions accounting for 72% of purchases.</div>
+        <div class="tag">News</div>
+      </div>
+
+      <div class="card-chrome">
+        <span class="sec-name">Instagram</span>
+        <span class="card-time">12:08</span>
+      </div>
+      <div class="card">
+        <div class="src">Sponsored</div>
+        <div class="ttl">DeWalt DCD778 18V Brushless Combi Drill</div>
+        <div class="snip">Black Friday Deal — 47% off. Includes 2x 4.0Ah batteries, charger, and 100-piece accessory set.</div>
+        <div class="tag e">Ad</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREADS -->
+  <div class="view view-hub" id="viewThreads">
+    <div class="hub-container">
+      <div class="thread-group-label">Official</div>
+      <div class="thread-item">
+        <div class="thread-text">ARC Consultation — Authentication Requirements for Regulated Entities (PS26/4)</div>
+        <div class="thread-src">FCA · Autumn 2026</div>
+      </div>
+      <div class="thread-item">
+        <div class="thread-text">Digital Identity: Making Public Services Work For You</div>
+        <div class="thread-src">Cabinet Office · Feb 2026</div>
+      </div>
+
+      <div class="thread-group-label">Dev's Rabbit Hole</div>
+      <div class="thread-item">
+        <div class="thread-text">The Invisible Empire: American Hyperscalers and the Future of Digital Sovereignty</div>
+        <div class="thread-src">Council on Foreign Relations · Feb 2026</div>
+      </div>
+      <div class="thread-item">
+        <div class="thread-text">SDG16 Part 2 — Enforcing Digital Identity</div>
+        <div class="thread-src">Unlimited Hangout · Oct 2023</div>
+      </div>
+      <div class="thread-item">
+        <div class="thread-text">Oracle and Palantir team up on government cloud and AI services</div>
+        <div class="thread-src">Data Centre Dynamics · Apr 2024</div>
+      </div>
+
+      <div class="thread-group-label">Simon's Notes</div>
+      <div class="thread-item">
+        <div class="thread-text">Online Safety Act: age verification now mandatory for adult content</div>
+        <div class="thread-src">Ofcom · Jul 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SONGS -->
+  <div class="view view-hub" id="viewSongs">
+    <div class="hub-container">
+      <div class="song">
+        <div class="song-title">Should I Stay or Should I Go</div>
+        <div class="song-artist">The Clash</div>
+        <div class="song-context">The knowing-doing gap has a soundtrack. Joe Strummer asked the question in 1981. Forty-five years later the answer is the same: you stay. Everyone stays.</div>
+        <a href="#" class="song-link">► Spotify</a>
+      </div>
+
+      <div class="song">
+        <div class="song-title">Blue Monday</div>
+        <div class="song-artist">New Order</div>
+        <div class="song-context">Named the chapter after it. A song about the gap between how you feel and how you function. The synths don't care about your Monday. Neither does the algorithm.</div>
+        <a href="#" class="song-link">► Spotify</a>
+      </div>
+
+      <div class="song">
+        <div class="song-title">The Fear</div>
+        <div class="song-artist">Lily Allen</div>
+        <div class="song-context">Everything's cool as long as I'm getting thinner. She saw the whole machine in 2009 and put it in a pop song. We gave it three marks and moved on.</div>
+        <a href="#" class="song-link">► Spotify</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" data-view="viewProse">
+    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+    </svg>
+    <span class="tab-label">Prose</span>
+    <span class="tab-dot"></span>
+  </button>
+  <button class="tab-btn has-new" data-view="viewFeed">
+    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <line x1="8" y1="8" x2="16" y2="8"/>
+      <line x1="8" y1="12" x2="16" y2="12"/>
+      <line x1="8" y1="16" x2="12" y2="16"/>
+    </svg>
+    <span class="tab-label">Feed</span>
+    <span class="tab-dot"></span>
+  </button>
+  <button class="tab-btn" data-view="viewThreads">
+    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+      <path d="m4.93 4.93 2.83 2.83m8.48 8.48 2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/>
+    </svg>
+    <span class="tab-label">Threads</span>
+    <span class="tab-dot"></span>
+  </button>
+  <button class="tab-btn" data-view="viewSongs">
+    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    <span class="tab-label">Songs</span>
+    <span class="tab-dot"></span>
+  </button>
+</div>
+
+<!-- CHAPTER DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay">
+  <div class="chapter-drawer" id="chapterDrawer">
+    <div class="drawer-header">Chapters</div>
+    <div class="drawer-item">
+      <span class="drawer-num">T1</span>
+      <span class="drawer-title">Digging, Bright and Breezy</span>
+      <span class="drawer-date">October 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T2</span>
+      <span class="drawer-title">Acorns</span>
+      <span class="drawer-date">October 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T3</span>
+      <span class="drawer-title">We Need to Talk About Elf</span>
+      <span class="drawer-date">October 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">Q1</span>
+      <span class="drawer-title" style="color:var(--h-cold);">Question</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T5</span>
+      <span class="drawer-title">Scattergun Sunday</span>
+      <span class="drawer-date">November 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T6</span>
+      <span class="drawer-title">Conker Season</span>
+      <span class="drawer-date">November 2026</span>
+    </div>
+    <div class="drawer-item current">
+      <span class="drawer-num">T7</span>
+      <span class="drawer-title">Blue Monday, Black Friday</span>
+      <span class="drawer-date">Late November 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T8</span>
+      <span class="drawer-title">The Cold Month</span>
+      <span class="drawer-date">December 2026</span>
+    </div>
+    <div class="drawer-item">
+      <span class="drawer-num">T9</span>
+      <span class="drawer-title">Christmas Day</span>
+      <span class="drawer-date">25 December 2026</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// Tab switching
+const tabBtns = document.querySelectorAll('.tab-btn');
+const views = document.querySelectorAll('.view');
+const header = document.getElementById('header');
+const headerTitle = document.getElementById('headerTitle');
+
+const viewTitles = {
+  viewProse: 'T7 — BLUE MONDAY, BLACK FRIDAY',
+  viewFeed: 'FEED',
+  viewThreads: 'THREADS',
+  viewSongs: 'SONGS'
+};
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.view;
+
+    // Update tabs
+    tabBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Update views
+    views.forEach(v => v.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+
+    // Update header
+    const isHub = target !== 'viewProse';
+    header.classList.toggle('hub-mode', isHub);
+    headerTitle.textContent = viewTitles[target];
+
+    // Clear new dot on feed
+    if (target === 'viewFeed') {
+      btn.classList.remove('has-new');
+    }
+  });
+});
+
+// Chapter drawer
+const menuBtn = document.getElementById('menuBtn');
+const drawerOverlay = document.getElementById('drawerOverlay');
+
+menuBtn.addEventListener('click', () => {
+  drawerOverlay.classList.toggle('open');
+});
+
+drawerOverlay.addEventListener('click', (e) => {
+  if (e.target === drawerOverlay) {
+    drawerOverlay.classList.remove('open');
+  }
+});
+
+// Prevent body scroll
+document.body.addEventListener('touchmove', (e) => {
+  // Allow scroll within views
+}, { passive: true });
+</script>
+
+</body>
+</html>

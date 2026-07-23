@@ -199,22 +199,7 @@
     },
     "_schemaVersion": "S167-1"
   },
-  "initialState": {
-    "cash": 840,
-    "ds": 12400,
-    "bc": 0,
-    "cw": {
-      "value": 50,
-      "visible": false
-    },
-    "health": "fine",
-    "bioDigital": 0,
-    "flags": {
-      "registered": false,
-      "met_dev": false,
-      "met_patel": false
-    }
-  },
+  "initialState": {},
   "turns": [
     {
       "id": 1,
@@ -7081,7 +7066,7 @@
         {
           "t": "She's not wrong."
         },
-      {
+        {
           "t": "I take a screenshot of the map to send to Dev. Lewes to Rye. One hundred and one dots of teal. Sixty dots of gold. A network that appeared like infrastructure always appears when it's been planned for years — suddenly, and all at once, and with a colour scheme."
         },
         {
@@ -10477,73 +10462,109 @@
             "src": "Mum (Spain)",
             "ttl": "Are you getting this? I've sent 4 texts since last night and don't know if any got through. Please reply darling. Please. xxx",
             "snip": "Four texts. None arrived. The fifth did.",
-            "tag": "", "cls": "", "time": "07:12", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "07:12",
+            "date": "20 Feb 2027"
           },
           {
             "src": "to Mum (Spain)",
             "ttl": "Getting this one! We're all fine mum. Phones playing up. Don't worry. Will call when lines clear. Love you x",
             "snip": "Thirty seconds to type. She's been awake since 3am.",
-            "tag": "", "cls": "", "time": "07:14", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "07:14",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Sarah",
             "ttl": "Call connected — 20 minutes 14 seconds.",
             "snip": "Twenty minutes. The longest conversation we've had since the decree absolute.",
-            "tag": "CONNECTED", "cls": "", "time": "10:35", "date": "20 Feb 2027"
+            "tag": "CONNECTED",
+            "cls": "",
+            "time": "10:35",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Sam",
             "ttl": "This is mental Pa. What do you reckon's actually going on? Mum's being weird about it",
             "snip": "Mum's being weird about it. He means Sarah. He means she asked him what I said.",
-            "tag": "", "cls": "", "time": "12:15", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "12:15",
+            "date": "20 Feb 2027"
           },
           {
             "src": "to Sam",
             "ttl": "Nobody knows mate. Sit tight. I'll drive over in the next couple of days and pick you and E up. Love you x",
             "snip": "Nobody knows. The lie that isn't quite a lie.",
-            "tag": "", "cls": "", "time": "12:18", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "12:18",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Emilia",
             "ttl": "hiii dad 💕 im fine dont worry. mums making us help clean the house lol. see u soon love u xxx",
             "snip": "Cleaning the house during a national emergency. Sarah would.",
-            "tag": "", "cls": "", "time": "13:00", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "13:00",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Ben",
             "ttl": "Mate it's grim in town. Queues at every cashpoint even though they don't work. Spar's been cleaned out. Army on Western Road. Not aggressive just... there. Emma wants to come to yours if it gets worse",
             "snip": "Brighton's not Lewes. Different density, different mood. Ben sees the edges I don't.",
-            "tag": "", "cls": "", "time": "13:45", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "13:45",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Giles → Parklife",
             "ttl": "Lads — reckon they'll have to print cash? Like actual emergency banknotes? My neighbour reckons ration books. His wife's already labelling tupperware 😂",
             "snip": "Hampshire is preparing for the wrong war. Ration books. Tupperware. As if the solution will be analogue.",
-            "tag": "", "cls": "", "time": "14:20", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "14:20",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Dave",
             "ttl": "Guessing beers off then 😂 Stay safe mate. Nicky's panic-frozen about 9000 fishfingers",
             "snip": "Nine thousand fishfingers. Dave's household preparing for the apocalypse one breaded rectangle at a time.",
-            "tag": "", "cls": "", "time": "14:50", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "14:50",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Vince",
             "ttl": "Record week at the gallery. Sold absolutely nothing. Might pivot to tinned goods. You reckon Palace will even have a ground to come back to at this rate?",
             "snip": "Vince. The only man alive who can pivot from financial collapse to Selhurst Park in two sentences.",
-            "tag": "", "cls": "", "time": "15:02", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "15:02",
+            "date": "20 Feb 2027"
           },
           {
             "src": "Rupert",
             "ttl": "If they can hit the banks twice they can hit the grid. Water. Gas. It's all networked. Come over tomorrow — bring everyone. We'll cook. Freezer's full. Let's compare notes.",
             "snip": "He's expecting Chapter 3. Power, water, the full cascade. He's wrong — but he doesn't know he's wrong yet. The grid was never the target.",
-            "tag": "", "cls": "", "time": "15:11", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "15:11",
+            "date": "20 Feb 2027"
           },
           {
             "src": "to Rupert",
             "ttl": "Yeah. Bring Amy and the dogs. Let me know when.",
             "snip": "Three words about what I actually think: none. He'll read into the silence. He usually does.",
-            "tag": "", "cls": "", "time": "15:14", "date": "20 Feb 2027"
+            "tag": "",
+            "cls": "",
+            "time": "15:14",
+            "date": "20 Feb 2027"
           }
         ]
       }

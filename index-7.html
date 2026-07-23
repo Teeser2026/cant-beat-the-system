@@ -89,11 +89,7 @@ body.phase-1 .right {
   --faint: #2A2826;
   --div: #28262A;
 }
-body.phase-1 .econ-bar {
-  background: rgba(218,212,200,.97);
-  border-bottom-color: var(--div);
-}
-body.phase-1 .econ-label { color: var(--dim); }
+/* phase-1 econ-bar removed S264 */
 body.phase-1 .t-date {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
@@ -203,8 +199,7 @@ body.phase-1 .choices {
   position: relative;
   z-index: 1;
 }
-/* Phase 1 — hide econ stats (keep bar for Chapters) */
-body.phase-1 .econ-left { display: none; }
+
 /* Phase 1 — chapter nav */
 body.phase-1 .chapter-nav {
   background: rgba(228,222,212,.97);
@@ -283,12 +278,7 @@ body.phase-2 .left-bg {
 body.phase-2 .right {
   background: var(--bg-r);
 }
-body.phase-2 .econ-bar {
-  background: rgba(16,16,20,.97);
-  border-bottom-color: var(--div);
-}
-body.phase-2 .econ-left { display: none; }
-body.phase-2 .econ-label { color: var(--dim); }
+/* phase-2 econ-bar removed S264 */
 body.phase-2 .t-date {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
@@ -437,12 +427,7 @@ body.phase-3 .right {
   --faint: #2A2826;
   --div: #28262A;
 }
-body.phase-3 .econ-bar {
-  background: rgba(213,217,208,.97);
-  border-bottom-color: var(--div);
-}
-body.phase-3 .econ-label { color: var(--dim); }
-body.phase-3 .econ-left { display: none; }
+/* phase-3 econ-bar removed S264 */
 body.phase-3 .t-date {
   font-family: 'Outfit', sans-serif;
   font-size: 10px;
@@ -658,7 +643,7 @@ body .card.aida .tag {
 /* ═══════════════════════════════════════
    PHASE TRANSITIONS — the room changes
    ═══════════════════════════════════════ */
-body, .left, .right, .econ-bar, .ticker-bar,
+body, .left, .right, .ticker-bar,
 .card, .tab, .sec-label, .t-date, .t-title,
 .prose, .inner, .lyric, .tag {
   transition: background 1.5s ease, color 1.5s ease,
@@ -680,8 +665,8 @@ html, body {
 /* ── LAYOUT ── */
 .wrap {
   display: flex;
-  height: calc(100vh - 90px);
-  margin-top: 48px;
+  height: calc(100vh - 42px);
+  margin-top: 0;
   overflow: hidden;
   margin-right: 740px;
 }
@@ -986,84 +971,19 @@ html, body {
 .c-opt.sel { color: var(--warm); padding-left: 12px; }
 
 /* ── ECONOMIC DISPLAY ── */
-.econ-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background: rgba(6,6,9,.97);
-  border-bottom: 1px solid var(--div);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 28px;
-  z-index: 200;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-.econ-left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.econ-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--dim);
-  opacity: .7;
-  transition: opacity .3s;
-}
-.econ-item:hover { opacity: 1; }
-.econ-label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text);
-  opacity: .45;
-}
-.econ-val {
-  font-size: 18px;
-  color: var(--text);
-  font-weight: 400;
-}
-.econ-val.cash { color: var(--earth); }
-.econ-val.ds { color: var(--text); opacity: .7; }
-.econ-val.bc { color: var(--sys); }
-.econ-val.cw { color: var(--warm); }
-
-/* ── HEALTH HEART ── */
-.heart-icon {
-  font-size: 22px;
-  line-height: 1;
-  animation: heartPulse 2s ease-in-out infinite;
-}
-.heart-icon.vital { color: var(--heart-vital); }
-.heart-icon.fine { color: var(--heart-fine); animation-duration: 2.5s; }
-.heart-icon.declining { color: var(--heart-declining); animation-duration: 3.5s; }
-.heart-icon.critical { color: var(--heart-critical); animation-duration: 5s; opacity: .5; }
-@keyframes heartPulse {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.15); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.1); }
-  60% { transform: scale(1); }
-}
-
-/* ── BC display (hidden until post-Event registration) ── */
-.bc-display { display: none; }
-.bc-display.visible { display: flex; }
-/* ── CW display (hidden until T41) ── */
-.cw-display { display: none; }
-.cw-display.visible { display: flex; }
+/* ── ECON BAR REMOVED S264 ──
 
 /* ── DEV NAV ── */
 .dev-bar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 200;
+  font-family: 'IBM Plex Mono', monospace;
 }
 .dev-label {
   font-size: 8px;
@@ -1077,7 +997,7 @@ html, body {
 .right {
   position: fixed;
   right: 280px;
-  top: 48px;
+  top: 0;
   bottom: 42px;
   width: 460px;
   background: var(--bg-r);
@@ -2423,10 +2343,8 @@ body.phase-3 .song-context {
   pointer-events: none;
 }
 
-.econ-bar { display: none; }
 .wrap { display: none; }
 .ticker-bar { display: none; }
-body.game-active .econ-bar { display: flex; }
 body.game-active .wrap { display: flex; }
 body.game-active .ticker-bar { display: flex; }
 
@@ -2711,7 +2629,7 @@ body.game-active .ticker-bar { display: flex; }
 .chapter-nav {
   position: fixed;
   right: 0;
-  top: 48px;
+  top: 0;
   bottom: 42px;
   width: 280px;
   z-index: 200;
@@ -2806,7 +2724,7 @@ body.game-active .ticker-bar { display: flex; }
 
 .dev-turn-list {
   position: fixed;
-  top: 48px;
+  top: 0;
   right: 0;
   width: 260px;
   max-height: calc(100vh - 90px);
@@ -2855,7 +2773,9 @@ body.game-active .ticker-bar { display: flex; }
   .right { display: none; }
   .wrap { margin-right: 0; }
   .left { border-right: none; }
-  .prose-wrap { padding: 64px 24px 120px; }
+  .prose-wrap { padding: 32px 20px 120px; }
+  .dev-bar { display: none !important; }
+  .reader-bar { display: none !important; }
   .prose-media.pm-wide {
     width: calc(100% - 16px);
     margin: 28px 8px;
@@ -4049,42 +3969,20 @@ body.game-active .ticker-bar { display: flex; }
 
 <div class="noise"></div>
 
-<!-- ══ ECONOMIC BAR ══ -->
-<div class="econ-bar">
-  <div class="econ-left">
-    <div class="econ-item heart-wrap">
-      <span class="econ-label">Health</span>
-      <span class="heart-icon fine" id="heart">♥</span>
-    </div>
-    <div class="econ-item" id="cashWrap">
-      <span class="econ-label">Cash</span>
-      <span class="econ-val cash" id="cashVal">£840</span>
-    </div>
-    <div class="econ-item" id="dsWrap">
-      <span class="econ-label">Savings</span>
-      <span class="econ-val ds" id="dsVal">£12,400</span>
-    </div>
-    <div class="econ-item bc-display" id="bcWrap">
-      <span class="econ-label">BC</span>
-      <span class="econ-val bc" id="bcVal">0</span>
-    </div>
-    <div class="econ-item cw-display" id="cwWrap">
-      <span class="econ-label">CW</span>
-      <span class="econ-val cw" id="cwVal">50</span>
-    </div>
-  </div>
-  <div class="dev-bar" id="devBar">
-    <span class="dev-label">Dev</span>
-    <button class="t-btn" id="prev">←</button>
-    <span class="t-num" id="t-num">T1</span>
-    <button class="t-btn" id="next">→</button>
-    <button class="t-btn" id="devListToggle">☰</button>
-  </div>
-  <div class="reader-bar" id="readerBar" style="display:none;">
-    <button class="r-btn" id="readerPrev">←</button>
-    <button class="r-btn" id="readerChapters">Chapters</button>
-    <button class="r-btn" id="readerNext">→</button>
-  </div>
+<!-- econ-bar stub — invisible, keeps overlay querySelector calls safe (S264) -->
+<div class="econ-bar" style="display:none!important"></div>
+<!-- ══ NAV BAR (dev + reader) ══ -->
+<div class="dev-bar" id="devBar">
+  <span class="dev-label">Dev</span>
+  <button class="t-btn" id="prev">←</button>
+  <span class="t-num" id="t-num">T1</span>
+  <button class="t-btn" id="next">→</button>
+  <button class="t-btn" id="devListToggle">☰</button>
+</div>
+<div class="reader-bar" id="readerBar" style="display:none;">
+  <button class="r-btn" id="readerPrev">←</button>
+  <button class="r-btn" id="readerChapters">Chapters</button>
+  <button class="r-btn" id="readerNext">→</button>
 </div>
 <div class="dev-turn-list" id="devTurnList"></div>
 
@@ -4334,13 +4232,6 @@ function renderTurn(turnData) {
 
       const choice = turnData.choices.opts[ci];
       const choiceText = typeof choice === 'string' ? choice : choice.text;
-      if (choice.flag) {
-        Object.assign(state.flags, choice.flag);
-        if (choice.flag.registered) {
-          state.bc = 1000;
-          state.ds = 0;
-        }
-      }
       state.choicesLog.push({ turn: turnData.id, chosen: ci, text: choiceText });
       const choices = this.closest('.choices');
       choices.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
@@ -4936,36 +4827,7 @@ function renderSongs() {
   });
 }
 
-function updateEconDisplay() {
-  const turn = playData.turns[state.turnIndex];
-  const turnId = turn ? turn.id : 1;
-  document.getElementById('cashVal').textContent = '\u00a3' + state.cash.toLocaleString();
-  document.getElementById('heart').className = 'heart-icon ' + state.health;
-
-  const dsWrap = document.getElementById('dsWrap');
-  if (state.flags.registered) {
-    dsWrap.style.display = 'none';
-  } else {
-    dsWrap.style.display = 'flex';
-    document.getElementById('dsVal').textContent = '\u00a3' + state.ds.toLocaleString();
-  }
-
-  const bcWrap = document.getElementById('bcWrap');
-  if (state.flags.registered && state.bc > 0) {
-    bcWrap.classList.add('visible');
-    document.getElementById('bcVal').textContent = state.bc.toLocaleString() + ' BC';
-  } else {
-    bcWrap.classList.remove('visible');
-  }
-
-  const cwWrap = document.getElementById('cwWrap');
-  if (state.cw.visible) {
-    cwWrap.classList.add('visible');
-    document.getElementById('cwVal').textContent = state.cw.value;
-  } else {
-    cwWrap.classList.remove('visible');
-  }
-}
+/* updateEconDisplay removed S264 */
 
 function updateTicker(turnId) {
   const ticker = document.getElementById('ticker');
@@ -7120,7 +6982,6 @@ function goTo(idx) {
   renderSignal(turn.isQuestion ? null : turn.id);
   renderSongs();
   renderThreads();
-  updateEconDisplay();
   updateTicker(turn.isQuestion ? null : turn.id);
   // Clean up any active overlays
   const vrOv = document.getElementById('video-rorschach-overlay');

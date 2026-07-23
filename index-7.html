@@ -2938,6 +2938,15 @@ body.game-active .ticker-bar { display: flex; }
     padding: 14px 20px;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
+    border-color: rgba(0,255,136,0.4);
+  }
+  #intro-screen .intro-cage .cage-bar.b1,
+  #intro-screen .intro-cage .cage-bar.b4 {
+    background: rgba(0,255,136,0.28);
+  }
+  #intro-screen .intro-cage .cage-bar.b2,
+  #intro-screen .intro-cage .cage-bar.b3 {
+    background: rgba(0,255,136,0.16);
   }
   #intro-screen .intro-title {
     font-size: 24px;
@@ -8150,6 +8159,10 @@ document.getElementById('welcome-begin').addEventListener('click', function(e) {
   setTimeout(() => {
     ws.style.display = 'none';
     document.body.classList.add('game-active');
+    // Re-trigger turn audio — goTo(0) ran before any gesture (S266h)
+    if (playData && playData.turns && playData.turns[state.turnIndex]) {
+      handleTurnAudio(playData.turns[state.turnIndex]);
+    }
   }, 1600);
 });
 
@@ -8221,16 +8234,24 @@ document.getElementById('article-overlay').addEventListener('click', function(e)
 // ── DEV SKIP ──
 document.getElementById('dev-skip-intro').addEventListener('click', function(e) {
   e.stopPropagation();
+  getCbtsAudioCtx(); // Ensure context alive on this gesture
   stopAmbient();
   document.getElementById('intro-screen').style.display = 'none';
   document.getElementById('welcome-screen').style.display = 'none';
   document.body.classList.add('game-active');
+  if (playData && playData.turns && playData.turns[state.turnIndex]) {
+    handleTurnAudio(playData.turns[state.turnIndex]);
+  }
 });
 document.getElementById('dev-skip-welcome').addEventListener('click', function(e) {
   e.stopPropagation();
+  getCbtsAudioCtx(); // Ensure context alive on this gesture
   stopBirdsong();
   document.getElementById('welcome-screen').style.display = 'none';
   document.body.classList.add('game-active');
+  if (playData && playData.turns && playData.turns[state.turnIndex]) {
+    handleTurnAudio(playData.turns[state.turnIndex]);
+  }
 });
 
 // ── MOBILE ENGINE (S266) ──

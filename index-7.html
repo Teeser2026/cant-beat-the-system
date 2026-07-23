@@ -5617,6 +5617,28 @@ function updateTicker(turnId) {
 }
 
 // ── TURN AUDIO ──
+// ── SHARED AUDIO CONTEXT (S266f — mobile audio fix) ──
+// Mobile browsers require AudioContext creation during a user gesture.
+// One shared context, created on first interaction, reused everywhere.
+let cbtsAudioCtx = null;
+function getCbtsAudioCtx() {
+  if (!cbtsAudioCtx || cbtsAudioCtx.state === 'closed') {
+    cbtsAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (cbtsAudioCtx.state === 'suspended') {
+    cbtsAudioCtx.resume().catch(() => {});
+  }
+  return cbtsAudioCtx;
+}
+// Resume on any user gesture (belt-and-braces for mobile Safari)
+['touchstart', 'mousedown'].forEach(evt => {
+  document.addEventListener(evt, () => {
+    if (cbtsAudioCtx && cbtsAudioCtx.state === 'suspended') {
+      cbtsAudioCtx.resume().catch(() => {});
+    }
+  }, { passive: true });
+});
+
 // Reads optional 'audio' field from turn data in JSON:
 //   "audio": { "src": "countryside-bees.mp3", "fadeIn": 2, "fadeOut": 3, "vol": 0.5 }
 // Turns without audio field play in silence. Questions always silent.
@@ -5634,7 +5656,7 @@ function startTurnAudio(audioConf) {
   stopTurnAudio(0);
 
   try {
-    turnAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    turnAudioCtx = getCbtsAudioCtx();
     turnAudioGain = turnAudioCtx.createGain();
     turnAudioGain.gain.value = 0;
     turnAudioGain.connect(turnAudioCtx.destination);
@@ -5666,11 +5688,11 @@ function stopTurnAudio(fadeDuration) {
     const ctxRef = turnAudioCtx;
     setTimeout(() => {
       try { elRef.pause(); } catch(e){}
-      try { ctxRef.close(); } catch(e){}
+      // Don't close shared context — just disconnect
     }, (dur + 0.2) * 1000);
   }
   turnAudioEl = null;
-  turnAudioCtx = null;
+  turnAudioCtx = null; // ref cleared, context stays open
   turnAudioGain = null;
   turnAudioSrc = null;
 }
@@ -7866,7 +7888,7 @@ function checkTabNotifications(turn) {
 
 function playPing() {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const ctx = getCbtsAudioCtx();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.connect(gain);
@@ -7877,7 +7899,6 @@ function playPing() {
     gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.15);
-    setTimeout(() => ctx.close(), 200);
   } catch(e) {}
 }
 
@@ -7993,6 +8014,7 @@ function stopAmbient() {
 // Auto-start ambient on first user interaction with the intro
 let ambientStarted = false;
 document.getElementById('intro-screen').addEventListener('mousedown', function() {
+  getCbtsAudioCtx(); // Init shared context on first gesture
   if (!ambientStarted) {
     startAmbient();
     ambientStarted = true;
@@ -8005,6 +8027,14 @@ document.getElementById('intro-screen').addEventListener('mousemove', function()
     ambientStarted = true;
   }
 }, { once: true });
+// Mobile: touchstart also inits shared context
+document.getElementById('intro-screen').addEventListener('touchstart', function() {
+  getCbtsAudioCtx();
+  if (!ambientStarted) {
+    startAmbient();
+    ambientStarted = true;
+  }
+}, { once: true, passive: true });
 
 document.getElementById('intro-ambient-toggle').addEventListener('click', function(e) {
   e.stopPropagation();

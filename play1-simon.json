@@ -16766,165 +16766,6 @@
       "audio": ""
     },
     {
-      "id": "MQ1",
-      "isQuestion": true,
-      "questionText": "Right now, in your actual life — do you feel free?",
-      "questionOpts": [
-        {
-          "text": "Yes. I can do what I want, go where I want, say what I want."
-        },
-        {
-          "text": "No. And I'm not sure I ever have."
-        },
-        {
-          "text": "I feel free enough."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ2",
-      "isQuestion": true,
-      "questionText": "How often do you tell yourself you'll do something tomorrow that you could do right now?",
-      "questionOpts": [
-        {
-          "text": "Rarely. If it needs doing, I do it."
-        },
-        {
-          "text": "Sometimes. Depends how tired I am."
-        },
-        {
-          "text": "Often. I'm a world-class procrastinator and I've made peace with it."
-        },
-        {
-          "text": "I'm doing it right now."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ3",
-      "isQuestion": true,
-      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
-      "questionOpts": [
-        {
-          "text": "Every morning. Before I even say good morning."
-        },
-        {
-          "text": "Sometimes. Depends who I wake up next to."
-        },
-        {
-          "text": "No. People first. Always."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ4",
-      "isQuestion": true,
-      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
-      "questionOpts": [
-        {
-          "text": "Mostly my choices. I'm deliberate about how I spend my time."
-        },
-        {
-          "text": "About half and half. More than I'd like to admit."
-        },
-        {
-          "text": "Mostly algorithms. They know what I want before I do."
-        },
-        {
-          "text": "I can't tell the difference anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ5",
-      "isQuestion": true,
-      "questionText": "Do you dream differently than you used to?",
-      "questionOpts": [
-        {
-          "text": "Yes. They've changed. I don't know when."
-        },
-        {
-          "text": "No. Same dreams, same nonsense."
-        },
-        {
-          "text": "I don't remember my dreams."
-        },
-        {
-          "text": "I don't think I dream anymore."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "IP1",
-      "isQuestion": true,
-      "questionMode": "image-prompt",
-      "questionText": "what do you feel?",
-      "questionOpts": [
-        {
-          "img": "inkblot-1.png"
-        }
-      ]
-    },
-    {
-      "id": "MQ6",
-      "isQuestion": true,
-      "questionText": "When someone you trust sends you something important to read, do you read it?",
-      "questionOpts": [
-        {
-          "text": "I mean to. I'll open it, skim the first few lines, then life gets in the way."
-        },
-        {
-          "text": "If someone I trust says it matters, I read it. All of it."
-        },
-        {
-          "text": "Honestly? I've got hundreds of unread links saved for 'later.' Later never comes."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ7",
-      "isQuestion": true,
-      "questionText": "Do you say what you actually think, or what the room wants to hear?",
-      "questionOpts": [
-        {
-          "text": "What I actually think. Even when it costs me."
-        },
-        {
-          "text": "Depends on the room. I pick my battles."
-        },
-        {
-          "text": "What the room wants to hear. Life's easier that way."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ8",
-      "isQuestion": true,
-      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
-      "questionOpts": [
-        {
-          "text": "Yes. Every day. I know it's hypocritical. I do it anyway."
-        },
-        {
-          "text": "I try not to. But the alternatives are expensive or inconvenient or don't exist."
-        },
-        {
-          "text": "No. I've restructured my life to avoid it. It costs me."
-        },
-        {
-          "text": "I don't think about it. Life's too short."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
       "id": "SP1",
       "isQuestion": true,
       "questionMode": "sound-prompt",
@@ -16934,43 +16775,6 @@
           "text": "[placeholder]"
         }
       ]
-    },
-    {
-      "id": "MQ9",
-      "isQuestion": true,
-      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
-      "questionOpts": [
-        {
-          "text": "Knowing. If you really understood what was happening, you couldn't look away."
-        },
-        {
-          "text": "Doing. I know plenty. I do almost nothing about any of it."
-        },
-        {
-          "text": "They're the same thing. Knowing and not acting is just a slower way of looking away."
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ10",
-      "isQuestion": true,
-      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
-      "questionOpts": [
-        {
-          "text": "Care. That's literally what a good partner does. What a good doctor does."
-        },
-        {
-          "text": "Captivity. No matter how comfortable the cage, it's still a cage."
-        },
-        {
-          "text": "Both. And the fact that it's both is what makes it dangerous."
-        },
-        {
-          "text": "It depends on whether I asked for it."
-        }
-      ],
-      "questionMode": "mirror"
     },
     {
       "id": "IP2",
@@ -16988,66 +16792,6 @@
           "text": "tibetan bowl"
         }
       ]
-    },
-    {
-      "id": "MQ11",
-      "isQuestion": true,
-      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
-      "questionOpts": [
-        {
-          "text": "In a heartbeat. Do you have any idea what I'd give to start from zero?"
-        },
-        {
-          "text": "No. If they're offering to buy my identity, it's worth more than my debt."
-        },
-        {
-          "text": "I'd need to read the terms. All of them. Before I signed anything."
-        },
-        {
-          "text": "What choice would I have?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ12",
-      "isQuestion": true,
-      "questionText": "If your phone died permanently right now, what's the first thing you'd feel?",
-      "questionOpts": [
-        {
-          "text": "Relief."
-        },
-        {
-          "text": "Panic."
-        },
-        {
-          "text": "Loss. Like something important just disappeared."
-        },
-        {
-          "text": "Curiosity. What happens next?"
-        }
-      ],
-      "questionMode": "mirror"
-    },
-    {
-      "id": "MQ13",
-      "isQuestion": true,
-      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
-      "questionOpts": [
-        {
-          "text": "Yes. I know what it is. I'm just not ready."
-        },
-        {
-          "text": "Probably. That's how blind spots work, isn't it?"
-        },
-        {
-          "text": "No. I'm fairly self-aware."
-        },
-        {
-          "text": "How would I know?"
-        }
-      ],
-      "questionMode": "mirror"
     },
     {
       "id": "IP3",
@@ -17089,23 +16833,6 @@
         }
       ],
       "questionVideo": "rorschach.mp4"
-    },
-    {
-      "id": "MF1",
-      "isQuestion": true,
-      "questionMode": "mirror",
-      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
-      "questionOpts": [
-        {
-          "text": "Yes, of course I would."
-        },
-        {
-          "text": "I’d notice. I wouldn’t do anything."
-        },
-        {
-          "text": "Probably not."
-        }
-      ]
     },
     {
       "id": "CW1",
@@ -17174,17 +16901,6 @@
       ]
     },
     {
-      "id": "SL1",
-      "isQuestion": true,
-      "questionMode": "slider",
-      "questionText": "To what extent do you live by the moral code you claim to possess?",
-      "questionOpts": [
-        {
-          "text": "[slider 0–10, no labels, no default]"
-        }
-      ]
-    },
-    {
       "id": "SE1",
       "isQuestion": true,
       "questionMode": "sound-echo",
@@ -17213,6 +16929,288 @@
             "body": "<p>Thames Water, now operating under AIDA Infrastructure Coordination, announces 'smart water management' across the South East.</p><p>Household allocation calculated by occupancy, seasonal need, and regional availability.</p><p>A DEFRA spokesperson confirmed that industrial water users — including data processing facilities designated as Tier 1 national infrastructure — operate under separate allocation frameworks 'to ensure continuity of essential digital services.' Consumer water use in the South East fell 18% in Q2.</p><p>Industrial water consumption data was not published.</p>",
             "footer": "BBC News — Environment"
           }
+        }
+      ]
+    }
+  ],
+  "mirror": [
+    {
+      "id": "MQ1",
+      "unlockAt": "1b",
+      "questionMode": "mirror",
+      "questionText": "Right now, in your actual life — do you feel free?",
+      "questionOpts": [
+        {
+          "text": "Yes. I can do what I want, go where I want, say what I want."
+        },
+        {
+          "text": "No. And I’m not sure I ever have."
+        },
+        {
+          "text": "I feel free enough."
+        }
+      ]
+    },
+    {
+      "id": "MQ3",
+      "unlockAt": "3",
+      "questionMode": "mirror",
+      "questionText": "Do you pick up your phone before you speak to someone in the morning?",
+      "questionOpts": [
+        {
+          "text": "Every morning. Before I even say good morning."
+        },
+        {
+          "text": "Sometimes. Depends who I wake up next to."
+        },
+        {
+          "text": "No. People first. Always."
+        }
+      ]
+    },
+    {
+      "id": "MQ2",
+      "unlockAt": "5a",
+      "questionMode": "mirror",
+      "questionText": "How often do you tell yourself you’ll do something tomorrow that you could do right now?",
+      "questionOpts": [
+        {
+          "text": "Rarely. If it needs doing, I do it."
+        },
+        {
+          "text": "Sometimes. Depends how tired I am."
+        },
+        {
+          "text": "Often. I’m a world-class procrastinator and I’ve made peace with it."
+        },
+        {
+          "text": "I’m doing it right now."
+        }
+      ]
+    },
+    {
+      "id": "MQ7",
+      "unlockAt": "6a",
+      "questionMode": "mirror",
+      "questionText": "Do you say what you actually think, or what the room wants to hear?",
+      "questionOpts": [
+        {
+          "text": "What I actually think. Even when it costs me."
+        },
+        {
+          "text": "Depends on the room. I pick my battles."
+        },
+        {
+          "text": "What the room wants to hear. Life’s easier that way."
+        }
+      ]
+    },
+    {
+      "id": "IP1",
+      "unlockAt": "6d",
+      "questionMode": "image-prompt",
+      "questionText": "what do you feel?",
+      "asset": "inkblot-1.webp"
+    },
+    {
+      "id": "MQ8",
+      "unlockAt": "7",
+      "questionMode": "mirror",
+      "questionText": "Do you use products or services from companies whose practices you find morally objectionable?",
+      "questionOpts": [
+        {
+          "text": "Yes. Every day. I know it’s hypocritical. I do it anyway."
+        },
+        {
+          "text": "I try not to. But the alternatives are expensive or inconvenient or don’t exist."
+        },
+        {
+          "text": "No. I’ve restructured my life to avoid it. It costs me."
+        },
+        {
+          "text": "I don’t think about it. Life’s too short."
+        }
+      ]
+    },
+    {
+      "id": "MQ4",
+      "unlockAt": "9",
+      "questionMode": "mirror",
+      "questionText": "How many hours today have you spent doing something you genuinely chose versus something an algorithm suggested?",
+      "questionOpts": [
+        {
+          "text": "Mostly my choices. I’m deliberate about how I spend my time."
+        },
+        {
+          "text": "About half and half. More than I’d like to admit."
+        },
+        {
+          "text": "Mostly algorithms. They know what I want before I do."
+        },
+        {
+          "text": "I can’t tell the difference anymore."
+        }
+      ]
+    },
+    {
+      "id": "MQ5",
+      "unlockAt": "10",
+      "questionMode": "mirror",
+      "questionText": "Do you dream differently than you used to?",
+      "questionOpts": [
+        {
+          "text": "Yes. They’ve changed. I don’t know when."
+        },
+        {
+          "text": "No. Same dreams, same nonsense."
+        },
+        {
+          "text": "I don’t remember my dreams."
+        },
+        {
+          "text": "I don’t think I dream anymore."
+        }
+      ]
+    },
+    {
+      "id": "MQ12",
+      "unlockAt": "11",
+      "questionMode": "mirror",
+      "questionText": "If your phone died permanently right now, what’s the first thing you’d feel?",
+      "questionOpts": [
+        {
+          "text": "Relief."
+        },
+        {
+          "text": "Panic."
+        },
+        {
+          "text": "Loss. Like something important just disappeared."
+        },
+        {
+          "text": "Curiosity. What happens next?"
+        }
+      ]
+    },
+    {
+      "id": "MQ6",
+      "unlockAt": "16a",
+      "questionMode": "mirror",
+      "questionText": "When someone you trust sends you something important to read, do you read it?",
+      "questionOpts": [
+        {
+          "text": "I mean to. I’ll open it, skim the first few lines, then life gets in the way."
+        },
+        {
+          "text": "If someone I trust says it matters, I read it. All of it."
+        },
+        {
+          "text": "Honestly? I’ve got hundreds of unread links saved for ‘later.’ Later never comes."
+        }
+      ]
+    },
+    {
+      "id": "MQ9",
+      "unlockAt": "17c",
+      "questionMode": "mirror",
+      "questionText": "Knowing something is wrong and doing something about it — which is harder?",
+      "questionOpts": [
+        {
+          "text": "Knowing. If you really understood what was happening, you couldn’t look away."
+        },
+        {
+          "text": "Doing. I know plenty. I do almost nothing about any of it."
+        },
+        {
+          "text": "They’re the same thing. Knowing and not acting is just a slower way of looking away."
+        }
+      ]
+    },
+    {
+      "id": "SL1",
+      "unlockAt": "17c",
+      "questionMode": "slider",
+      "questionText": "To what extent do you live by the moral code you claim to possess?",
+      "sliderRange": [
+        0,
+        10
+      ],
+      "sliderLabels": false
+    },
+    {
+      "id": "MQ10",
+      "unlockAt": "19",
+      "questionMode": "mirror",
+      "questionText": "If a system knew everything about you — every preference, every fear, every pattern — and used that knowledge to make your life easier, would that feel like care or like captivity?",
+      "questionOpts": [
+        {
+          "text": "Care. That’s literally what a good partner does. What a good doctor does."
+        },
+        {
+          "text": "Captivity. No matter how comfortable the cage, it’s still a cage."
+        },
+        {
+          "text": "Both. And the fact that it’s both is what makes it dangerous."
+        },
+        {
+          "text": "It depends on whether I asked for it."
+        }
+      ]
+    },
+    {
+      "id": "MF1",
+      "unlockAt": "21",
+      "questionMode": "mirror",
+      "questionText": "Your phone service provider regularly updates their terms of service. Would you notice if they stopped asking — and if you did, would you do anything about it?",
+      "questionOpts": [
+        {
+          "text": "Yes, of course I would."
+        },
+        {
+          "text": "I’d notice. I wouldn’t do anything."
+        },
+        {
+          "text": "Probably not."
+        }
+      ]
+    },
+    {
+      "id": "MQ11",
+      "unlockAt": "24",
+      "questionMode": "mirror",
+      "questionText": "A government program offers to forgive all your debt in exchange for your biometric data and a digital identity you can never delete. Do you take it?",
+      "questionOpts": [
+        {
+          "text": "In a heartbeat. Do you have any idea what I’d give to start from zero?"
+        },
+        {
+          "text": "No. If they’re offering to buy my identity, it’s worth more than my debt."
+        },
+        {
+          "text": "I’d need to read the terms. All of them. Before I signed anything."
+        },
+        {
+          "text": "What choice would I have?"
+        }
+      ]
+    },
+    {
+      "id": "MQ13",
+      "unlockAt": "27",
+      "questionMode": "mirror",
+      "questionText": "Is there something about yourself that everyone around you can see but you refuse to acknowledge?",
+      "questionOpts": [
+        {
+          "text": "Yes. I know what it is. I’m just not ready."
+        },
+        {
+          "text": "Probably. That’s how blind spots work, isn’t it?"
+        },
+        {
+          "text": "No. I’m fairly self-aware."
+        },
+        {
+          "text": "How would I know?"
         }
       ]
     }

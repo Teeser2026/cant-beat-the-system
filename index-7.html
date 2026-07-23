@@ -3877,6 +3877,93 @@ body.game-active .ticker-bar { display: flex; }
   #video-prompt-overlay .vp-instruction { font-size: 24px; }
 }
 
+/* ── MIRROR TAB (S265) ── */
+.mirror-empty {
+  font-family: 'Crimson Pro', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--dim);
+  opacity: 0.4;
+  text-align: center;
+  padding: 60px 20px;
+}
+.mirror-card {
+  background: rgba(0,0,0,0.15);
+  border-left: 2px solid var(--warm);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.mirror-card.answered {
+  border-left-color: var(--dim);
+  opacity: 0.55;
+}
+.mirror-q {
+  font-family: 'Crimson Pro', serif;
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--bright);
+  margin-bottom: 16px;
+}
+.mirror-card.answered .mirror-q {
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+.mirror-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mirror-opt {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(200,196,184,0.08);
+  border-radius: 3px;
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+  line-height: 1.5;
+}
+.mirror-opt:hover {
+  border-color: rgba(200,196,184,0.2);
+  background: rgba(0,0,0,0.22);
+}
+.mirror-receipt {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+  padding: 8px 0 2px;
+  opacity: 0.6;
+  font-style: italic;
+}
+.mirror-experiential {
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.mirror-experiential:hover {
+  border-color: var(--bright);
+}
+.mirror-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  opacity: 0.35;
+  margin-top: 4px;
+}
+
 </style>
 </head>
 <body class="no-transition phase-1">
@@ -4007,11 +4094,13 @@ body.game-active .ticker-bar { display: flex; }
       <button class="tab on" data-p="signal">Feed</button>
       <button class="tab" data-p="threads">Threads</button>
       <button class="tab" data-p="songs">Songs</button>
+      <button class="tab" data-p="mirror">Mirror</button>
     </div>
     <div class="panels">
       <div class="panel on" data-p="signal" id="signal-panel"></div>
       <div class="panel" data-p="threads" id="threads-panel"></div>
       <div class="panel" data-p="songs" id="songs-panel"></div>
+      <div class="panel" data-p="mirror" id="mirror-panel"></div>
     </div>
   </div>
 
@@ -4052,6 +4141,7 @@ let signalData = {};
 let threadsData = [];
 let songsData = [];
 let tickerData = {};
+let mirrorData = [];
 
 // ── DEV MODE ──
 const DEV = new URLSearchParams(window.location.search).has('dev');
@@ -4074,7 +4164,9 @@ async function loadGame() {
       playerThreads: [],
       _autoSaved: new Set(),
       _threadsClicked: new Set(),
-      maxReached: 0
+      maxReached: 0,
+      mirrorLog: [],
+      mirrorSeen: []
     };
 
     // Hydrate data
@@ -4083,6 +4175,7 @@ async function loadGame() {
     threadsData = data.threads || [];
     songsData = data.songs || [];
     tickerData = data.ticker || {};
+    mirrorData = data.mirror || [];
 
     // Init
     renderThreads();
@@ -4828,6 +4921,235 @@ function renderSongs() {
 }
 
 /* updateEconDisplay removed S264 */
+
+
+// ── MIRROR TAB (S265) ──
+function renderMirror() {
+  const panel = document.getElementById('mirror-panel');
+  if (!panel) return;
+  if (!mirrorData || !mirrorData.length) { panel.innerHTML = ''; return; }
+
+  // Build turn ID → index map
+  const tidxMap = {};
+  playData.turns.forEach((t, i) => { tidxMap[String(t.id)] = i; });
+
+  // Filter to unlocked items
+  const unlocked = mirrorData.filter(item => {
+    const idx = tidxMap[String(item.unlockAt)];
+    return idx !== undefined && idx <= state.maxReached;
+  });
+
+  if (!unlocked.length) {
+    panel.innerHTML = '<div class="mirror-empty">Nothing here yet.</div>';
+    return;
+  }
+
+  let html = '';
+  unlocked.forEach((item, vi) => {
+    const answered = state.mirrorLog.find(ml => ml.id === item.id);
+    const delay = vi * 0.08;
+
+    if (item.questionMode === 'mirror') {
+      if (answered) {
+        html += '<div class="mirror-card answered" data-mid="' + item.id + '" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-receipt">' + answered.text + '</div>'
+          + '</div>';
+      } else {
+        let optsHtml = '';
+        item.questionOpts.forEach((opt, oi) => {
+          optsHtml += '<button class="mirror-opt" data-mid="' + item.id + '" data-oi="' + oi + '">' + opt.text + '</button>';
+        });
+        html += '<div class="mirror-card" data-mid="' + item.id + '" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-opts">' + optsHtml + '</div>'
+          + '</div>';
+      }
+    } else if (item.questionMode === 'slider') {
+      if (answered) {
+        html += '<div class="mirror-card answered" data-mid="' + item.id + '" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-receipt">' + answered.text + '</div>'
+          + '</div>';
+      } else {
+        html += '<div class="mirror-card mirror-experiential" data-mid="' + item.id + '" data-mode="slider" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-hint">tap to answer</div>'
+          + '</div>';
+      }
+    } else if (item.questionMode === 'image-prompt') {
+      if (answered) {
+        html += '<div class="mirror-card answered" data-mid="' + item.id + '" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-receipt">' + answered.text + '</div>'
+          + '</div>';
+      } else {
+        html += '<div class="mirror-card mirror-experiential" data-mid="' + item.id + '" data-mode="image-prompt" style="animation-delay:' + delay + 's">'
+          + '<div class="mirror-q">' + item.questionText + '</div>'
+          + '<div class="mirror-hint">tap to answer</div>'
+          + '</div>';
+      }
+    }
+  });
+
+  panel.innerHTML = html;
+
+  // Bind click handlers for text MQ options
+  panel.querySelectorAll('.mirror-opt').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const mid = this.dataset.mid;
+      const oi = parseInt(this.dataset.oi);
+      const item = mirrorData.find(m => m.id === mid);
+      if (!item) return;
+      state.mirrorLog.push({
+        id: mid,
+        answer: oi,
+        text: item.questionOpts[oi].text,
+        timestamp: Date.now()
+      });
+      renderMirror();
+    });
+  });
+
+  // Bind click handlers for experiential cards
+  panel.querySelectorAll('.mirror-experiential').forEach(card => {
+    card.addEventListener('click', function() {
+      const mid = this.dataset.mid;
+      const mode = this.dataset.mode;
+      const item = mirrorData.find(m => m.id === mid);
+      if (!item) return;
+      if (mode === 'slider') openMirrorSlider(item);
+      else if (mode === 'image-prompt') openMirrorImagePrompt(item);
+    });
+  });
+
+  // Update mirrorSeen — all currently unlocked items
+  state.mirrorSeen = unlocked.map(item => item.id);
+}
+
+// ── Mirror-triggered Slider overlay ──
+function openMirrorSlider(item) {
+  const overlay = document.getElementById('slider-overlay');
+  if (!overlay) return;
+  overlay.style.display = 'flex';
+  overlay.classList.remove('visible');
+
+  overlay.innerHTML = '<div class="sl-inner">'
+    + '<div class="sl-stem">' + item.questionText + '</div>'
+    + '<div class="sl-track-wrap">'
+    + '<input type="range" class="sl-range" min="0" max="10" step="1" value="5">'
+    + '<div class="sl-endpoints"><span>0</span><span>10</span></div>'
+    + '<div class="sl-value"></div>'
+    + '<button class="sl-confirm">Confirm</button>'
+    + '</div></div>';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { overlay.classList.add('visible'); });
+  });
+
+  const range = overlay.querySelector('.sl-range');
+  const valDisplay = overlay.querySelector('.sl-value');
+  const confirmBtn = overlay.querySelector('.sl-confirm');
+  let hasTouched = false;
+
+  range.addEventListener('input', function() {
+    if (!hasTouched) {
+      hasTouched = true;
+      range.classList.add('touched');
+      valDisplay.classList.add('show');
+      confirmBtn.classList.add('ready');
+    }
+    valDisplay.textContent = this.value;
+  });
+
+  confirmBtn.addEventListener('click', function() {
+    if (!hasTouched) return;
+    const chosen = parseInt(range.value);
+    state.mirrorLog.push({
+      id: item.id,
+      answer: chosen,
+      text: String(chosen),
+      timestamp: Date.now()
+    });
+    range.disabled = true;
+    range.style.pointerEvents = 'none';
+    confirmBtn.disabled = true;
+    confirmBtn.classList.remove('ready');
+    confirmBtn.style.opacity = '.15';
+    setTimeout(() => {
+      overlay.classList.remove('visible');
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        overlay.innerHTML = '';
+        renderMirror();
+      }, 1600);
+    }, 1400);
+  });
+}
+
+// ── Mirror-triggered Image Prompt overlay ──
+function openMirrorImagePrompt(item) {
+  const overlay = document.getElementById('image-prompt-overlay');
+  if (!overlay) return;
+  overlay.style.display = 'flex';
+  overlay.classList.remove('visible');
+
+  const imgSrc = item.asset || 'inkblot-1.webp';
+  overlay.innerHTML = '<div class="ip-inner">'
+    + '<img class="ip-image" src="' + imgSrc + '" alt="" draggable="false">'
+    + '<div class="ip-frame">' + item.questionText + '</div>'
+    + '<div class="ip-input-wrap">'
+    + '<input class="ip-input" type="text" maxlength="20" autocomplete="off" spellcheck="false">'
+    + '<div class="ip-submit-hint">press enter</div>'
+    + '</div></div>';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { overlay.classList.add('visible'); });
+  });
+
+  const input = overlay.querySelector('.ip-input');
+  const hint = overlay.querySelector('.ip-submit-hint');
+
+  setTimeout(() => { if (input) input.focus(); }, 4500);
+
+  input.addEventListener('input', function() {
+    if (this.value.trim().length > 0) hint.classList.add('visible');
+    else hint.classList.remove('visible');
+  });
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      const word = this.value.trim();
+      state.mirrorLog.push({
+        id: item.id,
+        answer: word,
+        text: word,
+        timestamp: Date.now()
+      });
+
+      // Fade inner → linger word
+      const inner = overlay.querySelector('.ip-inner');
+      inner.style.opacity = '0';
+      inner.style.transition = 'opacity 2s ease';
+
+      const linger = document.createElement('div');
+      linger.className = 'ip-linger';
+      linger.innerHTML = '<div class="ip-linger-text">' + word + '</div>';
+      overlay.appendChild(linger);
+      setTimeout(() => { linger.classList.add('visible'); }, 500);
+
+      // Hold, then dismiss back to Mirror tab
+      setTimeout(() => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          overlay.innerHTML = '';
+          renderMirror();
+        }, 1600);
+      }, 5500);
+    }
+  });
+}
 
 function updateTicker(turnId) {
   const ticker = document.getElementById('ticker');
@@ -6982,6 +7304,24 @@ function goTo(idx) {
   renderSignal(turn.isQuestion ? null : turn.id);
   renderSongs();
   renderThreads();
+  renderMirror();
+  // Mirror tab dot — check for newly unlocked items
+  (function() {
+    const mirrorTab = document.querySelector('.tab[data-p="mirror"]');
+    if (!mirrorTab || !mirrorData.length) return;
+    const tidxMap = {};
+    playData.turns.forEach((t, i) => { tidxMap[String(t.id)] = i; });
+    const hasNew = mirrorData.some(item => {
+      const ui = tidxMap[String(item.unlockAt)];
+      return ui !== undefined && ui <= state.maxReached && !state.mirrorSeen.includes(item.id);
+    });
+    if (hasNew && !mirrorTab.querySelector('.tab-dot')) {
+      mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+    } else if (!hasNew) {
+      const dot = mirrorTab.querySelector('.tab-dot');
+      if (dot) dot.remove();
+    }
+  })();
   updateTicker(turn.isQuestion ? null : turn.id);
   // Clean up any active overlays
   const vrOv = document.getElementById('video-rorschach-overlay');

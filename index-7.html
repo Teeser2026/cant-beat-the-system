@@ -4165,8 +4165,7 @@ async function loadGame() {
       _autoSaved: new Set(),
       _threadsClicked: new Set(),
       maxReached: 0,
-      mirrorLog: [],
-      mirrorSeen: []
+      mirrorLog: []
     };
 
     // Hydrate data
@@ -5023,8 +5022,6 @@ function renderMirror() {
     });
   });
 
-  // Update mirrorSeen — all currently unlocked items
-  state.mirrorSeen = unlocked.map(item => item.id);
 }
 
 // ── Mirror-triggered Slider overlay ──
@@ -7305,23 +7302,6 @@ function goTo(idx) {
   renderSongs();
   renderThreads();
   renderMirror();
-  // Mirror tab dot — check for newly unlocked items
-  (function() {
-    const mirrorTab = document.querySelector('.tab[data-p="mirror"]');
-    if (!mirrorTab || !mirrorData.length) return;
-    const tidxMap = {};
-    playData.turns.forEach((t, i) => { tidxMap[String(t.id)] = i; });
-    const hasNew = mirrorData.some(item => {
-      const ui = tidxMap[String(item.unlockAt)];
-      return ui !== undefined && ui <= state.maxReached && !state.mirrorSeen.includes(item.id);
-    });
-    if (hasNew && !mirrorTab.querySelector('.tab-dot')) {
-      mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
-    } else if (!hasNew) {
-      const dot = mirrorTab.querySelector('.tab-dot');
-      if (dot) dot.remove();
-    }
-  })();
   updateTicker(turn.isQuestion ? null : turn.id);
   // Clean up any active overlays
   const vrOv = document.getElementById('video-rorschach-overlay');
@@ -7373,6 +7353,28 @@ function checkTabNotifications(turn) {
     if (!threadsTab.querySelector('.tab-dot')) {
       threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
       playPing();
+    }
+  }
+
+  // Songs tab dot — does any song unlock at this turn?
+  const songsTab = document.querySelector('.tab[data-p="songs"]');
+  if (songsTab && songsData.length) {
+    const hasSongNew = songsData.some(s => String(s.turn) == String(turn.id));
+    if (hasSongNew && !songsTab.classList.contains('on')) {
+      if (!songsTab.querySelector('.tab-dot')) {
+        songsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+      }
+    }
+  }
+
+  // Mirror tab dot — does any mirror item unlock at this turn?
+  const mirrorTab = document.querySelector('.tab[data-p="mirror"]');
+  if (mirrorTab && mirrorData.length) {
+    const hasMirrorNew = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
+    if (hasMirrorNew && !mirrorTab.classList.contains('on')) {
+      if (!mirrorTab.querySelector('.tab-dot')) {
+        mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+      }
     }
   }
 }

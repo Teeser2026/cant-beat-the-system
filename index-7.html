@@ -5285,34 +5285,13 @@ function renderSongs() {
     </div>`;
   });
 
-  if (state.playerSongs.length > 0) {
-    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);opacity:.4;margin:24px 0 16px;padding:12px 0 8px;border-top:1px solid rgba(196,149,106,.1)">Your songs</div>';
+  if (visible.length === 0) {
+    html += '<div class="mirror-empty" style="padding:40px 20px">Nothing here yet.</div>';
   }
 
-  state.playerSongs.forEach((song, si) => {
-    const linkHtml = song.url
-      ? `<a class="song-link" href="${song.url}" target="_blank" rel="noopener">\u266b</a>`
-      : '';
-    const addLinkBtn = !song.url
-      ? `<span class="ps-act ps-link" data-si="${si}">+ Add Spotify link</span>`
-      : '';
-    html += `<div class="song player">
-      <div class="song-info">
-        <div class="song-title">${song.title}</div>
-        <div class="song-artist">${song.artist || ''}</div>
-        ${song.notes ? `<div class="song-context">${song.notes}</div>` : ''}
-        <div class="song-turn">Added by player</div>
-        <div style="margin-top:6px">${addLinkBtn}<span class="ps-act ps-del" data-si="${si}">Delete</span></div>
-      </div>
-      ${linkHtml}
-    </div>`;
-  });
-
-  html += '<button class="add-song" id="addSong">+ Add a song</button>';
   panel.innerHTML = html;
 
   // S169: click-to-navigate on scripted song cards — jump to that song's turn.
-  // Mirrors the chapter-nav pattern. Player songs have no data-idx and are skipped.
   panel.querySelectorAll('.song-info[data-idx]').forEach(el => {
     el.addEventListener('click', function() {
       const idx = parseInt(this.dataset.idx);
@@ -5321,56 +5300,6 @@ function renderSongs() {
         renderChapterNav();
       }
     });
-  });
-
-  // Bind add-link buttons
-  panel.querySelectorAll('.ps-link').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const si = parseInt(this.dataset.si);
-      const url = prompt('Spotify link:');
-      if (url) {
-        state.playerSongs[si].url = url;
-        renderSongs();
-      }
-    });
-  });
-
-  // Bind delete buttons with confirmation
-  panel.querySelectorAll('.ps-del').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const si = parseInt(this.dataset.si);
-      if (this.dataset.confirm) {
-        state.playerSongs.splice(si, 1);
-        renderSongs();
-      } else {
-        this.dataset.confirm = '1';
-        this.textContent = 'Sure?';
-        this.style.color = 'var(--alert)';
-        setTimeout(() => {
-          if (this.parentElement) {
-            delete this.dataset.confirm;
-            this.textContent = 'Delete';
-            this.style.color = '';
-          }
-        }, 3000);
-      }
-    });
-  });
-
-  document.getElementById('addSong').addEventListener('click', () => {
-    const title = prompt('Song title:');
-    if (title) {
-      const artist = prompt('Artist:');
-      const notes = prompt('Why this song? (optional):');
-      const url = prompt('Spotify link (optional):');
-      state.playerSongs.push({
-        title,
-        artist: artist || '',
-        notes: notes || '',
-        url: url || ''
-      });
-      renderSongs();
-    }
   });
 }
 

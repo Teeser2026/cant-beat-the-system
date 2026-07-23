@@ -946,11 +946,11 @@
     });
   }
   const dayUrls = [
-    'img/earth-blue-marble.webp',
-    'img/earth-dark.webp'
+    'earth-blue-marble.webp',
+    'earth-dark.webp'
   ];
-  const nightUrls = [ 'img/earth-night.webp' ];
-  const cloudUrls = [ 'img/earth-clouds.webp' ];
+  const nightUrls = [ 'earth-night.webp' ];
+  const cloudUrls = [ 'earth-clouds.webp' ];
 
   async function firstTex(urls) {
     for (const u of urls) { const t = await loadTex(u); if (t) return t; }

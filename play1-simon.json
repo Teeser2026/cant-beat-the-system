@@ -11518,7 +11518,8 @@
             "snip": "Twenty-eight ways of saying 'we don't know either' in a carousel format.",
             "tag": "Birthday",
             "cls": "",
-            "type": "flavour",
+            "type": "thread-notify",
+            "threadRef": "science-technology",
             "time": "23:14",
             "date": "27 Nov 2026"
           },

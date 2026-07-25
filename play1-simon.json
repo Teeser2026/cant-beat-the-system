@@ -1437,10 +1437,16 @@
       "id": "6c",
       "num": "T6c",
       "title": "The Afterparty",
+      "audio": {
+        "src": "afterparty.mp3",
+        "fadeIn": 2,
+        "fadeOut": 3,
+        "vol": 0.25
+      },
       "date": "Late November 2026",
       "paras": [
         {
-          "t": "Rupert has rather sensibly decided not to try and drive home after six pints. He and I are now chatting shit on the sofa with another beer. The kids headed to their rooms as soon as they got jumped out the taxi. Off to read the links I sent them no doubt."
+          "t": "Rupert has rather sensibly decided not to try and drive home after six pints. He and I are now chatting shit on the sofa with another beer. The kids headed to their rooms as soon as they jumped out the taxi. Off to read the links I sent them no doubt."
         },
         {
           "t": "I wish they’d look. Just one of them. A birthday gift. If one of them read it and said - I read about <em>Working Futures</em>. And the footnotes. I can see why you think it’s ridiculous Dad - an economic forecast for 2035, built on data from before the thing it was trying to predict existed.",
@@ -1466,10 +1472,10 @@
           "t": "‘Revelling in being asleep in the car now. Jenny will be cursing him’."
         },
         {
-          "t": "‘Jenny will be worrying about AI taking the jobs. It baffles her, thinks it’s a glorified google that can make pictures of dancing cats’"
+          "t": "‘Jenny will be worrying about AI taking the jobs. It baffles her, thinks it’s a glorified google that can make pictures of dancing cats.’"
         },
         {
-          "t": "‘Did you see that post that George was talking about’"
+          "t": "‘Did you see that post that George was talking about?’"
         },
         {
           "t": "‘No, I switched off. I zone out of conspiracy chat with Jamie and Graeme around. I don’t want a repeat of France.’"
@@ -1497,7 +1503,7 @@
           "t": "‘Whatever we do, it doesn't matter. I’ve been right about everything without changing anything. Actually not totally true. I’ve changed myself. Tried to add some <em>doing</em> to the <em>knowing</em>. The reality is, the only thing that will move the dial is the thing that never happens - mass non-compliance. Telling them as a collective to stick their rules up their arse.’"
         },
         {
-          "t": "‘Stop paying tax, cut off their funding. Im all in. You first.’"
+          "t": "‘Stop paying tax, cut off their funding. I’m all in. You first.’"
         },
         {
           "t": "‘Exactly. Tax is the perfect example. Everyone knows the system is rigged. Nobody stops paying tax. Not because they can't articulate why — because individual refusal is theatre. The bailiffs come for you specifically.’"
@@ -1539,7 +1545,7 @@
           "t": "‘Go on then. Do you fancy some of this? Homegrown’"
         },
         {
-          "t": "Rupert pulls pre-rolled spliff from his pocket."
+          "t": "Rupert pulls a pre-rolled spliff from his pocket."
         },
         {
           "t": "I haven’t smoked weed in years but I’m a fair few pints in now, so just go with the flow. We head outside to the deck in the rear garden, the temperature must be close to freezing."
@@ -1554,7 +1560,7 @@
           "t": "‘I spent twenty years trying to identify The Cabal. The Committee of the Three Hundred. The Illuminati. Whatever. I thought you had to identify the enemy to bring them down. Now? Not so sure. I mean, technocracy. It’s not even a conspiracy, is it? Not really. It's just... everyone rowing the same direction because that's where the money is. You don't need a room full of Bond villains. You just need a thousand committees and a profit motive. That’s harder to fight against. And a lot more mundane.’"
         },
         {
-          "t": "‘I guess’"
+          "t": "‘I guess.’"
         },
         {
           "t": "I was beginning to feel a bit light-headed. I couldn’t get the image out of my head of dozens of Dr Evils sitting in a boardroom, each stroking a white cat sitting purring on their lap, taking it in turns to utter more and more ludicrous, meaningless sums of money. Eighteen billion, trillion dollars. Nine hundred and ninety-nine billion, zillion dollars.’"
@@ -1587,7 +1593,7 @@
           "t": "‘Sometimes I think the Dr Evil characters in real life are offered up to us. Distractions. Pantomime villains like Klaus Schwab. People to boo and hiss at which the real work, the legislation, the preparation is carried out behind the scenes. I try and focus on the documents, the bills they sneak in whilst people are blindsided. It’s harder for someone to call you a conspiracy theorist (he says in baby voice, wiggling his fingers) if you bore them with documents. And I look at the motives of the characters driving the new financial paradigm narrative, who aren’t always in the spotlight.’"
         },
         {
-          "t": "‘Narrative? Technocracy you mean?"
+          "t": "‘Narrative? Technocracy you mean?’"
         },
         {
           "t": "‘Yes, which goes hand in hand with the transhuman agenda. Some of those guys are nuts. They've actually built a religion. Not metaphorically. Like, with tenets and a tax status - but they don’t want to worship God. They want to be God. Immortality through digital convergence.’"
@@ -1599,7 +1605,7 @@
           "t": "‘You want Satanic? Read Max More. Wrote an essay praising Lucifer as the first free thinker.’"
         },
         {
-          "t": "I start singing. In my head I sound just like Mick. I’m sure I don’t though ’Please allow me to introduce myself…"
+          "t": "I start singing. In my head I sound just like Mick. I’m sure I don’t though ’Please allow me to introduce myself…’"
         },
         {
           "t": "Rupert sings too. Feels like we’re properly harmonising, but it falls apart when we try and hit the high <em>Whoo-hoos</em>."
@@ -1608,7 +1614,7 @@
           "t": "Olive and Wilf start barking."
         },
         {
-          "t": "‘They probably think there’s weird mammals in the garden.’"
+          "t": "‘They probably think there are weird mammals in the garden.’"
         },
         {
           "t": "‘Not wrong are they?’"
@@ -1718,7 +1724,7 @@
           "t": "‘You’ve always said you can’t fight an enemy that you don’t know exists.’"
         },
         {
-          "t": "‘And now people know <em>they</em> exist, we do what? Sign petitions against digital ID? Moan on twitter? Vote our way out of it?’ I sneer condescendingly. ‘These things are set up so that the opposition is part of the design.’"
+          "t": "‘And now people know <em>they</em> exist, we do what? Sign petitions against digital ID? Moan on Twitter? Vote our way out of it?’ I sneer condescendingly. ‘These things are set up so that the opposition is part of the design.’"
         },
         {
           "t": "Amy opened the pan drawer and studied the contents in deep thought. ‘Meaning what.’"
@@ -1962,6 +1968,35 @@
         },
         {
           "t": "‘Oh sorry, Kate, not you. The bloody onions are burning.’"
+        },
+        {
+          "t": ""
+        },
+        {
+          "t": "We’re lying in bed. Not the ‘early’ early night I’d planned, but still reasonably early. Just after ten. A second bottle of wine was opened. Well, I opened it. Saying it ‘was opened’ was a weak attempt at absolving responsibility for the action. I’m not sure how much is left in the bottle. Half a glass at most in all likelihood. Anyway, as I said, we’re in bed. I’m showered. Content. My head a semi-contented blur of hangover squiffiness and red wine haze. Amy’s reading. I turn to her to ask a question."
+        },
+        {
+          "t": "‘You know what Kate was saying? About being powerless to change stuff. And faith, and…’"
+        },
+        {
+          "t": "‘Simon, not now. I’m reading. Switch your brain off.’"
+        },
+        {
+          "t": "‘Sorry.’"
+        },
+        {
+          "t": "‘Why don’t you read a book? Or better still, why don’t you write some of your thoughts down? A pen and pad, not on your phone. You have a way with words.’"
+        },
+        {
+          "t": "‘Maybe I will. Love you.’"
+        },
+        {
+          "t": "Maybe I already have.",
+          "c": "inner"
+        },
+        {
+          "t": "I peck her on the cheek, roll onto my side, close my eyes and focus on slow, conscious breathing. In through the nose…",
+          "c": "solo"
         }
       ]
     },
@@ -2051,7 +2086,7 @@
           "c": "lyric"
         },
         {
-          "t": "The Spiritualised fucked up anti-cleanse feels sordidly appealing for a split second."
+          "t": "The Spiritualized fucked up anti-cleanse feels sordidly appealing for a split second."
         },
         {
           "t": "Get hold of yourself, Simon.",
@@ -2070,7 +2105,7 @@
           "t": "A herbal tea before bed."
         },
         {
-          "t": "‘Which flavour would you like tonight, Simon’"
+          "t": "‘Which flavour would you like tonight, Simon?’"
         },
         {
           "t": "‘Surprise me’"
@@ -2120,7 +2155,7 @@
           "t": "I laugh a little laugh to myself under my breath as I read this quote from the article —"
         },
         {
-          "t": "“There’s a reason narcissists don’t learn from mistakes and that’s because they never get past the first step which is admitting that they made one.” —Jeffrey Kluge",
+          "t": "“There’s a reason narcissists don’t learn from mistakes and that’s because they never get past the first step which is admitting that they made one.” —Jeffrey Kluger",
           "c": "quote"
         },
         {
@@ -8171,7 +8206,7 @@
           {
             "src": "Amy",
             "ttl": "Day 3. Still going. 💪",
-            "snip": "She's winning. You're browsing Majestic.",
+            "snip": "She's winning. I'm browsing Majestic.",
             "tag": "Today",
             "cls": "",
             "time": "08:30",
@@ -8185,7 +8220,7 @@
           {
             "src": "@DigitalRightsUK",
             "ttl": "Every \"voluntary\" digital scheme in the last decade became mandatory within five years. One Login. DIATF. Biometric boarding. We looked at the pattern.",
-            "snip": "He put it in writing. You just had the tabs open.",
+            "snip": "‘Voluntary’ — A Reasonable Summary",
             "tag": "Long Read",
             "cls": "",
             "type": "thread-notify",
@@ -13254,7 +13289,7 @@
             "source": "Digital Rights UK — Analysis",
             "title": "Optional Until It Isn't",
             "date": "2 December 2026",
-            "body": "<p>Every voluntary digital programme introduced by a UK government in the last decade has become effectively mandatory within five years. This is not a conspiracy theory. It is a pattern with publicly available evidence, and it is accelerating.</p><p>In 2014, the Cabinet Office launched GOV.UK Verify as a voluntary identity verification service. Users could choose it or continue using existing methods to access government services. By 2018, DWP and HMRC had quietly removed the alternative pathways for an expanding list of services. By 2020, Verify was shut down entirely — not because it failed, but because its successor, One Login, had absorbed its function and its user base. One Login currently has 4.2 million accounts. It has never been described as mandatory. It does not need to be. If you want to access your tax account, your driving licence, your student loan, or your state pension forecast, you use One Login. The alternative is a phone call that averages forty-seven minutes.</p><p>Smart meters follow the same trajectory. The 2012 rollout was explicitly voluntary — the government emphasised that no household would be forced to accept one. By 2024, thirty million were installed. Energy suppliers now design their tariffs, billing platforms, and customer service around the assumption that you have one. The cheapest rates require half-hourly usage data. The most responsive support channels require app access, which requires a meter that talks to the network. You are not required to have a smart meter. You are simply penalised, gradually and diffusely, for not having one.</p><p>Contactless payments crossed the same threshold invisibly. When the limit was raised to £100, then £150, each increase was reported as consumer convenience. What went unreported was the corresponding contraction of cash infrastructure — one in seven ATMs has closed since 2021, bank branches continue to disappear, and the quiet removal of \"cash accepted\" signage has accelerated. The choice is technically preserved. The infrastructure that supports the choice is being disassembled.</p><p>Three current programmes are following this curve at compressed timescales. The Digital Identity and Attributes Trust Framework, now in its third version, establishes the technical standards for digital identity across the private sector. One Login continues to expand its service footprint across government. And biometric boarding — facial recognition at airport security gates — went from a pilot at fourteen airports last year to a mandatory requirement on all domestic and EU routes, with no parliamentary debate and almost no press coverage. Each is voluntary, or was. Each is interoperable with the others by design. That interoperability is the mechanism that makes individual choice irrelevant.</p><p>And then there are the programmes that skip the voluntary phase entirely. In October, the Financial Conduct Authority mandated a unified device-level authentication layer — ARC — across every regulated payment terminal, banking application, and financial services platform in the country, with a compliance deadline of 6 December. No consultation with the public. No consumer opt-in. No opt-out. No coverage outside the financial trade press. Most people reading this will not have heard of it. It is already installed.</p><p>A resident who opts out of digital identity verification in 2026 can still function — with friction. They can queue at a post office, write a cheque, present physical documents. If the current trajectory holds, a resident who attempts the same in 2028 will find that the friction has quietly become a wall. Not because a law was passed, but because the systems that accepted the alternatives will have been decommissioned, defunded, or redesigned around the assumption of digital participation.</p><p>This is not about whether digital identity is good or bad. Framing it that way is how the pattern survives scrutiny. The question is whether a service that cannot practically be refused should still be called voluntary — and whether a country in which every transaction, journey, and government interaction is authenticated through a single interoperable framework has made a democratic choice, or simply arrived at an outcome that was never voted on.</p>",
+            "body": "<p>Every voluntary digital programme introduced by a UK government in the last decade has become effectively mandatory within five years. This is not a conspiracy theory. It is a pattern with publicly available evidence, and it is accelerating.</p><p>In 2014, the Cabinet Office launched GOV.UK Verify as a voluntary identity verification service. Users could choose it or continue using existing methods to access government services. By 2018, DWP and HMRC had quietly removed the alternative pathways for an expanding list of services. By 2020, Verify was shut down entirely — not because it failed, but because its successor, One Login, had absorbed its function and its user base. One Login currently has 4.2 million accounts. It has never been described as mandatory. It does not need to be. If you want to access your tax account, your driving licence, your student loan, or your state pension forecast, you use One Login. The alternative is a phone call that averages forty-seven minutes.</p><p>Smart meters follow the same trajectory. The 2012 rollout was explicitly voluntary — the government emphasised that no household would be forced to accept one. By 2024, thirty million were installed. Energy suppliers now design their tariffs, billing platforms, and customer service around the assumption that you have one. The cheapest rates require half-hourly usage data. The most responsive support channels require app access, which requires a meter that talks to the network. You are not required to have a smart meter. You are simply penalised, gradually and diffusely, for not having one.</p><p>Contactless payments crossed the same threshold invisibly. When the limit was raised to £100, then £150, each increase was reported as consumer convenience. What went unreported was the corresponding contraction of cash infrastructure — one in seven ATMs has closed since 2021, bank branches continue to disappear, and the quiet removal of \"cash accepted\" signage has accelerated. The choice is technically preserved. The infrastructure that supports the choice is being disassembled.</p><p>Three current programmes are following this curve at compressed timescales. The Digital Identity and Attributes Trust Framework, now in its third version, establishes the technical standards for digital identity across the private sector. One Login continues to expand its service footprint across government. And biometric boarding — facial recognition at airport security gates — went from a pilot at fourteen airports last year to a mandatory requirement on all domestic and EU routes, with no parliamentary debate and almost no press coverage. Each is voluntary, or was. Each is interoperable with the others by design. That interoperability is the mechanism that makes individual choice irrelevant.</p><p>And then there are the programmes that skip the voluntary phase entirely. In October, the Financial Conduct Authority mandated a unified device-level authentication layer — ARC — across every regulated payment terminal, banking application, and financial services platform in the country, with a compliance deadline of 6 December. No consultation with the public. No consumer opt-in. No opt-out. No coverage outside the financial trade press. Most people reading this will not have heard of it. It is already installed.</p><p>In July, Andy Burnham entered Downing Street and announced the cancellation of the national digital identity scheme. Three million petition signatures had made their point. The cancellation lasted thirty-six hours. The Cabinet Office Permanent Secretary clarified that the Government Digital Service \u2014 the team that builds GOV.UK Wallet, One Login, and the digital transformation programme \u2014 had merely moved to the Department for Culture, Media and Sport. The teams remained. The infrastructure remained. The statutory trust framework, which received legal footing under the Data (Use and Access) Act in December 2025, remained. The consultation closed in May. No response has been published. By autumn, certified digital verification services were approved for age-restricted sales in pubs and licensed premises. By December, the GOV.UK Wallet was in beta. The word \u201cmandatory\u201d had been dropped five months earlier. Nothing else had.</p><p>A resident who opts out of digital identity verification in 2026 can still function — with friction. They can queue at a post office, write a cheque, present physical documents. If the current trajectory holds, a resident who attempts the same in 2028 will find that the friction has quietly become a wall. Not because a law was passed, but because the systems that accepted the alternatives will have been decommissioned, defunded, or redesigned around the assumption of digital participation.</p><p>This is not about whether digital identity is good or bad. Framing it that way is how the pattern survives scrutiny. The question is whether a service that cannot practically be refused should still be called voluntary — and whether a country in which every transaction, journey, and government interaction is authenticated through a single interoperable framework has made a democratic choice, or simply arrived at an outcome that was never voted on.</p>",
             "footer": "Digital Rights UK — Analysis"
           }
         },

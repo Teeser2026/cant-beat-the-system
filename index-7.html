@@ -4872,7 +4872,33 @@ function renderSignal(turnId) {
     'AIDA':         { className: 'ch-aida', accentColour: '#1AAF6C' }
   };
 
-  data.forEach(section => {
+  // ── S267: chronological render. Sections are flattened into one list and sorted
+  //    by card time, because sec-label headers were retired in S185 and section
+  //    grouping is no longer visible to the reader. A card with no parseable time
+  //    inherits the position of the card before it rather than sorting to an end.
+  const _flat = [];
+  data.forEach(section => (section.cards || []).forEach(card => _flat.push({ section, card })));
+  const _MON = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+  const _day = o => {
+    const m = /^(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\s+(\d{4})$/.exec((o.card.date || '').trim());
+    return m ? Date.UTC(+m[3], _MON[m[2].slice(0, 3).toLowerCase()], +m[1]) / 86400000 : null;
+  };
+  const _min = o => {
+    const m = /^(\d{1,2})[:.](\d{2})/.exec((o.card.time || '').trim());
+    return m ? (+m[1]) * 60 + (+m[2]) : null;
+  };
+  let _lastDay = null, _carry = -1;
+  _flat.forEach((o, i) => {
+    const dd = _day(o); if (dd !== null) _lastDay = dd;
+    const tt = _min(o);
+    if (tt === null) { o._k = _carry; }
+    else { o._k = (_lastDay === null ? 0 : _lastDay * 1440) + tt; _carry = o._k; }
+    o._i = i;
+  });
+  _flat.sort((a, b) => (a._k - b._k) || (a._i - b._i));
+
+  let prevSrc = null;
+  _flat.forEach(({ section, card }) => {
     const secCls = section.sec.includes('ARC') ? ' arc'
                  : section.sec.includes('GOV') ? ' gov'
                  : '';
@@ -4883,8 +4909,6 @@ function renderSignal(turnId) {
     const secTheme    = SEC_THEME[secBaseKey] || null;
     const secCardCls  = secTheme ? ' ' + secTheme.className : '';
     // S185: sec-label standalone header killed — channel now in card-chrome
-    let prevSrc = null;
-    section.cards.forEach(card => {
       const type = card.type || 'flavour';
       const newCls = card.isnew ? ' new' : '';
       const typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : type === 'song' ? ' song-card' : '';
@@ -4935,7 +4959,6 @@ function renderSignal(turnId) {
       }
       if (card.img) html += '</div>'; // close .card-body
       html += '</div>';
-    });
   });
   panel.innerHTML = html;
 

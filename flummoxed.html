@@ -330,25 +330,30 @@ h1.hero-heading{font-size:32px;font-weight:800;color:var(--text-dark);line-heigh
     <div class="section-label">Pricing</div>
     <h2 class="section-title">Simple, honest pricing</h2>
     <p class="section-subtitle">No hidden fees. No call-out charge. No selling you things you don't need.</p>
-    <div class="pricing-grid">
+    <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
       <div class="pricing-card">
         <div class="pricing-label">Home visit</div>
-        <div class="pricing-amount">£55</div>
-        <div class="pricing-period">per hour</div>
-        <p class="pricing-desc">We come to your home and sort out whatever you need. One full hour minimum — even if the fix takes ten minutes, we spend the rest answering your questions.</p>
-      </div>
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most popular</div>
-        <div class="pricing-label">Keep me connected</div>
-        <div class="pricing-amount">£30</div>
-        <div class="pricing-period">per month</div>
-        <p class="pricing-desc">One visit per month plus unlimited phone support during office hours. We keep everything running and you always have someone to call.</p>
+        <div class="pricing-amount">£60</div>
+        <div class="pricing-period">first hour</div>
+        <p class="pricing-desc">We come to your home and sort out whatever you need. One full hour minimum — even if the fix takes ten minutes, we spend the rest answering your questions. Additional time charged at £10 per 30 minutes.</p>
       </div>
       <div class="pricing-card">
-        <div class="pricing-label">Peace of mind</div>
-        <div class="pricing-amount">£45</div>
+        <div class="pricing-label">Scam safety check</div>
+        <div class="pricing-amount">£75</div>
+        <div class="pricing-period">one-off visit</div>
+        <p class="pricing-desc">A dedicated 90-minute visit focused on your safety. Full device audit, call-blocking, email filters, two-factor authentication, and a scam awareness walkthrough.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Keep me connected</div>
+        <div class="pricing-amount">£25</div>
         <div class="pricing-period">per month</div>
-        <p class="pricing-desc">For families. Monthly visit, device check, scam review, and a short report emailed to your nominated family member so they know mum is sorted.</p>
+        <p class="pricing-desc">Phone support during office hours plus a monthly scam and security update newsletter. Someone to call whenever you're stuck — your safety net.</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-label">Peace of mind <span class="pricing-badge" style="margin-left:6px;vertical-align:middle">Most popular</span></div>
+        <div class="pricing-amount">£55</div>
+        <div class="pricing-period">per month</div>
+        <p class="pricing-desc">For families. Monthly home visit, device check, scam review, phone support, newsletter, and a short report emailed to your nominated family member so they know mum is sorted.</p>
       </div>
     </div>
 

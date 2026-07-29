@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When Trees Aren't Carbon</title>
+<meta property="og:title" content="When Trees Aren't Carbon">
+<meta property="og:description" content="Nature, credit markets and the people caught between them &mdash; Green by Numbers">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f2ece4;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+@keyframes gbnCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:1240px){#gbn-gauge{display:none!important}}
+@media(max-width:720px){.gbn-hero-title{font-size:54px!important}.gbn-h-title{font-size:34px!important}.gbn-wrap{padding-left:24px!important;padding-right:24px!important}}
+@media(max-width:720px){section[data-screen-label="Cover"]{min-height:60vh!important;aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+
+<div id="gbn-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#5a7a5a;z-index:60;transition:width .12s linear"></div>
+<nav id="gbn-gauge" style="position:fixed;left:32px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:6px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase;margin:0 0 8px 0">Sections</div>
+</nav>
+
+<main style="position:relative">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0c0a08">
+    <div style="position:absolute;inset:0;background:#0c0a08 url('trees.webp') center/cover no-repeat"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:rgba(12,10,8,.78)"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(12,10,8,.88))"></div>
+
+    <div style="position:absolute;top:50%;right:7%;transform:translateY(-50%);width:120px;display:flex;flex-direction:column;gap:8px;opacity:.9;pointer-events:none">
+      <div style="height:6px;background:#5a7a5a;opacity:.08"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.13"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.19"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.26"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.34"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.43"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.53"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.64"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.76"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:.88"></div>
+      <div style="height:6px;background:#5a7a5a;opacity:1"></div>
+    </div>
+
+    <div style="position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#7a9a7a;text-transform:uppercase">
+      <span>Scroll</span>
+      <span style="font-size:18px;animation:gbnCue 1.8s ease-in-out infinite">&darr;</span>
+    </div>
+
+    <div class="gbn-wrap" style="position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#7a9a7a;text-transform:uppercase">Green by Numbers</div>
+      <h1 class="gbn-hero-title" style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(52px,7.2vw,92px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:14ch">When Trees Aren&rsquo;t Carbon</h1>
+      <div style="width:64px;height:2px;background:#5a7a5a;margin:34px 0 28px"></div>
+      <p style="font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a4;margin:0;max-width:42ch">Over eight million acres of woodland.<br>No feed, no chemicals, no compliance scheme.<br>It just works.</p>
+      <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#6a7264;text-transform:uppercase;white-space:nowrap">
+        <span>Nature, credit markets and the people caught between them</span>
+        <span style="width:5px;height:5px;background:#5a7a5a;transform:rotate(45deg)"></span>
+        <span>July 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · WOODLAND ============ -->
+  <section id="S1" data-layer="0" data-screen-label="01 Woodland" style="position:relative;z-index:2;padding:130px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">01<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">Woodland</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Over eight million acres of woodland throughout the UK. No feed, no chemicals, no compliance scheme. It just works.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">This article doesn&rsquo;t have a human &mdash; an oysterman or a barrister or a farmer &mdash; as its protagonist. Instead it has a piece of woodland.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Picture the scene. A thousand acres of mature broadleaf trees somewhere in England. They&rsquo;ve been here for decades. They sequester carbon &mdash; between 120 and 200 tonnes of CO&#8322; per acre locked in their biomass, in trunks and branches and roots and deadwood and soil. They filter air. They stabilise soil. They shelter breeding birds, bats, insects, fungi. They hold water in storms and release it slowly. They are, by any reasonable measure, doing exactly what every environmental policy in the country says it wants done. They <em>are</em> the environment.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">They are doing it for free. Without a permit. Without a certificate. Without a tradable unit or a conservation covenant or a seven-year audit trail.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Nobody pays them. Nobody measures them. Nobody counts them.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On the environmental market &mdash; the system of credits, units, and covenants that now governs how nature is valued in England &mdash; a thousand acres of mature, functioning, unregistered woodland is worth exactly nothing.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Not nothing ecologically. Nothing financially. The system cannot see it. Not because the system is broken, but because the system is designed to see something else entirely.</p>
+
+    <div style="border-top:1px solid rgba(90,122,90,.22);padding-top:28px;margin-top:36px">
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 14px;max-width:680px">This piece is part of a series:</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Working_As_Designed.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Everything Is Working Exactly As Designed</a> &mdash; fish discos, bat tunnels and a government spreadsheet.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Ponies_Not_Biodiverse.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">When Ponies Aren&rsquo;t Biodiversity</a> &mdash; how a spreadsheet is culling Dartmoor&rsquo;s endangered ponies.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Oysters_Aren_t_Food.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">When Oysters Aren&rsquo;t Food</a> &mdash; how does closing an oyster farm bring back oysters?</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Cleaning_River_Bad.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Why Cleaning a River Is Illegal</a> &mdash; a dirty river is worth more than a clean one.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="Engineering_Greenness.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">Engineering Greenness</a> &mdash; the demand side.</p>
+      <p style="font-family:'Spectral',serif;font-size:16px;line-height:1.66;color:#8a8478;margin:0 0 6px;max-width:680px"><a href="The_Genie_and_the_Bottle.html" target="_blank" style="color:#3a6a3a;text-decoration:underline;text-underline-offset:3px">The Genie and the Bottle</a> &mdash; glass, plastic, and the algorithm between them.</p>
+    </div>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 02 · WHAT THE SYSTEM SEES ============ -->
+  <section id="S2" data-layer="1" data-screen-label="02 What The System Sees" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">02<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What the System Sees</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">It sees change. It cannot see continuity. Only disruption produces data.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Since February 2024, every new development in England must leave habitats 10% better than before &mdash; Biodiversity Net Gain. The improvement is measured by a government spreadsheet that scores habitats by size, type, condition, and location. The score before development is the baseline. The score after must be 10% higher. If it isn&rsquo;t, the developer buys credits from a landowner who has demonstrably improved habitat elsewhere.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The word that locks the system is <em>demonstrably</em>. The improvement must be measurable &mdash; a change from one verified state to another. A degraded field restored to wildflower meadow: measurable. A scrubby riverbank enhanced to functioning wetland: measurable. A thousand acres of woodland standing quietly, doing what it&rsquo;s done for a century: not measurable. There is no change. There is no delta. There is no unit to generate, register, or sell.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Woodland Carbon Code &mdash; the UK&rsquo;s standard for generating tradable carbon credits from trees &mdash; operates on the same logic. It applies only to <em>new</em> woodland creation on land that has not been wooded in the last 25 years. Existing woodland is ineligible. A forest that has been sequestering carbon since before the scheme existed generates zero credits, because the scheme can only measure what it caused to happen. Stewardship that predates the measurement system is invisible to it.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The same woodland can receive Countryside Stewardship payments for management &mdash; but what qualifies as &ldquo;good management&rdquo; under the Biodiversity Metric includes retaining standing and fallen deadwood, because deadwood is a habitat indicator. It scores positively. The payments and the metric both reward leaving dead material in place.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 0;max-width:660px">Dead material is fuel.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 03 · WHAT NOBODY PAYS FOR ============ -->
+  <section id="S3" data-layer="2" data-screen-label="03 What Nobody Pays For" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">03<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What Nobody Pays For</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">Every financial incentive points away from clearing the forest floor. Not one points toward it.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Clearing understory, removing deadwood, thinning dense stands, managing fuel loads &mdash; this costs money. Labour, equipment, access, disposal. It is the work that reduces wildfire intensity. It is the work that foresters and land managers have done for centuries. It is the work that nobody in the current system pays for.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Woodland Carbon Code pays you to plant trees. Countryside Stewardship pays you to manage habitats. Environmental Land Management pays you for biodiversity outcomes. The Biodiversity Metric rewards deadwood retention, structural diversity, and non-intervention &mdash; all of which accumulate fuel.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">No scheme, no grant, no credit, and no payment exists for actively reducing the fire risk on your own woodland.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Nobody prevents you from doing it. Nobody funds it either. And the schemes that do pay you &mdash; for carbon, for biodiversity, for stewardship &mdash; often reward the opposite. The financial incentive structure doesn&rsquo;t prohibit fuel management. It creates an environment in which every funded activity makes the fire worse, and the one activity that would make it better is unfunded.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Above the individual landowner, the same logic operates at the national level. The UK&rsquo;s land-use carbon accounting &mdash; the domestic equivalent of the EU&rsquo;s LULUCF framework &mdash; tracks the carbon stored in the nation&rsquo;s forests as part of its climate reporting. Clearing deadwood and brush reduces the national carbon stock. On the ledger, that&rsquo;s a debit. Leaving it in place keeps the number stable. The national accounting framework has a structural preference for the number that looks healthy over the forest that is healthy &mdash; because the two are not the same thing, and the framework only tracks one of them.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In the EU, where LULUCF is legally binding from 2026, the pressure is sharper. Each member state has an assigned carbon budget for its land sector. Spain and France &mdash; where the wildfires are worst &mdash; face a structural conflict: fuel management that prevents catastrophic fire would weaken their national carbon ledger. Inaction keeps the ledger looking healthy until the fire season arrives. And fire emissions from natural disturbance can be partially excluded from national reporting &mdash; meaning the accounting framework can write off catastrophe in a way it cannot write off prevention.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">The system registers deliberate prevention as a guaranteed loss and catastrophic fire as an excludable event.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">In 2025, the UK recorded its worst wildfire year in history. Nearly 120,000 acres burned. In 2026, the fires are running ahead of that pace &mdash; over 46,000 acres by mid-July. Virtually all UK wildfires are caused by human activity, both accidental and deliberate. In the UK, wildfires are not forensically investigated.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 04 · WHAT HAPPENS WHEN IT BURNS ============ -->
+  <section id="S4" data-layer="3" data-screen-label="04 When It Burns" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">04<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">What Happens When It Burns</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The atmosphere gained carbon. No ledger recorded the loss. The woodland is gone.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The woodland was unregistered. It burns. Three things happen at once.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">First, the carbon stored in the biomass is released into the atmosphere. A thousand acres of mature broadleaf woodland: 120,000 to 200,000 tonnes of CO&#8322;, released in days. Nobody accounts for this in any carbon market, because the woodland was never registered. The national carbon inventory will record a loss in the next reporting cycle, but no credit is cancelled, no buffer pool is drawn down, no buyer&rsquo;s offset is reversed. The carbon enters the atmosphere without a corresponding entry on any ledger. Atmospherically, it happened. Financially, it didn&rsquo;t.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Second, the land&rsquo;s baseline drops. The BNG score plummets. The carbon stock goes to near zero. The habitat condition falls from whatever it was to something close to nothing. The woodland that generated no measurable value while it stood now has, in its absence, created a measurable gap &mdash; between what the land is and what it could become.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 30px;max-width:660px">That gap is the product.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Third, the gap opens revenue streams that the standing woodland never could. Enhancement of the degraded site can now generate Biodiversity Net Gain units &mdash; immediately. Countryside Stewardship restoration payments can begin &mdash; immediately. And in 25 years, when the land meets the Woodland Carbon Code&rsquo;s eligibility threshold of not having been wooded in the preceding quarter-century, new tree planting on the site can generate tradable carbon credits.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Twenty-five years is a long time for a person. It is not a long time for a system. Pension funds target returns over fifteen to thirty years. Conservation covenants lock land for a minimum of thirty. Woodland Carbon Code projects run for a hundred. The 25-year rule doesn&rsquo;t prevent the mechanism. It sets the investment horizon.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">A standing unregistered forest is a dead asset. It generates no credits, no units, no covenants, no data. Its ecological value is real. Its value in environmental markets is zero. Burned land bought at a post-fire discount is the opposite &mdash; it generates nothing today, but it sits on a trajectory toward BNG units, stewardship payments, and carbon credits at year 26. The standing forest has no future in the market. The burned land has nothing but future. The patience is the investment thesis.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">This is not speculation. The institutional infrastructure is being built now. Habitat banks sell biodiversity units as a commercial business. Nature asset managers &mdash; like Rebalance Earth, 25% owned by the West Yorkshire Pension Fund &mdash; target 8&ndash;12% returns over fifteen years from ecosystem service payments. A &euro;200 million Carbon and Biodiversity Fund has launched in France for afforestation, reforestation, and revegetation projects across Europe. The FCA&rsquo;s Digital Securities Sandbox has sixteen firms testing tokenised issuance and settlement of environmental assets.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Nobody needs to set a fire. The system just needs the forest to stop being a forest &mdash; by fire, by neglect, by storm, by disease &mdash; and the market awakens. The destruction is the entrance fee.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 05 · THE SAME PATTERN ============ -->
+  <section id="S5" data-layer="4" data-screen-label="05 The Same Pattern" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">05<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Same Pattern</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The woodland is Edwards. Its absence is the product.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On the River Avon in Devon, Tim Edwards farmed oysters for fifty years &mdash; 125,000 a year, no feed, no chemicals, a government study confirming he enhanced biodiversity. The Duchy of Cornwall removed him. Native oysters can&rsquo;t survive on that river. Nobody replaced him. The estuary lost its oysters. The system registered no damage, because Edwards was never in the system. His fifty years of stewardship produced no delta. His removal produced one.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On Dartmoor, ponies grazed the moor for 4,500 years. Peer-reviewed science confirmed they are the most effective tool for managing the invasive grass destroying the moor&rsquo;s habitats. Natural England demanded livestock reductions of up to 89%. The ponies will be the first to go. Their grazing IS the biodiversity management, but pony grazing doesn&rsquo;t generate Biodiversity Units.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">On the River Roding, a barrister pulled 200 bags of rubbish from a river the Environment Agency&rsquo;s own partnership arm celebrates cleaning. The enforcement arm prosecuted him. He improved 250 metres of waterway for free &mdash; and in doing so, raised the baseline, destroying the gap the credit market needed to sell.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The woodland is the same story told by ecology instead of by a person. A thousand acres doing exactly what the system claims to want &mdash; sequestering carbon, supporting biodiversity, filtering air, stabilising soil &mdash; with no recognition, no revenue, and no protection. Not because the system fails to see it. Because the system is designed to see something else: the measurable gap between a degraded state and a restored one. Stewardship closes that gap for free, which makes it invisible. Degradation opens it, which makes it valuable.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">For the estuary, for the moor, for the river, for the woodland &mdash; the loss counts now. Fewer oysters, fewer ponies, a dirtier river, a burned forest. For the system, the loss counts later &mdash; when the degraded baseline becomes the floor from which credits are measured.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The system doesn&rsquo;t register the removal as damage. It registers it as potential.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 0;max-width:660px">The system doesn&rsquo;t measure loss. It banks it.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 06 · THE BIT THAT SHOULD BOTHER YOU ============ -->
+  <section id="S6" data-layer="5" data-screen-label="06 Should Bother You" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">06<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Bit That Should Bother You</h2>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:21px;line-height:1.5;color:#8a8478;margin:0 0 36px;max-width:52ch">The mechanism doesn&rsquo;t require anyone to strike a match.</p>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The Woodland Carbon Code publishes its eligibility rules. The Biodiversity Metric publishes its scoring criteria. The stewardship schemes publish what they pay for. The national carbon accounting framework publishes its methodology. None of them hid. The plans are in public documents with reference numbers and consultation deadlines. The absence of any programme that funds fuel management &mdash; in a country that just recorded its worst wildfire year in history &mdash; is not an oversight in any of those documents. It is a gap that every published framework leaves in exactly the same place. An oversight would imply someone was overseeing.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The mechanism doesn&rsquo;t require anyone to strike a match. It just needs nobody to have a reason to stop the fire before it starts.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Ninety-five per cent of wildfires in Europe are caused by human activity. In the UK, wildfires are not forensically investigated. The data that would show whether burned land disproportionately enters credit schemes &mdash; fire perimeters overlaid on the Woodland Carbon Code registry and the Biodiversity Gain Sites Register &mdash; exists in three separate public datasets that nobody has combined.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The question isn&rsquo;t whether someone is setting fires to generate credits. The question is whether the system cares either way.</p>
+  </div></section>
+
+  <div aria-hidden="true" style="position:relative;z-index:2;height:2px;margin:0 auto;max-width:680px;background:linear-gradient(90deg,transparent,rgba(90,122,90,.2) 20%,rgba(90,122,90,.35) 50%,rgba(90,122,90,.2) 80%,transparent);filter:blur(3px)"></div>
+
+  <!-- ============ 07 · THE QUESTION ============ -->
+  <section id="S7" data-layer="6" data-screen-label="07 The Question" style="position:relative;z-index:2;padding:120px 0 120px;background:#f2ece4"><div class="gbn-wrap" style="max-width:1040px;margin:0 auto;padding:0 64px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;color:#5a7a5a">07<span style="color:#8a8478"> / 07</span></div>
+      <div style="width:42px;height:2px;background:#5a7a5a;margin:14px 0 16px"></div>
+      <h2 class="gbn-h-title" style="font-family:'Spectral',serif;font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.012em;color:#1c1a16;margin:0 0 18px">The Question</h2>
+    </div>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Given the spate of wildfires in recent years, it&rsquo;s perfectly reasonable to ask why forests aren&rsquo;t being actively cleared of flammable debris. &ldquo;Surely it makes no sense?&rdquo;</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">Unfortunately it makes perfect sense from the perspective of the architecture. The system pays for deadwood retention. The system doesn&rsquo;t pay for fuel reduction. The national accounting framework registers prevention as a debit and catastrophe as an excludable event. The credit market can&rsquo;t see a standing forest and can price a burned one. Three separate frameworks, each rational, each published, each producing the same result.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">A thousand acres of woodland. No feed, no chemicals, no compliance scheme. Sequestering carbon for longer than the credit market has existed. Sheltering species the Biodiversity Metric would score highly if it were starting from bare ground. Doing everything the system says it values &mdash; invisibly, without generating data, without producing tradable instruments.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The system cannot see it.</p>
+    <p style="font-family:'Spectral',serif;font-size:18.5px;line-height:1.78;color:#2c2a24;margin:0 0 30px;max-width:680px">The fire can.</p>
+    <p style="font-family:'Spectral',serif;font-weight:500;font-size:24px;line-height:1.5;letter-spacing:-.006em;color:#1c1a16;margin:0 0 36px;max-width:660px">Everything is working exactly as designed.</p>
+
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#8a8478;margin:36px 0 0;max-width:680px;letter-spacing:.02em"><em>Sources: UK Woodland Carbon Code &mdash; Eligibility Rules, Statistics (Mar 2026), UK Carbon Prices (Apr 2025); Forest Research &mdash; Provisional Woodland Statistics (Jun 2025); Environment Act 2021 &mdash; Biodiversity Net Gain; Natural England &mdash; Statutory Biodiversity Metric 4.0; Frontiers in Forests and Global Change (Sep 2022) &mdash; &ldquo;Managing nature-based solutions in fire-prone ecosystems: Competing management objectives in California forests&rdquo;; Global Change Biology (Dec 2024) &mdash; &ldquo;Increasingly Active Wildfire Seasons Threaten the Sustainability of Forest-Backed Carbon Offset Programs&rdquo;; CarbonPlan &mdash; California buffer pool analysis; EFFIS &mdash; European wildfire perimeter data; NFCC (Jun 2025) &mdash; UK wildfire statistics; EU Civil Protection Knowledge Network &mdash; wildfire causes; FAO &mdash; Mediterranean wildfire statistics; Rebalance Earth / IPE Real Assets (Sep 2025); FCA (18 May 2026) &mdash; &ldquo;The Future of Tokenisation&rdquo;; Regreener (May 2026) &mdash; French Carbon and Biodiversity Fund; Gov.uk &mdash; Countryside Stewardship; Climate Change Act 2008; European Parliament &mdash; LULUCF Regulation.</em></p>
+  </div></section>
+
+  <footer style="padding:80px 0 60px;background:#f2ece4;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#8a8478;text-transform:uppercase">Green by Numbers &middot; When Trees Aren&rsquo;t Carbon &middot; July 2026</div>
+  </footer>
+
+</main>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('gbn-progress').style.width=((st/sh)*100)+'%';
+});
+
+// Layer gauge
+(function(){
+  var gauge=document.getElementById('gbn-gauge');
+  var labels=["Woodland","System Sees","Nobody Pays","When It Burns","Same Pattern","Should Bother You","The Question"];
+  var sections=document.querySelectorAll('section[data-layer]');
+  var rows=[];
+  labels.forEach(function(l,i){
+    var row=document.createElement('button');
+    row.type='button';
+    row.style.cssText='display:flex;align-items:center;gap:8px;background:none;border:0;padding:2px 0;cursor:pointer;text-align:left;font-family:"IBM Plex Mono",monospace';
+    var num=document.createElement('span');
+    num.textContent=String(i+1).padStart(2,'0');
+    num.style.cssText='font-size:10px;letter-spacing:.04em;color:#8a8478;width:16px;transition:color .35s';
+    var bar=document.createElement('span');
+    bar.style.cssText='display:block;height:7px;width:14px;border-radius:1.5px;background:#5a7a5a;opacity:.4;transition:all .45s cubic-bezier(.2,.7,.2,1)';
+    var label=document.createElement('span');
+    label.textContent=l;
+    label.style.cssText='font-size:9px;letter-spacing:.08em;color:#8a8478;text-transform:uppercase;white-space:nowrap;transition:color .35s,transform .35s;transform:translateX(0)';
+    row.appendChild(num);row.appendChild(bar);row.appendChild(label);
+    row.addEventListener('click',function(){
+      var s=document.getElementById('S'+(i+1));
+      if(s)s.scrollIntoView({behavior:'smooth'});
+    });
+    gauge.appendChild(row);
+    rows.push({row:row,num:num,bar:bar,label:label});
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=parseInt(e.target.getAttribute('data-layer'));
+        rows.forEach(function(r,i){
+          if(i===idx){
+            r.bar.style.width='42px';r.bar.style.opacity='1';r.bar.style.background='#5a7a5a';
+            r.num.style.color='#3a6a3a';r.label.style.color='#3a6a3a';r.label.style.transform='translateX(2px)';
+          }else{
+            r.bar.style.width='14px';r.bar.style.opacity='.4';r.bar.style.background='#5a7a5a';
+            r.num.style.color='#8a8478';r.label.style.color='#8a8478';r.label.style.transform='none';
+          }
+        });
+      }
+    });
+  },{threshold:0.15});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+
+</body>
+</html>

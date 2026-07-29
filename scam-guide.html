@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scam Prevention Guide — Flummoxed?</title>
+<meta name="description" content="Free scam prevention guide from Flummoxed. Learn how to spot the seven scams targeting people in Sussex, and what to do if you've been targeted.">
+<link rel="icon" type="image/png" href="Flummoxed%20%3F.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1B4332;
+  --green-mid:#2D6A4F;
+  --green-light:#5B8C6E;
+  --green-pale:#E1F5EE;
+  --green-bg:#F0F7F4;
+  --amber:#C48B3F;
+  --red-dark:#9B2226;
+  --amber-bg:#FFF8E7;
+  --amber-text:#633806;
+  --text-dark:#1a1a1a;
+  --text-mid:#555;
+  --text-light:#888;
+  --white:#fff;
+  --border:#e0e0e0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--text-dark);line-height:1.7;background:var(--white)}
+a{color:var(--green-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:20px;align-items:center;font-size:14px}
+.nav-links a{color:var(--text-mid);font-weight:600}
+.nav-links a:hover{color:var(--green-dark);text-decoration:none}
+.nav-cta{background:var(--green-dark);color:var(--white)!important;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px}
+.nav-cta:hover{background:var(--green-mid);text-decoration:none!important}
+
+/* CONTENT */
+.page{max-width:760px;margin:0 auto;padding:48px 24px 64px}
+.page-title{font-size:32px;font-weight:800;color:var(--green-dark);margin-bottom:4px}
+.page-subtitle{font-size:20px;font-weight:600;color:var(--red-dark);margin-bottom:8px}
+.page-intro{font-size:16px;color:var(--text-mid);margin-bottom:40px;line-height:1.8}
+
+/* GOLDEN RULES */
+.rules-section{margin-bottom:48px}
+.rules-label{font-size:22px;font-weight:800;color:var(--red-dark);margin-bottom:4px}
+.rules-sub{font-size:14px;font-style:italic;color:var(--text-light);margin-bottom:16px}
+.golden-rule{background:var(--amber-bg);padding:14px 20px;border-radius:8px;font-size:15px;font-weight:700;color:var(--amber-text);margin-bottom:8px;border-left:4px solid var(--amber)}
+
+/* SCAM TYPES */
+.scam-section{margin-bottom:48px}
+.scam-section-title{font-size:22px;font-weight:800;color:var(--green-dark);margin-bottom:24px}
+.scam-type{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border)}
+.scam-type:last-child{border-bottom:none}
+.scam-name{font-size:18px;font-weight:700;color:var(--red-dark);margin-bottom:8px}
+.scam-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:12px}
+.spot-stop{display:flex;gap:16px;flex-wrap:wrap}
+.spot-box,.stop-box{flex:1;min-width:260px;padding:14px 16px;border-radius:8px;font-size:13px;line-height:1.6}
+.spot-box{background:#FDE8E8;border-left:4px solid var(--red-dark)}
+.stop-box{background:var(--green-pale);border-left:4px solid var(--green-mid)}
+.spot-box strong,.stop-box strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.spot-box strong{color:var(--red-dark)}
+.stop-box strong{color:var(--green-dark)}
+
+/* SCAMMED SECTION */
+.scammed-section{margin-bottom:48px}
+.scammed-title{font-size:22px;font-weight:800;color:var(--red-dark);margin-bottom:12px}
+.reassurance{background:var(--green-pale);padding:16px 20px;border-radius:8px;font-size:15px;font-weight:600;color:var(--green-dark);margin-bottom:24px;line-height:1.6}
+.action-group{margin-bottom:20px}
+.action-group h4{font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:8px}
+.action-group li{font-size:14px;color:var(--text-mid);margin-bottom:6px;line-height:1.6;list-style:disc;margin-left:20px}
+
+/* CTA */
+.cta-box{background:var(--green-bg);border:2px solid var(--green-mid);border-radius:12px;padding:32px;text-align:center;margin-top:48px}
+.cta-box h3{font-size:20px;font-weight:700;color:var(--green-dark);margin-bottom:8px}
+.cta-box p{font-size:14px;color:var(--text-mid);margin-bottom:16px}
+.cta-box .btn{background:var(--green-dark);color:var(--white);padding:14px 32px;border-radius:8px;font-size:16px;font-weight:700;display:inline-block;margin:4px}
+.cta-box .btn:hover{background:var(--green-mid);text-decoration:none}
+.cta-box .btn-dl{background:var(--white);color:var(--green-dark);border:2px solid var(--green-mid);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;display:inline-block;margin:4px}
+.cta-box .btn-dl:hover{background:var(--green-pale);text-decoration:none}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:24px;background:var(--green-dark);color:rgba(255,255,255,0.7);margin-top:48px}
+.footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px}
+.footer-brand{font-weight:800;color:var(--white)}
+.footer a{color:rgba(255,255,255,0.7)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .spot-stop{flex-direction:column}
+  .page-title{font-size:26px}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Flummoxed_header.png" alt="Flummoxed?">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">What we do</a>
+      <a href="index.html#about">About us</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="tel:01444682270" class="nav-cta">📞 01444 682270</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <h1 class="page-title">Scam Prevention Guide</h1>
+  <p class="page-subtitle">How to protect yourself and your family from fraud</p>
+  <p class="page-intro">Fraud is the most common crime in England and Wales. In Sussex alone, over £19 million was lost to investment scams in a single year — and that's just one type of fraud. This guide covers the seven scams most likely to target you, how to spot them, and what to do if it happens.</p>
+
+  <!-- GOLDEN RULES -->
+  <div class="rules-section">
+    <h2 class="rules-label">The Five Golden Rules</h2>
+    <p class="rules-sub">Memorise these — Stick them by the phone — Tell your family</p>
+    <div class="golden-rule">1. Your bank will NEVER ask you to move money to a 'safe account'</div>
+    <div class="golden-rule">2. No real company will EVER phone you about a computer virus</div>
+    <div class="golden-rule">3. If someone you've never met in person asks for money — it's a scam</div>
+    <div class="golden-rule">4. If it sounds too good to be true — it is</div>
+    <div class="golden-rule">5. When in doubt — hang up — wait 5 minutes — and call someone you trust</div>
+  </div>
+
+  <!-- SEVEN SCAMS -->
+  <div class="scam-section">
+    <h2 class="scam-section-title">Seven Scams Targeting Sussex</h2>
+
+    <div class="scam-type">
+      <h3 class="scam-name">1. Courier & Impersonation Fraud</h3>
+      <p class="scam-desc">Someone phones claiming to be from your bank or the police. They say your account is compromised and ask you to withdraw cash, buy valuables, or hand over bank cards to a 'courier.' The courier is part of the scam. Sussex victims lost over £500,000 to this in 2025.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>They create urgency, tell you not to tell anyone, and ask you to hand over cash or cards. No real bank or officer will ever do this.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Hang up. Wait 5 minutes. Call your bank on the number on the BACK of your card. Tell a family member immediately.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">2. Phishing Emails & Texts</h3>
+      <p class="scam-desc">A message that looks like it's from HMRC, your bank, Royal Mail, Amazon, or the NHS. It says there's a problem and asks you to click a link to enter your details. The link leads to a fake website that steals your information.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>Urgency ('your account will be suspended'), slightly wrong sender address, spelling mistakes, and a link that doesn't match the real website.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Never click links in unexpected messages. Go to the real website by typing the address yourself. Forward suspicious emails to report@phishing.gov.uk. Forward texts to 7726.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">3. Fake Tech Support Calls</h3>
+      <p class="scam-desc">Someone phones claiming to be from Microsoft, BT, or your broadband provider. They say your computer has a virus and ask for remote access to 'fix' it. Once in, they steal passwords, install malware, or charge hundreds for fake repairs.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>Microsoft and BT will never phone you about your computer. If anyone asks to 'see your screen,' it's a scam.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Hang up immediately. If you've given access, turn off the computer and call your bank. Then call Flummoxed — we'll check your device.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">4. Romance Fraud</h3>
+      <p class="scam-desc">A scammer builds a relationship online over weeks or months, then asks for money. Some impersonate celebrities. One Sussex victim lost £275,000 to a single scammer. People aged 65-74 are the most targeted group.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>They can never video-call or meet in person. They declare love quickly. They ask for money via bank transfer or gift cards. They want you to keep it secret.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Never send money to someone you haven't met in person. Tell a friend or family member and ask their honest opinion.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">5. 'Hi Mum' Text Scams</h3>
+      <p class="scam-desc">You receive a text from an unknown number: 'Hi mum, I've got a new phone.' After chatting, they urgently need money. It's not your child — it's a scammer.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>Unknown number. Avoids voice calls. Needs money urgently. Bank details don't match your child's bank.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Always call your child on their known number before sending money. Agree a family code word.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">6. Doorstep Rogue Traders</h3>
+      <p class="scam-desc">Someone knocks offering work — roofing, driveways, gutters. They charge inflated prices, do terrible work, or take a deposit and disappear. Others pretend to be from the council to get inside your home.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>Uninvited, cash-only, no written quote, pressure to decide now. Real tradespeople don't cold-call.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Never agree to work on the doorstep. Get three quotes from traders you've found yourself. Never let unexpected visitors inside.</div>
+      </div>
+    </div>
+
+    <div class="scam-type">
+      <h3 class="scam-name">7. Investment & Pension Fraud</h3>
+      <p class="scam-desc">Online ads promise guaranteed returns on savings, crypto, or property. Victims invest small amounts that appear to grow on fake dashboards, then invest more. When they try to withdraw, the money is gone. Sussex victims lost £19 million in 2025.</p>
+      <div class="spot-stop">
+        <div class="spot-box"><strong>🔍 Spot it</strong>'Guaranteed' returns, pressure to act now, company not on the FCA register, contact out of the blue.</div>
+        <div class="stop-box"><strong>🛡️ Stop it</strong>Check register.fca.org.uk before investing. Never invest based on a cold call or social media ad. Get independent financial advice.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO DO -->
+  <div class="scammed-section">
+    <h2 class="scammed-title">What To Do If You've Been Scammed</h2>
+    <div class="reassurance">Don't feel ashamed. Scammers are professionals. Falling for a scam says nothing about your intelligence — it says everything about how good the criminals are.</div>
+
+    <div class="action-group">
+      <h4>Immediately</h4>
+      <ul>
+        <li>Call your bank on the number on the back of your card — they may be able to stop or recover the payment</li>
+        <li>If you gave someone access to your computer, turn it off and call us — we'll check it for malware</li>
+        <li>Change your passwords — start with email, then banking, then everything else</li>
+      </ul>
+    </div>
+
+    <div class="action-group">
+      <h4>Report it</h4>
+      <ul>
+        <li>Action Fraud: 0300 123 2040 or reportfraud.police.uk</li>
+        <li>Sussex Police: 101 (if vulnerable or elderly)</li>
+        <li>Scam emails: forward to report@phishing.gov.uk</li>
+        <li>Scam texts: forward to 7726 (free)</li>
+      </ul>
+    </div>
+
+    <div class="action-group">
+      <h4>Get support</h4>
+      <ul>
+        <li>Victim Support: 0808 16 89 111 (free, 24/7)</li>
+        <li>Age UK advice line: 0800 169 65 65 (free)</li>
+        <li>Citizens Advice: 0800 144 8848 (free)</li>
+        <li>Flummoxed: 01444 682270 — we check your devices and help secure your accounts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>Want us to make sure you're protected?</h3>
+    <p>We come to your home, check your devices, block scam callers, and set up your accounts to keep you safe.</p>
+    <a href="tel:01444682270" class="btn">📞 Call 01444 682270</a>
+    <a href="Flummoxed_Scam_Guide.pdf" download class="btn-dl">📥 Download this guide as PDF</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand">FLUMMOXED?</span> A helping hand with newfangled technology
+    </div>
+    <div>
+      <a href="mailto:hello@flummoxed.org.uk">hello@flummoxed.org.uk</a> | <a href="tel:01444682270">01444 682270</a> | Flummoxed Ltd © 2026
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

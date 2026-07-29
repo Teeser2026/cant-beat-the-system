@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flummoxed? — A helping hand with newfangled technology</title>
+<meta name="description" content="Flummoxed helps older people with technology in their own homes across Mid Sussex. Scam prevention, device setup, NHS App, video calling, and more. Patient, unhurried, no jargon.">
+<link rel="icon" type="image/png" href="Flummoxed%20%3F.png">
+<!-- FONT: Poppins for body text, Radiora for headings (self-hosted) -->
+<!-- To add Radiora: 1) Export .otf/.ttf from Font Book 2) Convert to .woff2 at cloudconvert.com 3) Upload to fonts/ folder 4) Uncomment the @font-face below -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* UNCOMMENT THIS once you have radiora.woff2 in your fonts/ folder:
+@font-face {
+  font-family: 'Radiora';
+  src: url('fonts/radiora-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-dark:#1B4332;
+  --green-mid:#2D6A4F;
+  --green-light:#5B8C6E;
+  --green-pale:#E1F5EE;
+  --green-bg:#F0F7F4;
+  --amber:#C48B3F;
+  --amber-light:#D4A85C;
+  --red-dark:#9B2226;
+  --amber-bg:#FFF3CD;
+  --amber-text:#633806;
+  --text-dark:#1a1a1a;
+  --text-mid:#555;
+  --text-light:#888;
+  --white:#fff;
+  --border:#e0e0e0;
+  --font-heading: 'Poppins', sans-serif; /* CHANGE TO: 'Radiora', 'Poppins', sans-serif once .woff2 is uploaded */
+  --font-body: 'Poppins', sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text-dark);line-height:1.7;background:var(--white)}
+h1,h2,h3{font-family:var(--font-heading)}
+a{color:var(--green-mid);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:24px;align-items:center;font-size:14px}
+.nav-links a{color:var(--text-mid);font-weight:600}
+.nav-links a:hover{color:var(--green-dark);text-decoration:none}
+.nav-cta{background:var(--green-dark);color:var(--white)!important;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px}
+.nav-cta:hover{background:var(--green-mid);text-decoration:none!important}
+.mobile-menu{display:none;background:none;border:none;font-size:28px;cursor:pointer;color:var(--green-dark)}
+
+/* HERO */
+.hero{background:var(--green-bg);padding:56px 24px 48px}
+.hero-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:48px}
+.hero-content{flex:1}
+.hero-image{flex:1;max-width:480px}
+.hero-image img{border-radius:16px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.1)}
+.hero-logo{max-width:360px;margin-bottom:24px}
+.hero-logo img{width:100%}
+h1.hero-heading{font-size:32px;font-weight:800;color:var(--text-dark);line-height:1.25;margin-bottom:12px}
+.hero-sub{font-size:16px;color:var(--text-mid);margin-bottom:28px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--green-dark);color:var(--white);padding:14px 32px;border-radius:8px;font-size:16px;font-weight:700;display:inline-block}
+.btn-primary:hover{background:var(--green-mid);text-decoration:none}
+.btn-secondary{border:2px solid var(--border);color:var(--text-dark);padding:12px 28px;border-radius:8px;font-size:16px;font-weight:600;display:inline-block;background:var(--white)}
+.btn-secondary:hover{border-color:var(--green-mid);text-decoration:none}
+
+/* TRUST BAR */
+.trust-bar{border-bottom:1px solid var(--border);padding:16px 24px;background:var(--white)}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-mid);font-weight:600}
+.trust-icon{font-size:18px;color:var(--green-mid)}
+
+/* SECTIONS */
+.section{padding:64px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:13px;font-weight:700;color:var(--red-dark);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:28px;font-weight:800;color:var(--text-dark);margin-bottom:8px}
+.section-subtitle{font-size:16px;color:var(--text-mid);margin-bottom:32px}
+.section-alt{background:var(--green-bg)}
+
+/* SERVICE GRID */
+.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px}
+.service-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
+.service-card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:14px;color:var(--text-mid);line-height:1.6}
+
+/* PHOTO FEATURE */
+.feature-split{display:flex;gap:48px;align-items:center;margin-top:48px}
+.feature-split-image{flex:1;border-radius:12px;overflow:hidden}
+.feature-split-image img{width:100%;height:300px;object-fit:cover;border-radius:12px}
+.feature-split-content{flex:1}
+
+/* ABOUT */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.team-member{text-align:center}
+.team-photo{width:140px;height:140px;border-radius:50%;background:var(--green-bg);border:3px solid var(--border);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--text-light);overflow:hidden}
+.team-photo img{width:100%;height:100%;object-fit:cover}
+.team-name{font-size:17px;font-weight:700;margin-bottom:2px}
+.team-role{font-size:13px;color:var(--amber);font-weight:700;margin-bottom:8px}
+.team-bio{font-size:14px;color:var(--text-mid);line-height:1.6}
+
+/* GOLDEN RULES */
+.golden-rule{background:var(--amber-bg);padding:14px 20px;border-radius:8px;font-size:15px;font-weight:700;color:var(--amber-text);margin-bottom:8px}
+.golden-rule::before{content:"⚠️ ";margin-right:6px}
+
+/* CASE STUDIES */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px}
+.review-text{font-size:15px;font-style:italic;line-height:1.7;margin-bottom:12px;color:var(--text-dark)}
+.review-name{font-size:14px;color:var(--text-mid)}
+.review-service{font-size:12px;color:var(--text-light);margin-top:4px}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pricing-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center}
+.pricing-card.featured{border:2px solid var(--green-mid)}
+.pricing-badge{display:inline-block;background:var(--green-pale);color:var(--green-mid);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.pricing-label{font-size:14px;color:var(--text-mid);margin-bottom:4px}
+.pricing-amount{font-size:40px;font-weight:800;color:var(--text-dark)}
+.pricing-period{font-size:14px;color:var(--text-mid);margin:4px 0 16px}
+.pricing-desc{font-size:14px;color:var(--text-mid);line-height:1.6}
+
+/* OFFER BANNER */
+.offer-banner{background:var(--white);border:2px solid var(--green-mid);border-radius:12px;padding:0;margin:40px 0 0;overflow:hidden}
+.offer-inner{display:flex;align-items:stretch}
+.offer-image{width:280px;flex-shrink:0;overflow:hidden}
+.offer-image img{width:100%;height:100%;object-fit:cover}
+.offer-content{padding:28px 32px;flex:1}
+.offer-badge{display:inline-block;background:var(--green-dark);color:var(--white);font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:10px;letter-spacing:0.5px}
+.offer-title{font-size:20px;font-weight:800;color:var(--green-dark);margin-bottom:6px}
+.offer-text{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:12px}
+.offer-highlight{font-size:15px;font-weight:700;color:var(--green-dark)}
+
+/* FAMILY BANNER */
+.family-banner{background:var(--green-pale);padding:48px 24px;text-align:center}
+.family-inner{max-width:520px;margin:0 auto}
+.family-title{font-size:22px;font-weight:700;color:var(--green-dark);margin-bottom:8px}
+.family-text{font-size:15px;color:var(--green-mid);line-height:1.7;margin-bottom:20px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.contact-icon-wrap{width:48px;height:48px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--green-mid);flex-shrink:0}
+.contact-label{font-size:16px;font-weight:700}
+.contact-detail{font-size:15px;color:var(--text-mid)}
+.contact-form{background:var(--green-bg);border:1px solid var(--border);border-radius:12px;padding:24px}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:15px;margin-bottom:12px;background:var(--white)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--green-mid)}
+.contact-form textarea{height:100px;resize:vertical}
+.contact-form button{width:100%;padding:14px;background:var(--green-dark);color:var(--white);border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.contact-form button:hover{background:var(--green-mid)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:24px;background:var(--green-dark);color:rgba(255,255,255,0.7)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{height:36px;margin-bottom:8px;filter:brightness(0) invert(1);opacity:0.9}
+.footer-brand{font-size:18px;font-weight:800;color:var(--white)}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.5);margin-left:8px}
+.footer-info{font-size:12px;color:rgba(255,255,255,0.5)}
+.footer a{color:rgba(255,255,255,0.7)}
+.footer a:hover{color:var(--white)}
+
+/* IMAGE PLACEHOLDERS — remove these styles once real photos are added */
+.placeholder-img{background:var(--green-bg);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:14px;font-style:italic;text-align:center;padding:20px;border-radius:12px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-menu{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:20px;border-bottom:1px solid var(--border);z-index:99}
+  .hero-inner{flex-direction:column;text-align:center}
+  .hero-logo{margin-left:auto;margin-right:auto}
+  .hero-image{max-width:100%}
+  .hero-buttons{justify-content:center}
+  h1.hero-heading{font-size:26px}
+  .section-title{font-size:22px}
+  .service-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)!important}
+  .contact-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .trust-inner{gap:16px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .feature-split{flex-direction:column}
+  .offer-inner{flex-direction:column}
+  .offer-image{width:100%;height:200px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- NAVIGATION — Logo image in nav -->
+<!-- ============================================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <!-- Clean wordmark for nav header -->
+      <img src="Flummoxed_header.png" alt="Flummoxed? A helping hand with newfangled technology">
+    </a>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+    <div class="nav-links">
+      <a href="#services">What we do</a>
+      <a href="#about">About us</a>
+      <a href="#scam-advice">Scam advice</a>
+      <a href="#reviews">Case studies</a>
+      <a href="#contact">Contact us</a>
+      <a href="tel:01444682270" class="nav-cta">📞 01444 682270</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- HERO — Centered, full width -->
+<!-- ============================================================ -->
+<section class="hero">
+  <div style="max-width:720px;margin:0 auto;text-align:center">
+    <div style="max-width:520px;margin:0 auto 32px">
+      <!--
+        NOTE: Your logo PNG needs a transparent background. In Affinity Designer,
+        File > Export > PNG > tick "Transparent background". The white rectangle
+        will disappear once you re-export.
+      -->
+      <img src="Flummoxed.png" alt="Flummoxed? A helping hand with newfangled technology" style="width:100%">
+    </div>
+    <h1 class="hero-heading" style="text-align:center">We visit your home and sort out your gadgets — and your safety</h1>
+    <p class="hero-sub" style="text-align:center">Patient. Unhurried. No jargon. Throughout Sussex.</p>
+    <div class="hero-buttons" style="justify-content:center">
+      <a href="tel:01444682270" class="btn-primary">📞 Call us: 01444 682270</a>
+      <a href="mailto:hello@flummoxed.org.uk" class="btn-secondary">✉️ Email us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TRUST BAR -->
+<!-- ============================================================ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><img src="DBS-Check.png" alt="Enhanced DBS Checked" style="height:90px;width:auto;vertical-align:middle;margin-right:8px"> Enhanced DBS checked</div>
+    <div class="trust-item"><img src="insurance.png" alt="Public liability insured" style="height:80px;width:auto;vertical-align:middle;margin-right:8px"> Public liability insured</div>
+    <div class="trust-item"><img src="Friends.png" alt="Friends Against Scams certified" style="height:56px;width:auto;vertical-align:middle;margin-right:6px"> Friends Against Scams certified</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SERVICES — Scam protection hero + grid -->
+<!-- ============================================================ -->
+<section class="section" id="services">
+  <div class="section-inner">
+
+    <!-- SCAM PROTECTION — problem + solution in one card -->
+    <div style="border:2px solid var(--red-dark);border-radius:12px;overflow:hidden;margin-bottom:32px">
+      <!-- The problem -->
+      <div style="background:var(--amber-bg);padding:24px 36px;text-align:center">
+        <p style="font-size:13px;font-weight:700;color:var(--red-dark);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Did you know?</p>
+        <p style="font-size:20px;font-weight:800;color:var(--text-dark);line-height:1.3;margin-bottom:4px">In Sussex, over £19 million was lost to investment scams last year — and that's just one type of fraud</p>
+        <p style="font-size:14px;color:var(--amber-text)">53% of victims were over 75.</p>
+      </div>
+      <!-- The solution -->
+      <div style="background:var(--white);padding:28px 36px;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <p style="font-size:12px;font-weight:700;color:var(--green-dark);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Our core service</p>
+          <h3 style="font-size:22px;font-weight:800;margin-bottom:8px;color:var(--text-dark)">Scam protection</h3>
+          <p style="font-size:15px;color:var(--text-mid);line-height:1.7;margin-bottom:0">We come to your home, check your devices for anything suspicious, block scam callers on your phone and landline, set up two-factor authentication on your important accounts, configure your email to filter phishing, and walk you through how to spot the scams that target people in Sussex every single day. We're certified Friends Against Scams SCAMchampions.</p>
+        </div>
+        <div style="flex-shrink:0">
+          <a href="tel:01444682270" class="btn-primary" style="font-size:14px;padding:12px 24px">📞 Book a scam safety check</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER SERVICES -->
+    <div class="section-label">We also help with</div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon" style="background:var(--green-pale)">📱</div>
+        <h3>Phones, tablets and laptops</h3>
+        <p>New device setup, transferring contacts and photos, updates, and making the screen big enough to actually read.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#EEEDFE">📶</div>
+        <h3>WiFi and smart home</h3>
+        <p>Internet fixes, smart doorbells, Alexa, and making everything talk to each other. We also tidy up the cable spaghetti.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FBEAF0">🏥</div>
+        <h3>NHS App and GP access</h3>
+        <p>Book appointments, order repeat prescriptions, and set up video consultations with your doctor — all from home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#E6F1FB">📹</div>
+        <h3>Video calls to family</h3>
+        <p>WhatsApp, FaceTime, Zoom — set up and a practice call with your family before we leave. This is our favourite job.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FAECE7">🛒</div>
+        <h3>Online shopping and banking</h3>
+        <p>Supermarket deliveries, Amazon, and navigating online banking — you do the tapping, we guide. We never touch your financial details.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FFF3CD">🎵</div>
+        <h3>Entertainment and leisure</h3>
+        <p>Streaming, audiobooks, podcasts, music, and games. Once someone discovers they can listen to books for free from the library, they're a client for life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRICING + FAMILY BANNER + CABLE TIDY -->
+<!-- ============================================================ -->
+<section class="section section-alt" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, honest pricing</h2>
+    <p class="section-subtitle">No hidden fees. No call-out charge. No selling you things you don't need.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-label">Home visit</div>
+        <div class="pricing-amount">£55</div>
+        <div class="pricing-period">per hour</div>
+        <p class="pricing-desc">We come to your home and sort out whatever you need. One full hour minimum — even if the fix takes ten minutes, we spend the rest answering your questions.</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most popular</div>
+        <div class="pricing-label">Keep me connected</div>
+        <div class="pricing-amount">£30</div>
+        <div class="pricing-period">per month</div>
+        <p class="pricing-desc">One visit per month plus unlimited phone support during office hours. We keep everything running and you always have someone to call.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Peace of mind</div>
+        <div class="pricing-amount">£45</div>
+        <div class="pricing-period">per month</div>
+        <p class="pricing-desc">For families. Monthly visit, device check, scam review, and a short report emailed to your nominated family member so they know mum is sorted.</p>
+      </div>
+    </div>
+
+    <!-- CABLE TIDY OFFER -->
+    <div class="offer-banner">
+      <div class="offer-inner">
+        <div class="offer-image">
+          <div class="placeholder-img" style="width:280px;min-height:200px">
+            📸 Use your cable mess photo here
+          </div>
+        </div>
+        <div class="offer-content">
+          <div class="offer-badge">FREE WITH YOUR FIRST VISIT</div>
+          <div class="offer-title">Look familiar? We'll tidy that up.</div>
+          <p class="offer-text">Every home has a tangle of cables behind the TV, the desk, or the router. It looks messy, it's confusing, and trailing cables are a trip hazard. When you book your first Flummoxed visit, we'll tidy up your cables, label what everything is, and make sure nothing's trailing across the floor — completely free.</p>
+          <div class="offer-highlight">📞 Mention "cable tidy" when you call to book</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY BANNER -->
+<div class="family-banner">
+  <div class="family-inner">
+    <h2 class="family-title">Worried about a parent?</h2>
+    <p class="family-text">If you live far from mum or dad and worry about them being safe online, our Peace of Mind package means you get a monthly update and they get a friendly face who keeps everything working.</p>
+    <a href="tel:01444682270" class="btn-primary">📞 Call us to set it up</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ABOUT US — Team with photos -->
+<!-- ============================================================ -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-label">About us</div>
+    <h2 class="section-title">The people behind Flummoxed</h2>
+    <p class="section-subtitle">We started because someone's mum called a tablet "that newfangled thing" and couldn't find the on button. So we came round and helped.</p>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="team-photo">
+          <div class="placeholder-img" style="width:100%;height:100%;border-radius:50%">📸</div>
+        </div>
+        <div class="team-name">Amy</div>
+        <div class="team-role">Your first call</div>
+        <p class="team-bio">The voice you'll hear when you ring Flummoxed. Amy makes sure you feel comfortable before anyone visits, and checks in afterwards to make sure everything's working.</p>
+      </div>
+      <div class="team-member">
+        <div class="team-photo">
+          <div class="placeholder-img" style="width:100%;height:100%;border-radius:50%">📸</div>
+        </div>
+        <div class="team-name">Sam</div>
+        <div class="team-role">Your home visit technician</div>
+        <p class="team-bio">Patient, friendly, and happy to explain things as many times as you need. Comes to your home across Sussex.</p>
+      </div>
+      <div class="team-member">
+        <div class="team-photo">
+          <div class="placeholder-img" style="width:100%;height:100%;border-radius:50%">📸</div>
+        </div>
+        <div class="team-name">George</div>
+        <div class="team-role">Technical lead</div>
+        <p class="team-bio">The one who fixes the tricky problems — WiFi, networking, smart home, and keeping your devices secure. If it's technical, George sorts it.</p>
+      </div>
+      <div class="team-member">
+        <div class="team-photo">
+          <div class="placeholder-img" style="width:100%;height:100%;border-radius:50%">📸</div>
+        </div>
+        <div class="team-name">Simon</div>
+        <div class="team-role">Founder</div>
+        <p class="team-bio">Sussex business owner who started Flummoxed because too many people were being left behind by technology — and targeted by scammers who exploit that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WHAT A VISIT LOOKS LIKE -->
+<!-- ============================================================ -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="feature-split">
+      <div class="feature-split-image">
+        <div class="placeholder-img" style="height:300px">
+          📸 Photo needed:<br>Close-up of hands helping with a tablet — warm, natural
+        </div>
+      </div>
+      <div class="feature-split-content">
+        <div class="section-label">What a visit looks like</div>
+        <h3 style="font-size:22px;font-weight:800;margin-bottom:12px">An hour of patience and plain English</h3>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:12px">We come to your home, sit down with you, and work through whatever you need — at your pace. We don't use jargon. We don't rush. Even if the fix takes ten minutes, we spend the rest of the hour answering your questions and making sure you're confident.</p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.8">Before we leave, we give you a written summary of what we did, a laminated cheat sheet for the tasks you'll do most often, and a fridge magnet with our number. So next time you're stuck, help is one call away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CASE STUDIES -->
+<!-- ============================================================ -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="section-label">Real stories</div>
+    <h2 class="section-title">What our clients say</h2>
+    <p class="section-subtitle">Names changed for privacy. Real testimonials will appear here as we grow.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p class="review-text">"I hadn't seen my grandson in Australia for two years. They set up WhatsApp and we did a video call right there in my kitchen. I cried. He cried. Best £40 I ever spent."</p>
+        <p class="review-name">— Margaret, 82, Lindfield</p>
+        <p class="review-service">Service: Video calling setup</p>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Someone called saying they were from BT and I nearly gave them access to my computer. Flummoxed came and checked everything, blocked the scam numbers, and showed me what to look for. I feel so much safer now."</p>
+        <p class="review-name">— Derek, 78, Haywards Heath</p>
+        <p class="review-service">Service: Scam prevention and device security</p>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"Mum's had an iPad since Christmas sitting in the box. The boys came round, set it up, got her on iPlayer, and now she watches Antiques Roadshow in bed. She thinks they're wonderful."</p>
+        <p class="review-name">— Sarah (daughter), calling from London</p>
+        <p class="review-service">Service: Device setup and streaming</p>
+      </div>
+      <div class="review-card">
+        <p class="review-text">"The surgery kept telling me to use the NHS App. I didn't know where to start. They sat with me for an hour and now I order my prescriptions from the sofa. Marvellous."</p>
+        <p class="review-name">— Joan, 74, Cuckfield</p>
+        <p class="review-service">Service: NHS App and GP online setup</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SCAM ADVICE — Golden Rules -->
+<!-- ============================================================ -->
+<section class="section section-alt" id="scam-advice">
+  <div class="section-inner">
+    <div class="section-label">Free scam advice</div>
+    <h2 class="section-title">The five golden rules</h2>
+    <p class="section-subtitle">Print this page. Stick it by the phone.</p>
+    <div class="golden-rule">1. Your bank will NEVER ask you to move money to a "safe account"</div>
+    <div class="golden-rule">2. No real company will EVER phone you about a computer virus</div>
+    <div class="golden-rule">3. If someone you've never met in person asks for money — it's a scam</div>
+    <div class="golden-rule">4. If it sounds too good to be true — it is</div>
+    <div class="golden-rule">5. When in doubt — hang up, wait 5 minutes, and call someone you trust</div>
+    <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text-mid);">
+      Think you've been scammed? Call your bank immediately on the number on the back of your card.<br>
+      Then call us — we'll check your devices and help secure your accounts.<br><br>
+      <strong>Report scams:</strong> Action Fraud 0300 123 2040 | Forward scam emails to report@phishing.gov.uk | Forward scam texts to 7726
+    </p>
+    <p style="text-align:center;margin-top:16px">
+      <a href="Flummoxed_Scam_Guide.pdf" target="_blank" download class="btn-secondary" style="font-size:14px;padding:10px 20px;margin-right:8px">📥 Download our free scam prevention guide (PDF)</a>
+      <a href="scam-guide.html" target="_blank" class="btn-secondary" style="font-size:14px;padding:10px 20px">📖 Read the full scam guide</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT -->
+<!-- ============================================================ -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Ready for a helping hand?</h2>
+    <p class="section-subtitle">Give us a call or send a message — we'll get back to you the same day.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">📞</div>
+          <div>
+            <div class="contact-label">Call us</div>
+            <div class="contact-detail"><a href="tel:01444682270" style="font-size:20px;font-weight:800;color:var(--green-dark)">01444 682270</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">✉️</div>
+          <div>
+            <div class="contact-label">Email us</div>
+            <div class="contact-detail"><a href="mailto:hello@flummoxed.org.uk">hello@flummoxed.org.uk</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">📍</div>
+          <div>
+            <div class="contact-label">We cover</div>
+            <div class="contact-detail">West Sussex, Mid Sussex, East Sussex &amp; surrounding areas</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">🕐</div>
+          <div>
+            <div class="contact-label">Hours</div>
+            <div class="contact-detail">Monday to Saturday, 9am – 6pm</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <p style="font-size:15px;color:var(--text-mid);margin-bottom:16px">Or send us a message:</p>
+        <!-- REPLACE YOUR_FORM_ID with your Formspree form ID -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="Phone number" required>
+          <textarea name="message" placeholder="What do you need help with?"></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER — Dark green with white logo -->
+<!-- ============================================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <!-- REPLACE with white version of logo once exported -->
+      <span class="footer-brand">FLUMMOXED?</span>
+      <span class="footer-tagline">A helping hand with newfangled technology</span>
+    </div>
+    <div class="footer-info">
+      Flummoxed Ltd &copy; 2026 | DBS checked | Fully insured | Friends Against Scams certified<br>
+      <a href="mailto:hello@flummoxed.org.uk">hello@flummoxed.org.uk</a> | <a href="tel:01444682270">01444 682270</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

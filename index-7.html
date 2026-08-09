@@ -4789,22 +4789,31 @@ function renderTurn(turnData) {
   });
 
   // Dynamic reveal pacing — short lines breathe faster
-  let cumDelay = 0.5;
-  container.querySelectorAll('p').forEach(p => {
-    p.style.animation = 'none';
-    p.style.opacity = '0';
-    void p.offsetWidth;
-    p.style.animation = `fadeUp 1.2s ease ${cumDelay}s forwards`;
-    // Gap before NEXT paragraph based on THIS paragraph's length
-    const len = p.textContent.length;
-    let gap;
-    if (len < 30) gap = 0.3;        // punchy one-liners
-    else if (len < 80) gap = 0.5;   // short lines, dialogue
-    else if (len < 200) gap = 0.8;  // medium paragraphs
-    else if (len < 400) gap = 1.2;  // substantial paragraphs
-    else gap = 1.6;                  // dense blocks — let them breathe
-    cumDelay += gap;
-  });
+  // DEV mode: skip animation entirely (S274)
+  if (typeof DEV !== 'undefined' && DEV) {
+    container.querySelectorAll('p').forEach(p => {
+      p.style.opacity = '1';
+      p.style.animation = 'none';
+    });
+  } else {
+    let cumDelay = 0.2;
+    const maxDelay = 6;
+    container.querySelectorAll('p').forEach(p => {
+      p.style.animation = 'none';
+      p.style.opacity = '0';
+      void p.offsetWidth;
+      p.style.animation = `fadeUp 0.8s ease ${cumDelay}s forwards`;
+      // Gap before NEXT paragraph based on THIS paragraph's length
+      const len = p.textContent.length;
+      let gap;
+      if (len < 30) gap = 0.15;       // punchy one-liners
+      else if (len < 80) gap = 0.25;  // short lines, dialogue
+      else if (len < 200) gap = 0.4;  // medium paragraphs
+      else if (len < 400) gap = 0.6;  // substantial paragraphs
+      else gap = 0.8;                  // dense blocks
+      cumDelay = Math.min(cumDelay + gap, maxDelay);
+    });
+  }
 }
 
 // S169: scroll target into view + transient flash highlight (reused by card→thread/song clicks)

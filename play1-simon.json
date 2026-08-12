@@ -9176,8 +9176,6 @@
             "tag": "Urgent",
             "cls": "",
             "isnew": true,
-            "type": "thread-notify",
-            "threadRef": "pattern-recognition",
             "time": "05:41",
             "date": "7 Feb 2027"
           },
@@ -14295,18 +14293,6 @@
           "url": "https://sgtpreppershop.co.uk",
           "src": "simon",
           "turn": 18
-        },
-        {
-          "text": "Dev — “Someone’s cracked part of the time-lock”",
-          "src": "dev",
-          "turn": "18",
-          "article": {
-            "style": "chat",
-            "source": "Signal",
-            "title": "Dev & Simon",
-            "date": "7 February 2027",
-            "body": "<p class=\"chat-ts\">Signal · 7 February 2027 · 05:41</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>Someone’s cracked part of the time-lock. It’s not a date. It’s a condition set. But the conditions are closing. Days. Not weeks. The gematria lot might be onto something for once.</p>\n<p class=\"chat-ts\">07:01</p>\n<p class=\"chat-out\"><strong>Simon</strong><br>Thoughts? projectnomad.us</p>\n<p class=\"chat-ts\">07:14</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>Decent concept. Kindergarten execution. That logo. Military surplus aesthetic, ammo-box-with-antenna energy. The prepper market dressing up civilian tech in tactical cosplay.</p>\n<p class=\"chat-out\"><strong>Simon</strong><br>Thought as much. What would you do?</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>I’d have a server rack in a farmhouse in Cumbria. You’ve got a 7-year-old iMac in a hallway. Different conversation. But here. At the very least do 1 to 3.</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>1. Download some on-device AI YOU control. Ollama + Qwen3 8B. Best your Mac can handle. It’s not Claude. It’s not even close. But if the cloud goes dark it’ll answer questions, draft documents, and think slower than you’d like but faster than a library book. Download it now while you’ve got bandwidth. You won’t do it later. Do not rely on Gemini Nano or similar. Nano is on-device but it’s Google’s model, Google’s weights, Google’s update schedule. That’s not local. That’s occupation. Their model, your hardware. You can’t even see what it does when it reconnects.<br><br>2. Organic Maps. Full UK offline download. Your entire life runs through Google. When Google needs permission from a server to tell you where the A272 is, you’ll wish you’d spent four minutes on this.<br><br>3. Print your prescriptions. All of them. Fiasp, Libre sensor codes, dosage, pharmacy address, GP surgery, NHS number. Paper. Folder. Front door. This isn’t optional. If your phone dies and the pharmacy system is down, this is the difference between managing and not managing. Do it tonight.<br><br>4. Kiwix. Offline Wikipedia, medical reference, survival basics. 90GB. Your Mac can handle that. The internet’s knowledge without the internet’s permission.<br><br>5. External SSD. Encrypted. VeraCrypt. Everything that matters. Photos, docs, insurance, deeds, kids’ school records. Not your desk drawer. Your coat pocket. If they reset the ledger you need to prove what was yours.<br><br>6. Meshtastic. LoRa radio. Thirty quid on Amazon. Text messages without internet or cellular. 5km line of sight. Buy two. Give one to Amy. If the phones go down this is how you find each other.<br><br>7. Solar panel + battery bank. Not the shitty festival one. Bluetti or EcoFlow. Keep your devices alive for a week when the grid wobbles. It will wobble.<br><br>8. Wind-up radio. DAB and FM. Not for what they tell you. For knowing when they stop telling you.<br><br>9. Faraday bag. Phone goes in when you’re not using it. Won’t save you. Might buy you a breath.<br><br>10. Talk to your neighbours. Not about firmware. Not about tokenisation. About the street. Who’s elderly. Who’s got kids. Who can’t get to a shop. Who’s got a generator. When it goes dark your neighbours are your infrastructure. Not your Mac.</p>\n<p class=\"chat-out\"><strong>Simon</strong><br>No food. No water. No cash. You absolutely sure?</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>If you need food, water and cash I’m a Dutchman. And you’d be fucked anyway. You’d need weaponry too.</p>\n<p class=\"chat-out\"><strong>Simon</strong><br>You have weaponry?</p>\n<p class=\"chat-in\"><strong>Dev</strong><br>I’m as protected as I need to be. Go buy some bottled water and spam if it makes you feel better. They won’t starve us. Anyway, laters mate. Do 1–3. At least. You fucking muppet.</p>"
-          }
         }
       ]
     },
@@ -14632,6 +14618,58 @@
           "text": "Project Nomad — offline knowledge, maps, AI and educational courses",
           "src": "simon",
           "turn": "18"
+        },
+        {
+          "text": "Dev — Nomad, Nano, and the ten-point list",
+          "src": "dev",
+          "turn": "18",
+          "article": {
+            "style": "chat",
+            "source": "Signal",
+            "title": "Dev & Simon",
+            "date": "7 February 2027",
+            "messages": [
+              {
+                "from": "simon",
+                "text": "Thoughts? projectnomad.us",
+                "time": "07:01",
+                "link": true
+              },
+              {
+                "from": "Dev",
+                "text": "Decent concept. Kindergarten execution. That logo. Military surplus aesthetic, ammo-box-with-antenna energy. The prepper market dressing up civilian tech in tactical cosplay.",
+                "time": "07:14"
+              },
+              {
+                "from": "simon",
+                "text": "Thought as much. What would you do?"
+              },
+              {
+                "from": "Dev",
+                "text": "I’d have a server rack in a farmhouse in Cumbria. You’ve got a 7-year-old iMac in a hallway. Different conversation. But here. At the very least do 1 to 3."
+              },
+              {
+                "from": "Dev",
+                "text": "1. Download some on-device AI YOU control. Ollama + Qwen3 8B. Best your Mac can handle. It’s not Claude. It’s not even close. But if the cloud goes dark it’ll answer questions, draft documents, and think slower than you’d like but faster than a library book. Download it now while you’ve got bandwidth. You won’t do it later. Do not rely on Gemini Nano or similar. Nano is on-device but it’s Google’s model, Google’s weights, Google’s update schedule. That’s not local. That’s occupation. Their model, your hardware. You can’t even see what it does when it reconnects.\n\n2. Organic Maps. Full UK offline download. Your entire life runs through Google. When Google needs permission from a server to tell you where the A272 is, you’ll wish you’d spent four minutes on this.\n\n3. Print your prescriptions. All of them. Fiasp, Libre sensor codes, dosage, pharmacy address, GP surgery, NHS number. Paper. Folder. Front door. This isn’t optional. If your phone dies and the pharmacy system is down, this is the difference between managing and not managing. Do it tonight.\n\n4. Kiwix. Offline Wikipedia, medical reference, survival basics. 90GB. Your Mac can handle that. The internet’s knowledge without the internet’s permission.\n\n5. External SSD. Encrypted. VeraCrypt. Everything that matters. Photos, docs, insurance, deeds, kids’ school records. Not your desk drawer. Your coat pocket. If they reset the ledger you need to prove what was yours.\n\n6. Meshtastic. LoRa radio. Thirty quid on Amazon. Text messages without internet or cellular. 5km line of sight. Buy two. Give one to Amy. If the phones go down this is how you find each other.\n\n7. Solar panel + battery bank. Not the shitty festival one. Bluetti or EcoFlow. Keep your devices alive for a week when the grid wobbles. It will wobble.\n\n8. Wind-up radio. DAB and FM. Not for what they tell you. For knowing when they stop telling you.\n\n9. Faraday bag. Phone goes in when you’re not using it. Won’t save you. Might buy you a breath.\n\n10. Talk to your neighbours. Not about firmware. Not about tokenisation. About the street. Who’s elderly. Who’s got kids. Who can’t get to a shop. Who’s got a generator. When it goes dark your neighbours are your infrastructure. Not your Mac."
+              },
+              {
+                "from": "simon",
+                "text": "No food. No water. No cash. You absolutely sure?"
+              },
+              {
+                "from": "Dev",
+                "text": "If you need food, water and cash I’m a Dutchman. And you’d be fucked anyway. You’d need weaponry too."
+              },
+              {
+                "from": "simon",
+                "text": "You have weaponry?"
+              },
+              {
+                "from": "Dev",
+                "text": "I’m as protected as I need to be. Go buy some bottled water and spam if it makes you feel better. They won’t starve us. Anyway, laters mate. Do 1–3. At least. You fucking muppet."
+              }
+            ]
+          }
         }
       ],
       "label": "Surveillance & Identity"

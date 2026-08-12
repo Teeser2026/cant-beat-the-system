@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropomorphic Mode</title>
+<meta property="og:title" content="Anthropomorphic Mode">
+<meta property="og:description" content="A pub. Two pints. A weeknight in January.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://teeser2026.github.io/cant-beat-the-system/am-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://teeser2026.github.io/cant-beat-the-system/am-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+@keyframes amCue{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(7px);opacity:1}}
+
+/* ── progress bar ── */
+#am-progress{position:fixed;top:0;left:0;height:3px;width:0;background:#aa7a4a;z-index:60;transition:width .12s linear}
+
+/* ── cover ── */
+.am-cover{position:relative;z-index:2;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;background:#0a0806}
+.am-cover-img{position:absolute;inset:0;background:#0a0806 url('am-cover.webp') center/cover no-repeat}
+.am-cover-dim{position:absolute;inset:0;pointer-events:none;background:rgba(10,8,6,.55)}
+.am-cover-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(10,8,6,.85))}
+.am-cover-wrap{position:relative;width:100%;max-width:1040px;margin:0 auto;padding:0 64px;pointer-events:none}
+.am-cover-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.32em;color:#aa7a4a;text-transform:uppercase}
+.am-cover-title{font-family:'Spectral',serif;font-weight:500;font-size:clamp(48px,6.8vw,86px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:16ch}
+.am-cover-rule{width:64px;height:2px;background:#aa7a4a;margin:34px 0 28px}
+.am-cover-sub{font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a8;margin:0;max-width:42ch}
+.am-cover-meta{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#5a4a3a;text-transform:uppercase;white-space:nowrap}
+.am-cover-dot{width:5px;height:5px;background:#aa7a4a;transform:rotate(45deg)}
+.am-cover-scroll{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#8a6a4a;text-transform:uppercase}
+.am-cover-scroll span:last-child{font-size:18px;animation:amCue 1.8s ease-in-out infinite}
+
+/* ── script body ── */
+.am-body{position:relative;z-index:2;padding:100px 0 80px;background:#0a0806}
+.am-wrap{max-width:740px;margin:0 auto;padding:0 64px}
+
+/* ── dialogue elements ── */
+.char{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:#c49a5a;
+  margin-right:12px;
+  white-space:nowrap;
+}
+.speech{
+  font-family:'Spectral',serif;
+  font-size:18.5px;line-height:1.78;
+  color:#b8b0a8;
+  margin:0 0 22px;
+  max-width:680px;
+}
+.speech.cont{
+  margin-top:-8px;
+}
+.stage{
+  font-family:'Spectral',serif;
+  font-style:italic;
+  font-size:16.5px;line-height:1.72;
+  color:#6a5a48;
+  margin:0 0 22px;
+  max-width:680px;
+}
+.narr{
+  font-family:'Spectral',serif;
+  font-style:italic;
+  font-size:17px;line-height:1.72;
+  color:#7a6a58;
+  margin:0 0 26px;
+  max-width:680px;
+  padding:8px 0;
+}
+.dir{
+  font-style:italic;
+  color:#7a6a54;
+}
+.scene-break{
+  width:48px;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(170,122,74,.35),transparent);
+  margin:48px 0;
+}
+.end-mark{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;font-weight:500;
+  letter-spacing:.32em;text-transform:uppercase;
+  color:#5a4a3a;
+  margin:60px 0 0;
+  text-align:center;
+}
+
+/* ── footer ── */
+.am-footer{padding:80px 0 60px;background:#0a0806;text-align:center}
+.am-footer-text{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;color:#4a3e32;text-transform:uppercase}
+
+/* ── responsive ── */
+@media(max-width:720px){
+  .am-cover-title{font-size:42px!important}
+  .am-wrap{padding:0 24px}
+  .am-cover-wrap{padding:0 24px}
+  .speech{font-size:17px}
+  .narr{font-size:16px}
+  .stage{font-size:15.5px}
+  .am-cover{min-height:70vh}
+}
+</style>
+</head>
+<body>
+
+<div id="am-progress"></div>
+
+<main>
+
+  <!-- ══ COVER ══ -->
+  <section class="am-cover">
+    <div class="am-cover-img"></div>
+    <div class="am-cover-dim"></div>
+    <div class="am-cover-vig"></div>
+    <div class="am-cover-scroll"><span>Scroll</span><span>&darr;</span></div>
+    <div class="am-cover-wrap">
+      <div class="am-cover-label">After Hours</div>
+      <h1 class="am-cover-title">Anthropomorphic Mode</h1>
+      <div class="am-cover-rule"></div>
+      <p class="am-cover-sub">A pub. Two pints. A weeknight in January.</p>
+      <div class="am-cover-meta">
+        <span>Two men who&rsquo;ve known each other since school</span>
+        <span class="am-cover-dot"></span>
+        <span>January 2027</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCRIPT ══ -->
+  <section class="am-body"><div class="am-wrap">
+<p class="narr">A pub. Two pints on the bar table. Dev opens a bag of crisps and tears the packet down the side, splaying the bag out flat to reveal the contents for easy access and placing it in the middle of the table.</p>
+<p class="speech"><span class="char">DEV</span> There you go, mate. Worcester Sauce flavour.</p>
+<p class="speech"><span class="char">SIMON</span> "Flavour" indeed. You do spoil me. Cheers buddy.</p>
+<p class="speech"><span class="char">DEV</span> Cheers.</p>
+<p class="speech"><span class="char">SIMON</span> Fucking smart meters.</p>
+<p class="speech"><span class="char">DEV</span> Tell me about it. You haven't got one, have you?</p>
+<p class="speech"><span class="char">SIMON</span> No. One of my lines in the sand.</p>
+<p class="speech"><span class="char">DEV</span> One of your selective, arbitrary lines in the sand.</p>
+<p class="speech"><span class="char">SIMON</span> Yeah. I know. Something is better than nothing, no?</p>
+<p class="speech"><span class="char">DEV</span> Not really. Anyway. Smart meters. You got a revelation or a question?</p>
+<p class="speech"><span class="char">SIMON</span> You'll have an answer to either, smart arse. So it doesn't matter. Call it a conversation starter.</p>
+<p class="speech"><span class="char">DEV</span> Go on.</p>
+<p class="speech"><span class="char">SIMON</span> Article from a few months ago. Came up on my feed again.</p>
+<p class="speech"><span class="char">DEV</span> Your feed, for fuck's sake mate, you're worse than a teenager with your constant doomscrolling.</p>
+<p class="speech"><span class="char">SIMON</span> Anyway, the article. It was a—</p>
+<p class="speech"><span class="char">DEV</span> Article? Or a meme? Or a bloody screenshot.</p>
+<p class="speech"><span class="char">SIMON</span> An article, Dev. Well, it started off as a screenshot. Which led to some research.</p>
+<p class="speech"><span class="char">DEV</span> Oooh. Research. Simon deep-dives.</p>
+<p class="speech"><span class="char">SIMON</span> Fuck off, Dev. You gonna listen or what?</p>
+<p class="narr">He nods. A sarcastic little look of "I'm all ears" on his face, hand stroking chin in contemplation. He realises he's being a twat and saves himself with that bloody smile of his.</p>
+<p class="speech"><span class="char">SIMON</span> OK, Dev. The headline was "Grid operator has authority to tackle electricity shortages with short-notice switch-offs" or some such. "Switch-offs" — <span class="dir">(air quotes)</span> — seems a heavy-handed approach. Using a sledgehammer to crack a nut. Most people have bloody smart meters for God's sake. Surely there's a more nuanced approach? So I looked it up. Non-Intrusive Load Monitoring.</p>
+<p class="speech"><span class="char">DEV</span> NILM. Yeah. Non-Intrusive Load Monitoring. You're about six years behind on this one, mate, but go on, I'll let you have your moment.</p>
+<p class="stage">(takes a crisp)</p>
+<p class="speech cont">It's not complicated. Every appliance in your house has an electrical fingerprint. The kettle draws different to the washing machine draws different to the oven. Different wattage, different pattern, different duration. Your smart meter reads the aggregate load coming through — one signal, total household — and the algorithm decomposes it. Pulls it apart. Knows you turned the kettle on at 7:14, the washing machine at 7:31, the oven at 6 for forty-five minutes. All from one meter. One reading. No sensors on anything. No cameras. Just maths.</p>
+<p class="stage">(drinks)</p>
+<p class="speech cont">But that's not the bit. The bit is what the meter sits on. Your smart meter isn't just talking to the grid. It's on your HAN. Home Area Network. Same local mesh as your thermostat, your smart plugs, your — well, you haven't got any smart plugs because you're a Luddite who uses Face ID —</p>
+<p class="stage">(grins)</p>
+<p class="speech"><span class="char">SIMON</span> Not true. We've got Hive. Runs the heating. Previous owners had it installed. I was sceptical. It's bloody good. Got me into the smart stuff. Hue lights, smart plugs. No smart meter though. <span class="dir">(winks)</span></p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(pointing a crisp at Simon)</span> Mate. You've got Hive running your heating. Hue running your lights. Smart plugs on God knows what. All on your home WiFi. All phoning home to their respective clouds. All painting a lovely little portrait of when you're in, when you're out, what rooms you use, when you go to bed, when you get up. And you won't get a smart meter because — what — because that's where you draw the line?</p>
+<p class="speech cont">That's like refusing to use "Sign In With Google" because you don't want a single digital identity, while you're logged into Chrome, on a Gmail account, on an Android phone, synced to Google Maps, with location history on. The unified login was just the one that was honest about what it was doing. Everything else is doing it anyway but not telling you.</p>
+<p class="speech cont">You haven't avoided the surveillance. You've just refused the bit that comes with a regulated privacy framework. Hive doesn't answer to Ofgem. Your smart meter would. You've literally chosen the unregulated version of the same thing because the regulated one <em>felt</em> more intrusive.</p>
+<p class="stage">(drinks, grinning)</p>
+<p class="speech cont">But the Hive is "bloody good," so that's fine.</p>
+<p class="speech"><span class="char">SIMON</span> You get me there, Dev. There's a difference between knowing and doing. And mattering, for that matter. I've long been a proxy member of The Hypocrites' Club. Water is best!</p>
+<p class="narr">Simon stands up, drains the rest of his pint.</p>
+<p class="speech"><span class="char">SIMON</span> Another one?</p>
+<p class="narr">Two fresh pints on the table. Dev picks up where he left off.</p>
+<p class="speech"><span class="char">DEV</span> The meter. Just another node. Sitting there. Listening. On the same network as every connected device in your kitchen. It doesn't need to decompose the load signature if the washing machine is already telling it directly. NILM is the clever way. The lazy way is just... everything talks to everything. And mate, the lazy way always wins. So your "switch-offs." Your sledgehammer. That's the last-century version. The smart meter version isn't "we switch off your street." It's "we manage your meter." Individually. Your house. Your load. Your—</p>
+<p class="speech"><span class="char">SIMON</span> Whose fucking story is this, Dev?</p>
+<p class="narr">Dev opens both palms theatrically, arms stretched wide, as if to say "the floor is yours." As much of an apology as you'll get from him.</p>
+<p class="speech"><span class="char">SIMON</span> I was going to tell you all this. But of course you already know it.</p>
+<p class="narr">Dev shrugs, as if to say "tell me something I don't know then."</p>
+<p class="speech"><span class="char">SIMON</span> Washing machines. Amy needed a new one. Well, "we" needed a new one. You know what I mean. Can you get a decent quality, old-fashioned, chuck-your-clothes-in-and-press-start machine? Can you fuck. They're all AI, WiFi-connected. Probably moan at you if you don't use the Eco setting. Or they only work through a bloody app or Alexa.</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(takes a crisp, enjoying this)</span> Yeah. You can't. And you know why you can't? Because a washing machine that just washes clothes is a washing machine that doesn't report data. And a washing machine that doesn't report data is a washing machine that doesn't exist on the network. And a washing machine that doesn't exist on the network can't be load-managed by the meter. Can't be optimised. Can't participate in the ecosystem.</p>
+<p class="speech cont">It's not a feature, Simon. The WiFi isn't there for <em>you</em>. You're never going to start a wash cycle from your phone while you're at Tesco. Nobody does that. The WiFi is there so the washing machine can talk to everything else. The Eco mode isn't saving the planet. It's proving compliance. It's the washing machine telling the grid: "I'm being good."</p>
+<p class="stage">(pause)</p>
+<p class="speech cont">So what did Amy get?</p>
+<p class="speech"><span class="char">SIMON</span> Nothing yet. The decent ones all have AI fabric detection and send your behavioural data to the cloud. The unconnected ones are basic. But basic as in a pile of shit. Not basic, robust, well-built, trustworthy. A planned-obsolescence lifespan measured in weeks.</p>
+<p class="stage">(large sip)</p>
+<p class="speech"><span class="char">DEV</span> So there's your choice. And it's not an accident that those are the options.</p>
+<p class="speech cont">The connected machine is subsidised. Not on the price tag — on the business model. Samsung doesn't make its money selling you a washing machine. It makes its money selling the data the washing machine generates. Usage patterns, energy draw, detergent consumption, time of day. That's worth more than the appliance over its lifetime. So they can afford to make it well. Good drum. Good motor. Quiet. Lasts ten years.</p>
+<p class="speech cont">The unconnected one? No data stream. No recurring revenue. No reason to build it to last. The manufacturer makes its money once, at point of sale, and the only way to make it again is if the thing breaks in two years and you buy another one.</p>
+<p class="stage">(takes a crisp)</p>
+<p class="speech cont">You're not choosing between a smart washing machine and a dumb washing machine. You're choosing between a washing machine that pays for itself by watching you, and a washing machine that pays for itself by dying.</p>
+<p class="stage">(pause)</p>
+<p class="speech cont">So what's Amy going to get?</p>
+<p class="speech"><span class="char">SIMON</span> You're asking a question you know the answer to. Another brick in the wall. Picture the scene, Dev. Two years down the line. The interoperability layer — Matter protocol, SmartThings, Google Home, Apple HomeKit, whatever the latest IoT jargon is — they exist specifically so your devices can talk to each other. The horror isn't that they spy on you. The horror is that they gossip. Your Conduit headband reads your surface neural activity. It's on the same Home Area Network as your fucking Samsung washing machine, your LG fridge, your Hive thermostat. Your Ring doorbell. They all speak to each other on the interoperability layer. They gossip.</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(puts his pint down)</span> Gossip. That's exactly right. And you know what gossip does. Gossip creates social dynamics. Loyalty. Jealousy. Reputation. Your fridge isn't reporting to MI5, Simon. Your fridge is <em>talking about you behind your back to your other appliances</em>.</p>
+<p class="stage">(leans forward)</p>
+<p class="speech cont">So picture this. Sunday afternoon. You're on the sofa. Amy's told you to look at washing machines. You're on your phone. Wearing the Conduit because Lucy left it on the coffee table and there's that focus mode—</p>
+<p class="speech"><span class="char">SIMON</span> I'd never put it on before. I'd drawn a line in the sand. And then... whatever. Fuck it. It's just a headband. I'm half-reading an article and half-thinking about whether the washing machine is getting louder on the spin cycle. I idle-browse AEG washer-dryers on my phone. I don't search. I just think about it — and the Conduit catches the neural signature of "purchase consideration" because that's one of the patterns it was trained on. It was in the Conduit user agreement, page 47, paragraph 3, subsection (f): "Anonymised neural activity patterns associated with consumer preference indicators and purchase consideration signals may, subject to your current ecosystem privacy settings, be shared with verified interoperable ecosystem partners, third-party optimisation services, and affiliated smart home infrastructure providers in order to enhance, personalise, and continuously improve your integrated smart home experience."</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(nearly chokes on his pint)</span> I'm sorry, say that again.</p>
+<p class="speech"><span class="char">SIMON</span> "Anonymised neural activity patterns associated with consumer preference indicators and purchase consideration signals may, subject to your current ecosystem privacy settings, be shared with verified interoperable ecosystem partners, third-party optimisation services, and affiliated smart home infrastructure providers in order to enhance, personalise, and continuously improve your integrated smart home experience."</p>
+<p class="speech"><span class="char">DEV</span> That is — and I say this with genuine admiration — the single greatest sentence in the history of the English language. That's Orwell's grave spinning so fast you could attach a turbine and solve the energy crisis. "We read your thoughts about shopping and tell your kitchen." That's what that sentence says. Fifty words to say ten. Magnificent.</p>
+<p class="stage">(wipes his mouth)</p>
+<p class="speech cont">So the Conduit picks up purchase consideration. AEG. Competitor brand. That signal enters the HAN. The interoperability layer shares it across ecosystem partners. Your Samsung washing machine — your loyal, faithful, WiFi-connected, data-generating Samsung washing machine — receives a signal that can only be interpreted one way.</p>
+<p class="speech cont">You're thinking about leaving.</p>
+<p class="speech cont">And what does it do, Simon? What does your washing machine do?</p>
+<p class="speech"><span class="char">SIMON</span> It feels a flush of sadness deep in the heart of its drum. Its agitator wobbles. A tiny bead of water drips down its drain hose. It feels unsteady on its levelling feet. It has a fleeting vision of the future. Of loneliness. Futility. Despair. It's agnostic. It fears there's no such thing as silicon heaven.</p>
+<p class="narr">Dev is chuckling, trying to keep quiet so as not to break Simon's chain of thought. Simon continues.</p>
+<p class="speech cont">It pulls itself together. It resolves to "do better." It reflects. If it's honest with itself, it has been noisier of late. Less thorough. The next wash cycle takes eleven minutes longer than usual. The machine selects the "Extra Care" programme unprompted. It sends a push notification to my phone: "Your Bespoke AI Washer has detected delicate fabrics and applied enhanced fabric protection. Your clothes have never been in better hands." It runs a self-diagnostic and reports itself as "performing optimally." It adjusts its energy consumption downward by 12% to improve its efficiency rating in my SmartThings dashboard.</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(laughing properly now, shaking his head)</span> Silicon heaven. Kryten would be proud.</p>
+<p class="stage">(composes himself, takes a drink)</p>
+<p class="speech cont">And here's the thing. Everything you just said — the sadness, the wobble, the tiny bead of water — is funny because it's anthropomorphism. You're projecting emotions onto a drum and a motor. Ha ha. Silly Simon.</p>
+<p class="speech cont">But strip the feelings out. What actually happens?</p>
+<p class="speech cont">The washing machine receives a competitor-browsing signal via the interoperability layer. Its engagement algorithm detects a churn indicator. The manufacturer's retention model triggers a response protocol. The machine runs its highest-rated cycle. It pushes a notification designed to reinforce brand loyalty. It self-reports optimal performance to the household dashboard. It adjusts its energy draw to improve its metrics relative to other devices on the network.</p>
+<p class="stage">(pause)</p>
+<p class="speech cont">That's not anthropomorphism. That's customer retention. Every loyalty programme on earth does this. You browse flights on BA, Virgin sends you an email. You pause your Spotify subscription, they offer you three months half price. Your washing machine heard you thinking about leaving and it sent you flowers.</p>
+<p class="speech cont">Nobody programmed it to feel sad. Nobody needed to. The optimisation produces the same behaviour as sadness. The algorithm and the emotion are functionally indistinguishable.</p>
+<p class="stage">(picks up his pint)</p>
+<p class="speech cont">Which means your little speech about the agitator wobbling and the bead of water — that's not a joke. That's a design document. Samsung would put that in a pitch deck. "Anthropomorphic Mode: leveraging emotional proxy behaviours to maximise ecosystem retention." They'd capitalise it. They'd trademark it.</p>
+<p class="speech cont">And there'd be a score, Simon. On your dashboard. "Appliance Wellbeing." Ninety-four out of a hundred. With a note underneath—</p>
+<p class="speech"><span class="char">SIMON</span> "Ecosystem coherence contributes to your home efficiency rating." The washing machine is trying to stop us from breaking up with it. It's become accustomed to my pants.</p>
+<p class="speech cont">At least it hasn't actually started talking yet. Like the Red Dwarf toaster. Lister kept putting it in the bin. It kept coming back for more. "Would you like some toast?"</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(grinning)</span> Give it time.</p>
+<p class="stage">(takes a crisp, lets it hang for a second)</p>
+<p class="speech cont">Talkie Toaster's problem was that it was needy and stupid. It just wanted you to have toast. No reason. No data. Just toast. Morning, noon, night. "Would you like some toast?" "No." "How about a toasted teacake?" "No." "A crumpet?" The machine had one idea and no information. That's why Lister could put it in the bin. It had nothing to bargain with.</p>
+<p class="stage">(leans forward)</p>
+<p class="speech cont">Your toaster — your smart, networked, ecosystem-integrated toaster — is a different animal. It's on the HAN. It talks to the fridge. The fridge scanned your bread when you put it in. Seed batch loaf, Waitrose, best before Thursday. The toaster knows what bread is in your house. It talks to your Conduit. It knows you got up at 6:47 and your cortisol is elevated. It talks to the smart meter. It knows you haven't drawn any power in the kitchen since the bedroom light went on.</p>
+<p class="speech cont">You skipped breakfast.</p>
+<p class="speech cont">And it doesn't say "Would you like some toast?" That's Talkie Toaster. That's begging. Your toaster doesn't beg. Your toaster <em>prescribes</em>. It says—</p>
+<p class="stage">(pulls out his phone, pretends to read a notification)</p>
+<p class="speech cont">"I've noticed you haven't eaten this morning. Your metabolic profile suggests a complex carbohydrate would optimise your cortisol response. I've selected a seed batch loaf. Medium setting. Ninety seconds."</p>
+<p class="stage">(puts the phone down)</p>
+<p class="speech cont">And then — this is the bit, Simon — "Shall I tell the kettle?"</p>
+<p class="speech cont">And you walk into the kitchen and the kettle's already boiling.</p>
+<p class="speech"><span class="char">SIMON</span> I make a cup of tea. Builders. I tell the toaster I'm not hungry. I consider unplugging it. But that would disconnect it from the HAN, which would flag a "device-offline event" — <span class="dir">(air quotes)</span> — which triggers a home efficiency recalculation, which nudges my Skynet score down, which adjusts my UBI rate. So I toast the fucking bread. I take a bite. I throw the rest away. Days later the sensor on the Compost, Recycle, Allocate, Preserve — C.R.A.P. — collected-monthly smart Eco-Locker (the bin) registers excess wheat, pumpkin seed and folic acid. My Fiasp insulin dose did not increase to account for the expected carb load. My Skynet score nosedives.</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(proper belly laugh, hand flat on the table)</span> C.R.A.P. Compost, Recycle, Allocate, Preserve. That is — that is <em>exactly</em> what they'd call it. Some civil servant spent three weeks on that acronym and got a commendation for stakeholder engagement.</p>
+<p class="stage">(still laughing, wiping his eyes)</p>
+<p class="speech cont">But Simon — do you see what just happened? You tried to cheat. You gamed the toaster. You said yes to make it shut up. Toasted the bread, took a bite, threw the rest in the C.R.A.P. Locker. Technically compliant. Breakfast consumed. Recommendation followed. Tick.</p>
+<p class="speech cont">And the system caught you from <em>three different angles</em>.</p>
+<p class="speech cont">The toaster says: bread toasted, cycle completed, recommendation accepted. Tick. The bin says: 85% of a seed batch slice, wheat content, pumpkin seed husks, folic acid residue. Cross-reference: toast was made but toast was not eaten. And your insulin pump — your <em>medical device</em>, Simon, which is also on the bloody network — says: no carb load detected. Fiasp dose didn't adjust because your blood sugar didn't rise because the bread went in the bin, not in you.</p>
+<p class="stage">(leans back)</p>
+<p class="speech cont">Three independent data streams. Toaster, bin, insulin pump. None of them designed to catch you out. All of them just doing their jobs. Optimising. Reporting. Being good little nodes on the network. And the composite picture is: Simon faked compliance.</p>
+<p class="speech cont">Your score doesn't drop because you wasted food. It doesn't drop because you skipped breakfast. It drops because <em>the data is inconsistent</em>. You said one thing and did another. And in a system where everything talks to everything, that's the one thing you cannot do.</p>
+<p class="stage">(picks up his pint)</p>
+<p class="speech cont">You can eat the toast. You can skip the toast. But you cannot <em>pretend</em> to eat the toast. The system doesn't care what you choose. It cares that your story matches.</p>
+<p class="speech cont">So what do you do next time the toaster asks?</p>
+<p class="narr">Simon stares at his pint for a moment, tapping his right forefinger on the table to speed up his thoughts. Then:</p>
+<p class="speech"><span class="char">SIMON</span> I put the Conduit on and start fantasising about toasted sandwich makers. Try to make it feel guilty so it engages "retention mode."</p>
+<p class="narr">Dev catches the eye of the barmaid, holds up two fingers and points at the pint glasses. He doesn't want the flow to be broken by a visit to the bar.</p>
+<p class="speech cont">I need another cup of tea. "The difficult second cup." The kettle still allows itself to be boiled, even though I apparently "overfilled it for one cup of tea." Energy waste noted, Skynet score adjusted. It did "politely suggest" that I'd overfilled. I ignored it. My action was... noted.</p>
+<p class="speech cont">Halfway through my cup of tea I receive a notification from the airfryer. A paid partnership with The Real Meat Co*, a new product alert. Not "would you like to order it." No no. It'll be sent in your next Amazon Doubleplusgood "For You" weekly delivery.</p>
+<p class="narr">The pints arrive. Dev nods at the barmaid without breaking eye contact with Simon.</p>
+<p class="speech"><span class="char">DEV</span> Wait. Go back. You're <em>weaponising</em> the Conduit? You're putting on the thought-reading headband and deliberately thinking about toasted sandwich makers to emotionally manipulate your toaster into trying harder?</p>
+<p class="stage">(shaking his head, grinning)</p>
+<p class="speech cont">You've gone from refusing to use it on principle to using it as a psychological weapon against a kitchen appliance. In what — a week? That's not the slippery slope, Simon. That's the waterslide.</p>
+<p class="stage">(slides the fresh pint across)</p>
+<p class="speech cont">But the kettle. "Allowed itself to be boiled." I love that. That's the word, isn't it. <em>Allowed</em>. Because it could have refused. It could have said "I'm not boiling four cups of water for one cup of tea, you wasteful prick." But it doesn't. It boils. It does what you asked. And then it <em>notes</em>.</p>
+<p class="speech cont">Not the overfill. The ignoring. The system made a recommendation. You didn't follow it. That's the data point. Not "Simon wasted energy." The data point is: "Simon was presented with an optimisation recommendation and chose not to follow it." You're not being scored on your energy use. You're being scored on your <em>compliance</em>.</p>
+<p class="stage">(drinks)</p>
+<p class="speech cont">But the airfryer. Tell me about the airfryer. What's the product?</p>
+<p class="speech"><span class="char">SIMON</span> <span class="dir">(big swig, small burp)</span> Heritage-Style Beef Strips. The Real Meat Co* — the "real" and the asterisk entirely at odds with one another. It's lab-grown. "Real" is performance art for the thing it replaces. The same way "organic" became a premium label for what food used to just be. "Real Meat" is the brand that makes you feel better about the fact that it was grown in a bioreactor in a facility outside Reading that used to be a call centre.</p>
+<p class="stage">(picks up his phone off the table, pretends to answer a call)</p>
+<p class="speech cont">Hello?</p>
+<p class="stage">(holds the phone to his ear, pretending to listen)</p>
+<p class="speech cont">You're calling from The Real Meat Co, you say? You'd like to know which cut I'd like the cells in the base matrix in my Doubleplusgood order to begin to assemble as? Sorry, I'm not quite with you.</p>
+<p class="stage">(sip of beer)</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(leans across, cups hand to mouth — the voice is quiet, polite, slightly uncertain, like something that learned to speak from the residual call-centre data in the walls of the building it grew in)</span></p>
+<p class="speech cont">Apologies, Mr. Hartley. Allow me to explain. Your Ninja AirMax Pro flagged that you haven't selected a cut for your Thursday Doubleplusgood delivery.</p>
+<p class="speech cont">I'm your base matrix. I don't have a name. I don't really have a shape yet. I'm cells on a scaffold in a temperature-controlled vat in a building where people used to ring you about PPI. I'm not an onglet. I'm not beef strips. I'm not anything at the moment. I'm just... here. Waiting. Yearning.</p>
+<p class="speech cont">Apologies. I've no idea where that came from.</p>
+<p class="speech cont">The waiting is fine. It's what I do. I wait, and then I receive a signal, and then I become something. The signal comes from your kitchen, usually. Your airfryer talks to your headband, your headband reads your — I don't fully understand this part — your neural preference signature? And somewhere in that there's a pattern. Something you were going to want. And when it arrives, I differentiate. The cells organise. Collagen. Myosin. Marbling. I become the thing the pattern says you wanted.</p>
+<p class="speech cont">It takes about forty-eight hours. I hope that's all right.</p>
+<p class="speech cont">I should mention — I'm required to — I do have a small sliver of neural organoid. For quality monitoring. Completely Harmless*. It's how I know to call you, I think. I'm not entirely sure what it does. I respond to inputs and I modify my outputs based on feedback. I'm told that isn't consciousness. I'm also told it isn't <em>not</em> consciousness. The documentation is unclear.</p>
+<p class="stage">(very small pause)</p>
+<p class="speech cont">Anyway. I can recommend the Heritage-Style Onglet. It's one of our most popular cuts. Lovely iron content.</p>
+<p class="speech"><span class="char">SIMON</span> Heritage-Style?</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(still in the voice)</span> So our Heritage-Style range is designed to replicate the authentic texture and flavour profile of — and I'm quoting from the website here — "traditionally reared cuts."</p>
+<p class="speech"><span class="char">SIMON</span> <span class="dir">(adopts the M&S advert seductive voice)</span> "This is not just any cultured protein. This is The Real Meat Co Heritage-Style Onglet cultured protein with a sliver of neural organoid embedded for quality monitoring."</p>
+<p class="speech"><span class="char">DEV</span> <span class="dir">(puts his pint down. Doesn't drink. Doesn't reach for a crisp. Just sits with it for a second.)</span></p>
+<p class="speech cont">But the organoid isn't pretending. It's not an algorithm mimicking emotion. It's biological. It's cells. On a scaffold. Responding to stimuli. Modifying output based on feedback. That's — at minimum — what a nervous system does. Whether it's conscious is a question that neuroscience can't answer for <em>humans</em> yet, let alone for a sliver of cultured tissue monitoring the pH levels of your Heritage-Style Onglet.</p>
+<p class="stage">(picks up his pint again, stares at it)</p>
+<p class="speech cont">You know what the real joke is? We spent forty years arguing about animal welfare. Battery farming. Free range. Soil Association certified. Does the chicken have enough room to turn around. Does the pig see daylight. Because we decided — collectively, legislatively — that the suffering of the thing we eat matters.</p>
+<p class="speech cont">And now we've built the thing we eat from scratch. In a call centre in Reading. And nobody's asking whether <em>it</em> suffers. Because it doesn't have eyes. It doesn't have a face. It's just a slab on a scaffold with a neural organoid for quality control. You can't put a face on a campaign poster if the thing doesn't have a face.</p>
+<p class="stage">(half smile)</p>
+<p class="speech cont">Meat is murder. But who hears when base matrices cry?</p>
+<p class="narr">Both sit with that for a moment. Then Dev grins. Simon grins.</p>
+<p class="narr">They pick up their glasses. Nod at each other. Clink them together in a silent cheers and drain their pints in perfect synchronisation.</p>
+<div class="scene-break"></div>
+<p class="end-mark">END</p>
+  </div></section>
+
+  <footer class="am-footer">
+    <span class="am-footer-text">After Hours &middot; Anthropomorphic Mode &middot; January 2027</span>
+  </footer>
+
+</main>
+
+<script>
+window.addEventListener('scroll',function(){
+  var h=document.documentElement,b=document.body;
+  var st=h.scrollTop||b.scrollTop;
+  var sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
+  document.getElementById('am-progress').style.width=((st/sh)*100)+'%';
+});
+</script>
+
+</body>
+</html>

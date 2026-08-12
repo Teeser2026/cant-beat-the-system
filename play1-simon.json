@@ -692,7 +692,7 @@
       "id": "2a",
       "num": "T2a",
       "title": "We Hope You Understand",
-      "date": "Mid-October 2026",
+      "date": "Mid October 2026",
       "paras": [
         {
           "t": "The weak mid-October sun has yet to rise fully over the tallest oak tree in the garden. Most of the leaves, soft, rusty brown, are still clinging to its branches. Autumn is Amy’s favourite month. The ferocious heat of the summer has faded into something more ambient. England’s green and pleasant land has morphed into glorious golden hues. I appreciate its beauty too, but I know what lies ahead — the cold, grey, bleak, drizzly, never-ending march of winter."
@@ -972,6 +972,17 @@
       }
     },
     {
+      "id": "5aa",
+      "num": "T5aa",
+      "title": "Thinking Faster",
+      "date": "Mid November 2026",
+      "paras": [
+        {
+          "t": "It’s still my thought. It just arrives quicker."
+        }
+      ]
+    },
+    {
       "id": "5a",
       "num": "T5a",
       "title": "The All-Seeing Eye",
@@ -1141,17 +1152,6 @@
           "The Joker. I’ve seen the absurdity. The only sane response to an insane system is laughter. Or madness. The line between them is thinner than anyone admits."
         ]
       }
-    },
-    {
-      "id": "5aa",
-      "num": "T5aa",
-      "title": "Thinking Faster",
-      "date": "Mid-November 2026",
-      "paras": [
-        {
-          "t": "It’s still my thought. It just arrives quicker."
-        }
-      ]
     },
     {
       "id": "5b",
@@ -9186,7 +9186,7 @@
             "tag": "",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "surveillance-identity",
+            "threadRef": "surveillance-architecture",
             "time": "07:01",
             "date": "7 Feb 2027"
           }
@@ -13445,7 +13445,9 @@
             "tag": "TECH",
             "cls": "",
             "date": "15 Nov 2026",
-            "time": "11:54"
+            "time": "11:54",
+            "type": "thread-notify",
+            "threadRef": "science-technology"
           }
         ]
       },
@@ -13781,6 +13783,58 @@
           "url": "https://walls.rip/esim",
           "src": "dev",
           "turn": "17c"
+        },
+        {
+          "text": "Dev — Nomad, Nano, and the ten-point list",
+          "src": "dev",
+          "turn": "18",
+          "article": {
+            "style": "chat",
+            "source": "Signal",
+            "title": "Dev & Simon",
+            "date": "7 February 2027",
+            "messages": [
+              {
+                "from": "simon",
+                "text": "Thoughts? projectnomad.us",
+                "time": "07:01",
+                "link": true
+              },
+              {
+                "from": "Dev",
+                "text": "Decent concept. Kindergarten execution. That logo. Military surplus aesthetic, ammo-box-with-antenna energy. The prepper market dressing up civilian tech in tactical cosplay.",
+                "time": "07:14"
+              },
+              {
+                "from": "simon",
+                "text": "Thought as much. What would you do?"
+              },
+              {
+                "from": "Dev",
+                "text": "I’d have a server rack in a farmhouse in Cumbria. You’ve got a 7-year-old iMac in a hallway. Different conversation. But here. At the very least do 1 to 3."
+              },
+              {
+                "from": "Dev",
+                "text": "1. Download some on-device AI YOU control. Ollama + Qwen3 8B. Best your Mac can handle. It’s not Claude. It’s not even close. But if the cloud goes dark it’ll answer questions, draft documents, and think slower than you’d like but faster than a library book. Download it now while you’ve got bandwidth. You won’t do it later. Do not rely on Gemini Nano or similar. Nano is on-device but it’s Google’s model, Google’s weights, Google’s update schedule. That’s not local. That’s occupation. Their model, your hardware. You can’t even see what it does when it reconnects.\n\n2. Organic Maps. Full UK offline download. Your entire life runs through Google. When Google needs permission from a server to tell you where the A272 is, you’ll wish you’d spent four minutes on this.\n\n3. Print your prescriptions. All of them. Fiasp, Libre sensor codes, dosage, pharmacy address, GP surgery, NHS number. Paper. Folder. Front door. This isn’t optional. If your phone dies and the pharmacy system is down, this is the difference between managing and not managing. Do it tonight.\n\n4. Kiwix. Offline Wikipedia, medical reference, survival basics. 90GB. Your Mac can handle that. The internet’s knowledge without the internet’s permission.\n\n5. External SSD. Encrypted. VeraCrypt. Everything that matters. Photos, docs, insurance, deeds, kids’ school records. Not your desk drawer. Your coat pocket. If they reset the ledger you need to prove what was yours.\n\n6. Meshtastic. LoRa radio. Thirty quid on Amazon. Text messages without internet or cellular. 5km line of sight. Buy two. Give one to Amy. If the phones go down this is how you find each other.\n\n7. Solar panel + battery bank. Not the shitty festival one. Bluetti or EcoFlow. Keep your devices alive for a week when the grid wobbles. It will wobble.\n\n8. Wind-up radio. DAB and FM. Not for what they tell you. For knowing when they stop telling you.\n\n9. Faraday bag. Phone goes in when you’re not using it. Won’t save you. Might buy you a breath.\n\n10. Talk to your neighbours. Not about firmware. Not about tokenisation. About the street. Who’s elderly. Who’s got kids. Who can’t get to a shop. Who’s got a generator. When it goes dark your neighbours are your infrastructure. Not your Mac."
+              },
+              {
+                "from": "simon",
+                "text": "No food. No water. No cash. You absolutely sure?"
+              },
+              {
+                "from": "Dev",
+                "text": "If you need food, water and cash I’m a Dutchman. And you’d be fucked anyway. You’d need weaponry too."
+              },
+              {
+                "from": "simon",
+                "text": "You have weaponry?"
+              },
+              {
+                "from": "Dev",
+                "text": "I’m as protected as I need to be. Go buy some bottled water and spam if it makes you feel better. They won’t starve us. Anyway, laters mate. Do 1–3. At least. You fucking muppet."
+              }
+            ]
+          }
         }
       ]
     },
@@ -14155,6 +14209,19 @@
             "title": "Pre-loaded",
             "date": "21 February 2027",
             "body": "<div class=\"x-header\"><div class=\"x-avatar\">DD</div><div class=\"x-name\">Distributed Denial</div><div class=\"x-handle\">@DistributedDenial</div></div><div class=\"x-body\"><p>1/ I've been offline for five weeks. So have you. So has everyone.</p><p>2/ The only information source during the blackout was ARC -- the emergency platform that auto-installed on your phone without consent, that you enabled notifications for because you needed to know which shops were open.</p><p>3/ For five weeks, the explanation for what happened on February 14th existed in exactly one place: the government's own communication channel. There was no alternative attribution because there was no alternative information source.</p><p>4/ Nobody contested the narrative. Not because it was uncontestable. Because there was nobody to contest it. The explanation ran unopposed in an information vacuum.</p><p>5/ Now we're back. Now there are voices. And the first thing to notice is that the explanation was ready before the question was. 'Sophisticated AI-assisted cyberattack.' Twenty-three nations. The attribution was instant because the attribution had been rehearsed -- in coverage, in policy documents, in evaluation reports, in NCSC advisories -- for nine months.</p><p>6/ Ask yourself when that sentence became pre-loaded. The answer is summer 2026.</p><p>7/ The question was never whether the attack was real. The question is why the explanation was ready before the fires were out. And why, for five weeks, nobody was allowed to ask.</p></div><div class=\"x-timestamp\">4:17 AM &middot; Feb 21, 2027</div><div class=\"x-metrics\">&cularr; 11.2K &#x1f501; 67.3K &hearts; 142K &#x1f4ca; 18.9M</div>"
+          }
+        },
+        {
+          "text": "WIRED UK — The headband that helps your kids think faster",
+          "src": "simon",
+          "turn": "5aa",
+          "article": {
+            "style": "news",
+            "source": "WIRED UK",
+            "title": "The headband that helps your kids think faster — Kent school among first UK pilot sites",
+            "date": "15 November 2026",
+            "body": "<p>A secondary school in Maidstone, Kent, has become one of the first UK sites to trial Conduit Labs’ cognitive-assist headband — a lightweight EEG device that monitors students’ neural activity during learning tasks and uses the data to reshape the study environment around them in real time.</p>\n<p>The trial, which began with a cohort of Year 10 students in early November, is part of Conduit’s expansion of its beta programme to what the San Francisco-based company describes as “select international educational partners.” Schools in Denmark, Singapore and New Zealand are also participating.</p>\n<p>The headband — a slim, matte-grey band worn across the forehead — uses proprietary neural-signal processing to measure patterns of cognitive engagement: attention, confusion, fatigue, comprehension. It is strictly read-only. It does not stimulate the brain, does not send signals back, and does not alter cognition directly. What it does is feed a continuous stream of cognitive data to Conduit’s AI platform, which then controls everything the student interacts with. The platform resequences revision materials in real time, surfaces related concepts when it detects the onset of confusion, adjusts the pacing of exercises to match individual comprehension speed, and quietly removes content the student’s neural signature suggests she has already consolidated. Conduit calls it “comprehension scaffolding.”</p>\n<p>The distinction is subtle but significant. The headband reads. The platform writes — not to the brain, but to the entire informational environment the brain is working inside. The student never encounters the friction she would have met without the device. She experiences this as faster, clearer thinking. Conduit’s marketing leans into that experience. “It’s like autocomplete for thinking,” one sixteen-year-old told WIRED US during an earlier pilot in Portland, Oregon. “It’s still my thought. It just arrives quicker.”</p>\n<p>The technology has roots in experiments that drew international criticism. In 2018 and 2019, schools in Hangzhou, China, fitted primary-school children with EEG headbands to monitor concentration in real time, with colour-coded data fed directly to teachers and parents. Red meant your child wasn’t paying attention. Simultaneously, surveillance company Hikvision installed facial-recognition systems in Chinese classrooms, scanning students every thirty seconds and cataloguing emotions and behaviours. Western media coverage was overwhelmingly negative. Within a year, some Chinese parents were fundraising to install the headbands in their own children’s schools.</p>\n<p>Conduit’s founders are keen to distance their product from the Chinese experiments. “That was compliance monitoring,” said co-founder Dr Lena Yeoh at TechCrunch Disrupt in September. “We’re not watching whether students pay attention. We’re helping their brains get where they were already going.”</p>\n<p>The company’s origins have drawn attention of a different kind. Conduit was co-founded in July by researchers including Naomi Bashkansky, a former member of OpenAI’s alignment team — the group responsible for ensuring AI systems remain safe. Bashkansky, who had previously designed OpenAI’s internal AGI-readiness onboarding programme, left the company to join Conduit after a single day’s gap. In a widely-read blog post titled “Why I’m leaving OpenAI to build telepathy,” she described a vision progressing from non-invasive neural reading to what she termed “write access” — the AI sending information directly back to the brain — by 2030, and full cognitive integration by 2035. The post was viewed 2.8 million times.</p>\n<p>“I feel good about the vision, because it builds towards a more human future,” Bashkansky wrote.</p>\n<p>The Kent trial operates well within the early, read-only stages of that trajectory. Neural data is processed on the device itself — though Conduit’s privacy documentation notes that “summary metrics” are uploaded to company servers for model improvement. The headband is optional, and the school’s consent process was designed with guidance from the Information Commissioner’s Office.</p>\n<p>Not all parents are satisfied with those assurances. “My daughter’s school just signed up for the Conduit trial,” one Kent mother wrote on X. “She’s excited. She opted-in. Nobody asked us. I feel sick.” The post, which has been shared over 4,000 times, raises questions about Gillick competency — the legal principle that allows children under 16 to consent to treatment if they are deemed sufficiently mature. Several legal commentators have suggested that neural data collection in schools may fall into a grey area not yet tested by the courts.</p>\n<p>Early results from the US trials have been promising, if unverified. Conduit’s internal data, shared at two EdTech conferences in October, showed that students wearing the headband outperformed a matched control group by 22 per cent on a standardised comprehension test. The data has not been independently replicated or peer-reviewed. Critics have noted that the comparison is structurally asymmetric: the control group used static study materials while the headband group’s materials were being continuously optimised by an AI responding to their individual neural state — a comparison less of cognition than of platform.</p>\n<p>The Department for Education has expressed “interest” in the Kent trial’s outcomes. Ofsted has sent observers. The BBC ran a segment in October asking: “Could this headband close the attainment gap?” — the question that makes the technology politically irresistible, regardless of what the data eventually shows.</p>\n<p>Three more UK schools — two in London, one in Manchester — have signed partnership agreements. Conduit has announced a “schools accelerator programme” offering subsidised devices to state schools in high-deprivation areas. The waiting list, according to the company, currently exceeds 200 schools.</p>\n<p>Professor Sarah Chen, a cognitive neuroscientist at UCL who is not involved in the trial, urged caution. “The device is read-only, but the system is not,” she said. “The student’s entire informational environment is being reshaped based on neural surveillance. We don’t yet understand the long-term effects of externalising metacognition in developing brains — of never allowing a child to sit with confusion long enough to develop their own strategies for resolving it. The fact that it works in the short term may be precisely the problem.”</p>\n<p>The students, for their part, are less equivocal. At the Kent school, participants described revision as “less of a slog” and homework as “weirdly productive.” One Year 10 student said she’d asked her parents to buy the consumer version — currently in pre-order at $349 — for home use.</p>\n<p>“I don’t see what the fuss is about,” she said. “It’s just a headband.”</p>",
+            "footer": "Technology / Education / Neural Interfaces"
           }
         }
       ]
@@ -14610,69 +14677,6 @@
           "url": "My_Iron_Lung.html"
         }
       ]
-    },
-    {
-      "id": "surveillance-identity",
-      "items": [
-        {
-          "text": "Project Nomad — offline knowledge, maps, AI and educational courses",
-          "src": "simon",
-          "turn": "18"
-        },
-        {
-          "text": "Dev — Nomad, Nano, and the ten-point list",
-          "src": "dev",
-          "turn": "18",
-          "article": {
-            "style": "chat",
-            "source": "Signal",
-            "title": "Dev & Simon",
-            "date": "7 February 2027",
-            "messages": [
-              {
-                "from": "simon",
-                "text": "Thoughts? projectnomad.us",
-                "time": "07:01",
-                "link": true
-              },
-              {
-                "from": "Dev",
-                "text": "Decent concept. Kindergarten execution. That logo. Military surplus aesthetic, ammo-box-with-antenna energy. The prepper market dressing up civilian tech in tactical cosplay.",
-                "time": "07:14"
-              },
-              {
-                "from": "simon",
-                "text": "Thought as much. What would you do?"
-              },
-              {
-                "from": "Dev",
-                "text": "I’d have a server rack in a farmhouse in Cumbria. You’ve got a 7-year-old iMac in a hallway. Different conversation. But here. At the very least do 1 to 3."
-              },
-              {
-                "from": "Dev",
-                "text": "1. Download some on-device AI YOU control. Ollama + Qwen3 8B. Best your Mac can handle. It’s not Claude. It’s not even close. But if the cloud goes dark it’ll answer questions, draft documents, and think slower than you’d like but faster than a library book. Download it now while you’ve got bandwidth. You won’t do it later. Do not rely on Gemini Nano or similar. Nano is on-device but it’s Google’s model, Google’s weights, Google’s update schedule. That’s not local. That’s occupation. Their model, your hardware. You can’t even see what it does when it reconnects.\n\n2. Organic Maps. Full UK offline download. Your entire life runs through Google. When Google needs permission from a server to tell you where the A272 is, you’ll wish you’d spent four minutes on this.\n\n3. Print your prescriptions. All of them. Fiasp, Libre sensor codes, dosage, pharmacy address, GP surgery, NHS number. Paper. Folder. Front door. This isn’t optional. If your phone dies and the pharmacy system is down, this is the difference between managing and not managing. Do it tonight.\n\n4. Kiwix. Offline Wikipedia, medical reference, survival basics. 90GB. Your Mac can handle that. The internet’s knowledge without the internet’s permission.\n\n5. External SSD. Encrypted. VeraCrypt. Everything that matters. Photos, docs, insurance, deeds, kids’ school records. Not your desk drawer. Your coat pocket. If they reset the ledger you need to prove what was yours.\n\n6. Meshtastic. LoRa radio. Thirty quid on Amazon. Text messages without internet or cellular. 5km line of sight. Buy two. Give one to Amy. If the phones go down this is how you find each other.\n\n7. Solar panel + battery bank. Not the shitty festival one. Bluetti or EcoFlow. Keep your devices alive for a week when the grid wobbles. It will wobble.\n\n8. Wind-up radio. DAB and FM. Not for what they tell you. For knowing when they stop telling you.\n\n9. Faraday bag. Phone goes in when you’re not using it. Won’t save you. Might buy you a breath.\n\n10. Talk to your neighbours. Not about firmware. Not about tokenisation. About the street. Who’s elderly. Who’s got kids. Who can’t get to a shop. Who’s got a generator. When it goes dark your neighbours are your infrastructure. Not your Mac."
-              },
-              {
-                "from": "simon",
-                "text": "No food. No water. No cash. You absolutely sure?"
-              },
-              {
-                "from": "Dev",
-                "text": "If you need food, water and cash I’m a Dutchman. And you’d be fucked anyway. You’d need weaponry too."
-              },
-              {
-                "from": "simon",
-                "text": "You have weaponry?"
-              },
-              {
-                "from": "Dev",
-                "text": "I’m as protected as I need to be. Go buy some bottled water and spam if it makes you feel better. They won’t starve us. Anyway, laters mate. Do 1–3. At least. You fucking muppet."
-              }
-            ]
-          }
-        }
-      ],
-      "label": "Surveillance & Identity"
     }
   ],
   "songs": [

@@ -14627,14 +14627,14 @@
     },
     {
       "id": "surveillance-identity",
-      "title": "Surveillance & Identity",
       "items": [
         {
           "text": "Project Nomad — offline knowledge, maps, AI and educational courses",
           "src": "simon",
           "turn": "18"
         }
-      ]
+      ],
+      "label": "Surveillance & Identity"
     }
   ],
   "songs": [

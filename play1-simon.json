@@ -7023,7 +7023,7 @@
         },
         {
           "t": "<em>Well. It’s for the best, isn’t it. If they’re doing it properly this time, it’s for the best.</em>",
-          "cls": "q"
+          "c": "q"
         },
         {
           "t": "Kate puts her glass down. And that’s when she breaks. Not dramatically. No sound at first. Her face just…changes. Compresses. The professionalism drains out of it and what’s left is a woman at a kitchen table who’s emotionally spent from watching old people, kind people, be simultaneously frightened and grateful and accepting. Amy’s arm goes around her. I put my hand on her wrist. We don’t mention false flags or firmware or latent biometric systems or technocracy. We simply comfort our friend."
@@ -8515,7 +8515,7 @@
             "tag": "AI",
             "cls": "",
             "type": "thread-notify",
-            "threadRef": "reader-own",
+            "threadRef": "science-technology",
             "time": "23:41",
             "date": "5 Dec 2026"
           }
@@ -10459,7 +10459,7 @@
         ]
       },
       {
-        "sec": "Song",
+        "sec": "Song · 3am",
         "cards": [
           {
             "src": "The Stone Roses",
@@ -10468,7 +10468,8 @@
             "tag": "Don’t count your chickens",
             "date": "18 Feb 2027",
             "time": "03:01",
-            "cls": ""
+            "cls": "",
+            "type": "song"
           }
         ]
       }
@@ -13601,7 +13602,7 @@
             "tag": "Weather",
             "date": "3 Oct 2026",
             "time": "07:15",
-            "img": "met-office-rain-se.webp"
+            "img": "img-met-office-rain-se.webp"
           }
         ]
       },

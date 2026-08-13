@@ -667,7 +667,7 @@ html, body {
 /* ── LAYOUT ── */
 .wrap {
   display: flex;
-  height: calc(100vh - 42px);
+  height: 100vh;
   margin-top: 0;
   overflow: hidden;
   margin-right: 740px;
@@ -999,16 +999,16 @@ html, body {
 .right {
   position: fixed;
   right: 280px;
-  top: 0;
-  bottom: 42px;
+  top: 8px;
+  bottom: 8px;
   width: 460px;
   background: var(--bg-r);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 100;
-  border-left: 1px solid var(--div);
-  border-radius: 6px;
+  border: 1px solid var(--div);
+  border-radius: 10px;
 }
 
 .tabs {
@@ -2794,11 +2794,14 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100vh - 136px - var(--safe-bottom));
-    /* 52px header + 32px ticker + 52px tabs = 136px */
+    height: calc(100vh - 104px - var(--safe-bottom));
+    /* 52px header + 52px tabs = 104px — ticker retired S279 */
   }
   .left {
     border-right: none;
+  }
+  body.phase-1 .left {
+    background-color: #EBE3D2; /* warmer than desktop #E8E2D6 — compensates for iPhone cool bias */
   }
   .prose-wrap {
     padding: 32px 20px 80px;

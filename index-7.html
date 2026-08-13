@@ -2084,14 +2084,14 @@ body.phase-3 .song-context {
   font-size: 12px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(200,196,184,0.2);
+  color: rgba(200,196,184,0.35);
   margin-top: 52px;
   opacity: 0;
   animation: intro-fade-in 2s ease-out 10s forwards;
 }
 
 #intro-screen:hover .intro-enter {
-  color: rgba(200,196,184,0.5);
+  color: rgba(200,196,184,0.6);
 }
 
 #intro-screen .intro-ambient {
@@ -2099,10 +2099,10 @@ body.phase-3 .song-context {
   bottom: 24px;
   right: 24px;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(200,196,184,0.15);
+  color: rgba(200,196,184,0.3);
   cursor: pointer;
   opacity: 0;
   animation: intro-fade-in 1.5s ease-out 6s forwards;
@@ -2110,7 +2110,7 @@ body.phase-3 .song-context {
   z-index: 10001;
 }
 #intro-screen .intro-ambient:hover {
-  color: rgba(200,196,184,0.4);
+  color: rgba(200,196,184,0.55);
 }
 
 #intro-screen.fade-out {
@@ -2536,6 +2536,7 @@ body.game-active .ticker-bar { display: flex; }
   cursor: pointer; z-index: 9999; padding: 8px 12px;
   border: 1px solid rgba(107,103,96,.15); border-radius: 3px;
   transition: opacity .3s;
+  display: none;
 }
 .dev-skip:hover { opacity: .6; }
 
@@ -2964,12 +2965,12 @@ body.game-active .ticker-bar { display: flex; }
     letter-spacing: 2px;
   }
   #intro-screen .intro-tagline {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 1.5px;
     padding: 0 12px;
   }
   #intro-screen .intro-enter {
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 2px;
   }
 
@@ -7909,6 +7910,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 // ── NAV SETUP (mode-dependent) ──
 if (DEV) {
   document.getElementById('devBar').style.display = '';
+  document.querySelectorAll('.dev-skip').forEach(el => el.style.display = '');
   document.getElementById('readerBar').style.display = 'none';
   document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
   document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));

@@ -13597,11 +13597,11 @@
           {
             "src": "BBC News",
             "ttl": "Weather warning issued for heavy rain across South East",
-            "snip": "From drought to it never stops bloody raining.",
+            "snip": "From ‘drought’ to ‘it never stops bloody raining.’",
             "tag": "Weather",
             "date": "3 Oct 2026",
             "time": "07:15",
-            "img": "img/met-office-rain-se.webp"
+            "img": "met-office-rain-se.webp"
           }
         ]
       },
@@ -13660,7 +13660,8 @@
             "snip": "I just can’t explain",
             "tag": "there’s gonna be some trouble",
             "date": "3 Oct 2026",
-            "time": "21:00"
+            "time": "21:00",
+            "type": "song"
           },
           {
             "src": "Talking Heads",
@@ -13668,7 +13669,8 @@
             "snip": "And you may ask yourself, well, how did I get here?",
             "tag": "same as it ever was",
             "date": "3 Oct 2026",
-            "time": "21:05"
+            "time": "21:05",
+            "type": "song"
           }
         ]
       }
@@ -14437,16 +14439,18 @@
           "turn": "2a",
           "article": {
             "title": "Sussex NHS trust suspends online booking after ‘automated flood’ fills all appointments within hours",
-            "src": "BBC South East",
             "date": "17 October 2026",
-            "body": "<p><strong>Sussex Community NHS Foundation Trust</strong> has suspended its online appointment booking system after what it described as an “unprecedented volume of automated requests” filled every available GP, outpatient and screening appointment across the trust within a matter of hours on Friday morning.</p>\n\n<p>Staff arriving for morning shifts found every bookable slot across 47 practices occupied. Patients attempting to book routine appointments, prescription reviews and screening follow-ups were met with a message stating no availability existed until late January 2027.</p>\n\n<p>The trust confirmed that no patient data had been accessed and no clinical systems were affected. The attack — if it can be called that — exploited no vulnerability beyond the booking system’s own design. The automated agents used the public-facing booking portal in exactly the way a patient would, submitting valid registration details and selecting available time slots. They simply did it faster, and at a scale no human user could replicate.</p>\n\n<p>“This was not a data breach in any conventional sense,” said Dr Helen Carver, the trust’s Chief Digital Officer. “The system was used as intended. The volume was not.”</p>\n\n<p>The trust has reverted to telephone booking while it implements what it described as “rate-limiting and behavioural verification measures.” Patients with urgent needs are advised to contact their practice directly. Routine appointments booked through the system during the affected period are being reviewed individually to identify and remove fraudulent bookings.</p>\n\n<p>NHS England confirmed it was aware of the incident and was working with the National Cyber Security Centre. A spokesperson said the incident was “being treated as an isolated event” but declined to comment on whether similar booking systems in other trusts were considered vulnerable to the same approach.</p>\n\n<p>The NCSC issued a brief advisory noting that “automated interaction with public-facing digital services is an emerging area of concern” and recommending that health service providers review access controls on patient-facing booking platforms.</p>\n\n<p>Digital rights groups were less measured. “This isn’t a sophisticated attack,” said Dr Aarav Mehta of the Open Digital Health Foundation. “A first-year computer science student could write a script that does this. The question isn’t how someone did it. The question is why every NHS trust in the country is running a booking system that can’t distinguish between a patient and a bot.”</p>\n\n<p>The trust declined to speculate on the motive behind the flooding. No individual or group has claimed responsibility. The automated accounts used to make the bookings were registered with disposable email addresses and contained no identifying information.</p>\n\n<p>One senior NHS digital strategist, speaking on condition of anonymity, described the incident as “a proof of concept dressed as vandalism. Whoever did this wasn’t trying to disrupt healthcare. They were trying to demonstrate that healthcare could be disrupted.”</p>\n\n<p>Patient groups have expressed frustration. Margaret Hale, 74, from Uckfield, told BBC South East she had been trying to rebook her annual diabetic eye screening since Friday. “I’ve been on hold for forty-five minutes twice now. They keep saying try again tomorrow. I just want my appointment.”</p>\n\n<p>The trust said it expected normal booking services to resume within three to four working days.</p>"
+            "body": "<p><strong>Sussex Community NHS Foundation Trust</strong> has suspended its online appointment booking system after what it described as an “unprecedented volume of automated requests” filled every available GP, outpatient and screening appointment across the trust within a matter of hours on Friday morning.</p>\n\n<p>Staff arriving for morning shifts found every bookable slot across 47 practices occupied. Patients attempting to book routine appointments, prescription reviews and screening follow-ups were met with a message stating no availability existed until late January 2027.</p>\n\n<p>The trust confirmed that no patient data had been accessed and no clinical systems were affected. The attack — if it can be called that — exploited no vulnerability beyond the booking system’s own design. The automated agents used the public-facing booking portal in exactly the way a patient would, submitting valid registration details and selecting available time slots. They simply did it faster, and at a scale no human user could replicate.</p>\n\n<p>“This was not a data breach in any conventional sense,” said Dr Helen Carver, the trust’s Chief Digital Officer. “The system was used as intended. The volume was not.”</p>\n\n<p>The trust has reverted to telephone booking while it implements what it described as “rate-limiting and behavioural verification measures.” Patients with urgent needs are advised to contact their practice directly. Routine appointments booked through the system during the affected period are being reviewed individually to identify and remove fraudulent bookings.</p>\n\n<p>NHS England confirmed it was aware of the incident and was working with the National Cyber Security Centre. A spokesperson said the incident was “being treated as an isolated event” but declined to comment on whether similar booking systems in other trusts were considered vulnerable to the same approach.</p>\n\n<p>The NCSC issued a brief advisory noting that “automated interaction with public-facing digital services is an emerging area of concern” and recommending that health service providers review access controls on patient-facing booking platforms.</p>\n\n<p>Digital rights groups were less measured. “This isn’t a sophisticated attack,” said Dr Aarav Mehta of the Open Digital Health Foundation. “A first-year computer science student could write a script that does this. The question isn’t how someone did it. The question is why every NHS trust in the country is running a booking system that can’t distinguish between a patient and a bot.”</p>\n\n<p>The trust declined to speculate on the motive behind the flooding. No individual or group has claimed responsibility. The automated accounts used to make the bookings were registered with disposable email addresses and contained no identifying information.</p>\n\n<p>One senior NHS digital strategist, speaking on condition of anonymity, described the incident as “a proof of concept dressed as vandalism. Whoever did this wasn’t trying to disrupt healthcare. They were trying to demonstrate that healthcare could be disrupted.”</p>\n\n<p>Patient groups have expressed frustration. Margaret Hale, 74, from Uckfield, told BBC South East she had been trying to rebook her annual diabetic eye screening since Friday. “I’ve been on hold for forty-five minutes twice now. They keep saying try again tomorrow. I just want my appointment.”</p>\n\n<p>The trust said it expected normal booking services to resume within three to four working days.</p>",
+            "style": "news",
+            "source": "BBC South East",
+            "footer": "BBC South East"
           }
         }
       ]
     },
     {
       "id": "pattern-recognition",
-      "label": "Convergences",
+      "label": "Signal & Noise",
       "items": [
         {
           "text": "Psychohistory Prediction Engine — Introduction",
@@ -14913,7 +14917,8 @@
           "src": "george",
           "turn": "0"
         }
-      ]
+      ],
+      "label": "Odds & Ends"
     }
   ],
   "songs": [
@@ -15240,6 +15245,24 @@
       "context": "Sent the sketch to Dev. Poured a whisky. Put the headphones on. The Machine welcomed me.",
       "src": "simon",
       "turn": "13a"
+    },
+    {
+      "id": "s037",
+      "title": "Now My Heart is Full",
+      "artist": "Morrissey",
+      "url": "https://open.spotify.com/track/69hDN5F5qaGC9d8UuVc8Vq?si=4210b78a566a4dd6",
+      "context": "So I won’t even try to",
+      "src": "simon",
+      "turn": 0
+    },
+    {
+      "id": "s038",
+      "title": "Once in a Lifetime",
+      "artist": "Talking Heads",
+      "url": "https://open.spotify.com/track/1Tr4K5MU5XYE44umXGDndd?si=7c6514e6197946f1",
+      "context": "Life on autopilot",
+      "src": "simon",
+      "turn": 0
     }
   ],
   "ticker": {

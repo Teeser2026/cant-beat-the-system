@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anthropomorphic Mode</title>
 <meta property="og:title" content="Anthropomorphic Mode">
-<meta property="og:description" content="A pub. Two pints. A weeknight in January.">
+<meta property="og:description" content="A pub. A few pints. A weeknight in January.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://teeser2026.github.io/cant-beat-the-system/am-cover.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@ body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,se
 .am-cover-title{font-family:'Spectral',serif;font-weight:500;font-size:clamp(48px,6.8vw,86px);line-height:1.0;letter-spacing:-.018em;color:#e4dcd4;margin:26px 0 0;max-width:16ch}
 .am-cover-rule{width:64px;height:2px;background:#aa7a4a;margin:34px 0 28px}
 .am-cover-sub{font-family:'Spectral',serif;font-size:23px;line-height:1.5;color:#b8b0a8;margin:0;max-width:42ch}
-.am-cover-meta{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#5a4a3a;text-transform:uppercase;white-space:nowrap}
+.am-cover-meta{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:46px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:#8a7a64;text-transform:uppercase;white-space:nowrap}
 .am-cover-dot{width:5px;height:5px;background:#aa7a4a;transform:rotate(45deg)}
 .am-cover-scroll{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.26em;color:#8a6a4a;text-transform:uppercase}
 .am-cover-scroll span:last-child{font-size:18px;animation:amCue 1.8s ease-in-out infinite}
@@ -65,23 +65,23 @@ body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,se
 .stage{
   font-family:'Spectral',serif;
   font-style:italic;
-  font-size:16.5px;line-height:1.72;
-  color:#7a6a54;
+  font-size:17.5px;line-height:1.72;
+  color:#8a7a5e;
   margin:0 0 22px;
   max-width:680px;
 }
 .narr{
   font-family:'Spectral',serif;
   font-style:italic;
-  font-size:17px;line-height:1.72;
-  color:#7a6a54;
+  font-size:17.5px;line-height:1.72;
+  color:#8a7a5e;
   margin:0 0 26px;
   max-width:680px;
   padding:8px 0;
 }
 .dir{
   font-style:italic;
-  color:#7a6a54;
+  color:#8a7a5e;
 }
 .scene-break{
   width:48px;height:2px;
@@ -104,12 +104,14 @@ body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,se
 /* ── responsive ── */
 @media(max-width:720px){
   .am-cover-title{font-size:42px!important}
+  .am-cover{min-height:100vh}
+  .am-cover-img{background-position:center center}
   .am-wrap{padding:0 24px}
   .am-cover-wrap{padding:0 24px}
   .speech{font-size:17px}
-  .narr{font-size:16px}
-  .stage{font-size:15.5px}
-  .am-cover{min-height:70vh}
+  .narr{font-size:17px}
+  .stage{font-size:17px}
+  .am-cover-meta{font-size:11px;gap:16px}
 }
 </style>
 </head>
@@ -129,7 +131,7 @@ body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,se
       <div class="am-cover-label">After Hours</div>
       <h1 class="am-cover-title">Anthropomorphic Mode</h1>
       <div class="am-cover-rule"></div>
-      <p class="am-cover-sub">A pub. Two pints. A weeknight in January.</p>
+      <p class="am-cover-sub">A pub. A few pints. A weeknight in January.</p>
       <div class="am-cover-meta">
         <span>Two men who&rsquo;ve known each other since school</span>
         <span class="am-cover-dot"></span>
@@ -140,7 +142,7 @@ body{margin:0;background:#0a0806;color:#b8b0a8;font-family:'Spectral',Georgia,se
 
   <!-- ══ SCRIPT ══ -->
   <section class="am-body"><div class="am-wrap">
-<p class="narr">A pub. Two pints on the bar table. Dev opens a bag of crisps and tears the packet down the side, splaying the bag out flat to reveal the contents for easy access and placing it in the middle of the table.</p>
+<p class="narr">Dev puts down two pints on the table. He opens a bag of crisps and places it between the ales, tearing the packet along the side, splaying it out flat to reveal the contents for easy access.</p>
 <p class="speech"><span class="char dev">DEV</span> There you go, mate. Worcester Sauce flavour.</p>
 <p class="speech"><span class="char simon">SIMON</span> "Flavour" indeed. You do spoil me. Cheers buddy.</p>
 <p class="speech"><span class="char dev">DEV</span> Cheers.</p>

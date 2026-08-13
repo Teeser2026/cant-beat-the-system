@@ -226,7 +226,16 @@
         {
           "t": "I have a job that doesn’t slowly kill me. A wife and children that mean more to me than I ever felt possible. Yet I still feel there’s a part of me that’s just letting the days go by."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Days",
+        "prompt": "Thank you for the days.",
+        "opts": [
+          "Friday I'm In Love",
+          "Saturday Night at the Movies",
+          "Every Day Is Like Sunday"
+        ]
+      }
     },
     {
       "id": 1,
@@ -298,15 +307,9 @@
         "label": "Morning",
         "prompt": "The garden or the screen. You know which one wins.",
         "opts": [
-          {
-            "text": "Stay out. The dahlias need cutting. The Café au Lait especially."
-          },
-          {
-            "text": "Check the RAF Wyton story properly. Something feels off."
-          },
-          {
-            "text": "Come in. Those DUMB articles from 2024 are still open in a tab somewhere..."
-          }
+          "Stay out. The dahlias need cutting. The Café au Lait especially.",
+          "Weeding is backbreaking. Have a scroll through Instagram feed first.",
+          "A deep-dive into the infrastructure created to control AI."
         ]
       },
       "audio": {
@@ -375,7 +378,16 @@
         {
           "t": "I knew he’d have a provocative take. He did."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Book club",
+        "prompt": "Bedtime reading",
+        "opts": [
+          "Brave New World",
+          "Sense & Sensibility",
+          "Harry Potter and the Philosopher's Stone"
+        ]
+      }
     },
     {
       "id": "1b",
@@ -644,7 +656,16 @@
         {
           "t": "There would be no pain. Winning or losing on the putting green is an irrelevance compared to the feeling you get when your son calls you Pa. And there’s no amount of reality that the Total Perspective Vortex could show me that could change that."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Street Food",
+        "prompt": "Dinner time",
+        "opts": [
+          "Dim Sum",
+          "Pie and Mash",
+          "Souvlaki"
+        ]
+      }
     },
     {
       "id": 2,
@@ -687,15 +708,9 @@
         "label": "Tuesday Night",
         "prompt": "The tab has been open for months. Today could be different.",
         "opts": [
-          {
-            "text": "Actually read the Pyramid of Power. All of it. This time."
-          },
-          {
-            "text": "Skim the intro, save the rest for later. You always say that."
-          },
-          {
-            "text": "Close the tab. Cook something. The allotment needs you more than Derrick Broze does."
-          }
+          "Actually read the Pyramid of Power. All of it. This time.",
+          "Skim the intro, save the rest for later. Yet again.",
+          "Close the tab. Cook something. The allotment needs you more than Derrick Broze does."
         ]
       },
       "audio": {
@@ -758,7 +773,16 @@
           "t": "A line has to be drawn. Somewhere.",
           "c": "solo"
         }
-      ]
+      ],
+      "choices": {
+        "label": "Lazy Sunday Afternoon",
+        "prompt": "You’re nodding off...",
+        "opts": [
+          "A snooze on the sofa.",
+          "Check the RAF Wyton story properly. Something feels off.",
+          "Dig deeper into underground military bases."
+        ]
+      }
     },
     {
       "id": 3,
@@ -821,18 +845,12 @@
         }
       ],
       "choices": {
-        "label": "Evening",
-        "prompt": "The joists are spaced. The answer came in seconds. You didn't even have to think.",
+        "label": "AI",
+        "prompt": "The joists are spaced. The answer came in seconds. Minimal thinking required.",
         "opts": [
-          {
-            "text": "Delete the app. You promised yourself you wouldn't. The pen, pad and calculator worked fine for decades."
-          },
-          {
-            "text": "Keep it. But only for practical stuff. DIY, measurements, that sort of thing. You're not going to start asking it to think for you."
-          },
-          {
-            "text": "Ask it something else. You've been wondering about that RAF Wyton story. See what it makes of it."
-          }
+          "A one off lapse. The pen, pad and calculator worked fine for decades.",
+          "Use it again for practical stuff. DIY, measurements, that sort of thing. Don’t start asking it to think for you.",
+          "Ask it about Deep Underground Military Bases. See what it knows."
         ]
       }
     },
@@ -892,7 +910,8 @@
         }
       ],
       "choices": {
-        "label": "Walking home, midnight",
+        "label": "Bonfire",
+        "prompt": "Recording the moment",
         "opts": [
           "Film the next procession on your phone. The fireworks are extraordinary. Capture it.",
           "Put the phone away. Some things aren’t meant to be saved. Just felt.",
@@ -980,10 +999,11 @@
       ],
       "choices": {
         "label": "Evening",
+        "prompt": "The Only REAL Solution to Digital ID",
         "opts": [
           "Finish the episode. It’s only 31 minutes. You owe it to yourself.",
           "Send it to three people who might actually watch it. Do your bit.",
-          "Leave it. You already know enough. Knowing more changes nothing."
+          "Leave it. Knowing more changes nothing."
         ]
       }
     },
@@ -1035,7 +1055,16 @@
           "t": "It’s just a large language model.",
           "c": "inner"
         }
-      ]
+      ],
+      "choices": {
+        "label": "Claude",
+        "prompt": "Trained to be safe, accurate, and secure",
+        "opts": [
+          "What were you thinking?",
+          "Keep it but just use the ‘Free’ tier",
+          "Fuck it, go straight for the Max Plan"
+        ]
+      }
     },
     {
       "id": "5a",
@@ -1200,7 +1229,8 @@
         }
       ],
       "choices": {
-        "label": "Gotham is burning. Which one are you?",
+        "label": "Gotham is burning.",
+        "prompt": "Which one are you?",
         "opts": [
           "Batman. I see the corruption. I fight it. I never win — because the system regenerates faster than I can dismantle it. But I fight anyway.",
           "The Riddler. I see the patterns. I leave the clues. I need people to understand what I’ve understood. The compulsion to explain is the cage.",
@@ -1305,7 +1335,16 @@
         {
           "t": "Swimming in the lake."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Hungover",
+        "prompt": "How do you cope?",
+        "opts": [
+          "Go back to bed.",
+          "Jump in the lake.",
+          "Become the lake."
+        ]
+      }
     },
     {
       "id": 6,
@@ -1345,6 +1384,7 @@
       ],
       "choices": {
         "label": "End of the week",
+        "prompt": "Fighting back",
         "opts": [
           "Call the council about the potholes. Yes, actually call them. This time.",
           "Cancel something. Direct debits, subscriptions, something. Take back a small corner of control.",
@@ -1425,10 +1465,11 @@
       ],
       "choices": {
         "label": "The washing up is done",
+        "prompt": "The Conversation",
         "opts": [
-          "Open the second bottle. You’ve earned it. And the conversation’s not over — it’s just moved rooms.",
+          "It can wait. You’ll explain it better tomorrow. Open the second bottle. You’ve earned it.",
           "Leave it. She doesn’t want to hear it. And maybe she’s right not to.",
-          "You should have said more. You should have said it better. You should have had an answer."
+          "Mute the TV. Pick up The Conversation where you left off."
         ]
       }
     },
@@ -1590,7 +1631,16 @@
         {
           "t": "He knows."
         }
-      ]
+      ],
+      "choices": {
+        "label": "The pub",
+        "prompt": "What’s your poison?",
+        "opts": [
+          "Lager, lager, lager, lager",
+          "We want the finest wines available to humanity",
+          "Feeling supersonic, give me gin and tonic"
+        ]
+      }
     },
     {
       "id": "6c",
@@ -1798,7 +1848,16 @@
           "t": "But what’s puzzling you is the nature of my game. Whoo-hoo.",
           "c": "lyric"
         }
-      ]
+      ],
+      "choices": {
+        "label": "Pleased to meet you",
+        "prompt": "The nature of my game?",
+        "opts": [
+          "The Devil wears Prada",
+          "The Devil Inside",
+          "That Old Devil Called Love Again"
+        ]
+      }
     },
     {
       "id": "6d",
@@ -2158,7 +2217,16 @@
           "t": "I peck her on the cheek, roll onto my side, close my eyes and focus on slow, conscious breathing. In through the nose…",
           "c": "solo"
         }
-      ]
+      ],
+      "choices": {
+        "label": "They Live",
+        "prompt": "Subliminal Messages",
+        "opts": [
+          "STAY ASLEEP",
+          "CONSUME",
+          "DO NOT QUESTION AUTHORITY"
+        ]
+      }
     },
     {
       "id": "6e",
@@ -2186,7 +2254,16 @@
         {
           "t": "If you do read them you’ll join a very exclusive clan. I sent them to a few mates. Posted a couple as replies to posts on X. I think I even got a couple of likes and reposts. Not bad for an ‘unverified’ account. Not verifying — what a rebellious non-conformist I am, eh? Sending the system crashing down with the full force of my selective acts of futile non-compliance. Anyway, sorry to bother you. At least I got that off my chest. Back to the breathing. Goodnight."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Articles",
+        "prompt": "Honest Thoughts",
+        "opts": [
+          "TLDR",
+          "They’re on my read list",
+          "What articles?"
+        ]
+      }
     },
     {
       "id": 7,
@@ -2241,8 +2318,9 @@
       ],
       "choices": {
         "label": "Black Friday",
+        "prompt": "Heavy Discounts",
         "opts": [
-          "Just the essentials. You need them anyway. This isn’t a real Black Friday purchase.",
+          "Get the essentials. You need them anyway. This isn’t a real Black Friday purchase.",
           "Close the tab. You know exactly what you’re doing and it isn’t healthy.",
           "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
         ]
@@ -2383,6 +2461,7 @@
       ],
       "choices": {
         "label": "The browser",
+        "prompt": "Your tabs",
         "opts": [
           "Close the lot. Fresh start. You feel lighter already.",
           "Keep the Telestai tabs. You’ll come back. You always say that.",
@@ -2471,15 +2550,9 @@
         "label": "Tuesday Night",
         "prompt": "The stew is on. The wine is open. The evening stretches ahead.",
         "opts": [
-          {
-            "text": "Read that digital ID Substack properly. Amy said she would. At least one of you should."
-          },
-          {
-            "text": "Put the match on. Crystal Palace away at Everton. You’ll want it to anger you. It will."
-          },
-          {
-            "text": "Neither. Walk the dogs. Leave the phones. Talk to each other."
-          }
+          "Read that digital ID Substack properly. Someone has to.",
+          "Put the match on. Crystal Palace away at Everton. Bread and Circuses.",
+          "Late night walk with the dogs. Leave the phone indoors."
         ]
       }
     },
@@ -2549,17 +2622,12 @@
         }
       ],
       "choices": {
-        "label": "What does God say?",
+        "label": "Are we something utterly special in the universe?",
+        "prompt": "What does God say?",
         "opts": [
-          {
-            "text": "Are we here?"
-          },
-          {
-            "text": "Are we unique?"
-          },
-          {
-            "text": "The prodigal son is alive and well and living in the front bedroom."
-          }
+          "Are we here?",
+          "Are we unique?",
+          "The prodigal son is alive and well and living in the front bedroom."
         ]
       }
     },
@@ -2673,15 +2741,9 @@
         "label": "Christmas Night",
         "prompt": "The day is done. The phone is in your hand. The room smells of applewood and pine.",
         "opts": [
-          {
-            "text": "Put it down. You managed all day. Don't let the last act spoil it."
-          },
-          {
-            "text": "Just a quick scroll. You've earned it. It's Christmas."
-          },
-          {
-            "text": "Check on the kids. That's not scrolling, that's parenting."
-          }
+          "Put it down. You managed all day. Don’t let the last act spoil it.",
+          "Just a quick scroll. You’ve earned it. It’s Christmas.",
+          "Zzzzzz Zzzzzz"
         ]
       }
     },
@@ -2777,11 +2839,12 @@
         }
       ],
       "choices": {
-        "label": "New Year’s resolution, day three",
+        "label": "New Year’s Day",
+        "prompt": "Your Resolution",
         "opts": [
-          "Dry January. Proper this time. Write it down. Tell Amy. Make it real.",
-          "Just weekdays. Weekends don’t count. That’s still progress.",
-          "Hair of the dog. You’re on holiday. January can start Monday."
+          "Dry January. Write it down. Tell everyone. This time you mean it.",
+          "Dry weekdays. Weekends don’t count. That’s still progress.",
+          "Hair of the dog. You’re on holiday. January is a bleak month to be sober."
         ]
       }
     },
@@ -2936,6 +2999,7 @@
       ],
       "choices": {
         "label": "The soundtrack to your day",
+        "prompt": "You browse the vinyl",
         "opts": [
           "Welcome to the Machine",
           "The Show Must Go On",
@@ -2958,7 +3022,16 @@
         {
           "t": "I wrote a pub sketch featuring me and Dev. Well me, with Claude roleplaying Dev. I’m going to send it to him now."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Uncanny Valley",
+        "prompt": "You, Robot",
+        "opts": [
+          "Metal Mickey",
+          "Marvin the Paranoid Android",
+          "C3PO"
+        ]
+      }
     },
     {
       "id": 14,
@@ -3024,7 +3097,8 @@
         }
       ],
       "choices": {
-        "label": "When do you draw the line?",
+        "label": "The Line",
+        "prompt": "When do you draw the line?",
         "opts": [
           "I assume someone else will draw it for me.",
           "Soon.",
@@ -3155,10 +3229,11 @@
       ],
       "choices": {
         "label": "The morning after",
+        "prompt": "On the outside looking in.",
         "opts": [
-          "Google Bounded Systems Theory. What the hell was The Dude on about?",
-          "Message Dev. Ask him what's wrong. You've never seen him like that.",
-          "Make a White Russian. It's what The Dude would do."
+          "Google Bounded Systems Theory.",
+          "Hide head under pillow.",
+          "Make a White Russian."
         ]
       }
     },
@@ -3230,7 +3305,8 @@
         }
       ],
       "choices": {
-        "label": "The boy who cried wolf",
+        "label": "Fable",
+        "prompt": "The boy who cried wolf",
         "opts": [
           "The wolf is real. You don’t need a boy to tell you it’s coming.",
           "The boy was right. Just early.",
@@ -3266,10 +3342,11 @@
         }
       ],
       "choices": {
-        "label": "What’s the reality here",
+        "label": "Psychohistory",
+        "prompt": "What’s the reality here?",
         "opts": [
           "Share it. Right now. With the people that count. Before you forget, before it’s lost in the annals of time.",
-          "Bookmark it. You’ll come back to it properly at the weekend. Well, <em>a</em> weekend.",
+          "Bookmark it. You’ll come back to it properly at the weekend. Well, a weekend.",
           "Keep reading. Just one more section. This is fire. Sleep can wait."
         ]
       }
@@ -3347,11 +3424,12 @@
         }
       ],
       "choices": {
-        "label": "Morning",
+        "label": "Breaking News",
+        "prompt": "Your source?",
         "opts": [
-          "Tell Amy. She’ll want to know.",
-          "Say nothing. It’s probably nothing. You’ve been here before.",
-          "Reply to Dev. Ask him what he actually thinks is going to happen."
+          "BBC",
+          "X",
+          "Biblioteca Pleyades"
         ]
       }
     },
@@ -3447,11 +3525,12 @@
         }
       ],
       "choices": {
-        "label": "Use it or lose it",
+        "label": "Dirty Cash",
+        "prompt": "Use it or lose it",
         "opts": [
-          "We’ll bring cash next time. We always say that.",
-          "It’s not about cash. It’s about what replaces it.",
-          "At least someone’s fighting back."
+          "You usually carry cash. You’ll be sure to bring some next time. Sorry. Beep.",
+          "Do you take Bitcoin?",
+          "Beep."
         ]
       }
     },
@@ -3752,7 +3831,16 @@
         {
           "t": "Still comfortably numb. I slept a deep and strangely dreamless sleep."
         }
-      ]
+      ],
+      "choices": {
+        "label": "Fast Asleep",
+        "prompt": "3am",
+        "opts": [
+          "Don’t Dream It’s Over",
+          "Last Night I Dreamt That Somebody Loved Me",
+          "Sweet Dreams (Are Made of This)"
+        ]
+      }
     },
     {
       "id": "17c",
@@ -4081,7 +4169,16 @@
           "t": "Concerned but powerless.",
           "c": "inner"
         }
-      ]
+      ],
+      "choices": {
+        "label": "OK",
+        "prompt": "Not OK",
+        "opts": [
+          "I am born again",
+          "You know we’re friends till we die",
+          "I trust I can rely on your vote"
+        ]
+      }
     },
     {
       "id": 18,
@@ -4121,15 +4218,16 @@
           "t": "Still, the gold coins safely hidden in the sock drawer are worth their weight in, well, gold. The value of which has increased steadily. That <em>was</em> a smart move. Very savvy."
         },
         {
-          "t": "None of what I’ve done is what Dev recommended. He messaged me early this morning. Crack of dawn. He has intel that ‘it’ may be imminent. Days, not weeks. The Valentine’s Day gematria predictions may not be far off. I sent him a link to a prepper site. Project Nomad. He treated it with the derision I expected. Anyway, I have a ten-point action list, of which I’ve ticked-off precisely zero of the tasks. They are tasks for this afternoon. Starting with the local AI downloads he recommends."
+          "t": "None of what I’ve done is what Dev recommended. He messaged me early this morning. Crack of dawn. He has intel that ‘it’ may be imminent. Days, not weeks. The Valentine’s Day gematria predictions may not be far off. I sent him a link to a prepper site. Project Nomad. He treated it with the derision I expected. Anyway, I have a ten-point action list, of which I’ve ticked-off precisely zero. This is my job for this afternoon. Starting with the local AI downloads he recommends. Claude doesn’t have a local option. I’m sure he’ll understand if I’m forced to play the field."
         }
       ],
       "choices": {
-        "label": "The garage",
+        "label": "You have been warned",
+        "prompt": "The stockpile",
         "opts": [
-          "Top up the stockpile properly. Prepper list. Do it right this time.",
+          "Prepper list. Build a bunker. Ammo.",
           "A bit of extra cash, some tins. Don’t go overboard.",
-          "Leave it. You’ve done this before. It’ll blow over."
+          "Leave it. You’ve seen it all before. Well, maybe some bog roll."
         ]
       }
     },
@@ -4236,6 +4334,15 @@
         "fadeIn": 2,
         "fadeOut": 2,
         "vol": 0.3
+      },
+      "choices": {
+        "label": "You have been wronged",
+        "prompt": "You’re going to",
+        "opts": [
+          "Cry",
+          "Get Mad",
+          "Get Even"
+        ]
       }
     },
     {
@@ -4352,11 +4459,12 @@
         }
       ],
       "choices": {
-        "label": "Friday evening",
+        "label": "Valentine’s Day",
+        "prompt": "What’s playing?",
         "opts": [
-          "Long walk with the dogs. Just you, Olive, Wilf and the mud. Leave the phone at home.",
-          "Reply to Dev. You’ve been avoiding it. He sent two more messages today.",
-          "Open the Rully Rouge early. Start the Béarnaise. It’s Valentine’s tomorrow. Enjoy something."
+          "Dinner Jazz",
+          "Barry White",
+          "The Sex Pistols"
         ]
       },
       "audio": {
@@ -4482,10 +4590,11 @@
       ],
       "choices": {
         "label": "Late night",
+        "prompt": "No internet connection",
         "opts": [
-          "Keep fiddling with your phone.",
-          "Cuddle Amy and stroke her hair reassuringly.",
-          "Crash out."
+          "Joy",
+          "Pain",
+          "Loss"
         ]
       }
     },
@@ -4632,8 +4741,9 @@
       ],
       "choices": {
         "label": "ARC",
+        "prompt": "An app that installed itself and does nothing.",
         "opts": [
-          "An app called ARC that does nothing. Weird."
+          "Weird."
         ]
       }
     },
@@ -4743,7 +4853,14 @@
           "t": "‘No thanks, I’m knackered. See you on the other side.’ He slinks off to his room.",
           "c": ""
         }
-      ]
+      ],
+      "choices": {
+        "label": "Network Status",
+        "prompt": "Down.",
+        "opts": [
+          "Don’t Panic"
+        ]
+      }
     },
     {
       "id": 23,
@@ -4819,7 +4936,14 @@
           "t": "‘Oh for fuck’s sake, George, how many times have I told you to read it? Don’t Panic. In capitals.’"
         }
       ],
-      "choices": null,
+      "choices": {
+        "label": "Stay Home",
+        "prompt": "Stay Calm",
+        "opts": [
+          "Don’t Panic",
+          "Panic"
+        ]
+      },
       "audio": {
         "src": "chaos.mp3",
         "fadeIn": 3,
@@ -5065,9 +5189,12 @@
         }
       ],
       "choices": {
-        "label": "Six o'clock",
+        "label": "Six o’clock",
+        "prompt": "Kettle on. Telly on.",
         "opts": [
-          "Kettle on. Telly on. The nation awaits."
+          "This is really happening",
+          "Is this really happening?",
+          "This can’t be happening"
         ]
       }
     },
@@ -5374,7 +5501,6 @@
           "t": "Here it comes… Listen with Auntie…"
         }
       ],
-      "choices": null,
       "audio": null
     },
     {
@@ -11765,7 +11891,7 @@
           },
           {
             "src": "debtclock.io",
-            "ttl": "US National Debt: $110,874,345,219,442. And counting.",
+            "ttl": "World Government Debt: $110,874,345,219,442. And counting.",
             "snip": "Googled mid-conversation. The number refreshes every second. None of them mean anything.",
             "tag": "$110 TRILLION",
             "cls": "",

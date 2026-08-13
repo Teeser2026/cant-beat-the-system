@@ -7910,7 +7910,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 // ── NAV SETUP (mode-dependent) ──
 if (DEV) {
   document.getElementById('devBar').style.display = '';
-  document.querySelectorAll('.dev-skip').forEach(el => el.style.display = '');
+  document.querySelectorAll('.dev-skip').forEach(el => el.style.display = 'block');
   document.getElementById('readerBar').style.display = 'none';
   document.getElementById('prev').addEventListener('click', () => goTo(state.turnIndex - 1));
   document.getElementById('next').addEventListener('click', () => goTo(state.turnIndex + 1));

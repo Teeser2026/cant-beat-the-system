@@ -13597,10 +13597,11 @@
           {
             "src": "BBC News",
             "ttl": "Weather warning issued for heavy rain across South East",
-            "snip": "October.",
+            "snip": "From drought to it never stops bloody raining.",
             "tag": "Weather",
             "date": "3 Oct 2026",
-            "time": "07:15"
+            "time": "07:15",
+            "img": "img/met-office-rain-se.webp"
           }
         ]
       },
@@ -13608,18 +13609,18 @@
         "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Family Chat — Emilia",
+            "src": "Emilia → Family Chat",
             "ttl": "Me and Chloe are going to Brighton later. Can anyone give us a lift to the station?",
             "snip": "The ‘Dad, can I have some money?’ message will be next.",
-            "tag": "Today",
+            "tag": "Taxi Service",
             "date": "3 Oct 2026",
             "time": "10:22"
           },
           {
-            "src": "Family Chat — Sam",
+            "src": "Sam → Family Chat",
             "ttl": "What about a please? You little rat",
             "snip": "Brotherly love.",
-            "tag": "",
+            "tag": "Courtesy",
             "date": "3 Oct 2026",
             "time": "10:24"
           },
@@ -13635,7 +13636,7 @@
             "src": "Simon → Amy",
             "ttl": "L.A. Confidential? Haven’t seen for ages.",
             "snip": "I really wanted to say The Godfather, Part II — but not Amy’s cup of tea.",
-            "tag": "",
+            "tag": "Movie Night",
             "date": "3 Oct 2026",
             "time": "13:02"
           },
@@ -13643,7 +13644,7 @@
             "src": "George",
             "ttl": "I know you don’t use AI. But this is fun!",
             "snip": "A quick scan. There it is in the tabs. Pricing.",
-            "tag": "AI",
+            "tag": "AI Gaming",
             "url": "https://whatifverse.world/",
             "date": "3 Oct 2026",
             "time": "15:44"
@@ -13656,7 +13657,7 @@
           {
             "src": "Morrissey",
             "ttl": "Now My Heart is Full",
-            "snip": "So I won’t even try to",
+            "snip": "I just can’t explain",
             "tag": "there’s gonna be some trouble",
             "date": "3 Oct 2026",
             "time": "21:00"
@@ -14215,7 +14216,7 @@
           }
         },
         {
-          "text": "BBC Tech — Why millions are switching to conversational AI assistants",
+          "text": "BBC Technology — Why millions are switching to conversational AI assistants",
           "src": "simon",
           "turn": 13,
           "article": {
@@ -14431,7 +14432,7 @@
           }
         },
         {
-          "text": "Sussex NHS booking system flooded by automated agents — all appointments filled in hours. Not a breach. A demonstration.",
+          "text": "BBC South East — Sussex NHS booking system flooded by automated agents",
           "src": "BBC South East",
           "turn": "2a",
           "article": {
@@ -14892,7 +14893,7 @@
     },
     {
       "id": "odds-and-ends",
-      "title": "",
+      "title": "Odds & Ends",
       "items": [
         {
           "text": "200 Best Movies of All Time — Rotten Tomatoes",

@@ -4725,14 +4725,14 @@ body.phase-3 .mob-tabs {
       <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> \u00B7 </span><span id="intro-resume-title"></span></button>
     </div>
     <div class="title-area" id="titleArea">
-      <div class="title-main">Can\u2019t Beat the <span class="title-system" id="systemWord"><span class="title-system-inner" id="systemInner">System</span></span><span class="title-cursor" id="introCursor"></span></div>
+      <div class="title-main">Can’t Beat the <span class="title-system" id="systemWord"><span class="title-system-inner" id="systemInner">System</span></span><span class="title-cursor" id="introCursor"></span></div>
       <div class="sub-wrapper">
         <div class="title-cage-sub" id="cageSub">the cage is comfortable</div>
         <div class="title-novel-sub" id="novelSub">a novel</div>
       </div>
     </div>
     <div class="btn-area" id="btnArea">
-      <button class="enter-btn" id="intro-enter">Enter</button>
+      <button type="button" class="enter-btn" id="intro-enter">Enter</button>
     </div>
   </div>
   <audio id="glitchSound" preload="auto" src="glitch-sound.mp3"></audio>
@@ -8958,28 +8958,7 @@ ambientStarted = true; // prevent any trigger from trying
   }
 })();
 
-// ══ WELCOME SCREEN: Override agree-all handler ══
-// The old handler on #welcome-begin is still attached but the element
-// was replaced, so it won't fire. Attach new one.
-(function initWarmWelcome() {
-  const wb = document.getElementById('welcome-begin');
-  if (!wb) return;
-
-  wb.addEventListener('click', function(e) {
-    e.stopPropagation();
-    const ws = document.getElementById('welcome-screen');
-    ws.classList.add('fade-out');
-    stopBirdsong();
-    setTimeout(() => {
-      ws.style.display = 'none';
-      document.body.classList.add('game-active');
-      positionSaveEnabled = true;
-      if (playData && playData.turns && playData.turns[state.turnIndex]) {
-        handleTurnAudio(playData.turns[state.turnIndex]);
-      }
-    }, 1600);
-  });
-})();
+// initWarmWelcome() removed — welcome-begin handler at line ~8496 covers this
 
 </script>
 </body>

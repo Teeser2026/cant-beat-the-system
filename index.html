@@ -4461,72 +4461,317 @@ body.phase-3 .mob-tabs {
   margin-top: 4px;
 }
 
+
+/* ══ INTRO ANIMATION (v26 integration) ══ */
+#intro-screen { pointer-events: none; } /* disable old click-anywhere handler */
+#intro-screen .start-area,
+#intro-screen .btn-area,
+#intro-screen .dev-skip { pointer-events: auto; }
+
+#intro-screen .scene {
+  position: absolute; inset: 0;
+}
+#intro-screen .scene video,
+#intro-screen .scene canvas,
+#intro-screen .scene .poster {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 55%;
+}
+#intro-screen .poster { z-index: 1; }
+#intro-screen #introVideo { z-index: 2; opacity: 0; }
+#intro-screen #introVideo.playing { opacity: 1; }
+#intro-screen #pixelCanvas { z-index: 3; display: none; opacity: 0; }
+#intro-screen .vignette {
+  position: absolute; inset: 0; z-index: 5;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+}
+#intro-screen .black-overlay {
+  position: absolute; inset: 0; z-index: 6;
+  background: #0a0a0c; opacity: 0; pointer-events: none;
+}
+#intro-screen .black-overlay.jitter {
+  animation: jitterFlash 2.2s ease-out forwards;
+}
+@keyframes jitterFlash {
+  0%{opacity:1}5%{opacity:1}8%{opacity:.08}14%{opacity:.88}
+  18%{opacity:.05}24%{opacity:.7}28%{opacity:.03}34%{opacity:0}
+  42%{opacity:.5}46%{opacity:0}56%{opacity:.3}60%{opacity:0}
+  72%{opacity:.15}76%{opacity:0}90%{opacity:.06}93%{opacity:0}100%{opacity:0}
+}
+#intro-screen .start-area {
+  position: absolute; z-index: 20; bottom: 10vh; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+#intro-screen .start-area.hidden {
+  opacity: 0; pointer-events: none; transition: opacity 0.8s;
+}
+#intro-screen .begin-btn {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+  font-weight: 400; font-style: italic; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px; padding: 14px 44px;
+  cursor: pointer; transition: all 0.3s;
+  backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+}
+#intro-screen .begin-btn:hover {
+  color: rgba(255,255,255,1);
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+}
+#intro-screen .title-area {
+  position: absolute; z-index: 15; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.08s;
+}
+#intro-screen .title-area.visible { opacity: 1; }
+#intro-screen .title-main {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 300; color: rgba(255,255,255,0.92);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  text-align: center; line-height: 1.2; padding: 0 1rem; white-space: nowrap;
+}
+#intro-screen .title-system { display: inline-block; color: #3A8A3A; perspective: 400px; }
+#intro-screen .title-system-inner { display: inline-block; transform-style: preserve-3d; }
+#intro-screen .title-system-inner.flip { animation: flipWord 0.8s ease-in-out forwards; }
+@keyframes flipWord { 0%{transform:rotateX(0deg)} 100%{transform:rotateX(360deg)} }
+#intro-screen .title-system.settled { color: rgba(255,255,255,0.92); }
+#intro-screen .title-cursor {
+  display: inline-block; width: 2px; height: 0.85em;
+  background: #CC3333; margin-left: 3px; vertical-align: text-bottom;
+  animation: introBlink 1s step-end infinite;
+}
+#intro-screen .title-cursor.final-blink { animation: lastBlink 0.6s step-end forwards; }
+@keyframes introBlink { 0%,100%{opacity:1}50%{opacity:0} }
+@keyframes lastBlink { 0%{opacity:1}33%{opacity:0}66%{opacity:1}100%{opacity:0} }
+#intro-screen .sub-wrapper {
+  position: relative; display: flex; flex-direction: column;
+  align-items: center; min-height: 2rem;
+}
+#intro-screen .title-cage-sub {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.2rem);
+  font-style: italic; color: #3A8A3A; letter-spacing: 0.04em;
+  margin-top: 0.8rem;
+  text-shadow: 0 1px 14px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.4);
+  transition: opacity 1s ease-out;
+}
+#intro-screen .title-cage-sub.faded { opacity: 0; }
+#intro-screen .title-novel-sub {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.4rem);
+  font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,0.6); letter-spacing: 0.06em;
+  margin-top: 0.8rem;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.4);
+  opacity: 0; transition: opacity 1.2s ease-in;
+  position: absolute; top: 0;
+}
+#intro-screen .title-novel-sub.visible { opacity: 1; }
+#intro-screen .btn-area {
+  position: absolute; z-index: 16; bottom: 10vh; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.8s ease-out;
+}
+#intro-screen .btn-area.visible { opacity: 1; pointer-events: auto; }
+#intro-screen .enter-btn {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 400; font-style: italic; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px; padding: 14px 44px;
+  cursor: pointer; transition: all 0.3s; min-width: 160px; text-align: center;
+}
+#intro-screen .enter-btn:hover {
+  color: rgba(255,255,255,1);
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ══ WARM WELCOME SCREEN (v4 integration) ══ */
+#welcome-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #E8E2D6;
+  display: none;
+  justify-content: center; align-items: center;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2C2A26;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
+  transition: opacity 1.6s ease-out;
+}
+#welcome-screen::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+#welcome-screen.fade-out { opacity: 0; }
+#welcome-screen .welcome-page {
+  position: relative; z-index: 1;
+  max-width: 640px; width: 90%;
+  padding: 8vh 0 6vh;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+}
+#welcome-screen .welcome-word {
+  font-size: clamp(3.2rem, 9vw, 5rem);
+  font-weight: 300; font-style: italic;
+  color: #6B8F6B; letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  opacity: 0; animation: wsFadeIn 2s ease-out 0.3s forwards;
+}
+#welcome-screen .cage-flash {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-style: italic; color: #8BAA8B;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem; opacity: 0; height: 1.2em;
+}
+#welcome-screen .cage-flash.flash-in {
+  animation: wsCageAppear 3s ease-in-out forwards;
+}
+@keyframes wsCageAppear { 0%{opacity:0}15%{opacity:0.7}70%{opacity:0.7}100%{opacity:0} }
+@keyframes wsFadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+#welcome-screen .body-text {
+  opacity: 0; animation: wsFadeIn 2s ease-out 1.2s forwards;
+}
+#welcome-screen .body-text p {
+  font-size: clamp(1.15rem, 2.8vw, 1.25rem);
+  font-weight: 400; color: #4A4640;
+  line-height: 1.9; margin-bottom: 0.3rem;
+}
+#welcome-screen .body-text .spacer { height: 1.6rem; }
+#welcome-screen .body-text .indented { padding-left: 2rem; }
+#welcome-screen .body-text em.warm { font-style: italic; color: #6B8F6B; }
+#welcome-screen .body-text em.alert { font-style: italic; color: #B08888; }
+#welcome-screen .judge-line {
+  margin: 2.5rem 0; padding-left: 1.2rem;
+  border-left: 2px solid rgba(107,143,107,0.45);
+  opacity: 0; animation: wsFadeIn 2s ease-out 1.8s forwards;
+}
+#welcome-screen .judge-line p {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 300; font-style: italic;
+  color: #8BAA8B; letter-spacing: 0.02em;
+}
+#welcome-screen .terms-line {
+  margin-bottom: 3rem;
+  opacity: 0; animation: wsFadeIn 2s ease-out 2.2s forwards;
+}
+#welcome-screen .terms-line p {
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  font-weight: 400; color: #2C2A26; letter-spacing: 0.12em;
+}
+#welcome-screen .terms-line em.terms {
+  font-style: italic; color: rgba(107,143,107,0.45);
+}
+#welcome-screen .terms-cursor {
+  display: inline-block; width: 2px; height: 0.75em;
+  background: #CC3333; margin-left: 2px; vertical-align: text-bottom;
+  animation: introBlink 1s step-end infinite;
+}
+#welcome-screen .agree-btn {
+  opacity: 0; animation: wsFadeIn 1.5s ease-out 2.8s forwards;
+}
+#welcome-screen .agree-btn button {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #6B8F6B;
+  background: rgba(107,143,107,0.06);
+  border: 1.5px solid #8BAA8B;
+  border-radius: 5px; padding: 14px 44px;
+  cursor: pointer; transition: all 0.3s;
+}
+#welcome-screen .agree-btn button:hover {
+  color: #fff; border-color: #6B8F6B; background: #6B8F6B;
+}
+@media (max-width: 600px) {
+  #welcome-screen .welcome-page { padding: 6vh 0 4vh; }
+  #welcome-screen .body-text .indented { padding-left: 1.2rem; }
+}
+
 </style>
 </head>
 <body class="no-transition phase-1">
 
 <!-- ══ INTRO SCREEN ══ -->
 <div id="intro-screen">
-  <div class="intro-content">
-    <div class="intro-cage">
-      <div class="cage-bar b1"></div>
-      <div class="cage-bar b2"></div>
-      <div class="cage-bar b3"></div>
-      <div class="cage-bar b4"></div>
-      <div class="intro-title">Can't Beat the <span class="sys">System</span><span class="intro-cursor"></span></div>
+  <div class="scene">
+    <img class="poster" id="poster" src="meadow-poster.webp" alt="" />
+    <video id="introVideo" muted playsinline preload="auto">
+      <source src="intro_video.mp4" type="video/mp4">
+    </video>
+    <canvas id="pixelCanvas"></canvas>
+    <div class="vignette"></div>
+    <div class="black-overlay" id="blackOverlay"></div>
+    <div class="start-area" id="startArea">
+      <button class="begin-btn" id="intro-begin">Begin your journey</button>
+      <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> \u00B7 </span><span id="intro-resume-title"></span></button>
     </div>
-    <div class="intro-tagline">the cage is comfortable</div>
-    <div class="intro-actions" id="intro-actions">
-      <button class="intro-btn" id="intro-begin">begin</button>
-      <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> · </span><span id="intro-resume-title"></span></button>
+    <div class="title-area" id="titleArea">
+      <div class="title-main">Can\u2019t Beat the <span class="title-system" id="systemWord"><span class="title-system-inner" id="systemInner">System</span></span><span class="title-cursor" id="introCursor"></span></div>
+      <div class="sub-wrapper">
+        <div class="title-cage-sub" id="cageSub">the cage is comfortable</div>
+        <div class="title-novel-sub" id="novelSub">a novel</div>
+      </div>
+    </div>
+    <div class="btn-area" id="btnArea">
+      <button class="enter-btn" id="intro-enter">Enter</button>
     </div>
   </div>
-  <div class="intro-ambient" id="intro-ambient-toggle">♪ sound on</div>
-  <div class="dev-skip" id="dev-skip-intro">skip ▸</div>
+  <audio id="glitchSound" preload="auto" src="glitch-sound.mp3"></audio>
+  <audio id="introSoundtrack" preload="auto" src="audio-layers.mp3"></audio>
+  <div class="dev-skip" id="dev-skip-intro">skip \u25B8</div>
 </div>
 
 <!-- ══ WELCOME SCREEN ══ -->
 <div id="welcome-screen">
-  <div class="welcome-inner">
+  <div class="welcome-page">
 
-    <div class="wl welcome-logo">
-      <div class="welcome-cage welcome-cage-lg">
-        <div class="wb wb1"></div><div class="wb wb2"></div><div class="wb wb3"></div><div class="wb wb4"></div>
-        <div class="wc-title wc-title-lg">Can't Beat the <span class="sys">System</span><span class="cur"></span></div>
-      </div>
-      <div class="wl-tagline">the cage is comfortable</div>
+    <div class="welcome-word">Reader, welcome</div>
+    <div class="cage-flash" id="cageFlash">the cage is comfortable</div>
+
+    <div class="body-text">
+      <p>As the tale unfolds, you will be asked questions</p>
+      <p>They are simply for your <em class="warm">enjoyment</em></p>
+      <div class="spacer"></div>
+      <p>Take your time or respond instinctively</p>
+      <p class="indented">Respond with <em class="warm">thought</em></p>
+      <p class="indented">With <em class="warm">consideration</em></p>
+      <p class="indented">With <em class="warm">reflection</em></p>
+      <p class="indented">With <em class="warm">honesty</em></p>
+      <p>Or click on an option at random</p>
+      <div class="spacer"></div>
+      <p>What difference does it make?</p>
+      <div class="spacer"></div>
+      <p>No algorithm will <em class="alert">monitor</em> your answers</p>
+      <p>You will not be <em class="alert">tracked</em></p>
+      <p>You will not be <em class="alert">judged</em></p>
     </div>
 
-    <div class="wl wl-gap-lg"></div>
-
-    <div class="wl wl-line">As the tale unfolds, you will be asked questions</div>
-    <div class="wl wl-line">They are simply for your <span class="green-i">enjoyment</span></div>
-
-    <div class="wl wl-gap"></div>
-    <div class="wl wl-line">Take your time or respond instinctively</div>
-    <div class="wl wl-line indent">Respond with <span class="green-i">thought</span></div>
-    <div class="wl wl-line indent">With <span class="green-i">consideration</span></div>
-    <div class="wl wl-line indent">With <span class="green-i">reflection</span></div>
-    <div class="wl wl-line indent">With <span class="green-i">honesty</span></div>
-    <div class="wl wl-line">Or click on an option at random</div>
-    <div class="wl wl-gap"></div>
-    <div class="wl wl-line">What difference does it make?</div>
-
-    <div class="wl wl-gap"></div>
-    <div class="wl wl-line">No algorithm will <span class="red-i">monitor</span> your answers</div>
-    <div class="wl wl-line">You will not be <span class="red-i">tracked</span></div>
-    <div class="wl wl-line">You will not be <span class="red-i">judged</span></div>
-
-    <div class="wl wl-gap"></div>
-    <div class="wl wl-big-line">Unless you judge yourself?</div>
-
-    <div class="wl wl-gap-lg"></div>
-    <div class="wl wl-terms">There are no <span class="green-i">terms</span> and <span class="green-i">conditions</span><span class="terms-cur"></span></div>
-
-    <div class="wl" style="display:flex;justify-content:center;margin-top:20px;">
-      <button class="welcome-begin" id="welcome-begin">agree all</button>
+    <div class="judge-line">
+      <p>Unless you judge yourself?</p>
     </div>
-    <div class="dev-skip" id="dev-skip-welcome">skip ▸</div>
+
+    <div class="terms-line">
+      <p>There are no <em class="terms">terms</em> and <em class="terms">conditions</em><span class="terms-cursor"></span></p>
+    </div>
+
+    <div class="agree-btn">
+      <button id="welcome-begin">Agree All</button>
+    </div>
+
+    <div class="dev-skip" id="dev-skip-welcome">skip \u25B8</div>
   </div>
 </div>
 
@@ -8496,6 +8741,221 @@ document.getElementById('intro-continue').addEventListener('click', function(e) 
 
 // ── BOOT ──
 loadGame();
+
+
+// ══ INTRO ANIMATION SYSTEM (v26 integration) ══
+(function initIntroAnimation() {
+  const video = document.getElementById('introVideo');
+  const pixelCanvas = document.getElementById('pixelCanvas');
+  const blackOverlay = document.getElementById('blackOverlay');
+  const titleArea = document.getElementById('titleArea');
+  const systemWord = document.getElementById('systemWord');
+  const systemInner = document.getElementById('systemInner');
+  const cursorEl = document.getElementById('introCursor');
+  const cageSub = document.getElementById('cageSub');
+  const novelSub = document.getElementById('novelSub');
+  const btnArea = document.getElementById('btnArea');
+  const startArea = document.getElementById('startArea');
+  const poster = document.getElementById('poster');
+  const glitchSound = document.getElementById('glitchSound');
+  const soundtrack = document.getElementById('introSoundtrack');
+  const enterBtn = document.getElementById('intro-enter');
+
+  if (!video || !pixelCanvas) {
+    console.log('Intro animation elements not found — skipping init');
+    return;
+  }
+
+  let glitchTime = 10;
+  video.addEventListener('loadedmetadata', () => {
+    glitchTime = Math.max(video.duration - 1.5, 8);
+  });
+
+  function animatePixelation() {
+    const vw = video.videoWidth;
+    const vh = video.videoHeight;
+    const dpr = window.devicePixelRatio || 1;
+    const displayW = pixelCanvas.clientWidth || window.innerWidth;
+    const displayH = pixelCanvas.clientHeight || window.innerHeight;
+
+    pixelCanvas.width = displayW * dpr;
+    pixelCanvas.height = displayH * dpr;
+
+    const pCtx = pixelCanvas.getContext('2d');
+    pCtx.imageSmoothingEnabled = false;
+
+    // Replicate CSS object-fit: cover; object-position: center 55%
+    const videoAR = vw / vh;
+    const viewAR = displayW / displayH;
+    let sx, sy, sw, sh;
+    if (videoAR > viewAR) {
+      sh = vh; sw = vh * viewAR;
+      sx = (vw - sw) / 2; sy = 0;
+    } else {
+      sw = vw; sh = vw / viewAR;
+      sx = 0; sy = (vh - sh) * 0.55;
+    }
+
+    const steps = [
+      { px: 800, lv: 64, at: 0 },
+      { px: 600, lv: 56, at: 600 },
+      { px: 480, lv: 48, at: 1100 },
+      { px: 380, lv: 40, at: 1550 },
+      { px: 300, lv: 32, at: 1950 },
+      { px: 240, lv: 26, at: 2300 },
+      { px: 200, lv: 22, at: 2600 },
+      { px: 180, lv: 18, at: 2900 },
+      { px: 160, lv: 16, at: 3200 },
+    ];
+
+    pixelCanvas.style.display = 'block';
+    pixelCanvas.style.opacity = '1';
+
+    function renderStep(pixelSize, levels) {
+      const smallH = pixelSize;
+      const smallW = Math.round(pixelSize * viewAR);
+      const tinyCanvas = document.createElement('canvas');
+      tinyCanvas.width = smallW;
+      tinyCanvas.height = smallH;
+      const tCtx = tinyCanvas.getContext('2d');
+      tCtx.drawImage(video, sx, sy, sw, sh, 0, 0, smallW, smallH);
+      const imgData = tCtx.getImageData(0, 0, smallW, smallH);
+      const d = imgData.data;
+      const s = 255 / (levels - 1);
+      for (let i = 0; i < d.length; i += 4) {
+        d[i]   = Math.round(d[i]   / s) * s;
+        d[i+1] = Math.round(d[i+1] / s) * s;
+        d[i+2] = Math.round(d[i+2] / s) * s;
+        d[i]   = Math.min(255, d[i] + 3);
+        d[i+2] = Math.max(0, d[i+2] - 5);
+      }
+      tCtx.putImageData(imgData, 0, 0);
+      pCtx.drawImage(tinyCanvas, 0, 0, smallW, smallH, 0, 0, pixelCanvas.width, pixelCanvas.height);
+    }
+
+    steps.forEach(step => {
+      setTimeout(() => renderStep(step.px, step.lv), step.at);
+    });
+  }
+
+  function triggerGlitch() {
+    video.pause();
+    animatePixelation();
+
+    if (glitchSound) {
+      glitchSound.currentTime = 0;
+      glitchSound.play().catch(() => {});
+    }
+
+    titleArea.classList.add('visible');
+    blackOverlay.style.opacity = '1';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        blackOverlay.classList.add('jitter');
+      });
+    });
+
+    // Beat 1 (+3s): System rotates
+    setTimeout(() => {
+      systemInner.classList.add('flip');
+      setTimeout(() => { systemWord.classList.add('settled'); }, 400);
+    }, 3000);
+
+    // Beat 2 (+4.5s): Cursor final blink
+    setTimeout(() => { cursorEl.classList.add('final-blink'); }, 4500);
+
+    // Beat 3a (+5.8s): cage sub fades
+    setTimeout(() => { cageSub.classList.add('faded'); }, 5800);
+
+    // Beat 3b (+7.3s): "a novel"
+    setTimeout(() => { novelSub.classList.add('visible'); }, 7300);
+
+    // De-pixelate (+8s): crisp HD countryside returns
+    setTimeout(() => {
+      pixelCanvas.style.transition = 'opacity 4s ease-in-out';
+      pixelCanvas.style.opacity = '0';
+    }, 8000);
+
+    // Enter button (+10s)
+    setTimeout(() => { btnArea.classList.add('visible'); }, 10000);
+  }
+
+  // "Begin your journey" — starts the video animation
+  document.getElementById('intro-begin').addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (!video) return;
+    getCbtsAudioCtx(); // ensure audio context from user gesture
+
+    startArea.classList.add('hidden');
+
+    if (soundtrack) {
+      soundtrack.volume = 0.35;
+      soundtrack.currentTime = 0;
+      soundtrack.play().catch(() => {});
+    }
+
+    video.currentTime = 0;
+    video.classList.add('playing');
+    if (poster) poster.style.display = 'none';
+    video.play().catch(() => {});
+
+    const checkTime = () => {
+      if (video.currentTime >= glitchTime) {
+        triggerGlitch();
+      } else {
+        requestAnimationFrame(checkTime);
+      }
+    };
+    requestAnimationFrame(checkTime);
+  });
+
+  // "Enter" — show warm welcome screen
+  if (enterBtn) {
+    enterBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const intro = document.getElementById('intro-screen');
+      intro.classList.add('fade-out');
+
+      // Stop intro audio, start birdsong
+      if (soundtrack) { soundtrack.pause(); soundtrack.currentTime = 0; }
+      startBirdsong();
+
+      setTimeout(() => {
+        intro.style.display = 'none';
+        const ws = document.getElementById('welcome-screen');
+        ws.style.display = 'flex';
+        // Trigger cage flash
+        setTimeout(() => {
+          const cf = document.getElementById('cageFlash');
+          if (cf) cf.classList.add('flash-in');
+        }, 1600);
+      }, 2100);
+    });
+  }
+})();
+
+// ══ WELCOME SCREEN: Override agree-all handler ══
+// The old handler on #welcome-begin is still attached but the element
+// was replaced, so it won't fire. Attach new one.
+(function initWarmWelcome() {
+  const wb = document.getElementById('welcome-begin');
+  if (!wb) return;
+
+  wb.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const ws = document.getElementById('welcome-screen');
+    ws.classList.add('fade-out');
+    stopBirdsong();
+    setTimeout(() => {
+      ws.style.display = 'none';
+      document.body.classList.add('game-active');
+      positionSaveEnabled = true;
+      if (playData && playData.turns && playData.turns[state.turnIndex]) {
+        handleTurnAudio(playData.turns[state.turnIndex]);
+      }
+    }, 1600);
+  });
+})();
 
 </script>
 </body>

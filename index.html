@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="phase-1">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -668,15 +668,11 @@ body.no-transition * {
 
 html, body {
   height: 100%;
-  min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: 'Crimson Pro', serif;
   overflow: hidden;
 }
-html.phase-1 { --bg: #E8E2D6; }
-html.phase-2 { --bg: #141418; }
-html.phase-3 { --bg: #DEE4DA; }
 
 /* ── LAYOUT ── */
 .wrap {
@@ -7595,10 +7591,9 @@ function goTo(idx) {
     return 3;
   })();
   document.body.classList.remove('phase-1', 'phase-2', 'phase-3');
-  document.documentElement.classList.remove('phase-1', 'phase-2', 'phase-3');
-  if (phaseNum === 1) { document.body.classList.add('phase-1'); document.documentElement.classList.add('phase-1'); }
-  else if (phaseNum === 2) { document.body.classList.add('phase-2'); document.documentElement.classList.add('phase-2'); }
-  else { document.body.classList.add('phase-3'); document.documentElement.classList.add('phase-3'); }
+  if (phaseNum === 1) document.body.classList.add('phase-1');
+  else if (phaseNum === 2) document.body.classList.add('phase-2');
+  else document.body.classList.add('phase-3');
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');

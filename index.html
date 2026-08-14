@@ -2850,8 +2850,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100vh - 104px - env(safe-area-inset-bottom, 0px));
-    /* 52px header + 52px tabs = 104px — ticker retired S279 */
+    height: calc(100vh - 98px - env(safe-area-inset-bottom, 0px));
+    /* 52px header + 46px tabs = 98px */
   }
   .left {
     border-right: none;
@@ -2869,7 +2869,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
     position: fixed;
     top: 52px;
     left: 0; right: 0;
-    bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(46px + env(safe-area-inset-bottom, 0px));
     width: 100%;
     border-left: none;
     border-radius: 0;
@@ -3052,20 +3052,19 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 }
 
 /* ── PWA STANDALONE — bottom safe area (S281) ──
-   env(safe-area-inset-bottom) returns 0 on iOS because Safari/PWA
-   handles the home indicator area itself. This block adds the padding
-   manually — only in standalone mode, only on mobile. ── */
-@media (max-width: 900px) and (display-mode: standalone) {
-  .mob-tabs {
+   env(safe-area-inset-bottom) returns 0 on iOS. JS adds .pwa-standalone
+   to <html> when running as home screen app. ── */
+@media (max-width: 900px) {
+  html.pwa-standalone .mob-tabs {
     padding-bottom: 34px;
   }
-  .wrap {
-    height: calc(100vh - 138px);
-    /* 52px header + 52px tab icons + 34px home indicator = 138px */
+  html.pwa-standalone .wrap {
+    height: calc(100vh - 132px);
+    /* 52px header + 46px tab icons + 34px home indicator = 132px */
   }
-  .right {
-    bottom: 86px;
-    /* 52px tab icons + 34px home indicator */
+  html.pwa-standalone .right {
+    bottom: 80px;
+    /* 46px tab icons + 34px home indicator */
   }
 }
 
@@ -3145,20 +3144,20 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 .mob-tabs {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: calc(52px + env(safe-area-inset-bottom, 0px));
+  height: calc(46px + env(safe-area-inset-bottom, 0px));
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  background: rgba(10,10,12,0.97);
+  background: rgba(10,10,12,1);
   border-top: 1px solid var(--div);
   align-items: center;
   justify-content: space-around;
   z-index: 100;
 }
 body.phase-1 .mob-tabs {
-  background: rgba(200,196,188,0.97);
+  background: rgba(200,196,188,1);
   border-top-color: var(--div);
 }
 body.phase-3 .mob-tabs {
-  background: rgba(220,228,216,0.97);
+  background: rgba(220,228,216,1);
   border-top-color: var(--div);
 }
 .mob-tab {
@@ -3167,7 +3166,7 @@ body.phase-3 .mob-tabs {
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 6px 0;
+  padding: 4px 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -4676,6 +4675,10 @@ body.phase-3 .mob-tabs {
 // ── SERVICE WORKER (S281) ──
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+// ── PWA STANDALONE DETECTION (S281) ──
+if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+  document.documentElement.classList.add('pwa-standalone');
 }
 
 // ── LEFT-PANE WIDTH CSS VAR (for pm-wide breakout) ──

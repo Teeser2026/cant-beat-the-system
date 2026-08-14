@@ -2850,7 +2850,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100vh - 104px - var(--safe-bottom));
+    height: calc(100vh - 104px - env(safe-area-inset-bottom, 0px));
     /* 52px header + 52px tabs = 104px — ticker retired S279 */
   }
   .left {
@@ -2869,7 +2869,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
     position: fixed;
     top: 52px;
     left: 0; right: 0;
-    bottom: calc(52px + var(--safe-bottom));
+    bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     width: 100%;
     border-left: none;
     border-radius: 0;
@@ -2884,7 +2884,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 
   /* ── Ticker above tab bar ── */
   .ticker-bar {
-    bottom: calc(52px + var(--safe-bottom));
+    bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     height: 32px;
   }
   .ticker-label {
@@ -3127,8 +3127,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 .mob-tabs {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: calc(52px + var(--safe-bottom));
-  padding-bottom: var(--safe-bottom);
+  height: calc(52px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: rgba(10,10,12,0.97);
   border-top: 1px solid var(--div);
   align-items: center;

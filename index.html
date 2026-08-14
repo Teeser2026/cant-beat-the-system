@@ -672,8 +672,13 @@ html, body {
   font-family: 'Crimson Pro', serif;
   overflow: hidden;
 }
-html { background: #0a0a0c; }
-body { background: var(--bg); }
+html { background: #0a0a0c; height: 100%; }
+body {
+  background: var(--bg);
+  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
 
 /* ── LAYOUT ── */
 .wrap {
@@ -3056,6 +3061,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
    to <html> when running as home screen app. ── */
 @media (max-width: 900px) {
   html.pwa-standalone .mob-tabs {
+    height: 74px; /* 40px icons + 34px home indicator */
     padding-bottom: 34px;
   }
   html.pwa-standalone .wrap {

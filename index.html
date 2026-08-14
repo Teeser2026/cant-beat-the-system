@@ -2850,8 +2850,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100dvh - 52px - max(env(safe-area-inset-bottom, 0px), 34px) - 52px);
-    /* 52px header + tab bar (52px icons + max(safe-area, 34px) padding) */
+    height: calc(100vh - 104px - env(safe-area-inset-bottom, 0px));
+    /* 52px header + 52px tabs = 104px — ticker retired S279 */
   }
   .left {
     border-right: none;
@@ -2869,7 +2869,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
     position: fixed;
     top: 52px;
     left: 0; right: 0;
-    bottom: calc(52px + max(env(safe-area-inset-bottom, 0px), 34px));
+    bottom: calc(52px + env(safe-area-inset-bottom, 0px));
     width: 100%;
     border-left: none;
     border-radius: 0;
@@ -3051,6 +3051,24 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   }
 }
 
+/* ── PWA STANDALONE — bottom safe area (S281) ──
+   env(safe-area-inset-bottom) returns 0 on iOS because Safari/PWA
+   handles the home indicator area itself. This block adds the padding
+   manually — only in standalone mode, only on mobile. ── */
+@media (max-width: 900px) and (display-mode: standalone) {
+  .mob-tabs {
+    padding-bottom: 34px;
+  }
+  .wrap {
+    height: calc(100vh - 138px);
+    /* 52px header + 52px tab icons + 34px home indicator = 138px */
+  }
+  .right {
+    bottom: 86px;
+    /* 52px tab icons + 34px home indicator */
+  }
+}
+
 /* ── MOBILE HEADER ── */
 .mob-header {
   position: fixed;
@@ -3127,7 +3145,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 .mob-tabs {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  padding-bottom: max(env(safe-area-inset-bottom, 0px), 34px);
+  height: calc(52px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: rgba(10,10,12,0.97);
   border-top: 1px solid var(--div);
   align-items: center;
@@ -7681,6 +7700,9 @@ function goTo(idx) {
   if (phaseNum === 1) document.body.classList.add('phase-1');
   else if (phaseNum === 2) document.body.classList.add('phase-2');
   else document.body.classList.add('phase-3');
+  // Sync html element background for iOS PWA safe-area bleed (S281)
+  const phBg = {1:'#E8E2D6', 2:'#0a0a0c', 3:'#DCE4D8'};
+  document.documentElement.style.background = phBg[phaseNum] || '#0a0a0c';
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');
   const numEl = document.getElementById('t-num');

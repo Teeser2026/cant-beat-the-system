@@ -4623,7 +4623,17 @@ body.phase-3 .mob-tabs {
 }
 #welcome-screen::before {
   content: ''; position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent, transparent 2px,
+      rgba(130,110,75,.045) 2px, rgba(130,110,75,.045) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent, transparent 3px,
+      rgba(110,95,65,.035) 3px, rgba(110,95,65,.035) 4px
+    );
   pointer-events: none; z-index: 0;
 }
 #welcome-screen.fade-out { opacity: 0; }
@@ -4695,20 +4705,29 @@ body.phase-3 .mob-tabs {
   opacity: 0; animation: wsFadeIn 1.5s ease-out 2.8s forwards;
 }
 #welcome-screen .agree-btn button {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-  font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: #6B8F6B;
-  background: rgba(107,143,107,0.06);
-  border: 1.5px solid #8BAA8B;
-  border-radius: 5px; padding: 14px 44px;
-  cursor: pointer; transition: all 0.3s;
+  background: rgba(107, 143, 107, 0.05);
+  border: 1px solid #8BAA8B;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0.85;
 }
 #welcome-screen .agree-btn button:hover {
-  color: #fff; border-color: #6B8F6B; background: #6B8F6B;
+  border-color: #6B8F6B;
+  color: #6B8F6B;
+  opacity: 1;
+  background: rgba(107, 143, 107, 0.1);
 }
 @media (max-width: 600px) {
   #welcome-screen .welcome-page { padding: 6vh 0 4vh; }
+  #welcome-screen .welcome-word { margin-bottom: 2.5rem; }
+  #welcome-screen .cage-flash { margin-bottom: 3rem; }
   #welcome-screen .body-text .indented { padding-left: 1.2rem; }
 }
 

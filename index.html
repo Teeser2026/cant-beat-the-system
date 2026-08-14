@@ -4738,7 +4738,7 @@ body.phase-3 .mob-tabs {
       </div>
     </div>
     <div class="btn-area" id="btnArea">
-      <button type="button" class="enter-btn" id="intro-enter">Enter</button>
+      <button type="button" class="enter-btn" id="intro-enter" onclick="event.stopImmediatePropagation();event.preventDefault();if(window._cbtsEnter)window._cbtsEnter()">Enter</button>
     </div>
   </div>
   <audio id="glitchSound" preload="auto" src="glitch-sound.mp3"></audio>
@@ -8923,31 +8923,7 @@ ambientStarted = true; // prevent any trigger from trying
     beginJourney(e);
   });
 
-  // "Enter" — show warm welcome screen
-  if (enterBtn) {
-    enterBtn._cbtsHandlerAttached = true; // Signal backup handler to defer
-    enterBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const intro = document.getElementById('intro-screen');
-      intro.classList.add('fade-out');
-
-      // Stop all intro audio, start birdsong
-      if (soundtrack) { soundtrack.pause(); soundtrack.currentTime = 0; }
-      try { stopAmbient(); } catch(err) {}
-      startBirdsong();
-
-      setTimeout(() => {
-        intro.style.display = 'none';
-        const ws = document.getElementById('welcome-screen');
-        ws.style.display = 'flex';
-        // Trigger cage flash
-        setTimeout(() => {
-          const cf = document.getElementById('cageFlash');
-          if (cf) cf.classList.add('flash-in');
-        }, 1600);
-      }, 2100);
-    });
-  }
+  // Enter handler moved to global _cbtsEnter (onclick on button)
   } catch(err) {
     console.error('Intro animation init error:', err);
   }
@@ -8955,31 +8931,32 @@ ambientStarted = true; // prevent any trigger from trying
 
 // initWarmWelcome() removed — welcome-begin handler at line ~8496 covers this
 
-// ── BACKUP: Enter button handler (outside IIFE, guaranteed to attach) ──
-(function() {
-  const enterBtn = document.getElementById('intro-enter');
-  if (!enterBtn || enterBtn._cbtsHandlerAttached) return;
-  enterBtn.addEventListener('click', function(e) {
-    if (enterBtn._cbtsHandlerAttached) return; // IIFE handler takes priority
-    e.stopPropagation();
-    const intro = document.getElementById('intro-screen');
-    intro.classList.add('fade-out');
-    // Stop intro audio, start birdsong for welcome screen
-    const st = document.getElementById('introSoundtrack');
-    if (st) { st.pause(); st.currentTime = 0; }
-    try { stopAmbient(); } catch(err) {}
-    startBirdsong();
-    setTimeout(() => {
-      intro.style.display = 'none';
-      const ws = document.getElementById('welcome-screen');
-      ws.style.display = 'flex';
-      setTimeout(() => {
-        const cf = document.getElementById('cageFlash');
-        if (cf) cf.classList.add('flash-in');
-      }, 1600);
-    }, 2100);
-  });
-})();
+// ── Enter button — global handler (onclick on button, zero scope dependency) ──
+window._cbtsEnter = function() {
+  console.log('_cbtsEnter fired');
+  var intro = document.getElementById('intro-screen');
+  if (!intro) return;
+  intro.classList.add('fade-out');
+
+  // Stop intro audio
+  var st = document.getElementById('introSoundtrack');
+  if (st) { st.pause(); st.currentTime = 0; }
+  try { stopAmbient(); } catch(e) {}
+
+  // Start birdsong for welcome screen
+  startBirdsong();
+
+  setTimeout(function() {
+    intro.style.display = 'none';
+    var ws = document.getElementById('welcome-screen');
+    if (ws) ws.style.display = 'flex';
+    // Trigger cage flash
+    setTimeout(function() {
+      var cf = document.getElementById('cageFlash');
+      if (cf) cf.classList.add('flash-in');
+    }, 1600);
+  }, 2100);
+};
 
 </script>
 </body>

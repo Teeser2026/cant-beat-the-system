@@ -668,11 +668,12 @@ body.no-transition * {
 
 html, body {
   height: 100%;
-  background: var(--bg);
   color: var(--text);
   font-family: 'Crimson Pro', serif;
   overflow: hidden;
 }
+html { background: #0a0a0c; }
+body { background: var(--bg); }
 
 /* ── LAYOUT ── */
 .wrap {
@@ -2074,6 +2075,7 @@ body.phase-3 .song-context {
   height: 32px;
   background: #ff3355;
   margin-left: 6px;
+  margin-right: -8px;
   vertical-align: middle;
   animation: intro-blink 1s step-end infinite;
 }
@@ -2103,6 +2105,49 @@ body.phase-3 .song-context {
 
 #intro-screen:hover .intro-enter {
   color: rgba(200,196,184,0.6);
+}
+
+/* ── Reading position — intro action buttons (S281) ── */
+#intro-screen .intro-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 52px;
+  opacity: 0;
+  animation: intro-fade-in 2s ease-out 3s forwards;
+}
+#intro-screen .intro-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(200,196,184,0.35);
+  background: none;
+  border: 1px solid rgba(200,196,184,0.1);
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: color .3s, border-color .3s;
+  -webkit-tap-highlight-color: transparent;
+}
+#intro-screen .intro-btn:active {
+  color: rgba(200,196,184,0.6);
+  border-color: rgba(200,196,184,0.25);
+}
+#intro-screen .intro-btn-continue {
+  font-size: 10px;
+  letter-spacing: 3px;
+  padding: 10px 28px;
+  color: rgba(200,196,184,0.25);
+  border-color: rgba(200,196,184,0.06);
+}
+#intro-screen .intro-btn-continue:active {
+  color: rgba(200,196,184,0.5);
+  border-color: rgba(200,196,184,0.18);
+}
+#intro-screen .intro-resume-dot {
+  color: rgba(0,255,136,0.3);
 }
 
 #intro-screen .intro-ambient {
@@ -2275,12 +2320,13 @@ body.phase-3 .song-context {
 #welcome-screen .welcome-cage .wc-title .sys { color: #1AAF6C; font-weight: 600; }
 #welcome-screen .welcome-cage .wc-title .cur {
   display: inline-block; width: 2px; height: 18px;
-  background: #ff3355; margin-left: 4px; vertical-align: middle;
+  background: #ff3355; margin-left: 4px; margin-right: -6px; vertical-align: middle;
   animation: intro-blink 1s step-end infinite;
 }
 #welcome-screen .welcome-cage .wc-title.wc-title-lg .cur {
   height: 26px;
   margin-left: 6px;
+  margin-right: -8px;
 }
 
 #welcome-screen .wl-tagline {
@@ -2823,7 +2869,7 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
     position: fixed;
     top: 52px;
     left: 0; right: 0;
-    bottom: calc(84px + var(--safe-bottom));
+    bottom: calc(52px + var(--safe-bottom));
     width: 100%;
     border-left: none;
     border-radius: 0;
@@ -2986,6 +3032,15 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   #intro-screen .intro-enter {
     font-size: 11px;
     letter-spacing: 2px;
+  }
+  #intro-screen .intro-btn {
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 12px 28px;
+  }
+  #intro-screen .intro-btn-continue {
+    font-size: 9px;
+    padding: 10px 24px;
   }
 
   /* ── Prose media ── */
@@ -4404,7 +4459,10 @@ body.phase-3 .mob-tabs {
       <div class="intro-title">Can't Beat the <span class="sys">System</span><span class="intro-cursor"></span></div>
     </div>
     <div class="intro-tagline">the cage is comfortable</div>
-    <div class="intro-enter">click anywhere to begin</div>
+    <div class="intro-actions" id="intro-actions">
+      <button class="intro-btn" id="intro-begin">begin</button>
+      <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> · </span><span id="intro-resume-title"></span></button>
+    </div>
   </div>
   <div class="intro-ambient" id="intro-ambient-toggle">♪ sound on</div>
   <div class="dev-skip" id="dev-skip-intro">skip ▸</div>
@@ -4615,6 +4673,8 @@ let mirrorData = [];
 
 // ── DEV MODE ──
 const DEV = new URLSearchParams(window.location.search).has('dev');
+let cbtsResumeData = null;
+let positionSaveEnabled = false;
 
 async function loadGame() {
   try {
@@ -4649,12 +4709,31 @@ async function loadGame() {
     // Init
     renderThreads();
     updateTicker(1); // Seed ticker with T1 pool before first goTo
+    // ── Reading position restore (S281) ──
+    try {
+      const raw = localStorage.getItem('cbts-pos');
+      if (raw) {
+        const sp = JSON.parse(raw);
+        if (sp && typeof sp.idx === 'number' && sp.idx > 0 && sp.idx < data.turns.length && sp.title) {
+          cbtsResumeData = sp;
+        }
+      }
+    } catch(e) {}
     goTo(0);
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         document.body.classList.remove('no-transition');
       });
     });
+    // Populate continue button if saved position exists (S281)
+    if (cbtsResumeData) {
+      const cb = document.getElementById('intro-continue');
+      const rt = document.getElementById('intro-resume-title');
+      if (cb && rt) {
+        rt.textContent = cbtsResumeData.title.toLowerCase();
+        cb.style.display = '';
+      }
+    }
 
   } catch (err) {
     console.error('CBTS load error:', err);
@@ -7580,6 +7659,10 @@ function goTo(idx) {
   if (idx < 0 || idx >= playData.turns.length) return;
   state.turnIndex = idx;
   const turn = playData.turns[idx];
+  // Save reading position (S281)
+  if (positionSaveEnabled && !turn.isQuestion) {
+    try { localStorage.setItem('cbts-pos', JSON.stringify({idx:idx, id:turn.id, title:turn.title})); } catch(e) {}
+  }
 
   // ── PHASE DETECTION — visual skin swap ──
   const phaseNum = (() => {
@@ -8147,6 +8230,7 @@ document.getElementById('welcome-begin').addEventListener('click', function(e) {
   setTimeout(() => {
     ws.style.display = 'none';
     document.body.classList.add('game-active');
+    positionSaveEnabled = true;
     // Re-trigger turn audio — goTo(0) ran before any gesture (S266h)
     if (playData && playData.turns && playData.turns[state.turnIndex]) {
       handleTurnAudio(playData.turns[state.turnIndex]);
@@ -8227,6 +8311,7 @@ document.getElementById('dev-skip-intro').addEventListener('click', function(e) 
   document.getElementById('intro-screen').style.display = 'none';
   document.getElementById('welcome-screen').style.display = 'none';
   document.body.classList.add('game-active');
+  positionSaveEnabled = true;
   if (playData && playData.turns && playData.turns[state.turnIndex]) {
     handleTurnAudio(playData.turns[state.turnIndex]);
   }
@@ -8237,9 +8322,36 @@ document.getElementById('dev-skip-welcome').addEventListener('click', function(e
   stopBirdsong();
   document.getElementById('welcome-screen').style.display = 'none';
   document.body.classList.add('game-active');
+  positionSaveEnabled = true;
   if (playData && playData.turns && playData.turns[state.turnIndex]) {
     handleTurnAudio(playData.turns[state.turnIndex]);
   }
+});
+
+// ── READING POSITION — continue button handler (S281) ──
+document.getElementById('intro-begin').addEventListener('click', function(e) {
+  // Begin button: let click propagate to full-screen handler (same action)
+  // No stopPropagation — clicking "begin" = clicking anywhere = welcome flow
+});
+document.getElementById('intro-continue').addEventListener('click', function(e) {
+  e.stopPropagation();
+  if (!introClickable) return;
+  getCbtsAudioCtx();
+  const intro = document.getElementById('intro-screen');
+  intro.classList.add('fade-out');
+  stopAmbient();
+  if (cbtsResumeData && cbtsResumeData.idx >= 0 && cbtsResumeData.idx < playData.turns.length) {
+    goTo(cbtsResumeData.idx);
+  }
+  setTimeout(() => {
+    intro.style.display = 'none';
+    document.getElementById('welcome-screen').style.display = 'none';
+    document.body.classList.add('game-active');
+    positionSaveEnabled = true;
+    if (playData && playData.turns && playData.turns[state.turnIndex]) {
+      handleTurnAudio(playData.turns[state.turnIndex]);
+    }
+  }, 2100);
 });
 
 // ── MOBILE ENGINE (S266) ──

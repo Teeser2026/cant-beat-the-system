@@ -8773,11 +8773,14 @@ loadGame();
     return;
   }
 
-  // Neutralise old intro click-anywhere handler
+  // Neutralise old intro click-anywhere handler, but let buttons through
   const introEl = document.getElementById('intro-screen');
   introEl.addEventListener('click', function(e) {
-    e.stopImmediatePropagation();
-  }, true); // capturing phase — fires before old handler
+    if (!e.target.closest('.begin-btn, .enter-btn, .intro-btn-continue, .dev-skip')) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  }, true); // capturing phase
 
   let glitchTime = 10;
   video.addEventListener('loadedmetadata', () => {

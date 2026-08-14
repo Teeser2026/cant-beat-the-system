@@ -4473,12 +4473,10 @@ body.phase-3 .mob-tabs {
 #intro-screen::before { opacity: 0 !important; } /* kill old noise overlay */
 #intro-screen::after { display: none !important; } /* kill old glow overlay */
 #intro-screen .scene { pointer-events: none; }
-#intro-screen .start-area,
-#intro-screen .btn-area,
 #intro-screen .dev-skip,
 #intro-screen .begin-btn,
-#intro-screen .enter-btn,
 #intro-screen .intro-btn-continue { pointer-events: auto !important; cursor: pointer; }
+#intro-screen .btn-area.visible .enter-btn { pointer-events: auto; cursor: pointer; }
 
 #intro-screen .scene {
   position: absolute; inset: 0;
@@ -4747,7 +4745,7 @@ body.phase-3 .mob-tabs {
     <div class="black-overlay" id="blackOverlay"></div>
     <div class="start-area" id="startArea">
       <button class="begin-btn" id="intro-begin">Begin your journey</button>
-      <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> \u00B7 </span><span id="intro-resume-title"></span></button>
+      <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> · </span><span id="intro-resume-title"></span></button>
     </div>
     <div class="title-area" id="titleArea">
       <div class="title-main">Can’t Beat the <span class="title-system" id="systemWord"><span class="title-system-inner" id="systemInner">System</span></span><span class="title-cursor" id="introCursor"></span></div>
@@ -4757,7 +4755,7 @@ body.phase-3 .mob-tabs {
       </div>
     </div>
     <div class="btn-area" id="btnArea">
-      <button type="button" class="enter-btn" id="intro-enter" onclick="event.stopImmediatePropagation();event.preventDefault();if(window._cbtsEnter)window._cbtsEnter()">Enter</button>
+      <button type="button" class="enter-btn" id="intro-enter" onclick="event.stopImmediatePropagation();event.preventDefault();if(window._cbtsEnter)window._cbtsEnter()">Start reading</button>
     </div>
   </div>
   <audio id="glitchSound" preload="auto" src="glitch-sound.mp3"></audio>
@@ -8952,6 +8950,8 @@ ambientStarted = true; // prevent any trigger from trying
 
 // ── Enter button — global handler (onclick on button, zero scope dependency) ──
 window._cbtsEnter = function() {
+  var btnArea = document.getElementById('btnArea');
+  if (!btnArea || !btnArea.classList.contains('visible')) return;
   console.log('_cbtsEnter fired');
   var intro = document.getElementById('intro-screen');
   if (!intro) return;

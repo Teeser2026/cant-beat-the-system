@@ -8750,6 +8750,10 @@ loadGame();
 
 
 // ══ INTRO ANIMATION SYSTEM (v26 integration) ══
+// Kill old ambient audio system at source — the video has its own soundtrack
+startAmbient = function() {};
+ambientStarted = true; // prevent any trigger from trying
+
 (function initIntroAnimation() {
   try {
   const video = document.getElementById('introVideo');
@@ -8901,6 +8905,7 @@ loadGame();
     if (e) e.stopPropagation();
     if (!video) return;
     try { getCbtsAudioCtx(); } catch(err) { console.log('Audio ctx:', err); }
+    try { stopAmbient(); } catch(err) { console.log('Stop ambient:', err); }
 
     startArea.classList.add('hidden');
 
@@ -8940,8 +8945,9 @@ loadGame();
       const intro = document.getElementById('intro-screen');
       intro.classList.add('fade-out');
 
-      // Stop intro audio, start birdsong
+      // Stop all intro audio, start birdsong
       if (soundtrack) { soundtrack.pause(); soundtrack.currentTime = 0; }
+      try { stopAmbient(); } catch(err) {}
       startBirdsong();
 
       setTimeout(() => {

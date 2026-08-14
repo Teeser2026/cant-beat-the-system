@@ -4654,6 +4654,11 @@ body.phase-3 .mob-tabs {
 // All render logic identical to index-6 Phase A.
 // ══════════════════════════════════════════════════════════
 
+// ── SERVICE WORKER (S281) ──
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
 // ── LEFT-PANE WIDTH CSS VAR (for pm-wide breakout) ──
 function setLeftW() {
   const el = document.querySelector('.left');

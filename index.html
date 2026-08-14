@@ -4727,7 +4727,7 @@ body.phase-3 .mob-tabs {
     <div class="vignette"></div>
     <div class="black-overlay" id="blackOverlay"></div>
     <div class="start-area" id="startArea">
-      <button class="begin-btn" id="intro-begin" onclick="if(window._cbtsBegin)window._cbtsBegin(event)">Begin your journey</button>
+      <button class="begin-btn" id="intro-begin">Begin your journey</button>
       <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> \u00B7 </span><span id="intro-resume-title"></span></button>
     </div>
     <div class="title-area" id="titleArea">
@@ -8410,23 +8410,7 @@ setTimeout(() => {
   document.getElementById('intro-screen').classList.add('clickable');
 }, 2500);
 
-document.getElementById('intro-screen').addEventListener('click', function() {
-  if (!introClickable) return;
-  this.classList.add('fade-out');
-  // Crossfade: start birdsong immediately, fade out ambient together
-  startBirdsong();
-  if (ambientAudio && ambientGain && ambientCtx) {
-    ambientGain.gain.linearRampToValueAtTime(0, ambientCtx.currentTime + 2.5);
-    setTimeout(() => { stopAmbient(); }, 2700);
-  }
-  setTimeout(() => {
-    this.style.display = 'none';
-    // Show welcome screen and start line reveals
-    const ws = document.getElementById('welcome-screen');
-    ws.style.display = 'flex';
-    startWelcomeSequence();
-  }, 2100);
-});
+// Old click-anywhere handler removed — v26 uses Begin/Enter buttons, not background click
 
 // ── WELCOME SCREEN ──
 // ── WELCOME SCREEN ──
@@ -8606,10 +8590,7 @@ document.getElementById('dev-skip-welcome').addEventListener('click', function(e
 });
 
 // ── READING POSITION — continue button handler (S281) ──
-document.getElementById('intro-begin').addEventListener('click', function(e) {
-  // Begin button: let click propagate to full-screen handler (same action)
-  // No stopPropagation — clicking "begin" = clicking anywhere = welcome flow
-});
+// Old intro-begin passthrough handler removed — IIFE handler covers this
 document.getElementById('intro-continue').addEventListener('click', function(e) {
   e.stopPropagation();
   if (!introClickable) return;
@@ -8912,6 +8893,13 @@ ambientStarted = true; // prevent any trigger from trying
       soundtrack.play().catch(() => {});
     }
 
+    // Unlock glitch sound during this user gesture (iOS requires it)
+    if (glitchSound) {
+      glitchSound.volume = 0;
+      glitchSound.play().then(() => { glitchSound.pause(); glitchSound.currentTime = 0; glitchSound.volume = 1; })
+        .catch(() => {});
+    }
+
     video.currentTime = 0;
     video.classList.add('playing');
     if (poster) poster.style.display = 'none';
@@ -8937,6 +8925,7 @@ ambientStarted = true; // prevent any trigger from trying
 
   // "Enter" — show warm welcome screen
   if (enterBtn) {
+    enterBtn._cbtsHandlerAttached = true; // Signal backup handler to defer
     enterBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       const intro = document.getElementById('intro-screen');
@@ -8965,6 +8954,32 @@ ambientStarted = true; // prevent any trigger from trying
 })();
 
 // initWarmWelcome() removed — welcome-begin handler at line ~8496 covers this
+
+// ── BACKUP: Enter button handler (outside IIFE, guaranteed to attach) ──
+(function() {
+  const enterBtn = document.getElementById('intro-enter');
+  if (!enterBtn || enterBtn._cbtsHandlerAttached) return;
+  enterBtn.addEventListener('click', function(e) {
+    if (enterBtn._cbtsHandlerAttached) return; // IIFE handler takes priority
+    e.stopPropagation();
+    const intro = document.getElementById('intro-screen');
+    intro.classList.add('fade-out');
+    // Stop intro audio, start birdsong for welcome screen
+    const st = document.getElementById('introSoundtrack');
+    if (st) { st.pause(); st.currentTime = 0; }
+    try { stopAmbient(); } catch(err) {}
+    startBirdsong();
+    setTimeout(() => {
+      intro.style.display = 'none';
+      const ws = document.getElementById('welcome-screen');
+      ws.style.display = 'flex';
+      setTimeout(() => {
+        const cf = document.getElementById('cageFlash');
+        if (cf) cf.classList.add('flash-in');
+      }, 1600);
+    }, 2100);
+  });
+})();
 
 </script>
 </body>

@@ -4463,10 +4463,16 @@ body.phase-3 .mob-tabs {
 
 
 /* ══ INTRO ANIMATION (v26 integration) ══ */
-#intro-screen { pointer-events: none; } /* disable old click-anywhere handler */
+#intro-screen { cursor: default; }
+#intro-screen::before { opacity: 0 !important; } /* kill old noise overlay */
+#intro-screen::after { display: none !important; } /* kill old glow overlay */
+#intro-screen .scene { pointer-events: none; }
 #intro-screen .start-area,
 #intro-screen .btn-area,
-#intro-screen .dev-skip { pointer-events: auto; }
+#intro-screen .dev-skip,
+#intro-screen .begin-btn,
+#intro-screen .enter-btn,
+#intro-screen .intro-btn-continue { pointer-events: auto !important; cursor: pointer; }
 
 #intro-screen .scene {
   position: absolute; inset: 0;
@@ -4715,7 +4721,7 @@ body.phase-3 .mob-tabs {
     <div class="vignette"></div>
     <div class="black-overlay" id="blackOverlay"></div>
     <div class="start-area" id="startArea">
-      <button class="begin-btn" id="intro-begin">Begin your journey</button>
+      <button class="begin-btn" id="intro-begin" onclick="if(window._cbtsBegin)window._cbtsBegin(event)">Begin your journey</button>
       <button class="intro-btn intro-btn-continue" id="intro-continue" style="display:none">continue<span class="intro-resume-dot"> \u00B7 </span><span id="intro-resume-title"></span></button>
     </div>
     <div class="title-area" id="titleArea">
@@ -8745,6 +8751,7 @@ loadGame();
 
 // ══ INTRO ANIMATION SYSTEM (v26 integration) ══
 (function initIntroAnimation() {
+  try {
   const video = document.getElementById('introVideo');
   const pixelCanvas = document.getElementById('pixelCanvas');
   const blackOverlay = document.getElementById('blackOverlay');
@@ -8765,6 +8772,12 @@ loadGame();
     console.log('Intro animation elements not found — skipping init');
     return;
   }
+
+  // Neutralise old intro click-anywhere handler
+  const introEl = document.getElementById('intro-screen');
+  introEl.addEventListener('click', function(e) {
+    e.stopImmediatePropagation();
+  }, true); // capturing phase — fires before old handler
 
   let glitchTime = 10;
   video.addEventListener('loadedmetadata', () => {
@@ -8881,10 +8894,10 @@ loadGame();
   }
 
   // "Begin your journey" — starts the video animation
-  document.getElementById('intro-begin').addEventListener('click', function(e) {
-    e.stopPropagation();
+  function beginJourney(e) {
+    if (e) e.stopPropagation();
     if (!video) return;
-    getCbtsAudioCtx(); // ensure audio context from user gesture
+    try { getCbtsAudioCtx(); } catch(err) { console.log('Audio ctx:', err); }
 
     startArea.classList.add('hidden');
 
@@ -8897,7 +8910,7 @@ loadGame();
     video.currentTime = 0;
     video.classList.add('playing');
     if (poster) poster.style.display = 'none';
-    video.play().catch(() => {});
+    video.play().catch((err) => { console.log('Video play failed:', err); });
 
     const checkTime = () => {
       if (video.currentTime >= glitchTime) {
@@ -8907,6 +8920,14 @@ loadGame();
       }
     };
     requestAnimationFrame(checkTime);
+  }
+
+  // Expose globally for onclick fallback
+  window._cbtsBegin = beginJourney;
+
+  document.getElementById('intro-begin').addEventListener('click', function(e) {
+    e.stopImmediatePropagation();
+    beginJourney(e);
   });
 
   // "Enter" — show warm welcome screen
@@ -8931,6 +8952,9 @@ loadGame();
         }, 1600);
       }, 2100);
     });
+  }
+  } catch(err) {
+    console.error('Intro animation init error:', err);
   }
 })();
 

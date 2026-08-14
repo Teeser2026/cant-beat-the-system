@@ -8396,16 +8396,7 @@ document.getElementById('intro-screen').addEventListener('touchstart', function(
   }
 }, { once: true, passive: true });
 
-document.getElementById('intro-ambient-toggle').addEventListener('click', function(e) {
-  e.stopPropagation();
-  if (ambientOn) {
-    stopAmbient();
-    this.textContent = '♪ sound off';
-  } else {
-    startAmbient();
-    this.textContent = '♪ sound on';
-  }
-});
+// intro-ambient-toggle handler removed — v26 uses video soundtrack, not ambient loop
 
 let introClickable = false;
 setTimeout(() => {

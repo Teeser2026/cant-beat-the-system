@@ -8292,6 +8292,9 @@ function checkTabNotifications(turn) {
 
 function playPing() {
   try {
+    // Suppress during intro sequence
+    const intro = document.getElementById('intro-screen');
+    if (intro && intro.style.display !== 'none') return;
     const ctx = getCbtsAudioCtx();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -8934,11 +8937,10 @@ ambientStarted = true; // prevent any trigger from trying
     }
 
     // Unlock glitch sound during this user gesture (iOS requires it)
-    // Volume stays at 0 until triggerGlitch sets it
+    // Let it play fully at vol 0 — more reliable unlock than play-then-pause
     if (glitchSound) {
       glitchSound.volume = 0;
-      glitchSound.play().then(() => { glitchSound.pause(); glitchSound.currentTime = 0; })
-        .catch(() => {});
+      glitchSound.play().catch(() => {});
     }
 
     video.currentTime = 0;

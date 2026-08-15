@@ -5102,6 +5102,7 @@ function renderTurn(turnData) {
         });
         this.classList.add('sel');
         this.style.opacity = '1';
+        playConfirm();
         setTimeout(() => goTo(state.turnIndex + 1), 1200);
       });
     });
@@ -5200,6 +5201,7 @@ function renderTurn(turnData) {
       choices.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
       this.classList.add('sel');
       choices.querySelectorAll('.c-opt:not(.sel)').forEach(o => o.style.opacity = '.25');
+      playConfirm();
       setTimeout(() => goTo(state.turnIndex + 1), 900);
     });
   });
@@ -8239,8 +8241,8 @@ function checkTabNotifications(turn) {
   if (hasNew && !threadsTab.classList.contains('on')) {
     if (!threadsTab.querySelector('.tab-dot')) {
       threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
-      playPing();
     }
+    playPing();
   }
 
   // Songs tab dot — does any song unlock at this turn?
@@ -8306,6 +8308,16 @@ function playPing() {
     gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.15);
+  } catch(e) {}
+}
+
+function playConfirm() {
+  try {
+    const intro = document.getElementById('intro-screen');
+    if (intro && intro.style.display !== 'none') return;
+    const a = new Audio('message-ping.mp3');
+    a.volume = 0.35;
+    a.play().catch(() => {});
   } catch(e) {}
 }
 

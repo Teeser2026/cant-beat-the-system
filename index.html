@@ -8894,6 +8894,7 @@ ambientStarted = true; // prevent any trigger from trying
     animatePixelation();
 
     if (glitchSound) {
+      glitchSound.muted = false;
       glitchSound.volume = 1;
       glitchSound.currentTime = 0;
       glitchSound.play().catch(() => {});
@@ -8948,9 +8949,8 @@ ambientStarted = true; // prevent any trigger from trying
     }
 
     // Unlock glitch sound during this user gesture (iOS requires it)
-    // Let it play fully at vol 0 — more reliable unlock than play-then-pause
     if (glitchSound) {
-      glitchSound.volume = 0;
+      glitchSound.muted = true;
       glitchSound.play().catch(() => {});
     }
 

@@ -8294,9 +8294,16 @@ function checkTabNotifications(turn) {
 
 function playPing() {
   try {
-    // Suppress during intro sequence
     const intro = document.getElementById('intro-screen');
     if (intro && intro.style.display !== 'none') return;
+    const a = new Audio('message-ping.mp3');
+    a.volume = 0.35;
+    a.play().catch(() => {});
+  } catch(e) {}
+}
+
+function playConfirm() {
+  try {
     const ctx = getCbtsAudioCtx();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -8308,16 +8315,6 @@ function playPing() {
     gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.15);
-  } catch(e) {}
-}
-
-function playConfirm() {
-  try {
-    const intro = document.getElementById('intro-screen');
-    if (intro && intro.style.display !== 'none') return;
-    const a = new Audio('message-ping.mp3');
-    a.volume = 0.35;
-    a.play().catch(() => {});
   } catch(e) {}
 }
 
@@ -8539,6 +8536,7 @@ function startWelcomeSequence() {
 
 document.getElementById('welcome-begin').addEventListener('click', function(e) {
   e.stopPropagation();
+  playConfirm();
   const ws = document.getElementById('welcome-screen');
   ws.classList.add('fade-out');
   stopBirdsong();
@@ -8649,6 +8647,7 @@ document.getElementById('intro-continue').addEventListener('click', function(e) 
   e.stopPropagation();
   if (!introClickable) return;
   getCbtsAudioCtx();
+  playConfirm();
   const intro = document.getElementById('intro-screen');
   intro.classList.add('fade-out');
   stopAmbient();
@@ -8990,7 +8989,7 @@ ambientStarted = true; // prevent any trigger from trying
 window._cbtsEnter = function() {
   var btnArea = document.getElementById('btnArea');
   if (!btnArea || !btnArea.classList.contains('visible')) return;
-  console.log('_cbtsEnter fired');
+  playConfirm();
   var intro = document.getElementById('intro-screen');
   if (!intro) return;
   intro.classList.add('fade-out');

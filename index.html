@@ -2855,8 +2855,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100vh - 92px - env(safe-area-inset-bottom, 0px));
-    /* 52px header + 40px tabs = 92px */
+    height: calc(100vh - 98px - env(safe-area-inset-bottom, 0px));
+    /* 52px header + 46px tabs = 98px */
   }
   .left {
     border-right: none;
@@ -3061,16 +3061,16 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
    to <html> when running as home screen app. ── */
 @media (max-width: 900px) {
   html.pwa-standalone .mob-tabs {
-    height: 74px; /* 40px icons + 34px home indicator */
+    height: 80px; /* 46px icons + 34px home indicator */
     padding-bottom: 34px;
   }
   html.pwa-standalone .wrap {
-    height: calc(100vh - 126px);
-    /* 52px header + 40px tab icons + 34px home indicator = 126px */
+    height: calc(100vh - 132px);
+    /* 52px header + 46px tab icons + 34px home indicator = 132px */
   }
   html.pwa-standalone .right {
-    bottom: 74px;
-    /* 40px tab icons + 34px home indicator */
+    bottom: 80px;
+    /* 46px tab icons + 34px home indicator */
   }
 }
 
@@ -3150,7 +3150,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 .mob-tabs {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: calc(40px + env(safe-area-inset-bottom, 0px));
+  height: calc(46px + env(safe-area-inset-bottom, 0px));
+  padding-top: 6px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: rgba(10,10,12,1);
   border-top: 1px solid var(--div);
@@ -7978,7 +7979,7 @@ function goTo(idx) {
   else if (phaseNum === 2) document.body.classList.add('phase-2');
   else document.body.classList.add('phase-3');
   // Sync html element background for iOS PWA safe-area bleed (S281)
-  const phBg = {1:'#E8E2D6', 2:'#0a0a0c', 3:'#DCE4D8'};
+  const phBg = {1:'#C8C4BC', 2:'#0a0a0c', 3:'#DCE4D8'};
   document.documentElement.style.background = phBg[phaseNum] || '#0a0a0c';
   const titleEl = document.getElementById('t-title');
   const dateEl = document.getElementById('t-date');

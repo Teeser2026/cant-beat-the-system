@@ -665,6 +665,12 @@
           "Pie and Mash",
           "Souvlaki"
         ]
+      },
+      "audio": {
+        "src": "car_ride.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -852,6 +858,12 @@
           "Use it again for practical stuff. DIY, measurements, that sort of thing. Don\u2019t start asking it to think for you.",
           "Ask it about Deep Underground Military Bases. See what it knows."
         ]
+      },
+      "audio": {
+        "src": "woodwork.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -1005,6 +1017,12 @@
           "Send it to three people who might actually watch it. Do your bit.",
           "Leave it. Knowing more changes nothing."
         ]
+      },
+      "audio": {
+        "src": "gentle_sadness.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.2
       }
     },
     {
@@ -1471,6 +1489,12 @@
           "Leave it. She doesn\u2019t want to hear it. And maybe she\u2019s right not to.",
           "Mute the TV. Pick up The Conversation where you left off."
         ]
+      },
+      "audio": {
+        "src": "gentle_guitar.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.25
       }
     },
     {
@@ -1640,6 +1664,12 @@
           "We want the finest wines available to humanity",
           "Feeling supersonic, give me gin and tonic"
         ]
+      },
+      "audio": {
+        "src": "birthday.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.25
       }
     },
     {
@@ -2324,6 +2354,12 @@
           "Close the tab. You know exactly what you\u2019re doing and it isn\u2019t healthy.",
           "Subscribe and Save on the olive oil too. The polyphenols alone justify it."
         ]
+      },
+      "audio": {
+        "src": "black-friday-pay.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.35
       }
     },
     {
@@ -2495,7 +2531,13 @@
             }
           ]
         }
-      ]
+      ],
+      "audio": {
+        "src": "deep-healing-binaural-frequencies.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.2
+      }
     },
     {
       "id": 9,
@@ -2629,6 +2671,12 @@
           "Are we unique?",
           "The prodigal son is alive and well and living in the front bedroom."
         ]
+      },
+      "audio": {
+        "src": "ascension-acid.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -2745,6 +2793,12 @@
           "Just a quick scroll. You\u2019ve earned it. It\u2019s Christmas.",
           "Zzzzzz Zzzzzz"
         ]
+      },
+      "audio": {
+        "src": "winter.mp3",
+        "fadeIn": 3,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -3005,6 +3059,12 @@
           "The Show Must Go On",
           "Didn\u2019t We Almost Have It All"
         ]
+      },
+      "audio": {
+        "src": "loop-pulse.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -3235,6 +3295,12 @@
           "Hide head under pillow.",
           "Make a White Russian."
         ]
+      },
+      "audio": {
+        "src": "the_dude.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {
@@ -3532,6 +3598,12 @@
           "Do you take Bitcoin?",
           "Beep."
         ]
+      },
+      "audio": {
+        "src": "winter_walk.mp3",
+        "fadeIn": 2,
+        "fadeOut": 2,
+        "vol": 0.3
       }
     },
     {

@@ -2855,8 +2855,8 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
   .wrap {
     margin-right: 0;
     margin-top: 52px;
-    height: calc(100vh - 98px - env(safe-area-inset-bottom, 0px));
-    /* 52px header + 46px tabs = 98px */
+    height: calc(100vh - 96px - env(safe-area-inset-bottom, 0px));
+    /* 52px header + 44px tabs = 96px */
   }
   .left {
     border-right: none;
@@ -3061,16 +3061,16 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
    to <html> when running as home screen app. ── */
 @media (max-width: 900px) {
   html.pwa-standalone .mob-tabs {
-    height: 80px; /* 46px icons + 34px home indicator */
+    height: 78px; /* 44px icons + 34px home indicator */
     padding-bottom: 34px;
   }
   html.pwa-standalone .wrap {
-    height: calc(100vh - 132px);
-    /* 52px header + 46px tab icons + 34px home indicator = 132px */
+    height: calc(100vh - 130px);
+    /* 52px header + 44px tab icons + 34px home indicator = 130px */
   }
   html.pwa-standalone .right {
-    bottom: 80px;
-    /* 46px tab icons + 34px home indicator */
+    bottom: 78px;
+    /* 44px tab icons + 34px home indicator */
   }
 }
 
@@ -3150,14 +3150,22 @@ body.game-active .ticker-bar { display: none; } /* S279: ticker retired */
 .mob-tabs {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: calc(46px + env(safe-area-inset-bottom, 0px));
-  padding-top: 6px;
+  height: calc(44px + env(safe-area-inset-bottom, 0px));
+  padding-top: 4px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: rgba(10,10,12,1);
   border-top: 1px solid var(--div);
   align-items: center;
   justify-content: space-around;
   z-index: 100;
+}
+.mob-tabs::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -50px;
+  height: 50px;
+  background: inherit;
 }
 body.phase-1 .mob-tabs {
   background: rgba(200,196,188,1);
@@ -4724,10 +4732,23 @@ body.phase-3 .mob-tabs {
   background: rgba(107, 143, 107, 0.1);
 }
 @media (max-width: 600px) {
-  #welcome-screen .welcome-page { padding: 3vh 0 3vh; }
-  #welcome-screen .welcome-word { margin-bottom: 0.6rem; }
-  #welcome-screen .cage-flash { margin-bottom: 1.5rem; }
+  #welcome-screen {
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: env(safe-area-inset-top, 2vh);
+  }
+  #welcome-screen .welcome-page { padding: 2vh 0 2vh; }
+  #welcome-screen .welcome-word { font-size: clamp(2.4rem, 8vw, 3.2rem); margin-bottom: 0.3rem; }
+  #welcome-screen .cage-flash { margin-bottom: 0.8rem; }
+  #welcome-screen .body-text p { font-size: clamp(0.95rem, 2.5vw, 1.1rem); line-height: 1.7; margin-bottom: 0.15rem; }
+  #welcome-screen .body-text .spacer { height: 0.8rem; }
   #welcome-screen .body-text .indented { padding-left: 1.2rem; }
+  #welcome-screen .judge-line { margin: 1.2rem 0; }
+  #welcome-screen .judge-line p { font-size: clamp(1.2rem, 3.5vw, 1.5rem); }
+  #welcome-screen .terms-line { margin-bottom: 1.5rem; }
+  #welcome-screen .terms-line p { font-size: clamp(1.1rem, 3vw, 1.4rem); }
+  #welcome-screen .agree-btn button { padding: 12px 28px; }
 }
 
 </style>
@@ -8859,6 +8880,7 @@ ambientStarted = true; // prevent any trigger from trying
     animatePixelation();
 
     if (glitchSound) {
+      glitchSound.volume = 1;
       glitchSound.currentTime = 0;
       glitchSound.play().catch(() => {});
     }
@@ -8912,9 +8934,10 @@ ambientStarted = true; // prevent any trigger from trying
     }
 
     // Unlock glitch sound during this user gesture (iOS requires it)
+    // Volume stays at 0 until triggerGlitch sets it
     if (glitchSound) {
       glitchSound.volume = 0;
-      glitchSound.play().then(() => { glitchSound.pause(); glitchSound.currentTime = 0; glitchSound.volume = 1; })
+      glitchSound.play().then(() => { glitchSound.pause(); glitchSound.currentTime = 0; })
         .catch(() => {});
     }
 

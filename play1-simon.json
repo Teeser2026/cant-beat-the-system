@@ -2951,6 +2951,13 @@
           "Dry weekdays. Weekends don’t count. That’s still progress.",
           "Hair of the dog. You’re on holiday. January is a bleak month to be sober."
         ]
+      },
+      "audio": {
+        "src": "water.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -3142,6 +3149,13 @@
           "Marvin the Paranoid Android",
           "C3PO"
         ]
+      },
+      "audio": {
+        "src": "whale_song.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -3215,6 +3229,10 @@
           "Soon.",
           "I already have. Look back there, hundreds of lines. They’ve all been crossed."
         ]
+      },
+      "audio": {
+        "src": "spanish_guitar.mp3",
+        "vol": 0.3
       }
     },
     {
@@ -3429,6 +3447,10 @@
           "The boy was right. Just early.",
           "Eventually everyone stops listening. That’s when it comes."
         ]
+      },
+      "audio": {
+        "src": "trust.mp3",
+        "vol": 0.2
       }
     },
     {
@@ -3466,6 +3488,13 @@
           "Bookmark it. You’ll come back to it properly at the weekend. Well, a weekend.",
           "Keep reading. Just one more section. This is fire. Sleep can wait."
         ]
+      },
+      "audio": {
+        "src": "explosion.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -3548,6 +3577,13 @@
           "X",
           "Biblioteca Pleyades"
         ]
+      },
+      "audio": {
+        "src": "crazy-violin.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -3963,6 +3999,13 @@
           "Last Night I Dreamt That Somebody Loved Me",
           "Sweet Dreams (Are Made of This)"
         ]
+      },
+      "audio": {
+        "src": "pourwhiskey.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -4301,6 +4344,13 @@
           "You know we’re friends till we die",
           "I trust I can rely on your vote"
         ]
+      },
+      "audio": {
+        "src": "mystery.mp3",
+        "vol": 0.25,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 3
       }
     },
     {
@@ -4352,6 +4402,13 @@
           "A bit of extra cash, some tins. Don’t go overboard.",
           "Leave it. You’ve seen it all before. Well, maybe some bog roll."
         ]
+      },
+      "audio": {
+        "src": "build_up.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -4719,6 +4776,10 @@
           "Pain",
           "Loss"
         ]
+      },
+      "audio": {
+        "src": "glad.mp3",
+        "vol": 0.3
       }
     },
     {
@@ -4868,6 +4929,13 @@
         "opts": [
           "Weird."
         ]
+      },
+      "audio": {
+        "src": "creak.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 3
       }
     },
     {
@@ -5336,6 +5404,11 @@
           "Is this really happening?",
           "This can’t be happening"
         ]
+      },
+      "audio": {
+        "src": "waiting.mp3",
+        "vol": 0.3,
+        "fadeIn": 1
       }
     },
     {

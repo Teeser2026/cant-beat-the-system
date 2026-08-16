@@ -5355,7 +5355,7 @@ function renderSignal(turnId) {
         const tg = threadsData.find(g => g.id === card.threadRef);
         const _tk = (card.threadRef || '') + ':' + turnId;
         const _tn = _threadSeenAt[_tk] || 0;
-        const _tItems = tg ? tg.items.filter(item => String(item.turn) === turnId) : [];
+        const _tItems = tg ? tg.items.filter(item => String(item.turn) === String(turnId)) : [];
         const ti = _tItems[_tn] || null;
         card._resolvedIdx = ti ? tg.items.indexOf(ti) : -1;
         _threadSeenAt[_tk] = _tn + 1;

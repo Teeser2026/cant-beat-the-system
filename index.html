@@ -5201,7 +5201,9 @@ function renderTurn(turnData) {
       choices.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
       this.classList.add('sel');
       choices.querySelectorAll('.c-opt:not(.sel)').forEach(o => o.style.opacity = '.25');
-      playConfirm();
+      if (turnData.choices && turnData.choices.sfx) {
+        new Audio(turnData.choices.sfx).play().catch(()=>{});
+      } else { playConfirm(); }
       setTimeout(() => goTo(state.turnIndex + 1), 900);
     });
   });

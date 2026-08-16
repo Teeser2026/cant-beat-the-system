@@ -1216,6 +1216,7 @@ body.phase-3 .card .snip {
 .card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--text); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
 .card-thread-ref:hover { opacity: 1; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
+.card-thread-ref.card-thread-article::before { content: '▸ '; font-size: 10px; }
 
 /* S174 hotfix: force .tag to IBM Plex Mono 10px across phases (beats phase .tag rules at 178/349/523). */
 body.phase-1 .tag,
@@ -1280,9 +1281,9 @@ a.ti.player, div.ti.player { color: var(--warm); border-left-color: rgba(196,149
 a.ti.player:hover, div.ti.player:hover { color: var(--text); border-left-color: var(--warm); }
 a.ti.player::before, div.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
 div.ti.pending { cursor: default; opacity: .5; }
-div.ti.article { cursor: pointer; }
-div.ti.article::after { content: ' ▸'; opacity: 0; transition: opacity .3s; font-size: 11px; }
-div.ti.article:hover::after { opacity: .4; }
+div.ti.article { cursor: pointer; border-left-color: rgba(196,149,106,.3); }
+div.ti.article::after { content: ' ▸'; opacity: .3; font-size: 11px; }
+div.ti.article:hover::after { opacity: .5; }
 
 /* ── TAB NOTIFICATION DOT ── */
 .tab .tab-dot {
@@ -5371,7 +5372,9 @@ function renderSignal(turnId) {
       if (type === 'thread-notify') {
         const group = threadsData.find(g => g.id === card.threadRef);
         const label = group ? group.label : card.threadRef;
-        html += `<div class="card-thread-ref" data-thread="${card.threadRef}" data-turn="${turnId}">NEW THREAD · ${label}</div>`;
+        const item = group && group.items.find(item => String(item.turn) === turnId);
+        const refCls = item && item.article ? 'card-thread-ref card-thread-article' : 'card-thread-ref';
+        html += `<div class="${refCls}" data-thread="${card.threadRef}" data-turn="${turnId}">NEW THREAD · ${label}</div>`;
       } else if (type === 'essential') {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
         // essential card — no save label

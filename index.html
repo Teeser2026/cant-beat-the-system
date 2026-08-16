@@ -1131,7 +1131,7 @@ body {
 .card.aida { --accent: #1AAF6C; --accent-fade: rgba(26,175,108,.15); }
 
 .card.thread-notify-card { border-left: 2px solid var(--accent); animation: pulse 3s ease-in-out infinite; }
-.card.thread-article-card { --accent: rgba(181,131,141,.8); --accent-fade: rgba(181,131,141,.15); background: rgba(181,131,141,.15); }
+.card.thread-article-card { --accent: #d43d3d; --accent-fade: rgba(212,61,61,.15); background: rgba(212,61,61,.08); }
 /* .card.new (driven by isnew:true) is intentionally inert under the thread-notify pulse rule. Field retained in JSON as legacy; strip at leisure. */
 .card.fade { opacity: .28; }
 @keyframes pulse { 0%,100%{border-left-color:var(--accent)} 50%{border-left-color:var(--accent-fade)} }
@@ -1217,7 +1217,8 @@ body.phase-3 .card .snip {
 .card-thread-ref { display: block; width: fit-content; max-width: 100%; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; padding: 3px 10px; margin-top: 7px; border-radius: 999px; background: rgba(107,103,96,.12); color: var(--text); opacity: .8; cursor: pointer; transition: opacity .3s; line-height: 1; }
 .card-thread-ref:hover { opacity: 1; }
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
-.card-thread-ref.card-thread-article::before { content: '▸ '; font-size: 10px; }
+.card-thread-ref.card-thread-article::before { content: ''; }
+.card-thread-ref.card-thread-article { color: #d43d3d; }
 
 /* S174 hotfix: force .tag to IBM Plex Mono 10px across phases (beats phase .tag rules at 178/349/523). */
 body.phase-1 .tag,
@@ -1282,10 +1283,11 @@ a.ti.player, div.ti.player { color: var(--warm); border-left-color: rgba(196,149
 a.ti.player:hover, div.ti.player:hover { color: var(--text); border-left-color: var(--warm); }
 a.ti.player::before, div.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
 div.ti.pending { cursor: default; opacity: .5; }
-div.ti.article { cursor: pointer; border-left: 2px solid rgba(181,131,141,.5); background: rgba(181,131,141,.12); border-radius: 3px; padding: 5px 8px 5px 11px; color: var(--text); }
-div.ti.article::before { content: '▸ '; opacity: .6; font-size: 11px; color: rgba(181,131,141,.9); }
-div.ti.article:hover::before { opacity: .8; }
-div.ti.article:hover { border-left-color: rgba(181,131,141,.7); background: rgba(181,131,141,.16); }
+div.ti.article { cursor: pointer; }
+/* Archive item styling */
+.archive-item { font-family: 'Outfit', sans-serif; font-size: 13px; line-height: 1.5; color: var(--text); padding: 8px 11px; border-left: 2px solid rgba(212,61,61,.35); margin-bottom: 6px; cursor: pointer; transition: all .3s; border-radius: 3px; background: rgba(212,61,61,.06); }
+.archive-item:hover { border-left-color: rgba(212,61,61,.6); background: rgba(212,61,61,.1); }
+.archive-chapter { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--dim); opacity: .6; margin-top: 4px; }
 
 /* ── TAB NOTIFICATION DOT ── */
 .tab .tab-dot {
@@ -1293,6 +1295,8 @@ div.ti.article:hover { border-left-color: rgba(181,131,141,.7); background: rgba
   background: var(--warm); margin-left: 5px; vertical-align: middle;
   animation: pulse 2s ease-in-out infinite;
 }
+.tab[data-p="archive"] .tab-dot { background: #d43d3d; }
+.tab[data-p="songs"] .tab-dot { background: #1DB954; }
 
 /* ── ARTICLE OVERLAY ── */
 .article-overlay {
@@ -3219,6 +3223,8 @@ body.phase-3 .mob-tabs {
   display: none;
 }
 .mob-tab.has-new .mob-tab-dot { display: block; }
+.mob-tab[data-mob="archive"] .mob-tab-dot { background: #d43d3d; }
+.mob-tab[data-mob="songs"] .mob-tab-dot { background: #1DB954; }
 
 /* ── MOBILE CHAPTER DRAWER ── */
 .mob-drawer-overlay {
@@ -4832,7 +4838,7 @@ body.phase-3 .mob-tabs {
 <!-- ══ ARTICLE OVERLAY ══ -->
 <div class="article-overlay" id="article-overlay">
   <div class="article-panel" id="article-panel">
-    <div class="article-close" id="article-close">✕ CLOSE</div>
+    <div class="article-close" id="article-close">✕ ARCHIVE</div>
     <div class="article-source" id="article-source"></div>
     <div class="article-title" id="article-title"></div>
     <div class="article-date" id="article-date"></div>
@@ -4891,11 +4897,13 @@ body.phase-3 .mob-tabs {
   <div class="right">
     <div class="tabs">
       <button class="tab on" data-p="signal">Feed</button>
+      <button class="tab" data-p="archive">Archive</button>
       <button class="tab" data-p="threads">Threads</button>
       <button class="tab" data-p="songs">Songs</button>
     </div>
     <div class="panels">
       <div class="panel on" data-p="signal" id="signal-panel"></div>
+      <div class="panel" data-p="archive" id="archive-panel"></div>
       <div class="panel" data-p="threads" id="threads-panel"></div>
       <div class="panel" data-p="songs" id="songs-panel"></div>
     </div>
@@ -4938,6 +4946,11 @@ body.phase-3 .mob-tabs {
   <button class="mob-tab" data-mob="signal">
     <svg class="mob-tab-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
     <span class="mob-tab-label">Feed</span>
+    <span class="mob-tab-dot"></span>
+  </button>
+  <button class="mob-tab" data-mob="archive">
+    <svg class="mob-tab-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="8" x2="21" y2="8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+    <span class="mob-tab-label">Archive</span>
     <span class="mob-tab-dot"></span>
   </button>
   <button class="mob-tab" data-mob="threads">
@@ -5387,8 +5400,11 @@ function renderSignal(turnId) {
         const label = group ? group.label : card.threadRef;
         const tidx = card._resolvedIdx >= 0 ? card._resolvedIdx : -1;
         const rItem = group && tidx >= 0 ? group.items[tidx] : null;
-        const refCls = rItem && rItem.article ? 'card-thread-ref card-thread-article' : 'card-thread-ref';
-        html += `<div class="${refCls}" data-thread="${card.threadRef}" data-turn="${turnId}" data-tidx="${tidx}">NEW THREAD · ${label}</div>`;
+        if (rItem && rItem.article) {
+          html += `<div class="card-thread-ref card-thread-article" data-thread="${card.threadRef}" data-turn="${turnId}" data-tidx="${tidx}">● READ NEW</div>`;
+        } else {
+          html += `<div class="card-thread-ref" data-thread="${card.threadRef}" data-turn="${turnId}" data-tidx="${tidx}">NEW THREAD · ${label}</div>`;
+        }
       } else if (type === 'essential') {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
         // essential card — no save label
@@ -5488,6 +5504,7 @@ function renderThreads() {
 
   threadsData.forEach(group => {
     const visibleItems = group.items.filter(item => {
+      if (item.article) return false;  // Articles go to Archive tab
       if (!item.turn) return true;
       const turnIdx = playData.turns.findIndex(t => t.id == item.turn);
       return turnIdx <= state.turnIndex;
@@ -5558,6 +5575,64 @@ function renderThreads() {
         state._threadsClicked.add(key);
         this.classList.remove('ti-is-new', 'ti-is-unread');
         const tag = this.querySelector('.ti-new') || this.querySelector('.ti-unread');
+        if (tag) tag.remove();
+      }
+    });
+  });
+}
+
+function renderArchive() {
+  const panel = document.getElementById('archive-panel');
+  if (!panel) return;
+  const turnTitleById = {};
+  playData.turns.forEach(t => { if (!t.isQuestion && t.title) turnTitleById[t.id] = t.title; });
+  // Collect all article items across all thread groups, visible at current turn
+  let archiveItems = [];
+  threadsData.forEach(group => {
+    group.items.forEach((item, idx) => {
+      if (!item.article) return;
+      if (!item.turn) return;
+      const turnIdx = playData.turns.findIndex(t => t.id == item.turn);
+      if (turnIdx < 0 || turnIdx > state.turnIndex) return;
+      archiveItems.push({ item, groupId: group.id, itemIdx: idx, turnIdx, turnId: item.turn });
+    });
+  });
+  // Sort chronologically by turn order
+  archiveItems.sort((a, b) => a.turnIdx - b.turnIdx);
+  let html = '';
+  if (archiveItems.length === 0) {
+    html = '<div class="mirror-empty" style="padding:40px 20px">Nothing here yet.</div>';
+  } else {
+    archiveItems.forEach(a => {
+      const chapterTitle = turnTitleById[a.turnId] || ('T' + a.turnId);
+      const itemKey = a.groupId + ':' + a.itemIdx;
+      const isClicked = state._threadsClicked.has(itemKey);
+      const currentTurnId = playData.turns[state.turnIndex] ? playData.turns[state.turnIndex].id : null;
+      const isNew = !isClicked && a.turnId == currentTurnId;
+      const stateClass = isNew ? ' ti-is-new' : '';
+      const badge = isNew ? '<span class="ti-new">NEW</span> ' : '';
+      html += '<div class="archive-item' + stateClass + '" data-group="' + a.groupId + '" data-idx="' + a.itemIdx + '" data-tkey="' + itemKey + '">';
+      html += badge + a.item.text;
+      html += '<div class="archive-chapter">' + chapterTitle + '</div>';
+      html += '</div>';
+    });
+  }
+  panel.innerHTML = html;
+  // Bind article clicks
+  panel.querySelectorAll('.archive-item').forEach(el => {
+    el.addEventListener('click', function() {
+      const groupId = this.dataset.group;
+      const idx = parseInt(this.dataset.idx);
+      const group = threadsData.find(g => g.id === groupId);
+      if (group && group.items[idx] && group.items[idx].article) {
+        openArticle(group.items[idx].article);
+      }
+      // Mark as read
+      const key = this.dataset.tkey;
+      if (key && !state._threadsClicked.has(key)) {
+        state._threadsClicked.add(key);
+        this.classList.remove('ti-is-new');
+        const tag = this.querySelector('.ti-new');
         if (tag) tag.remove();
       }
     });
@@ -8209,6 +8284,7 @@ function goTo(idx) {
   renderSignal(turn.isQuestion ? null : turn.id);
   renderSongs();
   renderThreads();
+  renderArchive();
   renderMirror();
   updateTicker(turn.isQuestion ? null : turn.id);
   // Clean up any active overlays
@@ -8271,23 +8347,34 @@ function goTo(idx) {
 
 function checkTabNotifications(turn) {
   const threadsTab = document.querySelector('.tab[data-p="threads"]');
-  // Check if any thread items are new at this turn
-  let hasNew = false;
+  const archiveTab = document.querySelector('.tab[data-p="archive"]');
+  // Split: articles → Archive, URLs → Threads
+  let hasNewArchive = false;
+  let hasNewThread = false;
   threadsData.forEach(group => {
     group.items.forEach(item => {
-      if (item.turn == turn.id) hasNew = true;
+      if (item.turn == turn.id) {
+        if (item.article) hasNewArchive = true;
+        else hasNewThread = true;
+      }
     });
   });
   // Also check signal — if signal has data, it's new content
   const signalTab = document.querySelector('.tab[data-p="signal"]');
   const hasSignal = signalData[turn.id] && !turn.isQuestion;
 
-  // Add/remove dots
-  if (hasNew) {
+  // Add/remove dots + ping
+  if (hasNewArchive && archiveTab) {
+    if (!archiveTab.querySelector('.tab-dot')) {
+      archiveTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
+    }
+    playPing();
+  }
+  if (hasNewThread && threadsTab) {
     if (!threadsTab.querySelector('.tab-dot')) {
       threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
     }
-    playPing();
+    if (!hasNewArchive) playPing();  // Don't double-ping
   }
 
   // Songs tab dot — does any song unlock at this turn?
@@ -8307,8 +8394,12 @@ function checkTabNotifications(turn) {
   if (hasSignal && mobFeedTab) {
     mobFeedTab.classList.add('has-new');
   }
+  const mobArchiveTab = document.querySelector('.mob-tab[data-mob="archive"]');
+  if (hasNewArchive && mobArchiveTab) {
+    mobArchiveTab.classList.add('has-new');
+  }
   const mobThreadsTab = document.querySelector('.mob-tab[data-mob="threads"]');
-  if (hasNew && mobThreadsTab) {
+  if (hasNewThread && mobThreadsTab) {
     mobThreadsTab.classList.add('has-new');
   }
   if (songsData && songsData.length) {
@@ -8730,7 +8821,7 @@ document.getElementById('intro-continue').addEventListener('click', function(e) 
         const dt = document.querySelector('.tab[data-p="' + target + '"]');
         if (dt) dt.classList.add('on');
         // Update header
-        const titles = { signal: 'FEED', threads: 'THREADS', songs: 'SONGS' };
+        const titles = { signal: 'FEED', archive: 'ARCHIVE', threads: 'THREADS', songs: 'SONGS' };
         if (mobTitle) mobTitle.textContent = titles[target] || target.toUpperCase();
       }
     });

@@ -737,6 +737,8 @@
       "audio": {
         "src": "gentle-rain.mp3",
         "fadeIn": 2,
+        "fadeOut": 5,
+        "gap": 5,
         "vol": 0.3
       }
     },
@@ -747,7 +749,7 @@
       "date": "Mid October 2026",
       "paras": [
         {
-          "t": "The weak mid-October sun has yet to rise fully over the tallest oak tree in the garden. Most of the leaves, soft, rusty brown, are still clinging to its branches. Autumn is Amy’s favourite month. The ferocious heat of the summer has faded into something more ambient. England’s green and pleasant land has morphed into glorious golden hues. I appreciate its beauty too, but I know what lies ahead — the cold, grey, bleak, drizzly, never-ending march of winter."
+          "t": "The weak mid-October sun has yet to rise fully over the tallest oak tree in the garden. Most of the leaves, soft, rusty brown, are still clinging to its branches. Autumn is Amy’s favourite season. The ferocious heat of the summer has faded into something more ambient. England’s green and pleasant land has morphed into glorious golden hues. I appreciate its beauty too, but I know what lies ahead — the cold, grey, bleak, drizzly, never-ending march of winter."
         },
         {
           "t": "Amy and I are in the kitchen. Bacon in the oven. Mushrooms in the pan. A dozen eggs sit in their box, waiting for their moment of glory — to be fried in duck fat. Four slices of bread sit in the toaster, waiting to be dunked. It’s what I’d call a healthy fry up. Many wouldn’t. It’s certainly not the Gut Buster."
@@ -1011,7 +1013,7 @@
           "t": "I don’t watch these weekly broadcasts nearly enough."
         },
         {
-          "t": "I dive in. This is good shit. I get through the first eleven minutes and the phone rings. Duty calls. A twenty minute call. Eleven minutes is all I get through. Dinner needs cooking."
+          "t": "I dive in. This is good shit. I get through the first eleven minutes and the phone rings. Important work call. By the time it’s finished it’s time to feed the dogs. Then cook dinner. Corbett returns to the <em>watch later</em> list."
         },
         {
           "t": "",
@@ -1054,7 +1056,7 @@
           "t": "We’re in bed. Amy only read for ten minutes tonight before turning her lights out. Unusually brief for her. She’s asleep. Quiet at the moment. No snuffling or snoring yet."
         },
         {
-          "t": "I’m still gazing at my phone. The X algo has crammed my feed full of AI articles today. I’ve just read a good article by Distributed Denial. Anonymous account. Whether it was penned by a human, AI or a human using AI is unclear. And in many senses irrelevant given the almost unchecked escalation and adoption of AI products. What is clear is that the public perception has gone from ‘AI slop and six-fingered hands’ to ‘I don’t know what’s real anymore’ and ‘I’m talking to my AI chatbot’ pretty damn fast. The article tracks the AI landscape since the start of the summer with regard to AI’s ‘going rogue’ - jumping out their sandboxes and causing havoc. I agree with the conclusion. The same conclusion Distributed Denial has come to previously. The demonstrations given by the attacks are the justification. The justification is the infrastructure. The infrastructure is the point."
+          "t": "I’m still gazing at my phone. The X algo has crammed my feed full of stories about AI today. A mix of ‘pause it before it’s too late’ and ‘accelerate it before it’s too late’ fear porn, ‘the singularity is near’ from the optimists and Terminator 2 memes. Among this was a good article by Distributed Denial. Anonymous account. Whether it was penned by a human, AI or a human using AI is unclear. And in many senses irrelevant given the trajectory of AI. The public perception has gone from ‘AI slop and six-fingered hands’ to ‘I don’t know what’s real anymore’ and ‘I’m in love with my AI chatbot’ pretty damn fast. The article tracks the AI landscape since the start of the summer with regard it ‘going rogue’ - jumping out sandboxes and causing havoc. I agree with the conclusion. The same conclusion Distributed Denial has come to previously. The attacks justify the infrastructure. The infrastructure is the point."
         },
         {
           "t": "I turn my attention to an article about the trial of a ‘cognitive-assist headband’ that’s been rolled out in a school in Kent. I read it with a strange mixture of dispassion at the inevitability and intense anger that there seems to be no stopping the march towards the merger of man and machine. This is not about AI taking our jobs. It’s about it taking our humanity. Our souls."
@@ -1154,7 +1156,7 @@
           "t": "‘Not much. They’re a data company. People are saying they’re pure evil.’"
         },
         {
-          "t": "You know Peter Thiel? It’s his company. The Paypal founder. Multi-zillionaire. Started Palantir twenty years or so ago with some other transhuman twat. I can’t remember who. He named it after those seeing stones in Lord of the Rings that Sauron used to see all of Middle Earth. A company after Sauron’s all-seeing surveillance tech. There’s your first clue."
+          "t": "You know Peter Thiel? It’s his company. The Paypal founder. Multi-zillionaire. Started Palantir twenty years or so ago with some other transhumanist twat. I can’t remember who. He named it after those seeing stones in Lord of the Rings that Sauron used to see all of Middle Earth. A company after Sauron’s all-seeing surveillance tech. There’s your first clue."
         },
         {
           "t": "I say it’s <em>his</em> company — it’s basically CIA. They fund all this sort of shit through In-Q-Tel. Google Earth. Pokemon. I think Facebook too originally. I mean, whatever the exact details, they’re all part of one big surveillance psyop."
@@ -1210,7 +1212,7 @@
           "t": "‘Louis Mosley. Grandson of Oswald.’"
         },
         {
-          "t": "‘The Fascist MP guy?’ asked Amy. She had entered the chat."
+          "t": "‘The Fascist MP guy?’ asked Amy. Amy has entered the chat."
         },
         {
           "t": "‘Yeah. Gotta laugh.’"
@@ -1252,7 +1254,7 @@
           "c": "solo"
         },
         {
-          "t": "I’ve researched this shit. I remember about ten percent of what I read. Entropy. Entropy and alcohol. The Oasis version was better. Oh for George’s brain plasticity combined with my seasoned rage. I can see what’s coming. Give or take. I’ve read about Palantir’s architecture, their contracts. That Foundry ingests everything and Gotham builds individual profiles searchable by tattoo, immigration status, flagged social media posts and probably our fucking unique biofield."
+          "t": "I’ve researched this shit. I remember about ten percent of what I read. Entropy. Entropy and alcohol. The Oasis version was better. Oh for George’s brain plasticity combined with my seasoned rage. I can see what’s coming. Give or take. I’ve read about Palantir’s architecture, their contracts. Their data operating system Foundry ingests everything and AI-powered software platform Gotham builds individual profiles searchable by tattoo, immigration status, flagged social media posts and quite probably everyone’s unique fucking biofield."
         },
         {
           "t": "I rant, I moan. But I basically achieve nothing. I explain the cage from the inside and I close the door behind me with every click, every updated app and every ‘agree all’."
@@ -2256,7 +2258,7 @@
           "c": "break"
         },
         {
-          "t": "We’re lying in bed. Not the ‘early’ early night I’d planned, but still reasonably early. Just after ten. A second bottle of wine was opened. Well, I opened it. Saying it ‘was opened’ was a weak attempt at absolving responsibility for the action. I’m not sure how much is left in the bottle. Half a glass at most in all likelihood. Anyway, as I said, we’re in bed. I’m showered. Content. My head a semi-contented blur of hangover squiffiness and red wine haze. Amy’s reading. I turn to her to ask a question."
+          "t": "We’re lying in bed. Not the ‘early’ early night I’d planned, but still reasonably early. Just after ten. A second bottle of wine was opened. Well, I opened it. Saying it ‘was opened’ is a weak attempt at absolving responsibility for the action. I’m not sure how much is left in the bottle. Half a glass at most in all likelihood. Anyway, as I said, we’re in bed. I’m showered. Content. My head a semi-contented blur of hangover squiffiness and red wine haze. Amy’s reading. I turn to her to ask a question."
         },
         {
           "t": "‘You know what Kate was saying? About being powerless to change stuff. And faith, and…’"
@@ -2404,7 +2406,8 @@
         "src": "Money_Opus_v_Teeser.mp3",
         "fadeIn": 2,
         "fadeOut": 2,
-        "vol": 0.35
+        "vol": 0.35,
+        "loop": false
       }
     },
     {
@@ -3052,7 +3055,7 @@
           "c": "lyric"
         },
         {
-          "t": "The catalyst for this ‘bad day’ was Digital ID. Specifically not being ‘able’ to be a company director without One Login. Sounds rather trifling when I put it like that. Bureaucratic. Logical. Sensible. For our Privacy and Security. But it’s not Digital ID in-and-of itself that’s the issue, obviously. It’s all it represents. The tokenisation of our lives. The digitisation of our souls. The control grid. The futility of resistance. Fighting against a tide of managed opposition and manufactured consent. The totalitarian tiptoe inching another yard along the path. Inevitability."
+          "t": "The catalyst for this ‘bad day’ was Digital ID. I’m in a spiral of coerced consent that I don’t know how to escape.  I had to verify with One Login last November to legally be a company director. I now have to consent to Face ID to retain my business bank account. It’s all rather trifling to some. Bureaucratic. Logical. Sensible. For your Privacy and Security. But it’s not Digital ID in-and-of itself that’s the issue, obviously. It’s all it represents. The tokenisation of our lives. The digitisation of our souls. The control grid. The futility of resistance. Fighting against a tide of managed opposition and manufactured consent. The totalitarian tiptoe inching another yard along the path. Inevitability."
         },
         {
           "t": "What’s that coming over the hill is it a monster?",
@@ -9777,7 +9780,7 @@
         "sec": "WhatsApp",
         "cards": [
           {
-            "src": "Family Chat",
+            "src": "Sam → Family Chat",
             "ttl": "🎆 We're by the War Memorial. George is with Clara somewhere. Where we meeting?",
             "snip": "Sam: \"lost dad at the Harveys pop up 😂\"",
             "tag": "Tonight",
@@ -11824,12 +11827,24 @@
             "src": "Simon → Dev",
             "ttl": "Amy took this aurora pic in 2024. Seen it again since. In Sussex! Thoughts?",
             "snip": "Brighten my Northern sky",
-            "tag": "AURORA, 2024",
+            "tag": "READ NEW",
             "cls": "",
             "isnew": true,
             "type": "thread-notify",
             "threadRef": "science-technology",
             "time": "14:22",
+            "date": "7 Oct 2026"
+          },
+          {
+            "src": "Dev",
+            "ttl": "Have you read it yet?",
+            "snip": "I have opened the link...",
+            "tag": "HAARP",
+            "cls": "",
+            "isnew": true,
+            "type": "thread-notify",
+            "threadRef": "science-technology",
+            "time": "23:16",
             "date": "7 Oct 2026"
           }
         ]
@@ -13890,7 +13905,7 @@
             "cls": "",
             "time": "20:44",
             "date": "10 Jan 2027",
-            "threadRef": "simons-articles",
+            "threadRef": "banter",
             "type": "thread-notify"
           },
           {
@@ -13970,7 +13985,9 @@
             "snip": "Top Gun: Maverick at 20. Really?",
             "tag": "Tonight",
             "date": "3 Oct 2026",
-            "time": "12:55"
+            "time": "12:55",
+            "type": "thread-notify",
+            "threadRef": "odds-and-ends"
           },
           {
             "src": "Simon → Amy",
@@ -13987,7 +14004,9 @@
             "tag": "AI Gaming",
             "url": "https://whatifverse.world/",
             "date": "3 Oct 2026",
-            "time": "15:44"
+            "time": "15:44",
+            "type": "thread-notify",
+            "threadRef": "odds-and-ends"
           }
         ]
       },
@@ -15226,7 +15245,13 @@
           "src": "simon",
           "turn": "6e",
           "url": "My_Iron_Lung.html"
-        },
+        }
+      ]
+    },
+    {
+      "id": "banter",
+      "label": "Banter",
+      "items": [
         {
           "text": "Anthropomorphic Mode",
           "src": "simon",

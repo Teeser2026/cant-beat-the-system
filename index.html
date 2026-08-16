@@ -1274,8 +1274,8 @@ body.phase-3 .card .ttl {
 a.ti, div.ti { font-family: 'Outfit', sans-serif; font-size: 13px; line-height: 1.5; color: var(--dim); padding: 4px 0 4px 11px; border-left: 1px solid rgba(90,122,138,.14); margin-bottom: 6px; cursor: pointer; transition: all .3s; display: block; text-decoration: none; }
 a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
 a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
-a.ti::after { content: ' ↗'; opacity: 0; transition: opacity .3s; font-size: 11px; }
-a.ti:hover::after { opacity: .4; }
+a.ti::after { content: ' ↗'; opacity: .3; font-size: 11px; }
+a.ti:hover::after { opacity: .5; }
 a.ti.player, div.ti.player { color: var(--warm); border-left-color: rgba(196,149,106,.3); }
 a.ti.player:hover, div.ti.player:hover { color: var(--text); border-left-color: var(--warm); }
 a.ti.player::before, div.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
@@ -5398,6 +5398,11 @@ function renderSignal(turnId) {
   panel.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function(e) {
       if (e.target.classList.contains('save-signal') || e.target.classList.contains('card-thread-ref') || e.target.classList.contains('card-auto-saved')) return;
+      // Thread-notify cards: whole card triggers the thread action
+      if (this.classList.contains('thread-notify-card')) {
+        const ref = this.querySelector('.card-thread-ref');
+        if (ref) { ref.click(); return; }
+      }
       if (this.classList.contains('new')) this.classList.remove('new');
       else this.classList.toggle('fade');
     });
@@ -5405,13 +5410,29 @@ function renderSignal(turnId) {
 
 
 
-  // Thread-notify: click → Threads tab, scroll to the specific item (matched by turn within the referenced group), flash.
+  // Thread-notify: article items → openArticle() directly; URL items → Threads tab as before.
   panel.querySelectorAll('.card-thread-ref').forEach(ref => {
     ref.addEventListener('click', function(e) {
       e.stopPropagation();
       const groupId = this.dataset.thread;
       const cardTurn = this.dataset.turn;
-      // Switch to Threads tab
+      if (!groupId || !cardTurn) return;
+      const group = threadsData.find(g => g.id === groupId);
+      if (!group) return;
+      const itemIdx = group.items.findIndex(item => String(item.turn) === cardTurn);
+      if (itemIdx < 0) return;
+      const item = group.items[itemIdx];
+      // Mark as read in thread state
+      const itemKey = groupId + ':' + itemIdx;
+      if (!state._threadsClicked.has(itemKey)) {
+        state._threadsClicked.add(itemKey);
+      }
+      // Article items: open directly, stay in feed
+      if (item.article) {
+        openArticle(item.article);
+        return;
+      }
+      // URL / plain items: navigate to Threads tab as before
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
       document.querySelectorAll('.panel').forEach(el => el.classList.remove('on'));
       const threadsTab = document.querySelector('[data-p="threads"]');
@@ -5420,14 +5441,8 @@ function renderSignal(turnId) {
       if (threadsPanel) threadsPanel.classList.add('on');
       const dot = threadsTab && threadsTab.querySelector('.tab-dot');
       if (dot) dot.remove();
-      // Locate specific item and flash
       renderThreads();
-      if (!groupId || !cardTurn) return;
-      const group = threadsData.find(g => g.id === groupId);
-      if (!group) return;
-      const itemIdx = group.items.findIndex(item => String(item.turn) === cardTurn);
-      if (itemIdx < 0) return;
-      const target = threadsPanel.querySelector('[data-tkey="' + groupId + ':' + itemIdx + '"]');
+      const target = threadsPanel.querySelector('[data-tkey="' + itemKey + '"]');
       cbtsFlashAndScroll(target);
     });
   });
@@ -8256,7 +8271,7 @@ function checkTabNotifications(turn) {
   const hasSignal = signalData[turn.id] && !turn.isQuestion;
 
   // Add/remove dots
-  if (hasNew && !threadsTab.classList.contains('on')) {
+  if (hasNew) {
     if (!threadsTab.querySelector('.tab-dot')) {
       threadsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
     }
@@ -8267,7 +8282,7 @@ function checkTabNotifications(turn) {
   const songsTab = document.querySelector('.tab[data-p="songs"]');
   if (songsTab && songsData.length) {
     const hasSongNew = songsData.some(s => String(s.turn) == String(turn.id));
-    if (hasSongNew && !songsTab.classList.contains('on')) {
+    if (hasSongNew) {
       if (!songsTab.querySelector('.tab-dot')) {
         songsTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
       }
@@ -8278,7 +8293,7 @@ function checkTabNotifications(turn) {
   const mirrorTab = document.querySelector('.tab[data-p="mirror"]');
   if (mirrorTab && mirrorData.length) {
     const hasMirrorNew = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
-    if (hasMirrorNew && !mirrorTab.classList.contains('on')) {
+    if (hasMirrorNew) {
       if (!mirrorTab.querySelector('.tab-dot')) {
         mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
       }
@@ -8287,24 +8302,24 @@ function checkTabNotifications(turn) {
 
   // ── MOBILE TAB DOTS (S266) ──
   const mobFeedTab = document.querySelector('.mob-tab[data-mob="signal"]');
-  if (hasSignal && mobFeedTab && !mobFeedTab.classList.contains('active')) {
+  if (hasSignal && mobFeedTab) {
     mobFeedTab.classList.add('has-new');
   }
   const mobThreadsTab = document.querySelector('.mob-tab[data-mob="threads"]');
-  if (hasNew && mobThreadsTab && !mobThreadsTab.classList.contains('active')) {
+  if (hasNew && mobThreadsTab) {
     mobThreadsTab.classList.add('has-new');
   }
   if (songsData && songsData.length) {
     const mobSongsTab = document.querySelector('.mob-tab[data-mob="songs"]');
     const hasSongNew2 = songsData.some(s => String(s.turn) == String(turn.id));
-    if (hasSongNew2 && mobSongsTab && !mobSongsTab.classList.contains('active')) {
+    if (hasSongNew2 && mobSongsTab) {
       mobSongsTab.classList.add('has-new');
     }
   }
   if (mirrorData && mirrorData.length) {
     const mobMirrorTab = document.querySelector('.mob-tab[data-mob="mirror"]');
     const hasMirrorNew2 = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
-    if (hasMirrorNew2 && mobMirrorTab && !mobMirrorTab.classList.contains('active')) {
+    if (hasMirrorNew2 && mobMirrorTab) {
       mobMirrorTab.classList.add('has-new');
     }
   }

@@ -4890,13 +4890,11 @@ body.phase-3 .mob-tabs {
       <button class="tab on" data-p="signal">Feed</button>
       <button class="tab" data-p="threads">Threads</button>
       <button class="tab" data-p="songs">Songs</button>
-      <button class="tab" data-p="mirror">Mirror</button>
     </div>
     <div class="panels">
       <div class="panel on" data-p="signal" id="signal-panel"></div>
       <div class="panel" data-p="threads" id="threads-panel"></div>
       <div class="panel" data-p="songs" id="songs-panel"></div>
-      <div class="panel" data-p="mirror" id="mirror-panel"></div>
     </div>
   </div>
 
@@ -4949,11 +4947,7 @@ body.phase-3 .mob-tabs {
     <span class="mob-tab-label">Songs</span>
     <span class="mob-tab-dot"></span>
   </button>
-  <button class="mob-tab" data-mob="mirror">
-    <svg class="mob-tab-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c-2 4-2 8 0 12s2 8 0 12" opacity=".4"/></svg>
-    <span class="mob-tab-label">Mirror</span>
-    <span class="mob-tab-dot"></span>
-  </button>
+
 </div>
 
 <!-- ══ MOBILE CHAPTER DRAWER ══ -->
@@ -8288,16 +8282,6 @@ function checkTabNotifications(turn) {
     }
   }
 
-  // Mirror tab dot — does any mirror item unlock at this turn?
-  const mirrorTab = document.querySelector('.tab[data-p="mirror"]');
-  if (mirrorTab && mirrorData.length) {
-    const hasMirrorNew = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
-    if (hasMirrorNew) {
-      if (!mirrorTab.querySelector('.tab-dot')) {
-        mirrorTab.insertAdjacentHTML('beforeend', '<span class="tab-dot"></span>');
-      }
-    }
-  }
 
   // ── MOBILE TAB DOTS (S266) ──
   const mobFeedTab = document.querySelector('.mob-tab[data-mob="signal"]');
@@ -8315,13 +8299,7 @@ function checkTabNotifications(turn) {
       mobSongsTab.classList.add('has-new');
     }
   }
-  if (mirrorData && mirrorData.length) {
-    const mobMirrorTab = document.querySelector('.mob-tab[data-mob="mirror"]');
-    const hasMirrorNew2 = mirrorData.some(item => String(item.unlockAt) == String(turn.id));
-    if (hasMirrorNew2 && mobMirrorTab) {
-      mobMirrorTab.classList.add('has-new');
-    }
-  }
+
 }
 
 function playPing() {
@@ -8733,7 +8711,7 @@ document.getElementById('intro-continue').addEventListener('click', function(e) 
         const dt = document.querySelector('.tab[data-p="' + target + '"]');
         if (dt) dt.classList.add('on');
         // Update header
-        const titles = { signal: 'FEED', threads: 'THREADS', songs: 'SONGS', mirror: 'MIRROR' };
+        const titles = { signal: 'FEED', threads: 'THREADS', songs: 'SONGS' };
         if (mobTitle) mobTitle.textContent = titles[target] || target.toUpperCase();
       }
     });

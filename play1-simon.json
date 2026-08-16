@@ -1435,6 +1435,13 @@
           "Cancel something. Direct debits, subscriptions, something. Take back a small corner of control.",
           "Open a beer. You earned it. The bills aren’t going anywhere."
         ]
+      },
+      "audio": {
+        "src": "ching.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 5
       }
     },
     {
@@ -2283,6 +2290,13 @@
           "CONSUME",
           "DO NOT QUESTION AUTHORITY"
         ]
+      },
+      "audio": {
+        "src": "dogs.mp3",
+        "vol": 0.3,
+        "fadeIn": 0,
+        "loop": false,
+        "delay": 10
       }
     },
     {
@@ -2320,6 +2334,10 @@
           "They’re on my read list",
           "What articles?"
         ]
+      },
+      "audio": {
+        "src": "breathing.mp3",
+        "vol": 0.3
       }
     },
     {
@@ -2623,6 +2641,12 @@
           "Put the match on. Crystal Palace away at Everton. Bread and Circuses.",
           "Late night walk with the dogs. Leave the phone indoors."
         ]
+      },
+      "audio": {
+        "src": "yoga.mp3",
+        "vol": 0.2,
+        "fadeIn": 2,
+        "loop": false
       }
     },
     {

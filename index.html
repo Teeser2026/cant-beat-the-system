@@ -6112,6 +6112,9 @@ function stopTurnAudio(fadeDuration) {
 }
 
 function handleTurnAudio(turn) {
+  // Suppress during intro/welcome screens
+  const intro = document.getElementById('intro-screen');
+  if (intro && intro.style.display !== 'none') return;
   // Questions always silent
   if (turn.isQuestion) {
     if (turnAudioSrc) stopTurnAudio(1.5);

@@ -737,9 +737,8 @@
       "audio": {
         "src": "gentle-rain.mp3",
         "fadeIn": 2,
-        "fadeOut": 5,
-        "gap": 5,
-        "vol": 0.3
+        "vol": 0.3,
+        "loop": false
       }
     },
     {
@@ -3055,7 +3054,7 @@
           "c": "lyric"
         },
         {
-          "t": "The catalyst for this ‘bad day’ was Digital ID. I’m in a spiral of coerced consent that I don’t know how to escape.  I had to verify with One Login last November to legally be a company director. I now have to consent to Face ID to retain my business bank account. It’s all rather trifling to some. Bureaucratic. Logical. Sensible. For your Privacy and Security. But it’s not Digital ID in-and-of itself that’s the issue, obviously. It’s all it represents. The tokenisation of our lives. The digitisation of our souls. The control grid. The futility of resistance. Fighting against a tide of managed opposition and manufactured consent. The totalitarian tiptoe inching another yard along the path. Inevitability."
+          "t": "The catalyst for this ‘bad day’ was Digital ID. I’m in a spiral of coerced consent that I don’t know how to escape. I had to verify with One Login last November to legally be a company director. I now have to consent to Face ID to retain my business bank account. It’s all rather trifling to some. Bureaucratic. Logical. Sensible. For your Privacy and Security. But it’s not Digital ID in-and-of itself that’s the issue, obviously. It’s all it represents. The tokenisation of our lives. The digitisation of our souls. The control grid. The futility of resistance. Fighting against a tide of managed opposition and manufactured consent. The totalitarian tiptoe inching another yard along the path. Inevitability."
         },
         {
           "t": "What’s that coming over the hill is it a monster?",
@@ -11838,10 +11837,9 @@
           {
             "src": "Dev",
             "ttl": "Have you read it yet?",
-            "snip": "I have opened the link...",
+            "snip": "I have opened the link…",
             "tag": "HAARP",
             "cls": "",
-            "isnew": true,
             "type": "thread-notify",
             "threadRef": "science-technology",
             "time": "23:16",
@@ -13987,7 +13985,7 @@
             "date": "3 Oct 2026",
             "time": "12:55",
             "type": "thread-notify",
-            "threadRef": "odds-and-ends"
+            "threadNotify": "odds-and-ends"
           },
           {
             "src": "Simon → Amy",
@@ -14006,7 +14004,7 @@
             "date": "3 Oct 2026",
             "time": "15:44",
             "type": "thread-notify",
-            "threadRef": "odds-and-ends"
+            "threadNotify": "odds-and-ends"
           }
         ]
       },
@@ -15249,18 +15247,6 @@
       ]
     },
     {
-      "id": "banter",
-      "label": "Banter",
-      "items": [
-        {
-          "text": "Anthropomorphic Mode",
-          "src": "simon",
-          "turn": "13a",
-          "url": "Anthropomorphic_Mode.html"
-        }
-      ]
-    },
-    {
       "id": "odds-and-ends",
       "title": "Odds & Ends",
       "items": [
@@ -15284,6 +15270,18 @@
         }
       ],
       "label": "Odds & Ends"
+    },
+    {
+      "id": "banter",
+      "label": "Banter",
+      "items": [
+        {
+          "text": "Anthropomorphic Mode",
+          "src": "simon",
+          "turn": "13a",
+          "url": "Anthropomorphic_Mode.html"
+        }
+      ]
     }
   ],
   "songs": [

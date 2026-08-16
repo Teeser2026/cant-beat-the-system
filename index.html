@@ -5322,6 +5322,7 @@ function renderSignal(turnId) {
   _flat.sort((a, b) => (a._k - b._k) || (a._i - b._i));
 
   let prevSrc = null;
+  const _threadSeenAt = {};  // tracks how many cards seen per group+turn combo
   _flat.forEach(({ section, card }) => {
     const secCls = section.sec.includes('ARC') ? ' arc'
                  : section.sec.includes('GOV') ? ' gov'
@@ -5338,7 +5339,12 @@ function renderSignal(turnId) {
       let typeCls = type === 'essential' ? ' essential-card' : type === 'thread-notify' ? ' thread-notify-card' : type === 'song' ? ' song-card' : '';
       if (type === 'thread-notify') {
         const tg = threadsData.find(g => g.id === card.threadRef);
-        const ti = tg && tg.items.find(item => String(item.turn) === turnId);
+        const _tk = (card.threadRef || '') + ':' + turnId;
+        const _tn = _threadSeenAt[_tk] || 0;
+        const _tItems = tg ? tg.items.filter(item => String(item.turn) === turnId) : [];
+        const ti = _tItems[_tn] || null;
+        card._resolvedIdx = ti ? tg.items.indexOf(ti) : -1;
+        _threadSeenAt[_tk] = _tn + 1;
         if (ti && ti.article) typeCls += ' thread-article-card';
       }
       const imgCls = card.img ? ' has-img' : '';
@@ -5378,9 +5384,10 @@ function renderSignal(turnId) {
       if (type === 'thread-notify') {
         const group = threadsData.find(g => g.id === card.threadRef);
         const label = group ? group.label : card.threadRef;
-        const item = group && group.items.find(item => String(item.turn) === turnId);
-        const refCls = item && item.article ? 'card-thread-ref card-thread-article' : 'card-thread-ref';
-        html += `<div class="${refCls}" data-thread="${card.threadRef}" data-turn="${turnId}">NEW THREAD · ${label}</div>`;
+        const tidx = card._resolvedIdx >= 0 ? card._resolvedIdx : -1;
+        const rItem = group && tidx >= 0 ? group.items[tidx] : null;
+        const refCls = rItem && rItem.article ? 'card-thread-ref card-thread-article' : 'card-thread-ref';
+        html += `<div class="${refCls}" data-thread="${card.threadRef}" data-turn="${turnId}" data-tidx="${tidx}">NEW THREAD · ${label}</div>`;
       } else if (type === 'essential') {
         const key = `${turnId}-${card.src}-${(card.ttl||'').substring(0,30)}`;
         // essential card — no save label
@@ -5421,8 +5428,10 @@ function renderSignal(turnId) {
       if (!groupId || !cardTurn) return;
       const group = threadsData.find(g => g.id === groupId);
       if (!group) return;
-      const itemIdx = group.items.findIndex(item => String(item.turn) === cardTurn);
-      if (itemIdx < 0) return;
+      // Use resolved index from render when available; fall back to turn-based find
+      const tidxAttr = this.dataset.tidx;
+      const itemIdx = (tidxAttr !== undefined && tidxAttr !== '-1') ? parseInt(tidxAttr) : group.items.findIndex(item => String(item.turn) === cardTurn);
+      if (itemIdx < 0 || itemIdx >= group.items.length) return;
       const item = group.items[itemIdx];
       // Mark as read in thread state
       const itemKey = groupId + ':' + itemIdx;

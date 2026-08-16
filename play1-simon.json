@@ -240,7 +240,7 @@
         ]
       },
       "audio": {
-        "src": "audio/tea.mp3",
+        "src": "tea.mp3",
         "vol": 0.35,
         "fadeIn": 0,
         "loop": false
@@ -398,7 +398,7 @@
         ]
       },
       "audio": {
-        "src": "audio/heavenly-highs.mp3",
+        "src": "heavenly-highs.mp3",
         "vol": 0.3,
         "fadeIn": 2,
         "loop": false
@@ -805,7 +805,7 @@
         ]
       },
       "audio": {
-        "src": "audio/cooking.mp3",
+        "src": "cooking.mp3",
         "vol": 0.3
       }
     },
@@ -1103,7 +1103,7 @@
         ]
       },
       "audio": {
-        "src": "audio/new-notification.mp3",
+        "src": "new-notification.mp3",
         "vol": 0.3,
         "fadeIn": 0,
         "loop": false,
@@ -1388,7 +1388,7 @@
           "Jump in the lake.",
           "Become the lake."
         ],
-        "sfx": "audio/splash.mp3"
+        "sfx": "splash.mp3"
       }
     },
     {

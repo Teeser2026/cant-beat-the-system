@@ -5182,7 +5182,6 @@ function renderTurn(turnData) {
 
   // Bind choice clicks
   container.querySelectorAll('.choices .c-opt').forEach(opt => {
-    if (opt.classList.contains('sel')) return;
     opt.addEventListener('click', function() {
       const ci = parseInt(this.dataset.ci);
 

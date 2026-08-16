@@ -6045,6 +6045,7 @@ let turnAudioEl = null;
 let turnAudioCtx = null;
 let turnAudioGain = null;
 let turnAudioSrc = null;  // current filename, to avoid restarting same track
+let turnAudioDelay = null; // pending delay timer — cleared on stop/navigate
 
 function startTurnAudio(audioConf) {
   if (!audioConf || !audioConf.src) return;
@@ -6054,32 +6055,44 @@ function startTurnAudio(audioConf) {
   // Stop anything currently playing first
   stopTurnAudio(0);
 
-  try {
-    turnAudioCtx = getCbtsAudioCtx();
-    turnAudioGain = turnAudioCtx.createGain();
-    turnAudioGain.gain.value = 0;
-    turnAudioGain.connect(turnAudioCtx.destination);
+  const delay = audioConf.delay !== undefined ? audioConf.delay : 0;
 
-    turnAudioEl = new Audio(audioConf.src);
-    turnAudioEl.loop = true;
-    const source = turnAudioCtx.createMediaElementSource(turnAudioEl);
-    source.connect(turnAudioGain);
+  function beginPlayback() {
+    try {
+      turnAudioCtx = getCbtsAudioCtx();
+      turnAudioGain = turnAudioCtx.createGain();
+      turnAudioGain.gain.value = 0;
+      turnAudioGain.connect(turnAudioCtx.destination);
 
-    const vol = audioConf.vol !== undefined ? audioConf.vol : 0.4;
-    const fadeIn = audioConf.fadeIn !== undefined ? audioConf.fadeIn : 2;
+      turnAudioEl = new Audio(audioConf.src);
+      turnAudioEl.loop = audioConf.loop !== false;
+      const source = turnAudioCtx.createMediaElementSource(turnAudioEl);
+      source.connect(turnAudioGain);
 
-    turnAudioEl.play().then(() => {
-      console.log('Turn audio playing:', audioConf.src);
-      turnAudioGain.gain.linearRampToValueAtTime(vol, turnAudioCtx.currentTime + fadeIn);
-    }).catch(err => { console.log('Turn audio play failed:', err); });
+      const vol = audioConf.vol !== undefined ? audioConf.vol : 0.4;
+      const fadeIn = audioConf.fadeIn !== undefined ? audioConf.fadeIn : 2;
 
-    turnAudioSrc = audioConf.src;
-  } catch(err) {
-    console.log('Turn audio error:', err);
+      turnAudioEl.play().then(() => {
+        console.log('Turn audio playing:', audioConf.src);
+        turnAudioGain.gain.linearRampToValueAtTime(vol, turnAudioCtx.currentTime + fadeIn);
+      }).catch(err => { console.log('Turn audio play failed:', err); });
+
+      turnAudioSrc = audioConf.src;
+    } catch(err) {
+      console.log('Turn audio error:', err);
+    }
+  }
+
+  if (delay > 0) {
+    turnAudioDelay = setTimeout(beginPlayback, delay * 1000);
+  } else {
+    beginPlayback();
   }
 }
 
 function stopTurnAudio(fadeDuration) {
+  // Cancel any pending delayed start
+  if (turnAudioDelay) { clearTimeout(turnAudioDelay); turnAudioDelay = null; }
   const dur = fadeDuration !== undefined ? fadeDuration : 1.5;
   if (turnAudioEl && turnAudioGain && turnAudioCtx) {
     turnAudioGain.gain.linearRampToValueAtTime(0, turnAudioCtx.currentTime + dur);

@@ -1131,7 +1131,7 @@ body {
 .card.aida { --accent: #1AAF6C; --accent-fade: rgba(26,175,108,.15); }
 
 .card.thread-notify-card { border-left: 2px solid var(--accent); animation: pulse 3s ease-in-out infinite; }
-.card.thread-article-card { --accent: rgba(181,131,141,.8); --accent-fade: rgba(181,131,141,.15); background: rgba(181,131,141,.04); }
+.card.thread-article-card { --accent: rgba(181,131,141,.8); --accent-fade: rgba(181,131,141,.15); background: rgba(181,131,141,.10); }
 /* .card.new (driven by isnew:true) is intentionally inert under the thread-notify pulse rule. Field retained in JSON as legacy; strip at leisure. */
 .card.fade { opacity: .28; }
 @keyframes pulse { 0%,100%{border-left-color:var(--accent)} 50%{border-left-color:var(--accent-fade)} }
@@ -1276,15 +1276,16 @@ body.phase-3 .card .ttl {
 a.ti, div.ti { font-family: 'Outfit', sans-serif; font-size: 13px; line-height: 1.5; color: var(--dim); padding: 4px 0 4px 11px; border-left: 1px solid rgba(90,122,138,.14); margin-bottom: 6px; cursor: pointer; transition: all .3s; display: block; text-decoration: none; }
 a.ti:hover, div.ti:hover { color: var(--text); border-left-color: var(--cold); }
 a.ti.hot { color: var(--warm); border-left-color: rgba(196,149,106,.35); }
-a.ti::after { content: ' ↗'; opacity: .3; font-size: 11px; color: var(--warm); }
-a.ti:hover::after { opacity: .5; }
+a.ti::before { content: '↗ '; opacity: .35; font-size: 10px; color: var(--warm); }
+a.ti:hover::before { opacity: .6; }
 a.ti.player, div.ti.player { color: var(--warm); border-left-color: rgba(196,149,106,.3); }
 a.ti.player:hover, div.ti.player:hover { color: var(--text); border-left-color: var(--warm); }
 a.ti.player::before, div.ti.player::before { content: '— '; opacity: .3; font-size: 11px; }
 div.ti.pending { cursor: default; opacity: .5; }
-div.ti.article { cursor: pointer; border-left-color: rgba(196,149,106,.3); }
-div.ti.article::after { content: ' ▸'; opacity: .3; font-size: 11px; color: rgba(181,131,141,.9); }
-div.ti.article:hover::after { opacity: .5; }
+div.ti.article { cursor: pointer; border-left-color: rgba(181,131,141,.35); background: rgba(181,131,141,.08); border-radius: 3px; padding: 5px 8px 5px 11px; }
+div.ti.article::before { content: '▸ '; opacity: .5; font-size: 11px; color: rgba(181,131,141,.9); }
+div.ti.article:hover::before { opacity: .7; }
+div.ti.article:hover { border-left-color: rgba(181,131,141,.6); }
 
 /* ── TAB NOTIFICATION DOT ── */
 .tab .tab-dot {

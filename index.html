@@ -5448,6 +5448,11 @@ function renderSignal(turnId) {
         const ref = this.querySelector('.card-thread-ref');
         if (ref) { ref.click(); return; }
       }
+      // Song cards: whole card navigates to Songs tab
+      if (this.classList.contains('song-card')) {
+        const saved = this.querySelector('.card-auto-saved');
+        if (saved) { saved.click(); return; }
+      }
       if (this.classList.contains('new')) this.classList.remove('new');
       else this.classList.toggle('fade');
     });

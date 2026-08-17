@@ -8173,6 +8173,20 @@
             "time": "23:47"
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@GOVUK",
+            "ttl": "How would you prepare for an emergency? This week we launch our UK Resilience Action Plan for a stronger and more resilient UK. Visit gov.uk/prepare to find out more and for practical advice. #AreYouPrepared?",
+            "snip": "Am I prepared? How about these hashtags? What do they know? What are they planning?",
+            "tag": "AD",
+            "cls": "x",
+            "time": "12:22",
+            "img": "prepare.webp"
+          }
+        ]
       }
     ],
     "2": [
@@ -8222,7 +8236,7 @@
           {
             "src": "@UKDefenceWatch",
             "ttl": "Fourth large-scale PLA exercise east of Taiwan this month. MOD 'monitoring closely.' Fourth time this year they've been 'monitoring closely.'",
-            "snip": "Same formation, different month. Pinned MOD statement is the one from June.",
+            "snip": "More ‘routine manoeuvres’. Planned. Four times. No cause for concern. Everything is routine. Everything is planned. Until it isn’t.",
             "tag": "",
             "cls": "",
             "img": "pla-taiwan-drill.webp",
@@ -9768,7 +9782,7 @@
         "cards": [
           {
             "src": "@cyberhq",
-            "ttl": "TOUGHEN UP your online security. Turn on 2-step verification now. 🛡️ Link in bio. #CyberAware #SecureOurWorld",
+            "ttl": "TOUGHEN UP your online security. Turn on 2-step verification now. 🛡️ Link in bio. #CyberAware #SecureOurWorld #AreYouPrepared?",
             "snip": "847 likes. Comments disabled. In the bio: 'a part of GCHQ.'",
             "tag": "Sponsored",
             "cls": "",
@@ -10054,6 +10068,18 @@
             "date": "17 Jan 2027"
           }
         ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@anarchyuk",
+            "ttl": "Cyber resilience exercises — simulated attacks on finance, energy & comms infrastructure — disrupted supply chains. Civil Contingencies Act — extended powers. #AreYouPrepared? #justsaying",
+            "snip": "Exercising resilience? Or getting ready?",
+            "tag": "CYBER RESILIENCE",
+            "time": "22:22"
+          }
+        ]
       }
     ],
     "19": [
@@ -10303,6 +10329,18 @@
             "type": "flavour",
             "time": "21:53",
             "date": "24 Nov 2026"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@anarchyuk",
+            "ttl": "So the government has finished reviewing the Civil Contingencies Act. The one that gives ministers power to make law without Parliament. Requisition property. Force quarantine. Compel citizens to work.\n\nNever been used. Not for Covid. Not for 7/7. Not for the riots.\n\nBut they want to ‘extend’ it.\n\nCalls for views closed 5 October. Very quiet calls. Did anyone ask you?",
+            "snip": "Power is the most persuasive rhetoric.",
+            "tag": "CIVIL CONTINGENCIES ACT",
+            "time": "21:29"
           }
         ]
       }
@@ -13792,7 +13830,7 @@
         "cards": [
           {
             "src": "@UKDefenceWatch",
-            "ttl": "Third ‘routine readiness exercise’ at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units.",
+            "ttl": "Third ‘routine readiness exercise’ at RAF Wyton in six weeks. Pathfinder Building. Intelligence & surveillance units. Convoys rolling in at 11pm via the B1090. MoD says ‘part of the UK Resilience Action Plan.’ Three in six weeks is not routine. Link to BBC article 🔗",
             "snip": "Since when do routine exercises make the news?",
             "tag": "Trending",
             "cls": "",
@@ -14362,7 +14400,7 @@
             "source": "BBC News — Cambridgeshire",
             "title": "Military activity at RAF Wyton part of 'routine readiness exercise', MoD confirms",
             "date": "17 October 2026",
-            "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
+            "body": "<p>Residents near RAF Wyton in Cambridgeshire reported increased military vehicle movement overnight on Wednesday, with convoys observed entering the base via the B1090 from approximately 11pm.</p><p>A Ministry of Defence spokesperson confirmed the activity was part of a 'routine readiness exercise' involving personnel from the base's intelligence and surveillance units.</p><p>'This is a planned exercise as a part of the UK Resilience Action Plan and there is no cause for public concern,' the spokesperson said. 'RAF Wyton regularly conducts readiness activities as part of its operational commitments.'</p><p>The base, which houses the RAF's Pathfinder Building and elements of the Joint Forces Intelligence Group, has seen a notable increase in exercise activity this autumn. This is the third such exercise confirmed by the MoD since early September.</p><p>Local residents expressed mild frustration at the overnight disruption but acknowledged the base's long presence in the area. 'It's been here longer than I have,' said one resident of Hartford village. 'You get used to it. But three in six weeks is unusual.'</p><p>The exercise is expected to conclude by the end of the week. No disruption to local roads or services is anticipated.</p>",
             "footer": "BBC News · Cambridgeshire · Filed under: Defence"
           }
         },
@@ -14458,7 +14496,7 @@
             "source": "BBC News",
             "title": "Allied nations conduct parallel cyber resilience exercises",
             "date": "17 January 2027",
-            "body": "<p>NATO and Five Eyes member states have conducted a series of parallel cyber resilience exercises over the past six weeks, with military and civilian agencies in at least fourteen countries testing their response to simulated disruptions of critical infrastructure.</p><p>The exercises, described by officials in each country as routine, have included simulated attacks on financial settlement systems, energy distribution networks, and telecommunications infrastructure. Several have involved the deployment of military logistics units to civilian distribution points — a rehearsal, officials say, for scenarios in which digital infrastructure failures disrupt supply chains.</p><p>The UK's contribution has included expanded readiness exercises at RAF Wyton in Cambridgeshire, confirmed by the Ministry of Defence in October, and a series of unannounced military logistics deployments across southern England. Germany's Bundeswehr conducted a week-long exercise in December simulating the coordination of emergency food and fuel distribution. France's Secrétariat Général de la Défense et de la Sécurité Nationale ran a parallel exercise focused on payment system continuity. Australia, Canada, Japan, and Singapore have all confirmed similar programmes since November.</p><p>\"These are standard preparedness activities,\" said a NATO spokesperson. \"Alliance members routinely test their resilience across multiple domains. The timing reflects updated planning cycles, not a specific threat assessment.\"</p><p>However, the concentration of exercises within such a narrow window has drawn comment. Marcus Willett, Senior Adviser for Cyber at the International Institute for Strategic Studies and former director of cyber at GCHQ, noted that the overlap was unusual. \"Individual exercises are routine. Fourteen countries conducting them simultaneously, across the same infrastructure categories, within six weeks — that is coordination, not coincidence. The question is what they are coordinating for.\"</p><p>The exercises share several common features. Each has tested the military's ability to support civilian logistics in the event of widespread digital infrastructure failure — a scenario in which electronic payments, automated supply chains, and internet-dependent communications cease to function for an extended period. In at least three countries, military units have rehearsed the physical distribution of emergency supplies at pre-designated community sites.</p><p>This represents a shift in military planning doctrine. Traditionally, cyber defence has been treated as a digital problem requiring digital solutions — patching vulnerabilities, hardening networks, building redundancy. The introduction of physical military logistics into cyber resilience exercises suggests that defence planners are now considering scenarios in which digital defences fail entirely and the consequences spill into the physical world.</p><p>\"If the payment system goes down for a day, that's an IT problem,\" said one senior NATO official, speaking on background. \"If it goes down for a week, that's a logistics problem. If it goes down for a month, that's a public order problem. You plan for all three.\"</p><p>The UK government has declined to comment on whether the exercises are connected to the NCSC's decision to raise its cyber threat advisory to \"heightened\" earlier this month. A Ministry of Defence spokesperson said: \"The UK armed forces maintain a continuous programme of readiness exercises. We do not comment on the specific scenarios being tested.\"</p>",
+            "body": "<p>NATO and Five Eyes member states have conducted a series of parallel cyber resilience exercises over the past six weeks, with military and civilian agencies in at least fourteen countries testing their response to simulated disruptions of critical infrastructure.</p><p>The exercises, described by officials in each country as routine, have included simulated attacks on financial settlement systems, energy distribution networks, and telecommunications infrastructure. Several have involved the deployment of military logistics units to civilian distribution points — a rehearsal, officials say, for scenarios in which digital infrastructure failures disrupt supply chains.</p><p>The UK's contribution, conducted under the government's UK Resilience Action Plan, has included expanded readiness exercises at RAF Wyton in Cambridgeshire, confirmed by the Ministry of Defence in October, and a series of unannounced military logistics deployments across southern England. Germany's Bundeswehr conducted a week-long exercise in December simulating the coordination of emergency food and fuel distribution. France's Secrétariat Général de la Défense et de la Sécurité Nationale ran a parallel exercise focused on payment system continuity. Australia, Canada, Japan, and Singapore have all confirmed similar programmes since November.</p><p>\"These are standard preparedness activities,\" said a NATO spokesperson. \"Alliance members routinely test their resilience across multiple domains. The timing reflects updated planning cycles, not a specific threat assessment.\"</p><p>However, the concentration of exercises within such a narrow window has drawn comment. Marcus Willett, Senior Adviser for Cyber at the International Institute for Strategic Studies and former director of cyber at GCHQ, noted that the overlap was unusual. \"Individual exercises are routine. Fourteen countries conducting them simultaneously, across the same infrastructure categories, within six weeks — that is coordination, not coincidence. The question is what they are coordinating for.\"</p><p>The exercises share several common features. Each has tested the military's ability to support civilian logistics in the event of widespread digital infrastructure failure — a scenario in which electronic payments, automated supply chains, and internet-dependent communications cease to function for an extended period. In at least three countries, military units have rehearsed the physical distribution of emergency supplies at pre-designated community sites.</p><p>This represents a shift in military planning doctrine. Traditionally, cyber defence has been treated as a digital problem requiring digital solutions — patching vulnerabilities, hardening networks, building redundancy. The introduction of physical military logistics into cyber resilience exercises suggests that defence planners are now considering scenarios in which digital defences fail entirely and the consequences spill into the physical world.</p><p>\"If the payment system goes down for a day, that's an IT problem,\" said one senior NATO official, speaking on background. \"If it goes down for a week, that's a logistics problem. If it goes down for a month, that's a public order problem. You plan for all three.\"</p><p>The UK government has declined to comment on whether the exercises are connected to the NCSC's decision to raise its cyber threat advisory to \"heightened\" earlier this month. A Ministry of Defence spokesperson said: \"The UK armed forces maintain a continuous programme of readiness exercises. We do not comment on the specific scenarios being tested.\"</p>",
             "footer": "BBC News · World · Filed under: Defence / Cyber Security"
           }
         },

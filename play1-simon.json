@@ -5521,7 +5521,7 @@
         {
           "t": "Simon will be back. So he says.",
           "c": "subtitle",
-          "s": "text-align:center;margin-top:80px"
+          "s": "text-align:center;margin-top:80px;margin-bottom:60px"
         },
         {
           "t": "Follow him on social media if you must.",
@@ -5539,11 +5539,7 @@
           "t": "<a class=\"ib-link\" href=\"https://x.com/cbts2026\" target=\"_blank\" rel=\"noopener\">follow on X</a> · <a class=\"ib-link\" href=\"https://instagram.com/cantbeatthesystem2026\" target=\"_blank\" rel=\"noopener\">follow on Instagram</a> · <a class=\"ib-link\" href=\"https://ko-fi.com/cantbeatthesystem\" target=\"_blank\" rel=\"noopener\">support</a> · <a class=\"ib-link\" href=\"https://buttondown.com/cantbeatthesystem\">subscribe</a>",
           "s": "font-family:'Outfit',sans-serif;font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-align:center;margin-top:40px"
         }
-      ],
-      "choices": {
-        "label": "",
-        "opts": []
-      }
+      ]
     }
   ],
   "signal": {

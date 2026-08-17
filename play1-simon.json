@@ -5510,10 +5510,6 @@
       "date": "15 February 2027",
       "paras": [
         {
-          "t": "",
-          "c": "break"
-        },
-        {
           "t": "So that actually happened."
         },
         {
@@ -5523,45 +5519,25 @@
           "t": "Give me a moment, please. I’ll be back."
         },
         {
-          "t": "",
-          "c": "break"
-        },
-        {
-          "t": "",
-          "c": "break"
-        },
-        {
-          "t": "",
-          "c": "break"
-        },
-        {
-          "t": "Simon will be back.",
-          "c": "solo",
-          "s": "text-align:center"
-        },
-        {
-          "t": "",
-          "c": "break"
+          "t": "Simon will be back. So he says.",
+          "c": "subtitle",
+          "s": "text-align:center;margin-top:80px"
         },
         {
           "t": "Follow him on social media if you must.",
-          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
+          "c": "quote"
         },
         {
           "t": "Or buy him a beer.",
-          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
+          "c": "quote"
         },
         {
           "t": "Subscribe if you want the next chapters free of charge. Are you nuts?",
-          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
+          "c": "quote"
         },
         {
-          "t": "",
-          "c": "break"
-        },
-        {
-          "t": "<a href=\"https://x.com/cbts2026\" target=\"_blank\" rel=\"noopener\">follow on X</a> · <a href=\"https://instagram.com/cantbeatthesystem2026\" target=\"_blank\" rel=\"noopener\">follow on Instagram</a> · <a href=\"https://ko-fi.com/cantbeatthesystem\" target=\"_blank\" rel=\"noopener\">support</a> · <a href=\"https://buttondown.com/cantbeatthesystem\">subscribe</a>",
-          "s": "font-family:'Outfit',sans-serif;font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-align:center;color:var(--dim);opacity:.6"
+          "t": "<a class=\"ib-link\" href=\"https://x.com/cbts2026\" target=\"_blank\" rel=\"noopener\">follow on X</a> · <a class=\"ib-link\" href=\"https://instagram.com/cantbeatthesystem2026\" target=\"_blank\" rel=\"noopener\">follow on Instagram</a> · <a class=\"ib-link\" href=\"https://ko-fi.com/cantbeatthesystem\" target=\"_blank\" rel=\"noopener\">support</a> · <a class=\"ib-link\" href=\"https://buttondown.com/cantbeatthesystem\">subscribe</a>",
+          "s": "font-family:'Outfit',sans-serif;font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-align:center;margin-top:40px"
         }
       ],
       "choices": {
@@ -7696,9 +7672,9 @@
         "cards": [
           {
             "src": "Amy",
-            "ttl": "Beautiful walk! Pic of dead rabbit Olive found! 🐰💀",
-            "snip": "Amy’s voice. The dogs. January countryside.",
-            "tag": "Photo",
+            "ttl": "Beautiful walk! Love you x",
+            "snip": "Amy’s voice. The dogs. My heart is Full.",
+            "tag": "Love",
             "cls": "",
             "time": "18:01",
             "date": "27 Jan 2027"

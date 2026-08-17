@@ -5536,7 +5536,24 @@
         },
         {
           "t": "Simon will be back.",
-          "c": "solo"
+          "c": "solo",
+          "s": "text-align:center"
+        },
+        {
+          "t": "",
+          "c": "break"
+        },
+        {
+          "t": "Follow him on social media if you must.",
+          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
+        },
+        {
+          "t": "Or buy him a beer.",
+          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
+        },
+        {
+          "t": "Subscribe if you want the next chapters free of charge. Are you nuts?",
+          "s": "font-family:'Outfit',sans-serif;font-size:13px;font-weight:300;text-align:center;color:var(--dim);opacity:.6"
         },
         {
           "t": "",
@@ -5544,9 +5561,13 @@
         },
         {
           "t": "<a href=\"https://x.com/cbts2026\" target=\"_blank\" rel=\"noopener\">follow on X</a> · <a href=\"https://instagram.com/cantbeatthesystem2026\" target=\"_blank\" rel=\"noopener\">follow on Instagram</a> · <a href=\"https://ko-fi.com/cantbeatthesystem\" target=\"_blank\" rel=\"noopener\">support</a> · <a href=\"https://buttondown.com/cantbeatthesystem\">subscribe</a>",
-          "s": "font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:3px;text-align:center;color:var(--dim);opacity:.5"
+          "s": "font-family:'Outfit',sans-serif;font-size:12px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-align:center;color:var(--dim);opacity:.6"
         }
-      ]
+      ],
+      "choices": {
+        "label": "",
+        "opts": []
+      }
     },
     {
       "id": "23b",

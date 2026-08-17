@@ -1219,6 +1219,8 @@ body.phase-3 .card .snip {
 .card-thread-ref::before { content: '↗ '; font-size: 8px; }
 .card-thread-ref.card-thread-article::before { content: ''; }
 .card-thread-ref.card-thread-article { color: #d43d3d; }
+.card-thread-ref:not(.card-thread-article) { color: var(--warm); }
+.card-thread-ref:not(.card-thread-article)::before { color: var(--warm); }
 
 /* S174 hotfix: force .tag to IBM Plex Mono 10px across phases (beats phase .tag rules at 178/349/523). */
 body.phase-1 .tag,
@@ -1297,6 +1299,10 @@ div.ti.article { cursor: pointer; }
 }
 .tab[data-p="archive"] .tab-dot { background: #d43d3d; }
 .tab[data-p="songs"] .tab-dot { background: #1DB954; }
+
+/* ── S285: PER-TAB ACTIVE COLORS (DESKTOP) ── */
+.tab.on[data-p="archive"] { color: #d43d3d; border-bottom-color: #d43d3d; }
+.tab.on[data-p="songs"] { color: #1DB954; border-bottom-color: #1DB954; }
 
 /* ── ARTICLE OVERLAY ── */
 .article-overlay {
@@ -3225,6 +3231,19 @@ body.phase-3 .mob-tabs {
 .mob-tab.has-new .mob-tab-dot { display: block; }
 .mob-tab[data-mob="archive"] .mob-tab-dot { background: #d43d3d; }
 .mob-tab[data-mob="songs"] .mob-tab-dot { background: #1DB954; }
+
+/* ── S285: PER-TAB ACTIVE COLORS (MOBILE) ── */
+.mob-tab[data-mob="prose"].active .mob-tab-icon { stroke: var(--text); }
+.mob-tab[data-mob="prose"].active .mob-tab-label { color: var(--text); }
+.mob-tab[data-mob="signal"].active .mob-tab-icon { stroke: #6b7d8e; }
+.mob-tab[data-mob="signal"].active .mob-tab-label { color: #6b7d8e; }
+.mob-tab[data-mob="archive"].active .mob-tab-icon { stroke: #d43d3d; }
+.mob-tab[data-mob="archive"].active .mob-tab-label { color: #d43d3d; }
+.mob-tab[data-mob="threads"].active .mob-tab-icon { stroke: var(--warm); }
+.mob-tab[data-mob="threads"].active .mob-tab-label { color: var(--warm); }
+.mob-tab[data-mob="songs"].active .mob-tab-icon { stroke: #1DB954; }
+.mob-tab[data-mob="songs"].active .mob-tab-label { color: #1DB954; }
+.mob-tab[data-mob="signal"] .mob-tab-dot { background: #6b7d8e; }
 
 /* ── MOBILE CHAPTER DRAWER ── */
 .mob-drawer-overlay {

@@ -14038,6 +14038,34 @@
             "cls": "",
             "time": "13:12",
             "date": "19 Oct 2026"
+          },
+          {
+            "src": "Amy \u2192 Family Chat",
+            "ttl": "Our beautiful Freddie \ud83d\ude22",
+            "snip": "God I miss him.",
+            "tag": "",
+            "cls": "",
+            "img": "freddie.webp",
+            "time": "22:37",
+            "date": "15 Oct 2026"
+          },
+          {
+            "src": "Chloe \u2192 Family Chat",
+            "ttl": "\u2764\ufe0f",
+            "snip": "Over five years since he crossed The Rainbow Bridge.",
+            "tag": "",
+            "cls": "",
+            "time": "22:45",
+            "date": "15 Oct 2026"
+          },
+          {
+            "src": "Emilia \u2192 Family Chat",
+            "ttl": "We should get it framed \u2764\ufe0f",
+            "snip": "A heart emoji reply is easier than reading an article.",
+            "tag": "",
+            "cls": "",
+            "time": "22:47",
+            "date": "15 Oct 2026"
           }
         ]
       },
@@ -14072,6 +14100,16 @@
             "threadRef": "science-technology",
             "date": "15 Nov 2026",
             "time": "22:30"
+          },
+          {
+            "src": "@thesingularity",
+            "ttl": "Starlink, I mean Skynet",
+            "snip": "The memes write themselves. Literally.",
+            "tag": "BIO-DIGITAL CONVERGENCE",
+            "cls": "",
+            "img": "terminator.webp",
+            "time": "23:02",
+            "date": "18 Nov 2026"
           }
         ]
       },

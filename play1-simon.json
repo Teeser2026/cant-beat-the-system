@@ -9271,6 +9271,19 @@
             "date": "9 Jan 2027"
           }
         ]
+      },
+      {
+        "sec": "Notification",
+        "cards": [
+          {
+            "src": "BBC News",
+            "ttl": "Government publishes Energy Resilience Strategy — measures to protect power grid from ‘hostile actors and extreme weather events’",
+            "snip": "Hostile actors. Extreme weather. Grid resilience. The replies to this are gold.",
+            "tag": "ENERGY",
+            "time": "23:16",
+            "date": "9 Jan 2027"
+          }
+        ]
       }
     ],
     "16a": [
@@ -12506,6 +12519,20 @@
             "cls": "",
             "img": "obey_roddy_piper_GIF.gif",
             "time": "22:01",
+            "date": "29 Nov 2026"
+          }
+        ]
+      },
+      {
+        "sec": "X",
+        "cards": [
+          {
+            "src": "@GOVUK",
+            "ttl": "Cold weather coming? ❄️\n\nHere's how to prepare for winter:\n\n1. Get your #WinterArmour - #Flu #Covid #RSV vaccines are free for those eligible. Ask your GP or pharmacist. 💉\n2. Keep your home warm - bleed radiators, check pipe insulation, know where your stopcock is. 🏠\n3. Stock up sensibly - make sure you have essentials in case of disruption to local shops or deliveries. 🛒\n4. Check on neighbours - especially those living alone or with health conditions. 🤝\n\nFind out more at gov.uk/prepare\n#AreYouPrepared?",
+            "snip": "Stock up sensibly. In case of disruption. ‘In case.’",
+            "tag": "AD",
+            "cls": "x",
+            "time": "12:30",
             "date": "29 Nov 2026"
           }
         ]

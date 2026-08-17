@@ -8134,7 +8134,10 @@ function goTo(idx) {
 
   // ── PHASE DETECTION — visual skin swap ──
   const phaseNum = (() => {
-    const m = String(turn.id).match(/^T?(\d+)/);
+    const tid = String(turn.id);
+    // BC broadcasts, IB coda, dreams, entities — all phase 2 (dark)
+    if (/^(BC|IB|D|E)\d*$/.test(tid)) return 2;
+    const m = tid.match(/^T?(\d+)/);
     if (!m) return 3;
     const n = parseInt(m[1]);
     if (n <= 20) return 1;

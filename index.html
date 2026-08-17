@@ -8508,11 +8508,10 @@ if (DEV) {
 } else {
   document.getElementById('devBar').style.display = 'none';
   document.getElementById('readerBar').style.display = '';
-  // Chapter nav open by default
+  // Chapter nav open by default — renderChapterNav called by goTo() after data loads
   const navInit = document.getElementById('chapterNav');
   navInit.classList.add('open');
   document.body.classList.add('chapters-open');
-  renderChapterNav();
   document.getElementById('readerPrev').addEventListener('click', () => goTo(prevProseIndex(state.turnIndex)));
   document.getElementById('readerNext').addEventListener('click', () => goTo(nextProseIndex(state.turnIndex)));
   document.getElementById('readerChapters').addEventListener('click', () => {

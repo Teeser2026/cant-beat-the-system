@@ -11910,8 +11910,6 @@
             "tag": "HE KNOWS",
             "cls": "",
             "isnew": true,
-            "type": "thread-notify",
-            "threadRef": "finance-commerce",
             "time": "16:42",
             "date": "31 Jan 2027"
           },
@@ -11923,7 +11921,9 @@
             "cls": "",
             "isnew": true,
             "time": "16:44",
-            "date": "31 Jan 2027"
+            "date": "31 Jan 2027",
+            "type": "thread-notify",
+            "threadRef": "finance-commerce"
           }
         ]
       },
@@ -14815,12 +14815,6 @@
           "turn": "16a"
         },
         {
-          "text": "Cyber Polygon: WEF exercise simulates coordinated financial infrastructure attack",
-          "url": "https://cyberpolygon.com",
-          "src": "dev",
-          "turn": "17c"
-        },
-        {
           "text": "@sacredgeometry_ — Lupercalia. February 13–15. Look it up.",
           "src": "simon",
           "turn": "17b",
@@ -15014,6 +15008,12 @@
             "body": "<p><strong>Payment terminal conspiracy theories: what the claims say and what we know</strong></p><p><em>BBC Verify has examined claims circulating on social media that millions of UK payment terminals have been secretly fitted with biometric surveillance technology.</em></p><p>Posts circulating on Telegram, X and Substack this week claim that millions of UK payment terminals have been secretly fitted with surveillance technology, including biometric scanners and connections to an international banking authority in Switzerland.</p><p>The claims, which have been shared tens of thousands of times, centre on a firmware update that was pushed to Ingenico and Verifone card machines on the night of 18–19 January.</p><p>BBC Verify has examined the key claims.</p><p><strong>The claim: A ‘dormant biometric payload’ was installed in 2.1 million terminals</strong></p><p>One widely shared Substack post, written by an anonymous author identifying themselves as a payment systems analyst, claims the firmware update contains a ‘dormant service container’ with biometric storage capability, NFC write access, and a connection to the Bank for International Settlements in Basel.</p><p>Industry sources told BBC Verify that overnight firmware updates are standard practice in the payment terminal industry. “Terminals receive updates regularly,” said a spokesperson for UK Finance, the trade body representing payment service providers. “These updates include security patches, compliance adjustments and performance improvements. They are pushed through authorised acquirer channels as a matter of routine.”</p><p><strong>The claim: The update connects to the Bank for International Settlements</strong></p><p>The BIS routing address cited in the viral posts is consistent with infrastructure used in the BIS Innovation Hub’s interoperability testing programme, which has been running since 2023. Payment terminals used in pilot schemes for cross-border settlement are known to route test data through BIS systems. Security researchers say this does not indicate covert activity.</p><p>“Seeing a BIS address in payment infrastructure is like seeing a .gov.uk address in a government website,” said Dr Marcus Webb, a cybersecurity researcher at Imperial College London. “It tells you who built the plumbing. It doesn’t tell you what’s flowing through it.”</p><p><strong>The claim: The firmware is ‘waiting for an activation signal’</strong></p><p>Several posts describe an encrypted ‘time-lock’ within the firmware that will activate all terminals simultaneously on a date chosen by the deployers. BBC Verify has not been able to independently verify this claim. Ingenico and Verifone declined to comment on the specifics of their firmware architecture, citing commercial confidentiality.</p><p><strong>The wider context</strong></p><p>The firmware claims have been amplified by accounts associated with conspiracy theories about central bank digital currencies, depopulation, and global financial control. Images referencing the ‘Mark of the Beast’ and the ‘Great Taking’ have been shared alongside the original technical analysis, making it difficult to separate technical claims from ideological framing.</p><p>The Bank of England confirmed that its digital pound consultation remains ongoing and that “no decisions have been made about implementation.”</p><p>UK Finance said it was “aware of the social media activity” and described the claims as “unfounded.”</p><p><em>BBC Verify rates the central claim — that payment terminals have been covertly fitted with biometric surveillance technology — as Misleading.</em></p><p><strong>What would you like BBC Verify to investigate?</strong></p><p>Please include a contact number if you are willing to speak to a BBC journalist.</p><p>You can also get in touch in the following ways:</p><p>Email: <strong>haveyoursay@bbc.co.uk</strong></p><p>WhatsApp: <strong>+44 7756 165803</strong></p><p>Tweet: <strong>@BBC_HaveYourSay</strong></p>",
             "footer": "BBC Verify"
           }
+        },
+        {
+          "text": "Cyber Polygon: WEF exercise simulates coordinated financial infrastructure attack",
+          "url": "https://cyberpolygon.com",
+          "src": "dev",
+          "turn": "17c"
         },
         {
           "text": "BIS mBridge: cross-border CBDC pilot expanded to 26 central banks",

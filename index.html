@@ -5216,6 +5216,11 @@ function renderTurn(turnData) {
   // Bind choice clicks
   container.querySelectorAll('.choices .c-opt').forEach(opt => {
     opt.addEventListener('click', function() {
+      const choicesEl = this.closest('.choices');
+      // Guard: kill pointer events immediately to prevent rapid-fire clicks
+      if (choicesEl.dataset.locked) return;
+      choicesEl.dataset.locked = '1';
+      choicesEl.style.pointerEvents = 'none';
       const ci = parseInt(this.dataset.ci);
 
       // Tempus fugit continue — no choices to process
@@ -5229,10 +5234,9 @@ function renderTurn(turnData) {
       const choice = turnData.choices.opts[ci];
       const choiceText = typeof choice === 'string' ? choice : choice.text;
       state.choicesLog.push({ turn: turnData.id, chosen: ci, text: choiceText });
-      const choices = this.closest('.choices');
-      choices.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
+      choicesEl.querySelectorAll('.c-opt').forEach(o => o.classList.remove('sel'));
       this.classList.add('sel');
-      choices.querySelectorAll('.c-opt:not(.sel)').forEach(o => o.style.opacity = '.25');
+      choicesEl.querySelectorAll('.c-opt:not(.sel)').forEach(o => o.style.opacity = '.25');
       if (turnData.choices && turnData.choices.sfx) {
         new Audio(turnData.choices.sfx).play().catch(()=>{});
       } else { playConfirm(); }

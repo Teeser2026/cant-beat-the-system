@@ -7625,6 +7625,14 @@ function renderEntity(turnData) {
 function renderDocument(turnData) {
   const file = turnData.dreamFile;
 
+  /* S289 — Mobile: open responsive standalone instead of iframe overlay */
+  if (window.innerWidth <= 768) {
+    const mobileFile = file.includes('gpa') ? 'gpa-combined.html' : file;
+    window.open(mobileFile, '_blank');
+    goTo(state.turnIndex + 1);
+    return;
+  }
+
   const wrap = document.querySelector('.wrap');
   const econBar = document.querySelector('.econ-bar');
   wrap.style.display = 'none';

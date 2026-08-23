@@ -7628,7 +7628,7 @@ function renderDocument(turnData) {
   /* S289 — Mobile: open responsive standalone instead of iframe overlay */
   if (window.innerWidth <= 1024) {
     const mobileFile = file.includes('gpa') ? 'gpa-combined.html' : file;
-    window.open(mobileFile, '_blank');
+    window.open(mobileFile + '?from=novel', '_blank');
     goTo(state.turnIndex + 1);
     return;
   }
@@ -7642,7 +7642,7 @@ function renderDocument(turnData) {
   overlay.className = 'document-overlay open';
 
   const iframe = document.createElement('iframe');
-  iframe.src = file;
+  iframe.src = file.includes('gpa') ? 'gpa-combined.html' : file;
   iframe.title = turnData.title || 'Document';
   overlay.appendChild(iframe);
 

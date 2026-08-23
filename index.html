@@ -3589,18 +3589,21 @@ body.phase-3 .mob-tabs {
   flex: 1; width: 100%; border: 0; display: block;
 }
 .document-overlay .document-continue {
-  position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+  position: fixed; top: 16px; right: 16px;
   display: none;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(14px, 2.2vw, 18px);
+  font-family: 'Outfit', 'Helvetica Neue', sans-serif;
+  font-size: 11px;
   font-weight: 400;
   color: rgba(255,255,255,0);
   cursor: pointer;
-  transition: color 1.5s ease, text-shadow 1s ease;
-  letter-spacing: 0.08em;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  letter-spacing: 2px;
   text-transform: uppercase;
   user-select: none;
   z-index: 10000;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,196,184,0.15);
 }
 
 
@@ -7649,9 +7652,9 @@ function renderDocument(turnData) {
 
   const btn = document.createElement('div');
   btn.className = 'document-continue';
-  btn.textContent = 'Close manual';
-  btn.style.background = 'rgba(26,26,26,0.85)';
-  btn.style.padding = '14px 32px';
+  btn.textContent = '\u2715 Close manual';
+  btn.style.background = 'rgba(14,13,10,0.5)';
+  btn.style.padding = '10px 16px';
   btn.style.borderRadius = '4px';
   overlay.appendChild(btn);
 

@@ -7650,6 +7650,10 @@ function renderDocument(turnData) {
   const btn = document.createElement('div');
   btn.className = 'document-continue';
   btn.textContent = 'Close manual';
+  btn.style.background = '#1a1a1a';
+  btn.style.width = '100%';
+  btn.style.textAlign = 'center';
+  btn.style.padding = '20px 0';
   overlay.appendChild(btn);
 
   document.body.appendChild(overlay);

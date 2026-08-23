@@ -7640,6 +7640,7 @@ function renderDocument(turnData) {
 
   const overlay = document.createElement('div');
   overlay.className = 'document-overlay open';
+  overlay.style.background = '#1a1a1a';
 
   const iframe = document.createElement('iframe');
   iframe.src = file.includes('gpa') ? 'gpa-combined.html' : file;

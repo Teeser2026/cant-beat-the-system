@@ -7626,7 +7626,7 @@ function renderDocument(turnData) {
   const file = turnData.dreamFile;
 
   /* S289 — Mobile: open responsive standalone instead of iframe overlay */
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1024) {
     const mobileFile = file.includes('gpa') ? 'gpa-combined.html' : file;
     window.open(mobileFile, '_blank');
     goTo(state.turnIndex + 1);

@@ -129,8 +129,8 @@ body { margin:0!important; padding:0!important; background:#111!important; min-h
 @media (max-width:820px) { body { justify-content:flex-start!important; padding-top:8px!important; } #reader { transform-origin:top center!important; } }
 /* --- PHONE: scroll fallback --- */
 @media (max-width:580px) {
-  html { overflow:auto!important; height:auto!important; }
-  body { overflow:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
+  html { overflow-x:hidden!important; overflow-y:auto!important; height:auto!important; }
+  body { overflow-x:hidden!important; overflow-y:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
   #reader { display:none!important; }
   .mobile-scroll { display:block!important; width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
   .mobile-scroll [data-section] { padding:1.2rem 1rem; }
@@ -1867,9 +1867,11 @@ document.fonts.ready.then(function() {
 
   // --- MOBILE SCROLL FALLBACK ---
   if (window.innerWidth < 581) {
-    document.documentElement.style.overflow = 'auto';
+    document.documentElement.style.overflowX = 'hidden';
+    document.documentElement.style.overflowY = 'auto';
     document.documentElement.style.height = 'auto';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'auto';
     document.body.style.display = 'block';
     document.body.style.background = '#F5F0E8';
     document.body.style.padding = '0';
@@ -1899,6 +1901,7 @@ document.fonts.ready.then(function() {
           pg.style.transformOrigin = 'top left';
           pg.style.marginBottom = (-deadH) + 'px';
           pg.style.boxShadow = '0 1px 8px rgba(0,0,0,0.3)';
+          pg.style.marginLeft = '12px';
         });
       }
       // Flowable chapters: add report/email/sandras-note classes

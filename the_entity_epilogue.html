@@ -45,6 +45,40 @@
   @media (max-width: 740px) { #reader { transform: scale(0.9); transform-origin: center center; } }
   @media (max-width: 660px) { #reader { transform: scale(0.8); transform-origin: center center; } }
   @media (max-width: 580px) { #reader { transform: scale(0.7); transform-origin: center center; } }
+
+/* --- TOUCH ARROWS --- */
+@media (hover:none) { .nav-arrow { opacity:0.35!important; } }
+/* --- TABLET: anchor reader to top --- */
+@media (max-width:820px) { body { justify-content:flex-start!important; padding-top:8px!important; } #reader { transform-origin:top center!important; } }
+/* --- PHONE: scroll fallback --- */
+@media (max-width:580px) {
+  html { overflow-x:hidden!important; overflow-y:auto!important; height:auto!important; }
+  body { overflow-x:hidden!important; overflow-y:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
+  #reader { display:none!important; }
+  .mobile-scroll { display:block!important; width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
+  .mobile-scroll [data-section] { padding:1.2rem 1rem; }
+  .mobile-scroll [data-section="title-page"] { text-align:center; padding:3rem 1.2rem; }
+  .mobile-scroll [data-section="title-page"] .title-page-inner { width:100%; }
+  .mobile-scroll [data-section="cover-page"] { padding:0; }
+  .mobile-scroll [data-section="cover-page"] img { width:100%!important; height:auto!important; object-fit:contain!important; display:block; }
+  .mobile-scroll .report p { text-align:left; }
+  .mobile-scroll .report .system-title { margin-top:1.8rem; }
+  .mobile-scroll .email-headers .label { width:auto; min-width:3.5rem; }
+  .mobile-scroll .patient-table td:first-child { width:auto; min-width:6rem; }
+  .mobile-scroll .page { position:relative!important; display:block!important; }
+  .mobile-scroll .page .nav-arrow, .mobile-scroll .page .click-zone, .mobile-scroll .page .page-number { display:none!important; }
+  .mobile-dark { background:#141414!important; }
+  .mobile-dark [data-section] { padding:1.2rem 1rem; }
+  .mobile-dark .report { color:#e8e4de; }
+  .mobile-dark .report .separator { color:#444; }
+  .mobile-dark [data-section="title-page"] .chapter-title { color:#e8e4de; }
+  .mobile-dark [data-section="title-page"] .chapter-subtitle { color:#888; }
+  .mobile-dark .sandras-note { color:#c0bdb7; }
+  .mobile-dark .sandras-note .stage-direction { color:#888; }
+  .mobile-dark .lyrics-inner .verse { color:#888; }
+  .mobile-dark .lyrics-inner .attribution { color:#555; }
+}
+
 </style>
 </head>
 <body>
@@ -82,10 +116,42 @@
 
 <script>
 document.fonts.ready.then(function() {
+
+  // --- MOBILE SCROLL FALLBACK ---
+  if (window.innerWidth < 581) {
+    document.documentElement.style.overflowX = 'hidden';
+    document.documentElement.style.overflowY = 'auto';
+    document.documentElement.style.height = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'auto';
+    document.body.style.display = 'block';
+    document.body.style.background = '#F5F0E8';
+    document.body.style.padding = '0';
+    var reader = document.getElementById('reader');
+    if (reader) reader.style.display = 'none';
+    var source = document.getElementById('source-content');
+    if (source) {
+      source.style.display = 'block';
+      source.classList.add('mobile-scroll');
+      
+      var sections = source.querySelectorAll('[data-section]');
+      sections.forEach(function(sec) {
+        var type = sec.getAttribute('data-section');
+        if (type === 'email') sec.classList.add('email');
+        else if (type === 'sandras-note') sec.classList.add('sandras-note');
+        else if (type !== 'title-page' && type !== 'cover-page') sec.classList.add('report');
+      });
+    }
+    return;
+  }
+  // --- END MOBILE FALLBACK ---
+
   var source = document.getElementById('source-content');
   var reader = document.getElementById('reader');
-  var PAGE_OFFSET = 106; // E1=28, E2=30, E3=16, E4=17, E5=15. Epilogue starts at 107.
-  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var PAGE_OFFSET = 106;
+  var el = document.getElementById('measurer');
+  if (el) el.remove();
+
   var allPages = [];
 
   function createPage(cssClass) {
@@ -102,51 +168,71 @@ document.fonts.ready.then(function() {
     return { el: div, content: content, num: pageNum };
   }
 
+  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var pg = null;
+  var pgClass = null;
+
   sections.forEach(function(section) {
     var type = section.getAttribute('data-section');
 
     if (type === 'title-page' || type === 'cover-page') {
-      var pg = createPage();
-      pg.el.classList.add(type);
-      pg.content.innerHTML = section.innerHTML;
-      pg.num.textContent = '';
-      allPages.push(pg);
+      if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+      var sp = createPage('');
+      sp.el.classList.add(type);
+      sp.content.innerHTML = section.innerHTML;
+      sp.num.textContent = '';
+      allPages.push(sp);
       return;
     }
 
-    var cssClass = (type === 'email') ? 'email' : 'report';
-    var children = Array.from(section.children);
-    var pg = createPage(cssClass);
+    var cssClass = (type === 'email') ? 'email'
+                 : (type === 'sandras-note') ? 'sandras-note'
+                 : 'report';
 
-    children.forEach(function(child) {
+    // Start new page only if no current page or CSS class changed
+    if (!pg || pgClass !== cssClass) {
+      if (pg) allPages.push(pg);
+      pg = createPage(cssClass);
+      pgClass = cssClass;
+    }
+
+    Array.from(section.children).forEach(function(child) {
+      // Force page break before system-title elements
+      if (child.classList && child.classList.contains('system-title') && pg.content.children.length > 0) {
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pgClass = cssClass;
+      }
+
       var clone = child.cloneNode(true);
       pg.content.appendChild(clone);
-
-      var sH = pg.content.scrollHeight, cH = pg.content.clientHeight;
-      if (sH > cH + 2) {
+      if (pg.content.scrollHeight > pg.content.clientHeight + 2) {
         pg.content.removeChild(clone);
         allPages.push(pg);
         pg = createPage(cssClass);
+        pgClass = cssClass;
         pg.content.appendChild(clone);
       }
     });
-
-    allPages.push(pg);
   });
 
+  if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+
+  // --- Render ---
   var totalPages = allPages.length;
   var pageCounter = 0;
   allPages.forEach(function(pg, i) {
     pg.el.style.cssText = '';
     if (i === 0) pg.el.classList.add('active');
-    var isTitle = !pg.content.classList.contains('report') && !pg.content.classList.contains('email');
-    if (isTitle) {
+    var isSpecial = pg.el.classList.contains('title-page') || pg.el.classList.contains('cover-page');
+    if (isSpecial) {
       pg.num.textContent = '';
     } else {
       pageCounter++;
       pg.num.textContent = String(pageCounter + PAGE_OFFSET);
     }
 
+    // Arrows
     var la = document.createElement('div');
     la.className = 'nav-arrow left';
     la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
@@ -192,6 +278,7 @@ document.fonts.ready.then(function() {
   });
   source.remove();
 });
+
 </script>
 </body>
 </html>

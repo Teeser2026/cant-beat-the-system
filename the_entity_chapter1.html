@@ -94,6 +94,40 @@
   .nav-arrow svg { width: 20px; height: 20px; fill: none; stroke: #888; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
   #measurer { position: absolute; left: -9999px; top: 0; width: 570px; visibility: hidden; }
+
+/* --- TOUCH ARROWS --- */
+@media (hover:none) { .nav-arrow { opacity:0.35!important; } }
+/* --- TABLET: anchor reader to top --- */
+@media (max-width:820px) { body { justify-content:flex-start!important; padding-top:8px!important; } #reader { transform-origin:top center!important; } }
+/* --- PHONE: scroll fallback --- */
+@media (max-width:580px) {
+  html { overflow-x:hidden!important; overflow-y:auto!important; height:auto!important; }
+  body { overflow-x:hidden!important; overflow-y:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
+  #reader { display:none!important; }
+  .mobile-scroll { display:block!important; width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
+  .mobile-scroll [data-section] { padding:1.2rem 1rem; }
+  .mobile-scroll [data-section="title-page"] { text-align:center; padding:3rem 1.2rem; }
+  .mobile-scroll [data-section="title-page"] .title-page-inner { width:100%; }
+  .mobile-scroll [data-section="cover-page"] { padding:0; }
+  .mobile-scroll [data-section="cover-page"] img { width:100%!important; height:auto!important; object-fit:contain!important; display:block; }
+  .mobile-scroll .report p { text-align:left; }
+  .mobile-scroll .report .system-title { margin-top:1.8rem; }
+  .mobile-scroll .email-headers .label { width:auto; min-width:3.5rem; }
+  .mobile-scroll .patient-table td:first-child { width:auto; min-width:6rem; }
+  .mobile-scroll .page { position:relative!important; display:block!important; }
+  .mobile-scroll .page .nav-arrow, .mobile-scroll .page .click-zone, .mobile-scroll .page .page-number { display:none!important; }
+  .mobile-dark { background:#141414!important; }
+  .mobile-dark [data-section] { padding:1.2rem 1rem; }
+  .mobile-dark .report { color:#e8e4de; }
+  .mobile-dark .report .separator { color:#444; }
+  .mobile-dark [data-section="title-page"] .chapter-title { color:#e8e4de; }
+  .mobile-dark [data-section="title-page"] .chapter-subtitle { color:#888; }
+  .mobile-dark .sandras-note { color:#c0bdb7; }
+  .mobile-dark .sandras-note .stage-direction { color:#888; }
+  .mobile-dark .lyrics-inner .verse { color:#888; }
+  .mobile-dark .lyrics-inner .attribution { color:#555; }
+}
+
 </style>
 </head>
 <body>
@@ -127,11 +161,11 @@ Massive Attack
 <div class="email-headers">
 <p><span class="label">From:</span> <span class="value">a.ramalingam@harleypsychiatry.co.uk</span></p>
 <p><span class="label">To:</span> <span class="value">h.hargreaves@harleypsychiatry.co.uk</span></p>
-<p><span class="label">Date:</span> <span class="value">18 February 2027, 23:54</span></p>
-<p><span class="label">Subject:</span> <span class="value">RE: AR-2024-0047</span></p>
+<p><span class="label">Date:</span> <span class="value">16 February 2027, 23:54</span></p>
+<p><span class="label">Subject:</span> <span class="value">RE: AR-2027-0047</span></p>
 </div>
 <p>Henry,</p>
-<p>I've completed my review of your three intake interview records. Your use of "unusual" regarding this case was understating it somewhat. I am reluctant to use the word "unique," but in four decades of practice I have never encountered a case that has intrigued or baffled me more. DID, it would appear, with such a degree of overlapping factual knowledge between identity states that the dissociation cannot be along the usual axis.</p>
+<p>I've completed my review of your three intake interview records. Your use of "unusual" regarding this case was understating it somewhat. I am reluctant to use the word "unique," but in over three decades of practice I have never encountered a case that has intrigued or baffled me more. DID, it would appear, with such a degree of overlapping factual knowledge between identity states that the dissociation cannot be along the usual axis.</p>
 <p>I've spent over a hundred hours on this so far. Prior to initial session. A new record — although arguably much of the research lapsed from professional to personal. I have yet to find any element of the architecture, as explained by the patient, that cannot be verified.</p>
 <p>I'd appreciate your thoughts before I schedule sessions.</p>
 <p>Best,</p>
@@ -331,125 +365,145 @@ Massive Attack
 </div>
 <script>
 document.fonts.ready.then(function() {
+
+  // --- MOBILE SCROLL FALLBACK ---
+  if (window.innerWidth < 581) {
+    document.documentElement.style.overflowX = 'hidden';
+    document.documentElement.style.overflowY = 'auto';
+    document.documentElement.style.height = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'auto';
+    document.body.style.display = 'block';
+    document.body.style.background = '#F5F0E8';
+    document.body.style.padding = '0';
+    var reader = document.getElementById('reader');
+    if (reader) reader.style.display = 'none';
+    var source = document.getElementById('source-content');
+    if (source) {
+      source.style.display = 'block';
+      source.classList.add('mobile-scroll');
+      
+      var sections = source.querySelectorAll('[data-section]');
+      sections.forEach(function(sec) {
+        var type = sec.getAttribute('data-section');
+        if (type === 'email') sec.classList.add('email');
+        else if (type === 'sandras-note') sec.classList.add('sandras-note');
+        else if (type !== 'title-page' && type !== 'cover-page') sec.classList.add('report');
+      });
+    }
+    return;
+  }
+  // --- END MOBILE FALLBACK ---
+
   var source = document.getElementById('source-content');
   var reader = document.getElementById('reader');
-  var PAGE_OFFSET = 0; // C1 starts at 1
+  var PAGE_OFFSET = 0;
   var el = document.getElementById('measurer');
   if (el) el.remove();
 
-  var PAGE_H = 990, PAD_TOP = 60, PAD_BOTTOM = 40, PAD_SIDE = 65, PAGENUM_H = 20;
-  var USABLE_H = PAGE_H - PAD_TOP - PAD_BOTTOM - PAGENUM_H;
+  var allPages = [];
+
+  function createPage(cssClass) {
+    var div = document.createElement('div');
+    div.className = 'page';
+    div.style.cssText = 'display:flex;visibility:hidden;';
+    var content = document.createElement('div');
+    content.className = 'page-content' + (cssClass ? ' ' + cssClass : '');
+    div.appendChild(content);
+    var pageNum = document.createElement('div');
+    pageNum.className = 'page-number';
+    div.appendChild(pageNum);
+    reader.appendChild(div);
+    return { el: div, content: content, num: pageNum };
+  }
 
   var sections = Array.from(source.querySelectorAll('[data-section]'));
-  var pages = [];
-
-  // Create probe INSIDE reader, styled like actual content area
-  var probe = document.createElement('div');
-  probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:' + (700 - PAD_SIDE*2) + 'px;padding:0;margin:0;overflow:auto;';
-  reader.appendChild(probe);
+  var pg = null;
+  var pgClass = null;
 
   sections.forEach(function(section) {
     var type = section.getAttribute('data-section');
 
     if (type === 'title-page' || type === 'cover-page') {
-      pages.push({ type: type, html: section.innerHTML });
+      if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+      var sp = createPage('');
+      sp.el.classList.add(type);
+      sp.content.innerHTML = section.innerHTML;
+      sp.num.textContent = '';
+      allPages.push(sp);
       return;
     }
 
-    var cssClass = (type === 'email') ? 'email' : 'report';
-    var children = Array.from(section.children);
+    var cssClass = (type === 'email') ? 'email'
+                 : (type === 'sandras-note') ? 'sandras-note'
+                 : 'report';
 
-    probe.className = cssClass;
-    probe.innerHTML = '';
-    var pageChildren = [];
+    // Start new page only if no current page or CSS class changed
+    if (!pg || pgClass !== cssClass) {
+      if (pg) allPages.push(pg);
+      pg = createPage(cssClass);
+      pgClass = cssClass;
+    }
 
-    children.forEach(function(child) {
-      // Add child to probe and measure cumulative height
+    Array.from(section.children).forEach(function(child) {
+      // Force page break before system-title elements
+      if (child.classList && child.classList.contains('system-title') && pg.content.children.length > 0) {
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pgClass = cssClass;
+      }
+
       var clone = child.cloneNode(true);
-      probe.appendChild(clone);
-      var totalH = probe.offsetHeight;
-
-      if (totalH > USABLE_H && pageChildren.length > 0) {
-        // This child overflows - flush current page WITHOUT this child
-        probe.removeChild(clone);
-        pages.push({ type: cssClass, children: pageChildren.slice() });
-
-        // Start new page with this child
-        probe.innerHTML = '';
-        pageChildren = [];
-        probe.appendChild(clone);
-        pageChildren.push(child.outerHTML);
-      } else {
-        pageChildren.push(child.outerHTML);
+      pg.content.appendChild(clone);
+      if (pg.content.scrollHeight > pg.content.clientHeight + 2) {
+        pg.content.removeChild(clone);
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pgClass = cssClass;
+        pg.content.appendChild(clone);
       }
     });
-
-    if (pageChildren.length > 0) {
-      pages.push({ type: cssClass, children: pageChildren });
-    }
-    probe.innerHTML = '';
   });
 
-  probe.remove();
+  if (pg) { allPages.push(pg); pg = null; pgClass = null; }
 
   // --- Render ---
-  var totalPages = pages.length;
-  var currentPage = 0;
+  var totalPages = allPages.length;
   var pageCounter = 0;
-
-  pages.forEach(function(pg, i) {
-    var div = document.createElement('div');
-    div.className = 'page' + (i === 0 ? ' active' : '');
-    var content = document.createElement('div');
-    content.className = 'page-content';
-
-    if (pg.type === 'cover-page') {
-      content.innerHTML = pg.html;
-      div.classList.add('cover-page');
-    } else if (pg.type === 'title-page') {
-      content.innerHTML = pg.html;
-    } else {
-      content.className += ' ' + pg.type;
-      content.innerHTML = pg.children.join('');
-    }
-
-    var pageNum = document.createElement('div');
-    pageNum.className = 'page-number';
-    if (pg.type === 'title-page' || pg.type === 'cover-page') {
-      pageNum.textContent = '';
+  allPages.forEach(function(pg, i) {
+    pg.el.style.cssText = '';
+    if (i === 0) pg.el.classList.add('active');
+    var isSpecial = pg.el.classList.contains('title-page') || pg.el.classList.contains('cover-page');
+    if (isSpecial) {
+      pg.num.textContent = '';
     } else {
       pageCounter++;
-      pageNum.textContent = String(pageCounter + PAGE_OFFSET);
+      pg.num.textContent = String(pageCounter + PAGE_OFFSET);
     }
-    div.appendChild(content);
-    div.appendChild(pageNum);
 
     // Arrows
     var la = document.createElement('div');
     la.className = 'nav-arrow left';
     la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
     la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
-    div.appendChild(la);
+    pg.el.appendChild(la);
     var ra = document.createElement('div');
     ra.className = 'nav-arrow right';
     ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
     ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
-    div.appendChild(ra);
+    pg.el.appendChild(ra);
 
-    // Click zones
     var lz = document.createElement('div');
-    lz.className = 'click-zone left'; lz.style.zIndex='5';
+    lz.className = 'click-zone left'; lz.style.zIndex = '5';
     lz.addEventListener('click', prevPage);
-    div.appendChild(lz);
+    pg.el.appendChild(lz);
     var rz = document.createElement('div');
-    rz.className = 'click-zone right'; rz.style.zIndex='5';
+    rz.className = 'click-zone right'; rz.style.zIndex = '5';
     rz.addEventListener('click', nextPage);
-    div.appendChild(rz);
-
-    reader.appendChild(div);
+    pg.el.appendChild(rz);
   });
 
-  // Counter
+  var currentPage = 0;
   var counter = document.createElement('div');
   counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
   counter.textContent = '1 / ' + totalPages;
@@ -457,9 +511,9 @@ document.fonts.ready.then(function() {
 
   function showPage(n) {
     if (n < 0 || n >= totalPages) return;
-    reader.querySelectorAll('.page')[currentPage].classList.remove('active');
-    reader.querySelectorAll('.page')[n].classList.add('active');
+    allPages[currentPage].el.classList.remove('active');
     currentPage = n;
+    allPages[currentPage].el.classList.add('active');
     counter.textContent = (n + 1) + ' / ' + totalPages;
     if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
   }
@@ -468,9 +522,12 @@ document.fonts.ready.then(function() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+    if (e.key === 'Home') { e.preventDefault(); showPage(0); }
+    if (e.key === 'End') { e.preventDefault(); showPage(totalPages - 1); }
   });
   source.remove();
 });
+
 </script>
 </body>
 </html>

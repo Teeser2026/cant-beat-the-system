@@ -74,6 +74,40 @@
   @media (max-width: 580px) { #reader { transform: scale(0.7); transform-origin: center center; } }
 
   #measurer { position: absolute; left: -9999px; top: 0; width: 570px; visibility: hidden; }
+
+/* --- TOUCH ARROWS --- */
+@media (hover:none) { .nav-arrow { opacity:0.35!important; } }
+/* --- TABLET: anchor reader to top --- */
+@media (max-width:820px) { body { justify-content:flex-start!important; padding-top:8px!important; } #reader { transform-origin:top center!important; } }
+/* --- PHONE: scroll fallback --- */
+@media (max-width:580px) {
+  html { overflow-x:hidden!important; overflow-y:auto!important; height:auto!important; }
+  body { overflow-x:hidden!important; overflow-y:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
+  #reader { display:none!important; }
+  .mobile-scroll { display:block!important; width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
+  .mobile-scroll [data-section] { padding:1.2rem 1rem; }
+  .mobile-scroll [data-section="title-page"] { text-align:center; padding:3rem 1.2rem; }
+  .mobile-scroll [data-section="title-page"] .title-page-inner { width:100%; }
+  .mobile-scroll [data-section="cover-page"] { padding:0; }
+  .mobile-scroll [data-section="cover-page"] img { width:100%!important; height:auto!important; object-fit:contain!important; display:block; }
+  .mobile-scroll .report p { text-align:left; }
+  .mobile-scroll .report .system-title { margin-top:1.8rem; }
+  .mobile-scroll .email-headers .label { width:auto; min-width:3.5rem; }
+  .mobile-scroll .patient-table td:first-child { width:auto; min-width:6rem; }
+  .mobile-scroll .page { position:relative!important; display:block!important; }
+  .mobile-scroll .page .nav-arrow, .mobile-scroll .page .click-zone, .mobile-scroll .page .page-number { display:none!important; }
+  .mobile-dark { background:#141414!important; }
+  .mobile-dark [data-section] { padding:1.2rem 1rem; }
+  .mobile-dark .report { color:#e8e4de; }
+  .mobile-dark .report .separator { color:#444; }
+  .mobile-dark [data-section="title-page"] .chapter-title { color:#e8e4de; }
+  .mobile-dark [data-section="title-page"] .chapter-subtitle { color:#888; }
+  .mobile-dark .sandras-note { color:#c0bdb7; }
+  .mobile-dark .sandras-note .stage-direction { color:#888; }
+  .mobile-dark .lyrics-inner .verse { color:#888; }
+  .mobile-dark .lyrics-inner .attribution { color:#555; }
+}
+
 </style>
 </head>
 <body>
@@ -461,12 +495,11 @@
 </div>
 
 <!-- ==================== LYRICS PAGE ==================== -->
-<!-- PLACEHOLDER: Paste actual lyrics here. Replace the .verse content. -->
 <div data-section="lyrics-page">
   <div class="lyrics-inner">
     <div class="verse">
       Karma police, I&rsquo;ve given all I can<br>
-     I&rsquo;ts not enough, I&rsquo;ve given all I can<br>
+     It&rsquo;s not enough, I&rsquo;ve given all I can<br>
      But we&rsquo;re still on the payroll
     </div>
     <div class="attribution">
@@ -480,122 +513,155 @@
 
 <script>
 document.fonts.ready.then(function() {
+
+  // --- MOBILE SCROLL FALLBACK ---
+  if (window.innerWidth < 581) {
+    document.documentElement.style.overflowX = 'hidden';
+    document.documentElement.style.overflowY = 'auto';
+    document.documentElement.style.height = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'auto';
+    document.body.style.display = 'block';
+    document.body.style.background = '#F5F0E8';
+    document.body.style.padding = '0';
+    var reader = document.getElementById('reader');
+    if (reader) reader.style.display = 'none';
+    var source = document.getElementById('source-content');
+    if (source) {
+      source.style.display = 'block';
+      source.classList.add('mobile-scroll');
+      source.classList.add('mobile-dark');
+      var sections = source.querySelectorAll('[data-section]');
+      sections.forEach(function(sec) {
+        var type = sec.getAttribute('data-section');
+        if (type === 'email') sec.classList.add('email');
+        else if (type === 'sandras-note') sec.classList.add('sandras-note');
+        else if (type !== 'title-page' && type !== 'cover-page') sec.classList.add('report');
+      });
+    }
+    return;
+  }
+  // --- END MOBILE FALLBACK ---
+
   var source = document.getElementById('source-content');
   var reader = document.getElementById('reader');
-  // PAGE_OFFSET: E1=28, E2=30, E3=16, E4=17. E5 starts at page 92.
-  // E1=28, E2=30, E3=16, E4=TBD. Set to 0 for now.
   var PAGE_OFFSET = 91;
-  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var el = document.getElementById('measurer');
+  if (el) el.remove();
+
   var allPages = [];
 
-  var probe = document.getElementById('measurer');
-  var MAX_H = 890; // 990 - 60 top - 40 bottom
+  function createPage(cssClass) {
+    var div = document.createElement('div');
+    div.className = 'page';
+    div.style.cssText = 'display:flex;visibility:hidden;';
+    var content = document.createElement('div');
+    content.className = 'page-content' + (cssClass ? ' ' + cssClass : '');
+    div.appendChild(content);
+    var pageNum = document.createElement('div');
+    pageNum.className = 'page-number';
+    div.appendChild(pageNum);
+    reader.appendChild(div);
+    return { el: div, content: content, num: pageNum };
+  }
+
+  var sections = Array.from(source.querySelectorAll('[data-section]'));
+  var pg = null;
+  var pgClass = null;
 
   sections.forEach(function(section) {
     var type = section.getAttribute('data-section');
 
-    if (type === 'title-page' || type === 'lyrics-page') {
-      allPages.push({ type: type, html: section.innerHTML });
+    if (type === 'title-page' || type === 'cover-page') {
+      if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+      var sp = createPage('');
+      sp.el.classList.add(type);
+      sp.content.innerHTML = section.innerHTML;
+      sp.num.textContent = '';
+      allPages.push(sp);
       return;
     }
 
-    // Flowable section — measure children into pages
-    var cssClass = type; // 'report', 'sandras-note', etc.
-    var children = Array.from(section.children);
-    var pageChildren = [];
-    probe.className = 'page-content ' + cssClass;
-    probe.innerHTML = '';
+    var cssClass = (type === 'email') ? 'email'
+                 : (type === 'sandras-note') ? 'sandras-note'
+                 : 'report';
 
-    children.forEach(function(child) {
+    // Start new page only if no current page or CSS class changed
+    if (!pg || pgClass !== cssClass) {
+      if (pg) allPages.push(pg);
+      pg = createPage(cssClass);
+      pgClass = cssClass;
+    }
+
+    Array.from(section.children).forEach(function(child) {
+      // Force page break before system-title elements
+      if (child.classList && child.classList.contains('system-title') && pg.content.children.length > 0) {
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pgClass = cssClass;
+      }
+
       var clone = child.cloneNode(true);
-      probe.appendChild(clone);
-
-      if (probe.scrollHeight > MAX_H && pageChildren.length > 0) {
-        probe.removeChild(clone);
-        allPages.push({ type: cssClass, children: pageChildren.slice() });
-
-        probe.innerHTML = '';
-        pageChildren = [];
-        probe.appendChild(clone);
-        pageChildren.push(child.outerHTML);
-      } else {
-        pageChildren.push(child.outerHTML);
+      pg.content.appendChild(clone);
+      if (pg.content.scrollHeight > pg.content.clientHeight + 2) {
+        pg.content.removeChild(clone);
+        allPages.push(pg);
+        pg = createPage(cssClass);
+        pgClass = cssClass;
+        pg.content.appendChild(clone);
       }
     });
-
-    if (pageChildren.length > 0) {
-      allPages.push({ type: cssClass, children: pageChildren });
-    }
-    probe.innerHTML = '';
   });
 
-  probe.remove();
+  if (pg) { allPages.push(pg); pg = null; pgClass = null; }
 
   // --- Render ---
   var totalPages = allPages.length;
-  var currentPage = 0;
   var pageCounter = 0;
-
   allPages.forEach(function(pg, i) {
-    var div = document.createElement('div');
-    div.className = 'page' + (i === 0 ? ' active' : '');
-    var content = document.createElement('div');
-    content.className = 'page-content';
-
-    if (pg.type === 'title-page' || pg.type === 'lyrics-page') {
-      content.innerHTML = pg.html;
-    } else {
-      content.className += ' ' + pg.type;
-      content.innerHTML = pg.children.join('');
-    }
-
-    var pageNum = document.createElement('div');
-    pageNum.className = 'page-number';
-    if (pg.type === 'title-page' || pg.type === 'lyrics-page') {
-      pageNum.textContent = '';
+    pg.el.style.cssText = '';
+    if (i === 0) pg.el.classList.add('active');
+    var isSpecial = pg.el.classList.contains('title-page') || pg.el.classList.contains('cover-page');
+    if (isSpecial) {
+      pg.num.textContent = '';
     } else {
       pageCounter++;
-      pageNum.textContent = String(pageCounter + PAGE_OFFSET);
+      pg.num.textContent = String(pageCounter + PAGE_OFFSET);
     }
-    div.appendChild(content);
-    div.appendChild(pageNum);
 
     // Arrows
     var la = document.createElement('div');
     la.className = 'nav-arrow left';
     la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
     la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
-    div.appendChild(la);
+    pg.el.appendChild(la);
     var ra = document.createElement('div');
     ra.className = 'nav-arrow right';
     ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
     ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
-    div.appendChild(ra);
+    pg.el.appendChild(ra);
 
-    // Click zones
     var lz = document.createElement('div');
-    lz.className = 'click-zone left'; lz.style.zIndex='5';
+    lz.className = 'click-zone left'; lz.style.zIndex = '5';
     lz.addEventListener('click', prevPage);
-    div.appendChild(lz);
+    pg.el.appendChild(lz);
     var rz = document.createElement('div');
-    rz.className = 'click-zone right'; rz.style.zIndex='5';
+    rz.className = 'click-zone right'; rz.style.zIndex = '5';
     rz.addEventListener('click', nextPage);
-    div.appendChild(rz);
-
-    reader.appendChild(div);
+    pg.el.appendChild(rz);
   });
 
-  // Counter
+  var currentPage = 0;
   var counter = document.createElement('div');
-  counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#555;letter-spacing:0.05em;';
+  counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
   counter.textContent = '1 / ' + totalPages;
   document.body.appendChild(counter);
 
   function showPage(n) {
     if (n < 0 || n >= totalPages) return;
-    reader.querySelectorAll('.page')[currentPage].classList.remove('active');
-    reader.querySelectorAll('.page')[n].classList.add('active');
+    allPages[currentPage].el.classList.remove('active');
     currentPage = n;
+    allPages[currentPage].el.classList.add('active');
     counter.textContent = (n + 1) + ' / ' + totalPages;
     if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
   }
@@ -604,9 +670,12 @@ document.fonts.ready.then(function() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+    if (e.key === 'Home') { e.preventDefault(); showPage(0); }
+    if (e.key === 'End') { e.preventDefault(); showPage(totalPages - 1); }
   });
   source.remove();
 });
+
 </script>
 </body>
 </html>

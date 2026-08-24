@@ -133,20 +133,14 @@ body { margin:0!important; padding:0!important; background:#111!important; min-h
   body { overflow:auto!important; min-height:auto!important; background:#F5F0E8!important; padding:0!important; display:block!important; }
   #reader { display:none!important; }
   .mobile-scroll { display:block!important; width:100%!important; max-width:100%!important; overflow-x:hidden!important; }
-  .mobile-scroll * { max-width:100%; box-sizing:border-box; }
   .mobile-scroll [data-section] { padding:1.2rem 1rem; }
   .mobile-scroll [data-section="title-page"] { text-align:center; padding:3rem 1.2rem; }
   .mobile-scroll [data-section="title-page"] .title-page-inner { width:100%; }
   .mobile-scroll [data-section="cover-page"] { padding:0; }
   .mobile-scroll [data-section="cover-page"] img { width:100%!important; height:auto!important; object-fit:contain!important; display:block; }
-  .mobile-scroll .report { font-size:1.02rem; line-height:1.72; }
   .mobile-scroll .report p { text-align:left; }
   .mobile-scroll .report .system-title { margin-top:1.8rem; }
-  .mobile-scroll .email { font-size:0.9rem; }
   .mobile-scroll .email-headers .label { width:auto; min-width:3.5rem; }
-  .mobile-scroll .letterhead { text-align:center; }
-  .mobile-scroll .letterhead::before, .mobile-scroll .letterhead::after { margin-left:0; margin-right:0; }
-  .mobile-scroll .patient-table { font-size:0.85rem; }
   .mobile-scroll .patient-table td:first-child { width:auto; min-width:6rem; }
   .mobile-scroll .page { position:relative!important; display:block!important; }
   .mobile-scroll .page .nav-arrow, .mobile-scroll .page .click-zone, .mobile-scroll .page .page-number { display:none!important; }
@@ -156,7 +150,7 @@ body { margin:0!important; padding:0!important; background:#111!important; min-h
   .mobile-dark .report .separator { color:#444; }
   .mobile-dark [data-section="title-page"] .chapter-title { color:#e8e4de; }
   .mobile-dark [data-section="title-page"] .chapter-subtitle { color:#888; }
-  .mobile-dark .sandras-note { font-family:'IBM Plex Sans',sans-serif; font-size:0.92rem; color:#c0bdb7; line-height:1.65; }
+  .mobile-dark .sandras-note { color:#c0bdb7; }
   .mobile-dark .sandras-note .stage-direction { color:#888; }
   .mobile-dark .lyrics-inner .verse { color:#888; }
   .mobile-dark .lyrics-inner .attribution { color:#555; }
@@ -1886,9 +1880,9 @@ document.fonts.ready.then(function() {
       if (!el) return;
       el.style.display = 'block';
       el.classList.add('mobile-scroll');
-      if (id === 'ch5-content') {
-        el.classList.add('mobile-dark');
-      }
+      if (id === 'ch5-content') el.classList.add('mobile-dark');
+
+      // C2: add ch2 class (normally done by processPrebuilt) + scale pages
       if (id === 'ch2-content') {
         var pages = el.querySelectorAll('.page');
         var viewW = window.innerWidth - 24;
@@ -1896,6 +1890,7 @@ document.fonts.ready.then(function() {
         var scaledH = 1018 * scale;
         var deadH = 1018 - scaledH;
         pages.forEach(function(pg) {
+          pg.classList.add('ch2');
           pg.style.position = 'relative';
           pg.style.display = 'block';
           pg.style.width = '720px';
@@ -1904,6 +1899,17 @@ document.fonts.ready.then(function() {
           pg.style.transformOrigin = 'top left';
           pg.style.marginBottom = (-deadH) + 'px';
           pg.style.boxShadow = '0 1px 8px rgba(0,0,0,0.3)';
+        });
+      }
+      // Flowable chapters: add report/email/sandras-note classes
+      // (normally done by processChapter when creating page-content divs)
+      else {
+        var sections = el.querySelectorAll('[data-section]');
+        sections.forEach(function(sec) {
+          var type = sec.getAttribute('data-section');
+          if (type === 'email') sec.classList.add('email');
+          else if (type === 'sandras-note') sec.classList.add('sandras-note');
+          else if (type !== 'title-page' && type !== 'cover-page') sec.classList.add('report');
         });
       }
     });

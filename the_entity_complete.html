@@ -129,6 +129,49 @@ body { margin:0!important; padding:0!important; background:#111!important; min-h
 .entity-rotate-msg { display:none; position:fixed; inset:0; z-index:200; background:#111; flex-direction:column; justify-content:center; align-items:center; gap:20px; font-family:'EB Garamond',Georgia,serif; font-size:16px; color:rgba(200,196,184,0.5); text-align:center; }
 .entity-rotate-icon { font-size:48px; opacity:0.4; }
 @media (orientation:landscape) and (pointer:coarse) and (min-width:781px) { .entity-rotate-msg { display:flex!important; } #reader { display:none!important; } .entity-gutter-arrow { display:none!important; } }
+/* --- PHONE SCROLL FALLBACK --- */
+@media (max-width:580px) {
+  html { height:auto!important; overflow:auto!important; overflow-x:hidden!important; }
+  body { display:block!important; overflow-y:auto!important; overflow-x:hidden!important; padding:0!important; margin:0!important; background:#F5F0E8!important; user-select:auto!important; }
+  #reader { display:none!important; }
+  #ch1-content,#ch2-content,#ch3-content,#ch4-content,#ch5-content,#ch6-content { display:block!important; border-bottom:1px solid rgba(0,0,0,0.08); }
+  [data-section] { padding:20px 20px; }
+  [data-section="title-page"] { padding:40px 20px; text-align:center; }
+  [data-section="cover-page"] { padding:0; overflow:hidden; }
+  .title-page-inner { height:auto!important; }
+  .title-page-inner .chapter-title { font-size:1.15rem!important; }
+  .title-page-inner .chapter-subtitle { font-size:1rem!important; }
+  .report { font-size:17px!important; line-height:1.8!important; }
+  .report p { text-align:left!important; }
+  .report .separator { margin:1rem 0!important; }
+  .report .doc-title { font-size:0.95rem!important; }
+  .report .confidential { font-size:0.65rem!important; }
+  .report .clinician-name { font-size:0.9rem!important; }
+  .report .clinician-role { font-size:0.78rem!important; }
+  .email { font-size:15px!important; line-height:1.7!important; }
+  .letterhead::before,.letterhead::after { margin-left:0!important; margin-right:0!important; }
+  .letterhead .practice-name { font-size:1rem!important; letter-spacing:0.25em!important; }
+  .patient-table { font-size:13px!important; }
+  .patient-table td:first-child { width:7rem!important; }
+  .epigraph-inner { height:auto!important; padding:32px 0!important; }
+  .epigraph-inner .verse { font-size:1rem!important; }
+  .cover-page { padding:0!important; height:auto!important; width:100%!important; }
+  .cover-page .page-content { height:auto!important; padding:0!important; }
+  .cover-page img { width:100%!important; height:auto!important; max-height:70vh; object-fit:contain; }
+  /* C2: scaled notebook pages */
+  #ch2-content { background:#111!important; padding:8px 0!important; border-bottom-color:rgba(255,255,255,0.1)!important; }
+  #ch2-content .page { display:block!important; position:relative!important; width:720px; height:1018px; transform:scale(0.5); transform-origin:top center; margin:4px auto -505px; box-shadow:none!important; }
+  #ch2-content .page:last-child { margin-bottom:4px; }
+  #ch2-content .page .nav-arrow,#ch2-content .page .click-zone,#ch2-content .page .page-number { display:none!important; }
+  /* C5: dark inversion */
+  #ch5-content { background:#141414!important; border-bottom-color:rgba(255,255,255,0.1)!important; }
+  #ch5-content .report { color:#e8e4de!important; }
+  #ch5-content .report .separator { color:#444!important; }
+  #ch5-content [data-section="title-page"] .chapter-title { color:#e8e4de!important; }
+  #ch5-content [data-section="title-page"] .chapter-subtitle { color:#888!important; }
+  #ch5-content .sandras-note { font-size:15px!important; line-height:1.7!important; color:#c0bdb7!important; }
+  #ch5-content .sandras-note .stage-direction { font-size:14px!important; color:#888!important; }
+}
 
 </style>
 </head>
@@ -1837,6 +1880,7 @@ Massive Attack
 <script>
 
 document.fonts.ready.then(function() {
+  if (window.innerWidth < 581) return;
   var reader = document.getElementById('reader');
   var allPages = [];
 

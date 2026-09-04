@@ -382,7 +382,7 @@ document.fonts.ready.then(function() {
     if (source) {
       source.style.display = 'block';
       source.classList.add('mobile-scroll');
-      
+
       var sections = source.querySelectorAll('[data-section]');
       sections.forEach(function(sec) {
         var type = sec.getAttribute('data-section');
@@ -395,137 +395,167 @@ document.fonts.ready.then(function() {
   }
   // --- END MOBILE FALLBACK ---
 
-  var source = document.getElementById('source-content');
-  var reader = document.getElementById('reader');
-  var PAGE_OFFSET = 0;
-  var el = document.getElementById('measurer');
-  if (el) el.remove();
+  function runPagination() {
+    var source = document.getElementById('source-content');
+    var reader = document.getElementById('reader');
+    var PAGE_OFFSET = 0;
+    var el = document.getElementById('measurer');
+    if (el) el.remove();
 
-  var allPages = [];
+    var allPages = [];
 
-  function createPage(cssClass) {
-    var div = document.createElement('div');
-    div.className = 'page';
-    div.style.cssText = 'display:flex;visibility:hidden;';
-    var content = document.createElement('div');
-    content.className = 'page-content' + (cssClass ? ' ' + cssClass : '');
-    div.appendChild(content);
-    var pageNum = document.createElement('div');
-    pageNum.className = 'page-number';
-    div.appendChild(pageNum);
-    reader.appendChild(div);
-    return { el: div, content: content, num: pageNum };
-  }
-
-  var sections = Array.from(source.querySelectorAll('[data-section]'));
-  var pg = null;
-  var pgClass = null;
-
-  sections.forEach(function(section) {
-    var type = section.getAttribute('data-section');
-
-    if (type === 'title-page' || type === 'cover-page') {
-      if (pg) { allPages.push(pg); pg = null; pgClass = null; }
-      var sp = createPage('');
-      sp.el.classList.add(type);
-      sp.content.innerHTML = section.innerHTML;
-      sp.num.textContent = '';
-      allPages.push(sp);
-      return;
+    function createPage(cssClass) {
+      var div = document.createElement('div');
+      div.className = 'page';
+      div.style.cssText = 'display:flex;visibility:hidden;';
+      var content = document.createElement('div');
+      content.className = 'page-content' + (cssClass ? ' ' + cssClass : '');
+      div.appendChild(content);
+      var pageNum = document.createElement('div');
+      pageNum.className = 'page-number';
+      div.appendChild(pageNum);
+      reader.appendChild(div);
+      return { el: div, content: content, num: pageNum };
     }
 
-    var cssClass = (type === 'email') ? 'email'
-                 : (type === 'sandras-note') ? 'sandras-note'
-                 : 'report';
+    var sections = Array.from(source.querySelectorAll('[data-section]'));
+    var pg = null;
+    var pgClass = null;
 
-    // Start new page only if no current page or CSS class changed
-    if (!pg || pgClass !== cssClass) {
-      if (pg) allPages.push(pg);
-      pg = createPage(cssClass);
-      pgClass = cssClass;
-    }
+    sections.forEach(function(section) {
+      var type = section.getAttribute('data-section');
 
-    Array.from(section.children).forEach(function(child) {
-      // Force page break before system-title elements
-      if (child.classList && child.classList.contains('system-title') && pg.content.children.length > 0) {
-        allPages.push(pg);
+      if (type === 'title-page' || type === 'cover-page') {
+        if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+        var sp = createPage('');
+        sp.el.classList.add(type);
+        sp.content.innerHTML = section.innerHTML;
+        sp.num.textContent = '';
+        allPages.push(sp);
+        return;
+      }
+
+      var cssClass = (type === 'email') ? 'email'
+                   : (type === 'sandras-note') ? 'sandras-note'
+                   : 'report';
+
+      if (!pg || pgClass !== cssClass) {
+        if (pg) allPages.push(pg);
         pg = createPage(cssClass);
         pgClass = cssClass;
       }
 
-      var clone = child.cloneNode(true);
-      pg.content.appendChild(clone);
-      if (pg.content.scrollHeight > pg.content.clientHeight + 2) {
-        pg.content.removeChild(clone);
-        allPages.push(pg);
-        pg = createPage(cssClass);
-        pgClass = cssClass;
+      Array.from(section.children).forEach(function(child) {
+        if (child.classList && child.classList.contains('system-title') && pg.content.children.length > 0) {
+          allPages.push(pg);
+          pg = createPage(cssClass);
+          pgClass = cssClass;
+        }
+
+        var clone = child.cloneNode(true);
         pg.content.appendChild(clone);
-      }
+        if (pg.content.scrollHeight > pg.content.clientHeight + 2) {
+          pg.content.removeChild(clone);
+          allPages.push(pg);
+          pg = createPage(cssClass);
+          pgClass = cssClass;
+          pg.content.appendChild(clone);
+        }
+      });
     });
-  });
 
-  if (pg) { allPages.push(pg); pg = null; pgClass = null; }
+    if (pg) { allPages.push(pg); pg = null; pgClass = null; }
 
-  // --- Render ---
-  var totalPages = allPages.length;
-  var pageCounter = 0;
-  allPages.forEach(function(pg, i) {
-    pg.el.style.cssText = '';
-    if (i === 0) pg.el.classList.add('active');
-    var isSpecial = pg.el.classList.contains('title-page') || pg.el.classList.contains('cover-page');
-    if (isSpecial) {
-      pg.num.textContent = '';
-    } else {
-      pageCounter++;
-      pg.num.textContent = String(pageCounter + PAGE_OFFSET);
+    // --- Render ---
+    var totalPages = allPages.length;
+    var pageCounter = 0;
+    allPages.forEach(function(pg, i) {
+      pg.el.style.cssText = '';
+      if (i === 0) pg.el.classList.add('active');
+      var isSpecial = pg.el.classList.contains('title-page') || pg.el.classList.contains('cover-page');
+      if (isSpecial) {
+        pg.num.textContent = '';
+      } else {
+        pageCounter++;
+        pg.num.textContent = String(pageCounter + PAGE_OFFSET);
+      }
+
+      var la = document.createElement('div');
+      la.className = 'nav-arrow left';
+      la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+      la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
+      pg.el.appendChild(la);
+      var ra = document.createElement('div');
+      ra.className = 'nav-arrow right';
+      ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
+      ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
+      pg.el.appendChild(ra);
+
+      var lz = document.createElement('div');
+      lz.className = 'click-zone left'; lz.style.zIndex = '5';
+      lz.addEventListener('click', prevPage);
+      pg.el.appendChild(lz);
+      var rz = document.createElement('div');
+      rz.className = 'click-zone right'; rz.style.zIndex = '5';
+      rz.addEventListener('click', nextPage);
+      pg.el.appendChild(rz);
+    });
+
+    var currentPage = 0;
+    var counter = document.createElement('div');
+    counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
+    counter.textContent = '1 / ' + totalPages;
+    document.body.appendChild(counter);
+
+    function showPage(n) {
+      if (n < 0 || n >= totalPages) return;
+      allPages[currentPage].el.classList.remove('active');
+      currentPage = n;
+      allPages[currentPage].el.classList.add('active');
+      counter.textContent = (n + 1) + ' / ' + totalPages;
+      if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
     }
-
-    // Arrows
-    var la = document.createElement('div');
-    la.className = 'nav-arrow left';
-    la.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>';
-    la.addEventListener('click', function(e){e.stopPropagation();prevPage();});
-    pg.el.appendChild(la);
-    var ra = document.createElement('div');
-    ra.className = 'nav-arrow right';
-    ra.innerHTML = '<svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>';
-    ra.addEventListener('click', function(e){e.stopPropagation();nextPage();});
-    pg.el.appendChild(ra);
-
-    var lz = document.createElement('div');
-    lz.className = 'click-zone left'; lz.style.zIndex = '5';
-    lz.addEventListener('click', prevPage);
-    pg.el.appendChild(lz);
-    var rz = document.createElement('div');
-    rz.className = 'click-zone right'; rz.style.zIndex = '5';
-    rz.addEventListener('click', nextPage);
-    pg.el.appendChild(rz);
-  });
-
-  var currentPage = 0;
-  var counter = document.createElement('div');
-  counter.style.cssText = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:IBM Plex Sans,sans-serif;font-size:0.75rem;color:#666;letter-spacing:0.05em;';
-  counter.textContent = '1 / ' + totalPages;
-  document.body.appendChild(counter);
-
-  function showPage(n) {
-    if (n < 0 || n >= totalPages) return;
-    allPages[currentPage].el.classList.remove('active');
-    currentPage = n;
-    allPages[currentPage].el.classList.add('active');
-    counter.textContent = (n + 1) + ' / ' + totalPages;
-    if (n === totalPages - 1) window.parent.postMessage({ type: 'entity-finished' }, '*');
+    function nextPage() { showPage(currentPage + 1); }
+    function prevPage() { showPage(currentPage - 1); }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+      if (e.key === 'Home') { e.preventDefault(); showPage(0); }
+      if (e.key === 'End') { e.preventDefault(); showPage(totalPages - 1); }
+    });
+    source.remove();
   }
-  function nextPage() { showPage(currentPage + 1); }
-  function prevPage() { showPage(currentPage - 1); }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
-    if (e.key === 'Home') { e.preventDefault(); showPage(0); }
-    if (e.key === 'End') { e.preventDefault(); showPage(totalPages - 1); }
-  });
-  source.remove();
+
+  // --- IFRAME DIMENSION CHECK ---
+  // When loaded in the engine's entity-overlay, the iframe may start inside
+  // a display:none container. scrollHeight/clientHeight return 0, breaking
+  // pagination. Poll until dimensions are available, then run.
+  var _r = document.getElementById('reader');
+  var _t = document.createElement('div');
+  _t.className = 'page';
+  _t.style.cssText = 'display:flex;visibility:hidden;';
+  var _c = document.createElement('div');
+  _c.className = 'page-content';
+  _t.appendChild(_c);
+  _r.appendChild(_t);
+
+  if (_c.clientHeight > 10) {
+    _t.remove();
+    runPagination();
+  } else {
+    _t.remove();
+    var _n = 0;
+    var _poll = setInterval(function() {
+      _n++;
+      _r.appendChild(_t);
+      var h = _c.clientHeight;
+      _t.remove();
+      if (h > 10 || _n > 50) {
+        clearInterval(_poll);
+        if (h > 10) runPagination();
+      }
+    }, 100);
+  }
 });
 
 </script>

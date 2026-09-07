@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Address to the Nation &mdash; GOV.UK</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #07080a;
+    --bg-el: #0c0e10;
+    --bg-panel: rgba(255,255,255,.012);
+    --txt: rgba(214,210,200,.94);
+    --txt2: rgba(200,196,184,.6);
+    --txt3: rgba(200,196,184,.32);
+    --txt4: rgba(200,196,184,.18);
+    --red: #c4352a;
+    --red-hi: #e04840;
+    --red-dim: rgba(196,53,42,.32);
+    --red-glow: rgba(196,53,42,.1);
+    --red-bg: rgba(196,53,42,.04);
+    --teal: #00ffe1;
+    --teal-hi: #33ffea;
+    --teal-dim: rgba(0,255,225,.28);
+    --green: #3d7a3d;
+    --amber: #c68a2e;
+    --border: rgba(200,196,184,.08);
+    --border-hi: rgba(200,196,184,.16);
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Outfit', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body::after { content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 140px; }
+  body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.55) 100%); }
+  .section { opacity: 0; transform: translateY(36px); transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.revealed { opacity: 1; transform: translateY(0); }
+  .section.speech p { opacity: 0; transform: translateY(16px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.speech p.revealed { opacity: 1; transform: translateY(0); }
+  .section.pull-quote { transition: opacity 1.7s cubic-bezier(.16,1,.3,1), transform 1.7s cubic-bezier(.16,1,.3,1); }
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .narrow { max-width: 780px; }
+  .bc-strip { position: sticky; top: 0; z-index: 100; background: rgba(6,7,9,.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(196,53,42,.14); padding: 9px 40px; display: flex; align-items: center; gap: 22px; font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.5px; color: var(--txt3); }
+  .bc-live { display: flex; align-items: center; gap: 7px; color: var(--red-hi); }
+  .bc-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); animation: livePulse 1.6s ease-in-out infinite; }
+  @keyframes livePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+  .bc-sep { width: 1px; height: 12px; background: var(--border-hi); }
+  .bc-id { color: var(--txt2); }
+  .bc-id .dim { color: var(--txt3); }
+  .bc-clock { color: var(--txt2); margin-left: auto; }
+  .gov-bar { padding: 34px 0 0; display: flex; align-items: center; gap: 10px; opacity: 0; animation: fadeIn 1.2s ease 0.4s forwards; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .gov-text { font-weight: 600; font-size: 20px; letter-spacing: 0.5px; color: #fff; }
+  .gov-dot { color: var(--teal); }
+  .emergency-bar { margin-top: 16px; padding: 11px 14px; background: var(--red-bg); border-left: 3px solid var(--red); display: flex; align-items: center; gap: 14px; opacity: 0; animation: fadeIn 1s ease 0.7s forwards; }
+  .emergency-bar-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); }
+  .emergency-bar-text { font-weight: 300; font-size: 13px; color: var(--txt); letter-spacing: 0.2px; }
+  .emergency-bar-meta { margin-left: auto; font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 1px; }
+  .hero { padding: 56px 0 44px; border-bottom: 1px solid var(--border-hi); position: relative; }
+  .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--txt3); }
+  .hero-kicker { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--txt3); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .hero-kicker::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--border-hi); }
+  .hero h1 { font-weight: 700; font-size: clamp(34px, 5.8vw, 52px); letter-spacing: -0.8px; color: #fff; line-height: 1.05; margin-bottom: 22px; }
+  .hero-meta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
+  .hero-meta { font-family: var(--mono); font-weight: 400; font-size: 11.5px; letter-spacing: 1.8px; color: var(--txt2); text-transform: uppercase; }
+  .hero-meta .m-sep { color: var(--txt4); margin: 0 2px; }
+  .hero-speakers { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .hero-speaker { font-family: var(--mono); font-weight: 400; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt3); }
+  .speech { padding: 52px 0 44px; position: relative; }
+  .speech p { font-weight: 300; font-size: 18px; line-height: 1.9; color: var(--txt); margin-bottom: 28px; max-width: 720px; }
+  .speech p strong { font-weight: 500; color: rgba(232,228,218,.95); }
+  .speech-opening { font-size: 24px !important; font-weight: 400 !important; color: rgba(214,210,200,.98) !important; padding-bottom: 20px; }
+  .speech-attribution { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--txt3); margin-bottom: 8px; display: block; }
+  .speech p::before, .closing-text::before { content: '\201C'; color: rgba(200,196,184,.42); margin-right: 4px; font-weight: 400; }
+  .speech p::after, .closing-text::after { content: '\201D'; color: rgba(200,196,184,.42); margin-left: 2px; font-weight: 400; }
+  .speech p.speech-topic { font-weight: 400; color: rgba(214,210,200,.98); }
+  .speech p.speech-topic::before { content: none; }
+  .speech p.speech-topic::after { content: none; }
+  .speech-topic-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 6px; }
+  .pull-quote { padding: 36px 0 28px; text-align: left; max-width: 720px; }
+  .pull-quote blockquote { font-weight: 200; font-size: clamp(26px, 4.5vw, 40px); line-height: 1.4; color: rgba(214,210,200,.72); letter-spacing: -0.3px; max-width: 680px; margin: 0; position: relative; padding: 0 0.4em; }
+  .pull-quote blockquote::before { content: '\201C'; position: absolute; left: -0.15em; top: -0.05em; color: rgba(214,210,200,.45); font-weight: 300; }
+  .pull-quote blockquote::after { content: '\201D'; color: rgba(214,210,200,.45); font-weight: 300; margin-left: 0.04em; }
+  .panel { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 2px; padding: 28px 32px 24px; position: relative; margin-bottom: 32px; }
+  .panel::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, var(--border-hi), transparent 70%); }
+  .panel-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .panel-label { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); }
+  .panel-meta { text-align: right; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); line-height: 1.8; }
+  .panel-footer { display: flex; justify-content: space-between; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--txt4); }
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table th { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt3); padding: 0 0 12px; text-align: left; border-bottom: 1px solid var(--border-hi); }
+  .data-table td { padding: 14px 0; border-bottom: 1px solid var(--border); font-weight: 300; font-size: 14px; color: var(--txt); }
+  .data-table td.dt-note { font-family: var(--mono); font-size: 11px; color: var(--txt3); letter-spacing: 0.5px; }
+  .dt-status { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; white-space: nowrap; }
+    .dt-status.ok { color: var(--green); background: rgba(61,122,61,.08); }
+    .dt-status.degraded { color: var(--amber); background: rgba(198,138,46,.08); }
+    .dt-status.down { color: var(--red); background: rgba(196,53,42,.08); }
+    .dt-status.restoring { color: var(--teal); background: rgba(0,255,225,.06); }
+  .epm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 6px; }
+  .epm-stat { padding: 18px 20px; background: rgba(0,255,225,.02); border: 1px solid rgba(0,255,225,.08); border-radius: 2px; }
+  .epm-stat-label { font-family: var(--mono); font-weight: 500; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt3); margin-bottom: 8px; }
+  .epm-stat-value { font-family: var(--mono); font-weight: 600; font-size: 22px; letter-spacing: 1px; color: var(--teal); line-height: 1.2; }
+  .epm-stat-note { font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 0.5px; margin-top: 6px; }
+  .di-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 6px; }
+  .di-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .di-row:last-child { border-bottom: none; }
+  .di-label { font-weight: 300; font-size: 14px; color: var(--txt); }
+  .di-timeline { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .di-timeline-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt2); }
+  .di-timeline-value { font-family: var(--mono); font-weight: 600; font-size: 18px; letter-spacing: 1px; color: var(--amber); }
+  .hub-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .hub-region { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.5px; color: var(--txt2); width: 130px; flex-shrink: 0; text-align: right; }
+  .hub-bar-bg { flex: 1; height: 18px; background: rgba(255,255,255,.02); border: 1px solid var(--border); border-radius: 2px; position: relative; overflow: hidden; }
+  .hub-bar-fill { height: 100%; border-radius: 1px; background: linear-gradient(90deg, rgba(0,255,225,.2), rgba(0,255,225,.45)); transition: width 1.5s cubic-bezier(.16,1,.3,1); }
+  .hub-count { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 1px; color: var(--teal); width: 50px; flex-shrink: 0; }
+  .hub-total { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; align-items: baseline; gap: 12px; }
+  .hub-total-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt2); }
+  .hub-total-val { font-family: var(--mono); font-weight: 600; font-size: 28px; letter-spacing: 1px; color: var(--teal); }
+  .hub-total-note { font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 0.5px; }
+  .closing-text { padding: 56px 0; text-align: center; font-weight: 400; font-size: 22px; line-height: 1.7; color: rgba(214,210,200,.9); }
+  .section-divider { width: 48px; height: 1.5px; background: var(--red-dim); margin: 56px auto; }
+  .continue-wrap { text-align: center; padding: 48px 0 28px; opacity: 0; transition: opacity 0.8s ease; }
+  .continue-wrap.visible { opacity: 1; }
+  .continue-btn { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: #00703c; border: none; padding: 14px 36px; border-radius: 0; cursor: pointer; box-shadow: 0 2px 0 #002d18; transition: background 0.2s; }
+  .continue-btn:hover { background: #005a30; }
+  .continue-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #002d18; }
+  .footer { text-align: center; padding: 36px 0 56px; }
+  .footer-text { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--txt4); margin-bottom: 6px; }
+  .footer-ids { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: var(--txt4); opacity: 0.6; }
+  .speech-handoff { font-family: var(--mono); font-weight: 400; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt4); margin-bottom: 4px; display: block; }
+  @media (max-width: 700px) {
+    .container { padding: 0 20px; }
+    .bc-strip { padding: 9px 16px; gap: 12px; font-size: 9px; }
+    .panel { padding: 20px 18px 18px; }
+    .panel-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .panel-meta { text-align: left; }
+    .emergency-bar { flex-wrap: wrap; }
+    .emergency-bar-meta { margin-left: 0; margin-top: 4px; }
+    .hub-region { width: 90px; font-size: 9px; }
+    .epm-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="bc-strip">
+  <div class="bc-live"><span class="bc-live-dot"></span>LIVE</div>
+  <div class="bc-sep"></div>
+  <div class="bc-id">ADDRESS TO THE NATION <span class="dim">/</span> DAY 8 <span class="dim">/</span> PUBLIC RELEASE</div>
+  <div class="bc-clock" id="bcClock">22 FEB 2027 &middot; 21:00:00 GMT</div>
+</div>
+<div class="container">
+  <div class="gov-bar">
+    <svg viewBox="0 0 44 38" width="28" height="24" fill="none"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>
+    <span class="gov-text">GOV<span class="gov-dot">&middot;</span>UK</span>
+  </div>
+  <div class="emergency-bar">
+    <span class="emergency-bar-label">&bull; Address to the Nation</span>
+    <span class="emergency-bar-text">Prime Minister &middot; Chancellor of the Exchequer &middot; NCSC Director of Operations &middot; Issued under the Civil Contingencies Act 2004</span>
+    <span class="emergency-bar-meta">REF UK-EMRG-2027-041</span>
+  </div>
+  <div class="hero">
+    <div class="hero-kicker">Official Transcript</div>
+    <h1>Address<br>to the Nation</h1>
+    <div class="hero-meta-row">
+      <div class="hero-meta">22 Feb 2027<span class="m-sep"> &middot; </span>21:00 GMT<span class="m-sep"> &middot; </span>Live Broadcast</div>
+      <div class="hero-arc">
+        <svg viewBox="0 0 46 20" width="38" height="16" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="14" r="2.8" fill="#00ffe1"/>
+          <text x="13" y="16.5" font-family="Outfit,sans-serif" font-weight="600" font-size="13" fill="#fff" letter-spacing="2.5">ARC</text>
+          <path d="M11 5 Q26 -3 43 5" stroke="#00ffe1" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-speakers">
+      <span class="hero-speaker">The Prime Minister</span>
+      <span class="hero-speaker">The Chancellor of the Exchequer</span>
+      <span class="hero-speaker">NCSC Director of Operations</span>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-attribution">The Prime Minister</span>
+    <p class="speech-opening">Good evening.</p>
+    <p>Yesterday at midday, the Chancellor stood here and told you to check your phones. Most of you did. And then most of you went to the shops.</p>
+    <p>I want to tell you what today looked like, because it did not look like last week.</p>
+    <p>This was the first full day of retail opening since the crisis began. In many cases, more than a full day &mdash; a number of supermarkets that opened this morning are still open now, and will remain so until midnight, four hours beyond the planned closing time of eight o&rsquo;clock. That is a testament to the retailers, to their staff, and to the Emergency Payment Module itself &mdash; a system that was activated thirty-three hours ago and has processed every transaction presented to it without fault. Pharmacies, convenience stores, corner shops &mdash; open. I am told that by this afternoon, in many parts of the country, you could walk into a shop, pick up what you needed, and pay at the till without excessive queuing. That sentence would not have been remarkable ten days ago. It is remarkable tonight.</p>
+    <p>I know it was not perfect. I know many of you found gaps on shelves &mdash; items you expected to see that were not there. The Chancellor will address the supply picture in detail.</p>
+    <p>I also want to confirm that from tomorrow morning, hospitality and leisure venues may reopen at their discretion, subject to the emergency price controls. I know that may sound like a small thing. But I think a country that has been through what this country has been through deserves a cup of tea in a cafe and a pint in a pub, and I am pleased to be able to say that.</p>
+    <p>Paul Chichester, the NCSC Director of Operations, was due to provide a technical update this morning. I took the decision to move that briefing to this evening so that you could hear it alongside the full picture from the Chancellor. Paul &mdash; over to you.</p>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-handoff">Speaker change</span>
+    <span class="speech-attribution">NCSC Director of Operations</span>
+    <p>Thank you, Prime Minister.</p>
+    <p>On Saturday morning I set out the preliminary assessment and said I would provide a further update today. I am presenting this to you this evening, instead of this morning as provisionally scheduled. This has given my team, working in collaboration with their contemporaries from our partner nations, an additional twelve hours to continue their investigation. This allows me to address you with confidence rather than speculation.</p>
+    <p>Three things.</p>
+    <p>First, on cloud services. Over the past forty-eight hours, my teams have completed the security verification of the major UK cloud platforms &mdash; Amazon Web Services, Microsoft Azure, and Google Cloud. The commercial cloud infrastructure that was taken offline as a precaution following the second incident on Friday has been assessed, and from this evening, verified services are authorised to resume. Business-critical services first, with broader restoration over the coming days. I want to be clear about what we found: the cloud infrastructure itself was not the target of either phase of this attack. The suspension was precautionary. The infrastructure is sound. What we are restoring tonight will operate on the same post-quantum authentication framework &mdash; ARC &mdash; that has been the foundation of our emergency response from the beginning. That framework was not compromised. It is the most secure layer in the UK&rsquo;s digital infrastructure, and everything we bring back online will sit on top of it.</p>
+    <p>Second, on email and messaging. The suspension of email and messaging services following Friday&rsquo;s second incident was also precautionary. Our assessment confirms that these services can be safely restored. Restoration will begin overnight and I expect full service across major providers within twenty-four hours.</p>
+    <p>Third, and most significantly, on the legacy banking systems.</p>
+    <p>I told you on Saturday that the second phase of this attack targeted the data itself &mdash; the records, balances, and transaction histories held by UK financial institutions. I described it as corruption rather than encryption. That assessment stands and has been confirmed by the detailed work my teams have now completed.</p>
+    <p>The question before us is no longer whether these systems can be brought back online. Technically, they can. The pipes work. The question is whether the data they would serve &mdash; the account records, the balances, the transaction histories that describe what you own, what you owe, and what you are owed &mdash; can be verified as accurate.</p>
+    <p>Over the past three days, my teams have worked with every major UK bank, building society, and financial institution to assess the integrity of their core data. I want to give you an honest picture.</p>
+    <p>The real-time databases &mdash; the live systems that powered your banking app, your online banking, your card transactions &mdash; have been substantially corrupted across the sector. The degree varies by institution. Some have fared better than others. But the pattern is consistent: the second phase targeted the data layer methodically, and the corruption is extensive.</p>
+    <p>The next question, which I know you are asking, is: what about the backups? Every financial institution maintains backup systems &mdash; cold storage, offline copies, disaster recovery archives. These are being examined. But I must be candid with you. The sophistication of this attack &mdash; the fact that the second phase used the recovery process itself as its activation pathway &mdash; means that we cannot take any backup at face value until it has been independently verified. That verification process is painstaking, institution by institution, record by record. It will take weeks, not days. Some records will prove recoverable. Others, I must be honest with you, may not.</p>
+    <p>I want to say one more thing about what this means in practice. The Emergency Payment Module &mdash; which the Chancellor will speak to &mdash; does not depend on any of the systems I have just described. It runs on ARC. It uses the post-quantum authentication layer that was not targeted and has not been compromised. The EPM is not a workaround while we fix the old system. It is a functioning payment system built on infrastructure that is intact.</p>
+    <p>My recommendation to the Prime Minister and Cabinet remains that the legacy banking applications, card payment networks, and associated financial services stay offline until the data integrity assessment is substantially complete. Reconnecting the public to records we cannot verify would be worse than the wait.</p>
+    <p>I will provide further updates as the assessment progresses. Prime Minister &mdash; Chancellor.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">NCSC Data Integrity Assessment</div></div>
+        <div class="panel-meta"><div>Assessment as at 21:00 GMT, 22 Feb 2027</div><div>National Cyber Security Centre</div></div>
+      </div>
+      <div class="di-grid">
+        <div class="di-row"><span class="di-label">Real-time databases</span><span class="dt-status down">Under assessment</span></div>
+        <div class="di-row"><span class="di-label">Backup systems</span><span class="dt-status degraded">Under verification</span></div>
+        <div class="di-row"><span class="di-label">ARC / EPM infrastructure</span><span class="dt-status ok">Unaffected</span></div>
+      </div>
+      <div class="di-timeline">
+        <span class="di-timeline-label">Estimated timeline</span>
+        <span class="di-timeline-value">Weeks, not days</span>
+      </div>
+      <div class="panel-footer"><span>Assessment ongoing &middot; institution by institution, record by record</span><span>NCSC-DIA-001</span></div>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-handoff">Speaker change</span>
+    <span class="speech-attribution">The Chancellor of the Exchequer</span>
+    <p>Thank you, Paul.</p>
+    <p>I know that what Paul has just told you is difficult to hear, and I want to address it directly before I turn to the practical picture.</p>
+    <p>Your money has not disappeared. I want to say that clearly. The records that describe your money are under assessment. That is not the same thing. The emergency obligations freeze &mdash; which suspends every mortgage, every rent payment, every bill, every credit obligation &mdash; remains in force and will remain in force until we have the full picture. Nobody owes anything. Nobody is in default. Nobody&rsquo;s credit record is affected. When the assessment is complete, I will stand here and tell you where things stand. Until then, you are protected, and you are not forgotten.</p>
+    <p>Now &mdash; the practical picture.</p>
+    <p>In thirty-three hours, the Emergency Payment Module has processed eighteen point five million transactions across the United Kingdom, with a total value of one point seven six billion pounds. The system has not gone down. It has not experienced a single significant delay. Every transaction has been processed.</p>
+    <p>I know that many households received allocations across multiple devices, and that for most of you the first allocation has been more than adequate for immediate needs. I also know that for others &mdash; those with one device, or none &mdash; the position has been harder. The hub-based allocation, available at all Community Recovery Hubs with photographic identification, is closing that gap.</p>
+    <p>The challenge we face today is not money. Most households have adequate funds. The challenge is what is on the shelves.</p>
+    <p>Our supply chains are recovering, but they are not yet normal. The systems that move goods from warehouses to shops &mdash; automated ordering, digital inventory management, supplier logistics &mdash; depend on cloud-hosted platforms that Paul&rsquo;s teams have now cleared. As those systems come back online over the coming days, restocking will accelerate. In the meantime, it is being coordinated by phone, by paper, and by military logistics teams working alongside the major retailers.</p>
+    <p>Here is the practical picture as of this evening.</p>
+    <span class="speech-topic-label">Stock</span>
+    <p class="speech-topic">Tinned goods, dried goods, rice, pasta, UHT milk, frozen food, cleaning products, and toiletries are in adequate supply at most major retailers. These are shelf-stable products that were in warehouses when this crisis began, and they are being moved to shops on a daily cycle.</p>
+    <p class="speech-topic">Fresh produce is limited. The cold chain &mdash; refrigerated transport and the automated ordering behind it &mdash; is partially operational. You will find some fresh fruit, vegetables, and meat in most stores, but not the range you are used to, and not reliably. This will improve daily as logistics systems come back online.</p>
+    <p class="speech-topic">Bread is available in most areas. Local and independent bakeries have been outstanding this week, and I want to thank them specifically.</p>
+    <p class="speech-topic">Baby formula and infant supplies remain prioritised at Community Recovery Hubs and designated pharmacies. If you cannot find formula at your local shop, your nearest hub will have stock.</p>
+    <p class="speech-topic">Two items that have caused concern today. Pet food &mdash; shorter supply than we anticipated. We did not build pet food into the initial emergency logistics, and I am sorry for that. Military teams are adding it to hub and retail deliveries from tomorrow. And specialist prescription medications beyond the thirty-day emergency supply are running low in some areas. The NHS is operating a regional redistribution programme and your pharmacist can advise.</p>
+    <span class="speech-topic-label">Purchase limits</span>
+    <p class="speech-topic">On purchase limits. Today&rsquo;s trading has demonstrated something I anticipated but hoped to avoid. Stock distribution across the day has been uneven. Many stores reported strong availability this morning and significantly reduced stock by late afternoon. I understand why. Everyone is doing the sensible thing for their family. But the sensible thing for each family is not yet the sustainable thing for the country.</p>
+    <p class="speech-topic">I am therefore introducing, from eight o&rsquo;clock tomorrow morning &mdash; the same time as the second allocation &mdash; daily purchase limits on designated essential items. Two units of each designated item per person, per day. The list covers items such as bread, milk, eggs, baked beans, infant formula, nappies, paracetamol, and batteries. The full list is published on ARC Emergency and displayed in stores. These limits will be applied automatically at the point of sale &mdash; if your basket contains more than the permitted quantity, the terminal will adjust your transaction and notify you before payment. And to be clear, these limits will be enforced across your total daily spend. You will not be able to purchase designated items above your daily limit at another retailer. These measures are about fairness, not scarcity. The stock is there. Buy what you need. Do not buy more than you need. There is enough for everyone if we share it sensibly.</p>
+    <span class="speech-topic-label">Second allocation</span>
+    <p class="speech-topic">On the second allocation. Every ARC-enabled device in the United Kingdom will receive a further two hundred pounds at eight o&rsquo;clock tomorrow morning. Same mechanism &mdash; automatic, no application, no form. If you received the first allocation, you will receive the second. Hub-based allocation on physical payment cards continues at all Community Recovery Hubs.</p>
+    <span class="speech-topic-label">International supply</span>
+    <p class="speech-topic">On international supply. Nineteen of the twenty-three affected nations now have emergency payment systems operational. That matters for restocking, because supply chains cross borders. Customs payments, letters of credit, port clearance &mdash; the cross-border financial infrastructure that moves goods between nations is now functioning across most of the affected economies. Container ships are moving. Cargo is clearing ports. The global supply picture is stabilising and you will see it reflected on shelves over the coming days.</p>
+    <span class="speech-topic-label">Online shopping</span>
+    <p class="speech-topic">On online shopping. With cloud services now being restored, the logistics and ordering platforms that online retailers depend on can begin to come back. The EPM payment infrastructure is ready and can process these transactions. I expect a number of essential online retailers to be operational within the coming days, and I will set out the detail as they come on board.</p>
+    <span class="speech-topic-label">Wages</span>
+    <p class="speech-topic">On wages. I know that many of you have now missed a pay cycle, and that monthly-paid employees are approaching the end of February without certainty that their wages will arrive. Your employer cannot currently process payroll because the banking infrastructure that handles it remains offline. That is not your employer&rsquo;s fault and it is not yours. The EPM allocations are designed to bridge this gap. Combined with the obligations freeze &mdash; which suspends every financial commitment you have &mdash; your immediate needs are covered. I will set out the longer-term position on wages, pensions, and savings once the NCSC assessment is further advanced.</p>
+    <p>Emergency price controls remain in force. They are law. They will be enforced.</p>
+    <p>Prime Minister.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">Emergency Payment Module &middot; Operational Status</div></div>
+        <div class="panel-meta">
+          <div>Live 21:00 GMT &middot; 22 February 2027</div>
+          <div>HM Treasury / ARC Programme</div>
+        </div>
+      </div>
+      <div class="epm-grid">
+        <div class="epm-stat"><div class="epm-stat-label">Transactions processed</div><div class="epm-stat-value">18.5M</div><div class="epm-stat-note">33 hours of operation</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">Total value</div><div class="epm-stat-value">&pound;1.76B</div><div class="epm-stat-note">All ARC-enabled devices</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">System availability</div><div class="epm-stat-value">100%</div><div class="epm-stat-note">No interruption</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">Second allocation</div><div class="epm-stat-value">08:00</div><div class="epm-stat-note">Tuesday 23 February</div></div>
+      </div>
+      <div class="panel-footer"><span>Purchase limits active from 08:00 &middot; Cross-retailer enforcement</span><span>EPM-002</span></div>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section pull-quote"><blockquote>The system works. It is not the system we had. But it works, and today it fed this country.</blockquote></div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">Service Status &middot; National Overview</div></div>
+        <div class="panel-meta"><div>Status as at 21:00 GMT, 22 Feb 2027</div><div>Issued by Cabinet Office &amp; HM Treasury</div></div>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Service</th><th>Provider</th><th style="text-align:right;">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Electricity &middot; Gas &middot; Water</td><td class="dt-note">National Grid / Utilities</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Emergency services</td><td class="dt-note">999 / 101 / 111</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>NHS &mdash; emergency care</td><td class="dt-note">NHS England</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Community Recovery Hubs</td><td class="dt-note">Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Open &middot; 5,000+</span></td></tr>
+          <tr><td>ARC Emergency</td><td class="dt-note">ARC / NCSC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>ARC Education</td><td class="dt-note">DfE / Local authorities</td><td style="text-align:right;"><span class="dt-status ok">Live</span></td></tr>
+          <tr><td>BBC broadcast</td><td class="dt-note">BBC</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Essential retail</td><td class="dt-note">Major retailers</td><td style="text-align:right;"><span class="dt-status ok">Open &middot; Extended hours</span></td></tr>
+          <tr><td>Emergency payments (EPM)</td><td class="dt-note">HM Treasury / ARC</td><td style="text-align:right;"><span class="dt-status ok">Operational &middot; 2nd allocation 08:00</span></td></tr>
+          <tr><td>Bank branches (cash)</td><td class="dt-note">Major UK banks</td><td style="text-align:right;"><span class="dt-status ok">Open &middot; Limited hours</span></td></tr>
+          <tr><td>Telephone calls &amp; SMS</td><td class="dt-note">UK mobile networks</td><td style="text-align:right;"><span class="dt-status ok">Operational</span></td></tr>
+          <tr><td>Transport &mdash; road</td><td class="dt-note">Highways England</td><td style="text-align:right;"><span class="dt-status ok">Normal</span></td></tr>
+          <tr><td>Schools</td><td class="dt-note">DfE / Local authorities</td><td style="text-align:right;"><span class="dt-status ok">ARC Education live</span></td></tr>
+          <tr><td>NHS &mdash; routine &amp; GP</td><td class="dt-note">NHS England</td><td style="text-align:right;"><span class="dt-status restoring">Pharmacies open</span></td></tr>
+          <tr><td>Social media</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status restoring">Instagram live &middot; Clearing</span></td></tr>
+          <tr><td>News websites / online media</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status restoring">Returning &middot; BBC website live</span></td></tr>
+          <tr><td>Cloud services</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status restoring">Restoring &middot; Business-critical</span></td></tr>
+          <tr><td>MMS / picture messaging</td><td class="dt-note">UK mobile networks</td><td style="text-align:right;"><span class="dt-status restoring">Under review</span></td></tr>
+          <tr><td>Fuel stations</td><td class="dt-note">Designated network</td><td style="text-align:right;"><span class="dt-status restoring">EPM &middot; Rationed</span></td></tr>
+          <tr><td>Transport &mdash; rail</td><td class="dt-note">Network Rail</td><td style="text-align:right;"><span class="dt-status restoring">Expanding</span></td></tr>
+          <tr><td>Payment terminals (card)</td><td class="dt-note">Acquirers &middot; Card networks</td><td style="text-align:right;"><span class="dt-status down">Offline</span></td></tr>
+          <tr><td>Banking applications</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Offline &middot; Data integrity</span></td></tr>
+          <tr><td>Online banking</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Offline</span></td></tr>
+          <tr><td>ATMs</td><td class="dt-note">LINK</td><td style="text-align:right;"><span class="dt-status down">Offline</span></td></tr>
+          <tr><td>Markets (LSE)</td><td class="dt-note">London Stock Exchange</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Email services</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Internet messaging</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended</span></td></tr>
+          <tr><td>Streaming / entertainment</td><td class="dt-note">NCSC directive</td><td style="text-align:right;"><span class="dt-status down">Suspended &middot; Non-essential</span></td></tr>
+        </tbody>
+      </table>
+      <div class="panel-footer"><span>Email &amp; messaging restoring overnight &middot; Next update 18:00 GMT, 23 Feb</span><span>Table 1 of 2</span></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">Community Recovery Hubs &middot; National Distribution</div></div>
+        <div class="panel-meta"><div>Sites operational as at 18:00 GMT</div><div>Source: MHCLG &middot; 22 February 2027</div></div>
+      </div>
+      <div class="hub-bars">
+        <div class="hub-row"><span class="hub-region">South East</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="85"></div></div><span class="hub-count">850</span></div>
+        <div class="hub-row"><span class="hub-region">London</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="78"></div></div><span class="hub-count">780</span></div>
+        <div class="hub-row"><span class="hub-region">North West</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="70"></div></div><span class="hub-count">700</span></div>
+        <div class="hub-row"><span class="hub-region">Midlands</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="66"></div></div><span class="hub-count">660</span></div>
+        <div class="hub-row"><span class="hub-region">North East</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="50"></div></div><span class="hub-count">500</span></div>
+        <div class="hub-row"><span class="hub-region">South West</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="48"></div></div><span class="hub-count">480</span></div>
+        <div class="hub-row"><span class="hub-region">East of England</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="46"></div></div><span class="hub-count">460</span></div>
+        <div class="hub-row"><span class="hub-region">Scotland</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="40"></div></div><span class="hub-count">400</span></div>
+        <div class="hub-row"><span class="hub-region">Wales</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="23"></div></div><span class="hub-count">230</span></div>
+        <div class="hub-row"><span class="hub-region">Northern Ireland</span><div class="hub-bar-bg"><div class="hub-bar-fill" style="width:0%" data-target="15"></div></div><span class="hub-count">150</span></div>
+      </div>
+      <div class="hub-total">
+        <span class="hub-total-label">National Total</span>
+        <span class="hub-total-val">5,210</span>
+        <span class="hub-total-note">&uarr; from 5,020 Sunday</span>
+      </div>
+      <div class="panel-footer"><span>Hub-based EPM allocation with photographic ID &middot; Hamper distribution ongoing</span><span>Table 2 of 2</span></div>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-handoff">Speaker change</span>
+    <span class="speech-attribution">The Prime Minister</span>
+    <p>Thank you, Chancellor. Thank you, Paul.</p>
+    <p>The system works. It is not the system we had. But it works, and today it fed this country.</p>
+    <p>I want to set out the wider picture.</p>
+    <p>China and Switzerland were the first of our partner nations to deploy emergency payment systems, within forty-eight hours of this crisis. France, Canada, and Australia followed. Germany activated this morning. South Korea yesterday evening. Nineteen of the twenty-three affected nations now have operational systems.</p>
+    <p>The coordination between these nations has been one of the most significant dimensions of this crisis, and I want to say something about it directly. The emergency payment frameworks that we and our partners have deployed were not improvised in a week. They were developed over the past four years as part of an international financial resilience programme that began after the pandemic, accelerated by the cyber threats that all of us have lived with in recent years. Procedures were in place for exactly this kind of scenario. Every nation that has activated has done so using interoperable standards, which means that as we move toward longer-term solutions, the architecture is already aligned across twenty-three nations. That is not an accident. It is the result of years of planning by people in treasuries and central banks and regulatory bodies around the world, and tonight I want to acknowledge their work.</p>
+    <p>On communications. Paul has confirmed that cloud services are being restored and that email and messaging will follow overnight. The NCSC has also today begun clearing social media platforms for restored service. Instagram is accessible. Facebook will follow tomorrow. I expect further platforms over the coming days. The BBC website and iPlayer are being restored this evening.</p>
+    <p>On the security situation. I have no intelligence to suggest a further phase of this attack. But I have asked the NCSC to proceed as though one is possible. I will not trade your safety for your convenience.</p>
+    <p>I want to close with something I have thought about all day.</p>
+    <p>This country has not panicked. Every contingency exercise I have ever been briefed on anticipated significant civil disorder within the first week of a crisis at this scale. Yesterday, when shops reopened and every household in the country arrived within the same three hours, I was briefed to expect difficulty. Eighteen and a half million transactions. And this country queued, paid, and went home.</p>
+    <p>The volunteers at five thousand hubs. The neighbours who have cooked for people they did not know. The pharmacists. The shelf-stackers. The soldiers who carried boxes of infant formula into a church hall in Wolverhampton this morning and stayed to pour tea.</p>
+    <p>None of that is the Government. That is you.</p>
+    <p>Tomorrow evening I will address you with a further update. ARC Emergency and ARC Local remain your most current source of information.</p>
+    <p>Buy what you need. Look after each other.</p>
+  </div>
+  <div class="section"><div class="section-divider"></div></div>
+  <div class="section"><div class="closing-text">Be well.</div></div>
+</div>
+<div class="container">
+  <div class="continue-wrap" id="continueWrap"><button class="continue-btn">Turn off TV</button></div>
+  <div class="footer">
+    <div class="footer-text">&copy; Crown copyright 2027 &middot; Open Government Licence v3.0</div>
+    <div class="footer-ids">DOC &middot; PMO-ADDR-20270222-A &nbsp;&middot;&nbsp; PUBLISHED 21:00 GMT &nbsp;&middot;&nbsp; TRANSCRIPT AVAILABLE</div>
+  </div>
+</div>
+<script>
+(function(){var e=document.getElementById('bcClock');if(!e)return;var s=Date.now(),p=function(n){return(n<10?'0':'')+n};function t(){var d=Math.floor((Date.now()-s)/1000),a=21*3600+d,h=Math.floor(a/3600)%24,m=Math.floor(a%3600/60),c=a%60;e.textContent='22 FEB 2027 \xb7 '+p(h)+':'+p(m)+':'+p(c)+' GMT'}t();setInterval(t,1e3)})();
+(function(){var ss=document.querySelectorAll('.section'),cw=document.getElementById('continueWrap');function r(s){if(s.classList.contains('revealed'))return;s.classList.add('revealed');if(s.classList.contains('speech')){s.querySelectorAll('p').forEach(function(p,i){setTimeout(function(){p.classList.add('revealed')},200+i*400)})}if(s.querySelector('.hub-bars')){setTimeout(function(){s.querySelectorAll('.hub-bar-fill').forEach(function(b,i){setTimeout(function(){b.style.width=b.dataset.target+'%'},i*120)})},600)}}function v(){var t=window.innerHeight*.85;ss.forEach(function(s){if(!s.classList.contains('revealed')&&s.getBoundingClientRect().top<t)r(s)});var l=ss[ss.length-1];if(l&&l.classList.contains('revealed')&&cw)setTimeout(function(){cw.classList.add('visible')},800)}setTimeout(function(){Array.from(ss).filter(function(s){return s.getBoundingClientRect().top<window.innerHeight}).forEach(function(s,i){setTimeout(function(){r(s)},i*600)})},800);window.addEventListener('scroll',v,{passive:true})})();
+(function(){var b=document.querySelector('.continue-btn');if(b)b.addEventListener('click',function(){if(window.parent&&window.parent!==window)window.parent.postMessage({type:'broadcast-continue',id:'BC10'},'*')})})();
+</script>
+</body>
+</html>

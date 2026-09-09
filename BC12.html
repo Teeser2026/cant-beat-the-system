@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Address to the Nation &mdash; GOV.UK</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #07080a;
+    --bg-el: #0c0e10;
+    --bg-panel: rgba(255,255,255,.012);
+    --txt: rgba(214,210,200,.94);
+    --txt2: rgba(200,196,184,.6);
+    --txt3: rgba(200,196,184,.32);
+    --txt4: rgba(200,196,184,.18);
+    --red: #c4352a;
+    --red-hi: #e04840;
+    --red-dim: rgba(196,53,42,.32);
+    --red-glow: rgba(196,53,42,.1);
+    --red-bg: rgba(196,53,42,.04);
+    --teal: #00ffe1;
+    --teal-hi: #33ffea;
+    --teal-dim: rgba(0,255,225,.28);
+    --green: #3d7a3d;
+    --amber: #c68a2e;
+    --border: rgba(200,196,184,.08);
+    --border-hi: rgba(200,196,184,.16);
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Outfit', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body::after { content: ''; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 140px; }
+  body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.55) 100%); }
+  .section { opacity: 0; transform: translateY(36px); transition: opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.revealed { opacity: 1; transform: translateY(0); }
+  .section.speech p { opacity: 0; transform: translateY(16px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); will-change: opacity, transform; }
+  .section.speech p.revealed { opacity: 1; transform: translateY(0); }
+  .section.pull-quote { transition: opacity 1.7s cubic-bezier(.16,1,.3,1), transform 1.7s cubic-bezier(.16,1,.3,1); }
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .narrow { max-width: 780px; }
+  .bc-strip { position: sticky; top: 0; z-index: 100; background: rgba(6,7,9,.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(196,53,42,.14); padding: 9px 40px; display: flex; align-items: center; gap: 22px; font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.5px; color: var(--txt3); }
+  .bc-live { display: flex; align-items: center; gap: 7px; color: var(--red-hi); }
+  .bc-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); box-shadow: 0 0 8px var(--red); animation: livePulse 1.6s ease-in-out infinite; }
+  @keyframes livePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+  .bc-sep { width: 1px; height: 12px; background: var(--border-hi); }
+  .bc-id { color: var(--txt2); }
+  .bc-id .dim { color: var(--txt3); }
+  .bc-clock { color: var(--txt2); margin-left: auto; }
+  .gov-bar { padding: 34px 0 0; display: flex; align-items: center; gap: 10px; opacity: 0; animation: fadeIn 1.2s ease 0.4s forwards; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .gov-text { font-weight: 600; font-size: 20px; letter-spacing: 0.5px; color: #fff; }
+  .gov-dot { color: var(--teal); }
+  .emergency-bar { margin-top: 16px; padding: 11px 14px; background: var(--red-bg); border-left: 3px solid var(--red); display: flex; align-items: center; gap: 14px; opacity: 0; animation: fadeIn 1s ease 0.7s forwards; }
+  .emergency-bar-label { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); }
+  .emergency-bar-text { font-weight: 300; font-size: 13px; color: var(--txt); letter-spacing: 0.2px; }
+  .emergency-bar-meta { margin-left: auto; font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 1px; }
+  .hero { padding: 56px 0 44px; border-bottom: 1px solid var(--border-hi); position: relative; }
+  .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--txt3); }
+  .hero-kicker { font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--txt3); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .hero-kicker::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--border-hi); }
+  .hero h1 { font-weight: 700; font-size: clamp(34px, 5.8vw, 52px); letter-spacing: -0.8px; color: #fff; line-height: 1.05; margin-bottom: 22px; }
+  .hero-meta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
+  .hero-meta { font-family: var(--mono); font-weight: 400; font-size: 11.5px; letter-spacing: 1.8px; color: var(--txt2); text-transform: uppercase; }
+  .hero-meta .m-sep { color: var(--txt4); margin: 0 2px; }
+  .hero-speakers { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .hero-speaker { font-family: var(--mono); font-weight: 400; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--txt3); }
+  .speech { padding: 52px 0 44px; position: relative; }
+  .speech p { font-weight: 300; font-size: 18px; line-height: 1.9; color: var(--txt); margin-bottom: 28px; max-width: 720px; }
+  .speech p strong { font-weight: 500; color: rgba(232,228,218,.95); }
+  .speech-opening { font-size: 24px !important; font-weight: 400 !important; color: rgba(214,210,200,.98) !important; padding-bottom: 20px; }
+  .speech-attribution { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--txt3); margin-bottom: 8px; display: block; }
+  .speech p::before, .closing-text::before { content: '\201C'; color: rgba(200,196,184,.42); margin-right: 4px; font-weight: 400; }
+  .speech p::after, .closing-text::after { content: '\201D'; color: rgba(200,196,184,.42); margin-left: 2px; font-weight: 400; }
+  .pull-quote { padding: 36px 0 28px; text-align: left; max-width: 720px; }
+  .pull-quote blockquote { font-weight: 200; font-size: clamp(26px, 4.5vw, 40px); line-height: 1.4; color: rgba(214,210,200,.72); letter-spacing: -0.3px; max-width: 680px; margin: 0; position: relative; padding: 0 0.4em; }
+  .pull-quote blockquote::before { content: '\201C'; position: absolute; left: -0.15em; top: -0.05em; color: rgba(214,210,200,.45); font-weight: 300; }
+  .pull-quote blockquote::after { content: '\201D'; color: rgba(214,210,200,.45); font-weight: 300; margin-left: 0.04em; }
+  .panel { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 2px; padding: 28px 32px 24px; position: relative; margin-bottom: 32px; }
+  .panel::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, var(--border-hi), transparent 70%); }
+  .panel-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .panel-label { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; color: var(--txt2); }
+  .panel-meta { text-align: right; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--txt3); line-height: 1.8; }
+  .panel-footer { display: flex; justify-content: space-between; margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--txt4); }
+  .epm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 6px; }
+  .epm-stat { padding: 18px 20px; background: rgba(0,255,225,.02); border: 1px solid rgba(0,255,225,.08); border-radius: 2px; }
+  .epm-stat-label { font-family: var(--mono); font-weight: 500; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--txt3); margin-bottom: 8px; }
+  .epm-stat-value { font-family: var(--mono); font-weight: 600; font-size: 22px; letter-spacing: 1px; color: var(--teal); line-height: 1.2; }
+  .epm-stat-note { font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 0.5px; margin-top: 6px; }
+  .closing-text { padding: 56px 0; text-align: center; font-weight: 400; font-size: 22px; line-height: 1.7; color: rgba(214,210,200,.9); }
+  .section-divider { width: 48px; height: 1.5px; background: var(--red-dim); margin: 56px auto; }
+  .continue-wrap { text-align: center; padding: 48px 0 28px; opacity: 0; transition: opacity 0.8s ease; }
+  .continue-wrap.visible { opacity: 1; }
+  .continue-btn { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: #00703c; border: none; padding: 14px 36px; border-radius: 0; cursor: pointer; box-shadow: 0 2px 0 #002d18; transition: background 0.2s; }
+  .continue-btn:hover { background: #005a30; }
+  .continue-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #002d18; }
+  .footer { text-align: center; padding: 36px 0 56px; }
+  .footer-text { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--txt4); margin-bottom: 6px; }
+  .footer-ids { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: var(--txt4); opacity: 0.6; }
+  @media (max-width: 700px) {
+    .container { padding: 0 20px; }
+    .bc-strip { padding: 9px 16px; gap: 12px; font-size: 9px; }
+    .panel { padding: 20px 18px 18px; }
+    .panel-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .panel-meta { text-align: left; }
+    .emergency-bar { flex-wrap: wrap; }
+    .emergency-bar-meta { margin-left: 0; margin-top: 4px; }
+    .epm-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="bc-strip">
+  <div class="bc-live"><span class="bc-live-dot"></span>LIVE</div>
+  <div class="bc-sep"></div>
+  <div class="bc-id">ADDRESS TO THE NATION <span class="dim">/</span> DAY 35 <span class="dim">/</span> INTERNATIONAL SIMULCAST</div>
+  <div class="bc-clock" id="bcClock">22 MAR 2027 &middot; 20:00:00 GMT</div>
+</div>
+<div class="container">
+  <div class="gov-bar">
+    <svg viewBox="0 0 44 38" width="28" height="24" fill="none"><path d="M22 2l4.5 9 8-5.5-2.5 13h-20L9.5 5.5l8 5.5L22 2z" fill="#fff"/><path d="M10 20.5h24v4H10z" fill="#fff"/><path d="M8 26h28v3.5H8z" fill="#fff"/><path d="M10 31h24v3H10z" fill="#fff"/><circle cx="22" cy="1" r="1.2" fill="#fff"/><rect x="21" y="0" width="2" height="3.5" fill="#fff" rx="0.5"/><circle cx="14" cy="19.5" r="1.3" fill="#fff"/><circle cx="22" cy="19.5" r="1.3" fill="#fff"/><circle cx="30" cy="19.5" r="1.3" fill="#fff"/></svg>
+    <span class="gov-text">GOV<span class="gov-dot">&middot;</span>UK</span>
+  </div>
+  <div class="emergency-bar">
+    <span class="emergency-bar-label">&bull; Address to the Nation</span>
+    <span class="emergency-bar-text">Prime Minister &middot; International Simulcast &middot; 23 Nations &middot; Issued under the Civil Contingencies Act 2004</span>
+    <span class="emergency-bar-meta">REF UK-EMRG-2027-091</span>
+  </div>
+  <div class="hero">
+    <div class="hero-kicker">Official Transcript</div>
+    <h1>Address<br>to the Nation</h1>
+    <div class="hero-meta-row">
+      <div class="hero-meta">22 Mar 2027<span class="m-sep"> &middot; </span>20:00 GMT<span class="m-sep"> &middot; </span>International Simulcast<span class="m-sep"> &middot; </span>23 Nations</div>
+      <div class="hero-arc">
+        <svg viewBox="0 0 46 20" width="38" height="16" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="5" cy="14" r="2.8" fill="#00ffe1"/>
+          <text x="13" y="16.5" font-family="Outfit,sans-serif" font-weight="600" font-size="13" fill="#fff" letter-spacing="2.5">ARC</text>
+          <path d="M11 5 Q26 -3 43 5" stroke="#00ffe1" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-speakers">
+      <span class="hero-speaker">The Prime Minister</span>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <span class="speech-attribution">The Prime Minister</span>
+    <p>Five weeks ago, on a Sunday night, the lights went out.</p>
+    <p>For some of us it was the lights in our homes. For all of us it was more than this. Much more. The systems we relied upon to move our money, keep our records safe, that held the invisible architecture of daily life in place &mdash; they began to flicker. And then they went dark. And in that darkness, you did something remarkable.</p>
+    <p>You looked after each other.</p>
+    <p>I have spent these five weeks visiting communities across this country. I have sat in leisure centres, school gymnasiums and supermarket car parks. I have watched volunteers &mdash; strangers, neighbours, teenagers, pensioners &mdash; work together for the community and for one another, organising food distribution with nothing more than clipboards and goodwill. I have seen this country at its most bare and its most unified. And I have never been more proud to lead it.</p>
+    <p>But pride is not a plan. You deserve a plan, and I am here, today, to deliver that plan.</p>
+    <p>You deserve the truth. You have always deserved the truth. It pains me to say that prior to this egregious assault on our way of life, you have not always been given it. From this day onwards, that changes. That is my vow. And it is the vow of the leaders of every nation that stand together, as one, before you tonight. We will deliver the truth &mdash; openly, sincerely, and with integrity.</p>
+    <p>First, I must be clear about one thing. The system that failed us on the fourteenth of February will not be repaired &mdash; it cannot be repaired. Not slowly, not partially. The financial infrastructure that underpinned our economy &mdash; the databases, the transaction networks, the ledgers that recorded who owned what and who owed what &mdash; sustained damage beyond recovery. The experts we have consulted &mdash; and we have consulted every credible expert available &mdash; are unanimous.</p>
+    <p>We cannot go back. But we can, we must, and we will go forwards.</p>
+    <p>Because something survived.</p>
+    <p>Resilience. A resilience that lives within each and every one of us. A resilience we built together and that will last forever. The neighbours who checked on each other. The strangers who became friends in a queue. The teenagers who carried shopping for people they&rsquo;d never met. You did not wait to be told. You did not wait for permission. You acted. We relied upon one another. And that reliance &mdash; that trust in each other &mdash; is the foundation everything else is built on.</p>
+    <p>But this is not all that survived.</p>
+    <p>In 2025, this government &mdash; alongside twenty-two partner nations &mdash; commissioned a programme. A resilience programme. A digital infrastructure designed not to replace the existing system, but to survive its failure. It was called the Autonomous Resilience Cloud &mdash; ARC. Of course you now recognise the name. It has been the backbone of the emergency information service on your phones these past five weeks. It was ARC that kept communication channels open. It was ARC that coordinated the hamper distribution. It was ARC that ensured your hospitals could still identify you and your children&rsquo;s schools could still find you.</p>
+    <p>ARC was not a contingency. It was a conviction. A recognition that the systems we had inherited were fragile, centralised, and overdue for replacement. We hoped we would never need it. We were wrong to hope. We were right to build.</p>
+    <p>And built on the foundation of ARC is something new. Something we believe represents the most significant step forward in the relationship between citizen and state in the modern era.</p>
+    <p>Her name is AIDA.</p>
+    <p>AIDA &mdash; the Adaptive Intelligence for Domestic Assistance &mdash; is your personal recovery assistant. She is not a government database. She is not surveillance. She is a service &mdash; designed for us, accountable to us, and available to us all from tonight. AIDA will manage our recovery allocation. She will help us access healthcare, education, housing, employment. She will know what we need because we will tell her, and she will learn. She is built on transparency. Every decision she makes on our behalf is visible to us all. Every recommendation, we can refuse. She works for us. No longer us for them.</p>
+    <p>She managed the food &mdash; no one went hungry. She managed the power, and she kept the lights on.</p>
+    <p>Now I want to talk to you about what comes next. It impacts what we own and what we owe. This uncertainty has kept us awake these past five weeks.</p>
+    <p>I am here to tell you: tonight we will all sleep well.</p>
+    <p>As of eight o&rsquo;clock this evening, His Majesty&rsquo;s Treasury &mdash; in coordination with the Bank of England and twenty-two partner nations &mdash; has enacted a complete jubilee on personal debt. Your mortgage is cancelled. Your credit card balance is zero. Your student loan is cleared. Your overdraft is closed, at zero. This is not a freeze. This is not a deferral. The debt is gone. It does not exist. You owe nothing.</p>
+    <p>I will say that again, because I know you need to hear it twice.</p>
+    <p>You owe nothing. To anyone.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="panel">
+      <div class="panel-head">
+        <div><div class="panel-label">Britannia Coin &middot; Initial Allocation</div></div>
+        <div class="panel-meta"><div>Effective 22 March 2027 &middot; 20:00 GMT</div><div>HM Treasury / Bank of England</div></div>
+      </div>
+      <div class="epm-grid">
+        <div class="epm-stat"><div class="epm-stat-label">Crisis allocation &middot; Adult</div><div class="epm-stat-value">10,000 BC</div><div class="epm-stat-note">Per registered adult</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">Crisis allocation &middot; Child</div><div class="epm-stat-value">2,000 BC</div><div class="epm-stat-note">Per registered child</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">Monthly &middot; Adult</div><div class="epm-stat-value">1,500 BC</div><div class="epm-stat-note">Ongoing allocation</div></div>
+        <div class="epm-stat"><div class="epm-stat-label">Monthly &middot; Child</div><div class="epm-stat-value">750 BC</div><div class="epm-stat-note">Ongoing allocation</div></div>
+      </div>
+      <div class="panel-footer"><span>Registration open now &middot; 90 seconds &middot; Phone or Community Recovery Hub</span><span>BC-001</span></div>
+    </div>
+  </div>
+</div>
+<div class="container narrow">
+  <div class="section speech">
+    <p>The old ledger is gone. The new one starts clean. BritCoin &mdash; our new digital allocation &mdash; will be credited to every registered household from midnight tonight. Ten thousand BritCoin per adult. Two thousand per child. A monthly allocation follows: fifteen hundred per adult, seven hundred and fifty per child. This is not furlough. This is not a loan. This is not temporary. This is the foundation of our new financial lives, and it begins tonight.</p>
+    <p>Registration is open now. It takes ninety seconds. You can do it from your phone, or you can visit your local Community Recovery Hub tomorrow morning. The process is simple because we built it to be simple. We have carried enough complexity.</p>
+    <p>What does registration mean? It means you are choosing to participate in both the National and the Global Recovery Programmes. It means AIDA can see each and every one of us &mdash; can allocate to us, can serve us, can protect us. Registration ensures that we can reach you. We can credit you. We can include you in the systems that will, from tonight, begin rebuilding our community, our country, our planet. Registration is not compulsory. But the recovery is real, and it is here, and it is here for all of us. No one should miss out. No one will miss out.</p>
+    <p>This is not a British project. It is global. This is not financial. It is human. This is not for the few. It is for us all.</p>
+    <p>Tonight, twenty-three nations are making this same announcement. The same jubilee. The same framework. The same commitment. From Washington to Berlin, from Tokyo to Canberra, from Delhi to S&atilde;o Paulo &mdash; the same words, the same promise, the same fresh start. This response was designed in five weeks, but built upon decades of planning, coordination, unity and trust.</p>
+    <p>The world you wake up to tomorrow will not look the same as the one you lost five weeks ago. It will look better. Not because the crisis was a gift &mdash; it was a catastrophe, and we grieve with every family that has suffered. But because the response to that catastrophe has given us permission to do what decades of politics could not: start again.</p>
+    <p>Tonight we register. Tomorrow we dream.</p>
+  </div>
+  <div class="section pull-quote"><blockquote>You owe nothing. To anyone.</blockquote></div>
+  <div class="section"><div class="section-divider"></div></div>
+  <div class="section"><div class="closing-text">Our future is now.</div></div>
+</div>
+<div class="container">
+  <div class="continue-wrap" id="continueWrap"><button class="continue-btn">Turn off TV</button></div>
+  <div class="footer">
+    <div class="footer-text">&copy; Crown copyright 2027 &middot; Open Government Licence v3.0</div>
+    <div class="footer-ids">DOC &middot; PMO-ADDR-20270322-A &nbsp;&middot;&nbsp; PUBLISHED 20:00 GMT &nbsp;&middot;&nbsp; INTERNATIONAL SIMULCAST &middot; 23 NATIONS</div>
+  </div>
+</div>
+<script>
+(function(){var e=document.getElementById('bcClock');if(!e)return;var s=Date.now(),p=function(n){return(n<10?'0':'')+n};function t(){var d=Math.floor((Date.now()-s)/1000),a=20*3600+d,h=Math.floor(a/3600)%24,m=Math.floor(a%3600/60),c=a%60;e.textContent='22 MAR 2027 \xb7 '+p(h)+':'+p(m)+':'+p(c)+' GMT'}t();setInterval(t,1e3)})();
+(function(){var ss=document.querySelectorAll('.section'),cw=document.getElementById('continueWrap');function r(s){if(s.classList.contains('revealed'))return;s.classList.add('revealed');if(s.classList.contains('speech')){s.querySelectorAll('p').forEach(function(p,i){setTimeout(function(){p.classList.add('revealed')},200+i*400)})}}function v(){var t=window.innerHeight*.85;ss.forEach(function(s){if(!s.classList.contains('revealed')&&s.getBoundingClientRect().top<t)r(s)});var l=ss[ss.length-1];if(l&&l.classList.contains('revealed')&&cw)setTimeout(function(){cw.classList.add('visible')},800)}setTimeout(function(){Array.from(ss).filter(function(s){return s.getBoundingClientRect().top<window.innerHeight}).forEach(function(s,i){setTimeout(function(){r(s)},i*600)})},800);window.addEventListener('scroll',v,{passive:true})})();
+(function(){var b=document.querySelector('.continue-btn');if(b)b.addEventListener('click',function(){if(window.parent&&window.parent!==window)window.parent.postMessage({type:'broadcast-continue',id:'BC12'},'*')})})();
+</script>
+</body>
+</html>

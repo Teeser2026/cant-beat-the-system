@@ -1111,6 +1111,13 @@ body {
   color: var(--dim);
   opacity: .8;
 }
+.card-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--dim);
+  opacity: .45;
+}
 .card-time {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 9px;
@@ -5402,7 +5409,8 @@ function renderSignal(turnId) {
       html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}${continuesCls}${secCardCls}">`;
       // S185: card-chrome — channel pill + time on every card
       const cardTime = card.time || '';
-      const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
+      const cardDate = (card.date || '').replace(/\s+\d{4}$/, '');
+      const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardDate ? `<span class="card-date">${cardDate}</span>` : ''}${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
       if (card.img) {
         html += chromeHtml;
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;

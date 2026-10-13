@@ -1213,6 +1213,14 @@ body.phase-3 .card .snip {
 /* Palette now driven by section.sec (channel) via SEC_THEME map in render, not by cls. */
 .tag.a { background: rgba(74,138,138,.12); color: #4a8a8a; }
 .tag.x { background: rgba(180,30,30,.25); color: #d43d3d; opacity: 1; animation: emergencyPulse 2s ease-in-out infinite; }
+/* 13f: X engagement row — reply · repost · like · views (no bookmark/share) */
+.x-eng { display: flex; justify-content: space-between; max-width: 340px; margin-top: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--dim); }
+.x-eng span { display: inline-flex; align-items: center; gap: 5px; opacity: .7; }
+.x-eng svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.x-eng span.on { opacity: 1; }
+.x-eng .x-like.on { color: #f91880; }
+.x-eng .x-like.on svg { fill: currentColor; }
+.x-eng .x-rp.on { color: #00ba7c; }
 .card:has(.tag.x) { border-color: rgba(180,30,30,.35); }
 /* GOV — if ttl has a <strong> header, body stays neutral; if no <strong>, the whole ttl is red */
 .card:has(.tag.x) .ttl { color: var(--text); }
@@ -5419,6 +5427,14 @@ function renderSignal(turnId) {
       // S185: card-chrome — channel pill + time on every card
       const cardTime = card.time || '';
       const cardDate = (card.date || '').trim(); // 13e: year shown (was stripped)
+      // 13f: X engagement row (optional card.x)
+      const _xi = p => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${p}"/></svg>`;
+      const xRowHtml = card.x ? `<div class="x-eng">`
+        + `<span class="x-reply">${_xi('M4 5h16v11H9l-5 4z')}${card.x.replies || ''}</span>`
+        + `<span class="x-rp${card.x.reposted ? ' on' : ''}">${_xi('M7 4 4 7l3 3M4 7h11a3 3 0 0 1 3 3v1M17 20l3-3-3-3M20 17H9a3 3 0 0 1-3-3v-1')}${card.x.reposts || ''}</span>`
+        + `<span class="x-like${card.x.liked ? ' on' : ''}">${_xi('M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z')}${card.x.likes || ''}</span>`
+        + `<span class="x-views">${_xi('M6 20v-7M11 20V5M16 20v-10')}${card.x.views || ''}</span>`
+        + `</div>` : '';
       const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}${cardTime && cardDate ? `<span class="card-date">·</span>` : ''}${cardDate ? `<span class="card-date">${cardDate}</span>` : ''}</div>`; // 13e: time · date
       if (card.img) {
         html += chromeHtml;
@@ -5443,7 +5459,7 @@ function renderSignal(turnId) {
       html += `
         <div class="ttl">${splitTtl(card.ttl)}</div>
         ${card.snip ? `<div class="snip">${card.snip}</div>` : ``}
-        ${card.tag ? `<div class="tag ${card.cls}">${card.tag}</div>` : ``}`;
+        ${card.tag ? `<div class="tag ${card.cls}">${card.tag}</div>` : ``}${xRowHtml}`;
 
       if (type === 'thread-notify') {
         const group = threadsData.find(g => g.id === card.threadRef);

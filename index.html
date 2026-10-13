@@ -5418,8 +5418,8 @@ function renderSignal(turnId) {
       html += `<div class="card${newCls}${typeCls}${imgCls}${aidaCls}${continuesCls}${secCardCls}">`;
       // S185: card-chrome — channel pill + time on every card
       const cardTime = card.time || '';
-      const cardDate = (card.date || '').replace(/\s+\d{4}$/, '');
-      const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardDate ? `<span class="card-date">${cardDate}</span>` : ''}${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}</div>`;
+      const cardDate = (card.date || '').trim(); // 13e: year shown (was stripped)
+      const chromeHtml = `<div class="card-chrome"><span class="sec-name${secCardCls}">${section.sec}</span>${cardTime ? `<span class="card-time">${cardTime}</span>` : ''}${cardTime && cardDate ? `<span class="card-date">·</span>` : ''}${cardDate ? `<span class="card-date">${cardDate}</span>` : ''}</div>`; // 13e: time · date
       if (card.img) {
         html += chromeHtml;
         html += `<img class="card-img" src="${card.img}" alt="" draggable="false" loading="lazy">`;
